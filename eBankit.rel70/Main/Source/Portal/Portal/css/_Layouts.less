@@ -1,0 +1,45 @@
+﻿@import "_Variables.less";
+
+@media (min-width:@container-extended-width)
+{
+    .containerExtended{
+        width:@container-extended-width;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+@media (max-width:@container-extended-width) {
+    .containerExtended{
+        width:100%;
+    }
+}
+
+@media (min-width:@container-width){
+    .col-4-override{
+        width:310px;
+        padding:0;
+    }
+
+    .col-4-margin{
+        margin-right:40px;
+    }
+
+    .col-8-override{
+        width:700px;
+        padding:0;
+    }
+}
+
+.noPadds{
+    padding:0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

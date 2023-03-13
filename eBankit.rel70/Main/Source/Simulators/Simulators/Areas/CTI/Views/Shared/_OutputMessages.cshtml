@@ -1,0 +1,21 @@
+﻿@if (errorContext.Messages != null && errorContext.Messages.Count > 0)
+{
+    foreach (var item in errorContext.Messages)
+    {
+        <div class="alert-@item.Type.ToString().ToLower()">
+            <span class="message-icon"></span>
+            <p class="message-text">
+                @item.Message
+            </p>
+
+            @if (!string.IsNullOrEmpty(item.Description))
+            {
+                <p class="message-text-small">
+                    @item.Description
+                </p>
+            }
+        </div>
+    }
+
+    errorContext.Messages = null;
+}

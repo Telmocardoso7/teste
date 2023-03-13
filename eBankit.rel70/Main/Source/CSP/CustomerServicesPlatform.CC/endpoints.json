@@ -1,0 +1,91 @@
+{
+  "GlobalSettings": {
+    "ServicesEndpoints": {
+      "Channel": {
+        "Users": {},
+        "Customers": {
+          "Cards": {},
+          "Accounts": {},
+          "ExportData": {},
+          "Transfers": {},
+          "CustomerHistory": {
+            "HistoryContacts": {},
+            "Operations": {}
+          },
+          "IntegratedPosition": {},
+          "ForgetData": {},
+          "VirtualEntity": {}
+        },
+        "Interactions": {},
+        "Processes": {},
+        "SecureMessages": {
+          "Claims": {}
+        },
+        "AccountOpening": {},
+        "Contact": {}
+      },
+      "CRM": {
+        "Contacts": {},
+        "UnidentifiedContacts": {},
+        "Alerts": {},
+        "Notes": {},
+        "Events": {},
+        "GeneralLinks": {},
+        "Messages": {
+          "User": {}
+        },
+        "ContactReasons": {}
+      },
+      "Administration": {
+        "Packages": {},
+        "PredefinedCodes": {},
+        "GenericTableLanguage": {},
+        "Limits": {},
+        "InternationalPhoneCodes": {}
+      },
+      "Platform": {
+        "Menus": {},
+        "Segments": {},
+        "Notifications": {},
+        "Cultures": {},
+        "Resources": {
+          "Base": "/Platform/Resources"
+        },
+        "Channel": {},
+        "Transactions": {},
+        "Currency": {},
+        "Errors": {},
+        "Scripts": {},
+        "EmailTemplate": {},
+        "Functionality": {},
+        "Module": {},
+        "Consents": {},
+        "GenericContent": {}
+      },
+      "CTI": {},
+      "MultiUserContract": {
+        "Customers": {
+          "UserAccessCodes": {}
+        },
+        "Devices": {},
+        "PermissionGroup": {},
+        "Documents": {},
+        "UserAlias": {},
+        "Contracts": {}
+      },
+      "Alerts": {
+        "Channel": {},
+        "Subscriptions": {},
+        "Notifications": {
+          "Templates": {}
+        },
+        "Configurations": {},
+        "Engine": {}
+      },
+      "Campaigns": {
+        "External": {},
+        "Response": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+    var currSegment = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_ProductList\"").FirstOrDefault();
+    var currProduct = CurrentPage;
+    var productImage = string.Empty;
+
+    if (CurrentPage.ebankIT_productImage != null && !(CurrentPage.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+    {
+        var m = (CurrentPage.ebankIT_productImage);
+        productImage = @CurrentPage.ebankIT_productImage.Url;
+    }
+}
+<div class="productDetail">
+    <div class="=container-fluid">
+
+        <div class="productImage lazy" style="background-image: url(@productImage);">
+            <div class="container ">
+                <p>@currSegment.Name</p>
+                <p class="productTitle">@currProduct.Name</p>
+                <div class="row byline">
+                    <div class="col-md-6 col-xs-12">@currProduct.GetPropertyValue("ebankIT_byline")</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="row-height">
+                <div class="col-xs-12 col-sm-8 col-sm-height productDetailLeft">
+                    <div class="inside inside-full-height">
+                        <div class="content">
+                            <h1>@Umbraco.GetDictionaryValue("AboutThisProduct")</h1>
+                            <div class="productDescription">
+                                <h2>@Umbraco.GetDictionaryValue("Advantages")</h2>
+                                <p>@currProduct.GetPropertyValue("ebankIT_productDescription")</p>
+                            </div>
+                            <div class="ProductDetailTabs">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs responsive" role="tablist" id="productTabs">
+                                    @{ bool first = true;}
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        string title = currProduct.GetPropertyValue("ebankIT_TitleTab" + i.ToString());
+                                        if (!string.IsNullOrEmpty(title))
+                                        {
+                                            <li role="presentation" class="@(first ? "active" : string.Empty)">
+                                                <a href="#tab@(i)" aria-controls="tab@(i)" role="tab" data-toggle="tab">@title</a>
+                                                <div class="arrow"></div>
+                                            </li>
+                                            first = false;
+                                        }
+                                    }
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content responsive" id="collapse-productTabs">
+                                    @{ first = true; }
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        HtmlString text = currProduct.GetPropertyValue("ebankIT_Tab" + i.ToString());
+                                        if (text != null)
+                                        {
+                                            <div role="tabpanel" class="tab-pane @(first ? "active" : string.Empty)" id="tab@(i)">
+                                                @text
+                                            </div>
+                                            first = false;
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-sm-height col-sm-top productDetailRight">
+                    <div class="inside inside-full-height">
+                        <div class="content">
+                            <h1>&nbsp;</h1>
+                            @if (!String.IsNullOrEmpty(CurrentPage.ebankIT_productlink) && !(CurrentPage.ebankIT_productlink is Umbraco.Core.Dynamics.DynamicNull))
+                            {
+                                var m = (CurrentPage.ebankIT_productlink);
+
+                                <div class="productDoc">
+                                    <a class="subscribe subscribeNowContainer gradientBG" href="@m" target="_blank">@Umbraco.GetDictionaryValue("SubscribeNow")</a>
+                                </div>
+                            }
+
+                            @if (CurrentPage.ebankIT_productdocument01 != null && !(CurrentPage.ebankIT_productdocument01 is Umbraco.Core.Dynamics.DynamicNull))
+                            {
+                                var m = Umbraco.Media(CurrentPage.ebankIT_productdocument01);
+
+                                <div class="productDoc">
+                                    <a href="@m.Url"><img class="lazy img-responsive" src="~/css/images/icon-pdf.png" /></a>
+                                    <a href="@m.Url">@Umbraco.GetDictionaryValue("ProductDoc01")</a>
+                                </div>
+                            }
+                            @if (CurrentPage.ebankIT_productdocument02 != null && !(CurrentPage.ebankIT_productdocument02 is Umbraco.Core.Dynamics.DynamicNull))
+                            {
+                                var m = (CurrentPage.ebankIT_productdocument02);
+
+                                <div class="productDoc">
+                                    <a href="@m.Url"><img class="lazy img-responsive" src="~/css/images/icon-pdf.png" /></a>
+                                    <a href="@m.Url">@Umbraco.GetDictionaryValue("ProductDoc02")</a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @{Html.RenderPartial("MoreToYou");}
+
+    </div>
+</div>

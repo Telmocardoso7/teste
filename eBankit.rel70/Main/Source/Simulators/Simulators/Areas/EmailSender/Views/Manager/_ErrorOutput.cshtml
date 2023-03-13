@@ -1,0 +1,33 @@
+﻿@model eBankit.FE.Simulators.Areas.EmailSender.Models.IndexModel
+
+@{
+    ViewData["HeaderTitle"] = "Email Sender Simulator";
+    ViewData["Title"] = "Demo";
+}
+
+    @if (Model.HasErrors)
+    {
+        <div>
+            <p>@Model.ErrorMessage</p>
+        </div>
+    }
+
+    @if (Model.HasResponses)
+    {
+        <div id="CampaignResponseOutput">
+            @if (!Model.HasErrors)
+            {
+                <div>
+                    <p>Response was sent with successfully</p>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <p>@Model.ErrorMessage</p>
+                </div>
+            }
+        </div>
+    }
+
+<link rel="stylesheet" href="~/css/emailSender.css" asp-append-version="true" />

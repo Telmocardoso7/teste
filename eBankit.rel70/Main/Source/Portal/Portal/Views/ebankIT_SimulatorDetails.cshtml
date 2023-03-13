@@ -1,0 +1,108 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+
+    dynamic products;
+    
+    
+   
+    
+    
+    if (!string.IsNullOrEmpty(Request.QueryString["currency"]) && !string.IsNullOrEmpty(Request.QueryString["amount"]))
+    {
+        string amount = Request.QueryString["amount"];
+        string currency = Request.QueryString["currency"];
+
+        products = CurrentPage.Children.Where(string.Format("ebankIT_minAmout<={0} && ebankIT_maxAmount>={0} && ebankIT_currency=\"{1}\"", amount, currency));
+    }
+    else
+    {
+        products = CurrentPage.Children;
+    }
+    var productsHigh = CurrentPage.Children.Where("ebankIT_highlightinproductlist=true");
+
+    var highlights = CurrentPage.Children("ebankIT_Product");
+
+
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var segment = currentLanguage.Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+    var products_list = segment.Children.Where("DocumentTypeAlias == \"ebankIT_ProductList\"");
+
+    var productImage = string.Empty;
+    var productName = string.Empty;
+    var productByLine = string.Empty;
+    var SegmentName=string.Empty;
+    string id_product = Request.QueryString["IDProduct"];
+
+    foreach (var list in products_list)
+    {
+        var products_ = list.Children.Where("DocumentTypeAlias == \"ebankIT_Product\"");
+
+        foreach (var product in products_)
+        {
+            var productID = product.ebankIT_centralID;
+            if (id_product == productID)
+            {
+                SegmentName=list.Name;
+                if (product.ebankIT_productImage != null && !(product.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+                {
+                    var m =  (@product.ebankIT_productImage);
+                    productImage = @m.Url;
+                }
+
+                productName=product.Name;
+                productByLine = product.ebankIT_byline;
+            }
+
+        }
+
+    }
+
+
+}
+
+<div class="productDetail">
+<div class="=container-fluid">
+
+    <div class="productImage lazy" style="background-image: url(@productImage);">
+        <div class="container ">
+            <p>@SegmentName</p>
+            <p class="productTitle">@productName</p>
+            <div class="row byline">
+                <div class="col-md-6 col-xs-12">@productByLine</div>
+            </div>
+            <p>
+                
+                    <a href="@CurrentPage.ebankIT_Link">
+                        @Umbraco.GetDictionaryValue("CalculateNow")
+                        <img class="lazy" src="/css/images/knowmore-white.png" />
+                    </a>
+            </p>
+        </div>
+    </div>
+
+</div>
+    </div>
+<div class="simulatorDetails">
+    <div class="container">
+
+        @{ Html.RenderPartial("CreditSimulator"); }
+
+    </div>
+    <div class="container-fluid divider"></div>
+@*    <div class="exportSimulation">
+        <div class="document first">
+            <a href="#">
+                <img src="/css/images/ico_pdf_blue.png" />
+                <span>PDF</span>
+            </a>
+        </div>
+        <div class="document">
+            <a href="#">
+                <img src="/css/images/ico_send_mail.png" />
+                <span>@Umbraco.GetDictionaryValue("SendEmail")</span>
+            </a>
+        </div>
+    </div>*@
+</div>
+    @{Html.RenderPartial("MoreToYou");}

@@ -1,0 +1,62 @@
+﻿.transaction-content {
+
+    .table-resp-to1199 {
+        overflow: visible !important;
+    }
+
+    .table {
+
+        td {
+            overflow: visible !important;
+
+            .btn-expandable {
+                background-image: url("../../images/icon/ico_plus_small.png");
+                width: 30px;
+                height: 30px;
+            }
+
+            .dropdown-menu-grid {
+                z-index: 9;
+            }
+        }
+
+        td:last-child {
+            min-height: 40px;
+        }
+    }
+}
+
+.labelLock:hover {
+    background-image: url("../../images/icon/action/action_credentials_lock_hover.png");
+    width: 30px;
+    height: 30px;
+}
+
+.labelUnLock:hover {
+    background-image: url("../../images/icon/action/action_credentials_unlock_hover.png");
+    width: 30px;
+    height: 30px;
+}
+
+.lkbLockCredential {
+    display: inline-block;
+    padding: 2px;
+
+    p {
+        margin: 0;
+    }
+
+    &:focus {
+        .labelLock {
+            background-image: url("../../images/icon/action/action_credentials_lock_hover.png");
+            width: 30px;
+            height: 30px;
+        }
+
+        .labelUnLock {
+            background-image: url("../../images/icon/action/action_credentials_unlock_hover.png");
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

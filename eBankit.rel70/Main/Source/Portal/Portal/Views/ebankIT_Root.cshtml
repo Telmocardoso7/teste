@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+
+    var language = Request.UserLanguages[0];
+    string lang = "en";
+    var topLanguage = CurrentPage.AncestorsOrSelf(1).FirstOrDefault().Children.Where("DocumentTypeAlias == \"ebankIT_Language\"");
+
+    if (language != null)
+    {
+        if (language.Length > 0 && language.Contains("-"))
+        {
+            var browserLanguage = language.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries)[0];
+            foreach (var item in topLanguage)
+            {
+                if (item.Name.ToUpperInvariant() == browserLanguage.ToUpperInvariant())
+                {
+                    lang = item.Name;
+                }
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+    this.Response.Redirect(lang);
+}
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Version>7.0.1</Version>
+    <Company>ebankIT - Omnichannel Inovation, SA.</Company>
+    <Authors>ebankIT - Omnichannel Inovation, SA.</Authors>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ebankit.MW.Module.Administration.Transactions" Version="7.0.1" />
+    <PackageReference Include="Ebankit.MW.Module.CRM.Transactions" Version="7.0.1" />
+    <PackageReference Include="Ebankit.MW.Module.MultiUserContract.Transactions" Version="7.0.1" />
+    <PackageReference Include="Ebankit.MW.Module.Processes.Transactions" Version="7.0.1" />
+    <PackageReference Include="Ebankit.MW.Module.Templates.Transactions" Version="7.0.1" />
+    <PackageReference Include="eBankit.MW.Transactions" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eBankit.Middleware.Transactions.Core.Custom.Interfaces\eBankit.Middleware.Transactions.Core.Custom.Interfaces.csproj" />
+  </ItemGroup>
+</Project>

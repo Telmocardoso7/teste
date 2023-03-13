@@ -1,0 +1,79 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<div class="container-fluid">
+    <div class="row">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-4-override col-4-margin">
+                        <ul>
+                            <li>eBankIT</li>
+                            <li> <a href="http://www.ebankit.com/en/contacts/">@Umbraco.GetDictionaryValue("WhereWeAre")</a> </li>
+                            <li> <a href="http://www.ebankit.com/en/jobs/">@Umbraco.GetDictionaryValue("WorkWithUs")</a> </li>
+                            <li> <a href="http://www.ebankit.com/en/about-us/">@Umbraco.GetDictionaryValue("AboutUs")</a> </li>
+                            <li> <a href="http://www.ebankit.com/en/news/">@Umbraco.GetDictionaryValue("News")</a> </li>
+                        </ul>
+                        @*<ul>
+                            <li>@Umbraco.GetDictionaryValue("Products")</li>
+                            <li> <a href="http://www.ebankit.com/en/products/">List</a> </li> 
+                        </ul>*@
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-4-override col-4-margin">
+                        <ul>
+                            <li>Contact Centre</li>
+                            <li> <a href="http://www.ebankit.com/en/contacts/">@Umbraco.GetDictionaryValue("ContactForm")</a> </li>
+                            @*<li> <a href="#">Complaints</a> </li>
+                            <li> <a href="#">Privacy policy</a> </li>
+                            <li> <a href="#">Foreign currency transaction</a> </li>*@
+                        </ul>
+                        <ul>
+                            <li>@Umbraco.GetDictionaryValue("MobileApplications")</li>
+                            <li> <a href="https://itunes.apple.com">IOS smartphone</a> </li>
+                            <li> <a href="https://itunes.apple.com">IOS tablet</a> </li>
+                            <li> <a href="https://play.google.com/store/search?q=ebankit&c=apps">Android Smartphone</a> </li>
+                            <li> <a href="https://play.google.com/store/search?q=ebankit&c=apps">Android Tablet</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-4-override">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <ul class="socialLinksHeader">
+                                    <li>@Umbraco.GetDictionaryValue("FollowUs")</li>
+                                </ul>
+                                <div class="centerBlock socialLinksDiv">
+                                    <ul>
+                                        <li class="socialLink">
+                                            <a href="https://www.facebook.com/ebankit.official"><i class="fa fa-facebook fa-3x socialLinkIcon"></i></a>
+                                        </li>
+                                        <li class="socialLink">
+                                            <a href="https://www.linkedin.com/company/ebankit"><i class="fa fa-linkedin fa-3x socialLinkIcon"></i></a>
+                                        </li>
+                                        <li class="socialLink">
+                                            <a href="https://www.youtube.com/channel/UCYcbHZR9keMfBnn3hH1EUsg"><i class="fa fa-youtube fa-3x socialLinkIcon"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <ul>
+                                    <li class="contactTitle">@Umbraco.GetDictionaryValue("TalkWithUs")</li>
+                                    <li>
+                                        <i class="fa fa-phone contactIcon fa-3x"></i>
+                                        <span>+44 203 287 6592</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope contactIcon fa-3x"></i>
+                                        <span>info@ebankit.com</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright gradientBG">
+            2015 <i class="fa fa-copyright"></i>@Umbraco.GetDictionaryValue("Copyright")
+        </div>
+    </div>
+</div>
+ 

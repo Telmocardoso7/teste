@@ -1,0 +1,14 @@
+﻿@media screen and (max-width: 979px) and (min-width: 768px) {
+  .enviromentImageTablet {
+    height: auto;
+  }
+}
+.recover-message {
+  margin-top: 0px;
+}
+.recover-message .content-message.metro.col-lg-8 {
+  margin: 20px 0 0 0;
+}
+.recover-form {
+  top: auto !important;
+}

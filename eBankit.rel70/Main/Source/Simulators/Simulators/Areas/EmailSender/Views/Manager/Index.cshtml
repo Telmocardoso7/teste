@@ -1,0 +1,61 @@
+﻿@model eBankit.FE.Simulators.Areas.EmailSender.Models.IndexModel
+
+@{
+    ViewData["HeaderTitle"] = "Email Sender Simulator";
+    ViewData["Title"] = "Demo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> campaigns = null;
+
+    if (Model.Campaigns != null)
+    {
+        campaigns = Model.Campaigns.Select(item => new SelectListItem
+        {
+            Text = item.Name,
+            Value = item.CampaignCode,
+        }).ToList();
+
+        // insert all element
+        campaigns.Insert(0, new SelectListItem() { Text = "Please Select a Campaign", Value = "" });
+    }
+}
+
+
+<div id="dvMain" class="s-container s-container-height p-2">
+
+    <div id="dvStart" class="demo">
+
+        <div class="h-100 mt-4">
+            <div class="s-b-title title-margin">Campaign</div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(x => Model.Campaigns, new SelectList(campaigns, "Value", "Text"))
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="s-b-action-btn" type="button" name="btnProcessCampain" value="Process Campaign" onclick="ProcessCampaign();" />
+                        <input class="s-b-action-btn" type="button" name="btnCampaignResponse" value="Campaign Response" onclick="GetCampaignResponse()" />
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div id="MarketingListDetailsId">
+                @if (Model.Loaded)
+                {
+                @await Html.PartialAsync("~/Views/Manager/_MarketingListSummary.cshtml", Model);
+                }
+            </div>
+
+            <hr />
+
+        </div>
+       
+    </div>
+
+</div>
+
+<script src="~/js/areas/emailSender/emailSender.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/css/emailSender.css" asp-append-version="true" />

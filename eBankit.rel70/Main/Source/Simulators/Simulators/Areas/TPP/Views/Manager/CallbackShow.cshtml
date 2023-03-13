@@ -1,0 +1,24 @@
+﻿@model EndResultModel
+
+@{
+    ViewData["HeaderTitle"] = "TPP Simulator";
+    ViewData["Title"] = "CallbackShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><span id="lblCalback"> @ViewData["Message"]</span></h2>
+<input id="automaticClose" hidden value="@Model.AutomaticClose.ToString()" />
+
+<div>
+    <p id="manualCloseTxt" hidden>You may now close this page.</p>
+    <p id="automaticCloseTxt" hidden>This page will close shortly.</p>
+</div>
+
+
+
+<environment include="Development">
+    <script src="~/js/areas/tpp/callback.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/areas/tpp/callback.min.js" asp-append-version="true"></script>
+</environment>

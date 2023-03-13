@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "eBankit - Omnichannel Service Bus Monitoring";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<!-- begin #page-container -->
+<div id="page-container" class="fade in">
+    <!-- begin login -->
+    <div class="login login-v2 animated fadeIn" style="background-color: #292d2e !important" data-pageload-addclass="animated fadeIn">
+        <!-- begin brand -->
+        <div class="login-header" style="padding: 0 !important">
+
+            <div class="brand">
+                <div class="parent">
+                    <div class="img">
+                        <img src="~/Content/img/ebankit.png" />
+                    </div>
+                    <div class="text">
+                        eBankit
+                        <small>Omnichannel Service Bus Monitoring</small>
+                    </div>
+                </div>
+            </div>
+            @*<div class="icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>*@
+        </div>
+        <!-- end brand -->
+        <div class="login-content">
+            <span>A email was sent to your email account. Please confirm your email by clicking in the link in it.</span>
+            <hr />
+            <div class="login-buttons">
+                <button type="button" class="btn btn-success btn-block btn-lg" onclick="redirectToLogin();">Back to Login</button>
+            </div>
+        </div>
+    </div>
+    <!-- end login -->
+</div>
+<!-- end page container -->
+<script>
+    var redirectToLogin = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Login","Account")';
+    }
+</script>

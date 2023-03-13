@@ -1,0 +1,229 @@
+﻿<style>
+    .top-buffer {
+        margin-top: 15px
+    }
+</style>
+<div class="modal" id="edit-image">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Change profile photo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row panel-form">
+                    <div class="form-horizontal form-bordered  col-md-12 ">
+                        <div class="row top-buffer">
+                            <div class="col-md-12 text-center">
+                                <canvas id="canvas"></canvas>
+                                <img style="display:none" src="~/Content/img/avatar.png" id="user-image" height="120" width="120" />
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="col-md-12 text-center">
+                                You can only upload .png, .gif or .jpeg files with a maximum of 2MB.
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="col-md-12 text-center">
+                                <input type="file" name="file" id="file" style="display:none;" />
+                                <a href="javascript:;" onclick="UploadPhoto()" class="btn btn-sm btn-white top-buffer">Add photo</a>
+                                <span class="text-danger field-validation-error top-buffer" id="UploadError" style="display: none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer top-buffer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cancel</a>
+                    <button type="button" onclick="EditImage();" class="btn btn-sm btn-success" id="btnEditUser">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    image = document.getElementById("user-image");
+    image.addEventListener('load', e => {
+        ctx.canvas.width = image.naturalWidth;
+        ctx.canvas.height = image.naturalHeight;
+        ctx.canvas.style.width =  $(image).attr('width') + 'px';
+        ctx.canvas.style.height = $(image).attr('height') + 'px';
+        ctx.drawImage(image, 0, 0);        
+    });
+
+    $(document).ready(function () {
+
+        $("#file").on('change', function () {
+            var myimg = document.getElementById("user-image");
+            var input = document.getElementById("file");
+            if (input.files && input.files[0]) {
+                if (ImageIsValid(input.files[0]) === true) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        myimg.src = e.target.result;
+                        cropping(e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        });
+
+    });
+
+    function ImageIsValid(file)
+    {
+        $('#UploadError').css({ 'display': "none" });
+        $('#UploadError').html('');
+        var _validFileExtensions = [".jpg" , ".jpeg", ".gif", ".png"]
+        var sFileName = file.name;
+        if (sFileName.length > 0) {
+            var validSize = file.size < (2 * 1024 * 1024)
+            var validExtension = false;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                var sCurExtension = _validFileExtensions[j];
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    validExtension = true;
+                    break;
+                }
+            }
+            if (!validExtension) {
+                var message =  "File type allowed: " + _validFileExtensions.join(", ");
+
+                $('#UploadError').css({ 'display': "block" });
+                $('#UploadError').html(message);
+                return false;
+            }
+            if (!validSize) {
+                var message = "File size must be less than 2 MB";
+
+                $('#UploadError').css({ 'display': "block" });
+                $('#UploadError').html(message);
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    var LoadEditImage = function () {
+        waitLoading();
+        $.ajax({
+            url: '@Url.Action("GetUserPhoto", "Manage")',
+            type: 'GET',
+            contentType: 'json',
+            success: function (response) {
+                if (response != 'null' && response != '') {
+                    $('#user-image').attr('src', 'data:image/jpeg;base64,' + response);
+                }
+                stopLoading();
+                $('#edit-image').modal('show');
+            },
+            error: function (request, textStatus, errorThrown) {
+                stopLoading();
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+    var EditImage = function () {        
+        var fileInput = document.getElementById('file');
+        if (fileInput.files && fileInput.files[0]) {
+            var formdata = new FormData();
+            formdata.append(fileInput.files[0].name, GetBlobfromCanvas());
+        }      
+
+        waitLoading();
+        $.ajax({
+            url: '@Url.Action("Upload", "Manage")',
+            type: 'POST',
+            data: formdata,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+
+                stopLoading();
+
+                if (response.Result == 'OK') {
+                    $('#UploadError').css({ 'display': "none" });
+                    $('#UploadError').html('');
+                    LoadProfileImage()
+                    $('#edit-image').modal('hide');
+
+                }
+                else {
+                    $('#UploadError').css({ 'display': "block" });
+                    $('#UploadError').html(response.Message);
+                }
+            },
+            error: function (request, textStatus, errorThrown) {
+                stopLoading();
+                errorHandler(request, textStatus, errorThrown);
+                $('#UploadError').css({ 'display': "block" });
+                $('#UploadError').html("Error on inserting/updating image.");
+            }
+        });
+    }
+
+    var UploadPhoto = function () {
+        $('#file').click();
+        return false;
+    }
+
+
+    function cropping(idata) {
+        var img = new Image();
+        img.onload = function () {            
+            var sY = 0
+            var sX = 0
+            var sWidth = img.naturalWidth
+            var sHeight = img.naturalHeight
+
+            if (img.naturalWidth > img.naturalHeight) {
+                sY = 0;
+                sX = (img.naturalWidth - img.naturalHeight) / 2
+                sWidth = img.naturalHeight
+                sHeight = img.naturalHeight
+            }
+            else if (img.naturalHeight > img.naturalWidth) {
+                sY = (img.naturalHeight - img.naturalWidth) / 2;
+                sX = 0
+                sWidth = img.naturalWidth
+                sHeight = img.naturalWidth
+            }
+
+            ctx.canvas.width = 480
+            ctx.canvas.height = 480
+            ctx.drawImage(img, sX, sY, sWidth, sHeight, 0, 0, 480, 480);                      
+        };
+        img.src = idata;
+    }
+
+
+    function GetBlobfromCanvas() {
+        var dataURI = ctx.canvas.toDataURL();
+
+        var byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1]);
+        else
+            byteString = unescape(dataURI.split(',')[1]);
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        var blob =  new Blob([ia], { type: mimeString });
+
+        return blob
+    }
+
+  
+
+
+
+</script>

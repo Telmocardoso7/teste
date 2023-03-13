@@ -1,0 +1,94 @@
+﻿@import url('../_variables-cp.less');
+
+.ultimasOperacoesDashboard {
+    margin: 60px 0px;
+
+    > div:first-child {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .dashboardLastOperationsToday {
+        display: block;
+        float: left;
+        width: 10%;
+        padding: 15px 0px 0px;
+
+        .header-default {
+            width: 3px;
+            height: 142px;
+            margin: 0 auto;
+        }
+
+        h6 {
+            font-family: @font-family-medium;
+            font-weight: normal;
+            font-size: 19px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .content-accounts .contentBox {
+        margin: 0px;
+    }
+
+    ul li a {
+        padding: 15px 0px;
+        min-height: 205px;
+    }
+
+    .bx-wrapper {
+        max-height: 200px;
+    }
+
+    .landingOperationContainer {
+        background-color: @account-Selector-Bg;
+
+        > div:first-child {
+            overflow: hidden;
+        }
+    }
+
+    .dashboardLastOperationsSliderContainer {
+        display: block;
+        float: right;
+        width: 90%;
+    }
+
+
+    .last-operation-data {
+        padding: 5px 5px;
+
+        h6 {
+            font-family: @font-family-medium;
+            font-weight: normal;
+            font-size: 19px;
+            color: rgb(24,146,174);
+            width: 100%;
+            text-align: center;
+        }
+
+            h6.formatOperation {
+                font-weight: normal;
+                font-family: @font-family-normal;
+                font-size: 17px;
+                color: rgb(24,146,174);
+                width: 100%;
+                text-align: center;
+                margin: 22px 0 10px 0;
+            }
+
+        .negative-value {
+            color: rgb(181,39,45) !important;
+        }
+
+        .positive-value {
+            color: rgb(0,161,75) !important;
+        }
+
+        .currency {
+            color: rgb(99,99,99) !important;
+        }
+    }
+}

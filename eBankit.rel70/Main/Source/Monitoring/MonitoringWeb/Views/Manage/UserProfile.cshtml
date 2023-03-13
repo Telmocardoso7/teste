@@ -1,0 +1,303 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model UserProfileViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(Model.BreadCrumbs)
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">User profile</h1>
+    <!-- end page-header -->
+
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Edit user profile</h4>
+                </div>
+                <div class="panel-body panel-form">
+
+                    <form id="formUpload" enctype="multipart/form-data">
+                        
+                        <table>
+                            <tr>
+                                <td>
+                                   
+                                   
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <div class="col-md-3">
+                            <div class="col-md-12">
+                                <div class="col-md-offset-4 col-md-8"  style="display:table-cell; vertical-align:middle; text-align:center">
+                                     <input type="file" name="file" id="file" style="display:none;"/>
+                                     @Html.Raw("<img onclick=\"UploadPhoto();\" style=\"margin-top: 10px;cursor:pointer;cursor:hand;\" class=\"col-md-12\" src=\"data:image/jpeg;base64," + Model.UserPhoto + "\" />")
+                                </div>
+                            </div>
+                            <div style="padding: 10px;" class="col-md-12">
+                                <div class="col-md-offset-4 col-md-8" style="display:table-cell; vertical-align:middle; text-align:center">
+                                    <button type="button" onclick="UploadPhoto();" class="btn btn-inverse m-r-5 m-b-5" id="btnUpload" data-dismiss="modal">Change photo</button>
+                                    <span class="text-danger field-validation-error" id="UploadError" style="display: none;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+
+                    <form id="formProfile" class="form-horizontal form-bordered">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @readonly = "true" })
+                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-3 control-label" })
+                                <div class="col-md-9">
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Role</label>
+                                <div class="col-md-9">
+                                    <label class="control-label">@Model.Role</label>
+                                </div>
+                            </div>
+                            <div class="m-b-20">
+                                <div class="col-md-12 m-t-20 m-b-20">
+                                    <button type="button" onclick="EditUser();" style="float: right" class="btn btn-inverse m-r-5 m-b-5" id="btnEditUser" data-dismiss="modal">Save</button>
+                                </div>
+                            </div>
+                            </form>
+                            </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+<div class="modal" id="modal-result">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">User profile</h4>
+            </div>
+            <div class="modal-body">
+                User successfully updated.
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-resultPassword">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">User profile</h4>
+            </div>
+            <div class="modal-body">
+                Password successfully changed.
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="modal-password">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Set password</h4>
+            </div>
+            <form id="formPassword">
+                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    <div class="row panel-form">
+                        <div class="form-horizontal form-bordered col-md-12">
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Old password</label>
+                                <div class="col-md-8">
+                                    @Html.PasswordFor(m => m.OldPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.OldPassword, "", new { @class = "text-danger" })
+                                   <span class="text-danger field-validation-error" id="OldPassword-error" style="display: none;"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">New password</label>
+                                <div class="col-md-8">
+                                    @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.NewPassword, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label ">Confirm new password</label>
+                                <div class="col-md-8">
+                                    @Html.PasswordFor(m => m.ConfirmNewPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.ConfirmNewPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                    <button type="button" onclick="ChangeUserPassword();" class="btn btn-sm btn-success" id="btnChangePassword">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<script src="~/bundles/requestsScripts"></script>
+
+<script>
+
+   $(document).ready(function () {
+
+        $("#file").on('change', function () {
+
+            var formdata = new FormData(); //FormData object
+            var fileInput = document.getElementById('file');
+            //Iterating through each files selected in fileInput
+            for (i = 0; i < fileInput.files.length; i++) {
+                //Appending each file to FormData object
+                formdata.append(fileInput.files[i].name, fileInput.files[i]);
+            }
+
+            waitLoading();
+            $.ajax({
+                url: '@Url.Action("Upload", "Manage")',
+                type: 'POST',
+                data: formdata,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    
+                    stopLoading();
+
+                    if (response.Result == 'OK') {
+                        $('#UploadError').css({ 'display': "none" });
+                        $('#UploadError').html('');
+                        var url = '@Url.Action("UserProfile", "Manage")';
+                        window.location.href = url;
+                    }
+                    else {
+                        $('#UploadError').css({ 'display': "block" });
+                        $('#UploadError').html(response.Message);
+                    }
+                },
+                error: function (request, textStatus, errorThrown) {
+                    stopLoading();
+                    errorHandler(request, textStatus, errorThrown);
+                }
+            });
+        });
+        App.init();
+
+    });
+
+    var EditUser = function () {
+        if ($("#formProfile").valid()) {
+            waitLoading();
+
+            $.ajax({
+                url: '@Url.Action("UserProfile", "Manage")',
+                type: 'POST',
+                data: $("#formProfile").serialize(),
+                success: function () {
+                    stopLoading();
+                    $('#modal-result').modal('show');
+                },
+                error: function (request, textStatus, errorThrown) {
+                    stopLoading();
+                    errorHandler(request, textStatus, errorThrown);
+                }
+            });
+        } 
+    }
+
+    var ChangeUserPassword = function () {
+        
+        if ($("#formPassword").valid()) {
+            waitLoading();
+            $.ajax({
+                url: '@Url.Action("Change2Password", "Manage")',
+                type: 'POST',
+                data: $("#formPassword").serialize(),
+                success: function (response) {
+                        stopLoading();
+
+                        if (response.Result == 'OK') {
+                            $('#modal-password').modal('hide');
+                            $('#modal-resultPassword').modal('show');
+                        }
+                        else {
+                            $('#OldPassword-error').css({ 'display': "block" });
+                            $('#OldPassword-error').html(response.Message);
+                        }
+                },
+                error: function (request, textStatus, errorThrown) {
+                    stopLoading();
+                    errorHandler(request, textStatus, errorThrown);
+                }
+            });
+        }
+    }
+
+
+    var UploadPhoto = function () {
+        $('#file').click();
+        return false;
+    }
+
+    var ClearForm = function () {
+        $('#ConfirmNewPassword').val('');
+        $('#NewPassword').val('');
+        $('#OldPassword').val('');
+        return false;
+    }
+
+</script>
+

@@ -1,0 +1,53 @@
+﻿@model AutenticateCallViewModel
+
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<h3>Transfer Money</h3>
+<div class="formCti">
+    <table>
+        <tr>
+            <td>
+                @Html.Raw("AccountNumber: ")
+            </td>
+            <td>
+                <input type="text" name="AccountNumber" id="AccountNumberOfTransfer" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("DestinationAccountNumber: ")
+            </td>
+
+            <td>
+                <input type="text" name="DestinationAccountNumber" id="DestinationAccountNumberOfTransfer" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Amount: ")
+            </td>
+            <td>
+                <input type="text" name="Amount" id="AmountOfTransfer" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Currency: ")
+            </td>
+            <td>
+                <input type="text" name="Currency" id="CurrencyOfTransfer" value="EUR" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Description: ")
+            </td>
+            <td>
+                <input type="text" name="Description" id="DescriptionOfTransfer" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Back", "Index")
+    <button class="assignButton" id="ConfimTransferMoneyButton" onclick="ConfirmTransferMoney('@Model.InteractionId')">Transfer Money</button>
+</div>

@@ -1,0 +1,178 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ManageUserRolesViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+	<!-- begin breadcrumb -->
+	@*<ol class="breadcrumb pull-right">
+		<li><a href="javascript:;">Home</a></li>
+		<li><a href="javascript:;">Administration</a></li>
+		<li class="active">User Roles</li>
+	</ol>*@
+    @BreadCrumbs.RenderBreadCrumbs(Model.BreadCrumbs)
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Users List<small> list of all users</small></h1>
+	<!-- end page-header -->
+	<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent"> 
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="#" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search users</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="UserRoles" method="post">
+
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Email</label>
+                            <div class="col-md-8">
+                                <input type="text" name="Email" id="txtEmail" class="form-control" placeholder="Email" value="@Model.Email">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Role</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Roles, "Role", @Model.Role)
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="col-md-12">
+			<!-- begin panel -->
+			<div class="panel-inverse newStyle">
+				<div class="panel-heading">
+					<h4 class="panel-title">Roles</h4>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+                                <th>Id</th>
+								<th style="width: 50%;">Email</th>
+								<th style="width: 45%;">Role</th>
+                                <th style="width: 5%;"></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+
+<form class="form-horizontal form-bordered" action="ChangeUserRole" method="post">
+    <div class="modal fade" id="userModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit User</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-inverse">
+                        <div class="panel-body">
+                            <input type="hidden" name="UserId" id="UserId" value="@Model.UserId" />
+                            <input type="hidden" name="OldRole" id="OldRole" value="@Model.OldRole" />
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Email</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="Email" name="Email" class="form-control" value="" placeholder="" disabled>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Role</label>
+                                <div class="col-md-8">
+                                    @Dropdown.RenderDropdown(Model.Roles, "UserRole", @Model.Role,null, true)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                    <button type="submit" onclick="$('#userModal').modal('hide');" class="btn btn-sm btn-success">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<script src="~/bundles/requestsScripts"></script>
+
+<script>
+    
+    $(document).ready(function () {
+
+        ToggleSideBarMenu($('#Administration'), $('#UserRoles'));
+        InitializeDropdowns();
+
+        var dataUrl = '@Html.Raw(Url.Action("GetUserRolesResults", "Manage", new { Email = Model.Email, Role = Model.Role }))';
+        var columns = [
+                { "mDataProp": "Id","targets": 0, "visible": false},
+                { "mDataProp": "Email", "orderable": false },
+                { "mDataProp": "Role", "orderable": false },
+                {
+                    "mDataProp": null,
+                    "orderable" : false,
+                    "sClass": "detail",
+                    "mRender": function (data, type, full) {
+                        return "<div style='width:5%'><a href='#userModal' role='button' class='btn btn-inverse' data-toggle='modal'><i class='fa fa-search-plus' style='font-size:13px'></i></a></div>";
+                    }
+                }
+        ];
+        InitializeDataTable('results-table', dataUrl, columns, [[0, "DESC"]]);
+        
+        InitializeViewDetailClickEvent();
+
+        App.init();
+    });
+
+
+    var InitializeViewDetailClickEvent = function () {
+        $("tbody .detail").live("click", function (event) {
+
+            event.stopPropagation();
+            var tableData = table.row(this.parentElement).data();
+
+            $('#Email').val(tableData['Email']);
+            $('#UserId').val(tableData['Id']);
+            $('#OldRole').val(tableData['Role']);
+            
+            var roleSel = tableData['Role'];
+            var dd = $('select[name=UserRole]');
+
+            $(dd).find("option:contains('" + roleSel + "')").prop('selected', true).end().change();
+            $(dd).selectpicker('refresh');
+            
+        });
+    }
+
+
+</script>
+

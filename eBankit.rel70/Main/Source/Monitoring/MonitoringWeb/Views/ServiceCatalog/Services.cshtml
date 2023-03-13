@@ -1,0 +1,540 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ServicesViewModel
+<style>
+    .txtLabel {
+        background-color: transparent;
+        border: 0;
+    }
+</style>
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">Service Catalog</a></li>
+        <li class="active">Manage Services</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Service Catalog<small> list of all services</small></h1>
+    <!-- end page-header -->
+    <!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search services</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="Services" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Service</label>
+                            <div class="col-md-8">
+                                <input type="text" id="txtService" class="form-control" name="SearchFilters.ServiceName" placeholder="Service Name" value="@Model.SearchFilters.ServiceName" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Method</label>
+                            <div class="col-md-8">
+                                <input type="text" id="txtMethod" class="form-control" name="SearchFilters.Method" placeholder="Method" value="@Model.SearchFilters.Method" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                            <button class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" id="btnClear" value="Clear" onclick="redirectToServicesList();" name="BtnClear">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="panel col-md-12 transparent">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Services Table</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="m-b-10">
+                        <table id="results-table-Services" class="table table-striped table-bordered" style="">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Service Name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Service Methods Table</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="m-b-10">
+                        <table id="results-table-Methods" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>ServiceId</th>
+                                    <th>Web Method</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+@*EDIT MODAL*@
+
+<div class="modal" id="modal-edit-service">
+    <div class="modal-dialog" style="width: 50%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Service</h4>
+            </div>
+            <form id="ServiceEditForm">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    <div class="row panel-form">
+                        <div class="form-horizontal form-bordered col-md-12">
+                            <input type="hidden" id="c_Id" name="Id" />
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Service Name</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="c_Name" name="Name" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" onclick="$('#modal-edit-service').modal('hide');$('#deleteService').modal('show');$('#hdnServiceDelete').val($('#c_Id').val());" class="btn btn-sm btn-danger" id="btnDeleteService">Delete</a>
+                    <a href="javascript:;" class="btn btn-sm btn-inverse" data-dismiss="modal">Close</a>
+                    <button type="button" onclick="EditService();" class="btn btn-sm btn-success" id="btnEditService" data-dismiss="modal">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-edit-method">
+    <div class="modal-dialog" style="width: 50%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Edit Web Method</h4>
+            </div>
+            <form id="MethodEditForm">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    <div class="row panel-form">
+                        <div class="form-horizontal form-bordered col-md-12">
+                            <input type="hidden" id="w_Id" name="Id" />
+                             <div class="form-group">
+                                <label class="col-md-2 control-label">Service Name</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="w_ServiceName" name="ServiceName" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Web Method</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="w_Name" name="Name" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" onclick="$('#modal-edit-method').modal('hide');$('#deleteMethod').modal('show');$('#hdnMethodDelete').val($('#w_Id').val());" class="btn btn-sm btn-danger" id="btnDeleteMethod">Delete</a>
+                    <a href="javascript:;" class="btn btn-sm btn-inverse" data-dismiss="modal">Close</a>
+                    <button type="button" onclick="EditMethod();" class="btn btn-sm btn-success" id="btnEditMethod" data-dismiss="modal">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*DELETE MODAL*@
+
+<div class="modal fade" id="deleteService">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="hdnServiceDelete" />
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Delete Service Confirmation</h4>
+            </div>
+            <div class="modal-body">Do you wish to delete this record?</div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-sm btn-success" onclick="DeleteRecord($('#hdnServiceDelete').val(),'Service');">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteMethod">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="hdnMethodDelete" />
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Delete Method Confirmation</h4>
+            </div>
+            <div class="modal-body">Do you wish to delete this record?</div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-sm btn-success" onclick="DeleteRecord($('#hdnMethodDelete').val(),'Method');">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*SUCCESS MODAL*@
+
+<div class="modal fade" id="modal-result">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Record</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<script src="~/bundles/requestsScripts"></script>
+<style>
+    .spaceRight {
+        margin-right: 5px;
+    }
+
+    .fa-check-square {
+  color: rgb(0, 172, 172);
+}
+
+       .fa-times {
+  color: #ff5b57;
+}
+
+    .ui-autocomplete{
+    z-index:1050;
+}
+</style>
+
+<script>
+
+    //INITIALIZATION
+    var tableServicesId = 'results-table-Services';
+    var tableMethodsId = 'results-table-Methods';
+
+    $(document).ready(function () {
+
+        ToggleSideBarMenu($('#ServiceCatalog'), $('#Services'));
+        InitializeDropdowns();
+
+        //SERVICE TABLE
+        var dataUrl = '@Html.Raw(Url.Action("GetServicesSearchResults", "ServiceCatalog", new { ServiceName = Model.SearchFilters.ServiceName, Application = Model.SearchFilters.Application, Method = Model.SearchFilters.Method}))';
+        var columns = [
+            { "mDataProp": "Id", "targets": 0, "visible": false },
+            { "mDataProp": "Name", "orderable": true },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "sWidth": "9%",
+                "mRender": function (data, type, full) {
+                    var detailsModal = "<a href='javascript:;' title='Details' onclick='ServiceDetails(\"" + full.Id + "\")' role='button' class='btn btn-inverse spaceRight' data-toggle='modal'><i class='fa fa-pencil' style='font-size:13px'></i></a>";
+                    var analytics = "<a href='javascript:;' title='Analytics' onclick='event.stopPropagation();redirectToAnalytics(&quot;" + data.Name + "&quot;)' role='button' class='btn btn-inverse spaceRight'><i class='fa fa-line-chart' style='font-size:13px'></i></a>";
+                    return "<div style='width:120px' class='alignCenter'>" + analytics + detailsModal + "</div>";
+                }
+            }
+
+        ];
+        InitializeDataTable(tableServicesId, dataUrl, columns, [[1, "DESC"]]);
+
+        //SERVICE METHODS TABLE
+        var methodUrl = '@Html.Raw(Url.Action("GetServiceMethodsSearchResults", "ServiceCatalog", new { ServiceName = Model.SearchFilters.ServiceName, Application = Model.SearchFilters.Application, Method = Model.SearchFilters.Method}))';
+        var methodcolumns = [
+            { "mDataProp": "Id", "targets": 0, "visible": false },
+            { "mDataProp": "ServiceId", "targets": 1, "visible": false },
+            {
+                "mDataProp": "Name", "orderable": true,
+                "mRender": function (data, type, full) {
+                    if (data != null && data.length > 100)
+                        return data.substring(0, 100) + "...";
+                    else
+                        return data;
+                }
+            },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "sWidth": "9%",
+                "mRender": function (data, type, full) {
+                    var analytics = "<a href='javascript:;' title='Analytics' onclick='event.stopPropagation();redirectToAnalyticsWM(" + data.Name + ")' role='button' class='btn btn-inverse spaceRight'><i class='fa fa-line-chart' style='font-size:13px'></i></a>";
+                    var detailsModal = "<a href='javascript:;' title='Details' onclick='MethodDetails(\"" + full.Id + "\")' role='button' class='btn btn-inverse spaceRight' data-toggle='modal'><i class='fa fa-pencil' style='font-size:13px'></i></a>";
+                    return "<div style='width:120px' class='alignCenter'>" + analytics + detailsModal + "</div>";
+
+                }
+            }
+
+        ];
+        InitializeDataTable(tableMethodsId, methodUrl, methodcolumns, [[2, "ASC"]]);
+
+        InitAutoCompletes();
+        InitializeClickRedirect(tableServicesId, '@Url.Action("Services", "ServiceCatalog", new {ServiceName = "__reqId__" })', 'Name');
+        App.init();
+
+    });
+
+    var InitAutoCompletes = function () {
+        InitializeAutoComplete($('#txtMethod'), '@Url.Action("SearchByDesignation", "ServiceCatalog", new {service = "ServiceRulesController/getAllServiceMethods" })');
+        InitializeAutoComplete($('#txtService'), '@Url.Action("SearchByDesignation", "ServiceCatalog", new {service = "ServiceRulesController/getAllServices"})');
+        InitializeAutoComplete($('#NewMethodService'), '@Url.Action("SearchByDesignation", "ServiceCatalog", new {service = "ServiceRulesController/getAllServices"})');
+    }
+
+   
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+
+    var DeleteRecord = function (id, type) {
+        var action = "Delete" + type;
+        var url = '@Html.Raw(Url.Action("actionName", "ServiceCatalog"))';
+        var dataUrl = url = url.replace("actionName", action);
+        switch (type) {
+            case "Service":
+                DeleteRecordFunc(tableServicesId, dataUrl, id, tableMethodsId);
+                break;
+            case "Method":
+                DeleteRecordFunc(tableMethodsId, dataUrl, id);
+                var _tableServices = $('#' + tableServicesId).DataTable();
+                _tableServices.draw(false);
+                break;
+            default:
+                break;
+        }
+        InitAutoCompletes();
+    }
+
+    var GenerateBefore = function (id, data, topic) {
+        var groupBefore = '_BEF_' + topic;
+        var groupAfter = '_AFT_' + topic;
+
+        var before = groupBefore + '_' + id;
+        var after = groupAfter + '_' + id;
+
+        return "<div id='div" + before + "' class=''><div class='col-md-6'><input id='lbl" + before + "' class='form-control txtLabel' onkeypress='javascript: return false;' onclick='event.stopPropagation();' type='text' style='width:55px' value='" + data + "'/></div><div class='col-md-6' style='padding-top: 7px'><a href='javascript:;' onclick='event.stopPropagation();$(\"[id^=div" + groupAfter + "]\").hide();$(\"[id^=div" + groupBefore + "]\").show();$(\"#txt" + after + "\").val($(\"#lbl" + before + "\").val());$(\"#div" + after + "\").show();$(\"#div" + before + "\").hide()'><i class='fa fa-pencil-square-o' style='font-size: 2em;color: #222;' aria-hidden='true'></i></a></div></div>";
+    }
+
+    var GenerateAfter = function (id, data, topic) {
+
+        var groupBefore = '_BEF_' + topic;
+        var groupAfter = '_AFT_' + topic;
+
+        var before = groupBefore + '_' + id;
+        var after = groupAfter + '_' + id;
+
+        return "<div id='div" + after + "' style='display:none' class=''><div class='col-md-6'><input id='txt" + after + "' class='form-control' onclick='event.stopPropagation();' type='text' onkeypress='return isNumberKey(event)' style='width:55px' value='" + data + "'/></div><div class='col-md-6' style='padding-top: 5px'><a href='javascript:;' onclick='event.stopPropagation();UpdateTimeOut(\"" + id + "\",$(\"#txt" + after + "\"), \"" + topic + "\");$(\"#div" + before + "\").show();$(\"#div" + after + "\").hide()'><i class='fa fa-check' style='font-size: 2em;color: #222;' aria-hidden='true'></i></a></div></div>";
+    }
+
+
+    var redirectToServicesList = function () {
+        event.stopPropagation();
+        waitLoading();
+        $('#txtService').val('');
+        $('#txtMethod').val('');
+        window.location.href = '@Url.Action("Services", "ServiceCatalog")';
+    }
+
+    var redirectToAnalytics = function (name) {
+        waitLoading();
+        window.location.href = '@Url.Action("Services","Analytics")' + '?RequestPath=' + name;
+    }
+
+    var redirectToAnalyticsWM = function (name) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebMethods","Analytics")' + '?ActionURL=' + name;
+    }
+
+    var ClearFields = function (type) {
+
+        switch (type) {
+            case "Service":
+                $('#New' + type + 'Name').val('');
+                break;
+            case "Method":
+                $('#New' + type + 'Name').val('');
+                $('#New' + type + 'Service').val('');
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    var ServiceDetails = function (id) {
+        event.stopPropagation();
+        waitLoading();
+        $.ajax({
+            url: '@Url.Action("GetSRServiceDetails", "ServiceCatalog")' + "?id=" + id,
+            type: 'GET',
+            contentType: 'json',
+            success: function (data) {
+                var attributes = ["Id", "Name"];
+                for (var i = 0; i < attributes.length; i++) {
+                    $('#c_' + attributes[i]).val(data[attributes[i]]);
+                }
+                
+                stopLoading();
+                $('#modal-edit-service').modal('show');
+            },
+            error: function (request, textStatus, errorThrown) {
+                stopLoading();
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+    var EditService = function () {
+
+        var dataUrl = '@Html.Raw(Url.Action("UpdateSRService","ServiceCatalog"))';
+
+        var fields = {};
+        fields['Name'] = $('#c_Name').val();
+        fields['Id'] = $('#c_Id').val();
+
+        var input = JSON.stringify(fields);
+
+        $.ajax({
+            url: dataUrl,
+            type: 'POST',
+            data: input,
+            contentType: "application/json;charset=utf-8",
+            async: true,
+            success: function (data) {
+
+                if (data == "True") {
+                    var mymodal = $('#modal-result');
+                    mymodal.find('.modal-body').text('Record updated successfully.');
+                    mymodal.modal('show');
+                }
+                else {
+                    $('#modalError').modal('show');
+                }
+
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                $('#modalError').modal('show');
+            }
+        });
+    }
+
+    $('#modal-result').on('hidden.bs.modal', function () {
+        waitLoading();
+        location.reload();
+    })
+
+
+    var MethodDetails = function (id) {
+        event.stopPropagation();
+        waitLoading();
+        $.ajax({
+            url: '@Url.Action("GetSRServiceMethodDetails", "ServiceCatalog")' + "?id=" + id,
+            type: 'GET',
+            contentType: 'json',
+            success: function (data) {
+                var attributes = ["Id", "Name", "ServiceName"];
+                for (var i = 0; i < attributes.length; i++) {
+                    $('#w_' + attributes[i]).val(data[attributes[i]]);
+                }
+                
+                stopLoading();
+                $('#modal-edit-method').modal('show');
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                stopLoading();
+            }
+        });
+    }
+
+    var EditMethod = function () {
+
+        var dataUrl = '@Html.Raw(Url.Action("UpdateSRServiceMethod","ServiceCatalog"))';
+
+        var fields = {};
+        fields['Name'] = $('#w_Name').val();
+        fields['Id'] = $('#w_Id').val();
+
+        var input = JSON.stringify(fields);
+
+        $.ajax({
+            url: dataUrl,
+            type: 'POST',
+            data: input,
+            contentType: "application/json;charset=utf-8",
+            async: true,
+            success: function (data) {
+
+                if (data == "True") {
+                    var mymodal = $('#modal-result');
+                    mymodal.find('.modal-body').text('Record updated successfully.');
+                    mymodal.modal('show');
+                }
+                else {
+                    $('#modalError').modal('show');
+                }
+
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                $('#modalError').modal('show');
+            }
+        });
+    }
+
+</script>

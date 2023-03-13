@@ -1,0 +1,23 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    
+    var segments = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault(); 
+    var products = segments.DescendantsOrSelf().Where("ebankIT_highlightInMoreToYou=true"); 
+    
+ 
+    var i = 0;
+}
+@foreach (var prod in products.Take(3))
+{
+    i++;
+    <div class="col-xs-12 col-sm-4 ">
+        <div class="productTitle">@Umbraco.GetDictionaryValue("MoreToYou" + i)</div>
+        <a class="caption caption-3" href="@prod.Url" data-title="@prod.Name"
+           data-description="@prod.GetPropertyValue("ebankIT_byline")">
+            @if (prod.ebankIT_rollupImage != null && !(prod.ebankIT_rollupImage is Umbraco.Core.Dynamics.DynamicNull))
+            { 
+                <img src="@prod.ebankIT_rollupImage.Url" alt="64x64" class="lazy media-object">
+            }
+        </a>
+    </div>
+}

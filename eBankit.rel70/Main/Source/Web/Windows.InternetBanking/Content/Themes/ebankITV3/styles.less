@@ -1,0 +1,49 @@
+﻿@import url('../ebankIT/_variables.less');
+@brand-primary: #335f1b;
+@account-Selector-Bg: #eeffce;
+@footer-bg: @gray-lighter;
+@footer-color: @brand-secondary;
+
+@favorit-bg: @account-Selector-Bg;
+@favorit-bg-hover: lighten(@account-Selector-Bg, 13.5%);
+@import url('../ebankIT/styles.less');
+@import url('../ebankIT/ebankit-menu.less');
+@import url('../ebankIT/ebankit-scroll.less');
+/*****METRO OVERRIDES*/
+// Color variables (appears count calculates by raw css)
+@color0: lighten(@brand-primary, 13.5%); // Appears 3 times
+@color1: @brand-primary; // Appears 2 times
+.metro {
+    a {
+        color: @color1;
+
+        &:hover {
+            color: @color0;
+        }
+    }
+
+    .link {
+        color: @color1;
+        
+        &:hover {
+            color: @color0;
+        }
+    }
+} 
+
+    .metro a:focus, .metro .link:focus, .metro a:active, .metro .link:active {
+        color: @color0;
+    }
+
+/***BASE STYLE OVERRRIDE*/
+.bs-reduced-transaction > div:first-of-type {
+    background-color: lighten(@brand-primary, 60%);
+}
+
+.panel-content-block {
+    margin: 0;
+
+    p {
+        margin: 0;
+    }
+}

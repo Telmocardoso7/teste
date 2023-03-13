@@ -1,0 +1,29 @@
+﻿@model NewCallViewModel
+@using eBankit.LIB.ApiModel.Interaction.Enums
+@using eBankit.FE.Simulators.CTI.Extensions
+
+<h2>Unidirectional CTI</h2>
+<br />
+<br />
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<h3>Call Type </h3>
+<div class="formCti">
+    @using (Html.BeginForm("ConfirmNewCall", "SilenceManager"))
+    {
+        <input type="hidden" name="identifier" id="identifier" value="@Model.InteractionId" />
+        <table>
+            <tr>
+                <td>
+                    Interaction Direction:
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.InteractionDirection, Model.InteractionDirection.ToSelectList())
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        @Html.ActionLink("Back", "Index")
+        <input type="submit" value="Create New Call" class="s-b-action-btn" />
+    }
+</div>

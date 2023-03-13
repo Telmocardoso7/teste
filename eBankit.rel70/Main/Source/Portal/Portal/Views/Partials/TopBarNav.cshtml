@@ -1,0 +1,84 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var topLanguage = CurrentPage.AncestorsOrSelf(1).FirstOrDefault().Children.Where("DocumentTypeAlias == \"ebankIT_Language\"");
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var segments = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault().Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"");
+    var currSegment = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+    if (currSegment.Name == "")
+    {
+        currSegment = segments.FirstOrDefault();
+    }
+    string ibLink = System.Web.Configuration.WebConfigurationManager.AppSettings["ebankIT_IBLink"];
+    if (ibLink == null)
+    {
+        ibLink = "#";
+    }
+}
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav ">
+                    @foreach (var segment in segments)
+                {
+                    if (segment.Id == currSegment.Id)
+                    {
+                        <li class="active"><a class="text-center" href="@segment.Url">@segment.Name</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="text-center" href="@segment.Url">@segment.Name</a></li>
+                    }
+                }
+                </ul>
+
+                @*///topLanguage*@
+                <ul class="nav navbar-nav navbar-right variation">
+                    @foreach (var segment in topLanguage)
+                {
+                    if (segment.Id == currentLanguage.Id)
+                    {
+                        <li><a class="text-center active" href="@segment.Url">@segment.Name</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="text-center" href="@segment.Url">@segment.Name</a></li>
+                    }
+                    <li class="separator">|</li>
+                }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="loginBar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <a href="@currentLanguage.Url">    <img class="lazy img-responsive navBar-logo" src="~/css/images/logo.svg" /></a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <button type="button" class="navBarLogin pull-right" onclick="window.open('@ibLink');">
+                                <i class="fa fa-lock loginLock"></i>
+                                <span>Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @{ Html.RenderPartial("Menu"); }
+</header>

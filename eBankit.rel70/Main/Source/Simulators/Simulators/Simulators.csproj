@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="IdentityModel" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="6.0.1" />
+    <PackageReference Include="RestSharp" Version="107.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.Common" Version="7.0.1" />
+    <PackageReference Include="eBankit.LIB.ApiModel" Version="7.0.1" />
+    <PackageReference Include="Ebankit.Core.Caching.CM" Version="7.0.1" />
+    <PackageReference Include="Ebankit.Core.Caching.CM.SqlServer" Version="7.0.1" />
+    <PackageReference Include="Ebankit.Core.Caching.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Ebankit.Core.Application.Startup" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TempCA.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

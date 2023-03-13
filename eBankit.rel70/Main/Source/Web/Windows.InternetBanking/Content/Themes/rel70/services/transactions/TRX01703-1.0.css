@@ -1,0 +1,84 @@
+﻿.search-term div {
+  width: 100%;
+}
+.metro .panel .panel-header {
+  padding: 14px 10px 14px !important;
+  background-color: transparent !important;
+  color: #FFF !important;
+  font-size: 14px !important;
+  font-family: "Gotham Book" !important;
+  cursor: default;
+}
+.field .input-control.text label.error {
+  position: relative;
+  margin-top: 7px;
+}
+.metro .input-control.text {
+  height: auto;
+}
+.large {
+  width: 63.666%;
+  float: left;
+}
+.field label {
+  margin-right: 10px;
+}
+.flowButtons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.nav-tabs > li > a {
+  font-family: "Gotham Light", 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+.nav-tabs > li.active > a {
+  color: #fff;
+  background-color: #0bb6c9;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0bb6c9), to(#0173a7));
+  background-image: -webkit-linear-gradient(left, #0bb6c9, #0173a7);
+  background-image: -moz-linear-gradient(left, #0bb6c9, #0173a7);
+  background-image: -ms-linear-gradient(left, #0bb6c9, #0173a7);
+  background-image: -o-linear-gradient(left, #0bb6c9, #0173a7);
+}
+.faq-tabs {
+  padding-left: 0px;
+}
+.faq-content .panel-default > .panel-heading h4 {
+  margin: 0;
+}
+.faq-content .faq-panel .panel .panel-heading .panel-title {
+  text-transform: initial;
+  padding-left: 0;
+  font-size: initial;
+  color: #0173a7;
+}
+.faq-content .panel-default > .panel-heading {
+  background-color: #fff;
+  border-top: 1px solid transparent;
+  border-radius: 0 6px 0 0;
+  border-bottom: 0;
+  display: inline-block;
+  width: 100%;
+}
+.faq-content .panel-default > .panel-heading h4 a {
+  font-weight: bold;
+}
+.faq-content .panel-default hr {
+  margin: 0 15px;
+  padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+.faq-content .panel-default:last-child > hr {
+  visibility: hidden;
+}
+.faq-content .faq-panel .panel .panel-heading .panel-title a:hover {
+  color: #2091eb;
+  text-decoration: none;
+}
+.faq-content .faq-panel .panel .panel-heading .panel-title a:visited {
+  color: #2e2e2e;
+  text-decoration: none;
+}

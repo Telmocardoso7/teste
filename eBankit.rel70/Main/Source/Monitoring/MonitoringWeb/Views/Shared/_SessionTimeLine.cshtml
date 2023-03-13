@@ -1,0 +1,176 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model SessionHistoryTimeLine
+
+
+
+@if (Model.Webpages.Count > 0)
+{
+
+    foreach (var item in Model.Webpages)
+    {
+		<li>
+			<!-- begin timeline-time -->
+			<div class="timeline-time">
+				<span class="date">@item.DateSession.Value.Day.ToString() @item.DateSession.Value.ToString("MMMM") @item.DateSession.Value.Year.ToString()</span>
+				<span class="time">@item.DateSession.Value.Hour.ToString("00"):@item.DateSession.Value.Minute.ToString("00"):@item.DateSession.Value.Second.ToString("00")</span>
+			</div>
+
+			<!-- begin timeline-icon -->
+			<div class="timeline-icon">
+				<a href="javascript:;" class="iconTimeLine"><i class="fa"></i></a>
+			</div>
+			<!-- end timeline-icon -->
+			<!-- begin timeline-body -->
+			<div class="timeline-body">
+				<div class="timeline-header">
+				</div>
+				<div class="timeline-content">
+					@{
+						decimal webPageExecutionTime = 0;
+						decimal maxExecution = item.MaxExecution.Value !=0 ? item.MaxExecution.Value : 1;
+						DateTime? dt = new DateTime(2100, 01, 01);
+                        int i = 1;
+					}
+					@if (@item.WebpageList.Count > 0)
+					{
+						foreach (var webpage in @item.WebpageList)
+						{
+							webPageExecutionTime = webpage.ExecutionTime.Value !=0 ? webpage.ExecutionTime.Value : 1;
+							var webPageWidth = Math.Floor((decimal)(webpage.ExecutionTime * 100 / maxExecution));
+                            var barpageClass = "webpagePanel";
+                            var pageRedirect = "WebPage";
+                            var hasSoap = "false";
+                            var nameVar = "WebP";
+                                
+                            if (webpage.Type == "M")
+                            {
+                                barpageClass = "mobilePanel";
+                                pageRedirect = "Mobile";
+                                hasSoap = "true";
+                                nameVar = "Service";
+                            }
+
+                            if (i < @item.WebpageList.Count)
+                            {
+                                dt = @item.WebpageList[i].BeginDate;
+                                i++;
+                            }
+                            else
+                            {
+                                dt = new DateTime(2100, 01, 01);
+                            }
+                                                     
+                            
+							<div class="leftDiv">
+								<a onclick="OpenDetails(this,'@webpage.Id', '@Html.Raw(pageRedirect)', @Html.Raw(hasSoap));" class='btn btn-inverse fixButton' data-toggle='modal'><i class='fa fa-search-plus'></i></a>
+								<div onclick="redirectToAnalytics('@webpage.RequestPath','@Html.Raw(pageRedirect)')" class='btn btn-inverse fixButton'><i class='fa fa-line-chart'></i></div>
+							</div>
+							<div class="rightDiv">
+								<div class="@Html.Raw(barpageClass)" style="width: @Html.Raw(webPageWidth)%">
+									<div class="divInformation"><b>@webpage.Type</b>&nbsp;[ExcT: @webpage.ExecutionTime, Dt: @webpage.BeginDate, Action: @webpage.Action, ReqS: @webpage.RequestSize, RespS: @webpage.ResponseSize, @Html.Raw(nameVar): @webpage.WebPageName ]</div>
+								</div>
+							</div> 
+                                
+							foreach (var service in @item.Services)
+							{
+                                if (webpage.BeginDate <= service.BeginDate && service.BeginDate <= dt)
+                                { 
+                                    
+									<div class="leftDiv">
+										<a onclick="OpenDetails(this,'@service.Id', 'Service', true);" role='button' class='btn btn-inverse fixButton' data-toggle='modal'><i class='fa fa-search-plus'></i></a>
+										<div onclick="redirectToWebMethodsAnalytics('@service.Action','@service.ServiceName','@service.MachineName')" class='btn btn-inverse fixButton'><i class='fa fa-line-chart'></i></div>
+									</div>
+									<div class="rightDiv">
+										@{
+											var serviceWidth = Math.Floor((decimal)((service.ExecutionTime * 100 / webPageExecutionTime) <= 100 ? service.ExecutionTime * 100 / webPageExecutionTime : 100));
+										}
+										<div class="servicePanel" style="width: @Html.Raw(serviceWidth)%">
+											<div class="divInformation"><b>S</b>&nbsp;[ExcT: @service.ExecutionTime, Dt: @service.BeginDate, ReqM: @service.RequestMethod, ReqS: @service.RequestSize, RespS: @service.ResponseSize, Service/Action: @service.ServiceName / @service.ActionName ]</div>
+										</div>
+									</div>
+                                        
+									foreach (var transaction in @service.Transactions)
+									{
+                                        
+										<div class="leftDiv">
+											<a onclick="OpenDetails(this,'@transaction.Id', 'Transaction', true);" role='button' class='btn btn-inverse fixButton' data-toggle='modal'><i class='fa fa-search-plus'></i></a>
+											<div onclick="redirectToAnalytics('@transaction.TransactionId','Transaction')" class='btn btn-inverse fixButton'><i class='fa fa-line-chart'></i></div>
+										</div>
+										<div class="rightDiv">
+											@{
+                                                    var s_execution = service.ExecutionTime.Value != 0 ? service.ExecutionTime.Value : 1;
+                                                    var trans_serviceWidth = (decimal)(transaction.ExecutionTime * 100 / s_execution) <= 100 ? (transaction.ExecutionTime * 100 / s_execution) : 100;
+													var transactionWidth = Math.Floor((decimal)(serviceWidth * trans_serviceWidth / 100 <= serviceWidth ? serviceWidth * trans_serviceWidth / 100 : serviceWidth));
+											}
+											<div class="transactionPanel" style="width: @Html.Raw(transactionWidth)% ">
+												<div class="divInformation"><b>T</b>&nbsp;[ExcT: @transaction.ExecutionTime, Dt: @transaction.BeginDate, EvtM: @transaction.EventMessage, TransId: @transaction.TransactionId ]</div>
+											</div>
+										</div>
+                                            
+									}
+								}
+							}
+							
+						}
+					}
+					else
+					{
+						foreach (var service in @item.Services)
+						{
+							var serviceWidth = 100;
+                            
+							if (service.ExecutionTime != null)
+							{
+                                
+								<div class="leftDiv">
+									<a onclick="OpenDetails(this,'@service.Id', 'Service', true);" role='button' class='btn btn-inverse fixButton' data-toggle='modal'><i class='fa fa-search-plus'></i></a>
+									<div onclick="redirectToWebMethodsAnalytics('@service.Action','@service.ServiceName','@service.MachineName')" class='btn btn-inverse fixButton'><i class='fa fa-line-chart'></i></div>
+								</div>
+								<div class="rightDiv">
+									
+									<div class="servicePanel" style="width: @Html.Raw(serviceWidth)%">
+										<div class="divInformation"><b>S</b>&nbsp;[ExcT: @service.ExecutionTime, Dt: @service.BeginDate, ReqM: @service.RequestMethod, ReqS: @service.RequestSize, RespS: @service.ResponseSize, Service/Action: @service.ServiceName / @service.ActionName ]</div>
+									</div>
+								</div>
+                                    
+							}
+									
+							foreach (var transaction in @service.Transactions)
+							{
+                                
+								<div class="leftDiv">
+									<a onclick="OpenDetails(this,'@transaction.Id', 'Transaction', true);" role='button' class='btn btn-inverse fixButton' data-toggle='modal'><i class='fa fa-search-plus'></i></a>
+									<div onclick="redirectToAnalytics('@transaction.TransactionId','Transaction')" class='btn btn-inverse fixButton'><i class='fa fa-line-chart'></i></div>
+								</div>
+								<div class="rightDiv">
+									@{
+                                        decimal trans_serviceWidth;
+                                        
+										decimal transactionWidth=0;
+                                        
+										if (service.ExecutionTime != null)
+										{
+                                            decimal s_execution = service.ExecutionTime.Value != 0 ? service.ExecutionTime.Value : 1;
+                                            trans_serviceWidth = ((decimal)(transaction.ExecutionTime * 100 / s_execution) <= 100 ? (transaction.ExecutionTime * 100 / s_execution) : 100).Value;
+											transactionWidth = Math.Floor((decimal)(serviceWidth * trans_serviceWidth / 100 <= serviceWidth ? serviceWidth * trans_serviceWidth / 100 : serviceWidth));
+                                            
+										}
+										else
+										{
+											transactionWidth=100;
+										}
+									}
+									<div class="transactionPanel" style="width: @Html.Raw(transactionWidth)% ">
+										<div class="divInformation"><b>T</b>&nbsp;[ExcT: @transaction.ExecutionTime, Dt: @transaction.BeginDate, EvtM: @transaction.EventMessage, TransId: @transaction.TransactionId ]</div>
+									</div>
+								</div>
+                                    
+							}
+						}
+					}
+				</div>
+			</div>
+		</li>
+    }
+}

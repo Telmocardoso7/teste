@@ -1,0 +1,11 @@
+{
+  "PSD2Settings": {
+    "ServicesEndpoints": {
+      "WebApi": {
+        "Consents": {
+          "Update": "psd2/v1/consents/update"
+        }
+      }
+    }
+  }
+}

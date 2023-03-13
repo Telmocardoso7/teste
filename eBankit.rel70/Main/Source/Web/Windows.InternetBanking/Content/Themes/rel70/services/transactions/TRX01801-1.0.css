@@ -1,0 +1,396 @@
+﻿#productsTabContent,
+#divFilter,
+#divTesteaver {
+  background-color: #F9F9F9;
+}
+/*TODO move css to transaction css file*/
+.cart-header-notifications {
+  background-color: #8DC63F;
+  color: #fff;
+  padding: 15px;
+}
+.cart-transaction-icon {
+  height: 40px;
+  width: 40px;
+  background-size: 40px 40px;
+  margin-right: 10px;
+  float: right;
+}
+.cart-transaction-icon img {
+  max-width: 100%;
+}
+.pending-check-all {
+  margin-left: 5px;
+}
+.pending-check-label {
+  line-height: 30px;
+  padding-left: 0px;
+  display: inline-block;
+  margin-left: 5%;
+  margin-top: 0px !important;
+  cursor: default;
+}
+.action-buttons {
+  text-align: center;
+  padding-top: 10px;
+}
+.action-buttons span {
+  margin: 0 5px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .action-buttons {
+    top: 37px;
+  }
+}
+@media (min-width: 992px) {
+  .action-buttons {
+    top: 6px;
+  }
+}
+.action-view-details {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_view_details_svg.svg);
+}
+.action-view-expand {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_expand_svg.svg);
+}
+.action-edit {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_edit.svg);
+}
+.action-delete {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_delete_svg.svg);
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cart-item-body.selected {
+  background-color: #EEFAFB;
+}
+.cart-item-body {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  margin: 10px 0;
+}
+.cart-item-body p {
+  margin: 0;
+}
+.cart-item-header-group {
+  color: #0173A7;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.cart-item-footer-group {
+  margin-bottom: 10px;
+}
+.cart-container {
+  padding-top: 20px;
+  color: #636363;
+}
+.cart-wrapper .cart-container {
+  padding-top: 0px;
+}
+.cart-container .img-search-panel {
+  margin-top: -14px;
+}
+.cart-grid-empty-icon {
+  text-align: center;
+  color: #ff8d00;
+  font-size: 60pt;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.cart-grid-empty-content {
+  text-align: center;
+  font-size: 12pt;
+}
+p.cart-grid-empty-content {
+  font-weight: bold;
+  font-size: 20px;
+}
+.cart-footer-container {
+  background-color: #eeeeee;
+  color: #636363;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+.cart-header-container {
+  background-color: #F9F9F9;
+  color: #636363;
+  font-weight: 600;
+  font-size: 14px;
+}
+.cart-header-container .cart-header-body {
+  padding-bottom: 5px;
+  margin: 0px 10px 5px 10px;
+  padding-top: 5px;
+}
+.cart-header-container .cbcontainer {
+  margin-left: 1px;
+  padding-top: 5px;
+}
+.cart-header-container .dropdown .btn-drop {
+  background-color: #fff;
+  border: 1px solid #B0B0B0;
+}
+.cart-header-container .dropdown .btn-drop option {
+  background-color: #ededed;
+}
+.cart-sub-header-container {
+  background-color: #fff;
+  color: #555555;
+  font-weight: 600;
+  font-size: 14px;
+}
+.cart-sub-header-container .cart-sub-header-body {
+  padding-bottom: 5px;
+  margin: 0;
+  padding-top: 5px;
+}
+.cart-sub-header-container .cart-sub-header-body .cbcontainer .checkmark {
+  margin-left: 10px;
+}
+.cart-sub-header-container .cbcontainer {
+  margin-left: 1px;
+  padding-top: 5px;
+}
+.cart-sub-header-container .dropdown .btn-drop {
+  background-color: #fff;
+  border: 1px solid #B0B0B0;
+}
+.cart-sub-header-container .dropdown .btn-drop option {
+  background-color: #ededed;
+}
+.cart-btn-container {
+  text-align: center;
+}
+.cart-content-container {
+  margin: 25px 0;
+}
+.btn-secondary {
+  color: #0173A7;
+  font-size: 16px;
+  background-color: #fff;
+  width: 320px;
+  padding: 10px 18px;
+  text-align: center;
+  border: 1px solid #0173A7;
+}
+.btn-secondary:hover {
+  color: #0173A7;
+}
+.cartdetailbtnedit {
+  border: 1px solid #0173a7;
+  background: white;
+  color: #0173a7;
+  width: 30%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-left: 4px;
+}
+.cartdetailbtndelete {
+  border: 1px solid #0173a7;
+  background: white;
+  color: #0173a7;
+  width: 30%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 4px;
+}
+.selectfilename {
+  float: left;
+  clear: left;
+  margin-left: 20px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  width: 220px;
+}
+.text-black {
+  font-weight: bold;
+  color: #555555;
+}
+iframe#PopupMainIframe {
+  height: 290px !important;
+}
+.ddlTransactionType .cd-select {
+  width: 100% !important;
+}
+.search-no-padding-left {
+  padding-left: 0px !important;
+}
+.pending-operation-message {
+  margin-top: 20px;
+}
+.field.input-control.text.label.error {
+  background-color: unset;
+}
+.bulk-container .transaction.transaction-group-counter {
+  padding: 12px;
+  font-size: 14px;
+}
+.bulk-container .transaction.transaction-group-counter .lbl-resource {
+  font-size: 14px;
+}
+.btn:focus,
+.btn:hover {
+  outline-offset: 0;
+}
+.metro .panel .panel-header {
+  cursor: default;
+}
+.cart-container .cart-item-body .cart-transaction-icon {
+  padding-top: 3px;
+}
+.cart-container .cart-item-body .action-buttons {
+  font-size: 0px;
+  display: flex;
+  padding: 5px;
+}
+.cart-container .cart-item-body .action-buttons a {
+  margin: 3px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.cart-container .cart-item-body .action-buttons a:focus {
+  outline-offset: unset;
+}
+.cart-container .cart-item-body .action-buttons a span {
+  margin: 0;
+}
+.cart-container .cart-item-body .action-buttons a:hover .action-view-details,
+.cart-container .cart-item-body .action-buttons a:focus .action-view-details {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_view_details_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons a:hover .action-delete,
+.cart-container .cart-item-body .action-buttons a:focus .action-delete {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_delete_new_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-edit {
+  cursor: pointer;
+  margin: 3px;
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_edit_new.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-edit:hover,
+.cart-container .cart-item-body .action-buttons .action-edit:focus {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_edit_new_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-view-details {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_view_details.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-view-expand {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_expand.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-view-expand:hover,
+.cart-container .cart-item-body .action-buttons .action-view-expand:focus {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_expand_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body .action-buttons .action-delete {
+  background: url(/Content/Themes/ebankIT/images/icon/action/action_delete_new.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body label {
+  display: unset;
+}
+.cart-container .cart-item-body.corporate.selected {
+  background-color: rgba(239, 123, 48, 0.2);
+}
+.cart-container .cart-item-body.corporate p.key {
+  color: #454547;
+}
+.cart-container .cart-item-body.corporate .action-buttons a:hover .action-view-details,
+.cart-container .cart-item-body.corporate .action-buttons a:focus .action-view-details {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_view_details_hover.png) no-repeat center center / cover !important;
+}
+.cart-container .cart-item-body.corporate .action-buttons a:hover .action-delete,
+.cart-container .cart-item-body.corporate .action-buttons a:focus .action-delete {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_delete_new_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-edit {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_edit_new.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-edit:hover,
+.cart-container .cart-item-body.corporate .action-buttons .action-edit:focus {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_edit_new_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-view-details {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_view_details.png) no-repeat center center / cover !important;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-view-expand {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_expand.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-view-expand:hover,
+.cart-container .cart-item-body.corporate .action-buttons .action-view-expand:focus {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_expand_hover.png) no-repeat center center / cover;
+}
+.cart-container .cart-item-body.corporate .action-buttons .action-delete {
+  background: url(/Content/Themes/ebankIT/images/icon/action/corporate/action_delete_new.png) no-repeat center center / cover;
+}
+.trs_buttons_top_action .disabled.btn,
+.trs_buttons-action .disabled.btn {
+  color: #454547;
+}
+.corporate .btn-primary {
+  font-family: "Gotham Light", 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #454547;
+  border: 1px solid #454547;
+  width: auto;
+  height: 40px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  text-align: center;
+}
+.trs_buttons label {
+  margin-left: 55px;
+  float: left;
+}
+.corporate.disabled.btn-primary {
+  background-color: #454547 !important;
+  color: #fff;
+  opacity: 0.5;
+}
+.disabled.btn-primary {
+  background-color: #187743;
+}
+.disabled.btn-primary {
+  color: #FFFFFF !important;
+}
+.big-radioButton input:focus + label span:first-child,
+.cbcontainer input:focus + .checkmark {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+.cbcontainer {
+  display: contents !important;
+  width: auto;
+  height: auto;
+  /*position: relative;*/
+}
+.panel-search .field .input-control.text label.error {
+  position: relative;
+  margin-top: 7px;
+  background-color: #f9f9f9;
+}
+.panel-search .metro .input-control.text {
+  height: auto;
+}

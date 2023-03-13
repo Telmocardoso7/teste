@@ -1,0 +1,324 @@
+﻿@import url('variables.less');
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+
+    .s-wrapper {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .s-body-main {
+        padding-bottom: @footer-height;
+    }
+
+
+    .fa-circle-o-notch {
+        color: @loading-color;
+        font-size: 4em;
+    }
+
+    .loadingSpin-text {
+        color: @gray;
+        font-family: @font-open-sans;
+        font-size: 24px;
+    }
+
+    .s-container {
+        max-width: @container-main-width;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .s-container-height {
+        padding-bottom: @tracelog-max-height !important;
+    }
+
+    .s-traceLog {
+        background-color: @blue-light;
+        position: absolute;
+        width: 100%;
+        overflow-y: scroll;
+        max-height: @tracelog-max-height;
+        bottom: @footer-height;
+
+        .s-traceLog-container {
+            width: @container-main-width;
+            margin: 0 auto;
+            color: @gray;
+            font-family: @font-open-sans;
+
+
+            .s-b-traceLog-title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .s-traceLog-text {
+                font-size: 14px;
+            }
+        }
+    }
+    /****************************************************************  FOOTER **********************************************************/
+    footer {
+        background-color: @gray-background;
+        height: @footer-height;
+        width: 100% !important;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: @white;
+            font-family: @font-open-sans;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 0 !important;
+        }
+    }
+    /************************************************************************************************************************************/
+    /****************************************************************  HEADER **********************************************************/
+    /*******************************************************************************************/
+    /*                                 BANNER                                                  */
+    /*******************************************************************************************/
+    .s-banner {
+        height: 150px;
+        background: url(../images/header_background.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding: 40px 0px;
+
+        .s-h-title {
+            color: @white;
+            font-family: @font-open-sans;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: right;
+        }
+    }
+    /************************************************************************************************************************************/
+    /****************************************************************  BODY  ************************************************************/
+    .s-b-title {
+        color: @blue;
+        font-family: @font-open-sans;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    .s-b-input-row {
+        color: @gray;
+        font-family: @font-open-sans;
+        padding: inherit;
+        margin: 4px 0px;
+        font-weight: normal;
+        font-size: 16px;
+        box-shadow: none;
+
+        label {
+            padding: .375rem .75rem;
+            padding-left: 0px !important;
+            /*height: 33px;*/
+        }
+
+        .s-b-input {
+            background-color: @white;
+            box-sizing: border-box;
+            border-radius: unset;
+            /*height: 33px;*/
+            margin: 0;
+            border: 1px solid @gray-light;
+        }
+
+        .s-b-input:focus {
+            box-shadow: none;
+        }
+
+        .s-b-select {
+            border: 1px solid @gray-light;
+            box-sizing: border-box;
+            border-radius: unset;
+            margin: 0;
+            color: @blue;
+            padding: 2px;
+            text-align: left;
+            max-width: 100px;
+            background: url('../images/ic_menu_down.png') bottom 8px right 12px no-repeat,url('../images/ic_menu_up.png') top 8px right 12px no-repeat;
+            background-color: @white !important;
+
+            option {
+                color: @gray;
+                background-color: @white;
+                background-image: none;
+                -ms-word-break: normal;
+                word-break: normal;
+                border: 1px solid @gray-light;
+            }
+        }
+
+        .s-b-select:focus {
+            box-shadow: none;
+        }
+    }
+    /*******************************************************************************************/
+    /*                                 BUTTONS                                                 */
+    /*******************************************************************************************/
+    .s-b-action-btn {
+        color: @blue;
+        font-family: @font-open-sans;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        box-sizing: border-box;
+        height: 33px;
+        min-width: 132px;
+        border: 1px solid @blue;
+        border-radius: 2px;
+        background-color: @white;
+    }
+
+    .s-b-action-btn:hover {
+        cursor: pointer;
+    }
+
+
+    .s-b-action-btn:disabled,
+    .s-b-action-btn[disabled] {
+        opacity: 0.5;
+    }
+
+    .s-b-back-btn {
+        color: @blue;
+        font-size: 11px;
+        cursor: pointer;
+
+        span {
+            color: @blue;
+            font-family: @font-open-sans;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+    }
+    /*******************************************************************************************/
+    /*                                 TABLE                                                 */
+    /*******************************************************************************************/
+    //TABLE GERAL (table is striped)
+    .s-table {
+        box-sizing: border-box;
+        border: 1px solid @gray-light-v2;
+        border-radius: 4px;
+        background-color: @white;
+        font-family: @font-open-sans;
+        font-size: 15px;
+
+        thead {
+            color: @blue;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid @gray-light;
+        }
+
+        tbody {
+            color: @gray;
+            font-weight: 300;
+            background-color: @gray-light-v3;
+
+            tr:nth-of-type(2n+1) {
+                background-color: @white;
+            }
+
+            td {
+                border-color: transparent !important;
+            }
+        }
+    }
+    //TABLE DETAILS (table is striped)
+    .s-table-details {
+        box-sizing: border-box;
+        border: 1px solid @gray-light-v2;
+        border-radius: 4px;
+        font-family: @font-open-sans;
+        font-size: 14px;
+
+        td {
+            color: @gray;
+            border: 0px solid transparent !important;
+        }
+
+        .title {
+            color: @blue;
+        }
+
+        tr:nth-of-type(2n+1) {
+            background-color: @white;
+        }
+
+        tr {
+            background-color: @gray-light-v3;
+        }
+    }
+}
+/*******************************************************************************************/
+/*                                 GERAL                                                 */
+/*******************************************************************************************/
+.padding-0 {
+    padding: 0px !important;
+}
+
+.margin-0 {
+    margin: 0px !important;
+}
+
+.border-transparent {
+    border-color: transparent !important;
+}
+
+/************************************************************************************************************************************/
+
+
+@media screen and (max-width: 360px) {
+    body {
+        .s-container {
+            max-width: @container-main-phone-width;
+        }
+
+        .s-traceLog-container {
+            max-width: @container-main-phone-width;
+        }
+
+        .s-b-action-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+
+
+        .s-b-input-row {
+            height: 33px !important;
+
+            .s-b-input {
+                height: 33px !important;
+            }
+        }
+    }
+}

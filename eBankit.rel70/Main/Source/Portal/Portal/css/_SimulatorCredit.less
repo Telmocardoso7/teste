@@ -1,0 +1,245 @@
+﻿@import "_Variables.less";
+
+
+.creditSim {
+    padding-top: 0px;
+
+
+    .product {
+        margin-bottom:20px;
+        .page_simulator_title {
+            margin-bottom: 10px;
+        }
+
+        .title_simulator_date {
+            margin-bottom: 5px;
+        }
+
+        .descriptionBox {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 40px;
+
+            .title_description {
+                text-align: right;
+                text-transform: capitalize;
+                margin-bottom:0px;
+            }
+
+            .results {
+                margin-bottom: 10px;
+            }
+
+            .description_last {
+                margin-bottom: 0px;
+            }
+        }
+
+        .content_info {
+            padding-top: 95px;
+            padding-right: 40px;
+        }
+
+        .simulator_area {
+            background-color: #F8F8FF;
+            padding: 15px;
+            padding-top: 95px;
+
+            .simulator_subtitle {
+                margin-bottom: 5px;
+                margin-top: 40px;
+
+
+                .title_2 {
+                    text-align: right;
+                    text-transform: capitalize;
+                }
+            }
+
+
+            .title_simulator {
+                font-size: @font-ml;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .subtitle_simulator {
+                font-size: @font-ml;
+                text-align: center;
+                color: gray;
+                TEXT-TRANSFORM: inherit;
+                margin-bottom: 0px;
+            }
+
+            .input_simulator {
+                width: 100%;
+                top: 0px;
+                background-color: #FFFFFF;
+                border-color: #D3D3D3;
+            }
+
+            .savingsControl {
+                width: 100% !important;
+            }
+
+            .savingsLine {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+
+    .plan{
+        .panel{
+            border-radius:0;
+            border:1px solid @light-gray;
+            .panel-heading{
+                height:40px;
+                background-color:@lighter-gray;
+                color:@blue;
+
+                .pull-right{
+                    border-radius:50%;
+                    border:1px solid @blue;
+                    width:24px;
+                    height:24px;
+                    a{
+                        padding-left:6px;
+
+                        i{
+                            font-size:10px;
+                        }
+                    }
+                }
+            }
+            .panel-body{
+                .pull-left, .pull-right{
+                    color:@blue;
+                    cursor:pointer;
+                }
+                .col-sm-20{
+                    padding:10px 0;
+                }
+
+                .pull-left i{
+                    padding-right:5px;
+                }
+
+                .pull-right i{
+                    padding-left:5px;
+                }
+
+                .col-sm-20.right{
+                    text-align:right;
+                    padding-right:15px;
+                }
+
+                .col-sm-20.left{
+                    padding-left:15px;
+                }
+
+                .pull-left.hide, .pull-right.hide{
+                    overflow:hidden;
+                    height:0;
+                }
+
+                .header{
+                    color:@blue;
+
+                    .col-sm-20{
+                        width:20%;
+                        border-bottom:1px solid @blue;
+                    }.right{
+                         text-align:right;
+                     }
+                }
+            }
+
+            .nav-tabs, .panel-body{
+                border:0;
+
+                .payment{
+                    .visible-xs{
+                        color:@blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.simulatorDetails{
+    .container-fluid.divider{
+        height:2px;
+        background-color:@blue;
+        margin-bottom:20px;
+    }
+
+    .exportSimulation{
+        width:240px;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+
+        .document{
+            width:100px;
+            height:110px;
+            text-align:center;
+            color:@blue;
+            font-family:@font-medium;
+            float:right;
+            margin-bottom:20px;
+
+            img{
+                margin-bottom:10px;
+            }
+
+            a{
+                text-decoration:none!important;
+            }
+        }.first{
+             float:left;
+         }
+    }
+}
+
+
+
+@media (max-width:@container-width){
+     .title_description {
+                text-align: left !important;
+            }
+
+
+     .input_simulator {
+                margin-top:20px;
+            }
+
+    .simulator_subtitle {
+        margin-bottom:20px !important;
+    }
+
+
+    .content_info {
+        margin: 0px;
+        padding: 0px;
+        padding-right:0px !important;
+    }
+}
+
+@media (min-width:769px){
+    .plan .col-sm-20{
+        width:20%;
+    }
+}
+
+@media (max-width: 768px){
+    .panel-body .payment{
+        border-bottom:1px solid @blue;
+
+        .col-sm-20{
+            text-align:left!important;
+            padding:10px 15px!important;
+        }
+    }
+}

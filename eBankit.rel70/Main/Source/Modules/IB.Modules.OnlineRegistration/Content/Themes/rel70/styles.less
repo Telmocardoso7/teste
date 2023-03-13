@@ -1,0 +1,318 @@
+﻿@import url('variables.less');
+
+
+@media screen and (max-width: 979px) and (min-width: 768px) {
+    .enviromentImageTablet {
+        height: auto;
+    }
+}
+
+
+.register-multi {
+    border: solid 1px #eaeaea;
+    background-color: @color5;
+    font-size: 15px;
+    font-family: @font-family-normal;
+    bottom: auto;
+    width: auto;
+    position: relative;
+    padding: 50px;
+
+    .panel-register-unlabelled {
+        .field, .field_v2 {
+            height: 60px;
+        }
+
+        .image-container-centered {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+}
+
+.register {
+    .content-message.metro.col-lg-8 {
+        margin: 0 0 25px 0;
+        padding: 0;
+        position: relative;
+        top: 0 !important;
+        width: @width1;
+
+        .alert {
+            padding: 10px;
+        }
+
+        &:after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        div.alert-warning_v3 {
+            margin: 0 0 25px 0;
+            padding: 0;
+            position: relative;
+            top: 0 !important;
+            width: @width1;
+        }
+    }
+
+    .field > label {
+        &:first-of-type {
+            color: @color0;
+            width: auto;
+        }
+    }
+
+    .panel-enrol-title {
+        color: @gray;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .sucess-text {
+        display: block;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .main-title-control {
+        color: @color0;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .panel-login-inputs > p {
+        &:first-of-type {
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+    }
+
+    .field {
+        input[type=email], input[type=tel] {
+            border: solid 1px @color6;
+            font-family: @font-family-light;
+            font-size: 14px;
+            padding: 8px;
+            width: @width1;
+        }
+    }
+
+    .register-steps {
+        background: -moz-linear-gradient(left, @color1 0%, @color0 15%, #0ab2c7 48%, #0ab2c7 52%, #0aaec5 55%, @color0 86%, @color1 100%);
+        background: -ms-linear-gradient(left, @color1 0%,@color0 15%,#0ab2c7 48%,#0ab2c7 52%,#0aaec5 55%,@color0 86%,@color1 100%);
+        background: -o-linear-gradient(left, @color1 0%,@color0 15%,#0ab2c7 48%,#0ab2c7 52%,#0aaec5 55%,@color0 86%,@color1 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,@color1), color-stop(15%,@color0), color-stop(48%,#0ab2c7), color-stop(52%,#0ab2c7), color-stop(55%,#0aaec5), color-stop(86%,@color0), color-stop(100%,@color1));
+        background: -webkit-linear-gradient(left, @color1 0%,@color0 15%,#0ab2c7 48%,#0ab2c7 52%,#0aaec5 55%,@color0 86%,@color1 100%);
+        background: @color1;
+        background: linear-gradient(to right, @color1 0%,@color0 15%,#0ab2c7 48%,#0ab2c7 52%,#0aaec5 55%,@color0 86%,@color1 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color1',GradientType=1 );
+        padding-bottom: 5px;
+        padding-top: 10px;
+
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            overflow: hidden;
+            padding: 0px;
+        }
+
+        .step {
+            border-bottom: solid 1px @color5;
+            color: @color5;
+            margin: 0px;
+            padding: 15px 15px;
+            padding-left: 0px;
+
+            &:hover {
+                color: @color5;
+                cursor: pointer;
+            }
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        .step > span {
+            overflow: hidden;
+            padding-left: 50px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .step-selected {
+            span {
+                background-image: url("@{base-url}/images/icon/ico_arrow_accounts_list.png");
+                background-position: 0px 0px;
+                background-repeat: no-repeat;
+                padding-bottom: 12px;
+                padding-top: 12px;
+            }
+        }
+    }
+
+    .state-empty, .state-success, .detail, .print {
+        background-position: 0px 10px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: @height0;
+        width: @width0;
+    }
+
+    .state-empty {
+        background-image: url("@{base-url}/images/icon/ico_empty.png");
+    }
+
+    .state-success {
+        background-image: url("@{base-url}/images/icon/ico_success.png");
+    }
+
+    .detail {
+        background-image: url("@{base-url}/images/icon/ico_regist_details.png");
+    }
+
+    .print {
+        background-image: url("@{base-url}/images/icon/ico_regist_print.png");
+    }
+
+    .enrollment-bord {
+        padding: 10px 0px;
+
+        strong {
+            color: @color0;
+            display: block;
+        }
+    }
+
+    .enrollment-bord > span {
+    }
+
+    .file-name {
+        color: @color0 !important;
+        font-size: 14px !important;
+    }
+
+    .documents-title {
+        color: @color0;
+        font-weight: bold;
+    }
+
+    .documents-item {
+        font-size: 11px;
+    }
+
+    .drop {
+        padding: 10px;
+        width: @width1;
+    }
+
+    .upload {
+        margin-left: 0px;
+    }
+
+    .photoPanel > label {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+    }
+
+    .photoPanel > label > span {
+        color: #cccccc;
+        display: inline-block;
+        left: 30%;
+        position: absolute;
+        top: 65%;
+    }
+
+    .register-help {
+        background-color: #f3f2f2;
+        margin-top: 50px;
+        padding: 0px 10px;
+
+        .help-item {
+            border-bottom: solid 1px @color4;
+            padding-bottom: 15px;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+
+            .register-phone {
+                display: block;
+                font-size: 24px;
+            }
+
+            .register-text {
+                display: block;
+                font-size: 12px;
+            }
+
+            .register-chat {
+                display: block;
+                font-size: 16px;
+            }
+        }
+
+        .help-item > h3 {
+            color: @color0;
+            font-size: 20px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+    }
+
+    .register-help > h2 {
+        border-bottom: solid 1px @color4;
+        color: @color0;
+        font-size: 28px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .enrollment-contract {
+        border-bottom: solid 1px @color4;
+        padding-bottom: 20px;
+
+        a {
+            background-image: url("@{base-url}/images/operations/transfers_old.png");
+            background-position: -10px -15px;
+            background-repeat: no-repeat;
+            display: block;
+            margin-top: 10px;
+            padding-left: 40px;
+            text-decoration: none;
+        }
+    }
+}
+
+.register-title {
+    color: @color0;
+    font-weight: bold;
+}
+
+.enrollment .alert-danger,
+.enrollment .alert-success {
+    padding: 5px;
+    position: relative;
+    min-height: 50px;
+    width: 100% !important;
+}
+
+.enrollment .alert .doc {
+    top: 15px;
+    right: 15px;
+    position: absolute;
+}
+
+.register-message {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    .content-message.metro.col-lg-8 {
+        margin: 20px 0 0 0;
+    }
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <EMSContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSContentFilesPath>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>true</RazorCompileOnPublish>
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+    <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+    <PreserveCompilationContext>false</PreserveCompilationContext>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  <!--BASE PACKAGE eBankit.FE.EMS Definitions-->
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AssemblyAttribute Include="eBankit.FE.Common.Entities.PackageHelpers.BasePackageAssemblyAttribute">
+      <!--Load static files from packages-->
+      <StaticFiles>
+        <StaticFilesRoot>$(EMSContentFilesPath)\wwwroot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSAdministrationContentFilesPath)\Areas\Administration\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSDocTemplatesContentFilesPath)\Areas\Templates\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSAlertsContentFilesPath)\Areas\Alerts\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSCampaignsContentFilesPath)\Areas\Campaigns\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSOpenBankingContentFilesPath)\Areas\OpenBanking\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSCommandCentreContentFilesPath)\Areas\CommandCentre\ModuleRoot</StaticFilesRoot>
+        <StaticFilesRoot>$(EMSUserEngagementHubContentFilesPath)\Areas\UserEngagementHub\ModuleRoot</StaticFilesRoot>
+      </StaticFiles>
+      <!--Load views from packages-->
+      <ViewProviders>
+        <ViewProvider>$(EMSContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSAdministrationContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSDocTemplatesContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSAlertsContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSCampaignsContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSOpenBankingContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSCommandCentreContentFilesPath)</ViewProvider>
+        <ViewProvider>$(EMSUserEngagementHubContentFilesPath)</ViewProvider>
+      </ViewProviders>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <!--Publish content from base pacakge in publish-->
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\Views\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\ViewComponent\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\wwwroot\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\Views\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\ViewComponent\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(EMSContentFilesPath)\wwwroot\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.Administration Definitions-->
+  <PropertyGroup Label="ModuleAdministration">
+    <EMSAdministrationContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems.administration\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSAdministrationContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleAdministration">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSAdministrationContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSAdministrationContentFilesPath)\**" />
+    <None Include="Areas\Administration\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\Administration\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.DocTemplates Definitions-->
+  <PropertyGroup Label="ModuleTemplates">
+    <EMSDocTemplatesContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems.doctemplates\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSDocTemplatesContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleTemplates">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSDocTemplatesContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSDocTemplatesContentFilesPath)\**" />
+    <None Include="Areas\Templates\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\Templates\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.Alerts Definitions-->
+  <PropertyGroup Label="ModuleAlerts">
+    <EMSAlertsContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems.alerts\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSAlertsContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleAlerts">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSAlertsContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSAlertsContentFilesPath)\**" />
+    <None Include="Areas\Alerts\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\Alerts\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.Campaigns Definitions-->
+  <PropertyGroup Label="ModuleCampaigns">
+    <EMSCampaignsContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems.campaigns\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSCampaignsContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleCampaigns">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSCampaignsContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSCampaignsContentFilesPath)\**" />
+    <None Include="Areas\Campaigns\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\Campaigns\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.OpenBanking Definitions-->
+  <PropertyGroup Label="ModuleOpenBanking">
+    <EMSOpenBankingContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.ems.openbanking\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSOpenBankingContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleOpenBanking">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSOpenBankingContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSOpenBankingContentFilesPath)\**" />
+    <None Include="Areas\OpenBanking\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\OpenBanking\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.CommandCentre Definitions-->
+  <PropertyGroup Label="ModuleCommandCentre">
+    <EMSCommandCentreContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.EMS.CommandCentre\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSCommandCentreContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleCommandCentre">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSCommandCentreContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSCommandCentreContentFilesPath)\**" />
+    <None Include="Areas\CommandCentre\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\CommandCentre\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.TRX Definitions-->
+  <PropertyGroup Label="ModuleTRX">
+    <EMSTRXContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.TRX\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSTRXContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleTRX">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSTRXContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSTRXContentFilesPath)\**" />
+    <None Include="Areas\Transactions\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\Transactions\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.MultiUserContract Definitions-->
+  <PropertyGroup Label="ModuleMultiUserContract">
+    <EMSMultiUserContractContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.MultiUserContract\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSMultiUserContractContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleMultiUserContract">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSMultiUserContractContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSMultiUserContractContentFilesPath)\**" />
+    <None Include="Areas\MultiUserContract\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\MultiUserContract\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <!--PACKAGE eBankit.FE.EMS.UserEngagementHub Definitions-->
+  <PropertyGroup Label="ModuleMultiUserContract">
+    <EMSUserEngagementHubContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.EMS.UserEngagementHub\$(ProductVersion)\contentFiles\any\$(TargetFramework)</EMSUserEngagementHubContentFilesPath>
+  </PropertyGroup>
+  <ItemGroup Label="ModuleUserEngagementHub">
+    <!--Publish content from package in publish-->
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(EMSUserEngagementHubContentFilesPath)\**" />
+    <None CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Include="$(EMSUserEngagementHubContentFilesPath)\**" />
+    <None Include="Areas\UserEngagementHub\ModuleRoot\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="Areas\UserEngagementHub\Views\**" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+  <ItemGroup Label="PackageReferences">
+    <PackageReference Include="eBankit.FE.EMS" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.Administration" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.DocTemplates" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.Alerts" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.Campaigns" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.OpenBanking" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.CommandCentre" Version="7.0.1" />
+    <PackageReference Include="eBankit.FE.EMS.UserEngagementHub" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\EMS.Common\EMS.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(EMSContentFilesPath)\appsettings.development.json" CopyToPublishDirectory="Never" />
+    <Content Update="$(EMSContentFilesPath)\appsettings.production.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+</Project>

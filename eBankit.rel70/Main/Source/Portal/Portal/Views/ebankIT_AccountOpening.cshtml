@@ -1,0 +1,190 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Linq;
+@using eBankit.Middleware.Data.EBankit;
+@{
+    Layout = "ebankIT_Master.cshtml";
+
+    bool valid = true;
+    string name = Request["q1"];
+    string email = Request["q2"];
+    string phone = Request["q3"];
+    string num = Request["q4"];
+    string card = Request["q5"];
+    string saving = Request["q6"];
+    string amounts = Request["q7"];
+    if (string.IsNullOrEmpty(name))
+    {
+        valid = false;
+    }
+    if (string.IsNullOrEmpty(email))
+    {
+        valid = false;
+    }
+    if (string.IsNullOrEmpty(phone))
+    {
+        valid = false;
+    }
+    if (string.IsNullOrEmpty(num))
+    {
+        valid = false;
+    }
+    if (string.IsNullOrEmpty(amounts))
+    {
+        valid = false;
+    }
+
+    if (valid)
+    {
+
+
+        ebankIT.Windows.Portals.Public.Umbraco.Helper.AccountHelper.AccountOpen(name, num, email, phone, decimal.Parse(amounts));
+
+
+    }
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var segments = currentLanguage.Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+}
+@if (!valid)
+{
+    @*<link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/FullscreenForm/css/normalize.css" />*@
+    
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/FullscreenForm/css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="http://tympanus.net/Development/FullscreenForm/css/cs-skin-boxes.css" />
+
+    <div class="container-fluid">
+        <div class="row">
+            @{Html.RenderPartial("Highlight", Model.Content, new ViewDataDictionary { { "SegmentPage", true },{ "ShowAll", true} });}
+        </div>
+    </div>
+    
+    <div class="container accountOpen">
+        <h1>@Umbraco.GetDictionaryValue("AccountOpenDemo")</h1>
+        <div class="fs-form-wrap" id="fs-form-wrap">
+
+            <form id="myform" class="fs-form fs-form-full" autocomplete="off">
+                <h3>REVER DADOS</h3>
+                <ol class="fs-fields">
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q1">@Umbraco.GetDictionaryValue("Name?")</label>
+                        <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="@Umbraco.GetDictionaryValue("NamePlaceHolder?")" required />
+                    </li>
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q2" data-info="@Umbraco.GetDictionaryValue("EmailInfo?")">@Umbraco.GetDictionaryValue("Email?")</label>
+                        <input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="info@ebankit.com" required />
+                    </li>
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q3">What's your mobile phone?</label>
+                        <input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="+351961231231" required />
+                    </li>
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q4">What's your citizen card number?</label>
+                        <input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="500600700" required />
+                    </li>
+                    <li data-input-trigger>
+                        <label class="fs-field-label fs-anim-upper" for="q5" data-info="This will help us know what kind of service you need">Cartões</label>
+                        <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                            <span><input id="q3b" name="q5" type="radio" value="card01" /><label for="q3b" class="radio-card01">EBANKIT CRÉDITO PREMIUM</label></span>
+                            <span><input id="q3c" name="q5" type="radio" value="card02" /><label for="q3c" class="radio-card02">EBANKIT CRÉDITO E-COMMERCE</label></span>
+                        </div>
+                    </li>
+                    <li data-input-trigger>
+                        <label class="fs-field-label fs-anim-upper" for="q6" data-info="We'll make sure to use it all over">Poupanças</label>
+                        <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                            <span><input id="q3d" name="q6" type="radio" value="saving01" /><label for="q3d" class="radio-saving01">DEPÓSITO SUPER</label></span>
+                            <span><input id="q3e" name="q6" type="radio" value="saving02" /><label for="q3e" class="radio-saving02">DEPÓSITO GALAXY</label></span>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <label class="fs-field-label fs-anim-upper" for="q7">Saldo inicial</label>
+                        <input class="fs-mark fs-anim-lower" id="q7" name="q7" type="number" placeholder="1000" step="100" min="100" />
+                    </li>
+                </ol><!-- /fs-fields -->
+                <button class="fs-submit" type="submit">@Umbraco.GetDictionaryValue("Finalize")</button>
+            </form><!-- /fs-form -->
+
+        </div><!-- /fs-form-wrap -->
+
+    </div>
+    <script src="http://tympanus.net/Development/FullscreenForm/js/modernizr.custom.js"></script>
+    <script src="http://tympanus.net/Development/FullscreenForm/js/classie.js"></script>
+    <script src="http://tympanus.net/Development/FullscreenForm/js/selectFx.js"></script>
+    <script src="http://tympanus.net/Development/FullscreenForm/js/fullscreenForm.js"></script>
+    <script>
+        (function () {
+
+
+            var formWrap = document.getElementById('fs-form-wrap');
+
+            [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+                new SelectFx(el, {
+                    stickyPlaceholder: false,
+                    onChange: function (val) {
+                        document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+                    }
+                });
+            });
+
+            new FForm(formWrap, {
+                onReview: function () {
+                    classie.add(document.body, 'overview');
+
+                }
+            });
+        })();
+        $(document).ready(function () {
+            console.log("##DOMAttrModified, class changed");
+            $('#ContactSlide').remove();
+            $('button.fs-continue').text('@Umbraco.GetDictionaryValue("Continue")');
+
+            $('.fs-message-error').on('DOMAttrModified', function (e) {
+                if (e.originalEvent.attrName === "class") {
+                    console.log("##DOMAttrModified, class changed");
+                    if ($(this).hasClass("current-image")) {
+                        console.log("##Element has 'current-image' class, changing");
+                        $(this).removeClass().addClass("previous-image");
+                    }
+                }
+                $(this).text('@Umbraco.GetDictionaryValue("RequiredField")');
+                $(".fs-current input").focus();
+            });
+
+            $("#myform").bind('keyup keydown keypress DOMAttrModified propertychange', function (e) {
+                if (e.keyCode == 13) {
+                    setTimeout(function () { $(this).find('li.fs-current input').focus() }, 500);
+                    return;
+                }
+                $(this).find('li.fs-current input').focus();
+            });
+
+            $("#myform").find('li.fs-current input').focus();
+        });
+
+
+        
+    </script>
+
+    <style>
+    .fs-continue::after {
+        content: '@Umbraco.GetDictionaryValue("OrPressEnter")';
+    }
+    @@media screen and (max-width: 52.5em){
+     .fs-continue{ color:#fff;}
+    .fs-continue::after {
+        content: '';
+
+    }
+    }
+    </style>
+
+}
+else
+{
+    <div class="container accountOpen">
+        <h1>@Umbraco.GetDictionaryValue("ThankYou")</h1>
+		<div style="min-height:300px">
+		@Umbraco.GetDictionaryValue("AccountOpenNextSteps")
+		</div>
+    </div>
+}

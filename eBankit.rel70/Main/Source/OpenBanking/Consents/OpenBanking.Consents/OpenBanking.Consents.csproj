@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <OBCContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.OBC\$(ProductVersion)\contentFiles\any\$(TargetFramework)</OBCContentFilesPath>
+    <Configurations>Debug;Release;</Configurations>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AssemblyAttribute Include="eBankit.FE.Common.Entities.PackageHelpers.BasePackageAssemblyAttribute">
+      <!--Load static files from packages-->
+      <StaticFiles>
+        <StaticFilesRoot>$(OBCContentFilesPath)\wwwroot</StaticFilesRoot>
+      </StaticFiles>
+      <!--Load views from packages-->
+      <ViewProviders>
+        <ViewProvider>$(OBCContentFilesPath)</ViewProvider>
+      </ViewProviders>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <!-- publish content from base pacakge in publish -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(OBCContentFilesPath)\Views\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(OBCContentFilesPath)\wwwroot\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="$(OBCContentFilesPath)\Views\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.OBC" Version="7.0.1" />
+  </ItemGroup>
+</Project>

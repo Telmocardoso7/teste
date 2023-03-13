@@ -1,0 +1,16 @@
+{
+  "ProviderConfigurations": {
+    "Endpoints": {
+      "EbankitService": "http://appcenter.rel70.local/Services/Ebankit/EbankitService.svc",
+      "ContactService": "http://appcenter.rel70.local/services/Core/ContactService.svc",
+      "Ebankit": "http://appcenter.rel70.local/Services/Ebankit/Ebankit.svc",
+      "Authentication": "http://appcenter.rel70.local/Services/MChannel/Authentication.svc",
+      "ProductSubscriptionService": "http://appcenter.rel70.local/services/ProductSubscription/ProductSubscription.svc",
+      "MW_API": "http://services.rel70.local",
+      "TransactionsManagement": "http://appcenter.rel70.local/Services/SecurityCenter/Application/ApplicationManagement.svc/",
+      "ContractManagement": "http://appcenter.rel70.local/Services/SecurityCenter/Contract/ContractManagement.svc/json/",
+      "RegistrationService": "http://appcenter.rel70.local/Services/MChannel/RegistrationService.svc",
+      "SessionManagement": "http://appcenter.rel70.local/Services/SecurityCenter/Session/SessionManagement.svc/"
+    }
+  }
+}

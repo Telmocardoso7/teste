@@ -1,0 +1,416 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+@*<link href="assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />*@
+<link href="~/Content/jquery-jvectormap.css" rel="stylesheet" />
+
+@*<link href="assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />*@
+<link href="~/Content/bootstrap_calendar.css" rel="stylesheet" />
+@*<link href="assets/plugins/morris/morris.css" rel="stylesheet" />*@
+<link href="~/Content/morris.css" rel="stylesheet" />
+@*<link href="~/Content/noUiSlider/jquery.nouislider.css" rel="stylesheet" />
+    <link href="~/Content/noUiSlider/css/nouislider.pips.css" rel="stylesheet" />*@
+<!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@model HomeViewModel
+
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="javascript:;">Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Dashboard</h1>
+    <!-- end page-header -->
+    <form id="Index">
+        <!-- Interval Selector -->
+        @Interval.RenderRadioIntervalMenu("Index", "TimeSelectorValue")
+        <!-- End Interval Selector -->
+        <input type="hidden" id="TimeSelectorValue" name="TimeSelectorValue" />
+
+        @if (Model.Widgets != null && Model.Widgets.Count > 0 || Model.SmallWidgets != null && Model.SmallWidgets.Count > 0 )
+        {
+            Html.RenderPartial("_Widgets");
+        }
+
+        <!-- begin row -->
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-md-8">
+                <div class="panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            Users Origin
+                        </h4>
+                    </div>
+                    <div id="visitors-map" class="bg-black" style="height: 330px;"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- begin panel -->
+                <div class="panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Channel Distribution</h4>
+                    </div>
+                    <div class="panel-body bg-silver" style="padding:0px;">
+                        <div id="donut-chart" style="height:332px;"></div>
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+        </div>
+        <!-- end row -->
+        <!-- begin row -->
+        <div class="row">
+            <!-- begin col-12 -->
+            <div class="col-md-12">
+                <div class="widget-chart with-sidebar transparent">
+                    <div id="menuTab" class="bs-example widget-chart-content" style="margin-bottom: 0px; padding: 0px;">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#sectionAStats">Users</a></li>
+                            <li><a data-toggle="tab" href="#sectionBStats" data-identifier="sessionschart">Sessions</a></li>
+                            <li><a data-toggle="tab" href="#sectionCStats" data-identifier="transactionschart">Transactions</a></li>
+                            <li><a data-toggle="tab" href="#sectionDStats" data-identifier="errorschart">Errors</a></li>
+                        </ul>
+                        <div class="tab-content current-day-tab">
+                            <div id="sectionAStats" class="tab-pane fade in active">
+                                <h4 class="chart-title">Current Day Activity - Users</h4>
+                                <div id="visitors-line-chart-users" class="morris-inverse"></div>
+                            </div>
+                            <div id="sectionBStats" class="tab-pane fade in">
+                                <h4 class="chart-title">
+                                    Current Day Activity - Sessions
+                                </h4>
+                                <div id="visitors-line-chart-interactions" class="morris-inverse"></div>
+                            </div>
+                            <div id="sectionCStats" class="tab-pane fade in">
+                                <h4 class="chart-title">
+                                    Current Day Activity - Transactions
+                                </h4>
+                                <div id="visitors-line-chart-transactions" class="morris-inverse"></div>
+                            </div>
+                            <div id="sectionDStats" class="tab-pane fade in">
+                                <h4 class="chart-title">
+                                    Current Day Activity - Errors
+                                </h4>
+                                <div id="visitors-line-chart-errors" class="morris-inverse"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-chart-sidebar current-day-sidebar">
+                        <div class="bg-black-darker">
+                            <div id="visitors-donut-chart" class="current-day-donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+
+        @if (Model.IsLiveTransactionEnabled)
+        {
+            Html.RenderPartial("_LiveTransaction");
+        }
+    </form>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+@*<script src="assets/plugins/morris/raphael.min.js"></script>*@
+<script src="~/Scripts/raphael-min.js"></script>
+@*<script src="assets/plugins/morris/morris.js"></script>*@
+<script src="~/Scripts/morris.js"></script>
+@*<script src="assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>*@
+<script src="~/Scripts/jquery-jvectormap-1.2.2.min.js"></script>
+@*<script src="assets/plugins/jquery-jvectormap/jquery-jvectormap-world-merc-en.js"></script>*@
+<script src="~/Scripts/jVectorMaps/world-ISO-A2/jquery-jvectormap-world-mill-en-US.js"></script>
+@*<script src="assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>*@
+<script src="~/Scripts/bootstrap_calendar.min.js"></script>
+@*<script src="assets/js/dashboard-v2.min.js"></script>*@
+<script src="~/Scripts/dashboard-v2.min.js"></script>
+@*<script src="assets/js/apps.min.js"></script>*@
+<script src="~/Scripts/apps.min.js"></script>
+<script src="~/Scripts/jquery.flot.pie.min.js"></script>
+@*<script src="~/Scripts/noUiSlider/nouislider.min.js"></script>*@
+<script src="~/Scripts/data.js"></script>
+<script src="~/Scripts/jquery.countdown360.js"></script>
+
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+
+<script>
+    var chartActivity = false;
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '@Url.Action("GetUserPhoto", "Manage")',
+            type: 'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            async: false,
+            success: function (response) {
+                if (response != 'null' && response != '') {
+                    $('#UserPicture').attr('src', 'data:image/jpeg;base64,' + response);
+                }
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+
+        InitCarousel();
+        handleVisitorsVectorMap('@Url.Action("GetTodayUsersByCountryCode", "Home", new { TimeInterval = Model.Interval })', 'visitors-map');
+        App.init();
+
+        SelectTimeInterval('@Model.Interval');
+
+        $("#Dashboard").addClass("active");
+        handleDonutChartMF();
+        handleVisitorsLineChart();
+        handleVisitorsDonutChart();
+
+        // CHART RESIZE
+        $(window).resize(function () {
+            if (chartActivity == true)
+            {
+                window.usersChart.redraw();
+                window.sessionschart.redraw();
+                window.transactionschart.redraw();
+                window.errorschart.redraw();
+                window.donutChart.redraw();
+            }
+        });
+    })
+
+    function decodeEntities(encodedString) {
+        var textArea = document.createElement('textarea');
+        textArea.innerHTML = encodedString;
+        var decodedString = textArea.value;
+        return decodedString;
+    }
+
+    var handleVisitorsLineChart = function () {
+        $.ajax({
+            dataType: "json",
+            url: '@Html.Raw(Url.Action("GetCurrentDayActivity", "Analytics"))',
+            success: function (data) {
+                if (data.length != 0)
+                {
+                    chartActivity = true;
+                    // Users
+                    var options = {
+                        element: "visitors-line-chart-users",
+                        data: data,
+                        xkey: "x",
+                        ykeys: ["u"],
+                        xLabels: "hour",
+                        lineColors: ["#00ACAC"],
+                        pointFillColors: ["#00ACAC"],
+                        pointStrokeColors: ["#00ACAC"],
+                        labels: ["Users"],
+                        lineWidth: "2px",
+                        resize: true,
+                        redraw: true,
+                        gridTextFamily: "Open Sans",
+                        gridTextColor: "rgba(255, 255, 255, 0.4)",
+                        gridTextWeight: "normal",
+                        gridTextSize: "11px",
+                        gridLineColor: "rgba(0,0,0,0.5)",
+                        hideHover: "true"
+                    };
+                    window.usersChart = Morris.Line(options);
+
+                    // Interactions
+                    options["element"] = "visitors-line-chart-interactions";
+                    options["ykeys"] = ["i"];
+                    options["labels"] = ["Sessions"];
+                    options["lineColors"] = ["#2A72B5"];
+                    options["pointFillColors"] = ["#2A72B5"];
+                    options["pointStrokeColors"] = ["#2A72B5"];
+                    window.sessionschart = Morris.Line(options);
+
+                    // Transactions
+                    options["element"] = "visitors-line-chart-transactions";
+                    options["ykeys"] = ["t"];
+                    options["labels"] = ["Transactions"];
+                    options["lineColors"] = ["#DDCCAA"];
+                    options["pointFillColors"] = ["#DDCCAA"];
+                    options["pointStrokeColors"] = ["#DDCCAA"];
+                    window.transactionschart = Morris.Line(options);
+
+                    // Errors
+                    options["element"] = "visitors-line-chart-errors";
+                    options["ykeys"] = ["e"];
+                    options["labels"] = ["Errors"];
+                    options["lineColors"] = ["#CC4946"];
+                    options["pointFillColors"] = ["#CC4946"];
+                    options["pointStrokeColors"] = ["#CC4946"];
+                    window.errorschart = Morris.Line(options);
+                }
+                else
+                {
+                    chartActivity = false;
+                    $('#visitors-line-chart-users').css("text-align", "center");
+                    $('#visitors-line-chart-users').html('<span style=\"line-height:240px; font-size: 15px\"><b>NO DATA</b></span>');
+
+                    $('#visitors-line-chart-interactions').css("text-align", "center");
+                    $('#visitors-line-chart-interactions').html('<span style=\"line-height:240px; font-size: 15px\"><b>NO DATA</b></span>');
+
+                    $('#visitors-line-chart-transactions').css("text-align", "center");
+                    $('#visitors-line-chart-transactions').html('<span style=\"line-height:240px; font-size: 15px\"><b>NO DATA</b></span>');
+
+                    $('#visitors-line-chart-errors').css("text-align", "center");
+                    $('#visitors-line-chart-errors').html('<span style=\"line-height:240px; font-size: 15px\"><b>NO DATA</b></span>');
+                }
+            }
+        });
+    }
+
+    $('ul.nav a').on('shown.bs.tab', function (e) {
+        var types = $(this).attr("data-identifier");
+
+        if (typeof types !== "undefined" && chartActivity == true) {
+            var typesArray = types.split(',');
+            $.each(typesArray, function (key, value) {
+                eval(value + ".redraw()");
+            })
+        }
+    });
+
+    var handleVisitorsDonutChart = function () {
+        var s = "#2A72B5";
+        var u = "#00ACAC";
+        var t = "#DDCCAA";
+        var e = "#CC4946";
+
+        $.ajax({
+            dataType: "json",
+            url: '@Html.Raw(Url.Action("GetCurrentDayActivityStats", "Analytics"))',
+            success: function (data) {
+                if (data.length != 0)
+                {
+                    window.donutChart = Morris.Donut({
+                        element: "visitors-donut-chart",
+                        data: data,
+                        colors: [s, u, e, t],
+                        labelFamily: "Open Sans",
+                        labelColor: "rgba(255,255,255,0.4)",
+                        labelTextSize: "12px",
+                        backgroundColor: "#242a30"
+                    })
+                }
+                else
+                {
+                    $('#visitors-donut-chart').css("text-align", "center");
+                    $('#visitors-donut-chart').html('<span style=\"line-height:240px; font-size: 15px\"><b>NO DATA</b></span>');
+                }
+            }
+        });
+    };
+
+    var handleDonutChartMF = function () {
+        "use strict";
+        if ($("#donut-chart").length !== 0) {
+            $.ajax({
+                dataType: "json",
+                url: '@Html.Raw(Url.Action("GetDistributionByChannel", "Analytics", new { Interval = Model.Interval }))',
+                success: function (data) {
+                    if (data.length != 0)
+                    {
+                        $.plot("#donut-chart", data, {
+                            series: {
+                                pie: {
+                                    radius : .5,
+                                    innerRadius: .20,
+                                    show: true,
+                                    label: {
+                                        radius: .6,
+                                        threshold:0.05,
+                                        show: true
+                                    }
+                                }
+                            },
+                            legend: {
+                                show: true
+                            }
+                        });
+                    }
+                    else
+                    {
+                        $('#donut-chart').css("text-align", "center");
+                        $('#donut-chart').html('<span style=\"line-height:300px; font-size: 15px\"><b>NO DATA</b></span>');
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+<style type="text/css" media="screen">
+    #container {
+        margin: 0 auto;
+        width: 600px;
+        text-align: right;
+        position: relative;
+    }
+
+
+    .date {
+        font-size: .9em;
+    }
+
+    .time {
+        font-size: 1.7em;
+    }
+
+    #caption {
+        font-size: 1.7em;
+        width: 2000px;
+        float: right;
+    }
+
+
+    .start {
+        position: absolute;
+        bottom: 86px;
+        left: -180px;
+        width: 130px;
+    }
+
+    .current {
+        position: absolute;
+        bottom: 86px;
+        left: 625px;
+        width: 130px;
+        color: #eee;
+    }
+
+    .start {
+        color: #777;
+    }
+
+        .start p {
+            text-align: left;
+        }
+
+    .current p {
+        text-align: left;
+    }
+
+    #scale {
+        position: absolute;
+        left: 625px;
+        bottom: 40px;
+    }
+</style>

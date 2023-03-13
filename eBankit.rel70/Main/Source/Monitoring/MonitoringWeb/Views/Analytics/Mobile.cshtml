@@ -1,0 +1,350 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model MobileRequestsViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(@Model.BreadCrumbs)
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Mobile Analytics<small></small></h1>
+    <!-- end page-header -->
+    <!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search mobile analytics</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="Mobile" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Application</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Apps, "SearchFilters.Application", Model.SearchFilters.Application)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Method</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.RequestMethods, "SearchFilters.RequestMethod", @Model.SearchFilters.RequestMethod)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Date</label>
+                            <div class="col-md-8">
+                                <div class="row row-space-10">
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker1", "SearchFilters.FromDate", Model.SearchFilters.FromDate, "From", ViewBag.DateFormat)
+                                    </div>
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker2", "SearchFilters.ToDate", Model.SearchFilters.ToDate, "To", ViewBag.DateFormat)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Path</label>
+                            <div class="col-md-8">
+                                <input type="hidden" id="txtInterval" name="SearchFilters.Interval" value="@Model.SearchFilters.Interval"/>
+                                <input type="text" id="txtReqPath" class="form-control" name="SearchFilters.RequestPath" placeholder="Request Path" value="@Model.SearchFilters.RequestPath"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Machine Name</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.MachineNames, "SearchFilters.MachineName", Model.SearchFilters.MachineName)
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" value="Search" name="BtnSubmit" id="btnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="menuTab" class="bs-example">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#sectionA">Analytics</a></li>
+            <li><a data-toggle="tab" href="#sectionB" data-identifier="donutchart1,donutchart2">Dashboard</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="sectionA" class="tab-pane fade in active">
+
+
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12">
+                        <!-- begin panel -->
+                        <div class="panel-inverse newStyle">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Mobile analytics requests</h4>
+                            </div>
+                            @Interval.RenderIntervalMenu(Model.Intervals, Url.Action("Mobile", "Analytics", new { MachineName = Model.SearchFilters.MachineName, Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate, RequestPath = Model.SearchFilters.RequestPath }), @Model.SearchFilters.Interval)
+                            <div class="panel-body">
+                                <div id="graphRequests" class="height-sm"></div>
+                            </div>
+                        </div>
+                        <!-- end panel -->
+                    </div>
+                    <!-- end col-12 -->
+                    <!-- begin col-12 -->
+                    <div class="col-md-12">
+                        <!-- begin panel -->
+                        <div class="panel-inverse newStyle">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Mobile analytics execution time</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div id="graphExecutionTime" class="height-sm"></div>
+                            </div>
+                        </div>
+                        <!-- end panel -->
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12">
+                        <!-- begin panel -->
+                        <div class="panel-inverse newStyle">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Mobile Statistics</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="panel-body" style="background-color: #d9e0e7;">
+                                    <div id="menuTabStats" class="bs-example">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#sectionAStats">By Period</a></li>
+                                            <li><a data-toggle="tab" href="#sectionBStats">By Request Path</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="sectionAStats" class="tab-pane fade in active table-responsive">
+                                                <table id="results-table" class="table table-striped table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Timeline</th>
+                                                            <th>Count</th>
+                                                            <th>Avg<br />
+                                                                Execution(s)</th>
+                                                            <th>Avg<br />
+                                                                Request(bytes)</th>
+                                                            <th>Avg<br />
+                                                                Response(bytes)</th>
+                                                            <th>Count<br />
+                                                                To 500(ms)</th>
+                                                            <th>Count<br />
+                                                                To 1000(ms)</th>
+                                                            <th>Count<br />
+                                                                To 5000(ms)</th>
+                                                            <th>Count<br />
+                                                                > 5000(ms)</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                            <div id="sectionBStats" class="tab-pane fade table-responsive">
+                                                <table id="results-tableRP" class="table table-striped table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Request Path</th>
+                                                            <th>Count</th>
+                                                            <th>Avg<br />
+                                                                Execution(s)</th>
+                                                            <th>Avg<br />
+                                                                Request(bytes)</th>
+                                                            <th>Avg<br />
+                                                                Response(bytes)</th>
+                                                            <th>Count<br />
+                                                                To 500(ms)</th>
+                                                            <th>Count<br />
+                                                                To 1000(ms)</th>
+                                                            <th>Count<br />
+                                                                To 5000(ms)</th>
+                                                            <th>Count<br />
+                                                                > 5000(ms)</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end panel -->
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <div id="sectionB" class="tab-pane fade">
+                <div class="row">
+
+                    <!-- begin col-12 -->
+                    <div class="panel col-md-12 transparent">
+                        <!-- begin panel -->
+                        <div class="panel-inverse newStyle">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Machine Distribution</h4>
+                            </div>
+                            <!-- begin row -->
+                            <div class="row">
+                                <!-- begin col-6 -->
+                                <div class="col-md-6">
+                                    <div class="panel-body" id="graph1">
+                                        <div id="graphRequestsPerMachine" class="height-sm"></div>
+                                        <h3 class="panel-title text-center">Number of requests per Machine</h3>
+                                    </div>
+                                </div>
+                                <!-- end col-6 -->
+                                <!-- begin col-6 -->
+                                <div class="col-md-6">
+                                    <div class="panel-body" id="graph2">
+                                        <div id="graphAvgExecutionPerMachine" class="height-sm"></div>
+                                        <h3 class="panel-title text-center">Avg Execution Time(ms) Per Machine</h3>
+                                    </div>
+                                </div>
+                                <!-- end col-6 -->
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end #content -->
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<link href="~/Content/morris.css" rel="stylesheet" />
+
+<script src="~/bundles/requestsScripts"></script>
+<script src="~/Scripts/raphael-min.js"></script>
+<script src="~/Scripts/morris.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        ToggleSideBarMenu($('#Analytics'), $('#MobileAnalytics'));
+        InitializeDropdowns();
+        InitializeRangedDatetimePicker($('#datetimepicker1'), $('#datetimepicker2'), '@ViewBag.DateFormat');
+
+        //TODO: DEFINE OUTPUT PARAMETERS
+        var dataUrl = '@Html.Raw(Url.Action("GetMobileStatistics", "Analytics", new { MachineName = Model.SearchFilters.MachineName, Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate, RequestPath = Model.SearchFilters.RequestPath }))';
+        var columns = [
+            { "mDataProp": "TimeLine", "orderable": false },
+            { "mDataProp": "NRequests", "orderable": false },
+            { "mDataProp": "AvgExecutionTime", "orderable": false },
+            { "mDataProp": "AvgRequestSize", "orderable": false },
+            { "mDataProp": "AvgResponseSize", "orderable": false },
+            { "mDataProp": "Interval1", "orderable": false },
+            { "mDataProp": "Interval2", "orderable": false },
+            { "mDataProp": "Interval3", "orderable": false },
+            { "mDataProp": "Interval4", "orderable": false }
+        ];
+        var table = InitializeDataTable('results-table', dataUrl, columns, [[0, "ASC"]], false, '@Model.SearchFilters.Interval');
+
+
+        var dataUrlRP = '@Html.Raw(Url.Action("GetJsonAnalyticsbyRequestPath","Analytics", new { MachineName = Model.SearchFilters.MachineName, Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate }))';
+        var columnsRP = [
+            { "mDataProp": "RequestPath", "orderable": false },
+            { "mDataProp": "NRequests", "orderable": true },
+            { "mDataProp": "AvgExecutionTime", "orderable": true },
+            { "mDataProp": "AvgRequestSize", "orderable": true },
+            { "mDataProp": "AvgResponseSize", "orderable": true },
+            { "mDataProp": "Interval1", "orderable": true },
+            { "mDataProp": "Interval2", "orderable": true },
+            { "mDataProp": "Interval3", "orderable": true },
+            { "mDataProp": "Interval4", "orderable": true },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "mRender": function (data, type, full) {
+                    return "<div class='alignCenter'><a href='#' role='button' class='btn btn-inverse detailsButton' data-toggle='modal' onclick='waitLoading();'><i class='fa fa-search-plus' style='font-size:13px'></i></a></div>";
+                }
+            }
+        ];
+        var tableRP = InitializeDataTable('results-tableRP', dataUrlRP, columnsRP, [[1, "DESC"]]);
+
+        InitializeClickRedirect('results-tableRP', '@Url.Action("Mobile", "Analytics", new {RequestPath = "__reqId__" })', 'RequestPath');
+
+        InitializeAutoComplete($('#txtReqPath'), '@Url.Action("RequestPathSearch", "Analytics", new { service = "MobileController/mobilerequestpaths" })');
+
+        App.init();
+        var dataurl = '@Html.Raw(Url.Action("GetMobileChartData", "Analytics", new { MachineName = Model.SearchFilters.MachineName, Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate, RequestPath = Model.SearchFilters.RequestPath }))';
+        var GraphClickHandler = function (i, row) {
+            var date = moment(row.TimeLine)
+            var fromDate = new Date(), toDate = new Date();;
+            switch (row.Interval) {
+                case 'YEAR':
+                    fromDate = new Date(date.year(), 0, 1);//first day of year
+                    toDate = new Date(date.year(), 12, 0, 23, 59, 59);//last day of year
+                    break;
+                case 'MONTH':
+                    fromDate = new Date(date.year(), date.month(), 1);//first day of month
+                    toDate = new Date(date.year(), date.month() + 1, 0, 23, 59, 59);//last day of month
+                    break;
+                case 'DAY':
+                    fromDate = new Date(date.year(), date.month(), date.date());
+                    toDate = new Date(date.year(), date.month(), date.date(), 23, 59, 59);
+                    break;
+                default:
+                    return;
+            }
+            $('#datetimepicker1').val(moment(fromDate).format('@ViewBag.DateFormat'));
+            $('#datetimepicker2').val(moment(toDate).format('@ViewBag.DateFormat'));
+            //submit form
+            $('#btnSubmit').click();
+            ;
+        };
+        InitializeGraph('graphRequests', dataurl, GraphClickHandler, 'Requests', '@Model.SearchFilters.Interval');
+        InitializeGraph('graphExecutionTime', dataurl, GraphClickHandler, 'AvgExecutionTime', '@Model.SearchFilters.Interval');
+
+        // Dashboard Charts
+        var dataRequestsMachine = '@Html.Raw(Url.Action("GetMobileRequestsPerMachine", "Analytics", new { Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate, RequestPath = Model.SearchFilters.RequestPath }))';
+        InitializeDonutGraph1('graphRequestsPerMachine', dataRequestsMachine);
+
+        // Dashboard Charts
+        var dataRequestsMachine = '@Html.Raw(Url.Action("GetMobileAvgExecutionPerMachine", "Analytics", new { Application = Model.SearchFilters.Application, RequestMethod = Model.SearchFilters.RequestMethod, BeginDate = Model.SearchFilters.FromDate, EndDate = Model.SearchFilters.ToDate, RequestPath = Model.SearchFilters.RequestPath }))';
+        InitializeDonutGraph2('graphAvgExecutionPerMachine', dataRequestsMachine);
+
+        // CHART RESIZE
+        $(window).resize(function () {
+            window.wgraphRequests.redraw();
+            window.wgraphExecutionTime.redraw();
+            window.donutchart1.redraw();
+            window.donutchart2.redraw();
+        });
+    });
+
+    $('ul.nav a').on('shown.bs.tab', function (e) {
+        var types = $(this).attr("data-identifier");
+
+        if (typeof types !== "undefined") {
+            var typesArray = types.split(',');
+            $.each(typesArray, function (key, value) {
+                eval(value + ".redraw()");
+
+            })
+        }
+    });
+
+</script>

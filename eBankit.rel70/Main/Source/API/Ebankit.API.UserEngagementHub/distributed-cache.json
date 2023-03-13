@@ -1,0 +1,15 @@
+{
+  "SessionSettings": {
+    "Use": "Sql",
+    "Redis": {
+      "Configuration": "localhost:10001",
+      "InstanceName": "ebankit.MW.dev - "
+    },
+    "Sql": {
+      "ConnectionString": "Data Source=EBKNTBOOK-0850\\LOCALDB;Initial Catalog=rel70_EbankitCache;User ID=sa;Password=Portofc1997_",
+      "SchemaName": "dbo",
+      "TableName": "MW_CacheItems",
+      "DefaultSlidingExpirationInSeconds": 12000
+    }
+  }
+}

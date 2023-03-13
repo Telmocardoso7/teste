@@ -1,0 +1,241 @@
+﻿.divStars {
+    margin: 20px 20px;
+}
+
+.divQuestion {
+    float: left;
+}
+
+.stars {
+    height: 40px;
+    width: 40px;
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.divThumbsUpDown {
+    margin: 20px 20px;
+}
+
+.divResponse {
+    float: right;
+}
+
+.thumbs {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-close {
+    display: inline-grid;
+    align-items: center;
+    border: 1px solid #525455;
+    box-sizing: border-box;
+    width: 170px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #525455;
+    text-transform: uppercase;
+}
+
+.btn-close:hover {
+    background-color: #ccc;
+    color: #333;
+}
+
+.survey-landing-question {
+    background-color: #F5F5F5;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.questionText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #0173A7;
+}
+
+.calloutText {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #555555;
+    margin-top: 8px;
+}
+
+.commentsTextArea {
+    width: 100%;
+    max-width: 100%;
+    height: 96px;
+    resize: none;
+    text-indent: 5px;
+}
+
+.commentsInfo {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #0173A7;
+}
+
+.btn-submit {
+    width: 170px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #525455 !important;
+    border: none;
+    background-color: rgba(24, 119, 67, 0.4);
+    display: inline-grid;
+    align-items: center;
+    margin-left: 20px;
+    text-transform: uppercase;
+
+    > a {
+        color: #FFFFFF !important;
+        display: inline-block;
+        width: 100%;
+    }
+
+    &.active {
+        background-color: rgba(24, 119, 67);
+        color: #FFFFFF;
+    }
+}
+
+.btn-submit.active:hover {
+    background-color: rgba(20, 97, 55);
+    color: #fff !important;
+}
+
+.divBtnAll {
+    display: flex;
+    margin-top: 10px;
+}
+
+.commentsText {
+    margin-top: 26px;
+}
+
+
+.divImgSuccess {
+    padding: 20px;
+}
+
+.divMessageError {
+    padding: 20px;
+}
+
+.divMessageSuccess {
+    text-align: center;
+    background-color: #F5F5F5;
+    margin-bottom: 40px;
+}
+
+.divMessageError {
+    text-align: center;
+    background-color: #F5F5F5;
+    margin-bottom: 40px;
+}
+
+.divInfoSuccess {
+    padding: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #555555;
+}
+
+.divInfoError {
+    padding: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #555555;
+}
+
+.divBtnClose {
+    margin-left: auto;
+}
+
+.divQuestion {
+    width: 550px;
+    word-wrap: break-word;
+}
+
+.divCallout {
+    width: 550px;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+    .divBtnAll {
+        display: block;
+    }
+
+    .divQuestion {
+        float: none;
+    }
+
+    .divResponse {
+        display: block;
+        float: none;
+        margin-top: 5%;
+
+        & #divThumbsBtnAll {
+            margin-top: 5%;
+        }
+
+        & #divStarsBtnAll {
+            margin-top: 5%;
+        }
+    }
+
+    .btn-submit {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .btn-close {
+        width: 100%;
+    }
+
+    .divBtnSubmit {
+        margin-top: 10px;
+    }
+
+    .divQuestion {
+        width: auto;
+        word-wrap: break-word;
+    }
+
+    .divCallout {
+        width: auto;
+        word-wrap: break-word;
+    }
+}

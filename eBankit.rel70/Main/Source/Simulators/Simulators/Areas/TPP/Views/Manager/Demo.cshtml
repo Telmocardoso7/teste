@@ -1,0 +1,208 @@
+﻿@model HomeModel
+
+@{
+    ViewData["HeaderTitle"] = "TPP Simulator";
+    ViewData["Title"] = "Demo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="dvMain" class="s-container s-container-height p-2">
+
+    @* *************************************************************************************************************************
+                                                          Start screen
+        ************************************************************************************************************************* *@
+    <div id="dvStart" class="demo">
+        @using (Html.BeginForm("Home", "GetHomeData", FormMethod.Post))
+        {
+            <div class="h-100 mt-4">
+                <div class="s-b-title">Demo </div>
+            </div>
+            <div class="h-100 mt-4 mb-4 ">
+                <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                    <label class="col-12 col-md-3 col-form-label" for="txtClientId">Client ID</label>
+                    <input id="txtClientId" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtClientId" value="@Model.ClientID" />
+                </div>
+                <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                    <label class="col-12 col-md-3 col-form-label" for="txtSecretId">Secret ID</label>
+                    <input id="txtSecretId" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtSecretId" value="@Model.SecretID" />
+                </div>
+                <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                    <label class="col-12 col-md-3 col-form-label" for="txtScope">Scope</label>
+                    <input id="txtScope" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtScope" value="@Model.Scope" />
+                </div>
+            </div>
+
+
+            <hr />
+            <div class="mt-4 mb-4">
+                <input class="s-b-action-btn col-12 col-md-2 mr-md-4 mb-2" type="button" name="btnAccounts" value="Accounts" onclick="ControlPanels();" />
+                <input class="s-b-action-btn col-12 col-md-2 mr-md-4 mb-2" type="button" name="btnAccounts" value="Payments" onclick="ShowPayment();" />
+            </div>
+        }
+    </div>
+
+    @* *************************************************************************************************************************
+                                                           Accounts
+        ************************************************************************************************************************* *@
+    <div id="pnlIBAN" style="display: none;" class="s-min-height-lg">
+        <div class="mt-3 mb-1">
+            <a class="s-b-back-btn" name="btnClose" value="Close" onclick="ShowStart();">
+                <img src="/images/ic_back.svg" />
+                <span>Back</span>
+            </a>
+        </div>
+
+        <div class="h-100 mt-3">
+            <div class="s-b-title">Accounts</div>
+        </div>
+
+        <div class="h-100 mt-4 mb-4 ">
+            <div class="form-row col-12 col-md-12 mb-2 mt-2 s-b-input-row  text-uppercase">
+                <label class="col-12 col-md-2 col-form-label mb-2" for="txturlreturn">BBAN</label>
+                <input id="txtBban" type="text" class="form-control col-12 col-md-7 mr-md-2 s-b-input mb-2" name="txtBban" />
+                <input class="mb-2  col-12 col-md-2 btnAddSpecificAccount s-b-action-btn" disabled id="btnAddAccount" type="button" name="btnAddAccount" value="Add" onclick="ShowAccountList();" />
+            </div>
+        </div>
+
+        <hr />
+        <div class="mt-4 mb-4">
+            <input class="col-12 col-md-2 mr-md-4 s-b-action-btn" id="btnAddAccount" name="btnAddAccount" type="button" value="Select Accounts" onclick="ShowAccountList();" />
+            @*<input class="col-12 col-md-2 mr-md-4 s-b-action-btn" id="btnAddAccount" name="btnAddAccount" type="button" value="Select Accounts" onclick="ShowAccountList();" />*@
+        </div>
+    </div>
+
+    @* *************************************************************************************************************************
+                                                         Accounts List
+        ************************************************************************************************************************* *@
+
+    <div id="pnlAccountList" style="display: none;">
+        <div class="h-100 mt-4">
+            <div class="s-b-title">Accounts</div>
+        </div>
+        <div class="h-100 mt-4 mb-4 col-12 col-lg-9 padding-0">
+            <table id="tbList" class="table table-striped s-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Account</th>
+                        <th scope="col">IBAN</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @* data will be hadded form js *@
+                </tbody>
+            </table>
+        </div>
+
+        <hr />
+        <div class="mt-4 mb-4">
+            <input class="col-12 col-md-2 mr-md-4 s-b-action-btn" id="btnClose" name="btnClose" type="button" value="Close" onclick="CloseAccountList();" />
+        </div>
+    </div>
+
+
+    @* *************************************************************************************************************************
+                                                         Payment
+        ************************************************************************************************************************* *@
+    <div id="dvPayment" style="display: none;">
+
+        <div class="mt-3 mb-3">
+            <a class="s-b-back-btn" name="btnPayClose" value="Close" onclick="ClosePayment();">
+                <img src="/images/ic_back.svg" />
+                <span>Back</span>
+            </a>
+        </div>
+
+        <div class="h-100 mt-4">
+            <div class="s-b-title">Payment</div>
+        </div>
+
+        <div class="h-100 mt-4 mb-4 ">
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                <label class="col-12 col-md-3 col-form-label" for="txtPaymentAccount">Payment account</label>
+                <input id="txtPaymentAccount" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtPaymentAccount" />
+            </div>
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                <label class="col-12 col-md-3 col-form-label" for="txtMyAccount">My account</label>
+                <input id="txtMyAccount" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtMyAccount" />
+            </div>
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                <label class="col-12 col-md-3 col-form-label" for="txtValue">Amount</label>
+                <input id="txtValue" type="text" class="form-control col-12 col-md-9 s-b-input" name="txtValue" value="1" />
+            </div>
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row ">
+                <label class="col-12 col-md-3 col-form-label" for="txturlreturn">Currency</label>
+                <div class="input-group mb-3 col-12 col-md-2 padding-0 margin-0">
+                    <select class="custom-select s-b-select" id="ddlCurrency">
+                        @*<option >Select</option>*@
+                        <option selected>EUR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                <label class="col-12 col-md-3 col-form-label" for="txtPaymentId">Payment ID</label>
+                <input id="txtPaymentId" type="text" class="form-control col-12 col-md-9 s-b-input border-transparent padding-0" name="txtPaymentId" readonly value="-" />
+            </div>
+            <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+                <label class="col-12 col-md-3 col-form-label" for="txtAuth">Authorisation ID</label>
+                <input id="txtAuth" type="text" class="form-control col-12 col-md-9 s-b-input border-transparent padding-0" name="txtAuth" readonly value="-" />
+            </div>
+
+        </div>
+
+        <hr />
+        <div class="mt-4 mb-4">
+            <input class="s-b-action-btn col-12 col-md-2 mr-md-4 mb-2" type="button" name="btnExecute" value="Execute" onclick="StartPayment();" />
+        </div>
+
+
+    </div>
+
+    @* *************************************************************************************************************************
+                                                         Payment details
+        ************************************************************************************************************************* *@
+
+    <div id="pnlPaymentInformation" style="display: none;">
+        <div class="h-100 mt-4">
+            <div class="s-b-title">Payment details</div>
+        </div>
+        <div class="h-100 mt-4 mb-4 col-12 col-md-7 padding-0">
+            <table id="tbPaymentDetails" class="table table-striped s-table-details">
+                @* data will be hadded form js *@
+            </table>
+        </div>
+
+        <hr />
+        <div class="mt-4 mb-4">
+            <input class="col-12 col-md-2 mr-md-4 s-b-action-btn" id="btnClose" name="btnClose" type="button" value="Close" onclick="ClosePaymentInformation();" />
+        </div>
+    </div>
+
+</div>
+
+
+<div id="dvlog" class="s-traceLog">
+    <div id="dvlog" class="s-traceLog-container mt-3 mb-2 mt-2 p-2">
+        <div class="p-2">
+            <div class="s-b-traceLog-title mb-4">Trace log:</div>
+            <table id="tbLog" class="s-traceLog-text"></table>
+        </div>
+    </div>
+</div>
+
+<div id="dvhidden">
+    <input id="hdClientId" type="hidden" />
+    <input id="hdSecretId" type="hidden" />
+    <input id="hdConsentID" type="hidden" />
+    <input id="hdToken" type="hidden" />
+    <input id="hdAccountId" type="hidden" />
+</div>
+
+
+
+<environment include="Development">
+    <script src="~/js/areas/tpp/demo.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+    <script src="~/js/areas/tpp/demo.min.js" asp-append-version="true"></script>
+</environment>

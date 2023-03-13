@@ -1,0 +1,1665 @@
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.props" Condition="Exists('..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\uSync.4.0.14\build\uSync.props" Condition="Exists('..\..\packages\uSync.4.0.14\build\uSync.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D362E354-0032-440F-A494-E2ED3063BBDF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Publishing</RootNamespace>
+    <AssemblyName>Publishing</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea">
+      <HintPath>..\..\packages\AngleSharp.0.9.10\lib\net45\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.7128.14461, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\businesslogic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.Core.1.2.0\lib\net45\CacheManager.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.Microsoft.Extensions.Configuration, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.Microsoft.Extensions.Configuration.1.2.0\lib\net45\CacheManager.Microsoft.Extensions.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.Microsoft.Extensions.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.Microsoft.Extensions.Logging.1.2.0\lib\net45\CacheManager.Microsoft.Extensions.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.Serialization.Json, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.Serialization.Json.1.2.0\lib\net45\CacheManager.Serialization.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.StackExchange.Redis, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.StackExchange.Redis.0.9.3\lib\net45\CacheManager.StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheManager.SystemRuntimeCaching, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb">
+      <HintPath>..\..\packages\CacheManager.SystemRuntimeCaching.0.9.3\lib\net45\CacheManager.SystemRuntimeCaching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cms, Version=1.0.7128.14461, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\cms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="controls, Version=1.0.7128.14462, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dommel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Dommel.1.11.0\lib\net451\Dommel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ebankIT.Data.Entities, Version=7.0.1.23306, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ebankIT.Data.Entities.7.0.1\lib\net48\ebankIT.Data.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ebankIT.Publishing.Common, Version=7.0.1.23306, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ebankIT.Publishing.Common.7.0.1\lib\net48\ebankIT.Publishing.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ebankIT.Publishing.Interfaces, Version=7.0.1.23306, Culture=neutral, PublicKeyToken=9fea7ad3517b7f83">
+      <HintPath>..\..\packages\ebankIT.Publishing.Interfaces.7.0.1\lib\net48\ebankIT.Publishing.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ebankIT.Publishing.Web, Version=7.0.1.23306, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ebankIT.Publishing.Web.7.0.1\lib\net48\ebankIT.Publishing.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.90.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Examine.0.1.90\lib\net45\Examine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.8.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.8.8\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28">
+      <HintPath>..\..\packages\HtmlSanitizer.4.0.187\lib\net45\HtmlSanitizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityModel, Version=4.4.0.0, Culture=neutral, PublicKeyToken=e7877f4675df049f">
+      <HintPath>..\..\packages\IdentityModel.4.4.0\lib\net472\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ImageProcessor.2.7.0.100\lib\net452\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.10.0.100, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\ImageProcessor.Web.4.10.0.100\lib\net452\ImageProcessor.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.7128.14444, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IOMG.Umbraco.StandaloneServices, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IOMG.Umbraco.StandaloneServices.1.0.0.2\lib\net45\IOMG.Umbraco.StandaloneServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.BackOffice, Version=4.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uSync.4.0.14\lib\net45\Jumoo.uSync.BackOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.Content, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uSync.ContentEdition.4.1.8\lib\net45\Jumoo.uSync.Content.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.ContentMappers, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uSync.ContentMappers.4.1.8\lib\net45\Jumoo.uSync.ContentMappers.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.Core, Version=6.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\uSync.Core.6.0.14\lib\net45\Jumoo.uSync.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4Net.Async, Version=2.0.4.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Log4Net.Async.2.0.4\lib\net40\Log4Net.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181">
+      <HintPath>..\..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Common.1.1.1\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.1.1.1\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.1\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.VisualBasic.1.0.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.1.0.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.1\lib\net452\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.1\lib\net452\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.0.1\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.0.1\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.5.0.1\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.Client.5.0.1\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=1.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.Binder.1.0.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.EnvironmentVariables.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.FileExtensions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.Json.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.FileProviders.Physical.2.1.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.FileSystemGlobbing.2.1.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=1.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Logging.1.0.2\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Logging.Abstractions.1.0.2\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Options.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\packages\Microsoft.Extensions.Primitives.3.1.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.SessionState.SqlInMemory, Version=13.0.0.0, Culture=neutral, PublicKeyToken=ae41e2615877eb90, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.SessionState.SqlInMemory.1.0.2\lib\net40\Microsoft.Web.SessionState.SqlInMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3">
+      <HintPath>..\..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>..\..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2">
+      <HintPath>..\..\packages\Pipelines.Sockets.Unofficial.1.0.7\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.7128.14462, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\SQLCE4Umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.1.608.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46">
+      <HintPath>..\..\packages\StackExchange.Redis.StrongName.1.1.608\lib\net46\StackExchange.Redis.StrongName.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Collections.NonGeneric.4.0.1\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.ComponentModel.Primitives.4.1.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.ComponentModel.TypeConverter.4.1.0\lib\net462\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Data.SqlClient.4.8.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Pipelines, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.IO.Pipelines.4.5.1\lib\netstandard2.0\System.IO.Pipelines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Linq.4.1.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Reflection.4.1.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Reflection.Metadata.1.1.0\lib\dotnet5.2\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Runtime.Extensions.4.1.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.4.1.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Security.Permissions.4.7.0\lib\net461\System.Security.Permissions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Spatial, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.0.1\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.4.7.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Threading.Channels.4.5.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\TidyNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.7128.14463, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.7128.14457, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\Umbraco.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.7128.14461, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\umbraco.DataLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.7128.14466, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\umbraco.editorControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.IdentityExtensions, Version=1.0.5779.34109, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.IdentityExtensions.1.0.0\lib\net45\Umbraco.IdentityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.7128.14467, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\umbraco.MacroEngines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\Umbraco.ModelsBuilder.3.0.10\lib\Umbraco.ModelsBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.7128.14462, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\umbraco.providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.RestApi.0.9.0\lib\net45\Umbraco.RestApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.7128.14470, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\Umbraco.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.14462, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UmbracoCms.Core.7.15.0\lib\net452\UmbracoExamine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.7.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApi.Hal, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\packages\WebApi.Hal.2.5.0\lib\net45\WebApi.Hal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\uSync.Content\uSyncDashboardContent.html" />
+    <Content Include="App_Plugins\uSync.Content\uSyncDashboardContentController.js" />
+    <Content Include="App_Plugins\uSync\uSyncDashboard.css" />
+    <Content Include="App_Plugins\uSync\uSyncDashboard.html" />
+    <Content Include="App_Plugins\uSync\uSyncDashboardController.js" />
+    <Content Include="App_Plugins\uSync\uSyncDashboardService.js" />
+    <Content Include="ASPStateInMemory.sql" />
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="config\splashes\booting.aspx" />
+    <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="css\bootstrap\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\bootstrap.css" />
+    <Content Include="css\bootstrap\bootstrap.min.css" />
+    <Content Include="css\ebankit\ebankit.css" />
+    <Content Include="css\ebankit\ebankit.min.css" />
+    <Content Include="css\ebankit\Footer.css" />
+    <Content Include="css\ebankit\Footer.min.css" />
+    <Content Include="css\ebankit\ib.css" />
+    <Content Include="css\ebankit\ib.min.css" />
+    <Content Include="css\ebankit\mixins.css" />
+    <Content Include="css\ebankit\mixins.min.css" />
+    <Content Include="css\ebankit\publishing.css" />
+    <Content Include="css\ebankit\publishing.min.css" />
+    <Content Include="css\ebankit\variables.css" />
+    <Content Include="css\ebankit\variables.min.css" />
+    <Content Include="css\fontawesome\font-awesome.css" />
+    <Content Include="css\fontawesome\font-awesome.min.css" />
+    <Content Include="css\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\fonts\Gotham\gotham-bold.svg" />
+    <Content Include="css\fonts\Gotham\gotham-book.svg" />
+    <Content Include="css\fonts\Gotham\gotham-medium.svg" />
+    <Content Include="css\fonts\LexiaDaMa\lexiadama.svg" />
+    <Content Include="css\fonts\Segoe\segoeuisl.svg" />
+    <Content Include="css\fonts\Segoe\seguisb.svg" />
+    <Content Include="css\images\campaign01.jpg" />
+    <Content Include="css\images\eBankIT.png" />
+    <Content Include="css\images\loading.gif" />
+    <Content Include="css\images\logo.jpg" />
+    <Content Include="css\images\state-icons.png" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Media\1002\untitled.png" />
+    <Content Include="Media\1002\untitled_thumb.jpg" />
+    <Content Include="Media\1003\bpc_logo.png" />
+    <Content Include="Media\1003\bpc_logo_thumb.jpg" />
+    <Content Include="Media\1004\ver.png" />
+    <Content Include="Media\1005\product02.png" />
+    <Content Include="Media\1005\product02_thumb.jpg" />
+    <Content Include="Media\1005\zap.png" />
+    <Content Include="Media\1006\product02.png" />
+    <Content Include="Media\1006\product02_thumb.jpg" />
+    <Content Include="Media\1006\untitled.png" />
+    <Content Include="Media\1006\untitled_thumb.jpg" />
+    <Content Include="Media\1007\facebook_icon.png" />
+    <Content Include="Media\1008\linkedin_icon.png" />
+    <Content Include="Media\1009\ic_client_support.png" />
+    <Content Include="Media\1011\utube_icon.png" />
+    <Content Include="Media\1012\ic_client_support-1.png" />
+    <Content Include="Media\1013\ic_click_to_chat.png" />
+    <Content Include="Media\1014\ic_faq.png" />
+    <Content Include="Media\1015\ic_map.png" />
+    <Content Include="Media\1016\login_security_alert.png" />
+    <Content Include="Media\1019\login_campaign.jpg" />
+    <Content Include="Media\1019\login_campaign_thumb.jpg" />
+    <Content Include="Media\1020\dashboard_secondary_campaign02.jpg" />
+    <Content Include="Media\1020\dashboard_secondary_campaign02_thumb.jpg" />
+    <Content Include="Media\1021\dashboard_main_campaign.jpg" />
+    <Content Include="Media\1021\dashboard_main_campaign_thumb.jpg" />
+    <Content Include="Media\1022\dashboard_secondary_campaign01.jpg" />
+    <Content Include="Media\1022\dashboard_secondary_campaign01_thumb.jpg" />
+    <Content Include="Media\1023\untitled.png" />
+    <Content Include="Media\1023\untitled_big-thumb.jpg" />
+    <Content Include="Media\1023\untitled_thumb.jpg" />
+    <Content Include="Media\1024\dashboard_main_campaign.jpg" />
+    <Content Include="Media\1024\dashboard_main_campaign_thumb.jpg" />
+    <Content Include="Media\1025\benef_4_small.png" />
+    <Content Include="Media\1026\danilobasileia1.jpg" />
+    <Content Include="Media\1026\danilobasileia1_thumb.jpg" />
+    <Content Include="Media\1028\unico01.png" />
+    <Content Include="Media\1028\unico01_thumb.jpg" />
+    <Content Include="Media\1029\unico02.png" />
+    <Content Include="Media\1029\unico02_thumb.jpg" />
+    <Content Include="Media\1030\unico03.png" />
+    <Content Include="Media\1030\unico03_thumb.jpg" />
+    <Content Include="Media\1033\login.png" />
+    <Content Include="Media\1033\login_big-thumb.jpg" />
+    <Content Include="Media\1033\login_thumb.jpg" />
+    <Content Include="Media\1035\banner-savings-super.jpg" />
+    <Content Include="Media\1035\banner-savings-super_thumb.jpg" />
+    <Content Include="Media\1038\ebankit-internet-banking.mp4" />
+    <Content Include="Media\1042\account_premium.jpg" />
+    <Content Include="Media\1042\account_premium_thumb.jpg" />
+    <Content Include="Media\1043\credit_house.jpg" />
+    <Content Include="Media\1043\credit_house_thumb.jpg" />
+    <Content Include="Media\1044\credit_consummer.jpg" />
+    <Content Include="Media\1044\credit_consummer_thumb.jpg" />
+    <Content Include="Media\1045\insurance_health.jpg" />
+    <Content Include="Media\1045\insurance_health_thumb.jpg" />
+    <Content Include="Media\1046\account_youth.jpg" />
+    <Content Include="Media\1046\account_youth_thumb.jpg" />
+    <Content Include="Media\1047\insurance_auto.jpg" />
+    <Content Include="Media\1047\insurance_auto_thumb.jpg" />
+    <Content Include="Media\1048\savings_galaxy.jpg" />
+    <Content Include="Media\1048\savings_galaxy_thumb.jpg" />
+    <Content Include="Media\1049\investment_pim.jpg" />
+    <Content Include="Media\1049\investment_pim_thumb.jpg" />
+    <Content Include="Media\1050\savings_super.jpg" />
+    <Content Include="Media\1050\savings_super_thumb.jpg" />
+    <Content Include="Media\1051\ib_dashboard1_pt.jpg" />
+    <Content Include="Media\1051\ib_dashboard1_pt_thumb.jpg" />
+    <Content Include="Media\1053\ib_conclusion_no_campaign.jpg" />
+    <Content Include="Media\1053\ib_conclusion_no_campaign_thumb.jpg" />
+    <Content Include="Media\1054\ib_conclusion1_en.jpg" />
+    <Content Include="Media\1054\ib_conclusion1_en_thumb.jpg" />
+    <Content Include="Media\1055\ib_conclusion1_es.jpg" />
+    <Content Include="Media\1055\ib_conclusion1_es_thumb.jpg" />
+    <Content Include="Media\1056\ib_conclusion1_fr.jpg" />
+    <Content Include="Media\1056\ib_conclusion1_fr_thumb.jpg" />
+    <Content Include="Media\1057\ib_conclusion2_en.jpg" />
+    <Content Include="Media\1057\ib_conclusion2_en_thumb.jpg" />
+    <Content Include="Media\1058\ib_conclusion2_fr.jpg" />
+    <Content Include="Media\1058\ib_conclusion2_fr_thumb.jpg" />
+    <Content Include="Media\1059\ib_dashboard1_en.jpg" />
+    <Content Include="Media\1059\ib_dashboard1_en_thumb.jpg" />
+    <Content Include="Media\1060\ib_conclusion1_pt.jpg" />
+    <Content Include="Media\1060\ib_conclusion1_pt_thumb.jpg" />
+    <Content Include="Media\1061\ib_dashboard_no_campaign.jpg" />
+    <Content Include="Media\1061\ib_dashboard_no_campaign_thumb.jpg" />
+    <Content Include="Media\1062\ib_conclusion2_pt.jpg" />
+    <Content Include="Media\1062\ib_conclusion2_pt_thumb.jpg" />
+    <Content Include="Media\1063\ib_conclusion2_es.jpg" />
+    <Content Include="Media\1063\ib_conclusion2_es_thumb.jpg" />
+    <Content Include="Media\1064\ib_dashboard1_es.jpg" />
+    <Content Include="Media\1064\ib_dashboard1_es_thumb.jpg" />
+    <Content Include="Media\1065\ib_dashboard2_es.jpg" />
+    <Content Include="Media\1065\ib_dashboard2_es_thumb.jpg" />
+    <Content Include="Media\1066\ib_dashboard2_en.jpg" />
+    <Content Include="Media\1066\ib_dashboard2_en_thumb.jpg" />
+    <Content Include="Media\1067\ib_dashboard1_fr.jpg" />
+    <Content Include="Media\1067\ib_dashboard1_fr_thumb.jpg" />
+    <Content Include="Media\1068\ib_dashboard2_fr.jpg" />
+    <Content Include="Media\1068\ib_dashboard2_fr_thumb.jpg" />
+    <Content Include="Media\1069\ib_dashboard1_pt.jpg" />
+    <Content Include="Media\1069\ib_dashboard1_pt_thumb.jpg" />
+    <Content Include="Media\1070\ib_dashboard2_pt.jpg" />
+    <Content Include="Media\1070\ib_dashboard2_pt_thumb.jpg" />
+    <Content Include="Media\1071\ib_dp_no_image.jpg" />
+    <Content Include="Media\1071\ib_dp_no_image_thumb.jpg" />
+    <Content Include="Media\1072\ib_dashboard3_en.jpg" />
+    <Content Include="Media\1072\ib_dashboard3_en_thumb.jpg" />
+    <Content Include="Media\1073\ib_dashboard3_es.jpg" />
+    <Content Include="Media\1073\ib_dashboard3_es_thumb.jpg" />
+    <Content Include="Media\1074\ib_dashboard3_fr.jpg" />
+    <Content Include="Media\1074\ib_dashboard3_fr_thumb.jpg" />
+    <Content Include="Media\1075\ib_dashboard3_pt.jpg" />
+    <Content Include="Media\1075\ib_dashboard3_pt_thumb.jpg" />
+    <Content Include="Media\1077\ib_conclusion1_pt.jpg" />
+    <Content Include="Media\1077\ib_conclusion1_pt_thumb.jpg" />
+    <Content Include="Media\1079\androidt_conclusion_no_campaign.jpg" />
+    <Content Include="Media\1079\androidt_conclusion_no_campaign_big-thumb.jpg" />
+    <Content Include="Media\1079\androidt_conclusion_no_campaign_thumb.jpg" />
+    <Content Include="Media\1080\androidt_conclusion1_es.jpg" />
+    <Content Include="Media\1080\androidt_conclusion1_es_big-thumb.jpg" />
+    <Content Include="Media\1080\androidt_conclusion1_es_thumb.jpg" />
+    <Content Include="Media\1081\androidt_conclusion2_en.jpg" />
+    <Content Include="Media\1081\androidt_conclusion2_en_big-thumb.jpg" />
+    <Content Include="Media\1081\androidt_conclusion2_en_thumb.jpg" />
+    <Content Include="Media\1085\androidt_conclusion2_es.jpg" />
+    <Content Include="Media\1085\androidt_conclusion2_es_big-thumb.jpg" />
+    <Content Include="Media\1085\androidt_conclusion2_es_thumb.jpg" />
+    <Content Include="Media\1086\androidt_conclusion2_fr.jpg" />
+    <Content Include="Media\1086\androidt_conclusion2_fr_big-thumb.jpg" />
+    <Content Include="Media\1086\androidt_conclusion2_fr_thumb.jpg" />
+    <Content Include="Media\1087\androidt_dashboard_no_campaign.jpg" />
+    <Content Include="Media\1087\androidt_dashboard_no_campaign_thumb.jpg" />
+    <Content Include="Media\1088\androidt_dashboard1_en.jpg" />
+    <Content Include="Media\1088\androidt_dashboard1_en_thumb.jpg" />
+    <Content Include="Media\1089\androidt_conclusion2_pt.jpg" />
+    <Content Include="Media\1089\androidt_conclusion2_pt_big-thumb.jpg" />
+    <Content Include="Media\1089\androidt_conclusion2_pt_thumb.jpg" />
+    <Content Include="Media\1090\androidt_dashboard1_es.jpg" />
+    <Content Include="Media\1090\androidt_dashboard1_es_thumb.jpg" />
+    <Content Include="Media\1091\androidt_dashboard1_pt.jpg" />
+    <Content Include="Media\1091\androidt_dashboard1_pt_thumb.jpg" />
+    <Content Include="Media\1092\androidt_dashboard1_fr.jpg" />
+    <Content Include="Media\1092\androidt_dashboard1_fr_thumb.jpg" />
+    <Content Include="Media\1093\androidt_dashboard2_en.jpg" />
+    <Content Include="Media\1093\androidt_dashboard2_en_thumb.jpg" />
+    <Content Include="Media\1094\ipad_conclusion_no_campaign.jpg" />
+    <Content Include="Media\1094\ipad_conclusion_no_campaign_big-thumb.jpg" />
+    <Content Include="Media\1094\ipad_conclusion_no_campaign_thumb.jpg" />
+    <Content Include="Media\1095\androidt_dp_no_image.jpg" />
+    <Content Include="Media\1095\androidt_dp_no_image_thumb.jpg" />
+    <Content Include="Media\1096\androidt_dashboard2_es.jpg" />
+    <Content Include="Media\1096\androidt_dashboard2_es_thumb.jpg" />
+    <Content Include="Media\1098\androidt_dashboard2_fr.jpg" />
+    <Content Include="Media\1098\androidt_dashboard2_fr_thumb.jpg" />
+    <Content Include="Media\1099\ipad_conclusion1_en.jpg" />
+    <Content Include="Media\1099\ipad_conclusion1_en_big-thumb.jpg" />
+    <Content Include="Media\1099\ipad_conclusion1_en_thumb.jpg" />
+    <Content Include="Media\1100\ipad_conclusion2_es.jpg" />
+    <Content Include="Media\1100\ipad_conclusion2_es_big-thumb.jpg" />
+    <Content Include="Media\1100\ipad_conclusion2_es_thumb.jpg" />
+    <Content Include="Media\1101\ipad_conclusion1_pt.jpg" />
+    <Content Include="Media\1101\ipad_conclusion1_pt_big-thumb.jpg" />
+    <Content Include="Media\1101\ipad_conclusion1_pt_thumb.jpg" />
+    <Content Include="Media\1102\ipad_conclusion1_es.jpg" />
+    <Content Include="Media\1102\ipad_conclusion1_es_big-thumb.jpg" />
+    <Content Include="Media\1102\ipad_conclusion1_es_thumb.jpg" />
+    <Content Include="Media\1103\ipad_conclusion1_fr.jpg" />
+    <Content Include="Media\1103\ipad_conclusion1_fr_big-thumb.jpg" />
+    <Content Include="Media\1103\ipad_conclusion1_fr_thumb.jpg" />
+    <Content Include="Media\1104\ipad_conclusion2_en.jpg" />
+    <Content Include="Media\1104\ipad_conclusion2_en_big-thumb.jpg" />
+    <Content Include="Media\1104\ipad_conclusion2_en_thumb.jpg" />
+    <Content Include="Media\1105\ipad_conclusion2_fr.jpg" />
+    <Content Include="Media\1105\ipad_conclusion2_fr_big-thumb.jpg" />
+    <Content Include="Media\1105\ipad_conclusion2_fr_thumb.jpg" />
+    <Content Include="Media\1106\androidt_dashboard2_pt.jpg" />
+    <Content Include="Media\1106\androidt_dashboard2_pt_thumb.jpg" />
+    <Content Include="Media\1107\androidt_conclusion1_pt.jpg" />
+    <Content Include="Media\1107\androidt_conclusion1_pt_big-thumb.jpg" />
+    <Content Include="Media\1107\androidt_conclusion1_pt_thumb.jpg" />
+    <Content Include="Media\1108\androidt_conclusion1_en.jpg" />
+    <Content Include="Media\1108\androidt_conclusion1_en_big-thumb.jpg" />
+    <Content Include="Media\1108\androidt_conclusion1_en_thumb.jpg" />
+    <Content Include="Media\1109\androidt_conclusion1_fr.jpg" />
+    <Content Include="Media\1109\androidt_conclusion1_fr_big-thumb.jpg" />
+    <Content Include="Media\1109\androidt_conclusion1_fr_thumb.jpg" />
+    <Content Include="Media\1110\allianz.png" />
+    <Content Include="Media\1111\bp.png" />
+    <Content Include="Media\1112\avis.png" />
+    <Content Include="Media\1113\amazon.png" />
+    <Content Include="Media\1114\alibaba.png" />
+    <Content Include="Media\1114\alibaba_thumb.jpg" />
+    <Content Include="Media\1115\cocacola.png" />
+    <Content Include="Media\1115\cocacola_thumb.jpg" />
+    <Content Include="Media\1116\bloomberg.png" />
+    <Content Include="Media\1117\dhl.png" />
+    <Content Include="Media\1118\ebay.png" />
+    <Content Include="Media\1119\edreams.png" />
+    <Content Include="Media\1120\exxon.png" />
+    <Content Include="Media\1121\fedex.png" />
+    <Content Include="Media\1122\finantialtimes.png" />
+    <Content Include="Media\1123\europcar.png" />
+    <Content Include="Media\1124\eurodisney.png" />
+    <Content Include="Media\1125\fox.png" />
+    <Content Include="Media\1125\fox_thumb.jpg" />
+    <Content Include="Media\1126\flyemirates.png" />
+    <Content Include="Media\1127\gas.png" />
+    <Content Include="Media\1128\gazprom.png" />
+    <Content Include="Media\1129\hbo.png" />
+    <Content Include="Media\1130\google.png" />
+    <Content Include="Media\1131\ryanair.png" />
+    <Content Include="Media\1132\pepsi.png" />
+    <Content Include="Media\1133\mcdonalds.png" />
+    <Content Include="Media\1133\mcdonalds_thumb.jpg" />
+    <Content Include="Media\1134\pizzahut.png" />
+    <Content Include="Media\1135\newyorktimes.png" />
+    <Content Include="Media\1136\momondo.png" />
+    <Content Include="Media\1137\shell.png" />
+    <Content Include="Media\1138\trivago.png" />
+    <Content Include="Media\1139\skype.png" />
+    <Content Include="Media\1140\telecom.png" />
+    <Content Include="Media\1141\ups.png" />
+    <Content Include="Media\1142\samsung.png" />
+    <Content Include="Media\1143\vodafone.png" />
+    <Content Include="Media\1144\wallstreetjournal.png" />
+    <Content Include="Media\1145\internet_video.png" />
+    <Content Include="Media\1145\internet_video_thumb.jpg" />
+    <Content Include="Media\1146\desktop.mp4" />
+    <Content Include="Media\1147\20150507_040916000_ios.jpg" />
+    <Content Include="Media\1147\20150507_040916000_ios_big-thumb.jpg" />
+    <Content Include="Media\1147\20150507_040916000_ios_thumb.jpg" />
+    <Content Include="Media\1148\20150505_142549300_ios.jpg" />
+    <Content Include="Media\1148\20150505_142549300_ios_big-thumb.jpg" />
+    <Content Include="Media\1148\20150505_142549300_ios_thumb.jpg" />
+    <Content Include="Media\1149\20150504_060351953_ios.jpg" />
+    <Content Include="Media\1149\20150504_060351953_ios_big-thumb.jpg" />
+    <Content Include="Media\1149\20150504_060351953_ios_thumb.jpg" />
+    <Content Include="Media\1150\20150504_044306202_ios.jpg" />
+    <Content Include="Media\1150\20150504_044306202_ios_big-thumb.jpg" />
+    <Content Include="Media\1150\20150504_044306202_ios_thumb.jpg" />
+    <Content Include="Media\1151\20150503_114453264_ios.jpg" />
+    <Content Include="Media\1151\20150503_114453264_ios_big-thumb.jpg" />
+    <Content Include="Media\1151\20150503_114453264_ios_thumb.jpg" />
+    <Content Include="Media\1152\20150507_022731910_ios.jpg" />
+    <Content Include="Media\1152\20150507_022731910_ios_big-thumb.jpg" />
+    <Content Include="Media\1152\20150507_022731910_ios_thumb.jpg" />
+    <Content Include="Media\1153\20151116_154129751_ios.jpg" />
+    <Content Include="Media\1153\20151116_154129751_ios_big-thumb.jpg" />
+    <Content Include="Media\1153\20151116_154129751_ios_thumb.jpg" />
+    <Content Include="Media\50600\card-credit-premium.png" />
+    <Content Include="Media\50600\card-credit-premium_thumb.jpg" />
+    <Content Include="Media\50601\card-credit-travel.png" />
+    <Content Include="Media\50601\card-credit-travel_thumb.jpg" />
+    <Content Include="Media\50602\card-debit-youth2.png" />
+    <Content Include="Media\50602\card-debit-youth2_thumb.jpg" />
+    <Content Include="Media\50603\auttrib.png" />
+    <Content Include="Media\50603\credit_calculators.png" />
+    <Content Include="Media\50603\credit_calculators_big-thumb.jpg" />
+    <Content Include="Media\50603\credit_calculators_big-thumb.png" />
+    <Content Include="Media\50603\credit_calculators_thumb.jpg" />
+    <Content Include="Media\50603\credit_calculators_thumb.png" />
+    <Content Include="Media\50604\credit_calculators.png" />
+    <Content Include="Media\50604\credit_calculators_big-thumb.jpg" />
+    <Content Include="Media\50604\credit_calculators_big-thumb.png" />
+    <Content Include="Media\50604\credit_calculators_thumb.jpg" />
+    <Content Include="Media\50604\credit_calculators_thumb.png" />
+    <Content Include="Media\50604\segsocial.png" />
+    <Content Include="Media\50604\segsocial_thumb.jpg" />
+    <Content Include="Media\50605\credit_calculators.png" />
+    <Content Include="Media\50605\credit_calculators_big-thumb.jpg" />
+    <Content Include="Media\50605\credit_calculators_big-thumb.png" />
+    <Content Include="Media\50605\credit_calculators_thumb.jpg" />
+    <Content Include="Media\50605\credit_calculators_thumb.png" />
+    <Content Include="Media\50606\cancel_card.png" />
+    <Content Include="Media\50606\cancel_card_big-thumb.jpg" />
+    <Content Include="Media\50606\cancel_card_big-thumb.png" />
+    <Content Include="Media\50606\cancel_card_thumb.jpg" />
+    <Content Include="Media\50606\cancel_card_thumb.png" />
+    <Content Include="Media\50607\cardf_payment.png" />
+    <Content Include="Media\50607\cardf_payment_big-thumb.jpg" />
+    <Content Include="Media\50607\cardf_payment_big-thumb.png" />
+    <Content Include="Media\50607\cardf_payment_thumb.jpg" />
+    <Content Include="Media\50607\cardf_payment_thumb.png" />
+    <Content Include="Media\50608\change_card_limit.png" />
+    <Content Include="Media\50608\change_card_limit_big-thumb.jpg" />
+    <Content Include="Media\50608\change_card_limit_big-thumb.png" />
+    <Content Include="Media\50608\change_card_limit_thumb.jpg" />
+    <Content Include="Media\50608\change_card_limit_thumb.png" />
+    <Content Include="Media\50609\change_payment_option.png" />
+    <Content Include="Media\50609\change_payment_option_big-thumb.jpg" />
+    <Content Include="Media\50609\change_payment_option_big-thumb.png" />
+    <Content Include="Media\50609\change_payment_option_thumb.jpg" />
+    <Content Include="Media\50609\change_payment_option_thumb.png" />
+    <Content Include="Media\50610\cancel_card.png" />
+    <Content Include="Media\50610\cancel_card_big-thumb.jpg" />
+    <Content Include="Media\50610\cancel_card_big-thumb.png" />
+    <Content Include="Media\50610\cancel_card_thumb.jpg" />
+    <Content Include="Media\50610\cancel_card_thumb.png" />
+    <Content Include="Media\50611\card_payment.png" />
+    <Content Include="Media\50611\card_payment_big-thumb.jpg" />
+    <Content Include="Media\50611\card_payment_big-thumb.png" />
+    <Content Include="Media\50611\card_payment_thumb.jpg" />
+    <Content Include="Media\50611\card_payment_thumb.png" />
+    <Content Include="Media\50612\change_credit_limit.png" />
+    <Content Include="Media\50612\change_credit_limit_big-thumb.jpg" />
+    <Content Include="Media\50612\change_credit_limit_big-thumb.png" />
+    <Content Include="Media\50612\change_credit_limit_thumb.jpg" />
+    <Content Include="Media\50612\change_credit_limit_thumb.png" />
+    <Content Include="Media\50613\change_payment_option.png" />
+    <Content Include="Media\50613\change_payment_option_big-thumb.jpg" />
+    <Content Include="Media\50613\change_payment_option_big-thumb.png" />
+    <Content Include="Media\50613\change_payment_option_thumb.jpg" />
+    <Content Include="Media\50613\change_payment_option_thumb.png" />
+    <Content Include="Media\50614\cancel_card.png" />
+    <Content Include="Media\50614\cancel_card_big-thumb.jpg" />
+    <Content Include="Media\50614\cancel_card_big-thumb.png" />
+    <Content Include="Media\50614\cancel_card_thumb.jpg" />
+    <Content Include="Media\50614\cancel_card_thumb.png" />
+    <Content Include="Media\50615\card_payment.png" />
+    <Content Include="Media\50615\card_payment_big-thumb.jpg" />
+    <Content Include="Media\50615\card_payment_big-thumb.png" />
+    <Content Include="Media\50615\card_payment_thumb.jpg" />
+    <Content Include="Media\50615\card_payment_thumb.png" />
+    <Content Include="Media\50616\change_card_limit.png" />
+    <Content Include="Media\50616\change_card_limit_big-thumb.jpg" />
+    <Content Include="Media\50616\change_card_limit_big-thumb.png" />
+    <Content Include="Media\50616\change_card_limit_thumb.jpg" />
+    <Content Include="Media\50616\change_card_limit_thumb.png" />
+    <Content Include="Media\50617\change_payment_options.png" />
+    <Content Include="Media\50617\change_payment_options_big-thumb.jpg" />
+    <Content Include="Media\50617\change_payment_options_big-thumb.png" />
+    <Content Include="Media\50617\change_payment_options_thumb.jpg" />
+    <Content Include="Media\50617\change_payment_options_thumb.png" />
+    <Content Include="Media\50618\credit_calculators.png" />
+    <Content Include="Media\50618\credit_calculators_big-thumb.jpg" />
+    <Content Include="Media\50618\credit_calculators_big-thumb.png" />
+    <Content Include="Media\50618\credit_calculators_thumb.jpg" />
+    <Content Include="Media\50618\credit_calculators_thumb.png" />
+    <Content Include="Media\50619\cancel_card.png" />
+    <Content Include="Media\50619\cancel_card_big-thumb.jpg" />
+    <Content Include="Media\50619\cancel_card_big-thumb.png" />
+    <Content Include="Media\50619\cancel_card_thumb.jpg" />
+    <Content Include="Media\50619\cancel_card_thumb.png" />
+    <Content Include="Media\50620\card_payment.png" />
+    <Content Include="Media\50620\card_payment_big-thumb.jpg" />
+    <Content Include="Media\50620\card_payment_big-thumb.png" />
+    <Content Include="Media\50620\card_payment_thumb.jpg" />
+    <Content Include="Media\50620\card_payment_thumb.png" />
+    <Content Include="Media\50621\change_card_limit.png" />
+    <Content Include="Media\50621\change_card_limit_big-thumb.jpg" />
+    <Content Include="Media\50621\change_card_limit_big-thumb.png" />
+    <Content Include="Media\50621\change_card_limit_thumb.jpg" />
+    <Content Include="Media\50621\change_card_limit_thumb.png" />
+    <Content Include="Media\50622\change_payment_option.png" />
+    <Content Include="Media\50622\change_payment_option_big-thumb.jpg" />
+    <Content Include="Media\50622\change_payment_option_big-thumb.png" />
+    <Content Include="Media\50622\change_payment_option_thumb.jpg" />
+    <Content Include="Media\50622\change_payment_option_thumb.png" />
+    <Content Include="Media\50623\credit_auto_tablet.jpg" />
+    <Content Include="Media\50623\credit_auto_tablet_big-thumb.jpg" />
+    <Content Include="Media\50623\credit_auto_tablet_thumb.jpg" />
+    <Content Include="Media\50624\credit_consumer_tablet.jpg" />
+    <Content Include="Media\50624\credit_consumer_tablet_big-thumb.jpg" />
+    <Content Include="Media\50624\credit_consumer_tablet_thumb.jpg" />
+    <Content Include="Media\50625\credit_mortgage_tablet.jpg" />
+    <Content Include="Media\50625\credit_mortgage_tablet_big-thumb.jpg" />
+    <Content Include="Media\50625\credit_mortgage_tablet_thumb.jpg" />
+    <Content Include="Media\50626\credit_travel_tablet.jpg" />
+    <Content Include="Media\50626\credit_travel_tablet_big-thumb.jpg" />
+    <Content Include="Media\50626\credit_travel_tablet_thumb.jpg" />
+    <Content Include="Media\50627\credit_auto_tablet.jpg" />
+    <Content Include="Media\50627\credit_auto_tablet_big-thumb.jpg" />
+    <Content Include="Media\50627\credit_auto_tablet_thumb.jpg" />
+    <Content Include="Media\50628\credit_consumer_tablet.jpg" />
+    <Content Include="Media\50628\credit_consumer_tablet_big-thumb.jpg" />
+    <Content Include="Media\50628\credit_consumer_tablet_thumb.jpg" />
+    <Content Include="Media\50629\credit_mortgage_tablet.jpg" />
+    <Content Include="Media\50629\credit_mortgage_tablet_big-thumb.jpg" />
+    <Content Include="Media\50629\credit_mortgage_tablet_thumb.jpg" />
+    <Content Include="Media\50630\credit_travel_tablet.jpg" />
+    <Content Include="Media\50630\credit_travel_tablet_big-thumb.jpg" />
+    <Content Include="Media\50630\credit_travel_tablet_thumb.jpg" />
+    <Content Include="Media\50631\credit_auto-3x.png" />
+    <Content Include="Media\50631\credit_auto-3x_thumb.jpg" />
+    <Content Include="Media\50631\credit_auto-3x_thumb.png" />
+    <Content Include="Media\50632\credit_consumer-3x.png" />
+    <Content Include="Media\50632\credit_consumer-3x_thumb.jpg" />
+    <Content Include="Media\50632\credit_consumer-3x_thumb.png" />
+    <Content Include="Media\50633\credit_mortgage_loans-3x.png" />
+    <Content Include="Media\50633\credit_mortgage_loans-3x_thumb.jpg" />
+    <Content Include="Media\50633\credit_mortgage_loans-3x_thumb.png" />
+    <Content Include="Media\50634\credit_travel-3x.png" />
+    <Content Include="Media\50634\credit_travel-3x_thumb.jpg" />
+    <Content Include="Media\50634\credit_travel-3x_thumb.png" />
+    <Content Include="Media\50635\credit_auto.png" />
+    <Content Include="Media\50635\credit_auto_big-thumb.jpg" />
+    <Content Include="Media\50635\credit_auto_big-thumb.png" />
+    <Content Include="Media\50635\credit_auto_thumb.jpg" />
+    <Content Include="Media\50635\credit_auto_thumb.png" />
+    <Content Include="Media\50636\credit_consumer.png" />
+    <Content Include="Media\50636\credit_consumer_big-thumb.jpg" />
+    <Content Include="Media\50636\credit_consumer_big-thumb.png" />
+    <Content Include="Media\50636\credit_consumer_thumb.jpg" />
+    <Content Include="Media\50636\credit_consumer_thumb.png" />
+    <Content Include="Media\50637\credit_mortgage_loans.png" />
+    <Content Include="Media\50637\credit_mortgage_loans_big-thumb.jpg" />
+    <Content Include="Media\50637\credit_mortgage_loans_big-thumb.png" />
+    <Content Include="Media\50637\credit_mortgage_loans_thumb.jpg" />
+    <Content Include="Media\50637\credit_mortgage_loans_thumb.png" />
+    <Content Include="Media\50638\credit_travel.png" />
+    <Content Include="Media\50638\credit_travel_big-thumb.jpg" />
+    <Content Include="Media\50638\credit_travel_big-thumb.png" />
+    <Content Include="Media\50638\credit_travel_thumb.jpg" />
+    <Content Include="Media\50638\credit_travel_thumb.png" />
+    <Content Include="Media\50639\desktop_en.mp4" />
+    <Content Include="Media\50640\desktop_fr.mp4" />
+    <Content Include="Media\50641\desktop_es.mp4" />
+    <Content Include="Media\50642\ebankit2015_600p_25seg.mp4" />
+    <Content Include="Media\50643\payment_entity_bp.png" />
+    <Content Include="Media\50643\payment_entity_bp_thumb.jpg" />
+    <Content Include="Media\50643\payment_entity_bp_thumb.png" />
+    <Content Include="Media\50643\payment_entity_financas.png" />
+    <Content Include="Media\50643\payment_entity_financas_thumb.jpg" />
+    <Content Include="Media\50643\payment_entity_financas_thumb.png" />
+    <Content Include="Media\50644\payment_entity_british_gas.png" />
+    <Content Include="Media\50644\payment_entity_british_gas_thumb.jpg" />
+    <Content Include="Media\50644\payment_entity_british_gas_thumb.png" />
+    <Content Include="Media\50644\payment_entity_seguranca_social.png" />
+    <Content Include="Media\50644\payment_entity_seguranca_social_thumb.jpg" />
+    <Content Include="Media\50644\payment_entity_seguranca_social_thumb.png" />
+    <Content Include="Media\50645\payment_entity_ee.png" />
+    <Content Include="Media\50645\payment_entity_ee_thumb.jpg" />
+    <Content Include="Media\50645\payment_entity_ee_thumb.png" />
+    <Content Include="Media\50646\payment_entity_edf_energy.png" />
+    <Content Include="Media\50646\payment_entity_edf_energy_thumb.jpg" />
+    <Content Include="Media\50646\payment_entity_edf_energy_thumb.png" />
+    <Content Include="Media\50646\payment_entity_t_mobile.png" />
+    <Content Include="Media\50646\payment_entity_t_mobile_thumb.jpg" />
+    <Content Include="Media\50646\payment_entity_t_mobile_thumb.png" />
+    <Content Include="Media\50647\payment_entity_o2.png" />
+    <Content Include="Media\50647\payment_entity_o2_thumb.jpg" />
+    <Content Include="Media\50647\payment_entity_o2_thumb.png" />
+    <Content Include="Media\50648\payment_entity_dhl.png" />
+    <Content Include="Media\50648\payment_entity_dhl_thumb.jpg" />
+    <Content Include="Media\50648\payment_entity_dhl_thumb.png" />
+    <Content Include="Media\50649\payment_entity_npower.png" />
+    <Content Include="Media\50649\payment_entity_npower_thumb.jpg" />
+    <Content Include="Media\50649\payment_entity_npower_thumb.png" />
+    <Content Include="Media\50649\payment_entity_paypal.png" />
+    <Content Include="Media\50649\payment_entity_paypal_thumb.jpg" />
+    <Content Include="Media\50649\payment_entity_paypal_thumb.png" />
+    <Content Include="Media\50650\payment_entity_paypal.png" />
+    <Content Include="Media\50650\payment_entity_paypal_thumb.jpg" />
+    <Content Include="Media\50650\payment_entity_paypal_thumb.png" />
+    <Content Include="Media\50650\payment_entity_sky.png" />
+    <Content Include="Media\50650\payment_entity_sky_thumb.jpg" />
+    <Content Include="Media\50650\payment_entity_sky_thumb.png" />
+    <Content Include="Media\50651\payment_entity_bp.png" />
+    <Content Include="Media\50651\payment_entity_bp_thumb.jpg" />
+    <Content Include="Media\50651\payment_entity_bp_thumb.png" />
+    <Content Include="Media\50651\payment_entity_financas.png" />
+    <Content Include="Media\50651\payment_entity_financas_thumb.jpg" />
+    <Content Include="Media\50651\payment_entity_financas_thumb.png" />
+    <Content Include="Media\50652\payment_entity_sse.png" />
+    <Content Include="Media\50652\payment_entity_sse_thumb.jpg" />
+    <Content Include="Media\50652\payment_entity_sse_thumb.png" />
+    <Content Include="Media\50652\payment_entity_t_mobile.png" />
+    <Content Include="Media\50652\payment_entity_t_mobile_thumb.jpg" />
+    <Content Include="Media\50652\payment_entity_t_mobile_thumb.png" />
+    <Content Include="Media\50653\payment_entity_npower.png" />
+    <Content Include="Media\50653\payment_entity_npower_thumb.jpg" />
+    <Content Include="Media\50653\payment_entity_npower_thumb.png" />
+    <Content Include="Media\50653\payment_entity_sky.png" />
+    <Content Include="Media\50653\payment_entity_sky_thumb.jpg" />
+    <Content Include="Media\50653\payment_entity_sky_thumb.png" />
+    <Content Include="Media\50654\payment_entity_sse.png" />
+    <Content Include="Media\50654\payment_entity_sse_thumb.jpg" />
+    <Content Include="Media\50654\payment_entity_sse_thumb.png" />
+    <Content Include="Media\50654\payment_entity_verizon.png" />
+    <Content Include="Media\50654\payment_entity_verizon_thumb.jpg" />
+    <Content Include="Media\50654\payment_entity_verizon_thumb.png" />
+    <Content Include="Media\50655\payment_entity_seguranca_social.png" />
+    <Content Include="Media\50655\payment_entity_seguranca_social_thumb.jpg" />
+    <Content Include="Media\50655\payment_entity_seguranca_social_thumb.png" />
+    <Content Include="Media\50655\payment_entity_xfinity.png" />
+    <Content Include="Media\50655\payment_entity_xfinity_thumb.jpg" />
+    <Content Include="Media\50655\payment_entity_xfinity_thumb.png" />
+    <Content Include="Media\50656\payment_entity_verizon.png" />
+    <Content Include="Media\50656\payment_entity_verizon_thumb.jpg" />
+    <Content Include="Media\50656\payment_entity_verizon_thumb.png" />
+    <Content Include="Media\50656\payment_entity_virgin_media.png" />
+    <Content Include="Media\50656\payment_entity_virgin_media_thumb.jpg" />
+    <Content Include="Media\50656\payment_entity_virgin_media_thumb.png" />
+    <Content Include="Media\50657\payment_entity_edf_energy.png" />
+    <Content Include="Media\50657\payment_entity_edf_energy_thumb.jpg" />
+    <Content Include="Media\50657\payment_entity_edf_energy_thumb.png" />
+    <Content Include="Media\50657\payment_entity_virgin_media.png" />
+    <Content Include="Media\50657\payment_entity_virgin_media_thumb.jpg" />
+    <Content Include="Media\50657\payment_entity_virgin_media_thumb.png" />
+    <Content Include="Media\50658\payment_entity_british_gas.png" />
+    <Content Include="Media\50658\payment_entity_british_gas_thumb.jpg" />
+    <Content Include="Media\50658\payment_entity_british_gas_thumb.png" />
+    <Content Include="Media\50658\payment_entity_vodafone.png" />
+    <Content Include="Media\50658\payment_entity_vodafone_thumb.jpg" />
+    <Content Include="Media\50658\payment_entity_vodafone_thumb.png" />
+    <Content Include="Media\50659\payment_entity_vodafone.png" />
+    <Content Include="Media\50659\payment_entity_vodafone_thumb.jpg" />
+    <Content Include="Media\50659\payment_entity_vodafone_thumb.png" />
+    <Content Include="Media\50659\payment_entity_xfinity.png" />
+    <Content Include="Media\50659\payment_entity_xfinity_thumb.jpg" />
+    <Content Include="Media\50659\payment_entity_xfinity_thumb.png" />
+    <Content Include="Media\50660\scacc.jpg" />
+    <Content Include="Media\50661\socacc.jpg" />
+    <Content Include="Media\50662\ycacc.jpg" />
+    <Content Include="Media\50663\scacc.jpg" />
+    <Content Include="Media\50664\socacc.jpg" />
+    <Content Include="Media\50665\ycacc.jpg" />
+    <Content Include="Media\50666\ebankit_full_bg.png" />
+    <Content Include="Media\50667\ebankit_hero_bg.png" />
+    <Content Include="Media\50667\introicon2.png" />
+    <Content Include="Media\50668\ic-youtube.png" />
+    <Content Include="Media\50668\introicon2.png" />
+    <Content Include="Media\50669\ic-twitter.png" />
+    <Content Include="Media\50669\introicon3.png" />
+    <Content Include="Media\50670\ic-linkedin.png" />
+    <Content Include="Media\50670\tour_user_data.png" />
+    <Content Include="Media\50670\tour_user_data_thumb.png" />
+    <Content Include="Media\50671\ic-facebook.png" />
+    <Content Include="Media\50671\tour_identity.png" />
+    <Content Include="Media\50671\tour_identity_thumb.png" />
+    <Content Include="Media\50672\ebankit_logo.png" />
+    <Content Include="Media\50672\tour_documents.png" />
+    <Content Include="Media\50672\tour_documents_thumb.png" />
+    <Content Include="Media\50673\img_bkg_1.jpg" />
+    <Content Include="Media\50673\img_bkg_1_big-thumb.jpg" />
+    <Content Include="Media\50673\img_bkg_1_thumb.jpg" />
+    <Content Include="Media\50674\img_bkg_2.jpg" />
+    <Content Include="Media\50674\img_bkg_2_big-thumb.jpg" />
+    <Content Include="Media\50674\img_bkg_2_thumb.jpg" />
+    <Content Include="Media\50675\img_bkg_3.jpg" />
+    <Content Include="Media\50675\img_bkg_3_big-thumb.jpg" />
+    <Content Include="Media\50675\img_bkg_3_thumb.jpg" />
+    <Content Include="Media\50676\img_bkg_4.jpg" />
+    <Content Include="Media\50676\img_bkg_4_big-thumb.jpg" />
+    <Content Include="Media\50676\img_bkg_4_thumb.jpg" />
+    <Content Include="Media\50677\img_bkg_5.jpg" />
+    <Content Include="Media\50677\img_bkg_5_big-thumb.jpg" />
+    <Content Include="Media\50677\img_bkg_5_thumb.jpg" />
+    <Content Include="Media\50678\img_bkg_6.jpg" />
+    <Content Include="Media\50678\img_bkg_6_big-thumb.jpg" />
+    <Content Include="Media\50678\img_bkg_6_thumb.jpg" />
+    <Content Include="Media\50679\img_bkg_7.jpg" />
+    <Content Include="Media\50679\img_bkg_7_big-thumb.jpg" />
+    <Content Include="Media\50679\img_bkg_7_thumb.jpg" />
+    <Content Include="Media\50680\img_bkg_8.jpg" />
+    <Content Include="Media\50680\img_bkg_8_big-thumb.jpg" />
+    <Content Include="Media\50680\img_bkg_8_thumb.jpg" />
+    <Content Include="Media\50681\tour_conclusion.png" />
+    <Content Include="Media\50681\tour_conclusion_thumb.png" />
+    <Content Include="Media\50682\tour_user_data-3x.png" />
+    <Content Include="Media\50683\tour_identity-3x.png" />
+    <Content Include="Media\50684\tour_documents-3x.png" />
+    <Content Include="Media\50685\tour_conclusion-3x.png" />
+    <Content Include="Media\50686\ico_conclusion_pdf.png" />
+    <Content Include="Media\50686\residence-3x.png" />
+    <Content Include="Media\50686\residence-3x_thumb.png" />
+    <Content Include="Media\50687\ico_conclusion_print.png" />
+    <Content Include="Media\50687\iddocument-3x.png" />
+    <Content Include="Media\50687\iddocument-3x_thumb.png" />
+    <Content Include="Media\50688\captura-de-ecra-2019-04-23-às-113029.png" />
+    <Content Include="Media\50688\captura-de-ecra-2019-04-23-às-113029_big-thumb.png" />
+    <Content Include="Media\50688\captura-de-ecra-2019-04-23-às-113029_thumb.png" />
+    <Content Include="Media\50688\captura-de-ecrã-2019-04-23-às-113029.png" />
+    <Content Include="Media\50688\captura-de-ecrã-2019-04-23-às-113029_big-thumb.png" />
+    <Content Include="Media\50688\captura-de-ecrã-2019-04-23-às-113029_thumb.png" />
+    <Content Include="Media\50688\ico_conclusion_send_mail.png" />
+    <Content Include="Media\50689\captura-de-ecra-2019-04-23-às-113059.png" />
+    <Content Include="Media\50689\captura-de-ecra-2019-04-23-às-113059_big-thumb.png" />
+    <Content Include="Media\50689\captura-de-ecra-2019-04-23-às-113059_thumb.png" />
+    <Content Include="Media\50689\captura-de-ecrã-2019-04-23-às-113059.png" />
+    <Content Include="Media\50689\captura-de-ecrã-2019-04-23-às-113059_big-thumb.png" />
+    <Content Include="Media\50689\captura-de-ecrã-2019-04-23-às-113059_thumb.png" />
+    <Content Include="Media\50689\ico_conclusion_pdf_hover.png" />
+    <Content Include="Media\50690\captura-de-ecra-2019-04-23-às-113116.png" />
+    <Content Include="Media\50690\captura-de-ecra-2019-04-23-às-113116_big-thumb.png" />
+    <Content Include="Media\50690\captura-de-ecra-2019-04-23-às-113116_thumb.png" />
+    <Content Include="Media\50690\captura-de-ecrã-2019-04-23-às-113116.png" />
+    <Content Include="Media\50690\captura-de-ecrã-2019-04-23-às-113116_big-thumb.png" />
+    <Content Include="Media\50690\captura-de-ecrã-2019-04-23-às-113116_thumb.png" />
+    <Content Include="Media\50690\homepage.jpg" />
+    <Content Include="Media\50691\scacc.png" />
+    <Content Include="Media\50691\tr_account_details.png" />
+    <Content Include="Media\50692\socacc.png" />
+    <Content Include="Media\50692\tr_card_request.png" />
+    <Content Include="Media\50693\ycacc.png" />
+    <Content Include="Media\50694\action_pdf.png" />
+    <Content Include="Media\50695\iddocument.jpg" />
+    <Content Include="Media\50695\img_open_account_desktop.jpg" />
+    <Content Include="Media\50695\img_open_account_desktop_thumb.jpg" />
+    <Content Include="Media\50696\iddocument.png" />
+    <Content Include="Media\50697\iddocument.png" />
+    <Content Include="Media\50698\proofoffaddress.jpg" />
+    <Content Include="Media\50702\onboarding_001.jpg" />
+    <Content Include="Media\50702\onboarding_001_big-thumb.jpg" />
+    <Content Include="Media\50702\onboarding_001_thumb.jpg" />
+    <Content Include="Media\50703\onboarding_002.jpg" />
+    <Content Include="Media\50703\onboarding_002_big-thumb.jpg" />
+    <Content Include="Media\50703\onboarding_002_thumb.jpg" />
+    <Content Include="Media\50704\onboarding_003.jpg" />
+    <Content Include="Media\50704\onboarding_003_big-thumb.jpg" />
+    <Content Include="Media\50704\onboarding_003_thumb.jpg" />
+    <Content Include="Media\50705\onboarding_004.jpg" />
+    <Content Include="Media\50705\onboarding_004_big-thumb.jpg" />
+    <Content Include="Media\50705\onboarding_004_thumb.jpg" />
+    <Content Include="Media\50706\onboarding_005.jpg" />
+    <Content Include="Media\50706\onboarding_005_big-thumb.jpg" />
+    <Content Include="Media\50706\onboarding_005_thumb.jpg" />
+    <Content Include="Media\50707\onboarding_006.jpg" />
+    <Content Include="Media\50707\onboarding_006_big-thumb.jpg" />
+    <Content Include="Media\50707\onboarding_006_thumb.jpg" />
+    <Content Include="Media\50708\onboarding_007.jpg" />
+    <Content Include="Media\50708\onboarding_007_big-thumb.jpg" />
+    <Content Include="Media\50708\onboarding_007_thumb.jpg" />
+    <Content Include="Media\50709\onboarding_008.jpg" />
+    <Content Include="Media\50709\onboarding_008_big-thumb.jpg" />
+    <Content Include="Media\50709\onboarding_008_thumb.jpg" />
+    <Content Include="Media\50849\img_account_simple_desktop.jpg" />
+    <Content Include="Media\50849\img_account_simple_desktop_thumb.jpg" />
+    <Content Include="Media\50850\download.jpg" />
+    <Content Include="Media\50850\img_account_specialone_desktop.jpg" />
+    <Content Include="Media\50850\img_account_specialone_desktop_thumb.jpg" />
+    <Content Include="Media\50851\download-1.jpg" />
+    <Content Include="Media\50851\img_open_account_desktop.jpg" />
+    <Content Include="Media\50851\img_open_account_desktop_thumb.jpg" />
+    <Content Include="Media\50855\img_account_youth_desktop.jpg" />
+    <Content Include="Media\50855\img_account_youth_desktop_thumb.jpg" />
+    <Content Include="Media\50861\ebankit_logo.png" />
+    <Content Include="Media\50862\ic_facebook.png" />
+    <Content Include="Media\50863\ic_linkedin.png" />
+    <Content Include="Media\50864\ic_twitter.png" />
+    <Content Include="Media\50865\ic_youtube.png" />
+    <Content Include="Media\50866\ebankit_full_bg.png" />
+    <Content Include="Media\dummy.txt" />
+    <Content Include="scripts\bootstrap\bootstrap.js" />
+    <Content Include="scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="scripts\ebankit\ebankit.js" />
+    <Content Include="scripts\jquery\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery\jquery-1.11.0.js" />
+    <Content Include="scripts\jquery\jquery.easing.min.js" />
+    <Content Include="scripts\jquery\jquery.lazy.min.js" />
+    <Content Include="scripts\jquery\jquery.rwdImageMaps.min.js" />
+    <Content Include="Services\GenericContents.svc" />
+    <Content Include="Services\GenericContentsJson.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\UmbracoAuthTokenServerExtensions.cs" />
+    <Compile Include="App_Start\UmbracoCustomOwinStartup.cs" />
+    <Compile Include="App_Start\UmbracoStandardOwinStartup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="Media\50848\bright-spring-view-cameo-island-260nw-1048185397.webp" />
+    <Content Include="Media\50849\bright-spring-view-cameo-island-260nw-1048185397.webp" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="App_Plugins\uSync\package.manifest" />
+    <Content Include="App_Plugins\uSync.Content\package.manifest" />
+    <Content Include="app.config" />
+    <Content Include="Media\created-packages\eBankIT_Publishing_1.zip" />
+    <Content Include="Media\created-packages\branches_1.zip" />
+    <Content Include="Media\50660\digitalchannelsaccess.pdf" />
+    <Content Include="Media\45150\bundle-1.zip" />
+    <Content Include="Media\1149\bundle-1.zip" />
+    <Content Include="Media\1147\bundle-1.zip" />
+    <Content Include="Media\1078\pricelist.pdf" />
+    <Content Include="macroScripts\Web.config" />
+    <Content Include="Dockerfile" />
+    <Content Include="css\fonts\Segoe\seguisb.woff" />
+    <Content Include="css\fonts\Segoe\seguisb.ttf" />
+    <Content Include="css\fonts\Segoe\seguisb.eot" />
+    <Content Include="css\fonts\Segoe\segoeuisl.woff" />
+    <Content Include="css\fonts\Segoe\segoeuisl.ttf" />
+    <Content Include="css\fonts\Segoe\segoeuisl.eot" />
+    <Content Include="css\fonts\LexiaDaMa\lexiadama.woff" />
+    <Content Include="css\fonts\LexiaDaMa\lexiadama.ttf" />
+    <Content Include="css\fonts\LexiaDaMa\LexiaDaMa.otf" />
+    <Content Include="css\fonts\LexiaDaMa\lexiadama.eot" />
+    <Content Include="css\fonts\Gotham\Gotham-MediumItalic.otf" />
+    <Content Include="css\fonts\Gotham\gotham-medium.woff" />
+    <Content Include="css\fonts\Gotham\gotham-medium.ttf" />
+    <Content Include="css\fonts\Gotham\Gotham-Medium.otf" />
+    <Content Include="css\fonts\Gotham\gotham-medium.eot" />
+    <Content Include="css\fonts\Gotham\Gotham-LightItalic.otf" />
+    <Content Include="css\fonts\Gotham\Gotham-Light.otf" />
+    <Content Include="css\fonts\Gotham\Gotham-Light.eot" />
+    <Content Include="css\fonts\Gotham\Gotham-BookItalic.otf" />
+    <Content Include="css\fonts\Gotham\gotham-book.woff" />
+    <Content Include="css\fonts\Gotham\gotham-book.ttf" />
+    <Content Include="css\fonts\Gotham\Gotham-Book.otf" />
+    <Content Include="css\fonts\Gotham\gotham-book.eot" />
+    <Content Include="css\fonts\Gotham\Gotham-BoldItalic.otf" />
+    <Content Include="css\fonts\Gotham\gotham-bold.woff" />
+    <Content Include="css\fonts\Gotham\gotham-bold.ttf" />
+    <Content Include="css\fonts\Gotham\Gotham-Bold.otf" />
+    <Content Include="css\fonts\Gotham\gotham-bold.eot" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\fonts\FontAwesome.otf" />
+    <Content Include="css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\ebankit\_typography.less" />
+    <Content Include="css\ebankit\_reset.less" />
+    <Content Include="css\ebankit\_master.less" />
+    <Content Include="css\ebankit\_layouts.less" />
+    <Content Include="css\ebankit\variables.less" />
+    <Content Include="css\ebankit\publishing.less" />
+    <Content Include="css\ebankit\mixins.less" />
+    <Content Include="css\ebankit\ib.less" />
+    <Content Include="css\ebankit\Footer.less" />
+    <Content Include="css\ebankit\ebankit.less" />
+    <Content Include="config\uSyncCore.Config" />
+    <Content Include="config\uSyncBackOffice.Config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\trees.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\log4net.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\EmbeddedMedia.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\BaseRestExtensions.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="config\applications.config" />
+    <Content Include="config\404handlers.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Redirect.cshtml" />
+    <Content Include="Views\Partials\Navigation.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\Childs.cshtml" />
+    <Content Include="Views\Partials\Breadcrumb.cshtml" />
+    <Content Include="Views\eBankitPublishing.cshtml" />
+    <Content Include="Views\eBankitMaster.cshtml" />
+    <Content Include="Views\eBankitLogout.cshtml" />
+    <Content Include="Views\eBankitHomePage.cshtml" />
+    <Content Include="Views\eBankitContentReview.cshtml" />
+    <Content Include="Views\eBankitContentList.cshtml" />
+    <Content Include="Views\eBankitContentItem.cshtml" />
+    <Content Include="scripts\jquery\jquery-1.10.2.min.map" />
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="xslt\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Media\1031\" />
+    <Folder Include="Media\50781\" />
+    <Folder Include="Media\50784\" />
+    <Folder Include="Media\50788\" />
+    <Folder Include="Media\50789\" />
+    <Folder Include="Media\50790\" />
+    <Folder Include="Media\50791\" />
+    <Folder Include="Media\50792\" />
+    <Folder Include="Media\50793\" />
+    <Folder Include="Media\50794\" />
+    <Folder Include="Media\50795\" />
+    <Folder Include="Media\50796\" />
+    <Folder Include="Media\50797\" />
+    <Folder Include="Media\50798\" />
+    <Folder Include="Media\50799\" />
+    <Folder Include="Media\50800\" />
+    <Folder Include="Media\50801\" />
+    <Folder Include="Media\50802\" />
+    <Folder Include="Media\50803\" />
+    <Folder Include="Media\50804\" />
+    <Folder Include="Media\50805\" />
+    <Folder Include="Media\50806\" />
+    <Folder Include="Media\50807\" />
+    <Folder Include="Media\50808\" />
+    <Folder Include="Media\50809\" />
+    <Folder Include="Media\50810\" />
+    <Folder Include="Media\50811\" />
+    <Folder Include="Media\50812\" />
+    <Folder Include="Media\50813\" />
+    <Folder Include="Media\50814\" />
+    <Folder Include="Media\50817\" />
+    <Folder Include="Media\50818\" />
+    <Folder Include="Media\50819\" />
+    <Folder Include="Media\50820\" />
+    <Folder Include="Media\50821\" />
+    <Folder Include="Media\50822\" />
+    <Folder Include="Media\50823\" />
+    <Folder Include="Media\50824\" />
+    <Folder Include="Media\50825\" />
+    <Folder Include="Media\50826\" />
+    <Folder Include="Media\50827\" />
+    <Folder Include="Media\50828\" />
+    <Folder Include="Media\50829\" />
+    <Folder Include="Media\50830\" />
+    <Folder Include="Media\50831\" />
+    <Folder Include="Media\50832\" />
+    <Folder Include="Media\50833\" />
+    <Folder Include="Media\50834\" />
+    <Folder Include="Media\50835\" />
+    <Folder Include="Media\50836\" />
+    <Folder Include="Media\50837\" />
+    <Folder Include="Media\50838\" />
+    <Folder Include="Media\50839\" />
+    <Folder Include="Media\50840\" />
+    <Folder Include="Media\50841\" />
+    <Folder Include="Media\50842\" />
+    <Folder Include="Media\50843\" />
+    <Folder Include="Media\50844\" />
+    <Folder Include="Media\50845\" />
+    <Folder Include="Media\50846\" />
+    <Folder Include="Media\50847\" />
+    <Folder Include="Media\50868\" />
+    <Folder Include="Media\50869\" />
+    <Folder Include="Media\productsubscription\" />
+    <Folder Include="Media\UserAvatars\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != '' and Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51460</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51460/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('$(SolutionDir)packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+  </Target>
+  <Import Project="..\..\packages\uSync.4.0.14\build\uSync.targets" Condition="Exists('..\..\packages\uSync.4.0.14\build\uSync.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PublishUrl Condition="'$(PublishBaseUrl)' != '' and '$(PublishUrl)' == ''">$(PublishBaseUrl)\Publishing\</PublishUrl>
+  </PropertyGroup>
+  <Import Project="..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.targets" Condition="Exists('..\..\packages\UmbracoCms.7.15.0\build\UmbracoCms.targets')" />
+</Project>

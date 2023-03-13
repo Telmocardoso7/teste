@@ -1,0 +1,192 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@model HomeViewModel
+
+@if (Model.Widgets != null && Model.Widgets.Count > 0)
+{
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-info" onclick="LoadMainWidgets();"><i class="fa fa-refresh"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Main Applications</h4>
+                </div>
+                <div class="panel-body tab-ridge">
+                    <div class="row" style="margin: 0 -5px -5px;">
+                        @foreach (var widget in Model.Widgets)
+                        {
+                            <div class="col-md-3 col-sm-6" style="padding: 0 5px 5px;">
+                                @DashboardWidgets.RenderPreLoadedWidget(widget, this.ViewBag.Permissions.Dashboard_ApplicationDetails)
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.SmallWidgets != null && Model.SmallWidgets.Count > 0)
+{
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-info" onclick="LoadSecundaryWidgets();"><i class="fa fa-refresh"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Service Components</h4>
+                </div>
+                <div class="panel-body tab-ridge">
+                    <div class="row" style="margin: 0 -5px;">
+                        @foreach (var widget in Model.SmallWidgets)
+                        {
+                            <div class="col-md-3 col-sm-6" style="padding: 0 5px 5px;">
+                                @DashboardWidgets.RenderPreLoadedSmallWidget(widget)
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        LoadMainWidgets();
+        LoadSecundaryWidgets();
+
+        if (@(Model.IsProbesEnabled ? Html.Raw("true") : Html.Raw("false") )) {
+            setInterval(function () { GetDataToRefreshProbes('@Url.Action("GetDataToRefreshProbes", "Probes")'); }, 15000);
+        }
+    })
+
+    var LoadMainWidgets = function () {
+        @if (Model.Widgets != null && Model.Widgets.Count > 0) {
+            foreach (var widget in Model.Widgets) {
+                 @Html.Raw("LoadProbeWidgetsAsync(" + widget.Id + ", '" +@Html.Raw(Url.Action("GetWidgetData", "Home", new  { widget.Id, Model.Interval })) + "');")
+            }
+        }
+    }
+
+    var LoadSecundaryWidgets = function() {
+        @if (Model.SmallWidgets != null && Model.SmallWidgets.Count > 0) {
+            foreach (var widget in Model.SmallWidgets) {
+                 @Html.Raw("LoadProbeWidgetsAsync(" + widget.Id + ", '" +@Html.Raw(Url.Action("GetWidgetData", "Home", new  { widget.Id, Model.Interval })) + "');")
+            }
+        }
+    }
+
+    var LoadProbeWidgetsAsync = function (id, url) {
+        // add loading spinner
+        var spinner = "<tr><td><div class=\"loading-data-gif\"><span class=\"widget-probe-spinner spinner\"></span></div></td></tr>";
+        $("#wpBody" + id).html(decodeEntities(spinner));
+
+        $.ajax({
+            url: url,
+            success: function (data) {
+                $("#wpBody" + id).html(decodeEntities(data));
+                if (@(Model.IsProbesEnabled ? Html.Raw("true") : Html.Raw("false") )) {
+                    var probe = LoadProbesDataAsync(id, '@Html.Raw(Url.Action("GetProbesDataAsync", "Home"))');
+                }
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                if (@(Model.IsProbesEnabled ? Html.Raw("true") : Html.Raw("false") )) {
+                    $("#wpBody" + id).html(decodeEntities("<tr><td><div class=\"text-center countdowncircle\" id=\"countdownCircle" + id + "\"></div></td></tr>"));
+                    RetryingCountdown(id, this, false, url);
+                }
+            }
+        });
+    }
+
+    var LoadProbesDataAsync = function (id, url) {
+        // add loading spinner
+        var spinner = "<div class=\"loading-probe-gif\"><span class=\"widget-probe-spinner spinner\"></span></div>";
+        $("#widget_" + id).find(".stats-desc.probe-body").html(decodeEntities(spinner));
+
+        $.ajax({
+            url: url + "?Id=" + id + "&url=" + url,
+            success: function (data) {
+                $("#widget_" + id).find(".stats-desc.probe-body").html(decodeEntities(data));
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                $("#widget_" + id).find(".stats-desc.probe-body").html(decodeEntities("<div class=\"text-center countdowncircle\" id=\"countdownCircleP" + id + "\"></div>"));
+                RetryingCountdown(id, this, true, url);
+            }
+        });
+    }
+
+    var RetryingCountdown = function (id, call, loadingProbes, url) {
+        if (@(Model.IsProbesEnabled ? Html.Raw("true") : Html.Raw("false") )) {
+            if (@(Model.IsProbesRetryEnable ? Html.Raw("true") : Html.Raw("false") )) {
+                var name = "#countdownCircle";
+                if (loadingProbes)
+                    name = name + "P";
+
+                $(name + id).countdown360(
+                    {
+                        radius: 18,
+                        seconds: @(Model.ProbesRetryCicle),
+                        strokeWidth: 2,
+                        strokeStyle: '#FFFFFF',
+                        fontColor: '#FFFFFF',
+                        fillStyle: '#9600A9',
+                        autostart: false,
+                        onComplete: function () {
+                            // add loading spinner
+                            if (loadingProbes) {
+                                var spinner = "<div class=\"loading-probe-gif\"><span class=\"widget-probe-spinner spinner\"></span></div>";
+                                $("#widget_" + id).find("[class=stats-desc]").html(decodeEntities(spinner));
+                            }
+                            else {
+                                var spinner = "<tr><td><div class=\"loading-data-gif\"><span class=\"widget-probe-spinner spinner\"></span></div></td></tr>";
+                                $("#wpBody" + id).html(decodeEntities(spinner));
+                            }
+                            $.ajax(call);
+                            return;
+                        }
+                    }
+                ).start();
+            }
+            else {
+                var cantConnect = "<div class=\"widget widget-probe widget-stats widget-probe-stats bg-probe-unknown\" style=\"margin: -5px;\">" +
+                "<div class=\"stats-probe-icon\"></div>" +
+                "<div class=\"stats-title stats-probe-title\" style=\"height:15px;\"></div>" +
+                "<div class=\"stats-number stats-probe-number\">Can't Connect</div>" +
+                "<div class=\"stats-progress progress\"><div class=\"progress-bar\" style=\"width: 0%\"></div></div>" +
+                "<div class=\"stats-desc stats-probe-desc\" style=\"padding-bottom:10px;\">Unknown</span></div>" +
+                "</div>";
+
+                $("#widget_" + id).find(".stats-desc.probe-body").html(cantConnect);
+            }
+        }
+    }
+
+    var redirectToManageProbes = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Manage", "Probes")';
+    }
+
+    var redirectToApplicationDetails = function (title, id, type, application, icon) {
+        waitLoading();
+        window.location.href = '@Url.Action("ApplicationDetails", "Analytics")' + '?Title=' + title + '&Id=' + id + '&Type=' + type + "&Application=" + application + "&Icon=" + icon + "&TimeSelectorValue=" + '@Model.Interval';
+    }
+
+    var redirectToManageProbes = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Manage", "Probes")';
+    }
+
+    var redirectToApplicationDetails = function (title, id, type, application, icon) {
+        waitLoading();
+        window.location.href = '@Url.Action("ApplicationDetails", "Analytics")' + '?Title=' + title + '&Id=' + id + '&Type=' + type + "&Application=" + application + "&Icon=" + icon + "&TimeSelectorValue=" + '@Model.Interval';
+    }
+
+</script>

@@ -1,0 +1,46 @@
+﻿@import "_Variables.less";
+
+.searchPage {
+    font-family:@font-book;
+    h1{
+         
+        color:@blue;
+    }
+    .searchAgain {
+        background-color: @LightGrey;
+        padding: 25px 0;
+        margin: 25px 0;
+        label{
+            color:@dark-gray;
+        }
+        input.form-control {
+            border: 1px solid @blue;
+        }
+
+        input.form-control:focus {
+            border: 2px solid @blue;
+        }
+
+        .btn {
+            border-radius: 0;
+            .gradientBG;
+            width: 100%;
+            border: 0;
+            color: @white;
+        }
+    }
+
+    .searchResults {
+        ul {
+            list-style-type: none;
+            padding:0;
+            margin:0;
+            li{
+                border-bottom:1px solid @light-gray;
+                a{
+                    text-decoration:none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ApplicationsViewModel
+
+<!-- begin #content -->
+<div id="content" class="content">
+	<!-- begin breadcrumb -->
+	    @BreadCrumbs.RenderBreadCrumbs(@Model.BreadCrumbs)
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Manage Applications<small> list of all applications</small></h1>
+	<!-- end page-header -->
+	<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent"> 
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Create Application</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="InsertApplication" method="post">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label col-md-2">Application</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="Application" placeholder="Application Name" value="@Model.App.Application"/>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="col-md-12"> 
+			<!-- begin panel -->
+            <div class="panel-inverse newStyle">
+				<div class="panel-heading">
+					<h4 class="panel-title">Manage Applications</h4>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Id</th>
+                                <th style="width: 95%;">Designation</th>
+                                <th style="width: 5%;"></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+	<!-- end row -->
+</div>
+<!-- end #content -->
+
+<form class="form-horizontal form-bordered" action="EditApplication" method="post">
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Edit Application</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-inverse">
+                        <div class="panel-body">
+                            <input type="hidden" name="ApplicationId" id="ApplicationId" value="@Model.App.ApplicationId" />
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Application</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="ApplicationName" aria-required="true" name="ApplicationName" data-val="true" data-val-required="You forgot to enter a username." class="form-control" value="@Model.App.Application" placeholder="Application Name">
+                                    <span class="field-validation-valid" data-valmsg-for="ApplicationName" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                    <button type="submit" class="btn btn-sm btn-success">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form class="form-horizontal form-bordered" action="DeleteApplication" method="post">
+    <input type="hidden" name="ApplicationId" id="hdnAppId" value="@Model.App.ApplicationId" />
+        <div class="modal fade" id="deleteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Delete Role Confirmation</h4>
+                    </div>
+                    <div class="modal-body">Removing this Application will also remove all Application Rules with this Application in it. Do you delete it anyway? </div>
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                        <button type="submit" class="btn btn-sm btn-success">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<script src="~/bundles/requestsScripts"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        ToggleSideBarMenu($('#Administration'), $('#Applications'));
+        
+        var dataUrl = '@Html.Raw(Url.Action("GetApplicationsResults", "Manage"))';
+        var columns = [
+                { "mDataProp": "Id", "targets": 0, "visible": false },
+                { "mDataProp": "Designation", "orderable": false },
+                {
+                    "mDataProp": null,
+                    "orderable": false,
+                    "sClass": "detail",
+                    "mRender": function (data, type, full) {
+                        var editModal = "<a href='#editModal' role='button' class='btn btn-inverse btnEdit' data-toggle='modal'><i class='fa fa-pencil-square-o' style='font-size:13px'></i></a>";
+                        var deleteModal = "<a href='#deleteModal' role='button' class='btn btn-inverse' onclick=\"$('#hdnAppId').val('" + data.Id + "');\" data-toggle='modal'><i class='fa fa-times' style='font-size:13px'></i></a>";
+
+                        return "<div>" + editModal + "&nbsp;&nbsp;" + deleteModal + "</div>";
+                    }
+                }
+        ];
+
+        InitializeDataTable('results-table', dataUrl, columns, [[1, "DESC"]]);
+
+        EditClickEvent();
+
+        App.init();
+    });
+
+    var EditClickEvent = function () {
+        $("tbody .detail .btn.btn-inverse.btnEdit").live("click", function (event) {
+            event.stopPropagation();
+            var tableData = table.row(this.parentElement.parentElement.parentElement).data();
+
+            $('#ApplicationId').val(tableData['Id']);
+            $('#ApplicationName').val(tableData['Designation']);
+            stopLoading();
+        });
+    }
+   
+</script>
+
+

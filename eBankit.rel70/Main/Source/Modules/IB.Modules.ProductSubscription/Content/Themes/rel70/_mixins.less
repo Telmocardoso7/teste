@@ -1,0 +1,37 @@
+﻿@import url('_onboarding-variables');
+
+
+.fontStyle(@font-size,@font-weight: normal,@font-family: @main-font-family) {
+    font-size: @font-size;
+    font-weight: @font-weight;
+    font-family: @font-family;
+}
+
+.positionAbsolute(@top: auto,@bottom: auto, @right:auto, @left: auto) {
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    right: @right;
+    left: @left;
+}
+
+/*.flex(@justify-content: flex-start,@flex-direction: row, @align-items: stretch) {
+    display: flex;
+    justify-content: @justify-content;
+    flex-direction: @flex-direction;
+    align-items: @align-items;
+}*/
+
+
+.flex(@width:auto,@flex: none,@justify-content: normal,@align-items: normal,@flex-wrap: nowrap,@align-content: normal, @flex-direction: row,@align-self: auto) {
+    display: flex;
+    flex: @flex;
+    justify-content: @justify-content;
+    align-items: @align-items;
+    width: @width;
+    flex-wrap: @flex-wrap;
+    align-content: @align-content;
+    flex-direction: @flex-direction;
+    align-self: @align-self;
+}
+

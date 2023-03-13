@@ -1,0 +1,66 @@
+﻿.img-info {
+  background-image: url('../images/icon/ico-tooltip.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  display: inline-block;
+  padding: 0px 7px 0px 8px;
+  height: 20px;
+}
+p.action-buttons > a {
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  float: right;
+  display: inline-block;
+}
+p.action-buttons > a.btn-delete {
+  background-image: url(../images/icon/Corporate/delete.png);
+}
+p.action-buttons > a.btn-delete:hover {
+  background-image: url(../images/icon/Corporate/delete_hover.png);
+}
+p.action-buttons > a.btn-edit {
+  background-image: url(../images/icon/Corporate/corp_action_edit.png);
+}
+p.action-buttons > a.btn-edit:hover {
+  background-image: url(../images/icon/Corporate/corp_action_edit_hover.png);
+}
+.contractTableResponsive * {
+  position: relative;
+}
+.table-header .rowWrapper span {
+  padding-bottom: 10px;
+}
+.gridPending {
+  margin-top: 25px !important;
+}
+.pendingAlignRight {
+  text-align: right !important;
+  float: right;
+  margin-right: 25px;
+}
+.custom-muc-chk {
+  position: relative;
+  display: inline-block;
+}
+.custom-muc-chk-descricption {
+  display: inline-block;
+  margin-left: 5px !important;
+}
+.lblSubtitleAccountsGrid {
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.title-grid {
+  padding-left: 8px;
+}
+.cbcontainer {
+  padding-left: 0px !important;
+}
+.noPaddingHeaderMarginLeft {
+  margin-left: 0px !important;
+}

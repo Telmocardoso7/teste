@@ -1,0 +1,23 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ErrorViewModel
+@{
+    ViewBag.Title = "eBankit - Omnichannel Service Bus Monitoring";
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+<div id="page-container" class="fade in">
+    <div class="errorWindow">
+        <div class="errorWindowContent">
+            <div class="row">
+                <div class="col-12">
+                    <img src="~/Content/img/alert.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="padding-top:20px">
+                    @Model.Message
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

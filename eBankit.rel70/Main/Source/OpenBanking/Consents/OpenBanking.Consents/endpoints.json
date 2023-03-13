@@ -1,0 +1,94 @@
+{
+  "PSD2Settings": {
+    "ServicesEndpoints": {
+      "BankServices": {
+        "Consents": {
+          "Create": "BankServices/Consents/Create",
+          "GetInformation": "BankServices/Consents",
+          "Delete": "BankServices/Consents/Delete",
+          "GetStatus": "BankServices/consents/{0}/status",
+          "GetAuthorisation": "BankServices/consents/{0}/authorisations",
+          "Update": "BankServices/Consents/Update"
+        },
+        "Accounts": {
+          "GetAccountList": "BankServices/accounts",
+          "GetAccountsByConsentId": "BankServices/getAccountsByConsentId"
+        },
+        "EbankitPSD2Services": {
+          "FrontPSD2": "http://consents.rel70.local/psd2/consent",
+          "FrontPSD2geral": "http://consents.rel70.local",
+          "Base": "http://appcenter.rel70.local",
+          "ValidateTpp": "/services/PSD2/PSD2Service.svc/json/ValidateTpp",
+          "GetConsentAuthorisation": "/services/PSD2/PSD2Service.svc/json/GetConsentAuthorisation",
+          "GetAccounts": "/services/PSD2/PSD2Service.svc/json/GetAccount",
+          "GetAccountDetails": "/services/PSD2/PSD2Service.svc/json/GetAccountDetails",
+          "GetAccountTransactions": "/services/PSD2/PSD2Service.svc/json/GetAccountTransactions",
+          "GetAccountBalances": "/services/PSD2/PSD2Service.svc/json/GetAccountBalances",
+          "GetCardAccountDetails": "/services/PSD2/PSD2Service.svc/json/GetCardAccountDetails",
+          "GetCardAccount": "/services/PSD2/PSD2Service.svc/json/GetCardAccount",
+          "GetCardAccountTransactions": "/services/PSD2/PSD2Service.svc/json/GetCardAccountTransactions",
+          "GetCardAccountBalances": "/services/PSD2/PSD2Service.svc/json/GetCardAccountBalances",
+          "GetCustomerAccounts": "/services/PSD2/PSD2Service.svc/json/GetCustomerAccounts",
+          "ExecutePSD2Authorization": "/services/PSD2/PSD2Service.svc/json/ExecutePSD2Authorization"
+        }
+      },
+      "AppCenter": {
+        "Base": "http://appcenter.rel70.local",
+        "MChannel": {
+          "Base": "http://appcenter.rel70.local/Services/MChannel",
+          "Authentication": {
+            "Base": "http://appcenter.rel70.local/Services/MChannel/Authentication.svc",
+            "SelectProfile": "/SelectProfile",
+            "CreateAuthenticatedSession": "/CreateAuthenticatedSession",
+            "SendSMSToken": "/SendSMSToken",
+            "AuthenticateAccessToken": "/AuthenticateAccessToken",
+            "IsSessionActive": "/IsSessionActive"
+          }
+        },
+        "EbankitServices": {
+          "Base": "http://appcenter.rel70.local/Services/Ebankit",
+          "Ebankit": {
+            "Base": "http://appcenter.rel70.local/Services/Ebankit/Ebankit.svc",
+            "SetAuthenticateContext": "/SetAuthenticateContext"
+          }
+        },
+        "SecurityCenter": {
+          "Base": "http://appcenter.rel70.local/Services/SecurityCenter/",
+          "ContactHistory": {
+            "Base": "ContactHistory/ContactHistoryManagement.svc",
+            "GetUserAmountAuth": "Contact/UserAmountAuth"
+          }
+        }
+      },
+      "PSD2Services": {
+        "Base": "localhost:405959",
+        "Payments": "/psd2/payments/OBC",
+        "ConsentForCoreOBCBase": "/psd2/CommonServices/OBC/ConsentForCore",
+        "ConsentForCoreBase": "/psd2/CommonServices/ConsentForCore",
+        "UpdateAccountConsents": "/psd2/CommonServices/OBC/ConsentForCore/UpdateAccountConsents",
+        "UpdateConsentStatus": "/psd2/CommonServices/ConsentForCore/UpdateConsentStatus",
+        "UpdateAuthorisationStatus": "/psd2/CommonServices/OBC/UpdateAuthorisationForCore",
+        "UpdateInitiationPaymentStatus": "/psd2/CommonServices/OBC/payments/UpdatePaymentForCore",
+        "GetAppName": "/psd2/CommonServices/OBC/GetAppName",
+        "ExecutePayment": "/psd2/payments/ExecutePayment"
+      },
+      "Platform": {
+        "Resources": {
+          "Base": "/Platform/Resources"
+        }
+      }
+    }
+  },
+  "GlobalSettings": {
+    "ServicesEndpoints": {
+      "Platform": {
+        "Resources": {
+          "Base": "/Platform/Resources"
+        }
+      },
+      "ServiceResources": {
+        "Base": "http://services.rel70.local"
+      }
+    }
+  }
+}

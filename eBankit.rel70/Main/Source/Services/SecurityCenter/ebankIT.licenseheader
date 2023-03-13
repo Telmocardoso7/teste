@@ -1,0 +1,23 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+//-----------------------------------------------------------------------------
+// <copyright file="%FileName%" company="ebankIT | Omnichannel Innovation">
+//     Copyright (c) ebankIT | Omnichannel Innovation. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------------
+extensions: .aspx .ascx
+<%-- 
+//-----------------------------------------------------------------------------
+// <copyright file="%FileName%" company="ebankIT | Omnichannel Innovation">
+//     Copyright (c) ebankIT | Omnichannel Innovation. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------------
+--%>
+extensions: .vb
+'Sample license text.
+extensions:  .xml .config .xsd
+<!--
+<copyright file="%FileName%" company="ebankIT | Omnichannel Innovation">
+    Copyright (c) ebankIT | Omnichannel Innovation. All rights reserved.
+</copyright>
+-->

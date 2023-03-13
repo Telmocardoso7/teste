@@ -1,0 +1,481 @@
+﻿@import url('_onboarding-variables');
+@import url('_mixins');
+
+label.field-label {
+    width: 100%;
+    color: @labelcolor;
+    text-align: left;
+    .fontStyle(16px);
+    margin-top: 40px;
+}
+p {
+    width: 100%;
+    color: @labelcolor;
+    .fontStyle(14px);
+    text-align:center;
+}
+
+
+.document-list {
+    padding: 30px 0;
+}
+
+.document-list .document-item-container .document-icon {
+    padding: 0 20px 0 0;
+
+    @media @phone {
+        flex: 0 0 40px;
+    }
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label {
+    background: url('@{base-url}/images/other_check_off.svg') no-repeat left center;
+    background-position: 10px;
+    min-height: 24px;
+    padding: 10px 40px;
+    color: @labelcolor;
+    .fontStyle(14px);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+
+
+    @media @phone {
+        background-position: left top;
+    }
+}
+
+input[type=checkbox]:checked + label {
+    background: url('@{base-url}/images/other_check_on.svg') no-repeat left center;
+    background-position: 10px;
+
+    @media @phone {
+        background-position: left top;
+    }
+}
+
+.label-checkbox-error {
+    width: 100%;
+    text-align: left;
+    color: @errorcolor;
+    .fontStyle(16px);
+    border-top: 1px solid @errorcolor;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+label.field-info {
+    width: 100%;
+    color: @labelcolor;
+    text-align: left;
+    .fontStyle(14px);
+    padding-left: 26px;
+    background: url('@{base-url}/images/other_field_info.svg') no-repeat;
+}
+.field_v2 {
+    margin: 40px 0 20px;
+
+    i.toggler-password {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        background: url('@{base-url}/images/other_field_hide_pwd.svg') no-repeat;
+        z-index: 2;
+        cursor: pointer;
+        .positionAbsolute(@top:25px,@right:5px);
+        transition: 0.2s;
+    }
+
+    i.toggler-password.password-display {
+        background: url('@{base-url}/images/other_field_show_pwd.svg') no-repeat;
+        transition: 0.2s;
+    }
+
+    .valid-field + .error + i.toggler-password,
+    .valid-field + i.toggler-password {
+        .positionAbsolute(@top:25px,@right:37px);
+    }
+
+
+    .label-wrapper {
+        text-align: left;
+    }
+
+    .leftField-label {
+        width: 100%;
+        margin: 0;
+        color: @labelcolor;
+        .fontStyle(16px);
+    }
+
+    .centerField-wrapper {
+        float: inherit;
+        width: 100%;
+        margin-left: 0;
+
+        > div {
+            position: relative;
+        }
+
+        input[type=text],
+        input[type=tel],
+        input[type=password],
+        input[type=email],
+        select,
+        textarea,
+        .richtextbox-container,
+        .mce-tinymce {
+            width: 100% !important;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #D8D8D8;
+            outline: none;
+            padding: 0;
+            color: @textcolor;
+            .fontStyle(16px);
+        }
+
+        input:focus,
+        input:focus,
+        select:focus,
+        input:focus,
+        textarea:focus {
+            box-shadow: none;
+            border: 0;
+            border-bottom: 1px solid #D8D8D8;
+        }
+
+        input.error,
+        select.error,
+        textarea.error,
+        input.has-error,
+        select.has-error,
+        textarea.has-error,
+        input.custom-error,
+        select.custom-error,
+        textarea.custom-error {
+            box-shadow: none;
+            border-bottom: 1px solid @errorcolor;
+        }
+
+
+        input.valid-field,
+        select.valid-field,
+        textarea.valid-field {
+            box-shadow: none;
+            border-bottom: 1px solid @validcolor;
+            background: url('@{base-url}/images/other_field_validated.svg') no-repeat right 4px top 3px;
+        }
+
+
+        label.error,
+        label.has-error {
+            color: @errorcolor !important;
+            font-size: 16px !important;
+            font-family: @main-font-family;
+            white-space: normal;
+            position: relative;
+            left: 0;
+            margin: 5px 0px;
+        }
+    }
+}
+
+.field {
+    margin: 40px 0 20px;
+
+    .left {
+        width: 100%;
+        position: relative;
+
+        > .label-left {
+            color: @labelcolor;
+            padding: 0 !important;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+            .fontStyle(16px);
+        }
+
+        > div {
+            input {
+                text-align: left;
+                background: transparent;
+                display: inline-block;
+                border: 0;
+                border-bottom: 1px solid #D8D8D8;
+                outline: none;
+                padding: 0;
+                font-family: @main-font-family;
+                color: @textcolor;
+                font-size: 16px;
+                width: calc(50% - 10px) !important;
+                min-height: 38px;
+            }
+
+            .bootstrap-select {
+                display: inline-block;
+                width: calc(50% - 10px) !important;
+
+                &.open .dropdown-menu {
+                    width: 100%;
+                    display: table;
+                }
+
+                button.dropdown-toggle {
+                    text-align: left;
+                    background: transparent;
+                    border: 0;
+                    border-bottom: 1px solid #D8D8D8;
+                    padding: 5px;
+                    font-family: @main-font-family;
+                    color: @textcolor;
+                    font-size: 16px;
+                    min-height: 38px;
+                    width: 100%;
+                    height: 38px;
+                }
+
+                button.dropdown-toggle:focus {
+                    outline: 1px auto -webkit-focus-ring-color !important;
+                    outline-offset: -2px;
+                    //outline: -webkit-focus-ring-color auto 1px;
+                    outline-color: -webkit-focus-ring-color;
+                    outline-style: auto;
+                    outline-width: 1px;
+                }
+
+                .bs-caret {
+                    position: absolute;
+                    top: 10px;
+                    right: 5px;
+
+                    span.caret {
+                        background-image: url("@{base-ib-url}/images/icon/ico_arrow_dropdown.png");
+                        background-size: 10px;
+                        height: 10px;
+                        width: 10px;
+                        border: 0;
+                    }
+                }
+                /* PLACEHOLDER STYLES UNTIL DESIGN IS DELIVERED*/
+                .dropdown-menu {
+                    -moz-box-sizing: border-box;
+
+                    li {
+                        position: relative;
+
+                        a {
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            -webkit-user-select: none;
+                            cursor: pointer;
+                            user-select: none;
+
+                            span.check-mark {
+                                display: none;
+                            }
+
+                            span.text {
+                                display: inline-block;
+                            }
+                        }
+
+                        a.opt {
+                            padding-left: 2.25em;
+                            position: relative;
+                        }
+
+                        small {
+                            padding-left: 0.5em;
+                        }
+                    }
+
+                    li.active {
+                        small {
+                            color: rgba(255, 255, 255, 0.5) !important;
+                        }
+                    }
+
+                    li.disabled {
+                        a {
+                            cursor: not-allowed;
+                        }
+                    }
+
+                    .notify {
+                        -moz-box-sizing: border-box;
+                        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+                        -webkit-box-sizing: border-box;
+                        background: #f5f5f5;
+                        border: 1px solid #e3e3e3;
+                        bottom: 5px;
+                        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+                        box-sizing: border-box;
+                        margin: 0 2%;
+                        min-height: 26px;
+                        opacity: 0.9;
+                        padding: 3px 5px;
+                        pointer-events: none;
+                        position: absolute;
+                        width: 96%;
+                    }
+                }
+
+                .dropdown-menu > .inner {
+                    &:focus {
+                        outline: none !important;
+                    }
+                }
+
+                .dropdown-menu.inner {
+                    -webkit-box-shadow: none;
+                    border-radius: 0;
+                    border: 0;
+                    box-shadow: none;
+                    float: none;
+                    margin: 0;
+                    padding: 0;
+                    position: static;
+                }
+
+                & ~ label.error {
+                    white-space: normal;
+                    position: inherit;
+                    display: block;
+                    margin: 5px 0px;
+                    left: calc(50% + 10px);
+                    color: @errorcolor;
+                    font-size: 16px;
+                    font-family: @main-font-family;
+
+                    @media @phone {
+                        left: inherit;
+                    }
+                }
+                /*END*/
+            }
+
+
+            > *:nth-child(odd) {
+                margin: 0 10px 0 0;
+            }
+
+            > *:nth-child(even) {
+                margin: 0 0 0 10px;
+            }
+
+            input:focus {
+                box-shadow: none;
+                border: 0;
+                border-bottom: 1px solid #D8D8D8;
+            }
+
+            input.error {
+                box-shadow: none;
+                border: 0;
+                border-bottom: 1px solid @errorcolor;
+            }
+
+            input.valid-field {
+                box-shadow: none;
+                border-bottom: 1px solid @validcolor;
+                background: url('@{base-url}/images/other_field_validated.svg') no-repeat right 4px top 3px;
+            }
+        }
+    }
+
+
+    .trx-field {
+        ~ .focus-border {
+            position: absolute;
+            top: 58px;
+            left: 0%;
+            width: 0;
+            height: 2px;
+            background-color: @maincolor;
+            transition: 0.4s;
+        }
+
+        &.valid-field ~ .focus-border {
+            background-color: @validcolor;
+        }
+
+        &.error ~ .focus-border {
+            background-color: @errorcolor;
+        }
+
+        &:focus ~ .focus-border {
+            width: 100%;
+            transition: 0.4s;
+        }
+    }
+
+
+    .fnumber {
+
+        ~ .focus-border {
+            position: absolute;
+            top: 37px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            z-index: 99;
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: @maincolor;
+                transition: 0.4s;
+            }
+
+            &:after {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &.valid-field ~ .focus-border:before,
+        &.valid-field ~ .focus-border:after, {
+            background-color: @validcolor;
+        }
+
+        &.error ~ .focus-border:before {
+            background-color: transparent;
+        }
+
+        &.error ~ .focus-border:after {
+            background-color: @errorcolor;
+        }
+
+        &:focus {
+            ~ .focus-border:before,
+            ~ .focus-border:after {
+                width: calc(50% - 10px);
+                transition: 0.4s;
+            }
+        }
+    }
+
+
+
+    .left > div > .focus-border {
+        margin: 0 0 0 0;
+    }
+}
+

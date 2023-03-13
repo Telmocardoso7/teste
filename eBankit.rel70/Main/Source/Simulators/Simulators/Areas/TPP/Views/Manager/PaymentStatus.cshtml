@@ -1,0 +1,37 @@
+﻿@model EndResultModel
+
+@{
+    ViewData["HeaderTitle"] = "TPP Simulator";
+    ViewData["Title"] = "PaymentStatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ @* *************************************************************************************************************************
+                                                         Payment details
+        ************************************************************************************************************************* *@
+<div id="dvMain" class="s-container s-container-height p-2">
+    <div id="pnlPaymentInformation" style="display: block;">
+        <div class="h-100 mt-4">
+            <div class="s-b-title">Payment details</div>
+        </div>
+        <div class="h-100 mt-4 mb-4 col-12 col-md-7 padding-0">
+            <table id="tbPaymentDetails" class="table table-striped s-table-details">
+                @* data will be hadded form js *@
+            </table>
+        </div>
+
+        @*<hr />
+        <div class="mt-4 mb-4">
+            <input class="col-12 col-md-2 mr-md-4 s-b-action-btn" id="btnClose" name="btnClose" type="button" value="Close" onclick="ClosePaymentInformation();" />
+        </div>*@
+    </div>
+    <div>
+        <p id="manualCloseTxt" hidden>You may now close this page.</p>
+        <p id="automaticCloseTxt" hidden>This page will close shortly.</p>
+    </div>
+</div>
+
+<input id="automaticClose" hidden value="@Model.AutomaticClose.ToString()" />
+
+ <script src="~/js/areas/tpp/paymentstatus.js" asp-append-version="true"></script>
+

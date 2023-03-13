@@ -1,0 +1,90 @@
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+/*****Footer (Start)*****/
+footer {
+  margin-bottom: 0px;
+  margin-top: -42px;
+}
+@media (max-width: 991px) {
+  footer .row {
+    margin: 0;
+  }
+}
+footer .nav {
+  margin: 0;
+}
+footer .ebankit-pointer-text {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+footer .footer-menus-container {
+  background-color: #d7d7d7;
+  border: solid;
+  border-width: 5px 0 0 0;
+  border-color: #d7d7d7;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+footer .footer-menus-container .menu-vertical-list {
+  text-align: left;
+  padding: 10px 0 0 15px;
+  min-height: 140px;
+}
+footer .footer-menus-container .menu-vertical-list div {
+  position: relative;
+}
+footer .footer-menus-container .menu-vertical-list div h5 {
+  color: white;
+  font-size: 1.3rem;
+}
+footer .footer-menus-container .menu-vertical-list div h5 a {
+  color: white;
+  font-size: 1.3rem;
+}
+footer .footer-menus-container .menu-vertical-list div ul {
+  list-style: none;
+  padding: 0px 0px;
+}
+footer .footer-menus-container .menu-vertical-list div ul li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+footer .footer-menus-container .menu-vertical-list div ul li a {
+  color: #d7d7d7;
+  font-size: 1.2rem;
+}
+footer .footer-credits {
+  padding: 10px 0;
+  background-color: #333333;
+  color: #d7d7d7;
+}
+footer .footer-credits span {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+footer .footer-soial {
+  margin-bottom: 40px;
+}
+footer .footer-soial a {
+  margin-right: 10px;
+}
+footer .horizontalBar-ebankIT {
+  background-color: #d7d7d7;
+  border: none;
+  box-shadow: -8px 0px 8px -8px #808080, 8px 0px 8px -8px #808080;
+  margin: 0 15px -20px 15px;
+}
+@media (max-width: 991px) {
+  footer .horizontalBar-ebankIT {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  footer .horizontalBar-ebankIT {
+    margin: 0;
+  }
+}
+/*****Footer (End)*****/

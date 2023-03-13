@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" ViewStateMode="Enabled" MasterPageFile="~/Masters/Base.Master" CodeBehind="Transaction.Master.cs" Inherits="eBankit.UI.Web.InternetBanking.Masters.Transaction" %>
+
+<%@ Import Namespace="eBankit.Common.InternetBanking" %>
+
+<asp:Content runat="server" ID="BodyFeaturedContent" ContentPlaceHolderID="FeaturedContent">
+    <asp:ContentPlaceHolder ID="TransactionFeaturedContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap-datepicker.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("slick.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap-multiselect.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("common-transaction.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+
+    <%--<link rel="stylesheet" type="text/css" href="~/Content/Slick/slick-theme.css" />--%>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap-datepicker.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("common-transaction.js".ResolveJsUrl(prefix: "~/Scripts/Services/MUC"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <asp:ContentPlaceHolder ID="TransactionMainContent" runat="server"></asp:ContentPlaceHolder>
+    <asp:PlaceHolder ID="phPlaceHolderEmptyAccounts" runat="server" Visible="false"></asp:PlaceHolder>
+    <div class="clearBoth"></div>
+    <asp:Panel ID="pnNotAllowedTransaction" Visible="false" runat="server">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-max col-max bs-reduced bs-head-metro bs-reduced-transaction  transp">
+            <h2 class="head-error" style="color: #EC8A0D">
+                <asp:Literal ID="Literal1" Text="<%$FrontEndResources:NotAllowed,NotAllowedMessageTitle %>" runat="server"></asp:Literal></h2>
+
+
+            <h4 class="submessage">
+                <asp:Literal ID="Literal2" Text="<%$FrontEndResources:ErroPage,SubMessage %>" runat="server"></asp:Literal></h4>
+            <div class="col-lg-12" id="ivBottomOperations" style="padding-right: 0px; padding-left: 0px; padding-top: 30px; display: none;">
+                <div class="metro noprint">
+                    <div class="panel" style="padding-top: 10px;">
+                        <ul class="nav nav-tabs nav-tabs-active" style="border: 0px currentColor; border-image: none; margin-bottom: 10px;">
+                            <li class="active" id="liOperations">
+                                <a href="#operations" data-toggle="tab">
+                                    <asp:Literal ID="Literal4" Text="<%$FrontEndResources:ErroPage,GoTo %>" runat="server"></asp:Literal></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content panel-content clearPadding" id="benefsTabContent" style="border: 0px currentColor; border-image: none;">
+                            <div class="tab-pane fade active in" id="operations">
+                                <div class="tiles tiles-operations">
+                                    <div id="divLanding" class="tile tile-last" style='background-position: 0px 0px; background-image: url("<%= eBankit.Common.Sites.Utils.GetCacheVersion(eBankit.Common.InternetBanking.InternetBankingSettings.ResolveImagePath("operations/dashboard.png"),Utils.CacheVersionKey.Image) %>"); background-repeat: no-repeat;' runat="server">
+                                        <span>
+                                            <asp:Literal ID="Literal3" Text="<%$FrontEndResources:ErroPage,dashboardtitle %>" runat="server"></asp:Literal></span>
+                                    </div>
+                                    <div class="clearBoth"></div>
+                                </div>
+                                <div class="clearBoth"></div>
+                            </div>
+                        </div>
+                        <div class="clearBoth"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <asp:Panel ID="pnNotAllowedMigratedTransaction" Visible="false" runat="server">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-max col-max bs-reduced bs-head-metro bs-reduced-transaction  transp">
+            <h2 class="head-error" style="color: #EC8A0D">
+                <asp:Literal ID="Literal5" Text="<%$FrontEndResources:NotAllowed,NotAllowedMessageTitle %>" runat="server"></asp:Literal></h2>
+
+            <div id="divWarningMessage2" style="padding-top: 20px;" runat="server">
+                <h4>
+                    <asp:Literal ID="Literal6" Text="<%$FrontEndResources:ErroPage,GenericMessageNew3 %>" runat="server"></asp:Literal></h4>
+            </div>
+            <div class="col-lg-12" id="ivBottomOperations2" style="padding-right: 0px; padding-left: 0px; padding-top: 30px; display: none;">
+                <div class="metro noprint">
+                    <div class="panel" style="padding-top: 10px;">
+                        <ul class="nav nav-tabs nav-tabs-active" style="border: 0px currentColor; border-image: none; margin-bottom: 10px;">
+                            <li class="active" id="liOperations2">
+                                <a href="#operations" data-toggle="tab">
+                                    <asp:Literal ID="Literal8" Text="<%$FrontEndResources:ErroPage,GoTo %>" runat="server"></asp:Literal></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content panel-content clearPadding" id="benefsTabContent2" style="border: 0px currentColor; border-image: none;">
+                            <div class="tab-pane fade active in" id="operations2">
+                                <div class="tiles tiles-operations">
+                                    <div id="divLanding2" class="tile tile-last" style='background-position: 0px 0px; background-image: url("<%=eBankit.Common.Sites.Utils.GetCacheVersion(eBankit.Common.InternetBanking.InternetBankingSettings.ResolveImagePath("operations/dashboard.png"),Utils.CacheVersionKey.Image)%>"); background-repeat: no-repeat;' runat="server">
+                                        <span>
+                                            <asp:Literal ID="Literal9" Text="<%$FrontEndResources:ErroPage,dashboardtitle %>" runat="server"></asp:Literal></span>
+                                    </div>
+                                    <div class="clearBoth"></div>
+                                </div>
+                                <div class="clearBoth"></div>
+                            </div>
+                        </div>
+                        <div class="clearBoth"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+</asp:Content>

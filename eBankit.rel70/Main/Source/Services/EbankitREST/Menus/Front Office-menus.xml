@@ -1,0 +1,1010 @@
+<ApplicationMenus>
+  <Menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Menu idMenu="34266">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>My Ebankit</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>1</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <SubMenu idMenu="34273">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>View</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>1</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="34274">
+              <idParentMenu>34273</idParentMenu>
+              <MenuName>Contacts History</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Client/ContactsHistory</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuContactsHistory</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="34283">
+              <idParentMenu>34273</idParentMenu>
+              <MenuName>Operations History</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Transactions/Transaction/trx00701</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuOperationHistory</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="34284">
+              <idParentMenu>34273</idParentMenu>
+              <MenuName>Client Dashboard</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Client/Dashboard</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuClientDashboard</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuView</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="34281">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>Claims</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>3</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="34275">
+              <idParentMenu>34281</idParentMenu>
+              <MenuName>Claims</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Messages/Claims</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuClaims</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="34282">
+              <idParentMenu>34281</idParentMenu>
+              <MenuName>Create new claim</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Messages/Claims/Add</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuCreateNewClaim</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuClaims</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="34285">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>Omnichannel access</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>4</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="34286">
+              <idParentMenu>34285</idParentMenu>
+              <MenuName>Omnichannel contracts</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/MultiUserContract/Contract</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuOmnichannelContracts</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="34287">
+              <idParentMenu>34285</idParentMenu>
+              <MenuName>Create new contract</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction>120001</MenuFunction>
+              <MenuType>MENU</MenuType>
+              <Url>/MultiUserContract/Contract/New</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuCreateNewContract</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35290">
+              <idParentMenu>34285</idParentMenu>
+              <MenuName>Manage credentials</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction>120120</MenuFunction>
+              <MenuType>MENU</MenuType>
+              <Url>/MultiUserContract/Credentials</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuManageCredentials</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35680">
+              <idParentMenu>34285</idParentMenu>
+              <MenuName>Manage devices</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/MultiUserContract/Devices</Url>
+              <IsTop>0</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuDevicesManagement</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>1</WithValidSession>
+              <WithValidSessionClient>1</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuOmnichannelAccess</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="35558">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>Messages</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>2</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="35559">
+              <idParentMenu>35558</idParentMenu>
+              <MenuName>Create new message</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Messages/SecureMessages/Send</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuCreateNewMessage</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuMessages</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="35574">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>Notifications</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>4</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="3">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>BusinessNotificationsSubscription</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/BusinessNotifications/Details</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuBusinessNotifications</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+			  <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35575">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>AccountNotificationsSubscription</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/Subscriptions/Details</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuNotificationsSubscription</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+			  <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35576">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>NotificationsHistory</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>7</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/History</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuNotificationsHistory</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35580">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>SubscriptionsHistory</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>6</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/SubscriptionsHistory</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuSubscriptionsHistory</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35650">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>ExternalNotificationsSubscription</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>5</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/ExternalSubscription/ExternalSubscriptionDetails</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuExternalNotifications</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35657">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>Settings</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>8</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/Customise</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuGeneralSettings</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35664">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>SecurityNotificationsSubscription</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/SecurityNotifications/Details</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuSecurityNotifications</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+			  <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35666">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>TransactionsNotificationsSubscription</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>4</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/TransactionsSubscription/Details</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuTransactionsNotifications</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+			  <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35698">
+              <idParentMenu>35574</idParentMenu>
+              <MenuName>ManageNotifications</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Notifications/Management</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuManageNotifications</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront>1</IsModernFront>
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuNotifications</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>0</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="35656">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>Customise</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>1</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>0</Status>
+          <ResourceTag>mnuCustomise</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>0</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+        <SubMenu idMenu="35668">
+          <idParentMenu>34266</idParentMenu>
+          <MenuName>My Personal Data</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>6</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="35669">
+              <idParentMenu>35668</idParentMenu>
+              <MenuName>Export Data</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/GDPR/ExportData/</Url>
+              <IsTop>0</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuExportData</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>1</WithValidSession>
+              <WithValidSessionClient>1</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35673">
+              <idParentMenu>35668</idParentMenu>
+              <MenuName>Manage consents</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/GDPR/Consents</Url>
+              <IsTop>0</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuManageConsent</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>1</WithValidSession>
+              <WithValidSessionClient>1</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="35676">
+              <idParentMenu>35668</idParentMenu>
+              <MenuName>Delete Data</MenuName>
+              <MenuTransact xsi:nil="true" />
+              <Description xsi:nil="true" />
+              <MenuOrder>3</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/GDPR/DeleteData</Url>
+              <IsTop>0</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuMyDeleteData</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>1</WithValidSession>
+              <WithValidSessionClient>1</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>0</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuMyPersonalData</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>1</WithValidSession>
+          <WithValidSessionClient>1</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>0</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>0</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+      </SubMenus>
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuMyEbankit</ResourceTag>
+      <CssClass>active</CssClass>
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34267">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Accounts</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>2</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <SubMenu idMenu="34276">
+          <idParentMenu>34267</idParentMenu>
+          <MenuName>Accounts</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>1</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="34277">
+              <idParentMenu>34276</idParentMenu>
+              <MenuName>Account Transactions</MenuName>
+              <MenuTransact>2</MenuTransact>
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Transactions/Transaction/trx00101</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuAccountTransactions</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+            <SubMenu idMenu="34278">
+              <idParentMenu>34276</idParentMenu>
+              <MenuName>Account Details</MenuName>
+              <MenuTransact>408</MenuTransact>
+              <Description xsi:nil="true" />
+              <MenuOrder>2</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Transactions/Transaction/trx00106</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuAccountDetails</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuAccounts</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+      </SubMenus>
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuAccounts</ResourceTag>
+      <CssClass xsi:nil="true" />
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34268">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Transfers &amp; Payments</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>3</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <SubMenu idMenu="34279">
+          <idParentMenu>34268</idParentMenu>
+          <MenuName>Transfers</MenuName>
+          <MenuTransact xsi:nil="true" />
+          <Description xsi:nil="true" />
+          <MenuOrder>1</MenuOrder>
+          <MenuFunction xsi:nil="true" />
+          <MenuType>CATEGORY</MenuType>
+          <Url xsi:nil="true" />
+          <SubMenus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SubMenu idMenu="34280">
+              <idParentMenu>34279</idParentMenu>
+              <MenuName>National Transfer</MenuName>
+              <MenuTransact>4</MenuTransact>
+              <Description xsi:nil="true" />
+              <MenuOrder>1</MenuOrder>
+              <MenuFunction xsi:nil="true" />
+              <MenuType>MENU</MenuType>
+              <Url>/Transactions/Transaction/trx00121</Url>
+              <IsTop>1</IsTop>
+              <ApplicationId>12</ApplicationId>
+              <Status>1</Status>
+              <ResourceTag>mnuNationalTransfer</ResourceTag>
+              <CssClass xsi:nil="true" />
+              <WithValidSession>0</WithValidSession>
+              <WithValidSessionClient>0</WithValidSessionClient>
+              <AllowToParticular>1</AllowToParticular>
+              <AllowToCorporate>1</AllowToCorporate>
+              <Roles xsi:nil="true" />
+              <AllowToDevices>1</AllowToDevices>
+              <CommingSoon>0</CommingSoon>
+              <IsVisible>1</IsVisible>
+              <IsModernFront xsi:nil="true" />
+            </SubMenu>
+          </SubMenus>
+          <IsTop>1</IsTop>
+          <ApplicationId>12</ApplicationId>
+          <Status>1</Status>
+          <ResourceTag>mnuTransfers</ResourceTag>
+          <CssClass xsi:nil="true" />
+          <WithValidSession>0</WithValidSession>
+          <WithValidSessionClient>0</WithValidSessionClient>
+          <AllowToParticular>1</AllowToParticular>
+          <AllowToCorporate>1</AllowToCorporate>
+          <Roles xsi:nil="true" />
+          <AllowToDevices>1</AllowToDevices>
+          <CommingSoon>0</CommingSoon>
+          <IsVisible>1</IsVisible>
+          <IsModernFront xsi:nil="true" />
+        </SubMenu>
+      </SubMenus>
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuTransfers&amp;Payments</ResourceTag>
+      <CssClass xsi:nil="true" />
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34269">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Cards</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>4</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuCards</ResourceTag>
+      <CssClass>inactive-mock</CssClass>
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34270">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Investments</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>8</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuInvestments</ResourceTag>
+      <CssClass>inactive-mock</CssClass>
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34271">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Loans</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>6</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuLoans</ResourceTag>
+      <CssClass>inactive-mock</CssClass>
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+    <Menu idMenu="34272">
+      <idParentMenu xsi:nil="true" />
+      <MenuName>Exchange</MenuName>
+      <MenuTransact xsi:nil="true" />
+      <Description xsi:nil="true" />
+      <MenuOrder>7</MenuOrder>
+      <MenuFunction xsi:nil="true" />
+      <MenuType>TOP</MenuType>
+      <Url xsi:nil="true" />
+      <IsTop>1</IsTop>
+      <ApplicationId>12</ApplicationId>
+      <Status>1</Status>
+      <ResourceTag>mnuExchange</ResourceTag>
+      <CssClass>inactive-mock</CssClass>
+      <WithValidSession>0</WithValidSession>
+      <WithValidSessionClient>0</WithValidSessionClient>
+      <AllowToParticular>1</AllowToParticular>
+      <AllowToCorporate>1</AllowToCorporate>
+      <Roles xsi:nil="true" />
+      <AllowToDevices>1</AllowToDevices>
+      <ContentCode xsi:nil="true" />
+      <CommingSoon>0</CommingSoon>
+      <IsVisible>1</IsVisible>
+    </Menu>
+  </Menus>
+</ApplicationMenus>

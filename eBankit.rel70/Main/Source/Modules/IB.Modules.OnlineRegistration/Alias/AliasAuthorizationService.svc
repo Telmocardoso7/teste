@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="eBankit.Middleware.SecurityCenterServices.Alias.AliasAuthorizationService" CodeBehind="AliasAuthorizationService.svc.cs" %>

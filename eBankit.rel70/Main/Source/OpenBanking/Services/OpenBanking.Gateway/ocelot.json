@@ -1,0 +1,2095 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/update",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/update",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/{consentId}/",
+      "UpstreamHttpMethod": [ "Delete", "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/{consentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/{consentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/consents/{consentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/accounts/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/accounts/{accountId}/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/balances",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/accounts/{accountId}/balances",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/transactions/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/accounts/{accountId}/transactions/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/transactions/{resourceId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/accounts/{accountId}/transactions/{resourceId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/card-accounts/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/card-accounts/{accountId}/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/balances",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/card-accounts/{accountId}/balances",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/transactions",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/aisp/v1/card-accounts/{accountId}/transactions",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/payments/GetPaymentForCore/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/payments/GetPaymentForCore/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/payments/UpdatePaymentForCore",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/payments/UpdatePaymentForCore",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/UpdateAuthorisationForCore",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/UpdateAuthorisationForCore",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/GetAuthorisationForCore/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/GetAuthorisationForCore/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/ConsentForCore/{consentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/ConsentForCore/{consentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/consentForCore/UpdateAccountConsents",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/common/v1/consentForCore/UpdateAccountConsents",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/fundconfirmation",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/fund-confirmations/v1",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/needstoken",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/pisp/v1/needstoken",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/signing-baskets/v1/",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/signing-baskets/v1/{basketId}/",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/signing-baskets/v1/{basketId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/signing-baskets/v1/{basketId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/signing-baskets/v1/{basketId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.services.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/update",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/update",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/{consentId}/",
+      "UpstreamHttpMethod": [ "Delete", "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/{consentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/{consentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/consents/{consentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/consents/{consentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/accounts/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/accounts/{accountId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/balances",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/accounts/{accountId}/balances",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/transactions/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/accounts/{accountId}/transactions/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/{accountId}/transactions/{resourceId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/accounts/{accountId}/transactions/{resourceId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/card-accounts/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/card-accounts/{accountId}/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/balances",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/card-accounts/{accountId}/balances",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/accounts/card/{accountId}/transactions",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/aisp/v1/card-accounts/{accountId}/transactions",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/payments/GetPaymentForCore/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/payments/GetPaymentForCore/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/payments/UpdatePaymentForCore",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/payments/UpdatePaymentForCore",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/UpdateAuthorisationForCore",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/UpdateAuthorisationForCore",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/GetAuthorisationForCore/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/GetAuthorisationForCore/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/ConsentForCore/{consentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/ConsentForCore/{consentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/commonservices/consentForCore/UpdateAccountConsents",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/common/v1/consentForCore/UpdateAccountConsents",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/fundconfirmation",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/fund-confirmations/v1",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentProduct}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/normal/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/bulk/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/bulk-payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/periodic/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/periodic-payments/{paymentProduct}/{paymentId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/payments/needstoken",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/pisp/v1/needstoken",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/signing-baskets/v1/",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/signing-baskets/v1/{basketId}/",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/status",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/signing-baskets/v1/{basketId}/status",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/authorisations/",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/signing-baskets/v1/{basketId}/authorisations/",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/psd2/signingbaskets/{basketId}/authorisations/{authorisationId}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/sandbox/signing-baskets/v1/{basketId}/authorisations/{authorisationId}",
+      "UpstreamHttpMethod": [ "Get", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "openbanking.sandbox.rel70.local",
+          "Port": 80
+        }
+      ],
+      "QoSOptions": {
+        "TimeoutValue": 360000
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Cookies",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "PSD2ChannelHandler"
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:9000"
+  }
+}
+

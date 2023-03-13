@@ -1,0 +1,181 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+  
+}
+<div class="container savingsContainer">
+    <div class="container savingsContainer">
+        <div class="savingsTitle">@Umbraco.GetDictionaryValue("SavingsCalculator")</div>
+        <div class="savingsSubTitle">@Umbraco.GetDictionaryValue("FindSuitableProduct")</div>
+        <div class="savingsSubTitle">@Umbraco.GetDictionaryValue("Currency")</div>
+        <div class="currenciesRadio">
+            <input type="radio" id="currenciesGBP" checked="checked" name="currencies" />
+            <label for="currenciesGBP"><span></span>GBP</label>
+            <input type="radio" id="currenciesUSD" name="currencies" />
+            <label for="currenciesUSD"><span></span>USD</label>
+            <input type="radio" id="currenciesEUR" name="currencies" />
+            <label for="currenciesEUR"><span></span>EUR</label>
+        </div>
+        <div class="savingsSubTitle">@Umbraco.GetDictionaryValue("Amount")</div>
+        <div class="savingsControl">
+            <div id="dragAmtMinus" class="savingsButton minus noselect">
+                <i class="fa fa-minus fa-2x"></i>
+            </div>
+            <div id="dragAmt" class="savingsLine dragdealer noselect">
+                <div class="savingsButton drag img-circle handle"></div>
+            </div>
+            <div id="dragAmtPlus" class="savingsButton plus noselect">
+                <i class="fa fa-plus fa-2x"></i>
+            </div>
+        </div>
+        <div id="dragAmtText" class="savingsDisplayBox centerBlock"><span></span></div>
+
+        <div class="savingsSubTitle">@Umbraco.GetDictionaryValue("TimeYears")</div>
+
+        <div class="savingsControl">
+            <div id="dragTimeMinus" class="savingsButton minus noselect">
+                <i class="fa fa-minus fa-2x"></i>
+            </div>
+            <div id="dragTime" class="savingsLine dragdealer noselect">
+                <div class="savingsButton drag img-circle handle"></div>
+            </div>
+            <div id="dragTimePlus" class="savingsButton plus noselect">
+                <i class="fa fa-plus fa-2x"></i>
+            </div>
+            
+        </div>
+        <div id="dragTimeText" class="savingsDisplayBox centerBlock"><span></span></div>
+
+        <div id="calculateSavings" class="savingsDisplayBox centerBlock calculate pull-right">@Umbraco.GetDictionaryValue("Search") </div>
+
+    </div>
+</div>
+
+<script>
+    var dragTime;
+    var dragAmt;
+
+    var valueAmt;
+    var valueYears;
+
+    var currency = "GBP";
+    var years = "@Umbraco.GetDictionaryValue("Years")";
+
+    var MAX_YEARS = 20;
+    var MAX_AMT = 1000;
+    var AMT_VAL = 1000;
+
+    $(document).ready(function () {
+        dragAmt = new Dragdealer('dragAmt', {
+            steps: MAX_AMT,
+            slide: false,
+            animationCallback: function (x, y) {
+                valueAmt = (Math.floor((x * MAX_AMT)) * AMT_VAL);
+                if (valueAmt == 0) {
+                    valueAmt = AMT_VAL;
+                    $("#dragAmtText span").text(AMT_VAL + ' ' + currency);
+                } else {
+                    $("#dragAmtText span").text(valueAmt + ' ' + currency);
+                }
+            }
+        });
+        dragTime = new Dragdealer('dragTime', {
+            steps: MAX_YEARS,
+            slide: false,
+            animationCallback: function (x, y) {
+                valueDays = Math.floor((x * MAX_YEARS));
+                if (valueDays == 0) {
+                    valueDays = 1;
+                    $("#dragTimeText span").text("1 " + years);
+                } else {
+                    $("#dragTimeText span").text(valueDays + ' ' + years);
+                }
+            }
+        });
+
+        var queryDict = {}
+        location.search.substr(1).split("&").forEach(function (item) {
+            queryDict[item.split("=")[0]] = item.split("=")[1]
+        })
+
+        if (queryDict["currency"] != undefined && queryDict["amount"] != undefined && queryDict["time"] != undefined) {
+            dragAmt.setStep(Math.floor(queryDict["amount"]) / AMT_VAL + 1, 1);
+            dragTime.setStep(Math.floor(queryDict["time"]) + 1, 1);
+            $("#currencies" + queryDict["currency"]).prop("checked", true)
+            currency = queryDict["currency"];
+            $("#currencies" + queryDict["currency"]).click();
+        } else {
+            dragAmt.setStep(MAX_AMT / 2 + 1, 1);
+            dragTime.setStep(MAX_YEARS / 2 + 1, 1);
+        }
+
+
+
+        $("#dragAmtMinus").click(function () {
+            var step = dragAmt.getStep();
+            if (step[0] == 3) {
+                dragAmt.setStep(step[0] - 2, 1);
+            }
+            else {
+                dragAmt.setStep(step[0] - 1, 1);
+            }
+
+        });
+
+        $("#dragTimeMinus").click(function () {
+            var step = dragTime.getStep();
+            if (step[0] == 3) {
+                dragTime.setStep(step[0] - 2, 1);
+            }
+            else {
+                dragTime.setStep(step[0] - 1, 1);
+            }
+        });
+
+        $("#dragAmtPlus").click(function () {
+            var step = dragAmt.getStep();
+            if (step[0] == 1) {
+                dragAmt.setStep(step[0] + 2, 1);
+            }
+            else {
+                dragAmt.setStep(step[0] + 1, 1);
+            }
+        });
+
+        $("#dragTimePlus").click(function () {
+            var step = dragTime.getStep();
+            if (step[0] == 1) {
+                dragTime.setStep(step[0] + 2, 1);
+            }
+            else {
+                dragTime.setStep(step[0] + 1, 1);
+            }
+        });
+
+        function ChangeCurrency() {
+            var text = $("#dragAmtText span").text().split(' ')[0];
+            $("#dragAmtText span").text(text + ' ' + currency);
+        }
+
+        $("#currenciesUSD").click(function () {
+            currency = "USD";
+            ChangeCurrency();
+        });
+
+        $("#currenciesGBP").click(function () {
+            currency = "GBP";
+            ChangeCurrency();
+        });
+
+        $("#currenciesEUR").click(function () {
+            currency = "EUR";
+            ChangeCurrency();
+        });
+        
+
+        $("#calculateSavings").click(function () {
+            var querystring = "currency=" + encodeURIComponent(currency) + "&amount=" + encodeURIComponent(valueAmt) + "&time=" + encodeURI(valueDays);
+            var loc = decodeHtml("@Umbraco.GetDictionaryValue("LocationSavings")");
+            window.location = loc + querystring;
+        });
+    });
+</script>

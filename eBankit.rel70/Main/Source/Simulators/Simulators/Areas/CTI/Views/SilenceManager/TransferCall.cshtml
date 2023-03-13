@@ -1,0 +1,25 @@
+﻿@model TransferCallViewModel
+
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<h3>Transfer Call between operatores</h3>
+<div class="formCti">
+    <table>
+        <tr>
+            <td>
+                Operator:
+            </td>
+            <td>
+                <select name="ToExtension" id="ExtensionToTransfer">
+                    @foreach (var user in Model.Users)
+                    {
+                        <option value="@user.Extension">@user.Username</option>
+                    }
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Back", "Index")
+    <button class="assignButton" id="ConfimTransferCallButton" onclick="ConfirmTransferCall('@Model.InteractionId', '@Model.SelectUser.Username')">Transfer Call</button>
+</div>

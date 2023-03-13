@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    //    var homePage = CurrentPage.AncestorsOrSelf(1).First();
+    ebankIT.Publishing.Web.Services.GenericContents l = new ebankIT.Publishing.Web.Services.GenericContents();
+    var lang="PT";
+    var bottomMenu=l.GetContent("INTERNETBANKING","MASTER","BOTTOMMENU",lang,"");
+    var bottomMenuHtml = bottomMenu == null ? string.Empty : bottomMenu.ValueAsHtml;
+
+    var bottomLinks = l.GetContent("INTERNETBANKING", "MASTER", "BOTTOMLINKS", lang, "");
+    var bottomLinksHtml = bottomLinks == null ? string.Empty : bottomLinks.ValueAsHtml;
+    }
+
+@*<ul class="icons">
+</ul>
+@helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName)
+{
+    // A helper function is handy when you have to do the same thing over and over again
+    // So now we only have to write the "if" check and list item once, and we only need
+    // to put in the things that can vary: the link, the cssClass and the linkName.
+
+    if (string.IsNullOrEmpty(link) == false)
+    {
+    <li><a href="@link" class="icon icon-@cssClass solo"><span>@linkName</span></a></li>
+    }
+}*@
+<footer class="noprint">
+    <div class="col-xs-12 col-sm-11 col-md-10 col-lg-9 col-centered main-resize">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-11 col-md-10 col-lg-9 col-centered main-resize">
+                <div class="horizontalBar-ebankIT justified-nav-tabs" style="margin-bottom: -20px;">
+                    @Html.Raw(bottomMenuHtml)
+                </div>
+            </div>
+        </div>
+        <div class="row footer-menus-container">
+            <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9 col-centered menu-vertical-list main-resize">
+         @Html.Raw(  @bottomLinksHtml)
+            </div>
+        </div>
+        <div class="row text-center footer-credits">
+            <span id="Label3">@umbraco.library.GetDictionaryItem("Copyright")  </span>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</footer>

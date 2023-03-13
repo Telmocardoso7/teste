@@ -1,0 +1,240 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using eBankit.Business.Entities.Banking.Loans;
+@{
+    Layout = "ebankIT_Master.cshtml";
+    dynamic products = CurrentPage.Children;
+    Dictionary<string, CoreLoanProduct> loansDetails = new Dictionary<string, CoreLoanProduct>();
+
+    var productsHigh = CurrentPage.Children.Where("ebankIT_highlightinproductlist=true");
+
+    var highlights = CurrentPage.Children("ebankIT_Product");
+
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var segment = currentLanguage.Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+    var simulador_ = segment.Children.Where("DocumentTypeAlias == \"ebankIT_SimulatorDetails\"").FirstOrDefault();
+
+    foreach (var prod in products)
+    {
+        CoreLoanProduct loan = ebankIT.Windows.Portals.Public.Umbraco.Helper.AccountHelper.CreditProduct(null, null, prod.ebankIT_centralID);
+
+        if (loan != null)
+        {
+            loansDetails.Add(prod.ebankIT_centralID, loan);
+        }
+    }
+}
+<div class="container-fluid">
+    <div class="row">
+        @{Html.RenderPartial("Highlight", Model.Content, new ViewDataDictionary { { "SegmentPage", true } });}
+    </div>
+</div>
+<div class="productList">
+    <div class="container">
+        @if (products.Count() > 0)
+        {
+            <div class="row">
+                <div class="productsHomeTitle">@CurrentPage.GetPropertyValue("ebankIT_byline")</div>
+            </div>
+       
+            foreach (var prod in products)
+            {
+                CoreLoanProduct loan = null;
+                loansDetails.TryGetValue(prod.ebankIT_centralID, out loan);
+                if (loan != null)
+                { 
+                <div class="product credit">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-4-override">
+                            @if (prod.ebankIT_rollupImage != null && !(prod.ebankIT_rollupImage is Umbraco.Core.Dynamics.DynamicNull))
+                            {
+                                var m = prod.ebankIT_rollupImage ;
+                                <img src="@m.Url" class="lazy hidden-xs image img-responsive">
+                            }
+                            @if (prod.ebankIT_productImage != null && !(prod.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+                            {
+                                var m =  prod.ebankIT_productImage ;
+                                <img src="@m.Url" class="lazy visible-xs image img-responsive">
+                            }
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-8-override">
+                            <div class="descriptionBox">
+                                <div class="productsHomeTitle ">@prod.Name</div>
+                                <div class="description">@prod.GetPropertyValue("ebankIT_byline")</div>
+                                <div class="row noPadds">
+                                    <div class="col-xs-12 col-sm-6 col-4-description">
+                                        <div class="detailBox centerBlock">
+                                            <div class="title">@Umbraco.GetDictionaryValue("MinAmt")</div>
+                                            <div class="value">@(loan.LoanAmountMin == 0 ? 1000 : Convert.ToInt32(loan.LoanAmountMin)) @loan.CurrencyId</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-4-description">
+                                        <div class="detailBox centerBlock">
+                                            <div class="title">@Umbraco.GetDictionaryValue("MaxAmt")</div>
+                                            <div class="value">@Convert.ToInt32(loan.LoanAmountMax) @loan.CurrencyId</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-4-description">
+                                        <div class="detailBox centerBlock">
+                                            <div class="title">@Umbraco.GetDictionaryValue("Term")</div>
+                                            <div class="value">@loan.LoanDurationMax @Umbraco.GetDictionaryValue("Years")</div>
+                                        </div>
+                                    </div>
+@*                                    <div class="col-xs-6 col-sm-6 col-3-description">
+                                        <div class="detailBox centerBlock">
+                                            <div class="title">@Umbraco.GetDictionaryValue("InterestRate")</div>
+                                            <div class="value">@prod.GetPropertyValue("ebankIT_interestRate")</div>
+                                        </div>
+                                    </div>*@
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 subscribeWrapper">
+                                        <div data-product="@prod.ebankIT_CentralID" class="subscribe show">@Umbraco.GetDictionaryValue("GetQuote")</div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="more pull-right">
+                                            <a href="@prod.Url">
+                                                @Umbraco.GetDictionaryValue("KnowMore")
+                                                <i class="fa fa-chevron-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12-col-sm-12 col-md-12 col-lg-12 simulator">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-4-override col-4-margin">
+                                    <div class="savingsSubTitle simulator_subtitle">
+                                        <div class="row">
+                                            <div class="pull-left title1">
+                                                @Umbraco.GetDictionaryValue("Term")
+                                            </div>
+                                            <div class="pull-right title2">
+                                               @Umbraco.GetDictionaryValue("Years") 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input disabled="disabled" type="text" id="@("dragTermTextCredit" + @prod.ebankIT_centralID)" class="savingsDisplayBox input_simulator" />
+                                    <div class="savingsControl">
+                                        <div id="@("dragTermCredit" + @prod.ebankIT_centralID)" class="savingsLine dragdealer noselect">
+                                            <div class="savingsButton drag img-circle handle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-4-override col-4-margin">
+                                    <div class="savingsSubTitle simulator_subtitle">
+                                        <div class="row">
+                                            <div class="pull-left title1">
+                                                @Umbraco.GetDictionaryValue("Amount")
+                                            </div>
+                                            <div class="pull-right title2">
+                                                @loan.CurrencyId
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input disabled="disabled" type="text" id="@("dragAmtTextCredit" + prod.ebankIT_centralID)" class="savingsDisplayBox input_simulator" />
+                                    <div class="savingsControl">
+                                        <div id="@("dragAmtCredit" + prod.ebankIT_centralID)" class="savingsLine dragdealer noselect">
+                                            <div class="savingsButton drag img-circle handle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-4-override calculate">
+                                    <div data-product="@prod.ebankIT_centralID" class="subscribe send pull-right" id="@("simulate" + prod.ebankIT_centralID)">@Umbraco.GetDictionaryValue("Calculate")</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            }
+        }
+        else
+        {
+            <div class="row ">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadds">
+                    <div class="savingsError">@Umbraco.GetDictionaryValue("NoSavings")</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(".subscribe.show").click(function () {
+        var data = $(this).attr("data-product");
+        $(this).toggleClass("active");
+        $(this).parents(".product").toggleClass("active");
+        window["Set" + data]();
+    });
+
+    $(".subscribe.send").click(function () {
+        var data = $(this).attr("data-product");
+        var amount = $("#dragAmtTextCredit"+data).val()
+        var time = $("#dragTermTextCredit"+data).val()
+        window.location = "@simulador_.Url" + "?IDProduct=" + data + "&amount=" + amount + "&time=" + time;
+    });
+
+    var AMT_VAL = 1000;
+
+</script>
+
+@foreach (var prod in products)
+{
+    string id = prod.ebankIT_centralID;
+    CoreLoanProduct loan = null;
+    loansDetails.TryGetValue(id, out loan);
+    
+    if (loan != null)
+    { 
+    <script>
+        window["MIN_YEARS" + "@id"] = "@loan.LoanDurationMin";
+        window["MAX_YEARS" + "@id"] = "@loan.LoanDurationMax";
+        window["DIFF_YEARS" + "@id"] = window["MAX_YEARS" + "@id"] - window["MIN_YEARS" + "@id"];
+        window["MIN_AMT" + "@id"] = "@loan.LoanAmountMin.ToString()".split(",")[0] / 1000;
+        window["MAX_AMT" + "@id"] = "@loan.LoanAmountMax.ToString()".split(",")[0] / 1000;
+        window["DIFF_AMT" + "@id"] = (window["MAX_AMT" + "@id"] - window["MIN_AMT" + "@id"]);
+
+        window["@("dragAmt" + id)"] = null;
+        window["@("dragTime" + id)"] = null;
+        window["isSet" + "@id"] = false;
+
+        window["Set" + "@id"] = function () {
+
+            if (window["isSet" + "@id"])
+            {
+                return;
+            }
+
+            window["@("dragAmt" + id)"] = new Dragdealer('@("dragAmtCredit" + id)', {
+                steps: window["DIFF_AMT" + "@id"],
+                slide: false,
+                animationCallback: function (x, y) {
+                    valueAmt = Math.floor(x * window["DIFF_AMT" + "@id"] + Math.floor(window["MIN_AMT" + "@id"])) * AMT_VAL;
+                    if (valueAmt == 0) {
+                        $("#" + "@("dragAmtTextCredit" + @id)").val(window["MIN_AMT" + "@id"] == 0 ? AMT_VAL : window["MIN_AMT" + "@id"]);
+                    } else {
+                        $("#" + "@("dragAmtTextCredit" + @id)").val(valueAmt);
+                    }
+                }
+            });
+
+            window["@("dragTime" + id)"] = new Dragdealer('@("dragTermCredit" + id)', {
+                steps: window["DIFF_YEARS" + "@id"],
+                slide: false,
+                animationCallback: function (x, y) {
+                    valueAmt = Math.floor(x * window["DIFF_YEARS" + "@id"]) + Math.floor(window["MIN_YEARS" + "@id"]);
+                    if (valueAmt == 0) {
+                        $("#" + "@("dragTermTextCredit" + @id)").val(window["MIN_YEARS" + "@id"]);
+                    } else {
+                        $("#" + "@("dragTermTextCredit" + @id)").val(valueAmt);
+                    }
+                }
+            });
+
+            window["isSet" + "@id"] = true;
+        }
+    </script>
+    }
+}

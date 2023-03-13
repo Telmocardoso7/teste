@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>true</RazorCompileOnPublish>
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+    <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+    <PreserveCompilationContext>false</PreserveCompilationContext>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\eBankit.MW.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='FO|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\eBankit.MW.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CC|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\eBankit.MW.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\eBankit.MW.Services.xml</DocumentationFile>
+  </PropertyGroup>
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <DocFile Include="bin\$(Configuration)\$(TargetFramework)\*.xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DocFile)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="false" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="eBankit.MW.Services" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(ProductVersion)\contentFiles\any\$(TargetFramework)\wwwroot\**">
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(ProductVersion)\contentFiles\any\$(TargetFramework)\Views\**">
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content CopyToPublishDirectory="Always" Update="Menus\**\*" />
+    <None CopyToPublishDirectory="Always" Update="Menus\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="logsMW\**" />
+    <Content Remove="logsMW\**" />
+    <EmbeddedResource Remove="logsMW\**" />
+    <Folder Remove="Logs\*" />
+    <None Remove="logsMW\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Transactions\eBankit.Middleware.Transactions.Core.Custom.Interfaces\eBankit.Middleware.Transactions.Core.Custom.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Transactions\eBankit.Middleware.Transactions.Core.Custom\eBankit.Middleware.Transactions.Core.Custom.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(Version)\contentFiles\any\$(TargetFramework)\appsettings.development.json" CopyToPublishDirectory="Never" />
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(Version)\contentFiles\any\$(TargetFramework)\appsettings.production.json" CopyToPublishDirectory="Never" />
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(Version)\contentFiles\any\$(TargetFramework)\endpoints.development.json" CopyToPublishDirectory="Never" />
+    <Content Update="$(userprofile)\.nuget\packages\ebankit.mw.services\$(Version)\contentFiles\any\$(TargetFramework)\endpoints.production.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+</Project>

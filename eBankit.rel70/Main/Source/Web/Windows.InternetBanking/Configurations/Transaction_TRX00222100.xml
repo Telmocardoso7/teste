@@ -1,0 +1,388 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="pt-PT">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="WorflowType" type="xs:string" minOccurs="0" />
+                <xs:element name="Transaction" type="xs:string" minOccurs="0" />
+                <xs:element name="IDTransaction" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Column1" type="xs:string" minOccurs="0" />
+                <xs:element name="WorkflowPropertyID" type="xs:int" minOccurs="0" />
+                <xs:element name="vcPropertyValue" type="xs:string" minOccurs="0" />
+                <xs:element name="bRequired" type="xs:boolean" minOccurs="0" />
+                <xs:element name="iSimulationID" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table2">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="iPropertyID" type="xs:int" minOccurs="0" />
+                <xs:element name="Column1" type="xs:string" minOccurs="0" />
+                <xs:element name="vcName" type="xs:string" minOccurs="0" />
+                <xs:element name="vcDestination" type="xs:string" minOccurs="0" />
+                <xs:element name="bInput" type="xs:boolean" minOccurs="0" />
+                <xs:element name="bCleanAfterMapping" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table3">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CallerPropertyID" type="xs:int" minOccurs="0" />
+                <xs:element name="CalledTransactionID" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table4">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PropertyID" type="xs:int" minOccurs="0" />
+                <xs:element name="CalledTransaction" type="xs:string" minOccurs="0" />
+                <xs:element name="Source" type="xs:string" minOccurs="0" />
+                <xs:element name="Destination" type="xs:string" minOccurs="0" />
+                <xs:element name="Column1" type="xs:int" minOccurs="0" />
+                <xs:element name="Column2" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <WorflowType>eBankit.Business.Workflow.Engine.CustomGenericFlow.CustomWorkflow, eBankit.Business.Workflow</WorflowType>
+    <Transaction>TRX00222</Transaction>
+    <IDTransaction>420</IDTransaction>
+  </Table>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>0</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.AccessValidation, eBankit.Business.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>1</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/InvalidPermission.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>2</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.InternetBanking.Transaction.Services.TRX00222_01, eBankit.Business.InternetBanking.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>3</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/002/TRX00222_01.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>4</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.InternetBanking.Transaction.Services.TRX00222_10, eBankit.Business.InternetBanking.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>5</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.InitCredentials, eBankit.Business.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>6</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/ConfirmControl.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>7</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.DefineSignType, eBankit.Business.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>8</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.CredentialsAuthorization, eBankit.Business.Transaction, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>9</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/CredentialAuthorization.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>10</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/CredentialNoAuthorization.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>11</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.ValidateCredentailAndSignature, eBankit.Business.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>12</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.Transaction.Services.WorkflowDefinition, eBankit.Business.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>13</WorkflowPropertyID>
+    <vcPropertyValue>eBankit.Business.InternetBanking.Transaction.Services.TRX00222_20, eBankit.Business.InternetBanking.Transaction</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>14</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/ResultControl.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table1>
+    <Column1>TRX00222</Column1>
+    <WorkflowPropertyID>19</WorkflowPropertyID>
+    <vcPropertyValue>~/Controls/Services/Generic/GenericError.ascx</vcPropertyValue>
+    <bRequired>false</bRequired>
+  </Table1>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outCard</vcName>
+    <vcDestination>sba29e706fad44251957009935be656eb</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outCard</vcName>
+    <vcDestination>sba29e706fad44251957009935be656eb</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outNewPaymentDate</vcName>
+    <vcDestination>s92aa66f91c144d5cb5b9b9c5595f6a7a</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outNewPaymentDate</vcName>
+    <vcDestination>s92aa66f91c144d5cb5b9b9c5595f6a7a</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outPaymentDate</vcName>
+    <vcDestination>s71d0d31d65934ca9b0839e9f334d5462</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>3</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_01.outPaymentDate</vcName>
+    <vcDestination>s71d0d31d65934ca9b0839e9f334d5462</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>4</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_10.inCard</vcName>
+    <vcDestination>sba29e706fad44251957009935be656eb</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>4</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_10.inNewPaymentDate</vcName>
+    <vcDestination>s92aa66f91c144d5cb5b9b9c5595f6a7a</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>4</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_10.inPaymentDate</vcName>
+    <vcDestination>s71d0d31d65934ca9b0839e9f334d5462</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>4</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_10.outLabels</vcName>
+    <vcDestination>se5241693edd04dd4a212b85204b51141</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>4</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_10.outParametersCollection</vcName>
+    <vcDestination>s76571dd5151946c7b621f874d4065031</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>6</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>ConfirmControl.inParametersCollection</vcName>
+    <vcDestination>s76571dd5151946c7b621f874d4065031</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>8</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialsAuthorization.inLabels</vcName>
+    <vcDestination>se5241693edd04dd4a212b85204b51141</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>8</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialsAuthorization.outPositions</vcName>
+    <vcDestination>sde4871fd7a7740d6bc000c5dc9a2ed05</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>8</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialsAuthorization.outSMSToken</vcName>
+    <vcDestination>sc9349e2371c54f4dad0923871acaae53</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>9</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialAuthorization.inSMSToken</vcName>
+    <vcDestination>sc9349e2371c54f4dad0923871acaae53</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>9</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialAuthorization.intPositions</vcName>
+    <vcDestination>sde4871fd7a7740d6bc000c5dc9a2ed05</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>9</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialAuthorization.inLabels</vcName>
+    <vcDestination>se5241693edd04dd4a212b85204b51141</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>9</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialAuthorization.outSMSToken</vcName>
+    <vcDestination>sc308d0f0b6724440bdf0be470db767ed</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>9</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>CredentialAuthorization.outPositions</vcName>
+    <vcDestination>s246e48a5938146da86802ff658ea14d3</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>11</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>ValidateCredentailAndSignature.inPositions</vcName>
+    <vcDestination>s246e48a5938146da86802ff658ea14d3</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>11</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>ValidateCredentailAndSignature.inSMSToken</vcName>
+    <vcDestination>sc308d0f0b6724440bdf0be470db767ed</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>13</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_20.inCard</vcName>
+    <vcDestination>sba29e706fad44251957009935be656eb</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>13</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_20.inNewPaymentDate</vcName>
+    <vcDestination>s92aa66f91c144d5cb5b9b9c5595f6a7a</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>13</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_20.inPaymentDate</vcName>
+    <vcDestination>s71d0d31d65934ca9b0839e9f334d5462</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>13</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>TRX00222_20.outOperationResult</vcName>
+    <vcDestination>s017f550acefe41139a21f49ff7f649e3</vcDestination>
+    <bInput>false</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>14</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>ResultControl.inParameters</vcName>
+    <vcDestination>s76571dd5151946c7b621f874d4065031</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+  <Table2>
+    <iPropertyID>14</iPropertyID>
+    <Column1>TRX00222</Column1>
+    <vcName>ResultControl.inOperationResult</vcName>
+    <vcDestination>s017f550acefe41139a21f49ff7f649e3</vcDestination>
+    <bInput>true</bInput>
+    <bCleanAfterMapping>false</bCleanAfterMapping>
+  </Table2>
+</NewDataSet>

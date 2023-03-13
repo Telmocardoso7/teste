@@ -1,0 +1,826 @@
+﻿[
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-menu.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-menu.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/styles.css",
+    "inputFile": "Content/Themes/ebankIT/styles.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-phone.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-phone.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-tablet.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-tablet.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankITV3/styles.css",
+    "inputFile": "Content/Themes/ebankITV3/styles.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/styles-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/styles-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00101-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00101-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00102-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00102-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00106-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00106-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00105-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00105-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00107-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00107-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00111-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00111-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00112-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00112-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00116-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00116-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00117-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00117-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00118-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00118-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00119-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00119-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00121-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00121-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00120-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00120-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00131-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00131-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00149-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00149-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00141-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00141-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00153-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00153-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00161-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00161-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00163-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00163-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00164-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00164-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00201-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00201-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00202-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00202-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00203-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00203-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00204-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00204-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00205-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00205-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00206-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00206-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00207-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00207-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00210-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00210-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00211-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00211-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00212-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00212-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00213-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00213-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00214-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00214-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00215-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00215-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00216-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00216-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00217-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00217-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00218-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00218-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00219-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00219-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00220-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00220-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00221-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00221-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00222-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00222-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00301-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00301-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00303-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00303-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00304-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00304-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00306-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00306-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00307-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00307-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00308-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00308-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00309-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00309-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00310-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00310-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00402-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00402-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00403-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00403-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00501-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00501-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00502-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00502-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00503-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00503-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00504-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00504-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00511-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00511-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00512-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00512-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00513-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00513-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00514-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00514-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00602-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00602-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00610-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00610-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00611-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00611-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00701-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00701-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00704-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00704-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00804-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00804-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00901-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00901-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01001-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01001-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01005-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01005-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01006-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01006-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01009-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01009-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01017-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01017-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01101-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01101-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01102-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01102-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01104-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01104-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01105-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01105-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01106-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01106-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01110-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01110-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01111-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01111-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01130-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01130-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01140-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01140-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01150-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01150-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01160-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01160-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01302-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01302-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01303-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01303-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01510-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01510-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01520-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01520-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01530-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01530-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01601-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01601-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01602-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01602-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01603-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01603-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01701-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01701-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01702-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01702-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01703-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01703-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-imgareaselect-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-imgareaselect-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-menu-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-menu-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-phone-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-phone-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-print-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-print-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-slider-dates-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-slider-dates-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-table-responsive-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-table-responsive-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-tablet-cp.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-tablet-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/styles-cp.css",
+    "inputFile": "Content/Themes/ebankIT/styles-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/TRX00514-cp.css",
+    "inputFile": "Content/Themes/ebankIT/components/TRX00514-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-menu-sb.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-menu-sb.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll-sb.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-smoothDivScroll-sb.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-tablet-sb.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-tablet-sb.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/styles-sb.css",
+    "inputFile": "Content/Themes/ebankIT/styles-sb.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-phone-sb.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-phone-sb.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00105-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00105-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-menu-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-menu-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00171-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00171-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00403-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00403-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-menu-cp-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-menu-cp-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/styles-cp-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/styles-cp-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LoanProductsControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LoanProductsControl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LoanProductsControl-cp.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LoanProductsControl-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LandingCorporateAccountsControl-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LandingCorporateAccountsControl-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LandingCorporateAccountsControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LandingCorporateAccountsControl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateCP.css",
+    "inputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateCP.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateCP-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateCP-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LandingCorpLastOperationsControl-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LandingCorpLastOperationsControl-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_LandingCorpLastOperationsControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/_LandingCorpLastOperationsControl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-phone-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-phone-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01112-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01112-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01151-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01151-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/LoginBackground.css",
+    "inputFile": "Content/Themes/ebankIT/components/LoginBackground.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01161-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01161-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00514-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00514-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01301-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01301-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01801-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01801-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/SchedulerControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/SchedulerControl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/SchedulerControl-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/SchedulerControl-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01304-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01304-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01018-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01018-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01019-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01019-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00163-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00163-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01170-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01170-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01160-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01160-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01106-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01106-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/AvailableControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/AvailableControl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01005-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01005-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-tablet-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-tablet-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-tablet-cp-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-tablet-cp-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-table-responsive.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-table-responsive.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-slider-dates.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-slider-dates.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-phone-cp-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-phone-cp-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-cookies.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-cookies.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-imgareaselect.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-imgareaselect.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-print.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-print.less"
+  },
+  {
+    "outputFile": "Content/slick-theme.css",
+    "inputFile": "Content/slick-theme.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01172-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01172-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01107-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01107-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01305-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01305-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01811-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01811-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01304-1.0-cp.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01304-1.0-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01811-1.0-cp.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01811-1.0-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/cart/UploadFile-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/cart/UploadFile-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01171-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01171-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01301-1.0-cp.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01301-1.0-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX02101-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX02101-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX00131-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX00131-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01335-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01335-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX02104-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX02104-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX02102-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX02102-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX02103-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX02103-1.0.less"
+  },
+  {
+    "outputFile": "Scripts/modalpopup-1.0.es5.js",
+    "inputFile": "Scripts/modalpopup-1.0.js"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/ebankit-muc.css",
+    "inputFile": "Content/Themes/ebankIT/services/ebankit-muc.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/PermissionGroupEdit.css",
+    "inputFile": "Content/Themes/ebankIT/components/PermissionGroupEdit.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/GroupEdit.css",
+    "inputFile": "Content/Themes/ebankIT/components/GroupEdit.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/GroupEditRule.css",
+    "inputFile": "Content/Themes/ebankIT/components/GroupEditRule.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/SignatureEditCombination.css",
+    "inputFile": "Content/Themes/ebankIT/components/SignatureEditCombination.less"
+  },
+  {
+    "outputFile": "Scripts/Services/MUC/ebankit-muc-trustees-1.0.es5.js",
+    "inputFile": "Scripts/Services/MUC/ebankit-muc-trustees-1.0.js"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/PendingOperations.css",
+    "inputFile": "Content/Themes/ebankIT/components/PendingOperations.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01802-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01802-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/ebankit-multiselect.css",
+    "inputFile": "Content/Themes/ebankIT/ebankit-multiselect.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateVE.css",
+    "inputFile": "Content/Themes/ebankIT/components/_AccountsControlUpdateVE.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/SignatureEditCombination-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/SignatureEditCombination-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/PermissionGroupEdit-rtl.css",
+    "inputFile": "Content/Themes/ebankIT/components/PermissionGroupEdit-rtl.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/TrusteeEdit.css",
+    "inputFile": "Content/Themes/ebankIT/components/TrusteeEdit.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/AccountGroupEdit.css",
+    "inputFile": "Content/Themes/ebankIT/components/AccountGroupEdit.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/contractdetails.css",
+    "inputFile": "Content/Themes/ebankIT/components/contractdetails.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01902-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01902-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/editdelegate.css",
+    "inputFile": "Content/Themes/ebankIT/components/editdelegate.less"
+  },
+  {
+    "outputFile": "Content/slick.css",
+    "inputFile": "Content/slick.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01999-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01999-1.0.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/GroupEditTrustee.css",
+    "inputFile": "Content/Themes/ebankIT/components/GroupEditTrustee.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/AddUsersToContractDelegates.css",
+    "inputFile": "Content/Themes/ebankIT/components/AddUsersToContractDelegates.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/AddUsersToContractDelegates-cp.css",
+    "inputFile": "Content/Themes/ebankIT/components/AddUsersToContractDelegates-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/widgets/LandingSecureMessages-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/widgets/LandingSecureMessages-1.0.less"
+  },
+  {
+    "outputFile": "Scripts/custom-plugins/multi-select/bootstrap-multiselect.es5.js",
+    "inputFile": "Scripts/custom-plugins/multi-select/bootstrap-multiselect.js"
+  },
+  {
+    "outputFile": "Scripts/Services/MUC/muc-details-1.0.es5.js",
+    "inputFile": "Scripts/Services/MUC/muc-details-1.0.js"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/components/ProfileSelectControl.css",
+    "inputFile": "Content/Themes/ebankIT/components/ProfileSelectControl.less"
+  },
+  {
+    "outputFile": "Scripts/Services/Transactions/TRX01105-1.0.es5.js",
+    "inputFile": "Scripts/Services/Transactions/TRX01105-1.0.js"
+  },
+  {
+    "outputFile": "Scripts/Services/Transactions/TRX01802-1.0.es5.js",
+    "inputFile": "Scripts/Services/Transactions/TRX01802-1.0.js"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX01105-1.0-cp.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX01105-1.0-cp.less"
+  },
+  {
+    "outputFile": "Content/Themes/ebankIT/services/transactions/TRX02201-1.0.css",
+    "inputFile": "Content/Themes/ebankIT/services/transactions/TRX02201-1.0.less"
+  }
+]

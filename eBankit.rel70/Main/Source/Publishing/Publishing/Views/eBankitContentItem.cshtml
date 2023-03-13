@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "eBankitMaster.cshtml";
+}
+
+@section content{
+	@Umbraco.Field("pageName")
+@Umbraco.Field("eBankitDescription")
+<fieldset><legend>Imagens</legend>
+ <img alt="" src="@Umbraco.Field("eBankitPortrait")" />
+ <img alt="" src="@Umbraco.Field("eBankitLandscape")" />
+ <img alt="" src="@Umbraco.Field("eBankitLarge")" />
+ <img alt="" src="@Umbraco.Field("eBankitSmall")" /> 
+</fieldset>
+}

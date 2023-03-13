@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <IDSContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.IdentityServer\$(ProductVersion)\contentFiles\any\$(TargetFramework)</IDSContentFilesPath>
+    <Configurations>Debug;Release;</Configurations>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AssemblyAttribute Include="eBankit.FE.Common.Entities.PackageHelpers.BasePackageAssemblyAttribute">
+      <!--Load static files from packages-->
+      <StaticFiles>
+        <StaticFilesRoot>$(IDSContentFilesPath)\wwwroot</StaticFilesRoot>
+      </StaticFiles>
+      <!--Load views from packages-->
+      <ViewProviders>
+        <ViewProvider>$(IDSContentFilesPath)</ViewProvider>
+      </ViewProviders>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <!-- publish content from base pacakge in publish -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(IDSContentFilesPath)\Views\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(IDSContentFilesPath)\wwwroot\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="$(IDSContentFilesPath)\Views\**" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="$(IDSContentFilesPath)\wwwroot\**" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.IdentityServer" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(IDSContentFilesPath)\appsettings.Production.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="$(IDSContentFilesPath)\web.release.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

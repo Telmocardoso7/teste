@@ -1,0 +1,28 @@
+.custom-muc-chk {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-muc-chk-descricption {
+    display: inline-block;
+    margin-left: 5px !important;
+}
+
+.lblSubtitleAccountsGrid {
+    font-family: "Open Sans";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+#upTransactions tr {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cbcontainer:not(.checkbox-description span) {
+    padding-left: 0px !important;
+}
+
+.checkbox-description {
+    margin-left: 8px !important;
+}

@@ -1,0 +1,50 @@
+﻿.ebankit-account-selector:focus {
+  outline: none;
+}
+.ebankit-account-selector:focus .icon-circle {
+  outline: auto;
+}
+.sameBankTrsOpHide > input[type=radio] {
+  display: none;
+}
+.multiselect-item .cbcontainerCorpGroup > label {
+  margin-left: 0;
+  font-size: 16px;
+  display: table;
+}
+.multiselect-native-select .btn-group .multiselect:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 5px;
+  outline-offset: -2px;
+}
+.multiselect-option.default .multiselect-item.multiselect-value:focus {
+  outline: auto;
+}
+.sharedIcon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-right: 20px;
+  margin-top: -40px;
+}
+.group-name {
+  max-height: 50px;
+}
+.multiselect-item.multiselect-group.group-name > a {
+  line-height: 50px !important;
+  max-height: 50px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.multiselect-container > li.multiselect-group label {
+  padding: 0px 20px 0px 20px;
+}
+.group-name > a > label {
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}

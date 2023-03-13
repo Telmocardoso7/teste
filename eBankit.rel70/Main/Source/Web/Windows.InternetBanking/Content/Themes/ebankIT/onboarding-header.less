@@ -1,0 +1,60 @@
+﻿@import url('_onboarding-variables');
+@import url('_mixins');
+
+.onboarding-header-container {
+    box-shadow: 0 1px 2px 0 rgba(209,209,209,0.28);
+    min-height: 60px;
+    overflow: hidden;
+
+    @media @tablet {
+        height: 60px !important;
+        width: 100%;
+    }
+
+    .onboarding-header-toggler {
+        height: 100%;
+    }
+
+    .secondary-buttons-container {
+        height: 100%;
+
+        .onboarding-secondary-actions.btn-actions-orchestrator-container {
+            margin-top: 0;
+            height: 100%;
+
+            .btn-action-orchestrator-container {
+                @media @phone {
+                    height: 100%;
+                    margin-bottom: 0;
+                }
+
+                background: url('@{base-url}/images/btn_previous.svg') no-repeat;
+                background-position: left;
+                margin-left: 20px;
+                .flex(@align-items:center);
+                height: auto;
+                padding-left: 2px;
+                padding-right: 2px;
+
+
+                .btn-action-orchestrator.btn_action_2 {
+                    background-color: transparent;
+                    border: 0px;
+                    padding: 2px;
+                    padding-left: 30px;
+                    color: #444444;
+                    width: auto;
+                    .fontStyle(14px);
+                }
+            }
+        }
+    }
+
+    .title-container {
+        text-align: center;
+
+        h3 {
+            margin-top: 21px;
+        }
+    }
+}

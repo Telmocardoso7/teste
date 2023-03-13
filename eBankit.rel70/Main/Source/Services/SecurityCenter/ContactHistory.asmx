@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="ContactHistory.asmx.cs" Class="eBankit.Middleware.SecurityCenter.WebServices.ContactHistory" %>

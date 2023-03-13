@@ -1,0 +1,86 @@
+﻿@import "_Variables.less";
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a img {
+    border: none;
+}
+
+.caption {
+    -webkit-backface-visibility: hidden; /* prevent flash when embedding fiddle */
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.caption img {
+    display: block;
+    max-width: 100%;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.caption:hover img {
+    opacity: 0.5;
+}
+
+.caption::after,
+.caption::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.caption::after {
+    content: attr(data-description);
+    top: 60%;
+    background:rgba(0,0,0,0.1);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    -webkit-transform: translateY(80%);
+    -moz-transform: translateY(80%);
+    transform: translateY(80%);
+}
+
+.caption::before {
+    content: attr(data-title);
+    top: 40%; 
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    -webkit-transform: translateY(60%);
+    -moz-transform: translateY(60%);
+    transform: translateY(30%);
+}
+
+.caption:hover::after,
+.caption:hover::before {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+.caption-1::before {
+    background: #A4B23C;
+}
+ 
+.caption-2::before {
+    background: #FFC94A;
+}
+
+ .caption-3::before {
+    background: #CA7629;
+}
+
+ 

@@ -1,0 +1,102 @@
+﻿ 
+@import "variables.less";
+@import "mixins.less";
+
+
+/*****Footer (Start)*****/
+footer {
+    margin-bottom: 0px;
+    margin-top:-42px;
+    .row {
+        @media (max-width: @screen-sm-max) {
+            margin:0;
+        }
+    }
+
+    .nav {
+        margin: 0;
+    }
+
+    .ebankit-pointer-text {
+        color: @brand-primary;
+        text-transform: uppercase;
+    }
+
+    .footer-menus-container {
+        .menu-vertical-list {
+            text-align: left;
+            padding: 10px 0 0 15px;
+                min-height:140px;
+            
+            div {
+                h5 {
+                    color: white;
+                    font-size: 1.3rem;
+
+                    a {
+                        color: white;
+                        font-size: 1.3rem;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0px 0px;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        a {
+                            color: @light;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                position: relative;
+            }
+        }
+
+        background-color: @theme-primary;
+        border: solid;
+        border-width: 5px 0 0 0;
+        border-color: @theme-primary;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .footer-credits {
+        padding: 10px 0;
+        background-color: @theme-secondary;
+        color: @light;
+
+        span {
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+    }
+
+    .footer-soial {
+        margin-bottom: 40px;
+
+        a {
+            margin-right: 10px;
+        }
+    }
+
+    .horizontalBar-ebankIT {
+        background-color: @light;;
+        border: none;
+        box-shadow: -8px 0px 8px -8px Gray, 8px 0px 8px -8px Gray;
+        margin: 0 15px -20px 15px;
+        @media (max-width: @screen-sm-max) {
+             margin: 0;
+        }
+        @media (max-width: @screen-xs-max) {
+             margin: 0;
+        }
+    }
+}
+/*****Footer (End)*****/

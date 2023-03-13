@@ -1,0 +1,226 @@
+﻿@import "_Variables.less";
+
+.productList {
+
+    .product {
+        margin-bottom: 40px;
+    }
+
+        .product .descriptionBox {
+            margin-left: 10px;
+            background-color: @lighter-gray;
+            min-height: 310px;
+            padding: 15px 20px 20px 20px;
+        }
+
+        .product .image {
+            width: 310px;
+            max-height: 310px;
+        }
+
+    @media (max-width:768px) {
+        .product .descriptionBox {
+            margin: 0;
+        }
+
+        .product .image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .product .descriptionBox .description {
+        font-family: @font-light;
+        font-size: @font-ml;
+        color: @dark-gray;
+        margin-bottom: 20px;
+    }
+
+    .product .descriptionBox .detailBox {
+        width: 150px;
+        min-height: 80px;
+        background-color: @light-gray;
+        font-family: @font-book;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width:@container-width) {
+        .product .descriptionBox .detailBox {
+            margin-right: 10px;
+        }
+    }
+
+    .product .descriptionBox .productsHomeTitle {
+        margin-bottom: 20px !important;
+    }
+
+    .product .descriptionBox .detailBox .title {
+        color: @blue;
+        font-size: @font-m;
+    }
+
+    .product .descriptionBox .detailBox .value {
+        color: @dark-gray;
+        font-size: @font-l;
+    }
+
+    .descriptionBox .subscribe, .product.credit .subscribe {
+        font-family: @font-book;
+        font-size: 18px;
+        color: white;
+        width: 227px;
+        text-align: center;
+        height: 40px;
+        background: linear-gradient(to right, #0bb6c9 0%, #0173a7 100%);
+        padding-top: 7px;
+    }
+
+    .descriptionBox a:hover {
+        text-decoration: none !important;
+    }
+
+    .descriptionBox .more {
+        margin-right: 10px;
+        font-family: @font-medium;
+        font-size: 18px;
+        padding-top: 5px;
+    }
+
+        .descriptionBox .more a {
+            display: inline-block;
+            color: #0173a7;
+            text-decoration: none;
+        }
+
+            .descriptionBox .more a:hover {
+                text-decoration: none;
+            }
+
+            .descriptionBox .more a i {
+                width: 25px;
+                height: 25px;
+                padding-top: 6px;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                border: 1px solid #0173a7;
+                position: relative;
+                top: -2px;
+                text-align: center;
+                font-size: 10px !important;
+            }
+
+    .noPaddRight {
+        padding-right: 0;
+    }
+
+    .product.credit .subscribe {
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .product.credit.active .descriptionBox {
+        margin-bottom: 10px;
+    }
+
+    .col-4-description {
+
+        .detailBox {
+            width: 205px!important;
+        }
+    }
+
+    @media (max-width:768px) {
+        .subscribeWrapper {
+            div {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+
+    .product .simulator {
+        display: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: @lighter-gray;
+    }
+
+    .product.active .simulator {
+        display: block;
+    }
+
+    .product .simulator .input_simulator {
+        width: 100%;
+        margin: 0;
+    }
+
+    .product .simulator .col-4-override {
+        padding: 0 15px;
+    }
+
+    .product .simulator .savingsControl, .product .simulator .savingsLine {
+        width: 100%;
+        margin: 0;
+    }
+
+    .product .simulator .savingsLine {
+        height: 2px;
+    }
+
+    .simulator input {
+        background-color: @white;
+        color: @dark-gray;
+    }
+
+    .product .subscribe.show.active {
+        background: white;
+        border: 2px solid @dark-gray;
+        color: @blue;
+    }
+
+    .simulator .title1 {
+        padding-left: 15px;
+    }
+
+    .simulator .title2 {
+        color: @dark-gray;
+        padding-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width:992px) {
+        .simulator input {
+            margin-bottom: 20px!important;
+        }
+    }
+
+    @media (min-width:768px) {
+        .simulator .calculate {
+            padding-top: 33px!important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .product .col-4-margin {
+            margin-bottom: 20px;
+        }
+
+        .simulator {
+            margin: 0 15px;
+        }
+    }
+
+    @media (min-width:@container-width) {
+        .col-3-description {
+            width: 165px;
+        }
+
+        .col-4-description {
+            width: 220px;
+        }
+    }
+}

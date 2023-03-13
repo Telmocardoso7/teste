@@ -1,0 +1,888 @@
+﻿.navbar-brand {
+    min-width: 500px !important;
+}
+
+/*DataTable overwriting styles*/
+table.table-striped tr.even.row_selectedv td {
+    background-color: #d9e0e7;
+    cursor: pointer !important;
+}
+
+table.table-striped tr.odd.row_selectedv td {
+    background-color: #d9e0e7;
+    cursor: pointer !important;
+}
+
+table.table-striped tr.even.row_selected td {
+    background-color: #d9e0e7;
+}
+
+table.table-striped tr.odd.row_selected td {
+    background-color: #d9e0e7;
+}
+
+.cursorHand {
+    cursor: pointer !important;
+}
+
+.detail {
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: nowrap;
+}
+
+th.detail {
+    display: table-cell;
+}
+
+#detailModal > .modal-dialog {
+    width: 70%;
+}
+
+#detailModal .panel-heading {
+    border-bottom: 1px solid #242a30 !important;
+}
+
+#detailModal .nav-tabs-inverse li:first-child a {
+    border-left: 1px solid #242a30 !important;
+}
+
+#detailModal .nav-tabs-inverse li a {
+    margin: 0;
+    background-color: white;
+    border-top: 1px solid #242a30 !important;
+    border-right: 1px solid #242a30 !important;
+    color: #000000;
+}
+
+#detailModal .nav-tabs-inverse li.active a:link {
+    background-color: #242a30;
+    color: white;
+}
+
+#detailModal .nav-tabs-inverse li a:hover {
+    margin: 0;
+    background-color: #DFDFDF;
+    border-top: 1px solid #242a30 !important;
+    border-right: 1px solid #242a30 !important;
+    color: #000000;
+}
+
+#detailModal .nav-tabs-inverse {
+    background-color: white;
+    padding-left: 10px;
+}
+
+
+#SoapIn, #SoapOut {
+    padding-top: 10px;
+}
+
+.detailsButton {
+    float: left;
+}
+
+.statsButton {
+    float: right;
+}
+
+/*Change the size here*/
+div.tooltip-inner {
+    min-width: 100px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.alignCenter {
+    text-align: center;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loading-row .spinner {
+    margin-top: 40px;
+    top: auto;
+}
+
+.newStyle {
+    background-color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
+
+.interval > li {
+    display: inline;
+}
+
+    .interval > li > a:hover {
+        color: #242a30;
+        background: #e2e7eb;
+        border-color: #d8dde1;
+    }
+
+
+    .interval > li > a {
+        position: relative;
+        padding: 6px 12px;
+        color: #242a30;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 3px !important;
+    }
+
+    .interval > li > a {
+        position: relative;
+        padding: 6px 12px;
+        color: #242a30;
+        margin-left: 3px;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 3px !important;
+    }
+
+        .interval > li > a.selected {
+            position: relative;
+            padding: 6px 12px;
+            color: #fff;
+            margin-left: 3px;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #242a30;
+            border: 1px solid #ddd;
+            border-radius: 3px !important;
+        }
+
+#menuTab .nav-tabs {
+    background: transparent;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+    #menuTab .nav-tabs > li > a {
+        margin-right: 5px;
+        line-height: 20px;
+        background: #242a30;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+
+    #menuTab .nav-tabs > li.active > a,
+    #menuTab .nav-tabs > li.active > a:focus {
+        color: #242a30;
+        background-color: #FFFFFF;
+    }
+
+#menuTab .nav > li > a {
+    color: #FFFFFF;
+}
+
+.stacked-chart rect {
+    stroke: #ffffff;
+    stroke-width: 2px;
+}
+
+.stacked-legend {
+    height: 20px;
+}
+
+    .stacked-legend .legend-text {
+        display: inline-block;
+        padding: 5px 5px;
+        position: relative;
+    }
+
+    .stacked-legend .legend-square {
+        margin-right: 30px;
+        display: inline-block;
+        border-radius: 50px/50px;
+        border: solid 1px;
+        border-color: #f00;
+        background-color: #f00;
+        width: 30px;
+        height: 10px;
+    }
+
+
+.bg-probe-error {
+    background: #e60000 !important;
+}
+
+.bg-probe-success {
+    background: #00b300 !important;
+}
+
+.bg-probe-slow {
+    background: #F5A30E !important;
+}
+
+.bg-probe-timeout {
+    background: #9600A9 !important;
+}
+
+.bg-probe-unknown {
+    background: #999 !important;
+}
+
+.probe-parent-on {
+    background: white;
+}
+
+.probe-outer-panel {
+    background-color: #242A30;
+    margin-bottom: 0px;
+}
+
+.probe-carousel .carousel-control {
+    width: 1%;
+    min-width: 15px;
+}
+
+.probe-carousel .carousel-inner {
+    width: 98%;
+    left: 1%;
+}
+
+.probe-test-panel {
+    background: none !important;
+    margin: 0px -5px 0px -5px;
+    border-radius: 0px 0px 3px 3px !important;
+}
+
+.widget-probe {
+    margin: 5px -5px;
+    padding: 10px 10px 0px 10px;
+    overflow: visible;
+}
+
+.widget-probe-test {
+    padding: 10px;
+    margin: 5px -5px 5px -5px;
+}
+
+.probe-group {
+    background: none !important;
+    margin: 10px 5px 10px;
+}
+
+.probe-panel {
+    padding: 0px;
+    margin: 0px -10px;
+    background: none !important;
+}
+
+.probe-btn {
+    background-color: white;
+    cursor: pointer;
+}
+
+    .probe-btn:hover {
+        -webkit-box-shadow: 0 0 2px 2px #f6ff82;
+        -moz-box-shadow: 0 0 2px 2px #f6ff82;
+        box-shadow: 0 0 2px 2px #f6ff82;
+        -webkit-transition: 250ms linear 0s;
+        -moz-transition: 250ms linear 0s;
+        -o-transition: 250ms linear 0s;
+        transition: 250ms linear 0s;
+    }
+
+.widget-probe-stats .stats-probe-title {
+    font-size: 14px;
+    margin: 2px 0 7px;
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.widget-probe-stats .stats-probe-title-sm {
+    font-size: 12px;
+    margin: 2px 0 7px;
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.widget-probe-stats .stats-probe-desc, .widget-probe-stats .stats-probe-title {
+    color: #fff;
+    color: rgba(255,255,255,.6);
+}
+
+.widget-probe-stats .stats-probe-desc {
+    font-weight: 300;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.widget-probe-stats .stats-probe-number {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.widget-probe-stats .stats-probe-number-sm {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.widget-probe-stats .stats-progress {
+    background: url(../img/transparent/black-0.2.png);
+    background: rgba(0,0,0,.2);
+    height: 2px;
+    margin: -5px 0px 10px;
+}
+
+.widget-probe-stats .stats-probe-progress .progress-bar {
+    background: #fff;
+}
+
+.stats-probe-icon {
+    top: 0px !important;
+    float: right;
+    font-weight: bold;
+}
+
+    .stats-probe-icon .btn-circle {
+        background-color: white;
+    }
+
+
+.divContainer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.divRow {
+    display: table-row;
+    height: auto;
+}
+
+fieldset {
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+    border-radius: 8px;
+    margin: 0 5px;
+    height: 100%;
+}
+
+
+
+.divColumn {
+    width: 50%;
+    height: 580px;
+    display: table-cell;
+}
+
+@keyframes reducetime {
+    0% {
+        width: 0;
+    }
+}
+
+.widget-table {
+    border: none;
+    margin-bottom: 0px;
+    width: 100%;
+    font-size: 11px;
+}
+
+    .widget-table > tbody > tr > td {
+        border: none;
+        padding: 3px;
+    }
+
+        .widget-table > tbody > tr > td:nth-child(3) {
+            text-align: right;
+        }
+
+    .widget-table > tbody > tr > th {
+        border: none;
+        padding: 3px;
+    }
+
+        .widget-table > tbody > tr > th:nth-child(3) {
+            text-align: right;
+        }
+
+.widget-text-success {
+    color: lime;
+}
+
+.widget-text-insuccess {
+    color: red;
+}
+
+.widget-text-same {
+    color: yellow;
+}
+
+.widget-title-small {
+    font-size: 18px;
+    font-weight: 300;
+    border-bottom: 1px groove white;
+    cursor: pointer;
+}
+
+.widget-title-small-no-clickable {
+    font-size: 18px;
+    font-weight: 300;
+    border-bottom: 1px groove white;
+}
+
+.widget-title {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    max-width: 80%;
+    cursor: pointer;
+}
+
+.widget-title-no-clickable {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+
+.leftDiv {
+    float: left;
+    width: 80px;
+    clear: both;
+}
+
+
+.rightDiv {
+    float: left;
+    width: 90%;
+    margin-left: 5px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.fixButton {
+    font-size: 12px !important;
+    vertical-align: top;
+    height: 30px;
+    width: 38px;
+}
+
+.divInformation {
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.webpagePanel {
+    background-color: #7d8790;
+    color: #000000;
+    font-size: 11px;
+    white-space: nowrap;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: reducetime;
+    animation-duration: 3s;
+    animation-name: reducetime;
+    float: left;
+}
+
+.mobilePanel {
+    background-color: #9EA1EC;
+    color: #000000;
+    font-size: 11px;
+    white-space: nowrap;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: reducetime;
+    animation-duration: 3s;
+    animation-name: reducetime;
+    float: left;
+}
+
+.servicePanel {
+    background-color: #0b62a4;
+    color: #000000;
+    font-size: 11px;
+    white-space: nowrap;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: reducetime;
+    animation-duration: 3s;
+    animation-name: reducetime;
+    float: left;
+}
+
+.transactionPanel {
+    background-color: #679dc6;
+    color: #000000;
+    font-size: 11px;
+    white-space: nowrap;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: reducetime;
+    animation-duration: 3s;
+    animation-name: reducetime;
+    float: left;
+}
+
+.legend {
+    padding: 1px 15px;
+    margin-right: 5px;
+}
+
+.legend-text {
+    margin-right: 20px;
+}
+
+.nopadding {
+    padding-left: 0px !important;
+    min-width: 1043px !important;
+}
+
+.paddingNone {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.timeline .timeline-body {
+    margin-left: 13% !important;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 15px;
+}
+
+    .timeline .timeline-body .timeline-content {
+        display: inline-block;
+        width: 100%;
+    }
+
+.timeline .timeline-time {
+    width: 85px !important;
+    padding-top: 5px !important;
+}
+
+.time {
+    font-size: 10pt !important;
+}
+
+.date {
+    font-size: 10pt !important;
+}
+
+.timeline .timeline-icon {
+    left: 6% !important;
+    margin: 0px !important;
+}
+
+@media all and (max-width: 1336px) {
+    .timeline .timeline-icon {
+        left: 63px !important;
+    }
+
+    .timeline .timeline-body {
+        margin-left: 136px !important;
+    }
+}
+
+.timeline:before {
+    left: 11% !important;
+}
+
+.iconTimeLine {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+
+div.parent {
+    display: table;
+    width: 100%;
+}
+
+div.text {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: justify;
+    padding-left: 0px;
+}
+
+div.parent .img {
+    vertical-align: middle;
+    display: table-cell;
+    max-width: 50px;
+}
+
+div.img img {
+    height: 80px; /* you can change height */
+    vertical-align: middle;
+    padding-bottom: 10px;
+}
+
+.scrollDataTable {
+    overflow-x: scroll;
+    display: block;
+    width: 100%;
+}
+
+.tab-ridge {
+    border: 2px ridge whitesmoke;
+    border-top: none;
+    border-radius: 0px 0px 3px 3px;
+    padding: 5px 5px 0px 5px;
+}
+
+.time-selector {
+    cursor: pointer;
+}
+
+.tooltipHover {
+    cursor: pointer !important;
+}
+
+#TimeSelectorLegend {
+    position: absolute;
+    width: 100px;
+    color: #FFFFFF;
+    background: #000000;
+    height: 30px;
+    line-height: 30px;
+    visibility: hidden;
+    text-align: center;
+    border-radius: 6px;
+}
+
+    #TimeSelectorLegend:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid #000000;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+    }
+
+.time-selector:hover #TimeSelectorLegend {
+    visibility: visible;
+    opacity: 0.8;
+    bottom: 30px;
+    left: 41px;
+    margin-left: -76px;
+    z-index: 999;
+}
+
+
+
+/* OVERRIDE NOUISLIDER PIPS */
+.time-selector .noUi-pips-horizontal {
+    top: -50% !important;
+}
+
+.time-selector .noUi-marker-large {
+    height: 13px !important;
+    width: 5px !important;
+    border: 1px solid white !important;
+    border-radius: 12px 12px !important;
+    background: #3FB8AF !important;
+}
+
+.time-selector .noUi-markerundefined {
+    width: 0px !important;
+}
+
+.interval-radios {
+    border-radius: 3px 3px 3px 3px !important;
+    padding: 5px;
+}
+
+    .interval-radios > div > label {
+        color: white;
+        margin-bottom: 0px;
+    }
+
+        .interval-radios > div > label > span {
+            position: relative;
+            top: -2px;
+            left: 6px;
+        }
+
+
+        .interval-radios > div > label > input {
+            cursor: pointer;
+        }
+
+
+.morris-inverse > svg {
+    width: 100% !important;
+}
+
+
+.current-day-tab {
+    margin-bottom: 0px;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+    .current-day-tab .tab-pane {
+        background-color: #2D353C;
+    }
+
+        .current-day-tab .tab-pane .morris-inverse {
+            height: 260px;
+        }
+
+        .current-day-tab .tab-pane .chart-title {
+            padding: 10px 0px 0px 10px;
+        }
+
+.current-day-sidebar {
+    margin-top: 40px;
+    background-color: #FFFFFF;
+    padding: 12px 10px 10px 0px !important;
+}
+
+    .current-day-sidebar > div {
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+.current-day-donut {
+    height: 240px;
+    margin: 0px;
+    padding: 40px 0px 0px 0px;
+}
+
+
+.widget-probe-spinner {
+    position: initial;
+    top: 0%;
+    left: 0%;
+    display: block;
+    margin: auto;
+}
+
+.probe-body {
+    min-height: 90px;
+    position: relative;
+}
+
+.stats-body {
+    min-height: 126px;
+    position: relative;
+}
+
+.stats-small-body {
+    min-height: 63px;
+    position: relative;
+}
+
+.loading-data-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-probe-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.countdowncircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grip {
+    width: 12px;
+    height: 20px;
+    margin-top: 15px;
+    background-image: url('img/resizable.png');
+    margin-left: -3px;
+    position: relative;
+    z-index: 88;
+    cursor: e-resize;
+    opacity: 0.2;
+}
+
+.noBreak {
+    white-space: nowrap;
+}
+
+.probe-no-actions {
+    padding-bottom: 10px;
+}
+
+
+/* GLICH FIX - Tests showing more that 1 row while slick not initialize */
+.slickshowtest {
+    max-height: 108px;
+    display: block;
+    overflow: hidden;
+}
+
+    .slickshowtest.slick-initialized.slick-slider {
+        max-height: initial;
+        overflow: initial;
+    }
+
+.slickshowprobe {
+    max-height: 114px;
+    display: block;
+    overflow: hidden;
+}
+
+    .slickshowprobe.slick-initialized.slick-slider {
+        max-height: initial;
+        overflow: initial;
+    }
+
+/* END GLICH FIX */
+
+.btNewUserPosition{
+    text-align: right;
+    padding-bottom: 20px !important;
+}
+
+.newUserMessage{
+    text-align:center;
+    color: red;
+}
+
+.errorWindow {
+    width: 700px;
+    height: 162px;
+    background: rgba(0,0,0,.4);
+    background-color: white;
+    margin: 168px auto;
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.errorWindowContent {
+    text-align: center;
+    padding: 30px 90px;
+    font-size: 16px;
+    color: #242A30;
+}

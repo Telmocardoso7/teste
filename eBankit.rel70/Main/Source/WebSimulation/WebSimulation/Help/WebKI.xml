@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="ActivateAccount method" Url="html/659a6f9b-2988-8328-9ca3-72f28889b584.htm" />
+  <HelpKINode Title="ActivateContract method" Url="html/78faf403-0032-241d-99c6-a0cc99493b0a.htm" />
+  <HelpKINode Title="ActivateUserAccessCode method" Url="html/7429ca7d-993f-f062-3b8e-07742329cb63.htm" />
+  <HelpKINode Title="ActivateUserAD method" Url="html/2fe2fbf5-a2bf-9539-053c-d9334f220940.htm" />
+  <HelpKINode Title="AddCommentToProcess method">
+    <HelpKINode Title="IRegistrationService.AddCommentToProcess Method " Url="html/7c132e4f-acf1-2056-a98e-68bbfd08dab0.htm" />
+    <HelpKINode Title="RegistrationService.AddCommentToProcess Method " Url="html/451a2fb3-783e-7f3a-6917-136b6bf85e31.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddDocumentToProcess method">
+    <HelpKINode Title="IRegistrationService.AddDocumentToProcess Method " Url="html/ea15a50a-8506-9519-cb0f-45432fde6246.htm" />
+    <HelpKINode Title="RegistrationService.AddDocumentToProcess Method " Url="html/f18305be-bda3-2ea6-0f35-f73f66cb78d7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddNewGlobalContentType method" Url="html/b9341d28-b63a-ce10-b824-795356f2c31a.htm" />
+  <HelpKINode Title="AddNewGlobalTypeLang method" Url="html/d09a8fa7-d6e1-bf78-23f0-5dbf0f1a3344.htm" />
+  <HelpKINode Title="AddUserAutoCompleteInfo_V2 method" Url="html/7ae21f1c-6d57-c2e3-7286-107198c2e041.htm" />
+  <HelpKINode Title="AddUserSMSTokenFailure method" Url="html/8600e03a-185c-6c43-df54-77c177fa3771.htm" />
+  <HelpKINode Title="AgregateValidateAuthentication_v5 method" Url="html/d28c09fc-1a81-b667-77c7-30423dc0fb94.htm" />
+  <HelpKINode Title="AliasAuthentication class">
+    <HelpKINode Title="AliasAuthentication Class" Url="html/673a6fe6-39c5-f79f-4d28-737043dcd014.htm" />
+    <HelpKINode Title="about AliasAuthentication class" Url="html/673a6fe6-39c5-f79f-4d28-737043dcd014.htm" />
+    <HelpKINode Title="constructor" Url="html/10e8f1d0-5ac2-507d-5395-729f765e95a6.htm" />
+    <HelpKINode Title="events" Url="html/39c6b34f-740b-655a-a0da-d86bbea36a47.htm" />
+    <HelpKINode Title="methods" Url="html/25f22ec9-1cb2-f615-5af0-7d3dedb6c8da.htm" />
+    <HelpKINode Title="properties" Url="html/a6b74a61-82d5-7bc4-aa84-d70b260ffa28.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AliasAuthentication.AgregateValidateAuthentication_v5 method" Url="html/d28c09fc-1a81-b667-77c7-30423dc0fb94.htm" />
+  <HelpKINode Title="AliasAuthentication.AliasAuthentication constructor" Url="html/10e8f1d0-5ac2-507d-5395-729f765e95a6.htm" />
+  <HelpKINode Title="AliasAuthentication.Dispose method" Url="html/8328c67e-27a1-8e0c-c752-c037021d59de.htm" />
+  <HelpKINode Title="AliasAuthentication.GetAliasPositionsWithSession_v2 method" Url="html/8acf85ab-861c-13f8-441f-ac874b4a6821.htm" />
+  <HelpKINode Title="AliasAuthentication.GetAliasPositions_v2 method" Url="html/cd9e5207-f84e-b6db-c65b-d12ff6b71936.htm" />
+  <HelpKINode Title="AliasAuthentication.GetAliasTypesByAlias method" Url="html/8ee423b4-571b-14d5-1f3c-d06e5a4607d1.htm" />
+  <HelpKINode Title="AliasAuthentication.SetAliasAuthentication method" Url="html/a467cb0c-a73f-c32d-557a-896cb27ffda4.htm" />
+  <HelpKINode Title="AliasAuthentication.ValidateAccessCode method" Url="html/6c22fcd9-8089-9a62-3b27-3090be5cf519.htm" />
+  <HelpKINode Title="AliasAuthorization class">
+    <HelpKINode Title="AliasAuthorization Class" Url="html/a9c7b683-8d7d-360a-5483-ba1dd7a9379e.htm" />
+    <HelpKINode Title="about AliasAuthorization class" Url="html/a9c7b683-8d7d-360a-5483-ba1dd7a9379e.htm" />
+    <HelpKINode Title="constructor" Url="html/7939460a-0852-5555-b208-3b79f3edc18c.htm" />
+    <HelpKINode Title="events" Url="html/d903abd7-0219-23d0-5a50-68834806977f.htm" />
+    <HelpKINode Title="methods" Url="html/a5c7f989-951f-b9d3-5aaa-deb09f51bb03.htm" />
+    <HelpKINode Title="properties" Url="html/4b121f7f-e3db-1b74-b69a-9d55cafcf442.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AliasAuthorization.AliasAuthorization constructor" Url="html/7939460a-0852-5555-b208-3b79f3edc18c.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransaction method" Url="html/35ae4d3e-389d-6d83-7a20-8c55f4023ac8.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransactionWithWorkflow method" Url="html/4a10e56e-eed4-7577-2825-0d321f6a3a6c.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransactionWithWorkflow_v2 method" Url="html/3cb30e5a-3c8d-336c-8c4a-a75336e7c8ad.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransactionWithWorkflow_v3 method" Url="html/40cc2920-cb3c-3a7c-0db1-9e8d44078786.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransactionWithWorkflow_v4 method" Url="html/aa2b6b7c-f5fe-b7bd-7158-6047a5041da6.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransaction_v2 method" Url="html/52e584bd-4b40-aeb6-b779-00b9814a6fc1.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransaction_v3 method" Url="html/c05746af-e5c0-d791-be88-2e80992dcd11.htm" />
+  <HelpKINode Title="AliasAuthorization.BeginTransaction_v4 method" Url="html/0a3f3764-bb5b-66d8-e9f3-6b6f6a5a5be0.htm" />
+  <HelpKINode Title="AliasAuthorization.CommitTransaction method" Url="html/0892e0d9-b071-e6c5-5553-8c601eee0c55.htm" />
+  <HelpKINode Title="AliasAuthorization.DeleteAliasProfileCombinationLimitRules method" Url="html/3662716b-62df-fb8c-1b84-75830b1e26e0.htm" />
+  <HelpKINode Title="AliasAuthorization.DeleteAliasProfileCombinationLimitRulesByUserId method" Url="html/f75196e5-41fe-9f1c-ac05-f9692d8c04ad.htm" />
+  <HelpKINode Title="AliasAuthorization.DeleteHeuristicBlacklistNIB method" Url="html/cd835703-38e1-fdf7-3d01-744842fd1c72.htm" />
+  <HelpKINode Title="AliasAuthorization.Dispose method" Url="html/ef8b345a-02f5-4a6f-460f-5a12ab609259.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateAliasProfile method" Url="html/9858c122-219b-ccfd-4a81-bb02a9925e6e.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransaction method" Url="html/17619a01-ecdd-633e-502a-744b508769cd.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransactionValue method" Url="html/a4d62689-894a-d777-93e0-d7aa04cd8792.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransactionValue_v2 method" Url="html/2dba71d7-0a20-fc91-c65f-b8ff3e9cc8ef.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransactionValue_v3 method" Url="html/1273aaae-4c06-bf0d-2a70-22df82bcdf82.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransaction_v2 method" Url="html/e80b8e1c-2c0c-ebf7-f0d4-dac0edfd8f94.htm" />
+  <HelpKINode Title="AliasAuthorization.EvaluateTransaction_v3 method" Url="html/504d5cf0-689c-97d7-3826-974ccfbf7c58.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAccessTransactionAccountProductList method" Url="html/a4d3f5bb-8280-42ef-0ffa-c47ae49d1efb.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAccessTransactionAccountProductList_v2 method" Url="html/ee8629c8-6791-c36d-2c1d-0508fb2fa8da.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAccountLimitsAndProfileOveridesList method" Url="html/0556d942-4354-988a-ca5b-ed9284ce21df.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAccountProducts method" Url="html/c64f72b0-1889-7af2-4607-f56a882675b9.htm" />
+  <HelpKINode Title="AliasAuthorization.GetADRoleAccessInfo method" Url="html/708a7c87-6538-8573-33ed-e0da822868ea.htm" />
+  <HelpKINode Title="AliasAuthorization.GetADRoleAccessInfo_v2 method" Url="html/a8d4a52a-33d0-4e3a-091c-6361d796ee02.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAliasProfileCombinationLimitRules method" Url="html/d9959d92-e40a-3e7b-82bf-4cb613f4ceb1.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAllLimitTypes method" Url="html/79154efa-2c35-b41f-0da1-467e6d71f58b.htm" />
+  <HelpKINode Title="AliasAuthorization.GetAllTransactionGroupRelation method" Url="html/d1e59c44-8592-08fd-5645-918e08183107.htm" />
+  <HelpKINode Title="AliasAuthorization.GetOutAccountProducts method" Url="html/9b049ef4-2762-c46d-0b91-9e3fc3af87f5.htm" />
+  <HelpKINode Title="AliasAuthorization.GetProfileTransactionList method" Url="html/bd652834-6c51-f22a-1a59-56aec6914f91.htm" />
+  <HelpKINode Title="AliasAuthorization.GetRuleAccessInfo method" Url="html/be97693d-1cc6-132b-f7df-a3cadca271a7.htm" />
+  <HelpKINode Title="AliasAuthorization.GetSubRuleInfoByAlias method" Url="html/f9b0ceda-bcc7-ca68-eb7f-06b6156cb41f.htm" />
+  <HelpKINode Title="AliasAuthorization.GetTransactionViewForUser method" Url="html/7b576c9e-94de-80fe-e916-c1b0419e75b2.htm" />
+  <HelpKINode Title="AliasAuthorization.ListHeuristicBlacklistNIB method" Url="html/877fca7d-d917-0002-7730-1524547b794b.htm" />
+  <HelpKINode Title="AliasAuthorization.NewAliasDailyLimitDetail method" Url="html/fd813899-173a-4394-3afe-555226f55307.htm" />
+  <HelpKINode Title="AliasAuthorization.RollbackTransaction method" Url="html/a8be6dce-31bc-9275-90a3-4c9457503102.htm" />
+  <HelpKINode Title="AliasAuthorization.RollbackTransactionV2 method" Url="html/549185bb-0574-0737-d5ca-9063ea2ef21e.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAccountLimitsAndProfileOveridesList method" Url="html/5b7da2b8-52ca-3d5a-9fbb-9bad7ef82e8e.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAliasAccessTransactionList method" Url="html/f85be289-e301-424d-6f46-2bea35db197b.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAliasAccountProductList method" Url="html/5dc126f3-4680-3857-2a41-a596eef7f5bb.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAliasDailyLimitDetail method" Url="html/6f26776e-e121-5bf9-36c1-0c931de6d5d7.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAliasProfileCombinationLimitRules method" Url="html/27ebb667-d20b-67a5-973e-5d8f1782180e.htm" />
+  <HelpKINode Title="AliasAuthorization.SetAliasProfileCombinationLimitRulesStateless method" Url="html/21974ef9-5821-e34a-9f84-8f91486ee22d.htm" />
+  <HelpKINode Title="AliasAuthorization.SetCompanyAliasAccessTransactionList method" Url="html/1d9fc61d-bcd9-9921-15a8-ba67a973f0d7.htm" />
+  <HelpKINode Title="AliasAuthorization.SetCompanyAliasAccessTransactionList_v2 method" Url="html/1fc5c641-139e-d673-1821-8a4582d61b89.htm" />
+  <HelpKINode Title="AliasAuthorization.SetCompanyAliasAccountProductList method" Url="html/079b7202-1c65-b379-a18a-8c98c8dd34a7.htm" />
+  <HelpKINode Title="AliasAuthorization.SetContextBranch method" Url="html/8947fc45-7d55-ca97-d0f6-15a9794b5be9.htm" />
+  <HelpKINode Title="AliasAuthorization.SetUserAliasAccessTransactionList method" Url="html/045a6d80-e612-b253-74d6-d39ba8a0d8c6.htm" />
+  <HelpKINode Title="AliasAuthorization.SetUserAliasAccessTransactionList_v2 method" Url="html/826347d9-9fcb-7f37-1401-13976c54a380.htm" />
+  <HelpKINode Title="AliasAuthorization.UpdateCompanyAliasProfile method" Url="html/dcb6e2e3-7d79-0265-d90c-a3fe1d706ae9.htm" />
+  <HelpKINode Title="AliasAuthorization.UpdateNIBHeuristicState method" Url="html/0621ca5d-894b-7790-d67c-4d245de80f4e.htm" />
+  <HelpKINode Title="AliasManagement class">
+    <HelpKINode Title="AliasManagement Class" Url="html/d868f9d8-89f6-7438-1715-272f1ee24603.htm" />
+    <HelpKINode Title="about AliasManagement class" Url="html/d868f9d8-89f6-7438-1715-272f1ee24603.htm" />
+    <HelpKINode Title="constructor" Url="html/faf0a78a-97d4-be06-e38f-c5527635f5b1.htm" />
+    <HelpKINode Title="events" Url="html/55ada4ed-4a9d-46b2-e79a-2793a1391327.htm" />
+    <HelpKINode Title="methods" Url="html/029dc7a6-e10b-340e-5aca-c924ee31c336.htm" />
+    <HelpKINode Title="properties" Url="html/68adca6d-bf88-fbc0-f8ea-5c58cd8c57cb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AliasManagement.AliasManagement constructor" Url="html/faf0a78a-97d4-be06-e38f-c5527635f5b1.htm" />
+  <HelpKINode Title="AliasManagement.ChangeUserAliasLimit_v2 method" Url="html/3bcc7044-c88f-6d7a-3c77-8449cd44332b.htm" />
+  <HelpKINode Title="AliasManagement.Dispose method" Url="html/10406867-b17b-ae60-1521-a0df99f7efa3.htm" />
+  <HelpKINode Title="AliasManagement.ExistsUserAlias method" Url="html/e1d3df09-f504-c472-242e-2bd20aeaa505.htm" />
+  <HelpKINode Title="AliasManagement.GetAliasBaseInfo method" Url="html/b03c793e-003d-81be-04e7-ab93126e7610.htm" />
+  <HelpKINode Title="AliasManagement.GetAllAliasStates method" Url="html/3a609cd8-5973-4b02-abd9-3706b60b0988.htm" />
+  <HelpKINode Title="AliasManagement.GetAllAliasType method" Url="html/7f1f0f68-541d-7b40-7b2d-4b3f8465624a.htm" />
+  <HelpKINode Title="AliasManagement.GetUserAliasAllLimitsAndCombinations_v2 method" Url="html/2abd648d-311e-afb1-f56a-e91f5d5f275c.htm" />
+  <HelpKINode Title="AliasManagement.GetUserAliasByAlias method" Url="html/d67c1114-3917-ede3-988a-5401dabc5d5d.htm" />
+  <HelpKINode Title="AliasManagement.GetUserLoginAlternativeAlias method" Url="html/61ce5cea-9e30-b57d-571c-73338d8a6bee.htm" />
+  <HelpKINode Title="AliasManagement.GetUserLoginMainAlias method" Url="html/775cdcf9-339c-ed27-f2a7-d976d26c68ec.htm" />
+  <HelpKINode Title="AliasManagement.RegistNewLoginAlias method" Url="html/6f71c92e-103c-2bf5-8b01-93248c56a4bc.htm" />
+  <HelpKINode Title="AliasManagement.SetAliasBaseInfo method" Url="html/7c1a5e77-38ba-f597-5c91-5ede3d9acbf9.htm" />
+  <HelpKINode Title="AliasOperation class">
+    <HelpKINode Title="AliasOperation Class" Url="html/ace78e69-18b0-29dd-a52f-7116b0ef95c1.htm" />
+    <HelpKINode Title="about AliasOperation class" Url="html/ace78e69-18b0-29dd-a52f-7116b0ef95c1.htm" />
+    <HelpKINode Title="constructor" Url="html/beffe8e4-04c3-d582-f9a1-79a3e5843aac.htm" />
+    <HelpKINode Title="events" Url="html/f4eb23f9-b7b5-8d84-e9d2-8e99123073c4.htm" />
+    <HelpKINode Title="methods" Url="html/b7fe2d91-192c-f224-dddf-95494056c4c3.htm" />
+    <HelpKINode Title="properties" Url="html/626d2f7d-c27b-a667-f28d-2055114f778b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AliasOperation.AliasOperation constructor" Url="html/beffe8e4-04c3-d582-f9a1-79a3e5843aac.htm" />
+  <HelpKINode Title="AliasOperation.AuthorizeOperation method" Url="html/4696383e-eeef-125d-a276-a8b7ffb39058.htm" />
+  <HelpKINode Title="AliasOperation.CancelOperation method" Url="html/d05acd70-1af8-87dd-02e3-83177107bac3.htm" />
+  <HelpKINode Title="AliasOperation.ChangeOperationStatus method" Url="html/b34ba755-f835-5c0e-9d9c-b0a1e5547d9a.htm" />
+  <HelpKINode Title="AliasOperation.Dispose method" Url="html/ec203419-a991-42e7-d3f0-732cc13eb771.htm" />
+  <HelpKINode Title="AliasOperation.GetMostUsedOperations method" Url="html/b1539211-228b-98de-d3c0-21e9e18050e7.htm" />
+  <HelpKINode Title="AliasOperation.GetOperations method" Url="html/da12ab45-25e1-0de8-95dc-30909f560d21.htm" />
+  <HelpKINode Title="AliasOperation.GetOperationsDetail method" Url="html/ab652096-ea30-06f5-63d9-8ae85f51a1e0.htm" />
+  <HelpKINode Title="AliasOperation.GetOperationsDetailByExternalId method" Url="html/ee2091fb-0c24-61af-e6ac-6ea9421db9f2.htm" />
+  <HelpKINode Title="AliasOperation.GetOperations_v7 method" Url="html/32e075cd-6699-84e2-20d2-8fe8d2279d23.htm" />
+  <HelpKINode Title="AliasOperation.GetPendingOperationsCount method" Url="html/9dfd6472-5a58-81a6-c2d8-e6e5d19972e0.htm" />
+  <HelpKINode Title="AliasOperation.NewOperation method" Url="html/03a46937-fd89-281b-2089-24e009788bcd.htm" />
+  <HelpKINode Title="ApplicationService class">
+    <HelpKINode Title="ApplicationService Class" Url="html/d74e7085-67d2-9bec-f5e3-dba71c445ced.htm" />
+    <HelpKINode Title="about ApplicationService class" Url="html/d74e7085-67d2-9bec-f5e3-dba71c445ced.htm" />
+    <HelpKINode Title="constructor" Url="html/f18ebab5-07eb-b241-89fe-aaf083c3b6ef.htm" />
+    <HelpKINode Title="events" Url="html/7d1698f0-d2f6-6929-90cf-cc817ef28beb.htm" />
+    <HelpKINode Title="methods" Url="html/9c8cef8d-8844-bd2b-8196-0f2679a5b5a2.htm" />
+    <HelpKINode Title="properties" Url="html/09923a9f-7dcf-e6c2-a0f4-f9ecd8cfa418.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ApplicationService.AddNewGlobalContentType method" Url="html/b9341d28-b63a-ce10-b824-795356f2c31a.htm" />
+  <HelpKINode Title="ApplicationService.AddNewGlobalTypeLang method" Url="html/d09a8fa7-d6e1-bf78-23f0-5dbf0f1a3344.htm" />
+  <HelpKINode Title="ApplicationService.ApplicationService constructor" Url="html/f18ebab5-07eb-b241-89fe-aaf083c3b6ef.htm" />
+  <HelpKINode Title="ApplicationService.DeleteResource method" Url="html/3f051651-cb59-cc84-0d23-89ded18b2161.htm" />
+  <HelpKINode Title="ApplicationService.DeleteTransaction method" Url="html/4b84d4f6-5cc4-d665-ccee-2b82c0144649.htm" />
+  <HelpKINode Title="ApplicationService.DeleteTransactionLabel method" Url="html/0dc9a816-9ff2-c310-c495-a78390803846.htm" />
+  <HelpKINode Title="ApplicationService.DeleteTransactionSMSMessage method" Url="html/73d217dc-9e2e-260d-b6f7-a01087f8ce8a.htm" />
+  <HelpKINode Title="ApplicationService.Dispose method" Url="html/1a55e255-9c78-fdba-2f0d-d1c904b82ad6.htm" />
+  <HelpKINode Title="ApplicationService.GetAllAssetImpactTypes method" Url="html/817587f2-c99e-ee14-e0bb-96c69e06a732.htm" />
+  <HelpKINode Title="ApplicationService.GetAllChannels method" Url="html/de94acfc-bdb2-4cb2-fd80-9252fe5fa942.htm" />
+  <HelpKINode Title="ApplicationService.GetAllDefaultCurrencies method" Url="html/c2169455-e784-4b87-e15d-1b73de08f7d5.htm" />
+  <HelpKINode Title="ApplicationService.GetAllLanguages method" Url="html/b5156b02-6012-011e-204a-49cfd6127941.htm" />
+  <HelpKINode Title="ApplicationService.GetAllResources method" Url="html/2f69f903-dd1d-8f57-7989-e243a7dab32f.htm" />
+  <HelpKINode Title="ApplicationService.GetInternationalDialingPhoneCodes method" Url="html/70220ab2-732b-bfe4-8a85-40309533ac60.htm" />
+  <HelpKINode Title="ApplicationService.GetResourcesByID method" Url="html/89d18193-497e-eeea-ea8a-5bb5043cd037.htm" />
+  <HelpKINode Title="ApplicationService.GetTransactionFullDetails method" Url="html/caf3a6a8-32ba-82a9-bbeb-400f4c75c78d.htm" />
+  <HelpKINode Title="ApplicationService.GetTransactionList method" Url="html/74692af1-35ed-8f49-51f4-907b4d99251b.htm" />
+  <HelpKINode Title="ApplicationService.GetTransactionsFiltered method" Url="html/55cf7b7d-52ed-1b0f-1d7d-c9013a7accf7.htm" />
+  <HelpKINode Title="ApplicationService.GetTransactionSMSMessage method" Url="html/9a1c777d-482a-4dfe-c683-8c1fc4e6a6bf.htm" />
+  <HelpKINode Title="ApplicationService.GetTransactionViewForChannel method" Url="html/56bbdfba-231e-bc97-58ca-c262810eb6b7.htm" />
+  <HelpKINode Title="ApplicationService.GetUserAccountList method" Url="html/8ae2c86c-0006-5fab-ebbe-09831b94aaad.htm" />
+  <HelpKINode Title="ApplicationService.SetTransactionData method" Url="html/cde2bcfd-7f41-7190-bf29-a20232f58b7c.htm" />
+  <HelpKINode Title="ApplicationService.SetTransactionLabelData method" Url="html/2733fc8b-fcc8-5a89-8592-e9ca3fc7a550.htm" />
+  <HelpKINode Title="ApplicationService.SetTransactionSMSMessage method" Url="html/8b0a9d13-19b0-965f-0a3d-7e5895f32d2f.htm" />
+  <HelpKINode Title="Application_AuthenticateRequest method" Url="html/be268a2f-f8ee-0559-4880-de07c21a9d4c.htm" />
+  <HelpKINode Title="Application_BeginRequest method" Url="html/c45b703e-f8d9-1a37-006f-a0481a89c863.htm" />
+  <HelpKINode Title="Application_End method" Url="html/c9494f90-f607-8fcc-8483-04785d88b367.htm" />
+  <HelpKINode Title="Application_EndRequest method" Url="html/f08121b4-8f71-0cda-0772-63f492f31e21.htm" />
+  <HelpKINode Title="Application_Error method" Url="html/148ad4cb-af31-d0b4-56ed-e4b5db6289fa.htm" />
+  <HelpKINode Title="Application_Start method" Url="html/18c66376-f58b-dc17-b390-b47cd17c0d21.htm" />
+  <HelpKINode Title="AssociateAccessCodeExternalReference method">
+    <HelpKINode Title="Authentication.AssociateAccessCodeExternalReference Method " Url="html/daa2c630-b5d7-7285-69a9-1e19bd2efa32.htm" />
+    <HelpKINode Title="UserManagement.AssociateAccessCodeExternalReference Method " Url="html/65a79de1-7dcf-d104-5628-a0a012c3e96d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssociateAccessCodeExternalReferenceById method" Url="html/6ecc9d9a-5fb9-bb73-4719-e5e7d1633975.htm" />
+  <HelpKINode Title="AssociateAccessCodeExternalReference_V2 method" Url="html/63ec888a-2995-9c87-7526-fa2680ad9ea8.htm" />
+  <HelpKINode Title="AssociateMatrixCardReference method" Url="html/c57c8869-a4a9-41c2-c2af-cc5e85e08e6d.htm" />
+  <HelpKINode Title="AssociateNewMatrixCard method">
+    <HelpKINode Title="Authentication.AssociateNewMatrixCard Method " Url="html/c74439f9-72b8-c0d7-68d5-01a1142c90fd.htm" />
+    <HelpKINode Title="AuthenticationService.AssociateNewMatrixCard Method " Url="html/bfa4e6bd-1a63-0b0e-02cd-a2cf19b2c8c0.htm" />
+    <HelpKINode Title="IAuthenticationService.AssociateNewMatrixCard Method " Url="html/977f6500-792a-dca0-ff68-ed55a6540378.htm" />
+    <HelpKINode Title="UserManagement.AssociateNewMatrixCard Method " Url="html/f007ed8d-8b67-d1b5-b218-a699be28a3ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AuthenticateAlias method">
+    <HelpKINode Title="AuthenticationService.AuthenticateAlias Method " Url="html/f38cac0d-8535-98c6-a739-c95abafdac47.htm" />
+    <HelpKINode Title="IAuthenticationService.AuthenticateAlias Method " Url="html/788c6236-a1b3-15db-2c97-7cb139fe1fc0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Authentication class">
+    <HelpKINode Title="Authentication Class" Url="html/51592e94-793e-140c-4a89-bf63ae48d324.htm" />
+    <HelpKINode Title="about Authentication class" Url="html/51592e94-793e-140c-4a89-bf63ae48d324.htm" />
+    <HelpKINode Title="constructor" Url="html/bf7347fd-80ea-a358-8c07-f4765bae3c24.htm" />
+    <HelpKINode Title="events" Url="html/a2acf9af-4f0c-9771-d165-34f042192ff1.htm" />
+    <HelpKINode Title="methods" Url="html/54e029bc-fc0b-b904-8ab2-231b837678c9.htm" />
+    <HelpKINode Title="properties" Url="html/e0d06431-19ab-5ca0-a998-aa0d30f7108e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Authentication.ActivateAccount method" Url="html/659a6f9b-2988-8328-9ca3-72f28889b584.htm" />
+  <HelpKINode Title="Authentication.ActivateUserAccessCode method" Url="html/7429ca7d-993f-f062-3b8e-07742329cb63.htm" />
+  <HelpKINode Title="Authentication.AssociateAccessCodeExternalReference method" Url="html/daa2c630-b5d7-7285-69a9-1e19bd2efa32.htm" />
+  <HelpKINode Title="Authentication.AssociateMatrixCardReference method" Url="html/c57c8869-a4a9-41c2-c2af-cc5e85e08e6d.htm" />
+  <HelpKINode Title="Authentication.AssociateNewMatrixCard method" Url="html/c74439f9-72b8-c0d7-68d5-01a1142c90fd.htm" />
+  <HelpKINode Title="Authentication.Authentication constructor" Url="html/bf7347fd-80ea-a358-8c07-f4765bae3c24.htm" />
+  <HelpKINode Title="Authentication.ChangeAccessCode method" Url="html/228488df-ecd6-7f08-e963-fd6d5f9244fd.htm" />
+  <HelpKINode Title="Authentication.ChangeAccessCodeCallCenterAB7 method" Url="html/c79a3dea-a983-afcb-bf68-2e19547199de.htm" />
+  <HelpKINode Title="Authentication.ChangeAccessCodeStatus method" Url="html/8785f3c2-e141-0925-7f52-d50cf0b91b5e.htm" />
+  <HelpKINode Title="Authentication.ChangeAccessCodeType method" Url="html/53c4747b-2fd2-30d4-ff90-790c5803c270.htm" />
+  <HelpKINode Title="Authentication.ChangeAccessCodeValue method" Url="html/aa6f3a5d-010a-631f-7c2b-98dea13f9368.htm" />
+  <HelpKINode Title="Authentication.ChangeAliasValidation method" Url="html/f777928b-9257-4d94-5afb-db70b5026137.htm" />
+  <HelpKINode Title="Authentication.ChangeCertificates method" Url="html/42a37826-a3a4-e043-81b9-950e3025f922.htm" />
+  <HelpKINode Title="Authentication.ChangeError method" Url="html/8ae0b912-a371-7f5d-b114-197ccbc88fb7.htm" />
+  <HelpKINode Title="Authentication.ChangeUserAccess method" Url="html/a1f5a6ce-3d91-6e5e-aa65-5d9c312fc54b.htm" />
+  <HelpKINode Title="Authentication.CheckUserAccessCodesFailures method" Url="html/08a73fea-a28a-b6b7-700b-4c33a65762cd.htm" />
+  <HelpKINode Title="Authentication.Dispose method" Url="html/fb1e9cd0-a41d-6ea8-2a89-12222f7b8560.htm" />
+  <HelpKINode Title="Authentication.EncryptAccessCodeExternalReference method" Url="html/c7550845-1037-73fe-fa44-3d82780ad827.htm" />
+  <HelpKINode Title="Authentication.GenerateUserAuthentication method" Url="html/fa811062-5ab7-2ae7-f57c-8cc2514fa1c7.htm" />
+  <HelpKINode Title="Authentication.GetABUserPositions method" Url="html/747ca920-0f23-62ba-cfef-dbbfa1bf8f5e.htm" />
+  <HelpKINode Title="Authentication.GetAccessCode method" Url="html/5ae041c2-a5e1-329b-62ad-25cc441d6e15.htm" />
+  <HelpKINode Title="Authentication.GetAccessCodePositions method" Url="html/56ca6733-15c4-0184-bfb7-6c0a8b75bae9.htm" />
+  <HelpKINode Title="Authentication.GetAccessCodesBranchesAssigned method" Url="html/b340014a-a39a-2605-1ae2-b3f914047c26.htm" />
+  <HelpKINode Title="Authentication.GetAccessCodesByBranchDate method" Url="html/52747e0f-2b78-c888-e17e-84487b9f4d85.htm" />
+  <HelpKINode Title="Authentication.GetAccessCodeValue method" Url="html/6dbf02ac-b275-d698-4489-d20bc149ee27.htm" />
+  <HelpKINode Title="Authentication.GetAccessCodeWithStatus method" Url="html/e5155009-1fed-c00c-70d7-2afd9b95147f.htm" />
+  <HelpKINode Title="Authentication.GetAllAccessCodeStatus method" Url="html/d2289df8-68ca-c656-b07f-fa0e3ab24365.htm" />
+  <HelpKINode Title="Authentication.GetAllAccessCodeTypes method" Url="html/cda2f82b-e4c7-d1d4-1071-b08ff42ea4d5.htm" />
+  <HelpKINode Title="Authentication.GetAllCertificateAuthority method" Url="html/b2d11965-80f3-c1f2-3858-86df64bc1268.htm" />
+  <HelpKINode Title="Authentication.GetAllCertificateStatus method" Url="html/7db422d1-520e-67fd-5a84-39b49d578e33.htm" />
+  <HelpKINode Title="Authentication.GetAllCertificateType method" Url="html/c0529f9a-0232-0426-0244-69bc982626e6.htm" />
+  <HelpKINode Title="Authentication.GetAllTokenCardIssuers method" Url="html/4621b2f1-2741-4e73-0192-96d168061522.htm" />
+  <HelpKINode Title="Authentication.GetCertificates method" Url="html/dad2ebce-5460-84c8-7b70-460bc9dafa34.htm" />
+  <HelpKINode Title="Authentication.GetContractByExternalReference method" Url="html/3b4383cd-52b6-538b-c4ee-758974dfcddd.htm" />
+  <HelpKINode Title="Authentication.GetErrors method" Url="html/b8f4c32b-3d0d-d2e8-0e8b-4eef73a2d6f8.htm" />
+  <HelpKINode Title="Authentication.GetMatrixCardByCustomer method" Url="html/97fca9c7-d245-9090-ad5a-98ed88dd8ad2.htm" />
+  <HelpKINode Title="Authentication.GetMatrixCardByReference method" Url="html/fcf69467-c4bf-25a5-2349-0fccf09e6c7d.htm" />
+  <HelpKINode Title="Authentication.GetRandomContract method" Url="html/344dc7ea-15d6-f12d-18d0-30df5a4a9217.htm" />
+  <HelpKINode Title="Authentication.GetUserActivationKey method" Url="html/148c0f0d-7d53-bee1-ef1a-777c1225970e.htm" />
+  <HelpKINode Title="Authentication.GetUserPositions method" Url="html/342fa450-f320-4170-35b2-c067fa155b35.htm" />
+  <HelpKINode Title="Authentication.GetUsersPositions method" Url="html/5ad0f275-ab3c-763a-f97d-e10d25a6c90b.htm" />
+  <HelpKINode Title="Authentication.InactivateUserAccessCodeAllExceptThis method" Url="html/d6dc5091-5c9b-c04d-5e0d-e5c9d9c0737a.htm" />
+  <HelpKINode Title="Authentication.InitializeAccessCodeFailures method" Url="html/de0c501e-9fdc-e21c-fee9-96bbba4dbf06.htm" />
+  <HelpKINode Title="Authentication.InitializeAccessCodeFailuresById method" Url="html/64286153-f71c-ecf9-f883-2edd822a56bf.htm" />
+  <HelpKINode Title="Authentication.NewAccessCodeByCustomer method" Url="html/7ebb8ede-b51a-39ac-23bf-6203d296b57d.htm" />
+  <HelpKINode Title="Authentication.NewCertificate method" Url="html/33358f21-245b-7367-1808-c41a18f32bdb.htm" />
+  <HelpKINode Title="Authentication.NewUserAccessCodeInactive method" Url="html/ce703dc8-33fe-9e18-fcac-6d80b611071c.htm" />
+  <HelpKINode Title="Authentication.NewUserAccessCodeInactiveExtUser method" Url="html/6ae1e57f-de9d-d0c2-2a22-7b75555a3868.htm" />
+  <HelpKINode Title="Authentication.RecoverAccessCodeFromEnvelope method" Url="html/42456c9c-c67b-50a4-a8dd-7a82741b685a.htm" />
+  <HelpKINode Title="Authentication.ResetUserAccessCodesFailures method" Url="html/df063b17-8833-73b6-0cf8-9e67bd5295d4.htm" />
+  <HelpKINode Title="Authentication.SetAccessCodeByCustomer method" Url="html/b1c48ab0-2703-72e4-9ca1-aa5b36cc68c5.htm" />
+  <HelpKINode Title="Authentication.SetAliasAccessCodeActivation method" Url="html/c4560db0-d695-b898-f93f-9ac752daef21.htm" />
+  <HelpKINode Title="Authentication.SetAliasAuthentication method" Url="html/2ebdf0dc-0be5-c261-1545-6226af935cc3.htm" />
+  <HelpKINode Title="Authentication.SetMultiChannelAuthentication method" Url="html/2bbfc96c-8161-4052-4851-299568a773e9.htm" />
+  <HelpKINode Title="Authentication.SetUserAuthentication method" Url="html/31d90e3b-f9de-68a7-dcc5-5e6c71fb6ec1.htm" />
+  <HelpKINode Title="Authentication.SetUserSessionToken method" Url="html/f9bf5997-e671-c6fe-f472-94bdd2dbf08a.htm" />
+  <HelpKINode Title="Authentication.SignContract method" Url="html/c7ccbd7d-51a4-cd10-e2ee-f6941425d510.htm" />
+  <HelpKINode Title="Authentication.ValidateAccessCode method" Url="html/5c1137af-e0ac-c338-8904-472389fcd59b.htm" />
+  <HelpKINode Title="Authentication.ValidateAccessCodeByCustomer method" Url="html/74700e13-746b-b368-86c6-7ece2fee1cfb.htm" />
+  <HelpKINode Title="Authentication.ValidateCertificate method" Url="html/08cc886e-1781-5adc-786d-a9f32abfb11a.htm" />
+  <HelpKINode Title="Authentication.ValidateMultipleUserAccessCode method" Url="html/4889c2de-ee2a-7fe1-8398-bb17c5e9ff8b.htm" />
+  <HelpKINode Title="Authentication.ValidateStrongAccessCode method" Url="html/7dd19cd1-e9c6-6f30-13a8-c2647bf1c9ad.htm" />
+  <HelpKINode Title="Authentication.ValidateUserAccessCode method" Url="html/55101010-7f61-f958-d398-f64a28b3923f.htm" />
+  <HelpKINode Title="Authentication.ValidateUserAccessCodeWithoutSat method" Url="html/a60566a2-b52e-c8ca-584e-cf2ba3c662b5.htm" />
+  <HelpKINode Title="Authentication.ValidateUserCardToken method" Url="html/26cb5fdb-c733-207c-ce2a-fdccce66b367.htm" />
+  <HelpKINode Title="Authentication.ValidateUserSmsToken method" Url="html/b29b61c9-f36b-c7ba-a35c-410f35ef15f9.htm" />
+  <HelpKINode Title="AuthenticationService class">
+    <HelpKINode Title="AuthenticationService Class" Url="html/c3529a1c-41bb-71f4-6d74-5f481353b86d.htm" />
+    <HelpKINode Title="about AuthenticationService class" Url="html/c3529a1c-41bb-71f4-6d74-5f481353b86d.htm" />
+    <HelpKINode Title="constructor" Url="html/a68b0d67-6b99-8053-2970-055aeacf5d50.htm" />
+    <HelpKINode Title="fields" Url="html/65e23735-d0ea-37c7-8c3f-6afa91f7f102.htm" />
+    <HelpKINode Title="methods" Url="html/6ea40138-9da2-9287-51af-5f41e9eca3bb.htm" />
+    <HelpKINode Title="properties" Url="html/6d7e24f0-4c7d-5784-79d9-aec1d44c6633.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AuthenticationService.AssociateNewMatrixCard method" Url="html/bfa4e6bd-1a63-0b0e-02cd-a2cf19b2c8c0.htm" />
+  <HelpKINode Title="AuthenticationService.AuthenticateAlias method" Url="html/f38cac0d-8535-98c6-a739-c95abafdac47.htm" />
+  <HelpKINode Title="AuthenticationService.AuthenticationService constructor" Url="html/a68b0d67-6b99-8053-2970-055aeacf5d50.htm" />
+  <HelpKINode Title="AuthenticationService.CancelAccessCode method" Url="html/87bc5c48-e793-58b6-7fbf-b1bfa4a1e6d6.htm" />
+  <HelpKINode Title="AuthenticationService.ChangeContractPhone method" Url="html/bf3ea085-347b-0173-a064-91b7f6c03bb4.htm" />
+  <HelpKINode Title="AuthenticationService.ChangePassword method" Url="html/90ed4153-d21a-0374-aefb-892be25d4355.htm" />
+  <HelpKINode Title="AuthenticationService.ChangeUserAliasLimit method" Url="html/432887d1-995f-9458-c51f-b7f7bc2490db.htm" />
+  <HelpKINode Title="AuthenticationService.CloseSession method" Url="html/0cec9452-3b6d-e991-80d7-9924a5e909dd.htm" />
+  <HelpKINode Title="AuthenticationService.DisableAccessCode method" Url="html/75c19c84-a1fa-8c2e-7d7e-1bca5b30ed66.htm" />
+  <HelpKINode Title="AuthenticationService.EvaluateTransaction method" Url="html/58a2bbb9-c1ba-7406-ab5c-fa944bc7c1f4.htm" />
+  <HelpKINode Title="AuthenticationService.GetAliasAuthentication method" Url="html/cb6ab150-bad6-dac9-f3da-0d2eb773be26.htm" />
+  <HelpKINode Title="AuthenticationService.GetAliasPositionsWithSession method" Url="html/6ddd6aff-e11b-1f36-558c-72b21eae3ac8.htm" />
+  <HelpKINode Title="AuthenticationService.GetAllAssetImpactTypes method" Url="html/264aa5b5-f574-c252-6127-f0bded954956.htm" />
+  <HelpKINode Title="AuthenticationService.GetAllChannels method" Url="html/85385e9a-b209-7620-6306-e42b5ae47f1d.htm" />
+  <HelpKINode Title="AuthenticationService.GetAllDefaultCurrencies method" Url="html/b97771ba-be23-7a0a-9375-35322ae66d8e.htm" />
+  <HelpKINode Title="AuthenticationService.GetAllTimePeriods method" Url="html/1ef0bba9-acd1-1a61-d7b3-5257ff108a8e.htm" />
+  <HelpKINode Title="AuthenticationService.GetSubscriptionTransactionList method" Url="html/394951e1-d820-05e4-7baf-1410206f7135.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserAccessesByLocation method" Url="html/8ce09a4e-6daa-df58-bbde-74735086dee8.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserAliasAllDevices method" Url="html/652dd322-aa3b-d6e8-843b-260dcedf03b8.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserAliasAllLimits method" Url="html/48842198-afcd-64b4-4058-3ec0f5e1af54.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserContactInfo method" Url="html/a0bc0e96-fafc-a191-9da4-e00ae2ae8ff8.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserLoginAlternativeAlias method" Url="html/98ef3ee6-570e-26cf-c5e7-27f36cb85f2e.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserLoginMainAlias method" Url="html/828b0808-9031-4d58-7ccf-edbb142733e9.htm" />
+  <HelpKINode Title="AuthenticationService.GetUserMatrixAccessCodes method" Url="html/ab2ee0ae-b7c3-b9f1-9f3a-f871f7a48fcc.htm" />
+  <HelpKINode Title="AuthenticationService.ReenableAccessCode method" Url="html/a4d0ec58-6d97-a21b-ded8-b7428edfbd4a.htm" />
+  <HelpKINode Title="AuthenticationService.RegistNewLoginAlias method" Url="html/e2afd40e-e572-ce18-dd41-28c5c0695d39.htm" />
+  <HelpKINode Title="AuthenticationService.SendSMSMessage method" Url="html/f06c2ccf-41e4-5005-983a-5885994752b1.htm" />
+  <HelpKINode Title="AuthenticationService.SendSMSToken method" Url="html/3bb39803-682f-1951-a20c-e051e2631e30.htm" />
+  <HelpKINode Title="AuthenticationService.ValidateAccessCodePositions method" Url="html/a10a2b77-0ea7-f4a6-3070-05bc7801ba3b.htm" />
+  <HelpKINode Title="AuthenticationService.ValidateRequestToken method" Url="html/9d149301-a61e-cda0-957f-19fe68481e55.htm" />
+  <HelpKINode Title="AuthenticationService.ValidateSMSToken method" Url="html/5964bb6c-8b04-1acc-b7ee-4a62518b6e8c.htm" />
+  <HelpKINode Title="AuthenticationService.ValidateToken method" Url="html/5311ac05-7b5f-1be2-bf71-4fc0da4a366f.htm" />
+  <HelpKINode Title="AuthorizeOperation method" Url="html/4696383e-eeef-125d-a276-a8b7ffb39058.htm" />
+  <HelpKINode Title="Backoffice class">
+    <HelpKINode Title="Backoffice Class" Url="html/ebd1912a-6dde-a9ba-7bc1-665f5fcc6167.htm" />
+    <HelpKINode Title="about Backoffice class" Url="html/ebd1912a-6dde-a9ba-7bc1-665f5fcc6167.htm" />
+    <HelpKINode Title="constructor" Url="html/4d45fff9-54d7-17f2-edbe-125774627577.htm" />
+    <HelpKINode Title="events" Url="html/c402174c-43c9-ec50-04e9-35cbcbda53ad.htm" />
+    <HelpKINode Title="methods" Url="html/fdee86e9-e660-67d7-a665-5d5ce2787d5f.htm" />
+    <HelpKINode Title="properties" Url="html/3c879026-504c-d938-8165-3f4cbbec411f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Backoffice.ActivateContract method" Url="html/78faf403-0032-241d-99c6-a0cc99493b0a.htm" />
+  <HelpKINode Title="Backoffice.Backoffice constructor" Url="html/4d45fff9-54d7-17f2-edbe-125774627577.htm" />
+  <HelpKINode Title="Backoffice.CancellationCompanyUser method" Url="html/c9ee5b7a-d56b-1a8b-80a7-80667de114c8.htm" />
+  <HelpKINode Title="Backoffice.ChangeAliasStatus method" Url="html/8d2abafc-72d6-5db8-9541-57780d4ed479.htm" />
+  <HelpKINode Title="Backoffice.ChangeUserAliasCombination_v2 method" Url="html/876c5fa5-6811-bd05-35d5-a0ee9e4e0dec.htm" />
+  <HelpKINode Title="Backoffice.ChangeUserAliasLimit_v2 method" Url="html/a8faec87-12eb-47fa-edbc-e7cd427d21bf.htm" />
+  <HelpKINode Title="Backoffice.ClearAliasContext method" Url="html/0d88d572-d44a-1dd7-4792-84f5a270f068.htm" />
+  <HelpKINode Title="Backoffice.ClearUserContext method" Url="html/829f6050-a192-4b08-b297-d5c974db1fa3.htm" />
+  <HelpKINode Title="Backoffice.CopyStandardRule method" Url="html/ef66c493-1e7f-6f79-3fb4-5b29ba605db2.htm" />
+  <HelpKINode Title="Backoffice.CreateTransactionLimit_v3 method" Url="html/526a641e-3587-80df-d6a6-5d27f2850c11.htm" />
+  <HelpKINode Title="Backoffice.DeleteRules method" Url="html/3fdc040a-e84f-346f-3c3f-057868b6954e.htm" />
+  <HelpKINode Title="Backoffice.Dispose method" Url="html/8a4a5482-25df-b5bd-491f-aa531e5806c6.htm" />
+  <HelpKINode Title="Backoffice.GetActiveCustomer method" Url="html/c2995e74-b3d9-8c83-ca37-55413a0c501b.htm" />
+  <HelpKINode Title="Backoffice.GetAliasBaseInfo method" Url="html/723b902c-4aa4-a6e3-fa55-ddb1772d43aa.htm" />
+  <HelpKINode Title="Backoffice.GetCompanyOrGroupUsersOverview method" Url="html/f9985c33-75db-2b6e-84ea-44775aa75c69.htm" />
+  <HelpKINode Title="Backoffice.GetContracts method" Url="html/b8257a0f-41bb-0083-2003-ea7b9a3b1235.htm" />
+  <HelpKINode Title="Backoffice.GetContractStatus method" Url="html/13950e66-441d-ee46-25e8-56c7394052ef.htm" />
+  <HelpKINode Title="Backoffice.GetCustomerDefaultAccount method" Url="html/0b725f9f-61ca-9519-d4fd-00f8fa8f4874.htm" />
+  <HelpKINode Title="Backoffice.GetCustomerIdByAlias method" Url="html/e706a258-99b6-37e5-0a08-2786b5988ec3.htm" />
+  <HelpKINode Title="Backoffice.GetEmployeeOverview method" Url="html/c54bf1c2-8473-086b-830d-b41472656e14.htm" />
+  <HelpKINode Title="Backoffice.GetEmployeeOverview_v2 method" Url="html/f5279062-0a58-39e5-1af5-cb86b3887c9d.htm" />
+  <HelpKINode Title="Backoffice.GetOperationHistoryDetail method" Url="html/20536021-4dfd-db42-f1c9-ad75c63852f7.htm" />
+  <HelpKINode Title="Backoffice.GetOperationsHistoryByUserId_v2 method" Url="html/9e030607-aa93-3de4-632e-fdcd23297969.htm" />
+  <HelpKINode Title="Backoffice.GetTransactionLimits_v2 method" Url="html/5d72a6f2-efbf-db51-a35f-b941fc34a3c2.htm" />
+  <HelpKINode Title="Backoffice.GetUserAliasAllLimitsAndCombinations_v2 method" Url="html/9a828874-b073-7734-5592-aa67ce98a6f7.htm" />
+  <HelpKINode Title="Backoffice.GetUserAliasLimitsAndCombinations_v3 method" Url="html/553f356a-c742-dd92-2d5d-508c395e8b6d.htm" />
+  <HelpKINode Title="Backoffice.GetUserIdByCustomerId method" Url="html/21c3b12f-ea75-a33b-18d2-967460a5b14c.htm" />
+  <HelpKINode Title="Backoffice.SearchUser method" Url="html/781096e5-176d-b467-5404-706a4c752d23.htm" />
+  <HelpKINode Title="Backoffice.SetAliasContext method" Url="html/015e0726-3c34-1328-383c-da7953ac78d9.htm" />
+  <HelpKINode Title="Backoffice.SetUserContext method" Url="html/c026684a-5c67-6bc1-bfbb-c5d5ace3851e.htm" />
+  <HelpKINode Title="Backoffice.TransactionStats method" Url="html/60bdfbdc-fcd1-96c5-f4ca-51152e36b318.htm" />
+  <HelpKINode Title="Backoffice.UpdateTransactionLimit_v01 method" Url="html/98ba53d8-8466-7cfe-ec33-bf6e3cd4b0c2.htm" />
+  <HelpKINode Title="Backoffice.ValidateAuthentication method" Url="html/226ac0f7-e935-b0b5-a255-cb5ec4ec16a6.htm" />
+  <HelpKINode Title="BaseMultiChannelService class">
+    <HelpKINode Title="BaseMultiChannelService Class" Url="html/90d3e267-dac3-9197-33e8-52cfcdcf056a.htm" />
+    <HelpKINode Title="about BaseMultiChannelService class" Url="html/90d3e267-dac3-9197-33e8-52cfcdcf056a.htm" />
+    <HelpKINode Title="constructor" Url="html/ef3d6074-3fe0-aff1-f83f-9262066b745b.htm" />
+    <HelpKINode Title="fields" Url="html/b7bb9b30-2afd-aa5a-56ac-6694f1eb423f.htm" />
+    <HelpKINode Title="methods" Url="html/471548dd-3dd5-acb8-7cc5-bfab3ec20e24.htm" />
+    <HelpKINode Title="properties" Url="html/5417f8a6-2a45-9bc0-2d97-ead2a988adfd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BaseMultiChannelService.BaseMultiChannelService constructor" Url="html/ef3d6074-3fe0-aff1-f83f-9262066b745b.htm" />
+  <HelpKINode Title="BaseMultiChannelService.CreateContext method" Url="html/8ac0921a-9213-189e-c4ec-7e09ee92306c.htm" />
+  <HelpKINode Title="BaseMultiChannelService.CurrentContext property" Url="html/a5ff9ca6-0b94-6525-b126-4477f8842e6f.htm" />
+  <HelpKINode Title="BaseWebService class">
+    <HelpKINode Title="BaseWebService Class" Url="html/5aac9d13-66a5-dd22-74ce-1c46c00366d6.htm" />
+    <HelpKINode Title="about BaseWebService class" Url="html/5aac9d13-66a5-dd22-74ce-1c46c00366d6.htm" />
+    <HelpKINode Title="constructor" Url="html/c5003efa-5708-59f4-d0d5-855f29764ebc.htm" />
+    <HelpKINode Title="events" Url="html/1e366915-9f62-4ccf-49e1-e3de6d01b971.htm" />
+    <HelpKINode Title="methods" Url="html/57f6cbfa-4856-60c4-8597-c98e66ba46af.htm" />
+    <HelpKINode Title="properties" Url="html/f71d76fe-8af2-39ff-6c09-9aaee3db4ce7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BaseWebService.BaseWebService constructor" Url="html/c5003efa-5708-59f4-d0d5-855f29764ebc.htm" />
+  <HelpKINode Title="BaseWebService.HandleException method" Url="html/a7723955-e7dc-b96f-560f-453ce353e2ba.htm" />
+  <HelpKINode Title="BeginTransaction method" Url="html/35ae4d3e-389d-6d83-7a20-8c55f4023ac8.htm" />
+  <HelpKINode Title="BeginTransactionWithWorkflow method" Url="html/4a10e56e-eed4-7577-2825-0d321f6a3a6c.htm" />
+  <HelpKINode Title="BeginTransactionWithWorkflow_v2 method" Url="html/3cb30e5a-3c8d-336c-8c4a-a75336e7c8ad.htm" />
+  <HelpKINode Title="BeginTransactionWithWorkflow_v3 method" Url="html/40cc2920-cb3c-3a7c-0db1-9e8d44078786.htm" />
+  <HelpKINode Title="BeginTransactionWithWorkflow_v4 method" Url="html/aa2b6b7c-f5fe-b7bd-7158-6047a5041da6.htm" />
+  <HelpKINode Title="BeginTransaction_v2 method" Url="html/52e584bd-4b40-aeb6-b779-00b9814a6fc1.htm" />
+  <HelpKINode Title="BeginTransaction_v3 method" Url="html/c05746af-e5c0-d791-be88-2e80992dcd11.htm" />
+  <HelpKINode Title="BeginTransaction_v4 method" Url="html/0a3f3764-bb5b-66d8-e9f3-6b6f6a5a5be0.htm" />
+  <HelpKINode Title="CancelAccessCode method">
+    <HelpKINode Title="AuthenticationService.CancelAccessCode Method " Url="html/87bc5c48-e793-58b6-7fbf-b1bfa4a1e6d6.htm" />
+    <HelpKINode Title="IAuthenticationService.CancelAccessCode Method " Url="html/7ba44d26-eb12-dd1d-0fe2-84efecec6459.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CancellationCompanyUser method" Url="html/c9ee5b7a-d56b-1a8b-80a7-80667de114c8.htm" />
+  <HelpKINode Title="CancelOperation method" Url="html/d05acd70-1af8-87dd-02e3-83177107bac3.htm" />
+  <HelpKINode Title="ChangeAccessCode method">
+    <HelpKINode Title="Authentication.ChangeAccessCode Method " Url="html/228488df-ecd6-7f08-e963-fd6d5f9244fd.htm" />
+    <HelpKINode Title="UserManagement.ChangeAccessCode Method " Url="html/97a36f37-184a-391a-9897-55b6af2accf4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeAccessCodeCallCenterAB7 method" Url="html/c79a3dea-a983-afcb-bf68-2e19547199de.htm" />
+  <HelpKINode Title="ChangeAccessCodeStatus method" Url="html/8785f3c2-e141-0925-7f52-d50cf0b91b5e.htm" />
+  <HelpKINode Title="ChangeAccessCodeType method" Url="html/53c4747b-2fd2-30d4-ff90-790c5803c270.htm" />
+  <HelpKINode Title="ChangeAccessCodeValue method" Url="html/aa6f3a5d-010a-631f-7c2b-98dea13f9368.htm" />
+  <HelpKINode Title="ChangeAliasStatus method" Url="html/8d2abafc-72d6-5db8-9541-57780d4ed479.htm" />
+  <HelpKINode Title="ChangeAliasValidation method" Url="html/f777928b-9257-4d94-5afb-db70b5026137.htm" />
+  <HelpKINode Title="ChangeBaseUserCardToken method">
+    <HelpKINode Title="SMSToken.ChangeBaseUserCardToken Method " Url="html/416c3580-b63e-5690-baec-97a71b7ba012.htm" />
+    <HelpKINode Title="User.ChangeBaseUserCardToken Method " Url="html/1740e7fc-e580-e12b-60fc-0f5b267e8210.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeCertificates method" Url="html/42a37826-a3a4-e043-81b9-950e3025f922.htm" />
+  <HelpKINode Title="ChangeContactDetail method" Url="html/c0b4826b-d3ad-894c-6c7b-4d4c79423491.htm" />
+  <HelpKINode Title="ChangeContractPhone method">
+    <HelpKINode Title="AuthenticationService.ChangeContractPhone Method " Url="html/bf3ea085-347b-0173-a064-91b7f6c03bb4.htm" />
+    <HelpKINode Title="IAuthenticationService.ChangeContractPhone Method " Url="html/d2bd2259-e53f-0f2c-b6eb-7d224e6fd6c3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeError method" Url="html/8ae0b912-a371-7f5d-b114-197ccbc88fb7.htm" />
+  <HelpKINode Title="ChangeExternalUser method" Url="html/bd4059ef-1d5b-fa47-575e-c370abd305a5.htm" />
+  <HelpKINode Title="ChangeOperationStatus method" Url="html/b34ba755-f835-5c0e-9d9c-b0a1e5547d9a.htm" />
+  <HelpKINode Title="ChangePassword method">
+    <HelpKINode Title="AuthenticationService.ChangePassword Method " Url="html/90ed4153-d21a-0374-aefb-892be25d4355.htm" />
+    <HelpKINode Title="IAuthenticationService.ChangePassword Method " Url="html/0f18f426-8d1c-e96f-4092-25d69331f98a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangePredefinedCodeStatus method" Url="html/54489441-57d1-0d2b-0bba-06e9c1badfc1.htm" />
+  <HelpKINode Title="ChangePredefinedCodeStock method" Url="html/b4823b74-256b-8fce-11a3-b3a592705066.htm" />
+  <HelpKINode Title="ChangeUser method" Url="html/4673d673-3be3-314b-fd2e-122f6d7da8bb.htm" />
+  <HelpKINode Title="ChangeUserAccess method" Url="html/a1f5a6ce-3d91-6e5e-aa65-5d9c312fc54b.htm" />
+  <HelpKINode Title="ChangeUserAliasCombination_v2 method" Url="html/876c5fa5-6811-bd05-35d5-a0ee9e4e0dec.htm" />
+  <HelpKINode Title="ChangeUserAliasLimit method">
+    <HelpKINode Title="AuthenticationService.ChangeUserAliasLimit Method " Url="html/432887d1-995f-9458-c51f-b7f7bc2490db.htm" />
+    <HelpKINode Title="IAuthenticationService.ChangeUserAliasLimit Method " Url="html/2934a809-8610-8199-e117-0b8ecc7b872d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeUserAliasLimit_v2 method">
+    <HelpKINode Title="AliasManagement.ChangeUserAliasLimit_v2 Method " Url="html/3bcc7044-c88f-6d7a-3c77-8449cd44332b.htm" />
+    <HelpKINode Title="Backoffice.ChangeUserAliasLimit_v2 Method " Url="html/a8faec87-12eb-47fa-edbc-e7cd427d21bf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeUserCardToken method">
+    <HelpKINode Title="SMSToken.ChangeUserCardToken Method " Url="html/137119d6-ac06-3d61-2e4c-fb3c6dfa94af.htm" />
+    <HelpKINode Title="User.ChangeUserCardToken Method " Url="html/34be3d7e-69b6-38c6-af7f-ff9bc4a98651.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeUserContactInfoByUserId method" Url="html/74505e38-c22c-605c-b049-2c1bb2e2cd9c.htm" />
+  <HelpKINode Title="ChangeUserTokenOverview method">
+    <HelpKINode Title="SMSToken.ChangeUserTokenOverview Method " Url="html/c8c7e999-3440-673f-c810-d8b2ed7caa37.htm" />
+    <HelpKINode Title="User.ChangeUserTokenOverview Method " Url="html/8302866d-4523-3049-bc84-bd75b039524f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChangeUserTokenOverview_v2 method" Url="html/e5841b0e-d60b-2943-53d6-b6e54ba33c66.htm" />
+  <HelpKINode Title="ChannelId property" Url="html/2564b90a-3203-dc1a-d502-bee0969d2ddc.htm" />
+  <HelpKINode Title="CheckTokenSignatureValue method" Url="html/c0c04b1e-177c-4b32-33e6-f34f37665294.htm" />
+  <HelpKINode Title="CheckUserAccessCodesFailures method" Url="html/08a73fea-a28a-b6b7-700b-4c33a65762cd.htm" />
+  <HelpKINode Title="ClearAliasContext method" Url="html/0d88d572-d44a-1dd7-4792-84f5a270f068.htm" />
+  <HelpKINode Title="ClearUserContext method" Url="html/829f6050-a192-4b08-b297-d5c974db1fa3.htm" />
+  <HelpKINode Title="CloseContract method" Url="html/e5736006-1af3-209a-e238-a5a07165ae00.htm" />
+  <HelpKINode Title="CloseSession method">
+    <HelpKINode Title="AuthenticationService.CloseSession Method " Url="html/0cec9452-3b6d-e991-80d7-9924a5e909dd.htm" />
+    <HelpKINode Title="IAuthenticationService.CloseSession Method " Url="html/c785fb32-4801-a318-e103-9d1a3876144b.htm" />
+    <HelpKINode Title="SdcManagement.CloseSession Method " Url="html/8408ec90-3ed9-ea81-9c8b-52d94868e867.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CommitTransaction method" Url="html/0892e0d9-b071-e6c5-5553-8c601eee0c55.htm" />
+  <HelpKINode Title="CompanyRegistration method" Url="html/ef31a8eb-0bdb-b7ab-3dc7-36d14aa8fe55.htm" />
+  <HelpKINode Title="Consts class">
+    <HelpKINode Title="Consts Class" Url="html/343e852a-7349-3c8c-326c-121aa9fd44e9.htm" />
+    <HelpKINode Title="about Consts class" Url="html/343e852a-7349-3c8c-326c-121aa9fd44e9.htm" />
+    <HelpKINode Title="fields" Url="html/21e07b1a-e1ce-caf8-3599-73a9045ecf58.htm" />
+    <HelpKINode Title="methods" Url="html/4880fd69-cc8f-6db1-5fde-ff56f507d016.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Consts.ITS_DNA_NAMESPACE field" Url="html/36429c8e-c8ae-f2f7-279e-7e7dc372462c.htm" />
+  <HelpKINode Title="ContactHistory class">
+    <HelpKINode Title="ContactHistory Class" Url="html/188216c6-a799-dc99-b91d-37b12aa7935a.htm" />
+    <HelpKINode Title="about ContactHistory class" Url="html/188216c6-a799-dc99-b91d-37b12aa7935a.htm" />
+    <HelpKINode Title="constructor" Url="html/5477d2e7-07a7-fb5d-ad0a-6f798ac92f06.htm" />
+    <HelpKINode Title="events" Url="html/08747104-9293-9f00-2dc3-d625bb832223.htm" />
+    <HelpKINode Title="methods" Url="html/3e3daaa3-7868-194e-f3c9-1cb94035fbdb.htm" />
+    <HelpKINode Title="properties" Url="html/f06b9d46-3c36-db9b-1577-1024d8de0d1d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContactHistory.ChangeContactDetail method" Url="html/c0b4826b-d3ad-894c-6c7b-4d4c79423491.htm" />
+  <HelpKINode Title="ContactHistory.ContactHistory constructor" Url="html/5477d2e7-07a7-fb5d-ad0a-6f798ac92f06.htm" />
+  <HelpKINode Title="ContactHistory.GetContactHistory method" Url="html/618155ba-300e-9cf6-f77a-4aec91964afd.htm" />
+  <HelpKINode Title="ContactHistory.GetContactHistoryDetail method" Url="html/b8cdaf74-f0ea-6719-a306-58d2d5ea80dc.htm" />
+  <HelpKINode Title="ContactHistory.GetCustomerContractEvents method" Url="html/e78f6f5f-0f52-7dec-42f4-508fbe875d92.htm" />
+  <HelpKINode Title="ContactHistory.NewContact method" Url="html/f7366b2c-cf55-02d0-1621-8e9610ef960a.htm" />
+  <HelpKINode Title="ContactHistory.NewContactByUserId method" Url="html/3d4d674f-b2f9-bab0-1219-13a822c7445e.htm" />
+  <HelpKINode Title="CopyStandardRule method" Url="html/ef66c493-1e7f-6f79-3fb4-5b29ba605db2.htm" />
+  <HelpKINode Title="CorporationId property" Url="html/39c4fc05-a3e8-d354-8f7e-ea45394e4b56.htm" />
+  <HelpKINode Title="CreateBatchEnvelope method" Url="html/d78168c1-e0fb-b03a-6942-050918c75f2f.htm" />
+  <HelpKINode Title="CreateContext method" Url="html/8ac0921a-9213-189e-c4ec-7e09ee92306c.htm" />
+  <HelpKINode Title="CreateMatrixBatch method" Url="html/8f344c06-4744-30f9-c42c-5dfafea8c31a.htm" />
+  <HelpKINode Title="CreateNewUserAD method" Url="html/6cd9a580-0bc2-b761-9c40-f7e141aa45fb.htm" />
+  <HelpKINode Title="CreateNewUserSMSToken method" Url="html/10bbfb27-7d91-3bf6-f024-fa000a78f991.htm" />
+  <HelpKINode Title="CreatePredefinedCodeBatchFile method" Url="html/57696291-2ed4-d7c7-930a-f4cbe0461292.htm" />
+  <HelpKINode Title="CreatePredefinedCodes method" Url="html/c9224d39-6406-d5aa-1e68-ea424fadc171.htm" />
+  <HelpKINode Title="CreatePredefinedMatrixBatchFile method" Url="html/000a9855-1c12-4ab0-8f38-459345e6c13d.htm" />
+  <HelpKINode Title="CreatePredefinedSecurityCodeBatchFile method" Url="html/2d16c136-55a2-4bb9-8644-b6b38cc02ba9.htm" />
+  <HelpKINode Title="CreateSecurityBatchEnvelope method" Url="html/6cfce83b-0fc8-7eb1-3800-9627199ae817.htm" />
+  <HelpKINode Title="CreateSession method" Url="html/04727c51-c275-5f29-fe0c-fbd3e945cc02.htm" />
+  <HelpKINode Title="CreateTransactionLimit_v3 method" Url="html/526a641e-3587-80df-d6a6-5d27f2850c11.htm" />
+  <HelpKINode Title="CurrentContext property" Url="html/a5ff9ca6-0b94-6525-b126-4477f8842e6f.htm" />
+  <HelpKINode Title="DeleteAliasProfileCombinationLimitRules method" Url="html/3662716b-62df-fb8c-1b84-75830b1e26e0.htm" />
+  <HelpKINode Title="DeleteAliasProfileCombinationLimitRulesByUserId method" Url="html/f75196e5-41fe-9f1c-ac05-f9692d8c04ad.htm" />
+  <HelpKINode Title="DeleteHeuristicBlacklistNIB method" Url="html/cd835703-38e1-fdf7-3d01-744842fd1c72.htm" />
+  <HelpKINode Title="DeleteResource method" Url="html/3f051651-cb59-cc84-0d23-89ded18b2161.htm" />
+  <HelpKINode Title="DeleteRules method" Url="html/3fdc040a-e84f-346f-3c3f-057868b6954e.htm" />
+  <HelpKINode Title="DeleteTransaction method" Url="html/4b84d4f6-5cc4-d665-ccee-2b82c0144649.htm" />
+  <HelpKINode Title="DeleteTransactionLabel method" Url="html/0dc9a816-9ff2-c310-c495-a78390803846.htm" />
+  <HelpKINode Title="DeleteTransactionSMSMessage method" Url="html/73d217dc-9e2e-260d-b6f7-a01087f8ce8a.htm" />
+  <HelpKINode Title="DeleteUserAutoCompleteTransactionsByList method" Url="html/ed4e0127-8ead-97d6-a33b-d6f7363c60b3.htm" />
+  <HelpKINode Title="DeleteUserCardToken method">
+    <HelpKINode Title="SMSToken.DeleteUserCardToken Method " Url="html/2ffa1a24-f2bd-b0b7-d5c5-d6aa2722bc0b.htm" />
+    <HelpKINode Title="User.DeleteUserCardToken Method " Url="html/b9ee133b-7580-e421-8156-1a72f03bcdfe.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DeleteUserTokenOverview method">
+    <HelpKINode Title="SMSToken.DeleteUserTokenOverview Method " Url="html/0b675783-a273-c842-83ad-78811bff6489.htm" />
+    <HelpKINode Title="User.DeleteUserTokenOverview Method " Url="html/21bf4f5d-2611-8361-5203-d38cec6d2a30.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DisableAccessCode method">
+    <HelpKINode Title="AuthenticationService.DisableAccessCode Method " Url="html/75c19c84-a1fa-8c2e-7d7e-1bca5b30ed66.htm" />
+    <HelpKINode Title="IAuthenticationService.DisableAccessCode Method " Url="html/ea7fe7bb-4b75-c73d-0467-046baa780a37.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="AliasAuthentication.Dispose Method " Url="html/8328c67e-27a1-8e0c-c752-c037021d59de.htm" />
+    <HelpKINode Title="AliasAuthorization.Dispose Method " Url="html/ef8b345a-02f5-4a6f-460f-5a12ab609259.htm" />
+    <HelpKINode Title="AliasManagement.Dispose Method " Url="html/10406867-b17b-ae60-1521-a0df99f7efa3.htm" />
+    <HelpKINode Title="AliasOperation.Dispose Method " Url="html/ec203419-a991-42e7-d3f0-732cc13eb771.htm" />
+    <HelpKINode Title="ApplicationService.Dispose Method " Url="html/1a55e255-9c78-fdba-2f0d-d1c904b82ad6.htm" />
+    <HelpKINode Title="Authentication.Dispose Method " Url="html/fb1e9cd0-a41d-6ea8-2a89-12222f7b8560.htm" />
+    <HelpKINode Title="Backoffice.Dispose Method " Url="html/8a4a5482-25df-b5bd-491f-aa531e5806c6.htm" />
+    <HelpKINode Title="PredefinedCode.Dispose Method " Url="html/73656105-e462-892c-e3b3-2e8422f532c0.htm" />
+    <HelpKINode Title="SdcManagement.Dispose Method " Url="html/b0c4d92f-1542-22e6-a737-cea10e263846.htm" />
+    <HelpKINode Title="SMSToken.Dispose Method " Url="html/15255b54-3e21-742a-2206-a63baeeb54ff.htm" />
+    <HelpKINode Title="User.Dispose Method " Url="html/e40e433d-b667-4c95-3be7-a80160b83d35.htm" />
+    <HelpKINode Title="UserAutoComplete.Dispose Method " Url="html/ec92efdd-5bc5-c549-a63b-19541aa31c7c.htm" />
+    <HelpKINode Title="UserManagement.Dispose Method " Url="html/b3e5ea10-c9ac-f3ef-ebec-2892f55ba1ff.htm" />
+    <HelpKINode Title="UserRegistration.Dispose Method " Url="html/fde775cc-07de-3c1e-12e1-30ea87675332.htm" />
+    <HelpKINode Title="UserSubscription.Dispose Method " Url="html/2e9ca0cc-ff62-b383-5b77-54ce682a4f08.htm" />
+  </HelpKINode>
+  <HelpKINode Title="eBankit.Middleware.GPMServices namespace" Url="html/af8a0f36-59fb-621b-a4b7-04d30eed2868.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.Authentication class" Url="html/51592e94-793e-140c-4a89-bf63ae48d324.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.BaseWebService class" Url="html/5aac9d13-66a5-dd22-74ce-1c46c00366d6.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.GpmManagement class" Url="html/e80a812c-97ed-b49e-8e35-916730723928.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.InputContextType class" Url="html/ea4b3929-702f-f45a-4599-ac797fc1386d.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.PredefinedCode class" Url="html/31dbc46d-df15-dbf0-e84a-1b9cc025aa4c.htm" />
+  <HelpKINode Title="eBankit.Middleware.GPMServices.User class" Url="html/35830ed4-9800-4c2a-0259-9b6eb715fe1d.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices namespace" Url="html/5b5cea91-011a-92d6-5e28-be3088584c1c.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.AuthenticationService class" Url="html/c3529a1c-41bb-71f4-6d74-5f481353b86d.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.BaseMultiChannelService class" Url="html/90d3e267-dac3-9197-33e8-52cfcdcf056a.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.Global class" Url="html/d8a06eac-75b6-03c0-7020-28640e3350ec.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.IAuthenticationService interface" Url="html/7ef450f0-8f4a-8efc-1de6-6de076c49683.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.IRegistrationService interface" Url="html/c839ab05-322d-fa86-41d1-4682b794dbce.htm" />
+  <HelpKINode Title="eBankit.Middleware.MChannelServices.RegistrationService class" Url="html/59bf8238-eedb-1eae-15d8-6963f253dd1e.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices namespace" Url="html/99398edb-ba4c-9aa4-7558-3bf3af72b10c.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.AliasAuthentication class" Url="html/673a6fe6-39c5-f79f-4d28-737043dcd014.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.AliasAuthorization class" Url="html/a9c7b683-8d7d-360a-5483-ba1dd7a9379e.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.AliasManagement class" Url="html/d868f9d8-89f6-7438-1715-272f1ee24603.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.AliasOperation class" Url="html/ace78e69-18b0-29dd-a52f-7116b0ef95c1.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.ApplicationService class" Url="html/d74e7085-67d2-9bec-f5e3-dba71c445ced.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.Backoffice class" Url="html/ebd1912a-6dde-a9ba-7bc1-665f5fcc6167.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.Consts class" Url="html/343e852a-7349-3c8c-326c-121aa9fd44e9.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.ContactHistory class" Url="html/188216c6-a799-dc99-b91d-37b12aa7935a.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.SdcManagement class" Url="html/44d7addf-7da6-bf7c-39a9-78f09e540967.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.SMSToken class" Url="html/cbbb35ca-e55d-09aa-4ceb-398fcd2f9ff5.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.UserAutoComplete class" Url="html/e79a7944-7406-4b1a-7939-616240d355be.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.UserManagement class" Url="html/7acf5841-b569-a777-4c85-47aa54d0b109.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.UserRegistration class" Url="html/64b42053-3ec4-e054-3ebf-b789ea69632b.htm" />
+  <HelpKINode Title="eBankit.Middleware.SecurityCenter.WebServices.UserSubscription class" Url="html/677af120-e232-d10c-a86d-13f7214b8d14.htm" />
+  <HelpKINode Title="eBankit.Middleware.SubscriptionServices namespace" Url="html/c5516544-edba-7795-c74a-f5b95a71c3fb.htm" />
+  <HelpKINode Title="eBankit.Middleware.SubscriptionServices.Global class" Url="html/085a92b3-e486-62be-1800-b86cd46ab1bd.htm" />
+  <HelpKINode Title="EmployeeRegistrationExtUser method" Url="html/75bcecb7-b308-b247-c22e-1b56a63d826c.htm" />
+  <HelpKINode Title="EncryptAccessCodeExternalReference method" Url="html/c7550845-1037-73fe-fa44-3d82780ad827.htm" />
+  <HelpKINode Title="EvaluateAliasProfile method" Url="html/9858c122-219b-ccfd-4a81-bb02a9925e6e.htm" />
+  <HelpKINode Title="EvaluateTransaction method">
+    <HelpKINode Title="AliasAuthorization.EvaluateTransaction Method " Url="html/17619a01-ecdd-633e-502a-744b508769cd.htm" />
+    <HelpKINode Title="AuthenticationService.EvaluateTransaction Method " Url="html/58a2bbb9-c1ba-7406-ab5c-fa944bc7c1f4.htm" />
+    <HelpKINode Title="IAuthenticationService.EvaluateTransaction Method " Url="html/5984cf2e-82c3-5e93-f74e-1d96de5f0be9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EvaluateTransactionValue method" Url="html/a4d62689-894a-d777-93e0-d7aa04cd8792.htm" />
+  <HelpKINode Title="EvaluateTransactionValue_v2 method" Url="html/2dba71d7-0a20-fc91-c65f-b8ff3e9cc8ef.htm" />
+  <HelpKINode Title="EvaluateTransactionValue_v3 method" Url="html/1273aaae-4c06-bf0d-2a70-22df82bcdf82.htm" />
+  <HelpKINode Title="EvaluateTransaction_v2 method" Url="html/e80b8e1c-2c0c-ebf7-f0d4-dac0edfd8f94.htm" />
+  <HelpKINode Title="EvaluateTransaction_v3 method" Url="html/504d5cf0-689c-97d7-3826-974ccfbf7c58.htm" />
+  <HelpKINode Title="ExistsUserAlias method" Url="html/e1d3df09-f504-c472-242e-2bd20aeaa505.htm" />
+  <HelpKINode Title="ExternalSessionId property" Url="html/6bba7316-65b8-183f-6598-38fdfb507ce4.htm" />
+  <HelpKINode Title="GenerateUserAuthentication method" Url="html/fa811062-5ab7-2ae7-f57c-8cc2514fa1c7.htm" />
+  <HelpKINode Title="GetABUserPositions method" Url="html/747ca920-0f23-62ba-cfef-dbbfa1bf8f5e.htm" />
+  <HelpKINode Title="GetAccessCode method" Url="html/5ae041c2-a5e1-329b-62ad-25cc441d6e15.htm" />
+  <HelpKINode Title="GetAccessCodePositions method" Url="html/56ca6733-15c4-0184-bfb7-6c0a8b75bae9.htm" />
+  <HelpKINode Title="GetAccessCodesBranchesAssigned method" Url="html/b340014a-a39a-2605-1ae2-b3f914047c26.htm" />
+  <HelpKINode Title="GetAccessCodesByBranchDate method" Url="html/52747e0f-2b78-c888-e17e-84487b9f4d85.htm" />
+  <HelpKINode Title="GetAccessCodeValue method" Url="html/6dbf02ac-b275-d698-4489-d20bc149ee27.htm" />
+  <HelpKINode Title="GetAccessCodeWithStatus method" Url="html/e5155009-1fed-c00c-70d7-2afd9b95147f.htm" />
+  <HelpKINode Title="GetAccessTransactionAccountProductList method" Url="html/a4d3f5bb-8280-42ef-0ffa-c47ae49d1efb.htm" />
+  <HelpKINode Title="GetAccessTransactionAccountProductList_v2 method" Url="html/ee8629c8-6791-c36d-2c1d-0508fb2fa8da.htm" />
+  <HelpKINode Title="GetAccountLimitsAndProfileOveridesList method" Url="html/0556d942-4354-988a-ca5b-ed9284ce21df.htm" />
+  <HelpKINode Title="GetAccountProducts method" Url="html/c64f72b0-1889-7af2-4607-f56a882675b9.htm" />
+  <HelpKINode Title="GetActiveCustomer method" Url="html/c2995e74-b3d9-8c83-ca37-55413a0c501b.htm" />
+  <HelpKINode Title="GetADRoleAccessInfo method" Url="html/708a7c87-6538-8573-33ed-e0da822868ea.htm" />
+  <HelpKINode Title="GetADRoleAccessInfo_v2 method" Url="html/a8d4a52a-33d0-4e3a-091c-6361d796ee02.htm" />
+  <HelpKINode Title="GetAliasAuthentication method" Url="html/cb6ab150-bad6-dac9-f3da-0d2eb773be26.htm" />
+  <HelpKINode Title="GetAliasBaseInfo method">
+    <HelpKINode Title="AliasManagement.GetAliasBaseInfo Method " Url="html/b03c793e-003d-81be-04e7-ab93126e7610.htm" />
+    <HelpKINode Title="Backoffice.GetAliasBaseInfo Method " Url="html/723b902c-4aa4-a6e3-fa55-ddb1772d43aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAliasPositionsWithSession method">
+    <HelpKINode Title="AuthenticationService.GetAliasPositionsWithSession Method " Url="html/6ddd6aff-e11b-1f36-558c-72b21eae3ac8.htm" />
+    <HelpKINode Title="IAuthenticationService.GetAliasPositionsWithSession Method " Url="html/1a465606-96c7-52bf-2987-14cc9d6265ec.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAliasPositionsWithSession_v2 method" Url="html/8acf85ab-861c-13f8-441f-ac874b4a6821.htm" />
+  <HelpKINode Title="GetAliasPositions_v2 method" Url="html/cd9e5207-f84e-b6db-c65b-d12ff6b71936.htm" />
+  <HelpKINode Title="GetAliasProfileCombinationLimitRules method" Url="html/d9959d92-e40a-3e7b-82bf-4cb613f4ceb1.htm" />
+  <HelpKINode Title="GetAliasTypesByAlias method" Url="html/8ee423b4-571b-14d5-1f3c-d06e5a4607d1.htm" />
+  <HelpKINode Title="GetAllAccessCodeStatus method" Url="html/d2289df8-68ca-c656-b07f-fa0e3ab24365.htm" />
+  <HelpKINode Title="GetAllAccessCodeTypes method" Url="html/cda2f82b-e4c7-d1d4-1071-b08ff42ea4d5.htm" />
+  <HelpKINode Title="GetAllAliasStates method" Url="html/3a609cd8-5973-4b02-abd9-3706b60b0988.htm" />
+  <HelpKINode Title="GetAllAliasType method" Url="html/7f1f0f68-541d-7b40-7b2d-4b3f8465624a.htm" />
+  <HelpKINode Title="GetAllAssetImpactTypes method">
+    <HelpKINode Title="ApplicationService.GetAllAssetImpactTypes Method " Url="html/817587f2-c99e-ee14-e0bb-96c69e06a732.htm" />
+    <HelpKINode Title="AuthenticationService.GetAllAssetImpactTypes Method " Url="html/264aa5b5-f574-c252-6127-f0bded954956.htm" />
+    <HelpKINode Title="IAuthenticationService.GetAllAssetImpactTypes Method " Url="html/149d8d4a-9c77-1f90-b579-c3fc23ca60f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllAutoCompleteTypes method" Url="html/515d4ca1-5bae-426f-dd54-0a4da82ca9a1.htm" />
+  <HelpKINode Title="GetAllBatchStatus method" Url="html/a96016c0-7880-45f6-43cb-9bf5c0e29ddc.htm" />
+  <HelpKINode Title="GetAllCertificateAuthority method" Url="html/b2d11965-80f3-c1f2-3858-86df64bc1268.htm" />
+  <HelpKINode Title="GetAllCertificateStatus method" Url="html/7db422d1-520e-67fd-5a84-39b49d578e33.htm" />
+  <HelpKINode Title="GetAllCertificateType method" Url="html/c0529f9a-0232-0426-0244-69bc982626e6.htm" />
+  <HelpKINode Title="GetAllChannels method">
+    <HelpKINode Title="ApplicationService.GetAllChannels Method " Url="html/de94acfc-bdb2-4cb2-fd80-9252fe5fa942.htm" />
+    <HelpKINode Title="AuthenticationService.GetAllChannels Method " Url="html/85385e9a-b209-7620-6306-e42b5ae47f1d.htm" />
+    <HelpKINode Title="IAuthenticationService.GetAllChannels Method " Url="html/e559a7bf-6095-3cd2-60ef-9d3b4cc7c170.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllDefaultCurrencies method">
+    <HelpKINode Title="ApplicationService.GetAllDefaultCurrencies Method " Url="html/c2169455-e784-4b87-e15d-1b73de08f7d5.htm" />
+    <HelpKINode Title="AuthenticationService.GetAllDefaultCurrencies Method " Url="html/b97771ba-be23-7a0a-9375-35322ae66d8e.htm" />
+    <HelpKINode Title="IAuthenticationService.GetAllDefaultCurrencies Method " Url="html/f20ec1ec-be39-e54b-1296-dde450c54358.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllLanguages method" Url="html/b5156b02-6012-011e-204a-49cfd6127941.htm" />
+  <HelpKINode Title="GetAllLimitTypes method" Url="html/79154efa-2c35-b41f-0da1-467e6d71f58b.htm" />
+  <HelpKINode Title="GetAllPredefinedCodeBranches method" Url="html/baeab736-b5c5-6b69-aa38-021cf9b5d9f7.htm" />
+  <HelpKINode Title="GetAllPredefinedCodeStatus method" Url="html/1d88a358-58dd-55db-3671-830cb955a25b.htm" />
+  <HelpKINode Title="GetAllResources method" Url="html/2f69f903-dd1d-8f57-7989-e243a7dab32f.htm" />
+  <HelpKINode Title="GetAllTimePeriods method">
+    <HelpKINode Title="AuthenticationService.GetAllTimePeriods Method " Url="html/1ef0bba9-acd1-1a61-d7b3-5257ff108a8e.htm" />
+    <HelpKINode Title="IAuthenticationService.GetAllTimePeriods Method " Url="html/7628fddf-b995-13fd-86af-69d6ae17ce5b.htm" />
+    <HelpKINode Title="UserSubscription.GetAllTimePeriods Method " Url="html/0f01080a-ac81-d539-ba13-4b4de883d902.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllTokenCardIssuers method">
+    <HelpKINode Title="Authentication.GetAllTokenCardIssuers Method " Url="html/4621b2f1-2741-4e73-0192-96d168061522.htm" />
+    <HelpKINode Title="SMSToken.GetAllTokenCardIssuers Method " Url="html/4577d69a-407b-6e52-0b87-f37b595cfdf0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllTransactionGroupRelation method" Url="html/d1e59c44-8592-08fd-5645-918e08183107.htm" />
+  <HelpKINode Title="GetAllUserCardTokenStatus method">
+    <HelpKINode Title="SMSToken.GetAllUserCardTokenStatus Method " Url="html/195ffcc6-5d3e-75d9-4d7e-0a19589c0bd9.htm" />
+    <HelpKINode Title="User.GetAllUserCardTokenStatus Method " Url="html/5e7717c7-b605-d406-f5af-b7453e94da6a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAllUserProfiles method" Url="html/b7cf17c5-500a-fc03-3588-e67a6729c0c0.htm" />
+  <HelpKINode Title="GetAllUserStatus method" Url="html/d6ae2074-da26-4a6d-be80-c1d38a5d4e07.htm" />
+  <HelpKINode Title="GetAllUserTypes method" Url="html/e68b7514-de3a-ed28-d536-1b1959a45b0e.htm" />
+  <HelpKINode Title="GetBatchFileContent method" Url="html/9d872b5e-e837-2764-ac15-4eae34830adf.htm" />
+  <HelpKINode Title="GetCertificates method" Url="html/dad2ebce-5460-84c8-7b70-460bc9dafa34.htm" />
+  <HelpKINode Title="GetCompanyOrGroupUsersOverview method" Url="html/f9985c33-75db-2b6e-84ea-44775aa75c69.htm" />
+  <HelpKINode Title="GetCompanyRegistrationInformation method" Url="html/3bebd500-23d2-47f9-3323-01f3ac1d79fd.htm" />
+  <HelpKINode Title="GetCompanyUserAliasInfo method" Url="html/0f0c2faf-cfb8-6478-734a-489346103bca.htm" />
+  <HelpKINode Title="GetCompanyUserAliasList method" Url="html/0213f0fc-9d86-590a-6c73-84f4a8f47fae.htm" />
+  <HelpKINode Title="GetContactHistory method" Url="html/618155ba-300e-9cf6-f77a-4aec91964afd.htm" />
+  <HelpKINode Title="GetContactHistoryDetail method" Url="html/b8cdaf74-f0ea-6719-a306-58d2d5ea80dc.htm" />
+  <HelpKINode Title="GetContract method">
+    <HelpKINode Title="IRegistrationService.GetContract Method " Url="html/12ef7fce-584a-6b46-a124-e59ce6bac449.htm" />
+    <HelpKINode Title="RegistrationService.GetContract Method " Url="html/111ed537-7425-0c70-3ba9-3c6ced654da8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetContractByExternalReference method" Url="html/3b4383cd-52b6-538b-c4ee-758974dfcddd.htm" />
+  <HelpKINode Title="GetContracts method" Url="html/b8257a0f-41bb-0083-2003-ea7b9a3b1235.htm" />
+  <HelpKINode Title="GetContractStatus method" Url="html/13950e66-441d-ee46-25e8-56c7394052ef.htm" />
+  <HelpKINode Title="GetCustomerCardTokens method" Url="html/53eda753-9eb1-c51a-cabf-761fe630d63e.htm" />
+  <HelpKINode Title="GetCustomerContractEvents method" Url="html/e78f6f5f-0f52-7dec-42f4-508fbe875d92.htm" />
+  <HelpKINode Title="GetCustomerDefaultAccount method" Url="html/0b725f9f-61ca-9519-d4fd-00f8fa8f4874.htm" />
+  <HelpKINode Title="GetCustomerIdByAlias method" Url="html/e706a258-99b6-37e5-0a08-2786b5988ec3.htm" />
+  <HelpKINode Title="GetCustomerPushToken method" Url="html/a2f7e558-1848-5688-8f67-f79c76523a4d.htm" />
+  <HelpKINode Title="GetEmployeeOverview method" Url="html/c54bf1c2-8473-086b-830d-b41472656e14.htm" />
+  <HelpKINode Title="GetEmployeeOverview_v2 method" Url="html/f5279062-0a58-39e5-1af5-cb86b3887c9d.htm" />
+  <HelpKINode Title="GetErrors method" Url="html/b8f4c32b-3d0d-d2e8-0e8b-4eef73a2d6f8.htm" />
+  <HelpKINode Title="GetExternalUser method" Url="html/c6840437-6f4d-946e-ff90-ba811ab768e4.htm" />
+  <HelpKINode Title="GetInternationalDialingPhoneCodes method" Url="html/70220ab2-732b-bfe4-8a85-40309533ac60.htm" />
+  <HelpKINode Title="GetMatrixCardBatchDetail method" Url="html/2e54a5d0-4d23-f084-db98-c63ba0946193.htm" />
+  <HelpKINode Title="GetMatrixCardByCustomer method" Url="html/97fca9c7-d245-9090-ad5a-98ed88dd8ad2.htm" />
+  <HelpKINode Title="GetMatrixCardByReference method" Url="html/fcf69467-c4bf-25a5-2349-0fccf09e6c7d.htm" />
+  <HelpKINode Title="GetMostUsedOperations method" Url="html/b1539211-228b-98de-d3c0-21e9e18050e7.htm" />
+  <HelpKINode Title="GetOperationHistoryDetail method" Url="html/20536021-4dfd-db42-f1c9-ad75c63852f7.htm" />
+  <HelpKINode Title="GetOperations method" Url="html/da12ab45-25e1-0de8-95dc-30909f560d21.htm" />
+  <HelpKINode Title="GetOperationsDetail method" Url="html/ab652096-ea30-06f5-63d9-8ae85f51a1e0.htm" />
+  <HelpKINode Title="GetOperationsDetailByExternalId method" Url="html/ee2091fb-0c24-61af-e6ac-6ea9421db9f2.htm" />
+  <HelpKINode Title="GetOperationsHistoryByUserId_v2 method" Url="html/9e030607-aa93-3de4-632e-fdcd23297969.htm" />
+  <HelpKINode Title="GetOperations_v7 method" Url="html/32e075cd-6699-84e2-20d2-8fe8d2279d23.htm" />
+  <HelpKINode Title="GetOtherUserDetailInfo method" Url="html/d77c7729-e0ca-8cae-ab00-773657f91eb6.htm" />
+  <HelpKINode Title="GetOutAccountProducts method" Url="html/9b049ef4-2762-c46d-0b91-9e3fc3af87f5.htm" />
+  <HelpKINode Title="GetPendingOperationsCount method" Url="html/9dfd6472-5a58-81a6-c2d8-e6e5d19972e0.htm" />
+  <HelpKINode Title="GetPredefinedCodeAccessCode method" Url="html/485a428b-d474-dc97-2a03-5daf08027dec.htm" />
+  <HelpKINode Title="GetPredefinedCodeBatchDetail method" Url="html/7a2ecb32-0f5c-3a51-c865-3fe8326923df.htm" />
+  <HelpKINode Title="GetPredefinedCodeBatches method" Url="html/ad1100f8-6fcb-7141-181b-8cccfdd0ce5f.htm" />
+  <HelpKINode Title="GetPredefinedCodeBatchFiles method" Url="html/3f9b609d-0f11-54ae-b858-67090f4d19c1.htm" />
+  <HelpKINode Title="GetPredefinedCodeBranch method" Url="html/9df6b3e7-4f3e-c004-84c8-107ca38249e2.htm" />
+  <HelpKINode Title="GetPredefinedCodes method" Url="html/6b0b0183-179e-be5f-f288-ae94efc9c4c0.htm" />
+  <HelpKINode Title="GetPredefinedCodeStock method" Url="html/57bed5a7-aea1-7b86-4a90-9add82079b0e.htm" />
+  <HelpKINode Title="GetPredefinedCodeStockByType method" Url="html/a87f77e7-4d79-a28a-38cb-b32890494e1c.htm" />
+  <HelpKINode Title="GetPredefinedMatrixBatchFiles method" Url="html/0733904e-ba6c-3cea-9ccb-66954ae64a1f.htm" />
+  <HelpKINode Title="GetPredefinedMatrixCardBatches method" Url="html/ac2aa9e4-ae6b-d655-e616-9c08e3c912a6.htm" />
+  <HelpKINode Title="GetProcessDocuments method">
+    <HelpKINode Title="IRegistrationService.GetProcessDocuments Method " Url="html/46a0a354-847b-334b-4cd7-38d1b01e1ff8.htm" />
+    <HelpKINode Title="RegistrationService.GetProcessDocuments Method " Url="html/1df47056-1947-8971-73af-793448951865.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetProfileTransactionList method" Url="html/bd652834-6c51-f22a-1a59-56aec6914f91.htm" />
+  <HelpKINode Title="GetRandomContract method" Url="html/344dc7ea-15d6-f12d-18d0-30df5a4a9217.htm" />
+  <HelpKINode Title="GetRelatedUserByAliasValue method" Url="html/f69cc92d-80db-fbb1-4b3c-6a07215849de.htm" />
+  <HelpKINode Title="GetRequiredDocument method">
+    <HelpKINode Title="IRegistrationService.GetRequiredDocument Method " Url="html/307320d1-8ad0-875e-7fc1-7f010180dcf9.htm" />
+    <HelpKINode Title="RegistrationService.GetRequiredDocument Method " Url="html/0d774ec1-85cc-c992-a248-8981ba4fff2d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetResourcesByID method" Url="html/89d18193-497e-eeea-ea8a-5bb5043cd037.htm" />
+  <HelpKINode Title="GetRuleAccessInfo method" Url="html/be97693d-1cc6-132b-f7df-a3cadca271a7.htm" />
+  <HelpKINode Title="GetSMSSecurityCode method" Url="html/82517642-26b6-aa49-c6dc-531ebed66217.htm" />
+  <HelpKINode Title="GetSubRuleInfoByAlias method" Url="html/f9b0ceda-bcc7-ca68-eb7f-06b6156cb41f.htm" />
+  <HelpKINode Title="GetSubscriptionTransactionList method">
+    <HelpKINode Title="AuthenticationService.GetSubscriptionTransactionList Method " Url="html/394951e1-d820-05e4-7baf-1410206f7135.htm" />
+    <HelpKINode Title="IAuthenticationService.GetSubscriptionTransactionList Method " Url="html/6d10c766-adaa-c8c5-ff23-934cf2f1107d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetTokenTransactionConfigurationReport method" Url="html/cd300afc-a823-f9af-27d2-74f45c77b37e.htm" />
+  <HelpKINode Title="GetTokenTransactionConfigurationToCertify method" Url="html/cb62ef2f-2f4b-e26c-e786-11a38cd0f38c.htm" />
+  <HelpKINode Title="GetTokenTransactionConfigurationToCertify_v2 method" Url="html/0e759b84-aa25-96e4-4c0f-272837421ab2.htm" />
+  <HelpKINode Title="GetTokenTransactionConfigurationToCertify_v3 method" Url="html/9bda79e2-47c0-3910-6665-7eee4b689c80.htm" />
+  <HelpKINode Title="GetTraceEnable method" Url="html/eccfdafc-fbe5-14eb-1331-f7542d0a5d78.htm" />
+  <HelpKINode Title="GetTransactionFullDetails method" Url="html/caf3a6a8-32ba-82a9-bbeb-400f4c75c78d.htm" />
+  <HelpKINode Title="GetTransactionLimits_v2 method" Url="html/5d72a6f2-efbf-db51-a35f-b941fc34a3c2.htm" />
+  <HelpKINode Title="GetTransactionList method" Url="html/74692af1-35ed-8f49-51f4-907b4d99251b.htm" />
+  <HelpKINode Title="GetTransactionsFiltered method" Url="html/55cf7b7d-52ed-1b0f-1d7d-c9013a7accf7.htm" />
+  <HelpKINode Title="GetTransactionSMSMessage method" Url="html/9a1c777d-482a-4dfe-c683-8c1fc4e6a6bf.htm" />
+  <HelpKINode Title="GetTransactionViewForChannel method" Url="html/56bbdfba-231e-bc97-58ca-c262810eb6b7.htm" />
+  <HelpKINode Title="GetTransactionViewForUser method" Url="html/7b576c9e-94de-80fe-e916-c1b0419e75b2.htm" />
+  <HelpKINode Title="GetUser method" Url="html/6c3d2136-6229-4e71-3acd-c99b28e7121d.htm" />
+  <HelpKINode Title="GetUserAccessCodeList method" Url="html/3262f7f3-72b3-1b57-cd6f-a160665d99d1.htm" />
+  <HelpKINode Title="GetUserAccessCodes method" Url="html/8f0c1b91-baba-fd08-f1a2-ca1ff2170386.htm" />
+  <HelpKINode Title="GetUserAccessesByLocation method">
+    <HelpKINode Title="AuthenticationService.GetUserAccessesByLocation Method " Url="html/8ce09a4e-6daa-df58-bbde-74735086dee8.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserAccessesByLocation Method " Url="html/c56ac3e7-4392-f451-ddff-807cb051c776.htm" />
+    <HelpKINode Title="UserManagement.GetUserAccessesByLocation Method " Url="html/7859cffb-2ae5-54e8-97bf-cd83f2c7d567.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserAccountList method" Url="html/8ae2c86c-0006-5fab-ebbe-09831b94aaad.htm" />
+  <HelpKINode Title="GetUserActivationKey method" Url="html/148c0f0d-7d53-bee1-ef1a-777c1225970e.htm" />
+  <HelpKINode Title="GetUserAlias method" Url="html/586df265-7bf1-83d4-8447-4609f3dc5cb1.htm" />
+  <HelpKINode Title="GetUserAliasAccessCode method" Url="html/b08a55f9-9309-728d-81e9-424f525dae5d.htm" />
+  <HelpKINode Title="GetUserAliasAccessCodes method" Url="html/42fad07b-4b2c-704f-f028-242441014641.htm" />
+  <HelpKINode Title="GetUserAliasAllDevices method">
+    <HelpKINode Title="AuthenticationService.GetUserAliasAllDevices Method " Url="html/652dd322-aa3b-d6e8-843b-260dcedf03b8.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserAliasAllDevices Method " Url="html/799c4de6-92b6-59b5-1486-0fcd0544abbc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserAliasAllLimits method">
+    <HelpKINode Title="AuthenticationService.GetUserAliasAllLimits Method " Url="html/48842198-afcd-64b4-4058-3ec0f5e1af54.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserAliasAllLimits Method " Url="html/8d7e72ea-6c0e-5b21-2b9e-4d2bef64511e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserAliasAllLimitsAndCombinations_v2 method">
+    <HelpKINode Title="AliasManagement.GetUserAliasAllLimitsAndCombinations_v2 Method " Url="html/2abd648d-311e-afb1-f56a-e91f5d5f275c.htm" />
+    <HelpKINode Title="Backoffice.GetUserAliasAllLimitsAndCombinations_v2 Method " Url="html/9a828874-b073-7734-5592-aa67ce98a6f7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserAliasByAlias method" Url="html/d67c1114-3917-ede3-988a-5401dabc5d5d.htm" />
+  <HelpKINode Title="GetUserAliasCertificate method" Url="html/34ce10f7-7ae2-2979-6b46-b6695ff8ff4a.htm" />
+  <HelpKINode Title="GetUserAliasCertificates method" Url="html/9ce4416e-1f96-55fd-c51c-e1799f8683dc.htm" />
+  <HelpKINode Title="GetUserAliasDevices method" Url="html/2b9e3bca-1c28-2dd9-8630-d0f57d8988ba.htm" />
+  <HelpKINode Title="GetUserAliasLimitsAndCombinations_v3 method" Url="html/553f356a-c742-dd92-2d5d-508c395e8b6d.htm" />
+  <HelpKINode Title="GetUserAliasList method" Url="html/7266ce5e-42ec-acbd-2b6d-1ec53645a50a.htm" />
+  <HelpKINode Title="GetUserAssociatedUsers method" Url="html/2ea74679-4ecc-e66d-962f-29e669fb24a4.htm" />
+  <HelpKINode Title="GetUserAutoCompleteInfo_v4 method" Url="html/b1cd18c6-9969-a7c7-5260-2e834bb93ffb.htm" />
+  <HelpKINode Title="GetUserByUserAccessCodeId method" Url="html/7c6453a0-f72b-328b-9d57-65e433602b35.htm" />
+  <HelpKINode Title="GetUserCardToken method">
+    <HelpKINode Title="SMSToken.GetUserCardToken Method " Url="html/06309b18-3639-5e89-632a-c27e1d7bc8ba.htm" />
+    <HelpKINode Title="User.GetUserCardToken Method " Url="html/0a5142d3-1274-75fb-da7e-9a1f6e655462.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserCardTokens method">
+    <HelpKINode Title="SMSToken.GetUserCardTokens Method " Url="html/89611167-7b53-4a11-f8f0-74da0ac46269.htm" />
+    <HelpKINode Title="User.GetUserCardTokens Method " Url="html/e30b529f-71fa-3792-cb48-574b542d29d4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserCardTokensBO method" Url="html/3b5ef777-6167-7099-c96f-94adea81200d.htm" />
+  <HelpKINode Title="GetUserCertificateCounters method" Url="html/9886646e-46ca-4837-45fe-eba4dd473a8e.htm" />
+  <HelpKINode Title="GetUserChannelOverview method" Url="html/abd4b85e-2bec-a415-3360-12757ba264f1.htm" />
+  <HelpKINode Title="GetUserContactInfo method">
+    <HelpKINode Title="AuthenticationService.GetUserContactInfo Method " Url="html/a0bc0e96-fafc-a191-9da4-e00ae2ae8ff8.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserContactInfo Method " Url="html/e495778e-b71a-3afd-a9d0-31c2b2e74e35.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserContactInfoByUserId method" Url="html/9d08afc2-820b-688c-d076-575e45845591.htm" />
+  <HelpKINode Title="GetUserDetailInfo method" Url="html/a9ce3cb4-3e51-756b-62ab-793690ece801.htm" />
+  <HelpKINode Title="GetUserEmailDetailByUserId method" Url="html/462bd30a-b463-db4e-efd0-25b59ffd3793.htm" />
+  <HelpKINode Title="GetUserIdByCustomerId method" Url="html/21c3b12f-ea75-a33b-18d2-967460a5b14c.htm" />
+  <HelpKINode Title="GetUserImpersonationCounters method" Url="html/653969f1-c364-d8a0-280c-f2470d1c2058.htm" />
+  <HelpKINode Title="GetUserLimitPositionsSummary method" Url="html/a57ddfef-514c-094d-23b6-b34ae9d68775.htm" />
+  <HelpKINode Title="GetUserLoginAlternativeAlias method">
+    <HelpKINode Title="AliasManagement.GetUserLoginAlternativeAlias Method " Url="html/61ce5cea-9e30-b57d-571c-73338d8a6bee.htm" />
+    <HelpKINode Title="AuthenticationService.GetUserLoginAlternativeAlias Method " Url="html/98ef3ee6-570e-26cf-c5e7-27f36cb85f2e.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserLoginAlternativeAlias Method " Url="html/7eb89706-18f5-daf2-24c3-f10b45858fd1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserLoginMainAlias method">
+    <HelpKINode Title="AliasManagement.GetUserLoginMainAlias Method " Url="html/775cdcf9-339c-ed27-f2a7-d976d26c68ec.htm" />
+    <HelpKINode Title="AuthenticationService.GetUserLoginMainAlias Method " Url="html/828b0808-9031-4d58-7ccf-edbb142733e9.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserLoginMainAlias Method " Url="html/7a4b09b1-dd76-8039-70ce-d5682faf2f5a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserMainSourcePointers method" Url="html/05319730-1096-3355-6437-4a429184868c.htm" />
+  <HelpKINode Title="GetUserMatrixAccessCodes method">
+    <HelpKINode Title="AuthenticationService.GetUserMatrixAccessCodes Method " Url="html/ab2ee0ae-b7c3-b9f1-9f3a-f871f7a48fcc.htm" />
+    <HelpKINode Title="IAuthenticationService.GetUserMatrixAccessCodes Method " Url="html/7dc53b39-12bb-d1ed-75c6-6b43fd664c74.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserPhoneDetailByUserId method" Url="html/9a7f7c9a-b43d-d5f2-7029-6826a3230e56.htm" />
+  <HelpKINode Title="GetUserPointers method" Url="html/fb3dd05c-2714-50e7-5e3a-642f08b75be6.htm" />
+  <HelpKINode Title="GetUserPositions method" Url="html/342fa450-f320-4170-35b2-c067fa155b35.htm" />
+  <HelpKINode Title="GetUserRelationshipDetail method" Url="html/64979d96-51c0-0718-a7a1-9411190ca092.htm" />
+  <HelpKINode Title="GetUsers method" Url="html/6ee3dc54-dbf6-f0bb-9167-9a7db5711238.htm" />
+  <HelpKINode Title="GetUserSMSToken method" Url="html/3dc6b504-5984-cdd6-41ba-a2ef4e82e0d8.htm" />
+  <HelpKINode Title="GetUserSmsToken method" Url="html/9d1149e5-4f39-4f46-bad7-ccd90c92f8f9.htm" />
+  <HelpKINode Title="GetUsersPositions method" Url="html/5ad0f275-ab3c-763a-f97d-e10d25a6c90b.htm" />
+  <HelpKINode Title="GetUserTokenOverview method">
+    <HelpKINode Title="SMSToken.GetUserTokenOverview Method " Url="html/1f4a750e-02bc-ad46-e94c-7e939ad2b3c6.htm" />
+    <HelpKINode Title="User.GetUserTokenOverview Method " Url="html/2c9087fe-5236-0a62-7b42-d3d70a29ad3e.htm" />
+    <HelpKINode Title="UserManagement.GetUserTokenOverview Method " Url="html/8ad4bfde-0229-eed8-a8ee-03ccde4d73ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserTokenOverview_v2 method" Url="html/7c73b3e3-bf8c-ff78-8253-f7d501edebc9.htm" />
+  <HelpKINode Title="GetUserTypeId method" Url="html/9bb63d24-3725-313a-1b11-0e9c44858e12.htm" />
+  <HelpKINode Title="Global class">
+    <HelpKINode Title="Global Class" Url="html/085a92b3-e486-62be-1800-b86cd46ab1bd.htm" />
+    <HelpKINode Title="Global Class" Url="html/d8a06eac-75b6-03c0-7020-28640e3350ec.htm" />
+    <HelpKINode Title="about Global class" Url="html/d8a06eac-75b6-03c0-7020-28640e3350ec.htm" />
+    <HelpKINode Title="about Global class" Url="html/085a92b3-e486-62be-1800-b86cd46ab1bd.htm" />
+    <HelpKINode Title="constructor" Url="html/6ae992e6-2acf-c025-816e-3911bb0c903b.htm" />
+    <HelpKINode Title="constructor" Url="html/a08bc01d-4033-15ca-cd58-4a2af0c914fb.htm" />
+    <HelpKINode Title="events" Url="html/ecfcb058-b3a8-d188-c37c-68d945e0d32d.htm" />
+    <HelpKINode Title="events" Url="html/5132ba4c-2c46-6ea1-7997-9b7149e4dd9a.htm" />
+    <HelpKINode Title="methods" Url="html/6c73b28c-0a34-be28-b063-5927017d56cf.htm" />
+    <HelpKINode Title="methods" Url="html/2489cb0d-ac7b-961f-14f6-c3a8bc41b8a5.htm" />
+    <HelpKINode Title="properties" Url="html/4a21df38-0c60-718f-897b-dbda56dd01cb.htm" />
+    <HelpKINode Title="properties" Url="html/dbd5b968-1785-3d63-4336-bd80dec6275a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Global.Application_AuthenticateRequest method" Url="html/be268a2f-f8ee-0559-4880-de07c21a9d4c.htm" />
+  <HelpKINode Title="Global.Application_BeginRequest method" Url="html/c45b703e-f8d9-1a37-006f-a0481a89c863.htm" />
+  <HelpKINode Title="Global.Application_End method" Url="html/c9494f90-f607-8fcc-8483-04785d88b367.htm" />
+  <HelpKINode Title="Global.Application_EndRequest method" Url="html/f08121b4-8f71-0cda-0772-63f492f31e21.htm" />
+  <HelpKINode Title="Global.Application_Error method" Url="html/148ad4cb-af31-d0b4-56ed-e4b5db6289fa.htm" />
+  <HelpKINode Title="Global.Application_Start method" Url="html/18c66376-f58b-dc17-b390-b47cd17c0d21.htm" />
+  <HelpKINode Title="Global.Global constructor">
+    <HelpKINode Title="Global Constructor " Url="html/6ae992e6-2acf-c025-816e-3911bb0c903b.htm" />
+    <HelpKINode Title="Global Constructor " Url="html/a08bc01d-4033-15ca-cd58-4a2af0c914fb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Global.Session_End method" Url="html/42456129-4109-81f7-0a72-f924e3aa9634.htm" />
+  <HelpKINode Title="Global.Session_Start method" Url="html/5da6ce7f-e0a7-253c-33ae-d1e8293f2773.htm" />
+  <HelpKINode Title="GpmManagement class">
+    <HelpKINode Title="GpmManagement Class" Url="html/e80a812c-97ed-b49e-8e35-916730723928.htm" />
+    <HelpKINode Title="about GpmManagement class" Url="html/e80a812c-97ed-b49e-8e35-916730723928.htm" />
+    <HelpKINode Title="constructor" Url="html/60319b4e-ed23-f7ad-d2d1-f639049b5317.htm" />
+    <HelpKINode Title="events" Url="html/40d4b0fe-f259-0541-7dde-7b9b7718a61c.htm" />
+    <HelpKINode Title="methods" Url="html/ac788150-e7cb-b002-7064-afa18edd4f0f.htm" />
+    <HelpKINode Title="properties" Url="html/45890010-b7fb-8dd6-afe9-2e59634bc047.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GpmManagement.GpmManagement constructor" Url="html/60319b4e-ed23-f7ad-d2d1-f639049b5317.htm" />
+  <HelpKINode Title="GpmManagement.PingSite method" Url="html/a4bfa33a-47aa-a23d-e9db-7050ee5ea84b.htm" />
+  <HelpKINode Title="HandleException method" Url="html/a7723955-e7dc-b96f-560f-453ce353e2ba.htm" />
+  <HelpKINode Title="HasValidSession method" Url="html/2a9ad0fd-3ea9-a424-00d8-351b9e4093dd.htm" />
+  <HelpKINode Title="IAuthenticationService interface">
+    <HelpKINode Title="IAuthenticationService Interface" Url="html/7ef450f0-8f4a-8efc-1de6-6de076c49683.htm" />
+    <HelpKINode Title="about IAuthenticationService interface" Url="html/7ef450f0-8f4a-8efc-1de6-6de076c49683.htm" />
+    <HelpKINode Title="methods" Url="html/a4640fde-f915-cb03-d54c-704ffa5c3b6b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IAuthenticationService.AssociateNewMatrixCard method" Url="html/977f6500-792a-dca0-ff68-ed55a6540378.htm" />
+  <HelpKINode Title="IAuthenticationService.AuthenticateAlias method" Url="html/788c6236-a1b3-15db-2c97-7cb139fe1fc0.htm" />
+  <HelpKINode Title="IAuthenticationService.CancelAccessCode method" Url="html/7ba44d26-eb12-dd1d-0fe2-84efecec6459.htm" />
+  <HelpKINode Title="IAuthenticationService.ChangeContractPhone method" Url="html/d2bd2259-e53f-0f2c-b6eb-7d224e6fd6c3.htm" />
+  <HelpKINode Title="IAuthenticationService.ChangePassword method" Url="html/0f18f426-8d1c-e96f-4092-25d69331f98a.htm" />
+  <HelpKINode Title="IAuthenticationService.ChangeUserAliasLimit method" Url="html/2934a809-8610-8199-e117-0b8ecc7b872d.htm" />
+  <HelpKINode Title="IAuthenticationService.CloseSession method" Url="html/c785fb32-4801-a318-e103-9d1a3876144b.htm" />
+  <HelpKINode Title="IAuthenticationService.DisableAccessCode method" Url="html/ea7fe7bb-4b75-c73d-0467-046baa780a37.htm" />
+  <HelpKINode Title="IAuthenticationService.EvaluateTransaction method" Url="html/5984cf2e-82c3-5e93-f74e-1d96de5f0be9.htm" />
+  <HelpKINode Title="IAuthenticationService.GetAliasPositionsWithSession method" Url="html/1a465606-96c7-52bf-2987-14cc9d6265ec.htm" />
+  <HelpKINode Title="IAuthenticationService.GetAllAssetImpactTypes method" Url="html/149d8d4a-9c77-1f90-b579-c3fc23ca60f3.htm" />
+  <HelpKINode Title="IAuthenticationService.GetAllChannels method" Url="html/e559a7bf-6095-3cd2-60ef-9d3b4cc7c170.htm" />
+  <HelpKINode Title="IAuthenticationService.GetAllDefaultCurrencies method" Url="html/f20ec1ec-be39-e54b-1296-dde450c54358.htm" />
+  <HelpKINode Title="IAuthenticationService.GetAllTimePeriods method" Url="html/7628fddf-b995-13fd-86af-69d6ae17ce5b.htm" />
+  <HelpKINode Title="IAuthenticationService.GetSubscriptionTransactionList method" Url="html/6d10c766-adaa-c8c5-ff23-934cf2f1107d.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserAccessesByLocation method" Url="html/c56ac3e7-4392-f451-ddff-807cb051c776.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserAliasAllDevices method" Url="html/799c4de6-92b6-59b5-1486-0fcd0544abbc.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserAliasAllLimits method" Url="html/8d7e72ea-6c0e-5b21-2b9e-4d2bef64511e.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserContactInfo method" Url="html/e495778e-b71a-3afd-a9d0-31c2b2e74e35.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserLoginAlternativeAlias method" Url="html/7eb89706-18f5-daf2-24c3-f10b45858fd1.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserLoginMainAlias method" Url="html/7a4b09b1-dd76-8039-70ce-d5682faf2f5a.htm" />
+  <HelpKINode Title="IAuthenticationService.GetUserMatrixAccessCodes method" Url="html/7dc53b39-12bb-d1ed-75c6-6b43fd664c74.htm" />
+  <HelpKINode Title="IAuthenticationService.ReenableAccessCode method" Url="html/5624d39e-96ef-250f-eb68-bc4f49439bf7.htm" />
+  <HelpKINode Title="IAuthenticationService.RegistNewLoginAlias method" Url="html/41e1148e-5ebe-3f0a-2563-1eec316b49ab.htm" />
+  <HelpKINode Title="IAuthenticationService.SendSMSMessage method" Url="html/0926c3fb-ed90-daae-98c0-1d18d91cefb7.htm" />
+  <HelpKINode Title="IAuthenticationService.SendSMSToken method" Url="html/9b1af6d3-d3b1-88f1-a3e0-8eafd937a256.htm" />
+  <HelpKINode Title="IAuthenticationService.ValidateAccessCodePositions method" Url="html/c4a20286-10cf-1f7c-d2de-ae71a715ff3d.htm" />
+  <HelpKINode Title="IAuthenticationService.ValidateRequestToken method" Url="html/80ee973a-2e1a-a9e3-e156-335920a9b97d.htm" />
+  <HelpKINode Title="IAuthenticationService.ValidateSMSToken method" Url="html/7262bf7d-ef50-8d35-4476-3bdca7f0166b.htm" />
+  <HelpKINode Title="IAuthenticationService.ValidateToken method" Url="html/9be82c2b-4540-bcb7-f763-fc6d10c4e378.htm" />
+  <HelpKINode Title="InactivateUserAccessCodeAllExceptThis method" Url="html/d6dc5091-5c9b-c04d-5e0d-e5c9d9c0737a.htm" />
+  <HelpKINode Title="InitializeAccessCodeFailures method" Url="html/de0c501e-9fdc-e21c-fee9-96bbba4dbf06.htm" />
+  <HelpKINode Title="InitializeAccessCodeFailuresById method">
+    <HelpKINode Title="Authentication.InitializeAccessCodeFailuresById Method " Url="html/64286153-f71c-ecf9-f883-2edd822a56bf.htm" />
+    <HelpKINode Title="UserManagement.InitializeAccessCodeFailuresById Method " Url="html/5c1601ae-b385-d364-177d-20190718a675.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InputContextType class">
+    <HelpKINode Title="InputContextType Class" Url="html/ea4b3929-702f-f45a-4599-ac797fc1386d.htm" />
+    <HelpKINode Title="about InputContextType class" Url="html/ea4b3929-702f-f45a-4599-ac797fc1386d.htm" />
+    <HelpKINode Title="constructor" Url="html/2a321d0e-bfb2-5e0c-bca6-5e80b7a1b187.htm" />
+    <HelpKINode Title="methods" Url="html/b4d6bfdb-1a70-075b-f874-782a89e81123.htm" />
+    <HelpKINode Title="properties" Url="html/05243fba-72b8-498e-6bdf-bf602b21e706.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InputContextType.ChannelId property" Url="html/2564b90a-3203-dc1a-d502-bee0969d2ddc.htm" />
+  <HelpKINode Title="InputContextType.CorporationId property" Url="html/39c4fc05-a3e8-d354-8f7e-ea45394e4b56.htm" />
+  <HelpKINode Title="InputContextType.ExternalSessionId property" Url="html/6bba7316-65b8-183f-6598-38fdfb507ce4.htm" />
+  <HelpKINode Title="InputContextType.InputContextType constructor" Url="html/2a321d0e-bfb2-5e0c-bca6-5e80b7a1b187.htm" />
+  <HelpKINode Title="InputContextType.Language property" Url="html/c8fea06e-2f6e-249e-7d0a-a8366190bc72.htm" />
+  <HelpKINode Title="IRegistrationService interface">
+    <HelpKINode Title="IRegistrationService Interface" Url="html/c839ab05-322d-fa86-41d1-4682b794dbce.htm" />
+    <HelpKINode Title="about IRegistrationService interface" Url="html/c839ab05-322d-fa86-41d1-4682b794dbce.htm" />
+    <HelpKINode Title="methods" Url="html/3f9170cf-de72-4ed6-f018-6ccb7f5acf4b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRegistrationService.AddCommentToProcess method" Url="html/7c132e4f-acf1-2056-a98e-68bbfd08dab0.htm" />
+  <HelpKINode Title="IRegistrationService.AddDocumentToProcess method" Url="html/ea15a50a-8506-9519-cb0f-45432fde6246.htm" />
+  <HelpKINode Title="IRegistrationService.GetContract method" Url="html/12ef7fce-584a-6b46-a124-e59ce6bac449.htm" />
+  <HelpKINode Title="IRegistrationService.GetProcessDocuments method" Url="html/46a0a354-847b-334b-4cd7-38d1b01e1ff8.htm" />
+  <HelpKINode Title="IRegistrationService.GetRequiredDocument method" Url="html/307320d1-8ad0-875e-7fc1-7f010180dcf9.htm" />
+  <HelpKINode Title="IRegistrationService.RegisterIndividualUser method" Url="html/856cb7bd-bbad-d70b-88ef-5a1c4af851a6.htm" />
+  <HelpKINode Title="IRegistrationService.UpdatePushToken method" Url="html/c4bcca00-3f51-4f1f-4d7d-2d0a2c656f87.htm" />
+  <HelpKINode Title="IsRegisteredInChannel method" Url="html/e6e3e4eb-1b88-0985-6614-4c6fb1d2df66.htm" />
+  <HelpKINode Title="ITS_DNA_NAMESPACE field" Url="html/36429c8e-c8ae-f2f7-279e-7e7dc372462c.htm" />
+  <HelpKINode Title="KeepAlive method" Url="html/78bef598-db49-815a-a810-612f83693b6f.htm" />
+  <HelpKINode Title="Language property" Url="html/c8fea06e-2f6e-249e-7d0a-a8366190bc72.htm" />
+  <HelpKINode Title="ListHeuristicBlacklistNIB method" Url="html/877fca7d-d917-0002-7730-1524547b794b.htm" />
+  <HelpKINode Title="NewAccessCodeByCustomer method" Url="html/7ebb8ede-b51a-39ac-23bf-6203d296b57d.htm" />
+  <HelpKINode Title="NewAliasDailyLimitDetail method" Url="html/fd813899-173a-4394-3afe-555226f55307.htm" />
+  <HelpKINode Title="NewCertificate method" Url="html/33358f21-245b-7367-1808-c41a18f32bdb.htm" />
+  <HelpKINode Title="NewContact method" Url="html/f7366b2c-cf55-02d0-1621-8e9610ef960a.htm" />
+  <HelpKINode Title="NewContactByUserId method" Url="html/3d4d674f-b2f9-bab0-1219-13a822c7445e.htm" />
+  <HelpKINode Title="NewOperation method" Url="html/03a46937-fd89-281b-2089-24e009788bcd.htm" />
+  <HelpKINode Title="NewUserAccessCodeInactive method" Url="html/ce703dc8-33fe-9e18-fcac-6d80b611071c.htm" />
+  <HelpKINode Title="NewUserAccessCodeInactiveExtUser method" Url="html/6ae1e57f-de9d-d0c2-2a22-7b75555a3868.htm" />
+  <HelpKINode Title="NewUserInactive method" Url="html/0ad86662-8f24-df65-ddd2-ab82e6ebd883.htm" />
+  <HelpKINode Title="PingSite method" Url="html/a4bfa33a-47aa-a23d-e9db-7050ee5ea84b.htm" />
+  <HelpKINode Title="PredefinedCode class">
+    <HelpKINode Title="PredefinedCode Class" Url="html/31dbc46d-df15-dbf0-e84a-1b9cc025aa4c.htm" />
+    <HelpKINode Title="about PredefinedCode class" Url="html/31dbc46d-df15-dbf0-e84a-1b9cc025aa4c.htm" />
+    <HelpKINode Title="constructor" Url="html/3def47a7-af4f-16e7-ff72-bf991534ca1d.htm" />
+    <HelpKINode Title="events" Url="html/5d8dd58d-2f36-e9a7-7b61-7fd355fbae97.htm" />
+    <HelpKINode Title="methods" Url="html/12d043c5-573b-72e8-bd45-f88ebf638289.htm" />
+    <HelpKINode Title="properties" Url="html/b36211e0-3f67-ac8e-e683-c31b11ec96dd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PredefinedCode.ChangePredefinedCodeStatus method" Url="html/54489441-57d1-0d2b-0bba-06e9c1badfc1.htm" />
+  <HelpKINode Title="PredefinedCode.ChangePredefinedCodeStock method" Url="html/b4823b74-256b-8fce-11a3-b3a592705066.htm" />
+  <HelpKINode Title="PredefinedCode.CreateBatchEnvelope method" Url="html/d78168c1-e0fb-b03a-6942-050918c75f2f.htm" />
+  <HelpKINode Title="PredefinedCode.CreateMatrixBatch method" Url="html/8f344c06-4744-30f9-c42c-5dfafea8c31a.htm" />
+  <HelpKINode Title="PredefinedCode.CreatePredefinedCodeBatchFile method" Url="html/57696291-2ed4-d7c7-930a-f4cbe0461292.htm" />
+  <HelpKINode Title="PredefinedCode.CreatePredefinedCodes method" Url="html/c9224d39-6406-d5aa-1e68-ea424fadc171.htm" />
+  <HelpKINode Title="PredefinedCode.CreatePredefinedMatrixBatchFile method" Url="html/000a9855-1c12-4ab0-8f38-459345e6c13d.htm" />
+  <HelpKINode Title="PredefinedCode.CreatePredefinedSecurityCodeBatchFile method" Url="html/2d16c136-55a2-4bb9-8644-b6b38cc02ba9.htm" />
+  <HelpKINode Title="PredefinedCode.CreateSecurityBatchEnvelope method" Url="html/6cfce83b-0fc8-7eb1-3800-9627199ae817.htm" />
+  <HelpKINode Title="PredefinedCode.Dispose method" Url="html/73656105-e462-892c-e3b3-2e8422f532c0.htm" />
+  <HelpKINode Title="PredefinedCode.GetAllBatchStatus method" Url="html/a96016c0-7880-45f6-43cb-9bf5c0e29ddc.htm" />
+  <HelpKINode Title="PredefinedCode.GetAllPredefinedCodeBranches method" Url="html/baeab736-b5c5-6b69-aa38-021cf9b5d9f7.htm" />
+  <HelpKINode Title="PredefinedCode.GetAllPredefinedCodeStatus method" Url="html/1d88a358-58dd-55db-3671-830cb955a25b.htm" />
+  <HelpKINode Title="PredefinedCode.GetBatchFileContent method" Url="html/9d872b5e-e837-2764-ac15-4eae34830adf.htm" />
+  <HelpKINode Title="PredefinedCode.GetMatrixCardBatchDetail method" Url="html/2e54a5d0-4d23-f084-db98-c63ba0946193.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeAccessCode method" Url="html/485a428b-d474-dc97-2a03-5daf08027dec.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeBatchDetail method" Url="html/7a2ecb32-0f5c-3a51-c865-3fe8326923df.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeBatches method" Url="html/ad1100f8-6fcb-7141-181b-8cccfdd0ce5f.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeBatchFiles method" Url="html/3f9b609d-0f11-54ae-b858-67090f4d19c1.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeBranch method" Url="html/9df6b3e7-4f3e-c004-84c8-107ca38249e2.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodes method" Url="html/6b0b0183-179e-be5f-f288-ae94efc9c4c0.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeStock method" Url="html/57bed5a7-aea1-7b86-4a90-9add82079b0e.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedCodeStockByType method" Url="html/a87f77e7-4d79-a28a-38cb-b32890494e1c.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedMatrixBatchFiles method" Url="html/0733904e-ba6c-3cea-9ccb-66954ae64a1f.htm" />
+  <HelpKINode Title="PredefinedCode.GetPredefinedMatrixCardBatches method" Url="html/ac2aa9e4-ae6b-d655-e616-9c08e3c912a6.htm" />
+  <HelpKINode Title="PredefinedCode.PredefinedCode constructor" Url="html/3def47a7-af4f-16e7-ff72-bf991534ca1d.htm" />
+  <HelpKINode Title="PredefinedCode.ReceiveBatchEnvelope method" Url="html/204b7120-0092-e14e-e871-955117845dbc.htm" />
+  <HelpKINode Title="PredefinedCode.ReceiveBatchMatrixCard method" Url="html/805a2fcd-f879-11ae-2ffb-216052aa2523.htm" />
+  <HelpKINode Title="PredefinedCode.ReceiveSecurityBatchEnvelope method" Url="html/0bac43dd-46fd-7650-9eba-965d19dff1b1.htm" />
+  <HelpKINode Title="PredefinedCode.SendBatchEnvelope method" Url="html/c35a1747-7f18-2d4b-4d0c-c7cb050e2a77.htm" />
+  <HelpKINode Title="PredefinedCode.SendMatrixBatch method" Url="html/482c3586-8c5e-a3b4-db48-c5a6a639e0fa.htm" />
+  <HelpKINode Title="PredefinedCode.SendSecurityBatchEnvelope method" Url="html/7158d020-922c-4f84-410e-8918588c0c77.htm" />
+  <HelpKINode Title="ReceiveBatchEnvelope method" Url="html/204b7120-0092-e14e-e871-955117845dbc.htm" />
+  <HelpKINode Title="ReceiveBatchMatrixCard method" Url="html/805a2fcd-f879-11ae-2ffb-216052aa2523.htm" />
+  <HelpKINode Title="ReceiveSecurityBatchEnvelope method" Url="html/0bac43dd-46fd-7650-9eba-965d19dff1b1.htm" />
+  <HelpKINode Title="RecoverAccessCodeFromEnvelope method" Url="html/42456c9c-c67b-50a4-a8dd-7a82741b685a.htm" />
+  <HelpKINode Title="ReenableAccessCode method">
+    <HelpKINode Title="AuthenticationService.ReenableAccessCode Method " Url="html/a4d0ec58-6d97-a21b-ded8-b7428edfbd4a.htm" />
+    <HelpKINode Title="IAuthenticationService.ReenableAccessCode Method " Url="html/5624d39e-96ef-250f-eb68-bc4f49439bf7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegisterDevice method" Url="html/6ac83b00-4533-6cad-a59e-4e2c822600cd.htm" />
+  <HelpKINode Title="RegisterIndividualUser method">
+    <HelpKINode Title="IRegistrationService.RegisterIndividualUser Method " Url="html/856cb7bd-bbad-d70b-88ef-5a1c4af851a6.htm" />
+    <HelpKINode Title="RegistrationService.RegisterIndividualUser Method " Url="html/555b5fb5-a93b-71ad-f424-2f22212d6504.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegistNewLoginAlias method">
+    <HelpKINode Title="AliasManagement.RegistNewLoginAlias Method " Url="html/6f71c92e-103c-2bf5-8b01-93248c56a4bc.htm" />
+    <HelpKINode Title="AuthenticationService.RegistNewLoginAlias Method " Url="html/e2afd40e-e572-ce18-dd41-28c5c0695d39.htm" />
+    <HelpKINode Title="IAuthenticationService.RegistNewLoginAlias Method " Url="html/41e1148e-5ebe-3f0a-2563-1eec316b49ab.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegistrationService class">
+    <HelpKINode Title="RegistrationService Class" Url="html/59bf8238-eedb-1eae-15d8-6963f253dd1e.htm" />
+    <HelpKINode Title="about RegistrationService class" Url="html/59bf8238-eedb-1eae-15d8-6963f253dd1e.htm" />
+    <HelpKINode Title="constructor" Url="html/3a037d38-81a6-1a0d-f466-d46389d4c794.htm" />
+    <HelpKINode Title="fields" Url="html/7a2a3c1f-efee-91c0-e6ad-f601a15d9f64.htm" />
+    <HelpKINode Title="methods" Url="html/ff3e885d-5dfb-f4fe-0cfd-93e96e5adaa2.htm" />
+    <HelpKINode Title="properties" Url="html/980b4a2c-ea61-eb92-41ab-511fe732c133.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegistrationService.AddCommentToProcess method" Url="html/451a2fb3-783e-7f3a-6917-136b6bf85e31.htm" />
+  <HelpKINode Title="RegistrationService.AddDocumentToProcess method" Url="html/f18305be-bda3-2ea6-0f35-f73f66cb78d7.htm" />
+  <HelpKINode Title="RegistrationService.GetContract method" Url="html/111ed537-7425-0c70-3ba9-3c6ced654da8.htm" />
+  <HelpKINode Title="RegistrationService.GetProcessDocuments method" Url="html/1df47056-1947-8971-73af-793448951865.htm" />
+  <HelpKINode Title="RegistrationService.GetRequiredDocument method" Url="html/0d774ec1-85cc-c992-a248-8981ba4fff2d.htm" />
+  <HelpKINode Title="RegistrationService.RegisterIndividualUser method" Url="html/555b5fb5-a93b-71ad-f424-2f22212d6504.htm" />
+  <HelpKINode Title="RegistrationService.RegistrationService constructor" Url="html/3a037d38-81a6-1a0d-f466-d46389d4c794.htm" />
+  <HelpKINode Title="RegistrationService.UpdatePushToken method" Url="html/0ac05d64-bb27-9584-320e-d7a3e23163dd.htm" />
+  <HelpKINode Title="RegistrationWFMessage method" Url="html/bbdd13d2-718a-dd4d-b38c-57138620a163.htm" />
+  <HelpKINode Title="Registration_v2 method" Url="html/81b9b032-a3d8-fa38-f7df-bc425dd213c1.htm" />
+  <HelpKINode Title="Registration_v3 method" Url="html/9cb07329-6f64-910a-9396-39975c3c4ac1.htm" />
+  <HelpKINode Title="ResetAllUserSMSTokenFailures method" Url="html/d798faf1-3262-d269-9124-6536f9e33070.htm" />
+  <HelpKINode Title="ResetUserAccessCodesFailures method" Url="html/df063b17-8833-73b6-0cf8-9e67bd5295d4.htm" />
+  <HelpKINode Title="ResetUserCardTokenFailure method">
+    <HelpKINode Title="SMSToken.ResetUserCardTokenFailure Method " Url="html/83543ca5-caf0-8b17-20b4-96f112f753f9.htm" />
+    <HelpKINode Title="User.ResetUserCardTokenFailure Method " Url="html/526cdb58-7764-8d66-ab8c-7bf36e21845f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ResetUserSMSTokenFailure method" Url="html/b9145dd2-d710-efd7-694b-eba38c92185c.htm" />
+  <HelpKINode Title="ResetUserSMSTokenFailures method" Url="html/d62d1cb1-7041-5877-bdd1-b37e05727001.htm" />
+  <HelpKINode Title="RollbackTransaction method" Url="html/a8be6dce-31bc-9275-90a3-4c9457503102.htm" />
+  <HelpKINode Title="RollbackTransactionV2 method" Url="html/549185bb-0574-0737-d5ca-9063ea2ef21e.htm" />
+  <HelpKINode Title="SdcManagement class">
+    <HelpKINode Title="SdcManagement Class" Url="html/44d7addf-7da6-bf7c-39a9-78f09e540967.htm" />
+    <HelpKINode Title="about SdcManagement class" Url="html/44d7addf-7da6-bf7c-39a9-78f09e540967.htm" />
+    <HelpKINode Title="constructor" Url="html/84cf53e9-7e66-f5f6-7de5-c8d40ada7b90.htm" />
+    <HelpKINode Title="events" Url="html/8a07d90f-2f47-94ae-3fd9-56c202fc84b6.htm" />
+    <HelpKINode Title="methods" Url="html/8ffe11b8-c25b-cfb3-0030-6a9f503d21e3.htm" />
+    <HelpKINode Title="properties" Url="html/1afdbb9c-ba5a-5997-ebbf-19408598927c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SdcManagement.CloseSession method" Url="html/8408ec90-3ed9-ea81-9c8b-52d94868e867.htm" />
+  <HelpKINode Title="SdcManagement.CreateSession method" Url="html/04727c51-c275-5f29-fe0c-fbd3e945cc02.htm" />
+  <HelpKINode Title="SdcManagement.Dispose method" Url="html/b0c4d92f-1542-22e6-a737-cea10e263846.htm" />
+  <HelpKINode Title="SdcManagement.HasValidSession method" Url="html/2a9ad0fd-3ea9-a424-00d8-351b9e4093dd.htm" />
+  <HelpKINode Title="SdcManagement.KeepAlive method" Url="html/78bef598-db49-815a-a810-612f83693b6f.htm" />
+  <HelpKINode Title="SdcManagement.SdcManagement constructor" Url="html/84cf53e9-7e66-f5f6-7de5-c8d40ada7b90.htm" />
+  <HelpKINode Title="SearchUser method" Url="html/781096e5-176d-b467-5404-706a4c752d23.htm" />
+  <HelpKINode Title="SendBatchEnvelope method" Url="html/c35a1747-7f18-2d4b-4d0c-c7cb050e2a77.htm" />
+  <HelpKINode Title="SendLoginTokenToMobile method" Url="html/58d2ec57-37f2-dea3-7152-f220d8d80288.htm" />
+  <HelpKINode Title="SendMatrixBatch method" Url="html/482c3586-8c5e-a3b4-db48-c5a6a639e0fa.htm" />
+  <HelpKINode Title="SendSecurityBatchEnvelope method" Url="html/7158d020-922c-4f84-410e-8918588c0c77.htm" />
+  <HelpKINode Title="SendSMSMessage method">
+    <HelpKINode Title="AuthenticationService.SendSMSMessage Method " Url="html/f06c2ccf-41e4-5005-983a-5885994752b1.htm" />
+    <HelpKINode Title="IAuthenticationService.SendSMSMessage Method " Url="html/0926c3fb-ed90-daae-98c0-1d18d91cefb7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SendSMSToken method">
+    <HelpKINode Title="AuthenticationService.SendSMSToken Method " Url="html/3bb39803-682f-1951-a20c-e051e2631e30.htm" />
+    <HelpKINode Title="IAuthenticationService.SendSMSToken Method " Url="html/9b1af6d3-d3b1-88f1-a3e0-8eafd937a256.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SendSMSToMobile method" Url="html/953d471c-2f10-9600-16d2-79c303183c9f.htm" />
+  <HelpKINode Title="SendTokenToMobile method" Url="html/1523b879-4f56-007f-5593-f17399d7c579.htm" />
+  <HelpKINode Title="SendTokenToMobile_v2 method" Url="html/fe17402b-b8c3-5ce2-1856-7a82befa50cd.htm" />
+  <HelpKINode Title="Session_End method" Url="html/42456129-4109-81f7-0a72-f924e3aa9634.htm" />
+  <HelpKINode Title="Session_Start method" Url="html/5da6ce7f-e0a7-253c-33ae-d1e8293f2773.htm" />
+  <HelpKINode Title="SetAccessCodeByCustomer method" Url="html/b1c48ab0-2703-72e4-9ca1-aa5b36cc68c5.htm" />
+  <HelpKINode Title="SetAccountLimitsAndProfileOveridesList method" Url="html/5b7da2b8-52ca-3d5a-9fbb-9bad7ef82e8e.htm" />
+  <HelpKINode Title="SetAliasAccessCodeActivation method" Url="html/c4560db0-d695-b898-f93f-9ac752daef21.htm" />
+  <HelpKINode Title="SetAliasAccessTransactionList method" Url="html/f85be289-e301-424d-6f46-2bea35db197b.htm" />
+  <HelpKINode Title="SetAliasAccountProductList method" Url="html/5dc126f3-4680-3857-2a41-a596eef7f5bb.htm" />
+  <HelpKINode Title="SetAliasAuthentication method">
+    <HelpKINode Title="AliasAuthentication.SetAliasAuthentication Method " Url="html/a467cb0c-a73f-c32d-557a-896cb27ffda4.htm" />
+    <HelpKINode Title="Authentication.SetAliasAuthentication Method " Url="html/2ebdf0dc-0be5-c261-1545-6226af935cc3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetAliasBaseInfo method" Url="html/7c1a5e77-38ba-f597-5c91-5ede3d9acbf9.htm" />
+  <HelpKINode Title="SetAliasContext method" Url="html/015e0726-3c34-1328-383c-da7953ac78d9.htm" />
+  <HelpKINode Title="SetAliasDailyLimitDetail method" Url="html/6f26776e-e121-5bf9-36c1-0c931de6d5d7.htm" />
+  <HelpKINode Title="SetAliasProfileCombinationLimitRules method" Url="html/27ebb667-d20b-67a5-973e-5d8f1782180e.htm" />
+  <HelpKINode Title="SetAliasProfileCombinationLimitRulesStateless method" Url="html/21974ef9-5821-e34a-9f84-8f91486ee22d.htm" />
+  <HelpKINode Title="SetCompanyAliasAccessTransactionList method" Url="html/1d9fc61d-bcd9-9921-15a8-ba67a973f0d7.htm" />
+  <HelpKINode Title="SetCompanyAliasAccessTransactionList_v2 method" Url="html/1fc5c641-139e-d673-1821-8a4582d61b89.htm" />
+  <HelpKINode Title="SetCompanyAliasAccountProductList method" Url="html/079b7202-1c65-b379-a18a-8c98c8dd34a7.htm" />
+  <HelpKINode Title="SetContextBranch method" Url="html/8947fc45-7d55-ca97-d0f6-15a9794b5be9.htm" />
+  <HelpKINode Title="SetMultiChannelAuthentication method" Url="html/2bbfc96c-8161-4052-4851-299568a773e9.htm" />
+  <HelpKINode Title="SetTraceEnable method" Url="html/7dd5af2f-4f1f-a24d-5acf-9ff7d3b2d874.htm" />
+  <HelpKINode Title="SetTransactionData method" Url="html/cde2bcfd-7f41-7190-bf29-a20232f58b7c.htm" />
+  <HelpKINode Title="SetTransactionLabelData method" Url="html/2733fc8b-fcc8-5a89-8592-e9ca3fc7a550.htm" />
+  <HelpKINode Title="SetTransactionSMSMessage method" Url="html/8b0a9d13-19b0-965f-0a3d-7e5895f32d2f.htm" />
+  <HelpKINode Title="SetUserAliasAccessTransactionList method" Url="html/045a6d80-e612-b253-74d6-d39ba8a0d8c6.htm" />
+  <HelpKINode Title="SetUserAliasAccessTransactionList_v2 method" Url="html/826347d9-9fcb-7f37-1401-13976c54a380.htm" />
+  <HelpKINode Title="SetUserAuthentication method" Url="html/31d90e3b-f9de-68a7-dcc5-5e6c71fb6ec1.htm" />
+  <HelpKINode Title="SetUserCertificateCounters method" Url="html/51624529-0fc1-35d2-dad2-7243952248b5.htm" />
+  <HelpKINode Title="SetUserContext method" Url="html/c026684a-5c67-6bc1-bfbb-c5d5ace3851e.htm" />
+  <HelpKINode Title="SetUserSessionToken method" Url="html/f9bf5997-e671-c6fe-f472-94bdd2dbf08a.htm" />
+  <HelpKINode Title="SignContract method" Url="html/c7ccbd7d-51a4-cd10-e2ee-f6941425d510.htm" />
+  <HelpKINode Title="SMSToken class">
+    <HelpKINode Title="SMSToken Class" Url="html/cbbb35ca-e55d-09aa-4ceb-398fcd2f9ff5.htm" />
+    <HelpKINode Title="about SMSToken class" Url="html/cbbb35ca-e55d-09aa-4ceb-398fcd2f9ff5.htm" />
+    <HelpKINode Title="constructor" Url="html/0931e393-3b4c-597d-4219-46a80c3ba356.htm" />
+    <HelpKINode Title="events" Url="html/a5b58990-2bba-5ebb-1860-17eb99803c3a.htm" />
+    <HelpKINode Title="methods" Url="html/194d1780-005d-9493-6e9a-abb7611ead5a.htm" />
+    <HelpKINode Title="properties" Url="html/3bb8ad2e-ed52-fdfd-873c-ad8344d2d956.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SMSToken.ChangeBaseUserCardToken method" Url="html/416c3580-b63e-5690-baec-97a71b7ba012.htm" />
+  <HelpKINode Title="SMSToken.ChangeUserCardToken method" Url="html/137119d6-ac06-3d61-2e4c-fb3c6dfa94af.htm" />
+  <HelpKINode Title="SMSToken.ChangeUserTokenOverview method" Url="html/c8c7e999-3440-673f-c810-d8b2ed7caa37.htm" />
+  <HelpKINode Title="SMSToken.ChangeUserTokenOverview_v2 method" Url="html/e5841b0e-d60b-2943-53d6-b6e54ba33c66.htm" />
+  <HelpKINode Title="SMSToken.CheckTokenSignatureValue method" Url="html/c0c04b1e-177c-4b32-33e6-f34f37665294.htm" />
+  <HelpKINode Title="SMSToken.DeleteUserCardToken method" Url="html/2ffa1a24-f2bd-b0b7-d5c5-d6aa2722bc0b.htm" />
+  <HelpKINode Title="SMSToken.DeleteUserTokenOverview method" Url="html/0b675783-a273-c842-83ad-78811bff6489.htm" />
+  <HelpKINode Title="SMSToken.Dispose method" Url="html/15255b54-3e21-742a-2206-a63baeeb54ff.htm" />
+  <HelpKINode Title="SMSToken.GetAllTokenCardIssuers method" Url="html/4577d69a-407b-6e52-0b87-f37b595cfdf0.htm" />
+  <HelpKINode Title="SMSToken.GetAllUserCardTokenStatus method" Url="html/195ffcc6-5d3e-75d9-4d7e-0a19589c0bd9.htm" />
+  <HelpKINode Title="SMSToken.GetCustomerCardTokens method" Url="html/53eda753-9eb1-c51a-cabf-761fe630d63e.htm" />
+  <HelpKINode Title="SMSToken.GetTokenTransactionConfigurationReport method" Url="html/cd300afc-a823-f9af-27d2-74f45c77b37e.htm" />
+  <HelpKINode Title="SMSToken.GetTokenTransactionConfigurationToCertify method" Url="html/cb62ef2f-2f4b-e26c-e786-11a38cd0f38c.htm" />
+  <HelpKINode Title="SMSToken.GetTokenTransactionConfigurationToCertify_v2 method" Url="html/0e759b84-aa25-96e4-4c0f-272837421ab2.htm" />
+  <HelpKINode Title="SMSToken.GetTokenTransactionConfigurationToCertify_v3 method" Url="html/9bda79e2-47c0-3910-6665-7eee4b689c80.htm" />
+  <HelpKINode Title="SMSToken.GetUserCardToken method" Url="html/06309b18-3639-5e89-632a-c27e1d7bc8ba.htm" />
+  <HelpKINode Title="SMSToken.GetUserCardTokens method" Url="html/89611167-7b53-4a11-f8f0-74da0ac46269.htm" />
+  <HelpKINode Title="SMSToken.GetUserCardTokensBO method" Url="html/3b5ef777-6167-7099-c96f-94adea81200d.htm" />
+  <HelpKINode Title="SMSToken.GetUserSmsToken method" Url="html/9d1149e5-4f39-4f46-bad7-ccd90c92f8f9.htm" />
+  <HelpKINode Title="SMSToken.GetUserTokenOverview method" Url="html/1f4a750e-02bc-ad46-e94c-7e939ad2b3c6.htm" />
+  <HelpKINode Title="SMSToken.GetUserTokenOverview_v2 method" Url="html/7c73b3e3-bf8c-ff78-8253-f7d501edebc9.htm" />
+  <HelpKINode Title="SMSToken.ResetUserCardTokenFailure method" Url="html/83543ca5-caf0-8b17-20b4-96f112f753f9.htm" />
+  <HelpKINode Title="SMSToken.ResetUserSMSTokenFailures method" Url="html/d62d1cb1-7041-5877-bdd1-b37e05727001.htm" />
+  <HelpKINode Title="SMSToken.SendLoginTokenToMobile method" Url="html/58d2ec57-37f2-dea3-7152-f220d8d80288.htm" />
+  <HelpKINode Title="SMSToken.SendSMSToMobile method" Url="html/953d471c-2f10-9600-16d2-79c303183c9f.htm" />
+  <HelpKINode Title="SMSToken.SendTokenToMobile method" Url="html/1523b879-4f56-007f-5593-f17399d7c579.htm" />
+  <HelpKINode Title="SMSToken.SendTokenToMobile_v2 method" Url="html/fe17402b-b8c3-5ce2-1856-7a82befa50cd.htm" />
+  <HelpKINode Title="SMSToken.SMSToken constructor" Url="html/0931e393-3b4c-597d-4219-46a80c3ba356.htm" />
+  <HelpKINode Title="TransactionStats method" Url="html/60bdfbdc-fcd1-96c5-f4ca-51152e36b318.htm" />
+  <HelpKINode Title="UpdateCompanyAliasProfile method" Url="html/dcb6e2e3-7d79-0265-d90c-a3fe1d706ae9.htm" />
+  <HelpKINode Title="UpdateNIBHeuristicState method" Url="html/0621ca5d-894b-7790-d67c-4d245de80f4e.htm" />
+  <HelpKINode Title="UpdatePushToken method">
+    <HelpKINode Title="IRegistrationService.UpdatePushToken Method " Url="html/c4bcca00-3f51-4f1f-4d7d-2d0a2c656f87.htm" />
+    <HelpKINode Title="RegistrationService.UpdatePushToken Method " Url="html/0ac05d64-bb27-9584-320e-d7a3e23163dd.htm" />
+    <HelpKINode Title="UserRegistration.UpdatePushToken Method " Url="html/8b02c9e8-82c2-56f5-b56b-0f62f77988ff.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UpdateTransactionLimit_v01 method" Url="html/98ba53d8-8466-7cfe-ec33-bf6e3cd4b0c2.htm" />
+  <HelpKINode Title="UpdateUserAutoCompleteInfo_V2 method" Url="html/e5014705-1d13-4269-9e2d-b59b121c0460.htm" />
+  <HelpKINode Title="UpdateUserCertificate method" Url="html/79b78f59-2faf-4f8f-eaec-9426ee8d000f.htm" />
+  <HelpKINode Title="UpdateUserRelationship method" Url="html/6f8ae394-0251-6cb3-3c6a-da7d7d71e6ca.htm" />
+  <HelpKINode Title="User class">
+    <HelpKINode Title="User Class" Url="html/35830ed4-9800-4c2a-0259-9b6eb715fe1d.htm" />
+    <HelpKINode Title="about User class" Url="html/35830ed4-9800-4c2a-0259-9b6eb715fe1d.htm" />
+    <HelpKINode Title="constructor" Url="html/0f184e4f-efe5-b8af-06b1-9d014aa24769.htm" />
+    <HelpKINode Title="events" Url="html/1608396f-e6bf-d682-df1e-c7efe8142955.htm" />
+    <HelpKINode Title="methods" Url="html/053acc07-dcdd-f75e-ade8-398cec82563c.htm" />
+    <HelpKINode Title="properties" Url="html/f5cbb840-a660-3554-e42d-b723513f0aa3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User.ActivateUserAD method" Url="html/2fe2fbf5-a2bf-9539-053c-d9334f220940.htm" />
+  <HelpKINode Title="User.AddUserSMSTokenFailure method" Url="html/8600e03a-185c-6c43-df54-77c177fa3771.htm" />
+  <HelpKINode Title="User.ChangeBaseUserCardToken method" Url="html/1740e7fc-e580-e12b-60fc-0f5b267e8210.htm" />
+  <HelpKINode Title="User.ChangeExternalUser method" Url="html/bd4059ef-1d5b-fa47-575e-c370abd305a5.htm" />
+  <HelpKINode Title="User.ChangeUser method" Url="html/4673d673-3be3-314b-fd2e-122f6d7da8bb.htm" />
+  <HelpKINode Title="User.ChangeUserCardToken method" Url="html/34be3d7e-69b6-38c6-af7f-ff9bc4a98651.htm" />
+  <HelpKINode Title="User.ChangeUserTokenOverview method" Url="html/8302866d-4523-3049-bc84-bd75b039524f.htm" />
+  <HelpKINode Title="User.CreateNewUserAD method" Url="html/6cd9a580-0bc2-b761-9c40-f7e141aa45fb.htm" />
+  <HelpKINode Title="User.CreateNewUserSMSToken method" Url="html/10bbfb27-7d91-3bf6-f024-fa000a78f991.htm" />
+  <HelpKINode Title="User.DeleteUserCardToken method" Url="html/b9ee133b-7580-e421-8156-1a72f03bcdfe.htm" />
+  <HelpKINode Title="User.DeleteUserTokenOverview method" Url="html/21bf4f5d-2611-8361-5203-d38cec6d2a30.htm" />
+  <HelpKINode Title="User.Dispose method" Url="html/e40e433d-b667-4c95-3be7-a80160b83d35.htm" />
+  <HelpKINode Title="User.GetAllUserCardTokenStatus method" Url="html/5e7717c7-b605-d406-f5af-b7453e94da6a.htm" />
+  <HelpKINode Title="User.GetAllUserStatus method" Url="html/d6ae2074-da26-4a6d-be80-c1d38a5d4e07.htm" />
+  <HelpKINode Title="User.GetAllUserTypes method" Url="html/e68b7514-de3a-ed28-d536-1b1959a45b0e.htm" />
+  <HelpKINode Title="User.GetExternalUser method" Url="html/c6840437-6f4d-946e-ff90-ba811ab768e4.htm" />
+  <HelpKINode Title="User.GetSMSSecurityCode method" Url="html/82517642-26b6-aa49-c6dc-531ebed66217.htm" />
+  <HelpKINode Title="User.GetTraceEnable method" Url="html/eccfdafc-fbe5-14eb-1331-f7542d0a5d78.htm" />
+  <HelpKINode Title="User.GetUser method" Url="html/6c3d2136-6229-4e71-3acd-c99b28e7121d.htm" />
+  <HelpKINode Title="User.GetUserAccessCodeList method" Url="html/3262f7f3-72b3-1b57-cd6f-a160665d99d1.htm" />
+  <HelpKINode Title="User.GetUserAliasAccessCode method" Url="html/b08a55f9-9309-728d-81e9-424f525dae5d.htm" />
+  <HelpKINode Title="User.GetUserAliasAccessCodes method" Url="html/42fad07b-4b2c-704f-f028-242441014641.htm" />
+  <HelpKINode Title="User.GetUserAliasCertificate method" Url="html/34ce10f7-7ae2-2979-6b46-b6695ff8ff4a.htm" />
+  <HelpKINode Title="User.GetUserAliasCertificates method" Url="html/9ce4416e-1f96-55fd-c51c-e1799f8683dc.htm" />
+  <HelpKINode Title="User.GetUserByUserAccessCodeId method" Url="html/7c6453a0-f72b-328b-9d57-65e433602b35.htm" />
+  <HelpKINode Title="User.GetUserCardToken method" Url="html/0a5142d3-1274-75fb-da7e-9a1f6e655462.htm" />
+  <HelpKINode Title="User.GetUserCardTokens method" Url="html/e30b529f-71fa-3792-cb48-574b542d29d4.htm" />
+  <HelpKINode Title="User.GetUserCertificateCounters method" Url="html/9886646e-46ca-4837-45fe-eba4dd473a8e.htm" />
+  <HelpKINode Title="User.GetUserImpersonationCounters method" Url="html/653969f1-c364-d8a0-280c-f2470d1c2058.htm" />
+  <HelpKINode Title="User.GetUsers method" Url="html/6ee3dc54-dbf6-f0bb-9167-9a7db5711238.htm" />
+  <HelpKINode Title="User.GetUserSMSToken method" Url="html/3dc6b504-5984-cdd6-41ba-a2ef4e82e0d8.htm" />
+  <HelpKINode Title="User.GetUserTokenOverview method" Url="html/2c9087fe-5236-0a62-7b42-d3d70a29ad3e.htm" />
+  <HelpKINode Title="User.GetUserTypeId method" Url="html/9bb63d24-3725-313a-1b11-0e9c44858e12.htm" />
+  <HelpKINode Title="User.NewUserInactive method" Url="html/0ad86662-8f24-df65-ddd2-ab82e6ebd883.htm" />
+  <HelpKINode Title="User.ResetAllUserSMSTokenFailures method" Url="html/d798faf1-3262-d269-9124-6536f9e33070.htm" />
+  <HelpKINode Title="User.ResetUserCardTokenFailure method" Url="html/526cdb58-7764-8d66-ab8c-7bf36e21845f.htm" />
+  <HelpKINode Title="User.ResetUserSMSTokenFailure method" Url="html/b9145dd2-d710-efd7-694b-eba38c92185c.htm" />
+  <HelpKINode Title="User.SetTraceEnable method" Url="html/7dd5af2f-4f1f-a24d-5acf-9ff7d3b2d874.htm" />
+  <HelpKINode Title="User.SetUserCertificateCounters method" Url="html/51624529-0fc1-35d2-dad2-7243952248b5.htm" />
+  <HelpKINode Title="User.UpdateUserCertificate method" Url="html/79b78f59-2faf-4f8f-eaec-9426ee8d000f.htm" />
+  <HelpKINode Title="User.User constructor" Url="html/0f184e4f-efe5-b8af-06b1-9d014aa24769.htm" />
+  <HelpKINode Title="User.UserCanImpersonate method" Url="html/724fd533-5600-b2fa-713f-3b04170d9a4f.htm" />
+  <HelpKINode Title="UserAutoComplete class">
+    <HelpKINode Title="UserAutoComplete Class" Url="html/e79a7944-7406-4b1a-7939-616240d355be.htm" />
+    <HelpKINode Title="about UserAutoComplete class" Url="html/e79a7944-7406-4b1a-7939-616240d355be.htm" />
+    <HelpKINode Title="constructor" Url="html/7be4e4f4-fef9-27f0-3103-e9517b0d6595.htm" />
+    <HelpKINode Title="events" Url="html/8bbabf75-d1c1-d272-d512-e7c9c1b86a0c.htm" />
+    <HelpKINode Title="methods" Url="html/d61b609b-d3ad-bd9a-c2ca-0ec098937ca5.htm" />
+    <HelpKINode Title="properties" Url="html/e263a75d-a9a6-4bb1-9a95-739681ead7f8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserAutoComplete.AddUserAutoCompleteInfo_V2 method" Url="html/7ae21f1c-6d57-c2e3-7286-107198c2e041.htm" />
+  <HelpKINode Title="UserAutoComplete.DeleteUserAutoCompleteTransactionsByList method" Url="html/ed4e0127-8ead-97d6-a33b-d6f7363c60b3.htm" />
+  <HelpKINode Title="UserAutoComplete.Dispose method" Url="html/ec92efdd-5bc5-c549-a63b-19541aa31c7c.htm" />
+  <HelpKINode Title="UserAutoComplete.GetAllAutoCompleteTypes method" Url="html/515d4ca1-5bae-426f-dd54-0a4da82ca9a1.htm" />
+  <HelpKINode Title="UserAutoComplete.GetUserAutoCompleteInfo_v4 method" Url="html/b1cd18c6-9969-a7c7-5260-2e834bb93ffb.htm" />
+  <HelpKINode Title="UserAutoComplete.UpdateUserAutoCompleteInfo_V2 method" Url="html/e5014705-1d13-4269-9e2d-b59b121c0460.htm" />
+  <HelpKINode Title="UserAutoComplete.UserAutoComplete constructor" Url="html/7be4e4f4-fef9-27f0-3103-e9517b0d6595.htm" />
+  <HelpKINode Title="UserCanImpersonate method" Url="html/724fd533-5600-b2fa-713f-3b04170d9a4f.htm" />
+  <HelpKINode Title="UserManagement class">
+    <HelpKINode Title="UserManagement Class" Url="html/7acf5841-b569-a777-4c85-47aa54d0b109.htm" />
+    <HelpKINode Title="about UserManagement class" Url="html/7acf5841-b569-a777-4c85-47aa54d0b109.htm" />
+    <HelpKINode Title="constructor" Url="html/798a6e2e-94d9-cc63-982e-090e901b408f.htm" />
+    <HelpKINode Title="events" Url="html/20df0d2c-734d-0b24-3d7f-cfb80be44160.htm" />
+    <HelpKINode Title="methods" Url="html/a2127514-11fd-b289-67b1-dec061e7cd61.htm" />
+    <HelpKINode Title="properties" Url="html/202cfb94-b517-194f-280b-9ba209fd338e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserManagement.AssociateAccessCodeExternalReference method" Url="html/65a79de1-7dcf-d104-5628-a0a012c3e96d.htm" />
+  <HelpKINode Title="UserManagement.AssociateAccessCodeExternalReferenceById method" Url="html/6ecc9d9a-5fb9-bb73-4719-e5e7d1633975.htm" />
+  <HelpKINode Title="UserManagement.AssociateAccessCodeExternalReference_V2 method" Url="html/63ec888a-2995-9c87-7526-fa2680ad9ea8.htm" />
+  <HelpKINode Title="UserManagement.AssociateNewMatrixCard method" Url="html/f007ed8d-8b67-d1b5-b218-a699be28a3ce.htm" />
+  <HelpKINode Title="UserManagement.ChangeAccessCode method" Url="html/97a36f37-184a-391a-9897-55b6af2accf4.htm" />
+  <HelpKINode Title="UserManagement.ChangeUserContactInfoByUserId method" Url="html/74505e38-c22c-605c-b049-2c1bb2e2cd9c.htm" />
+  <HelpKINode Title="UserManagement.CloseContract method" Url="html/e5736006-1af3-209a-e238-a5a07165ae00.htm" />
+  <HelpKINode Title="UserManagement.Dispose method" Url="html/b3e5ea10-c9ac-f3ef-ebec-2892f55ba1ff.htm" />
+  <HelpKINode Title="UserManagement.GetAllUserProfiles method" Url="html/b7cf17c5-500a-fc03-3588-e67a6729c0c0.htm" />
+  <HelpKINode Title="UserManagement.GetCompanyUserAliasInfo method" Url="html/0f0c2faf-cfb8-6478-734a-489346103bca.htm" />
+  <HelpKINode Title="UserManagement.GetCompanyUserAliasList method" Url="html/0213f0fc-9d86-590a-6c73-84f4a8f47fae.htm" />
+  <HelpKINode Title="UserManagement.GetOtherUserDetailInfo method" Url="html/d77c7729-e0ca-8cae-ab00-773657f91eb6.htm" />
+  <HelpKINode Title="UserManagement.GetUserAccessCodes method" Url="html/8f0c1b91-baba-fd08-f1a2-ca1ff2170386.htm" />
+  <HelpKINode Title="UserManagement.GetUserAccessesByLocation method" Url="html/7859cffb-2ae5-54e8-97bf-cd83f2c7d567.htm" />
+  <HelpKINode Title="UserManagement.GetUserAlias method" Url="html/586df265-7bf1-83d4-8447-4609f3dc5cb1.htm" />
+  <HelpKINode Title="UserManagement.GetUserAliasDevices method" Url="html/2b9e3bca-1c28-2dd9-8630-d0f57d8988ba.htm" />
+  <HelpKINode Title="UserManagement.GetUserAliasList method" Url="html/7266ce5e-42ec-acbd-2b6d-1ec53645a50a.htm" />
+  <HelpKINode Title="UserManagement.GetUserAssociatedUsers method" Url="html/2ea74679-4ecc-e66d-962f-29e669fb24a4.htm" />
+  <HelpKINode Title="UserManagement.GetUserChannelOverview method" Url="html/abd4b85e-2bec-a415-3360-12757ba264f1.htm" />
+  <HelpKINode Title="UserManagement.GetUserContactInfoByUserId method" Url="html/9d08afc2-820b-688c-d076-575e45845591.htm" />
+  <HelpKINode Title="UserManagement.GetUserDetailInfo method" Url="html/a9ce3cb4-3e51-756b-62ab-793690ece801.htm" />
+  <HelpKINode Title="UserManagement.GetUserEmailDetailByUserId method" Url="html/462bd30a-b463-db4e-efd0-25b59ffd3793.htm" />
+  <HelpKINode Title="UserManagement.GetUserLimitPositionsSummary method" Url="html/a57ddfef-514c-094d-23b6-b34ae9d68775.htm" />
+  <HelpKINode Title="UserManagement.GetUserMainSourcePointers method" Url="html/05319730-1096-3355-6437-4a429184868c.htm" />
+  <HelpKINode Title="UserManagement.GetUserPhoneDetailByUserId method" Url="html/9a7f7c9a-b43d-d5f2-7029-6826a3230e56.htm" />
+  <HelpKINode Title="UserManagement.GetUserPointers method" Url="html/fb3dd05c-2714-50e7-5e3a-642f08b75be6.htm" />
+  <HelpKINode Title="UserManagement.GetUserRelationshipDetail method" Url="html/64979d96-51c0-0718-a7a1-9411190ca092.htm" />
+  <HelpKINode Title="UserManagement.GetUserTokenOverview method" Url="html/8ad4bfde-0229-eed8-a8ee-03ccde4d73ed.htm" />
+  <HelpKINode Title="UserManagement.InitializeAccessCodeFailuresById method" Url="html/5c1601ae-b385-d364-177d-20190718a675.htm" />
+  <HelpKINode Title="UserManagement.UpdateUserRelationship method" Url="html/6f8ae394-0251-6cb3-3c6a-da7d7d71e6ca.htm" />
+  <HelpKINode Title="UserManagement.UserManagement constructor" Url="html/798a6e2e-94d9-cc63-982e-090e901b408f.htm" />
+  <HelpKINode Title="UserRegistration class">
+    <HelpKINode Title="UserRegistration Class" Url="html/64b42053-3ec4-e054-3ebf-b789ea69632b.htm" />
+    <HelpKINode Title="about UserRegistration class" Url="html/64b42053-3ec4-e054-3ebf-b789ea69632b.htm" />
+    <HelpKINode Title="constructor" Url="html/8671f459-a105-7606-8623-485bd48bc67c.htm" />
+    <HelpKINode Title="events" Url="html/a51614ef-186b-1745-5521-d637d1ca6c91.htm" />
+    <HelpKINode Title="methods" Url="html/08775b5e-9347-d45f-7280-0ca56ca70e6c.htm" />
+    <HelpKINode Title="properties" Url="html/c041ff02-b2b1-d146-8777-a51a332d7262.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserRegistration.CompanyRegistration method" Url="html/ef31a8eb-0bdb-b7ab-3dc7-36d14aa8fe55.htm" />
+  <HelpKINode Title="UserRegistration.Dispose method" Url="html/fde775cc-07de-3c1e-12e1-30ea87675332.htm" />
+  <HelpKINode Title="UserRegistration.EmployeeRegistrationExtUser method" Url="html/75bcecb7-b308-b247-c22e-1b56a63d826c.htm" />
+  <HelpKINode Title="UserRegistration.GetCompanyRegistrationInformation method" Url="html/3bebd500-23d2-47f9-3323-01f3ac1d79fd.htm" />
+  <HelpKINode Title="UserRegistration.GetCustomerPushToken method" Url="html/a2f7e558-1848-5688-8f67-f79c76523a4d.htm" />
+  <HelpKINode Title="UserRegistration.GetRelatedUserByAliasValue method" Url="html/f69cc92d-80db-fbb1-4b3c-6a07215849de.htm" />
+  <HelpKINode Title="UserRegistration.IsRegisteredInChannel method" Url="html/e6e3e4eb-1b88-0985-6614-4c6fb1d2df66.htm" />
+  <HelpKINode Title="UserRegistration.RegisterDevice method" Url="html/6ac83b00-4533-6cad-a59e-4e2c822600cd.htm" />
+  <HelpKINode Title="UserRegistration.RegistrationWFMessage method" Url="html/bbdd13d2-718a-dd4d-b38c-57138620a163.htm" />
+  <HelpKINode Title="UserRegistration.Registration_v2 method" Url="html/81b9b032-a3d8-fa38-f7df-bc425dd213c1.htm" />
+  <HelpKINode Title="UserRegistration.Registration_v3 method" Url="html/9cb07329-6f64-910a-9396-39975c3c4ac1.htm" />
+  <HelpKINode Title="UserRegistration.UpdatePushToken method" Url="html/8b02c9e8-82c2-56f5-b56b-0f62f77988ff.htm" />
+  <HelpKINode Title="UserRegistration.UserRegistration constructor" Url="html/8671f459-a105-7606-8623-485bd48bc67c.htm" />
+  <HelpKINode Title="UserSubscription class">
+    <HelpKINode Title="UserSubscription Class" Url="html/677af120-e232-d10c-a86d-13f7214b8d14.htm" />
+    <HelpKINode Title="about UserSubscription class" Url="html/677af120-e232-d10c-a86d-13f7214b8d14.htm" />
+    <HelpKINode Title="constructor" Url="html/01cd2012-0bb5-a614-9127-9f005f954139.htm" />
+    <HelpKINode Title="events" Url="html/ee42aec2-eb6a-8083-d147-2c26e17b4d94.htm" />
+    <HelpKINode Title="methods" Url="html/36c7a6ee-b4a3-2f58-20d1-51442af9ac5a.htm" />
+    <HelpKINode Title="properties" Url="html/fcc319a6-00e2-f2d5-527b-d113307606c7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserSubscription.Dispose method" Url="html/2e9ca0cc-ff62-b383-5b77-54ce682a4f08.htm" />
+  <HelpKINode Title="UserSubscription.GetAllTimePeriods method" Url="html/0f01080a-ac81-d539-ba13-4b4de883d902.htm" />
+  <HelpKINode Title="UserSubscription.UserSubscription constructor" Url="html/01cd2012-0bb5-a614-9127-9f005f954139.htm" />
+  <HelpKINode Title="ValidateAccessCode method">
+    <HelpKINode Title="AliasAuthentication.ValidateAccessCode Method " Url="html/6c22fcd9-8089-9a62-3b27-3090be5cf519.htm" />
+    <HelpKINode Title="Authentication.ValidateAccessCode Method " Url="html/5c1137af-e0ac-c338-8904-472389fcd59b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidateAccessCodeByCustomer method" Url="html/74700e13-746b-b368-86c6-7ece2fee1cfb.htm" />
+  <HelpKINode Title="ValidateAccessCodePositions method">
+    <HelpKINode Title="AuthenticationService.ValidateAccessCodePositions Method " Url="html/a10a2b77-0ea7-f4a6-3070-05bc7801ba3b.htm" />
+    <HelpKINode Title="IAuthenticationService.ValidateAccessCodePositions Method " Url="html/c4a20286-10cf-1f7c-d2de-ae71a715ff3d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidateAuthentication method" Url="html/226ac0f7-e935-b0b5-a255-cb5ec4ec16a6.htm" />
+  <HelpKINode Title="ValidateCertificate method" Url="html/08cc886e-1781-5adc-786d-a9f32abfb11a.htm" />
+  <HelpKINode Title="ValidateMultipleUserAccessCode method" Url="html/4889c2de-ee2a-7fe1-8398-bb17c5e9ff8b.htm" />
+  <HelpKINode Title="ValidateRequestToken method">
+    <HelpKINode Title="AuthenticationService.ValidateRequestToken Method " Url="html/9d149301-a61e-cda0-957f-19fe68481e55.htm" />
+    <HelpKINode Title="IAuthenticationService.ValidateRequestToken Method " Url="html/80ee973a-2e1a-a9e3-e156-335920a9b97d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidateSMSToken method">
+    <HelpKINode Title="AuthenticationService.ValidateSMSToken Method " Url="html/5964bb6c-8b04-1acc-b7ee-4a62518b6e8c.htm" />
+    <HelpKINode Title="IAuthenticationService.ValidateSMSToken Method " Url="html/7262bf7d-ef50-8d35-4476-3bdca7f0166b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidateStrongAccessCode method" Url="html/7dd19cd1-e9c6-6f30-13a8-c2647bf1c9ad.htm" />
+  <HelpKINode Title="ValidateToken method">
+    <HelpKINode Title="AuthenticationService.ValidateToken Method " Url="html/5311ac05-7b5f-1be2-bf71-4fc0da4a366f.htm" />
+    <HelpKINode Title="IAuthenticationService.ValidateToken Method " Url="html/9be82c2b-4540-bcb7-f763-fc6d10c4e378.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValidateUserAccessCode method" Url="html/55101010-7f61-f958-d398-f64a28b3923f.htm" />
+  <HelpKINode Title="ValidateUserAccessCodeWithoutSat method" Url="html/a60566a2-b52e-c8ca-584e-cf2ba3c662b5.htm" />
+  <HelpKINode Title="ValidateUserCardToken method" Url="html/26cb5fdb-c733-207c-ce2a-fdccce66b367.htm" />
+  <HelpKINode Title="ValidateUserSmsToken method" Url="html/b29b61c9-f36b-c7ba-a35c-410f35ef15f9.htm" />
+</HelpKI>

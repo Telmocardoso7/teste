@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.CC.Notifications" Version="7.0.1" />
+  </ItemGroup>
+  <!-- package eBankit.FE.CC.Notifications Definitions -->
+  <PropertyGroup>
+    <CSPContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.cc.notifications\$(ProductVersion)\contentFiles\any\$(TargetFramework)</CSPContentFilesPath>
+  </PropertyGroup>
+  <!-- publish content from base package in publish -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\**" />
+  </ItemGroup>
+  <!-- publish content from package in publish -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\**" />
+    <Content CopyToPublishDirectory="Always" Update="Areas\Notifications\**\*" />
+    <None CopyToPublishDirectory="Always" Update="Areas\Notifications\**\*" />
+  </ItemGroup>
+</Project>

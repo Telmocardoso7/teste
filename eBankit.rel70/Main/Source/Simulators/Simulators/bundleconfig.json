@@ -1,0 +1,110 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/areas/cti/SimulatorPlugins/SimulatorServices.min.js",
+    "inputFiles": [
+      "wwwroot/js/areas/cti/SimulatorPlugins/SimulatorServices.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/areas/cti/SimulatorPlugins/signalR/simulator-hub.min.js",
+    "inputFiles": [
+      "wwwroot/js/areas/cti/SimulatorPlugins/signalR/simulator-hub.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/areas/tpp/demo.min.js",
+    "inputFiles": [
+      "wwwroot/js/areas/tpp/demo.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/areas/tpp/paymentstatus.min.js",
+    "inputFiles": [
+      "wwwroot/js/areas/tpp/paymentstatus.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/image-svg.min.js",
+    "inputFiles": [
+      "wwwroot/js/image-svg.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/homepage.min.js",
+    "inputFiles": [
+      "wwwroot/js/homepage.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/areas/tpp/callback.min.js",
+    "inputFiles": [
+      "wwwroot/js/areas/tpp/callback.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/homepage-skin.min.css",
+    "inputFiles": [
+      "wwwroot/css/homepage-skin.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/index-skin.min.css",
+    "inputFiles": [
+      "wwwroot/css/index-skin.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/ivr.min.css",
+    "inputFiles": [
+      "wwwroot/css/ivr.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/simulator-skin.min.css",
+    "inputFiles": [
+      "wwwroot/css/simulator-skin.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/variables.min.css",
+    "inputFiles": [
+      "wwwroot/css/variables.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/ebankitPlugins/loadingSpin.min.js",
+    "inputFiles": [
+      "wwwroot/js/ebankitPlugins/loadingSpin.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/signalr/signalr.min.js",
+    "inputFiles": [
+      "wwwroot/signalr/signalr.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/fonts/fonts.min.css",
+    "inputFiles": [
+      "wwwroot/fonts/fonts.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/cookies.min.js",
+    "inputFiles": [
+      "wwwroot/js/cookies.js"
+    ]
+  }
+]

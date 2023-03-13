@@ -1,0 +1,163 @@
+{
+  "GlobalSettings": {
+    "ServicesEndpoints": {
+      "Channel": {
+        "Users": {
+          "ContactHistory": {}
+        },
+        "Customers": {
+          "Profiles": "/Channel/Customers/Profiles",
+          "Accounts": {},
+          "Transfers": {},
+          "CustomerHistory": {
+            "HistoryContacts": {
+              "Base": "/Channel/Customers/History/Contacts/{0}/{1}"
+            },
+            "Operations": {
+              "Base": "/Channel/Customers/History/Operations"
+            },
+            "MarketingCampaigns": {
+              "SendDataToWorkFlow": "/Channel/Customers/MarketingCampaigns/SendDataToWorkFlow"
+            }
+          },
+          "IntegratedPosition": {}
+        },
+        "Interactions": {},
+        "Processes": {},
+        "SecureMessages": {
+          "Claims": {}
+        },
+        "AccountOpening": {},
+        "Contact": {
+          "Documents": "/Contact/Documents"
+        }
+      },
+      "CRM": {
+        "Contacts": {},
+        "UnidentifiedContacts": {},
+        "Alerts": {},
+        "Notes": {},
+        "Events": {},
+        "GeneralLinks": {},
+        "Messages": {
+          "User": {}
+        },
+        "ContactReasons": {}
+      },
+      "Templates": {
+        "Documents": {},
+        "DocumentStructures": {}
+      },
+      "Administration": {
+        "Resources": {},
+        "Application": {},
+        "MessageType": {},
+        "GenericMessage": {},
+        "Menus": {},
+        "GenericTableLanguage": {},
+        "CostCenter": {},
+        "Culture": {},
+        "Transaction": {},
+        "Functionality": {},
+        "Users": {},
+        "Errors": {},
+        "Modules": {},
+        "Limits": {},
+        "Roles": {},
+        "Packages": {},
+        "Entity": {},
+        "ServiceType": {},
+        "PredefinedCodes": {},
+        "SecurityQuestions": {},
+        "SecurityImages": {},
+        "Scripts": {},
+        "EmailTemplate": {},
+        "Otp": {},
+        "TimeUnit": {},
+        "ActiveUsers": {}
+      },
+      "Platform": {
+        "Menus": {},
+        "Notifications": {},
+        "Cultures": {},
+        "GenericContent": {},
+        "Resources": {
+          "Base": "/Platform/Resources"
+        },
+        "Functionality": {},
+        "Module": {},
+        "Channel": {},
+        "Transactions": {},
+        "Currency": {},
+        "Errors": {},
+        "Consents": {}
+      },
+      "CTI": {},
+      "MultiUserContract": {},
+      "Alerts": {
+        "Channel": {},
+        "Notifications": {
+          "Groups": {},
+          "Templates": {},
+          "Operations": {}
+        },
+        "Configurations": {
+          "Base": "/Alerts/Configurations"
+        },
+        "Statistics": {
+          "Base": "/Alerts/Statistics"
+        }
+      },
+      "Campaigns": {
+        "Processes": {},
+        "Campaign": {
+          "GetCampaignValidLaunch": "/Campaigns/Campaigns/GetCampaignValidLaunch"
+        },
+        "Channels": {},
+        "Content": {},
+        "AdditionalInformation": {},
+        "Types": {},
+        "Positions": {},
+        "DictionaryAttributes": {},
+        "Response": {},
+        "Configurations": {
+          "MarketingList": {}
+        },
+        "Media": {},
+        "External": {},
+        "Simulator": {},
+        "OutboundEngine": {
+          "GetOutboundMessageQueue": "/Campaigns/OutboundEngine/GetOutboundMessageQueue",
+          "ChangeOutboundMessageQueueState": "/Campaigns/OutboundEngine/ChangeOutboundMessageQueueState",
+          "InsertOutboundMessageIntoQueue": "/Campaigns/OutboundEngine/InsertOutboundMessageIntoQueue",
+          "GetOutboundMessageQueuePagination": "/Campaigns/OutboundEngine/GetOutboundMessageQueuePagination",
+          "UpdateOutboundMessagesIntoQueue": "/Campaigns/OutboundEngine/UpdateOutboundMessagesIntoQueue",
+          "AllMembersInProcessing": "/Campaigns/OutboundEngine/AllMembersInProcessing",
+          "UpdateMembersStatus": "/Campaigns/OutboundEngine/UpdateMembersStatus"
+        }
+      },
+      "Surveys": {
+        "Types": {},
+        "Surveys": {}
+      },
+      "OpenBanking": {
+        "Application": {},
+        "Users": {
+          "GetUsers": "/OpenBnaking/Users/GetUsers",
+          "GetUserDetails": "/OpenBnaking/Users/GetUserDetails",
+          "Update": "/OpenBnaking/Users/UpdateUser",
+          "Delete": "/OpenBnaking/Users/DeleteUser"
+        },
+        "Apis": {}
+      },
+      "CommandCentre": {
+        "Config": {},
+        "Operations": {},
+        "Rules": {
+          "GetRuleNotifications": "/CommandCentre/Rules/RuleNotificationList",
+          "ChangeStatusRuleNotifications": "/CommandCentre/Rules/ChangeStatusRuleNotifications"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+    var currSegment = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_ProductList\"").FirstOrDefault();
+    var currProduct = CurrentPage;
+    var productImage = string.Empty;
+
+    if (CurrentPage.ebankIT_productImage != null && !(CurrentPage.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+    {
+        productImage = @CurrentPage.ebankIT_productImage.Url;
+    }
+
+
+}
+<div class="productDetail">
+    <div class="=container-fluid">
+
+        <div class="productImage lazy" style="background-image: url(@productImage);">
+            <div class="container ">
+                <p>@currSegment.Name</p>
+                <p class="productTitle">@currProduct.Name</p>
+                <div class="row byline">
+                    <div class="col-md-6 col-xs-12">@currProduct.GetPropertyValue("ebankIT_byline")</div>
+                </div>
+                <p>
+                    @if (CurrentPage.ebankIT_Link != null && !(CurrentPage.ebankIT_Link is Umbraco.Core.Dynamics.DynamicNull))
+                    {
+                        <a href="@CurrentPage.ebankIT_Link">
+                            @Umbraco.GetDictionaryValue("CalculateNow")
+                            <img class="lazy" src="/css/images/knowmore-white.png" />
+                        </a>}
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="row-height">
+                <div class="col-xs-12 col-sm-8 col-sm-height productDetailLeft">
+                    <div class="inside inside-full-height">
+                        <div class="content">
+                            <h1>@Umbraco.GetDictionaryValue("AboutThisProduct")</h1>
+                            <div class="productDescription">
+                                <h2>@Umbraco.GetDictionaryValue("Advantages")</h2>
+                                <p>@currProduct.GetPropertyValue("ebankIT_productDescription")</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-sm-height col-sm-top productDetailRight">
+                    <div class="inside inside-full-height">
+                        <div class="content">
+                            @{
+
+                            }
+                            <h1>&nbsp;</h1>
+                            <a href="@CurrentPage.ebankIT_Link" class="subscribe gradientBG">@Umbraco.GetDictionaryValue("Download")</a>
+
+                            
+
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @{Html.RenderPartial("MoreToYou");}
+
+    </div>
+</div>

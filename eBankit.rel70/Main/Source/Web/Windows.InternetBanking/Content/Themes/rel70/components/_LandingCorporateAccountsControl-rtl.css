@@ -1,0 +1,73 @@
+﻿.CorpMainAccAlignLeft {
+  text-transform: none !important;
+  text-align: right !important;
+  float: right !important;
+  width: auto !important;
+  margin: 20px 0px !important;
+}
+.CorpMainAccViewMore {
+  text-transform: none !important;
+  text-align: right !important;
+  float: right !important;
+  font-size: 11px !important;
+  width: auto !important;
+  margin: 20px 0px !important;
+  padding: 10px 10px 0px 0px;
+}
+.CorpMainAccNumber {
+  font-size: 11px !important;
+}
+.CorpMainAccBalance {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+.CorpMainAccAlwaysVisible {
+  white-space: normal !important;
+  height: 32px !important;
+}
+.CorpMainAccFormatCurrency {
+  font-size: 12px !important;
+  margin-top: -5px !important;
+}
+.scrollContainerCorpMainAcc {
+  padding: 20px 20px 0px 20px;
+  background-color: #eeeeee;
+  height: 170px;
+}
+#scroolContentCorpMainAcc {
+  height: 120px;
+  position: relative;
+  display: block;
+  overflow: hidden !important;
+}
+#scroolContentCorpMainAcc .contentBoxCorpMainAcc {
+  background-color: #fff;
+  position: relative;
+  float: right;
+  display: block;
+  height: 110px;
+  width: 155px;
+  padding: 10px;
+  margin: 5px !important;
+  margin-right: 20px;
+  /* If you don't want the images in the scroller to be selectable, try the following
+            block of code. It's just a nice feature that prevent the images from
+            accidentally becoming selected/inverted when the user interacts with the scroller. */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  border: 2px solid #FFF;
+}
+#scroolContentCorpMainAcc .contentBoxCorpMainAcc:hover,
+#scroolContentCorpMainAcc .contentBoxCorpMainAcc.selected {
+  cursor: pointer;
+  border: 2px solid #58595B !important;
+}
+#scroolContentCorpMainAcc .contentBoxCorpMainAcc img {
+  margin-bottom: 10px;
+}
+#scroolContentCorpMainAcc .contentBoxCorpMainAcc p {
+  font-size: 10px;
+}

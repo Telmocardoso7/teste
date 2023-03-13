@@ -1,0 +1,17 @@
+﻿.flex-container(@direction){
+    display: flex;
+    flex-direction: @direction;
+}
+
+.flex-item(@width,@flex:none,@justify-content: normal,@align-items: normal,@flex-wrap: nowrap,@align-content: normal, @flex-direction: unset,@align-self:auto) {
+    display: flex;
+    flex: @flex;
+    justify-content: @justify-content;
+    align-items: @align-items;
+    width: @width;
+    flex-wrap: @flex-wrap;
+    align-content: @align-content;
+    flex-direction: @flex-direction;
+    align-self: @align-self;
+}
+

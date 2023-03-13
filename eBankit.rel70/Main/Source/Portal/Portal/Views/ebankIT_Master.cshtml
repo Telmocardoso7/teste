@@ -1,0 +1,78 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    var CacheVersion = "ver=49";// +DateTime.Now.Ticks;
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@CurrentPage.siteDescription">
+    <title>@CurrentPage.Name | ebankIT</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/css/images/favicon.ico">
+    <!-- Fonts -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.min.css?@CacheVersion">
+    <link rel="stylesheet" type="text/css" href="/css/eBankit.min.css?@CacheVersion">
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome.min.css?@CacheVersion">
+    <script src="/scripts/jquery-1.9.1.min.js?@CacheVersion"></script>
+    <script src="/scripts/dragger.min.js?@CacheVersion"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    @{ Html.RenderPartial("TopBarNav"); }
+    @RenderBody()
+    @{ Html.RenderPartial("Footer"); }
+    <!-- Javascripts -->
+
+
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>
+    <script src="/scripts/jquery.blockUI.js?@CacheVersion"></script>
+    <script src="/scripts/bootstrap.min.js?@CacheVersion"></script>
+    <script src="/scripts/responsive-tabs.js?@CacheVersion"></script>
+    <script src="/scripts/ebankit.js?@CacheVersion"></script>
+    <script src="/scripts/common.js?@CacheVersion"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            fakewaffle.responsiveTabs(['xs', 'sm']);
+        })(jQuery);
+
+        jQuery(document).ready(function () {
+            jQuery(".lazy").lazy({
+                effect: "fadeIn",
+                effectTime: 1500
+            });
+        });
+
+
+    </script>
+    <div style="z-index: 10005 !important; position: absolute; top: 35%; right: 0px;" id="ContactSlide">
+        <script lang="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $('#divCollpsed').css({ right: '-100px' }); // this or use css to hide the div
+                $('#divCollpsed').delay(3500).animate({ right: 0 }, 500);
+                $("#divCollpsed").mouseover(function () {
+                    $(this).animate({ right: -180 }, 500);
+                    $("#divExpanded").animate({ right: 0 }, 500);
+                });
+                $("#divExpanded").mouseout(function () {
+                    $(this).animate({ right: -180 }, 500);
+                    $("#divCollpsed").animate({ right: 0 }, 500);;
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

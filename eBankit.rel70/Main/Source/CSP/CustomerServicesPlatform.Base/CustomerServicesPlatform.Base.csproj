@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <CSPContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.cc\$(ProductVersion)\contentFiles\any\$(TargetFramework)</CSPContentFilesPath>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.CC" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Xdt.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CSP.Common\CSP.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--Publish content from base package in publish-->
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\Views\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\ViewComponent\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\wwwroot\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\Widgets\**" />
+    <Content CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\Views\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\ViewComponent\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\wwwroot\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="$(CSPContentFilesPath)\Widgets\**" />
+    <None CopyToOutputDirectory="Always" CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(CSPContentFilesPath)\operationdetails.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

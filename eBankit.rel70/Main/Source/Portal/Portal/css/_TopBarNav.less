@@ -1,0 +1,613 @@
+﻿@import "_Variables.less";
+
+
+.navbar.gradientBG {
+    z-index:2000;
+}
+
+.navbar {
+    min-height: 40px;
+    background-color: @light-gray;
+    border-bottom: 1px solid @white;
+    border-radius: 0;
+
+    @media (min-width: 768px) {
+        .navbar {
+            border-radius: 0;
+        }
+    }
+
+    &.menu {
+      
+        background: linear-gradient(to right, @blue 0%, @gradient-blue 50%, @blue 100%);
+        border: 0;
+        margin-bottom: 0;
+
+        .navbar {
+            background: none;
+        }
+
+        .navbar-nav > li > a {
+            padding: 15px;
+        }
+    }
+}
+
+.navbar-nav > li > a {
+    padding: 10px;
+    font-family: @font-light;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: @darkest-gray;
+}
+
+.nav.variation > li > a {
+    padding: 10px 3px;
+}
+
+.navbar-default .navbar-nav.variation > li.separator {
+    padding: 11px 0;
+    color: @blue;
+    font-size: @font-xs;
+}
+
+@media (max-width:768px) {
+    .navbar-default .navbar-nav.variation > li.separator {
+        display: none;
+    }
+}
+
+.navbar-default .navbar-nav.variation > li > a {
+    font-size: @font-xs;
+    color: @blue;
+    font-family: @font-medium;
+}
+
+.navbar-default .navbar-nav.variation > li > a.active {
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background-color: @white;
+}
+
+
+.loginBar {
+    height: 80px;
+}
+
+.navBar-logo {
+    width: 154px;
+    height: 54px;
+}
+
+.navTopLink.active {
+    background-color: @white;
+}
+
+.navBarLink {
+    color: @white;
+    text-decoration: none !important;
+    font-size: @font-s;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    font-family: @font-light;
+}
+
+.navBarLink:hover {
+    color: @white;
+}
+
+.navBarSearch, .navBarSearch:hover {
+    color: @white;
+    padding-top: 14px;
+    display: inline-block;
+}
+
+.navBarLogin {
+    height: 60px;
+    color: @white;
+    text-transform: uppercase;
+    border: 0;
+    background-color: @orange;
+    font-weight: bold;
+    font-size: @font-ml;
+    font-family: @font-light;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.navBarLogin span {
+    position: relative;
+    top: -5px;
+}
+
+.loginLock {
+    font-size: @font-header !important;
+    padding-right: 10px;
+}
+
+
+
+/***********************/
+.publicMenu.navbar {
+    min-height: 40px;
+    margin-bottom: 0;
+    border: 0;
+}
+
+
+.publicMenu .open ul {
+    background-color: #fff;
+}
+
+.publicMenu .nav,
+.publicMenu .dropup,
+.publicMenu .dropdown,
+.publicMenu .collapse {
+    position: static;
+}
+
+.publicMenu .navbar-inner,
+.publicMenu .container {
+    position: relative;
+}
+
+
+.publicMenu .dropdown-menu {
+    left: auto;
+}
+
+.publicMenu .dropdown-menu > li {
+    display: block;
+}
+
+.publicMenu .nav.pull-right .dropdown-menu {
+    right: 0;
+}
+
+.publicMenu .publicMenu-content {
+    padding: 20px 30px;
+    *zoom: 1;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.publicMenu .publicMenu-content a {
+    text-decoration: none;
+}
+
+.publicMenu .publicMenu-content > div > a{
+    padding-right:15px;
+}
+
+.publicMenu .publicMenu-content:before,
+.publicMenu .publicMenu-content:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.publicMenu .publicMenu-content:after {
+    clear: both;
+}
+
+.publicMenu.navbar .nav > li > .dropdown-menu:after,
+.publicMenu.navbar .nav > li > .dropdown-menu:before {
+    display: none;
+}
+
+
+
+.publicMenu .navbar-brand {
+    padding: 8px 10px 9px 10px;
+    color: #FFF;
+    margin: 2px 2px 0 2px;
+}
+
+.publicMenu .navbar-brand.active,
+.publicMenu .navbar-brand:hover {
+    background-color: #FFF;
+    color: #001F38;
+}
+
+.publicMenu .navbar-nav > li {
+}
+
+.publicMenu .navbar-nav > li > a {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-family: @font-light;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 40px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.publicMenu .navbar-toggle {
+    border-color: #fff;
+}
+
+.publicMenu .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+
+.publicMenu .dropdown-toggle.open a,
+.nav .open > a:hover, .nav .open > a:focus {
+    background-color: #fff;
+    border-color: #428bca;
+}
+
+.menu-heading:hover,
+.menu-heading {
+    font-family: @font-light;
+    font-size: 18px;
+    color: #00a1cc;
+    text-align: left;
+    text-decoration: none;
+}
+
+@media (max-width: 969px) {
+    .publicMenu .dropdown.publicMenu-fullwidth .dropdown-menu {
+        width: auto;
+        background-color: #fff;
+    }
+
+    .publicMenu .publicMenu-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .publicMenu .dropdown-menu > li > ul {
+        display: block;
+    }
+}
+
+
+
+/**hover menu**/
+
+
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+    border-top: 0;
+}
+
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+
+
+
+
+/********************MENU */
+
+.publicMenu.navbar {
+    min-height: 40px;
+    margin-bottom: 0;
+    border: 0;
+}
+
+.publicMenu .navbar-collapse.in {
+    max-height: 100%;
+}
+
+.publicMenu .open ul {
+    background-color: #fff;
+}
+
+.publicMenu .nav,
+.publicMenu .dropup,
+.publicMenu .dropdown,
+.publicMenu .collapse {
+    position: static;
+}
+
+.publicMenu .navbar-inner,
+.publicMenu .container {
+    position: relative;
+}
+
+
+.publicMenu .dropdown-menu {
+    left: auto;
+}
+
+.publicMenu .dropdown-menu > li {
+    display: block;
+}
+
+.publicMenu .nav.pull-right .dropdown-menu {
+    right: 0;
+}
+
+.publicMenu .publicMenu-content {
+    padding: 0px 20px 20px 20px;
+    *zoom: 1;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 992px) {
+    .publicMenu .publicMenu-content {
+        background-image: none !important;
+    }
+}
+
+.publicMenu {
+    .publicMenu-content {
+        :before {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+
+        :after {
+            display: table;
+            content: "";
+            line-height: 0;
+            clear: both;
+        }
+
+        a, span {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 64px;
+        }
+
+        .menu-heading:hover,
+        .menu-heading {
+            font-size: 18px;
+            color: @blue;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .media-body {
+            padding: 0 0 0 5px;
+        }
+    }
+
+    .dropdown {
+        &publicMenu-fullwidth {
+            .dropdown-menu {
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .navbar-nav > li > a {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        font-weight: bold;
+        font-size: 14px;
+        color: @white;
+        text-align: center;
+        height: 40px;
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+    .navbar-collapse.in {
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .navbar-toggle {
+        border-color: #fff;
+    }
+
+    .dropdown-toggle.active,
+    .nav .open > a,
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        background-color: @white;
+        color: @blue;
+    }
+
+    .dropdown.publicMenu-fullwidth .dropdown-menu {
+        width: 100%;
+        left: 15px;
+        right: 15px;
+        border: 0;
+    }
+}
+
+
+.publicMenu.navbar .nav > li > .dropdown-menu:after,
+.publicMenu.navbar .nav > li > .dropdown-menu:before {
+    display: none;
+}
+
+
+.publicMenu .navbar-brand {
+    padding: 8px 10px 9px 10px;
+    color: #FFF;
+    margin: 2px 2px 0 2px;
+}
+
+.publicMenu .navbar-brand.active,
+.publicMenu .navbar-brand:hover {
+    background-color: #FFF;
+    color: #001F38;
+}
+
+
+.publicMenu .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+
+.publicMenu .dropdown-toggle.open a,
+.nav .open > a:hover, .nav .open > a:focus {
+    background-color: #fff;
+    border-color: #428bca;
+}
+
+
+/**hover menu**/
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+    border-top: 0;
+}
+
+
+/*****************menu*/
+@media (max-width: 969px) {
+    .publicMenu .dropdown.publicMenu-fullwidth .dropdown-menu {
+        width: auto;
+        background-color: #fff;
+    }
+
+    .publicMenu .publicMenu-content {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+
+    .publicMenu .dropdown-menu > li > ul {
+        display: block;
+    }
+}
+
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+
+/***SEARCH**/
+
+.navbar-collapse form[role="search"] {
+    .input-group {
+        float: right;
+    }
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    z-index: 0;
+}
+
+.navbar-collapse form[role="search"] button:hover,
+.navbar-collapse form[role="search"].active button,
+.navbar-collapse form[role="search"] input:hover {
+    background-color: @white;
+    color: @blue;
+}
+
+.navbar-collapse form[role="search"] button,
+.navbar-collapse form[role="search"] input {
+    padding: 8px 12px;
+    border-radius: 0px;
+    border-width: 0px;
+    color: @white;
+    background-color: transparent;
+    border-color: rgb(231, 231, 231);
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-collapse form[role="search"] input {
+    padding: 16px 12px;
+    font-size: 14pt; 
+    background-color: @white;
+    color: @blue;
+    box-shadow: none;
+}
+
+.navbar-collapse form[role="search"] button[type="reset"] {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    /*.navbar-collapse {
+			padding-top: 0px !important;
+			padding-right: 38px !important;
+		}*/
+    .navbar-collapse form[role="search"] {
+        width: 38px;
+    }
+
+    .navbar-collapse form[role="search"] button,
+    .navbar-collapse form[role="search"] input {
+        padding: 15px 12px;
+    }
+
+    .navbar-collapse form[role="search"] input {
+        padding: 25px 12px;
+        font-size: @font-m;
+        font-family:@font-book;
+        opacity: 0;
+        display: none;
+    }
+
+    .navbar-collapse form[role="search"].active {
+        width: 100%;
+    }
+
+    .navbar-collapse form[role="search"].active button,
+    .navbar-collapse form[role="search"].active input {
+        display: table-cell;
+        opacity: 1;
+    }
+
+    .navbar-collapse form[role="search"].active input {
+        width: 100%;
+    }
+}
+
+@media (min-width:768px)
+{
+    .search-pos{
+        position:relative;
+        top:50px;
+        left:37px;
+    }
+}
+
+@media (max-width:767px) {
+    .navbar-collapse form[role="search"] {
+        position:unset;
+    }
+
+    .navbar-collapse input.search-pos{
+        position:relative;
+        height:36px;
+        margin-bottom:10px;
+        top:5px;
+    }
+}

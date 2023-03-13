@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/eBankit.Business.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/eBankit.Business.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-suite-appcenter.ebankit.local/Services/Ebankit/EbankitCustomService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="ServiceInputHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessSourceValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExecutionData" nillable="true" type="tns:TransactionExecutionData" />
+      <xs:element minOccurs="0" name="InteractionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteractionTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceInputHeader" nillable="true" type="tns:ServiceInputHeader" />
+  <xs:complexType name="TransactionExecutionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthenticationData" nillable="true" type="tns:TransactionAuthenticationData" />
+      <xs:element minOccurs="0" name="CloseOperation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CloseOperationWithSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CredentialType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FavoritId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSimulation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendToStoreAndForward" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendToWorkflow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionExecutionData" nillable="true" type="tns:TransactionExecutionData" />
+  <xs:complexType name="TransactionAuthenticationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityMask" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionAuthenticationData" nillable="true" type="tns:TransactionAuthenticationData" />
+  <xs:complexType name="ServiceError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ex" nillable="true" type="tns:ServiceException" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ExceptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceError" nillable="true" type="tns:ServiceError" />
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" name="_Data" nillable="true" type="q1:ArrayOfKeyValuePairOfanyTypeanyType" />
+      <xs:element name="_HelpLink" nillable="true" type="xs:string" />
+      <xs:element name="_InnerException" nillable="true" type="tns:ServiceException" />
+      <xs:element name="_Message" nillable="true" type="xs:string" />
+      <xs:element name="_Source" nillable="true" type="xs:string" />
+      <xs:element name="_StackTrace" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceException" nillable="true" type="tns:ServiceException" />
+  <xs:simpleType name="ExceptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="System" />
+      <xs:enumeration value="Application" />
+      <xs:enumeration value="Business" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExceptionType" nillable="true" type="tns:ExceptionType" />
+  <xs:complexType name="ServiceExecutionPerfomance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Steps" nillable="true" type="tns:ArrayOfServiceExecutionPerfomance" />
+      <xs:element minOccurs="0" name="TotalExecutionTime" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceExecutionPerfomance" nillable="true" type="tns:ServiceExecutionPerfomance" />
+  <xs:complexType name="ArrayOfServiceExecutionPerfomance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceExecutionPerfomance" nillable="true" type="tns:ServiceExecutionPerfomance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceExecutionPerfomance" nillable="true" type="tns:ArrayOfServiceExecutionPerfomance" />
+  <xs:complexType name="ServiceProgress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProcessId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ServiceProgressStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceProgress" nillable="true" type="tns:ServiceProgress" />
+  <xs:simpleType name="ServiceProgressStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SF" />
+      <xs:enumeration value="Workflow" />
+      <xs:enumeration value="TimeOut" />
+      <xs:enumeration value="UnknownError" />
+      <xs:enumeration value="BusinessError" />
+      <xs:enumeration value="Sucess" />
+      <xs:enumeration value="Offline" />
+      <xs:enumeration value="SessionTimeOut" />
+      <xs:enumeration value="SFSended" />
+      <xs:enumeration value="PS2" />
+      <xs:enumeration value="PendingAuthorization" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceProgressStatus" nillable="true" type="tns:ServiceProgressStatus" />
+  <xs:simpleType name="ServiceStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ok" />
+      <xs:enumeration value="NOk" />
+      <xs:enumeration value="PENDING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceStatus" nillable="true" type="tns:ServiceStatus" />
+</xs:schema>

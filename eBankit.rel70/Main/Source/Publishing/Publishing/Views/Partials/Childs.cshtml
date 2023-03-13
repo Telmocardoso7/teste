@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@{
+    Layout = null;
+    var parent = Model.AncestorOrSelf(2);
+    int a = 1;
+    string classSelectedMenuItem;
+}
+@foreach (var page in parent.Children)
+{
+    classSelectedMenuItem = a % 2 == 0 ? "div0" : "div1";
+    a++;
+    <div class="@classSelectedMenuItem">
+        <section id="@page.Id" class="container content-section text-center">
+
+            <h2>@page.Name</h2>
+            @foreach (var spage in page.Children)
+            {
+                <div class="panel-group" role="tablist">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="@spage.Name">
+                            <h4 class="panel-title">
+                                <a class="" data-toggle="collapse" href="#@spage.Id" aria-expanded="false" aria-controls="@spage.Id">
+                                    @spage.Name
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="@spage.Id" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@spage.Name" aria-expanded="false">
+
+                            @foreach (var sspage in spage.Children)
+                            {   <div class="col-md-4 text-center">
+                                <div class="thumbnail">
+                                    <img class="img-responsive" src="@sspage.GetPropertyValue("eBankitLandscape")" alt="">
+                                    <div class="caption">
+                                        <h3>@sspage.Name<br>
+                                            <small>@sspage.GetPropertyValue("eBankitGroup")</small>
+                                        </h3>
+                                       <div style="overflow:hidden;">@sspage.GetPropertyValue("eBankitHtml")</div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                 
+            }
+        </section>
+    </div>         
+}

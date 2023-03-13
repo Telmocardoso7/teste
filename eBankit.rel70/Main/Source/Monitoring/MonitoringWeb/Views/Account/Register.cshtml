@@ -1,0 +1,107 @@
+﻿@model eBankit.Middleware.Ui.Web.Monitoring.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+
+<!-- begin #page-container -->
+<div id="page-container" class="fade in">
+    <!-- begin login -->
+    <div class="login login-v2 animated fadeIn" style="background-color: #292d2e !important" data-pageload-addclass="animated fadeIn">
+        <!-- begin brand -->
+        <div class="login-header" style="padding: 0 !important">
+
+            <div class="brand">
+                <div class="parent">
+                    <div class="img">
+                        <img src="~/Content/img/ebankit.png" />
+                    </div>
+                    <div class="text">
+                        eBankit
+                        <small>Omnichannel Service Bus Monitoring</small>
+                    </div>
+                </div>
+            </div>
+            @*<div class="icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>*@
+        </div>
+        <!-- end brand -->
+        <div class="login-content">
+           <form action="@Url.Action("Register", "Account", new { ReturnUrl = ViewBag.ReturnUrl })" method="POST" class="margin-bottom-0">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+               <span>Create a new account.</span>
+               <hr />
+               <div class="form-group m-b-20">
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control input-lg", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group m-b-20">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group m-b-20">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="checkbox m-b-20">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "Confirm Password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <div class="login-buttons m-b-20">
+                    <button type="submit" class="btn btn-success btn-block btn-lg">Register</button>
+                </div>
+               <div class="login-buttons">
+                   <button type="button" class="btn btn-success btn-block btn-lg" onclick="redirectToLogin();">Back To Login</button>
+               </div>
+            </form>
+        </div>
+    </div>
+    <!-- end login -->
+</div>
+<!-- end page container -->
+
+<script>
+    var redirectToLogin = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Login","Account")';
+    }
+</script>
+
+
+@* OLD REGISTER *@
+@*<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}*@
+

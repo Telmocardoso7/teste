@@ -1,0 +1,26 @@
+{
+  "CtiSettings": {
+    "Prefix": "dev",
+    "Base": "http://services.rel70.local",
+    "Interaction": {
+      "NewInteraction": "/ContactCenter/NewInteraction",
+      "CloseInteraction": "/ContactCenter/CloseInteraction",
+      "RegisterExtension": "/ContactCenter/Extension/Register",
+      "UnRegisterExtension": "/ContactCenter/Extension/UnRegister",
+      "CallIncoming": "/ContactCenter/Call/Incoming",
+      "CallStarted": "/ContactCenter/Call/Started",
+      "CallEnd": "/ContactCenter/Call/End",
+      "CallTransfer": "/ContactCenter/Call/Started",
+      "EmailIn": "/ContactCenter/Email/In",
+      "IgnoreCall": "/ContactCenter/Call/Ignore"
+    },
+    "Ivr": {
+      "IdentifyByClientNumber": "/ContactCenter/Identification/ClientNumber",
+      "LoginByClientNumber": "/ContactCenter/Authentication/ClientNumber",
+      "LoginByClientNumberWithoutAccessCode": "/ContactCenter/Impersonate/ClientNumber",
+      "MoneyTransferInterAccounts": "/ContactCenter/Operation/Transfer",
+      "TransferToIvr": "/ContactCenter/Call/Ivr/To",
+      "TransferFromIvr": "/ContactCenter/Call/Ivr/From"
+    }
+  }
+}

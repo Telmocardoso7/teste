@@ -1,0 +1,118 @@
+﻿@import url('_onboarding-variables');
+@import url('_mixins');
+
+@span-color: @anchorhover;
+
+.onboarding-introduction-container {
+    height: 100%;
+    .flex(@flex-direction: column);
+    overflow-y: auto;
+
+    .onboarding-introduction-content {
+        padding: 30px 50px;
+        text-align: center;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        span {
+            color: @span-color;
+            .fontStyle(18px, 300, @secondary-font-family);
+        }
+
+        @media @phone {
+            padding: 30px 30px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .onboarding-introduction-carrousel {
+            margin-top: 60px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+            -webkit-transition: opacity 1s ease;
+            height: 345px;
+            overflow: hidden;
+
+            .onboarding-icon {
+                min-width: 250px;
+                min-height: 250px;
+                margin-bottom: 40px;
+            }
+
+            span {
+                margin-bottom: 10px;
+            }
+
+            .onboarding-icon-register {
+                background: url('@{base-url}/images/onboarding-icon-register.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            .onboarding-icon-data {
+                background: url('@{base-url}/images/onboarding-icon-data.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            .onboarding-icon-terms {
+                background: url('@{base-url}/images/onboarding-icon-terms.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            .slick-slide:focus {
+                outline: none;
+            }
+
+            &.slick-initialized {
+                visibility: visible;
+                opacity: 1;
+                height: auto;
+                overflow: visible;
+            }
+        }
+
+        .onboarding-introduction-carrousel-dots {
+            button:before {
+                width: 8px;
+                height: 8px;
+                content: "";
+                border-radius: 50%;
+                background-color: #D8D8D8;
+                opacity: 1;
+            }
+
+            button:hover:before {
+                background-color: @maincolor;
+            }
+
+            .slick-active {
+                button:before {
+                    background-color: @maincolor;
+                }
+            }
+        }
+
+        .onboarding-introduction-button-container {
+            margin-top: 60px;
+            height: auto;
+            margin-bottom: 20px;
+
+            input {
+                border-radius: 4px;
+                width: 100%;
+                max-width: 240px;
+                text-transform: none;
+                .fontStyle(16px,bold, @ternary-font-family);
+                height: 48px;
+                transition: transform .1s;
+
+                @media @phone {
+                    background-color: #80b636;
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+}

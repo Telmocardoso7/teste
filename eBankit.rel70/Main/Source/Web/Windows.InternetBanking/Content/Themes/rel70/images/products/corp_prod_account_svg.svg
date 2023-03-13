@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>corp_prod_account_svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="25" cy="25" r="25"></circle>
+        <path d="M23.9583333,6.25 L23.9583333,2.08333333 C23.9583333,1.50803672 23.4919633,1.04166667 22.9166667,1.04166667 L2.08333333,1.04166667 C1.50803672,1.04166667 1.04166667,1.50803672 1.04166667,2.08333333 L1.04166667,16.6666667 C1.04166667,17.2419633 1.50803672,17.7083333 2.08333333,17.7083333 L22.9166667,17.7083333 C23.4919633,17.7083333 23.9583333,17.2419633 23.9583333,16.6666667 L23.9583333,12.5 L20.8333333,12.5 C19.1074435,12.5 17.7083333,11.1008898 17.7083333,9.375 C17.7083333,7.64911016 19.1074435,6.25 20.8333333,6.25 L23.9583333,6.25 Z M2.08333333,0 L22.9166667,0 C24.0672599,0 25,0.932740105 25,2.08333333 L25,16.6666667 C25,17.8172599 24.0672599,18.75 22.9166667,18.75 L2.08333333,18.75 C0.932740105,18.75 0,17.8172599 0,16.6666667 L0,2.08333333 C0,0.932740105 0.932740105,0 2.08333333,0 Z M20.8333333,7.29166667 L20.8333333,7.29166667 C19.6827401,7.29166667 18.75,8.22440677 18.75,9.375 C18.75,10.5255932 19.6827401,11.4583333 20.8333333,11.4583333 L23.9583333,11.4583333 L23.9583333,7.29166667 L20.8333333,7.29166667 Z M20.8333333,10.4166667 C20.2580367,10.4166667 19.7916667,9.95029661 19.7916667,9.375 C19.7916667,8.79970339 20.2580367,8.33333333 20.8333333,8.33333333 C21.4086299,8.33333333 21.875,8.79970339 21.875,9.375 C21.875,9.95029661 21.4086299,10.4166667 20.8333333,10.4166667 Z" id="path-3"></path>
+    </defs>
+    <g id="Internet-banking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IB-iconset-PRODUCT-(CORPORATE)" transform="translate(-608.000000, -148.000000)">
+            <g id="corp_prod_account" transform="translate(608.000000, 148.000000)">
+                <g id="tr/account/details">
+                    <g id="background-colour">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask"></g>
+                        <g id="🔵background-colour" mask="url(#mask-2)" fill="#7FCCCC">
+                            <rect id="Rectangle-14" x="0" y="0" width="50" height="50"></rect>
+                        </g>
+                    </g>
+                    <g id="🐼icon-colour" transform="translate(12.500000, 15.625000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        <g mask="url(#mask-4)" id="Rectangle-14" fill="#FFFFFF">
+                            <g transform="translate(-12.500000, -15.625000)">
+                                <rect x="0" y="0" width="50" height="50"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

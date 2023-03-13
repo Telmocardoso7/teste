@@ -1,0 +1,75 @@
+﻿.ultimasOperacoesDashboard {
+  margin: 60px 0px;
+}
+.ultimasOperacoesDashboard > div:first-child {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.ultimasOperacoesDashboard .dashboardLastOperationsToday {
+  display: block;
+  float: left;
+  width: 10%;
+  padding: 15px 0px 0px;
+}
+.ultimasOperacoesDashboard .dashboardLastOperationsToday .header-default {
+  width: 3px;
+  height: 142px;
+  margin: 0 auto;
+}
+.ultimasOperacoesDashboard .dashboardLastOperationsToday h6 {
+  font-family: "Gotham Medium", 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 19px;
+  width: 100%;
+  text-align: center;
+}
+.ultimasOperacoesDashboard .content-accounts .contentBox {
+  margin: 0px;
+}
+.ultimasOperacoesDashboard ul li a {
+  padding: 15px 0px;
+  min-height: 205px;
+}
+.ultimasOperacoesDashboard .bx-wrapper {
+  max-height: 200px;
+}
+.ultimasOperacoesDashboard .landingOperationContainer {
+  background-color: #F5F5F5;
+}
+.ultimasOperacoesDashboard .landingOperationContainer > div:first-child {
+  overflow: hidden;
+}
+.ultimasOperacoesDashboard .dashboardLastOperationsSliderContainer {
+  display: block;
+  float: right;
+  width: 90%;
+}
+.ultimasOperacoesDashboard .last-operation-data {
+  padding: 5px 5px;
+}
+.ultimasOperacoesDashboard .last-operation-data h6 {
+  font-family: "Gotham Medium", 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 19px;
+  color: #1892ae;
+  width: 100%;
+  text-align: center;
+}
+.ultimasOperacoesDashboard .last-operation-data h6.formatOperation {
+  font-weight: normal;
+  font-family: "Gotham Book", "Open Sans", "Arial", "sans-serif";
+  font-size: 17px;
+  color: #1892ae;
+  width: 100%;
+  text-align: center;
+  margin: 22px 0 10px 0;
+}
+.ultimasOperacoesDashboard .last-operation-data .negative-value {
+  color: #b5272d !important;
+}
+.ultimasOperacoesDashboard .last-operation-data .positive-value {
+  color: #00a14b !important;
+}
+.ultimasOperacoesDashboard .last-operation-data .currency {
+  color: #636363 !important;
+}

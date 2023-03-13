@@ -1,0 +1,22 @@
+﻿@model eBankit.FE.Simulators.Areas.EmailSender.Models.IndexModel
+
+
+<div>
+
+    <div class="h-100 mt-4 mb-4 ">
+        <div class="form-row col-12 col-md-11 mb-2 mt-2 s-b-input-row">
+            <label class="col-12 col-md-3 col-form-label LabelFormat" for="txtClientId">Campaign Responses</label>
+        </div>
+    </div>
+    @if (Model.HasErrors)
+    {
+        <div>
+            <p>@Model.ErrorMessage</p>
+        </div>
+    }
+    else
+    {
+        <p>Campaign Responses was successfully sent to EMS</p>
+    }
+
+</div>

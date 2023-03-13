@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" ViewStateMode="Enabled" AutoEventWireup="true" CodeBehind="Popup.Master.cs" Inherits="eBankit.UI.Web.InternetBanking.Masters.Popup" %>
+
+<%@ Import Namespace="eBankit.Common.InternetBanking" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<%= VariationHelper.GetCurrentVariationLabel() %>">
+<head runat="server">
+    <title><%: Page.Title %> <asp:Literal runat="server" Text="<%$FrontEndResources:PopupMaster,pageTitle%>" /></title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("iconFont.min.css".ResolveThirdPartyCssUrl("metro-ui/css"), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("metro-bootstrap.css".ResolveThirdPartyCssUrl("metro-ui/css"), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootswatch.min.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap-datepicker.css".ResolveThirdPartyCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("styles.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ebankit-tablet.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" media="screen and (min-width: 768px) and (max-width: 979px)" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ebankit-phone.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" media="screen and (max-width: 767px)" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ebankit-slider-dates.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ebankit-imgareaselect.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    <link rel="stylesheet" type="text/css" href="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ebankit-scroll.css".ResolveCssUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.CStyleSheet) %>" />
+    
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ieblocker.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="/Scripts/html5shiv.min.js"></script>
+      <script type="text/javascript" src="/Scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery-3.6.0.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery-ui-1.13.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("cufon-yui.js".ResolveJsUrl("megamenu"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootswatch.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.blockUI.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.validate.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("bootstrap-datepicker.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <%--<script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("highcharts.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>--%>
+    <%--<script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ej.web.all.min.js".ResolveJsUrl("ej/web"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>--%>
+    <script defer="defer" type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ej.core.min.js".ResolveJsUrl("ej/common"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>     
+    <script defer="defer" type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ej.globalize.min.js".ResolveJsUrl("ej/common"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script defer="defer" type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ej.data.min.js".ResolveJsUrl("ej/common"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script defer="defer" type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("ej.chart.min.js".ResolveJsUrl("ej/datavisualization"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.mousewheel.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.slider.dates.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.imgareaselect.pack.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.kinetic.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("slick.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <script>
+        var baseUrl = '<%= Page.ResolveClientUrl("~/") %>';
+    </script>
+</head>
+<body style="padding-top: 0px;" role="application">
+    <form id="aspnetForm" runat="server" autocomplete="off">
+        <it:CustomScriptManager ID="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" ScriptMode="debug" />
+        <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("common-1.0.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+        <div class="inprint"></div>
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-centered container-popup clearPadding makes-sticky-footer">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+        </div>
+    </form>
+</body>
+</html>

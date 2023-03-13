@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="95px" viewBox="0 0 87 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Guide-2017" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Patterns" transform="translate(-950.000000, -141.000000)">
+            <g id="Group-7" transform="translate(952.000000, 143.000000)">
+                <path d="M1.20454545,16 L51.7954545,16" id="Shape" stroke="#002B60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M51.7954545,67 L1.20454545,67" id="Shape" stroke="#002B60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M45.7727273,91 L7.22727273,91 C3.23575937,91 0,87.7835157 0,83.8157895 L0,7.18421053 C0,3.21647977 3.23575937,0 7.22727273,0 L45.7727273,0 C49.7642361,0 53,3.21647977 53,7.18421053 L53,83.8157895 C53,87.7835157 49.7642361,91 45.7727273,91 Z" id="Shape" stroke="#002B60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <ellipse id="Oval" stroke="#002B60" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" cx="26.5" cy="79.0263158" rx="2.40909091" ry="2.39473684"></ellipse>
+                <g id="Group-3" transform="translate(39.000000, 4.000000)">
+                    <polygon id="Shape" stroke="#002B60" stroke-width="3" fill="#88BC47" fill-rule="nonzero" transform="translate(22.189862, 36.970737) scale(-1, 1) translate(-22.189862, -36.970737) " points="44.3797247 55 33.2847935 46.6788016 0 46.6788016 0 18.9414737 44.3797247 18.9414737"></polygon>
+                    <text id="..." font-family="Montserrat-Medium, Montserrat" font-size="36" font-weight="400">
+                        <tspan x="10" y="35" fill="#002B60">...</tspan>
+                        <tspan x="34.3" y="35" font-size="18" fill="#4A4A4A"> </tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

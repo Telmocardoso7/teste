@@ -1,0 +1,114 @@
+﻿@import url('../_variables-cp.less');
+
+.field .req strong{
+    color: @brand-primary;
+}
+
+.bs-reduced .head{
+    font-weight: bold;
+}
+
+.lblContractResponsive {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: normal;
+}
+
+.field.field_v2.metro.break {
+    margin-bottom: 15px;
+}
+
+.border{
+    border: 1px solid #E2E2E2;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.field_v2 .hideRequiredCheckMark select {
+    display: block;
+    line-height: 35px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-left: 5px;
+}
+
+.field.hideRequiredCheckMark .req strong {
+    color: transparent;
+}
+
+.field.field_v2.metro.break.hideRequiredCheckMark {
+    & > .label-wrapper > .leftField-label.req {
+        width: 0%;
+    }
+}
+
+#divCombinationOne, #divCombinationTwo, #divCombinationThree {
+    padding: 5px 0px;
+}
+
+#divCombinationOne, #divCombinationTwo, #divCombinationThree {
+    & > .row {
+        & > .field.break {
+            width: 35%;
+
+            & > .label-wrapper > label {
+                width: 70%;
+                display: inline-block;
+                text-align: left;
+            }
+
+            & > .centerField-wrapper {
+                width: 40%;
+                display: inline-block;
+            }
+        }
+
+        & > .field.break.hideRequiredCheckMark {
+            width: 15%;
+
+            & > .label-wrapper > label {
+                width: 70%;
+                display: inline-block;
+                text-align: left;
+            }
+
+            & > .centerField-wrapper {
+                width: 100%;
+                display: inline-block;
+            }
+        }
+
+        .field_v2 .centerField-wrapper {
+            margin: 0px;
+        }
+
+        .field.field_v2.metro.break {
+            float: left
+        }
+
+        .field_v2 .label-wrapper {
+            width: 60%;
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+
+        .field_v2.hideRequiredCheckMark .label-wrapper {
+            width: 0px;
+            padding-left: 0px;
+        }
+    }
+}
+
+button.multiselect.dropdown-toggle.btn.btn-default.ddlAccountTest:focus {
+    border: 2px solid #414141 !important;
+}
+
+#divCombinationOne > .row > .field.break > .label-wrapper > label, #divCombinationTwo > .row > .field.break > .label-wrapper > label, #divCombinationThree > .row > .field.break > .label-wrapper > label {
+    width: 77%;
+    display: inline-block;
+    text-align: left;
+}

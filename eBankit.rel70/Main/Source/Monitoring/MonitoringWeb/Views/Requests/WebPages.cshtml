@@ -1,0 +1,247 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model WebPageRequestsViewModel
+
+<!-- begin #content -->
+<div id="content" class="content">
+	<!-- begin breadcrumb -->
+	<ol class="breadcrumb pull-right">
+		<li><a href="javascript:;">Home</a></li>
+		<li><a href="javascript:;">Requests</a></li>
+		<li class="active">Web Pages</li>
+	</ol>
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Webpage Requests<small> list of all webpage requests</small></h1>
+	<!-- end page-header -->
+	<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent"> 
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search webpage requests</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="WebPages" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Application</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Apps, "SearchFilters.Application", Model.SearchFilters.Application)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">User</label>
+                            <div class="col-md-8">
+                                <input type="text" name="SearchFilters.User" id="txtUser" class="form-control" placeholder="User" value="@Model.SearchFilters.User">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Method</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.RequestMethods, "SearchFilters.RequestMethod", @Model.SearchFilters.RequestMethod)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Machine Name</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.MachineNames, "SearchFilters.MachineName", Model.SearchFilters.MachineName)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Interaction ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.InteractionId" placeholder="Interaction Id" value="@Model.SearchFilters.InteractionId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request date</label>
+                            <div class="col-md-8">
+                                <div class="row row-space-10">
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker1", "SearchFilters.FromDate", Model.SearchFilters.FromDate, "From", ViewBag.DateFormat)
+                                    </div>
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker2", "SearchFilters.ToDate", Model.SearchFilters.ToDate, "To", ViewBag.DateFormat)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Session ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.SessionId" placeholder="Session Id" value="@Model.SearchFilters.SessionId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.RequestId" placeholder="Request Id" value="@Model.SearchFilters.RequestId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Execution Time</label>
+                            <div class="col-md-8">
+                                <input type="text" id="ExecTime" name="SearchFilters.ExecutionTime" value="@{ Html.Raw(Model.SearchFilters.ExecutionTime); }" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Path</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.RequestPath" placeholder="Request Path" value="@Model.SearchFilters.RequestPath" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="col-md-12"> 
+			<!-- begin panel -->
+            <div class="panel-inverse newStyle">
+				<div class="panel-heading">
+					<h4 class="panel-title">Webpage requests</h4>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Application</th>
+								<th>User</th>
+								<th>Exec. T.
+                                    <i class="fa fa-info-circle" style="font-size:12px;" data-toggle="tooltip" data-placement="top" title="Execution Time (ms)"></i>
+								</th>
+                                <th>Begin Date</th>
+                                <th>End Date</th>
+                                <th>Machine Name</th>
+                                <th>RequestPath</th>
+                                <th></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+	<!-- end row -->
+</div>
+<!-- end #content -->
+
+
+<div id="detailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">WebPage Request details</h4>
+            </div>
+            <div class="modal-body" style="padding-left:0px;padding-right:0px;">
+                @DetailModal.RenderModal(new List<string> {"Id","Application","InteractionId","User","SessionId","RequestId","ExecutionTime","Action","ApplicationVirtualPath","EventTime","MachineName","RequestPath","RequestThreadAccountName","RequestUrl","RequestMethod","UserAuthenticated","BeginDate","EndDate","RequestSize","ResponseSize"},false)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ModalMsg" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Information</h4>
+            </div>
+            <div class="modal-body" style="padding-left:15px;padding-right:0px;">
+                It is not possible to redirect to the service page because this web page request has no interactionid.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+
+<script>
+
+    $(document).ready(function () {
+
+        InitializeTooltip();
+        ToggleSideBarMenu($('#Requests'), $('#WebPageRequests'));
+        InitializeDropdowns();
+        InitializeRangedDatetimePicker($('#datetimepicker1'), $('#datetimepicker2'), '@ViewBag.DateFormat');
+        InitializeSlider($('#ExecTime'),'@Model.ExecutionTimeMin','@Model.ExecutionTimeMax','@Model.SearchFilters.ExecutionTime.Split(';').FirstOrDefault()','@Model.SearchFilters.ExecutionTime.Split(';').LastOrDefault()');
+
+
+        //TODO: DEFINE OUTPUT PARAMETERS
+        var dataUrl = '@Html.Raw(Url.Action("GetWebPageSearchResults", "Requests", new {MachineName=Model.SearchFilters.MachineName,Application = Model.SearchFilters.Application,User = Model.SearchFilters.User,FromDate = Model.SearchFilters.FromDate,ToDate = Model.SearchFilters.ToDate,ExecutionTime = Model.SearchFilters.ExecutionTime,RequestMethod = Model.SearchFilters.RequestMethod,InteractionId = Model.SearchFilters.InteractionId,RequestId = Model.SearchFilters.RequestId,SessionId = Model.SearchFilters.SessionId,RequestPath = Model.SearchFilters.RequestPath}))';
+        var columns = [
+            { "mDataProp": "Application" , "orderable" : false },
+            { "mDataProp": "User" , "orderable" : false },
+            { "mDataProp": "ExecutionTime" , "orderable" : true },
+            {
+                "mDataProp": "BeginDate",
+                "orderable" : true ,
+                "mRender": function (data, type, full) {
+                    return moment(data).format('@ViewBag.DateFormat');
+                }
+            },
+            {
+                "mDataProp": "EndDate",
+                "orderable": true,
+                "mRender": function (data, type, full) {
+                    return moment(data).format('@ViewBag.DateFormat');
+                }
+            },
+            { "mDataProp": "MachineName" , "orderable" : false },
+            { "mDataProp": "RequestPath", "orderable": false },
+            {
+                "mDataProp": null,
+                "orderable" : false,
+                "sClass": "detail",
+                "mRender": function (data, type, full) {
+                    return "<div style='width:85px;' class='alignCenter'><a href='#detailModal' onclick='initTab();' role='button' class='btn btn-inverse detailsButton' data-toggle='modal'><i class='fa fa-search-plus' style='font-size:13px'></i></a> <div onclick='redirectToAnalytics(\"" + data.RequestPath + "\")' class='btn btn-inverse statsButton'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                }
+            }
+
+        ];
+
+        if (@Json.Encode(Model.SearchFilters.FirstTime) != true)
+        {
+            var table = InitializeDataTable('results-table', dataUrl, columns, [[3, "DESC"]]);
+        }
+
+        InitializeAutoComplete($('#txtUser'), '@Url.Action("UserSearch", "Requests", new {service = "WebPageController/webpageusers" })');
+
+        InitializeClickRedirect('results-table', '@Url.Action("Services", "Requests", new {RequestId = "__reqId__" })','RequestId');
+
+        var attributeList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "ExecutionTime", "Action", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "UserAuthenticated", "BeginDate", "EndDate", "RequestSize", "ResponseSize"];
+        InitializeDetailClickEvent(attributeList, '@ViewBag.DateFormat', false);
+
+        App.init();
+    });
+
+    var redirectToAnalytics = function (reqpath) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebPages","Analytics")' + '?RequestPath=' + reqpath;
+    }
+
+
+</script>
+

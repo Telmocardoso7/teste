@@ -1,0 +1,31 @@
+﻿<div id="CookieDisclaimer" class="CookieContainer" >
+    <div class="gdprPopup_popup" >
+        <div class="gdprPopup_overlay"></div>
+        <div class="gdprPopup_moreInfo" style="display:none;"></div>
+        <div class="gdprPopup_content">
+            <div class="gdprIntro_intro">
+                <div class="gdprIntro_title" style="font-size: 16px !important; padding-top: 15px !important;">
+                    <span><div class="controlCookiesManagementFullTitle"></div></span>
+                </div>
+                <div class="gdprIntro_description" style="padding-top: 4px !important;">
+                    <div><div id="CookieTitle"></div></div>
+                </div>
+                <div class="gdprIntro_options" style="padding-bottom: 0px !important; display: block !important;" >
+                    <div style="padding-top: 10px;">
+                        <button class="gdprButton_button gdprIntro_MoreInfo btn-default" type="button" onclick="ShowCookiesInfo();">
+                            <span><div id="MoreInfoCookieButton"></div></span>
+                        </button>
+                        <button class="gdprButton_button gdprIntro_acceptAll btn-success" onclick="createCookie('ShowCookieBar','30');$('.unfocus').attr('tabindex', 0).removeClass('unfocus').removeAttr('disabled');" type="button">
+                            <span><div class="controlComfirmationCookieButton"></div></span>
+                        </button>
+                    </div>
+                    <div style="padding-top: 10px;">
+                        <a class="gdprIntro_link" href="https://www.ebankit.com/privacy-policy/" target="_blank" rel="noopener noreferrer"><div class="controlPrivacyPolicyLinkText"></div></a>
+                        <a class="gdprIntro_link" href="https://www.ebankit.com/cookies/" target="_blank" rel="noopener noreferrer"><div class="controlCookiesPolicyLinkText"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container CookieContentFooter" style="display: none;"></div>
+</div>

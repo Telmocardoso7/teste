@@ -1,0 +1,34 @@
+﻿@labelcolor: #555555;
+@maincolor: #0173A7;
+@errorcolor: #C13333;
+@main-font-family: "Open Sans";
+@secondary-font-family: "Open Sans Light";
+@tablet: ~"screen and (max-width: 992px) and (min-width: 768px)";
+@phone: ~"screen and (max-width: 767px)";
+@theme: "ebankit";
+@base-url: "../@{theme}";
+
+
+
+.flex-container(@direction) {
+    display: flex;
+    flex-direction: @direction;
+}
+.flex-item(@width,@flex: none,@justify-content: normal,@align-items: normal,@flex-wrap: nowrap,@align-content: normal, @flex-direction: unset,@align-self: auto) {
+    display: flex;
+    flex: @flex;
+    justify-content: @justify-content;
+    align-items: @align-items;
+    width: @width;
+    flex-wrap: @flex-wrap;
+    align-content: @align-content;
+    flex-direction: @flex-direction;
+    align-self: @align-self;
+}
+@font-family-normal: "Gotham Book", "Open Sans", "Arial", "sans-serif";
+@font-family-light: "Gotham Light", 'Open Sans', sans-serif;
+@font-family-medium: "Gotham Medium", 'Open Sans', sans-serif;
+@font-family-bold: "Gotham Bold", 'Open Sans', sans-serif;
+@brand-primary: #0173a7;
+@gray-dark: #333333;
+@gray-lighter: #f5f5f5;

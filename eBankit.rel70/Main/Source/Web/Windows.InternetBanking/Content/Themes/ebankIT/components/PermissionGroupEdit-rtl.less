@@ -1,0 +1,87 @@
+﻿@import url('../_variables-cp.less');
+
+p.action-buttons {
+    width: 100%;
+}
+
+.ebankit-accordion-list {
+    border-top: none;
+}
+
+table{
+    margin-top: 10px!important;
+    border-top: 1px solid #EDEDED;
+}
+
+div.usersNotIncludedDiv {
+    margin-bottom: 50px;
+    display: inline-block;
+    height: auto;
+}
+
+.bold{
+    font-weight: bold!important;
+}
+
+.ebankit-accordion-list .btn-edit {
+    margin-right: 20px;
+    height: 30px;
+    margin-top: 0px;
+}
+
+
+.numberOfUsers {
+    text-align: right;
+}
+
+span.numberOfUsers{
+    float:right;
+}
+
+-btn-default {
+    background-color: @btn-primary-color;
+}
+
+
+p.action-buttons > a {
+    width: 30px;
+    height: 30px;
+    
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+
+    &.btn-delete {
+        background-image: url(../images/icon/Corporate/delete.png);
+
+        &:hover {
+            background-image: url(../images/icon/Corporate/delete_hover.png);
+        }
+    }
+
+    &.btn-edit {
+        background-image: url(../images/icon/Corporate/corp_action_edit.png);
+
+        &:hover {
+            background-image: url(../images/icon/Corporate/corp_action_edit_hover.png);
+        }
+    }
+
+    &.btn-duplicate {
+        background-image: url(../images/icon/Corporate/corp_action_copy.png);
+        float: left;
+
+        &:hover {
+            background-image: url(../images/icon/Corporate/corp_action_copy_hover.png);
+        }
+    }
+}
+
+.bs-head-metro .head{
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+}
+
+.ebankit-accordion-list .btn-edit {
+    float: left;
+}

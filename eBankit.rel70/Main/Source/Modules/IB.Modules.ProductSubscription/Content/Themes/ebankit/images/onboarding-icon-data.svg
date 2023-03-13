@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="230px" height="230px" viewBox="0 0 230 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>0D2DACF9-C8B1-43F1-B3E4-BA71CBD6ABC5</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="8.60856525e-15%" x2="50%" y2="99.7110172%" id="linearGradient-1">
+            <stop stop-color="#F3F0F6" offset="0%"></stop>
+            <stop stop-color="#DEDBE9" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="115" cy="115" r="115"></circle>
+        <path d="M19,7 L171,7 C173.209139,7 175,8.790861 175,11 L175,112 L15,112 L15,11 C15,8.790861 16.790861,7 19,7 Z" id="path-4"></path>
+        <filter x="-28.1%" y="-42.9%" width="156.2%" height="185.7%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.784313725   0 0 0 0 0.764705882   0 0 0 0 0.850980392  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="3.061617e-15%" y1="50%" x2="100%" y2="50%" id="linearGradient-6">
+            <stop stop-color="#0BB6C9" offset="0%"></stop>
+            <stop stop-color="#0173A7" offset="100%"></stop>
+        </linearGradient>
+        <path d="M80.0539108,50.7840402 C80.0539108,42.7148437 86.760242,36.1473214 94.9999863,36.1473214 C103.239731,36.1473214 109.942643,42.7148437 109.942643,50.7840402 C109.942643,58.8532366 103.239731,65.4190848 94.9999863,65.4190848 C86.760242,65.4190848 80.0539108,58.8532366 80.0539108,50.7840402 M106.409126,64.5987723 C110.518741,61.3359375 113.156485,56.3571429 113.156485,50.7840402 C113.156485,40.9787946 105.010763,33 94.9999863,33 C84.9875004,33 76.8417781,40.9787946 76.8417781,50.7840402 C76.8417781,56.3571429 79.4778125,61.3359375 83.5891371,64.5987723 C76.5614217,68.0608259 71.1252419,75.9659598 70.0123635,84.8035714 C69.9029561,85.6674107 70.5320486,86.4559152 71.4090173,86.5597098 C71.4773969,86.5680804 71.544067,86.5714286 71.6107372,86.5714286 C72.4056502,86.5714286 73.1014129,85.9871652 73.2005633,85.1919643 C74.2826708,76.5987723 79.8709953,69.031808 86.8252027,66.641183 C89.2851595,67.8632812 92.0562436,68.5664062 94.9999863,68.5664062 C97.9420195,68.5664062 100.713104,67.8632812 103.17306,66.6428571 C110.125558,69.031808 115.713883,76.5987723 116.799409,85.1919643 C116.900269,85.9871652 117.592613,86.5714286 118.390945,86.5714286 C118.455906,86.5714286 118.525995,86.5680804 118.590955,86.5597098 C119.469633,86.452567 120.097016,85.6674107 119.987609,84.8035714 C118.871312,75.9626116 113.436841,68.0608259 106.409126,64.5987723" id="path-7"></path>
+    </defs>
+    <g id="Internet-banking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IB-iconset-ONBOARDING" transform="translate(-822.000000, -140.000000)">
+            <g id="tour_identity" transform="translate(822.000000, 140.000000)">
+                <g>
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <g id="Group-22" mask="url(#mask-3)">
+                        <g transform="translate(20.000000, 60.000000)">
+                            <g id="Rectangle" stroke="none" fill="none" fill-rule="nonzero">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                                <use fill="#FFFFFF" xlink:href="#path-4"></use>
+                            </g>
+                            <path d="M84,0 L106,0 C107.104569,-2.02906125e-16 108,0.8954305 108,2 L108,12 C108,13.1045695 107.104569,14 106,14 L84,14 C82.8954305,14 82,13.1045695 82,12 L82,2 C82,0.8954305 82.8954305,2.02906125e-16 84,0 Z" id="Rectangle-path" stroke="none" fill="#0BB6C9" fill-rule="nonzero"></path>
+                            <circle id="Oval" stroke="none" fill="#FFFFFF" fill-rule="nonzero" cx="95" cy="7" r="3"></circle>
+                            <polygon id="Shape" stroke="none" fill="url(#linearGradient-6)" fill-rule="nonzero" points="190 145.811245 190 160 0 160 0 145.811245"></polygon>
+                            <mask id="mask-8" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <use id="Mask" stroke="none" fill="#8DC63F" fill-rule="evenodd" xlink:href="#path-7"></use>
+                            <polygon id="Rectangle" stroke="none" fill="#F4F4F4" fill-rule="nonzero" points="15 112 175 112 190 146 2.27373675e-13 146"></polygon>
+                            <rect id="Rectangle" stroke="none" fill="#8DC63F" fill-rule="evenodd" x="85" y="135" width="20" height="4" rx="2"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

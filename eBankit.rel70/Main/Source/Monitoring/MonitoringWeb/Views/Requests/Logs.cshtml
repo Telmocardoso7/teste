@@ -1,0 +1,257 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model LogRequestsViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+	<!-- begin breadcrumb -->
+	<ol class="breadcrumb pull-right">
+		<li><a href="javascript:;">Home</a></li>
+		<li><a href="javascript:;">Requests</a></li>
+		<li class="active">Logs</li>
+	</ol>
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Log Requests<small> list of all log requests</small></h1>
+	<!-- end page-header -->
+	<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent"> 
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="#" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search log requests</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="Logs" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Application</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Apps, "SearchFilters.Application", Model.SearchFilters.Application, "Select an item", false, false, "includeMonitoringTrigger")
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">User</label>
+                            <div class="col-md-8">
+                                <input type="text" name="SearchFilters.User" id="txtUser" class="form-control" placeholder="User" value="@Model.SearchFilters.User">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Level</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Levels, "SearchFilters.Level", @Model.SearchFilters.Level)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Interaction ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.InteractionId" placeholder="Interaction Id" value="@Model.SearchFilters.InteractionId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request date</label>
+                            <div class="col-md-8">
+                                <div class="row row-space-10">
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker1", "SearchFilters.FromDate", Model.SearchFilters.FromDate, "From", ViewBag.DateFormat)
+                                    </div>
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker2", "SearchFilters.ToDate", Model.SearchFilters.ToDate, "To", ViewBag.DateFormat)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Session ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.SessionId" placeholder="Session Id" value="@Model.SearchFilters.SessionId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request ID</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.RequestId" placeholder="Request Id" value="@Model.SearchFilters.RequestId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Path</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.RequestPath" placeholder="Request Path" value="@Model.SearchFilters.RequestPath" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Message</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="SearchFilters.Message" placeholder="Message" value="@Model.SearchFilters.Message" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group" style="height:65px;" id="formIncludeMonitoring">
+                            <label class="control-label col-md-4">Include Monitoring</label>
+                            <div class="col-md-8">
+                                @Html.CheckBoxFor(m => Model.SearchFilters.IncludeMonitoring, new { @class = "form-check"})
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="col-md-12">
+			<!-- begin panel -->
+			<div class="panel-inverse newStyle">
+				<div class="panel-heading">
+					<h4 class="panel-title">Log requests</h4>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Application</th>
+								<th>User</th>
+                                <th>Event Time</th>
+								<th>Level</th>
+								<th>Message</th>
+								<th>Exception</th>
+                                <th></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+
+                            
+
+
+<div id="detailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Log Request details</h4>
+            </div>
+            <div class="modal-body" style="padding-left:0px;padding-right:0px;">
+                @DetailModal.RenderModal(new List<string> {"Id","Application","InteractionId","User","SessionId","RequestId","SRequestId","Level","Message","Exception","EventTime","MachineName","RequestPath","RequestThreadAccountName","RequestUrl"},false)
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+
+<script>
+
+    $(document).ready(function () {
+
+        function htmlEncode(value) {
+            return $('<div/>').text(value).html();
+        }
+
+        function htmlDecode(value) {
+            return $('<div/>').html(value).text();
+        }
+
+        InitializeTooltip();
+        ToggleSideBarMenu($('#Requests'),$('#LogRequests'));
+        InitializeDropdowns();
+        InitializeRangedDatetimePicker($('#datetimepicker1'), $('#datetimepicker2'), '@ViewBag.DateFormat');
+
+        InitializeAutoComplete($('#txtUser'), '@Url.Action("UserSearch", "Requests", new { service = "LogController/logusers" })');
+
+
+        var dataUrl = '@Html.Raw(Url.Action("GetLogSearchResults", "Requests", new { Application = Model.SearchFilters.Application, User = Model.SearchFilters.User, Level = Model.SearchFilters.Level, FromDate = Model.SearchFilters.FromDate, ToDate = Model.SearchFilters.ToDate, InteractionId = Model.SearchFilters.InteractionId, SessionId = Model.SearchFilters.SessionId, RequestId = Model.SearchFilters.RequestId, RequestPath = Model.SearchFilters.RequestPath, Message = Model.SearchFilters.Message, IncludeMonitoring = Model.SearchFilters.IncludeMonitoring }))';
+        var columns = [
+                { "mDataProp": "Application", "orderable": false },
+                { "mDataProp": "User", "orderable": false },
+                {
+                    "mDataProp": "EventTime",
+                    "orderable": true,
+                    "sClass": "noBreak",
+                    "mRender": function (data, type, full) {
+                        return moment(data).format('@ViewBag.DateFormat');
+                    }
+                },
+                { "mDataProp": "Level", "orderable": false },
+                {
+                    "mDataProp": "Message", "orderable": false,
+                    "mRender": function (data, type, full) {
+                        if (data !== null) {
+                            if (data.length > 50) {
+                                return "<span title='" + data.replace(/'/g, '&quot;') + "' >" + htmlEncode(data.substring(0, 50)) + "..." + "</span>";
+                            }
+                            else
+                                return "<span title='" + data.replace(/'/g, '&quot;') + "' >" + htmlEncode(data) + "</span>";
+                        }
+                        else
+                            return "<span title='" + data + "' >" + htmlEncode(data) + "</span>";
+                    }
+                },
+                {
+                    "mDataProp": "Exception",
+                    "orderable": false,
+                    "mRender": function (data, type, full) {
+                        if (data !== null) {
+                            if (data.length > 50) {
+                                return "<span title='" + data.replace(/'/g, '&quot;') + "'>" + htmlEncode(data.substring(0, 50)) + "..." + "</span>";
+                            }
+                            else
+                                return "<span title='" + data.replace(/'/g, '&quot;') + "' >" + htmlEncode(data) + "</span>";
+                        }
+                        else
+                            return "<span title='" + data + "' >" + htmlEncode(data) + "</span>";
+                    }
+                },
+                {
+                    "mDataProp": null,
+                    "orderable" : false,
+                    "sClass": "detail",
+                    "mRender": function (data, type, full) {
+                        return "<div style='width:39px' class='alignCenter'><a href='#detailModal' onclick='initTab();' role='button' class='btn btn-inverse detailsButton' data-toggle='modal'><i class='fa fa-search-plus' style='font-size:13px'></i></a></div>";
+                    }
+                }
+        ];
+
+        if (@Json.Encode(Model.SearchFilters.FirstTime) != true)
+        {
+
+            var domOptions = "<'row'<'col-sm-6'l><'col-sm-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-4'i><'col-sm-8'p>>"; // Set paging bigger - preventing last button to drop row
+
+            InitializeDataTable('results-table', dataUrl, columns, [[2, "DESC"]], null, null, null, domOptions);
+        }
+
+
+        var attributeList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "Level", "Message", "Exception", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl"];
+        InitializeDetailClickEvent(attributeList, '@ViewBag.DateFormat',false);
+
+        App.init();
+    });
+
+    function includeMonitoringTrigger() {
+        if ($('select[name = "SearchFilters.Application"] :selected').text() === "Select an item") {
+            $("#formIncludeMonitoring").show();
+        } else {
+            $("#formIncludeMonitoring").hide();
+        }
+    }
+</script>

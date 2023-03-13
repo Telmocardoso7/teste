@@ -1,0 +1,61 @@
+{
+  "PSD2Settings": {
+    "ServicesEndpoints": {
+      "PSD2AuthorizationEndPoints": "/authentication/token",
+      "Portal": {
+        "APIS": {
+          "Base": "portal/api",
+          "GetSandboxScopes": "portal/api/sandboxscopes/{0}",
+          "GetProductionScopes": "portal/api/scopes/{0}"
+        },
+        "APPS": {
+          "Base": "portal/app",
+          "Client": "portal/app/client/{0}",
+          "ProfileUser": "portal/app/profileuser",
+          "Validate": "portal/app/validate/{0}/{1}/{2}/{3}"
+        },
+        "Companies": {
+          "Base": "portal/companies",
+          "CompanyExist": "portal/companies/companyexist"
+        },
+        "ProfileUser": {
+          "Base": "portal/profileuser",
+          "ProfileUserExists": "portal/profileuser/profile-user-exists",
+          "Login": "portal/profileuser/login",
+          "Logs": "portal/profileuser/logs",
+          "Validate": "portal/profileuser/validate"
+        },
+        "Interactions": "portal/interaction",
+        "Aux": {
+          "Environments": "portal/auxiliar/environment/{0}",
+          "Banks": "portal/auxiliar/banks"
+        },
+        "SandBox": {
+          "Customers": "portal/sandbox",
+          "Accounts": "portal/sandbox/accounts",
+          "Cards": "portal/sandbox/cards",
+          "CardsSearchFilters": "portal/sandbox/cards-search-filters",
+          "AccountsTransactions": "portal/sandbox/accounts-transactions",
+          "CardsTransactions": "portal/sandbox/cards-transactions"
+        }
+      },
+      "IdentityServer": {
+        "Base": "api/Client",
+        "Secret": "api/Client/UpdateClientSecret",
+        "Scope": "api/Client/Scope"
+      }
+    }
+  },
+  "GlobalSettings": {
+    "ServicesEndpoints": {
+      "Platform": {
+        "Cultures": {
+          "Base": "/Platform/Cultures"
+        },
+        "Resources": {
+          "Base": "/Platform/Resources"
+        }
+      }
+    }
+  }
+}

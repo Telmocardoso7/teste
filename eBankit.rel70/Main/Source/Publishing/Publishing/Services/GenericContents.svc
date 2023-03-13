@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ebankIT.Publishing.Web.Services.GenericContents" CodeBehind="GenericContents.svc.cs"   %>

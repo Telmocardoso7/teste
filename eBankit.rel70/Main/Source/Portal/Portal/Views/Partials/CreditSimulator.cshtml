@@ -1,0 +1,886 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    string productId = Request.QueryString["IDProduct"];
+
+    string currencyId = "";
+    string loanTypeId = "";
+
+    bool showCollateral = false;
+    var showInitialPayment = false;
+    var showBalloonPayment = false;
+    var showGracePeriod = false;
+
+    var prod = ebankIT.Windows.Portals.Public.Umbraco.Helper.AccountHelper.CreditProduct(null, null, productId);
+
+    var prodList = ((Umbraco.Web.Models.DynamicPublishedContentList)CurrentPage.Up().Children()).Where(x => x.GetTemplateAlias() == "ebankIT_ProductListCredit").FirstOrDefault();
+    var product = prodList.Children.Where("ebankIT_centralID == \"" + productId + "\"").FirstOrDefault();
+
+    if (prod != null)
+    {
+        loanTypeId = prod.LoanTypeId;
+        currencyId = prod.CurrencyId;
+        showCollateral = prod.CollateralRequired.GetValueOrDefault();
+        showInitialPayment = prod.LoanInitialPaymentFixedMax > 0;
+        showBalloonPayment = prod.LoanBalloonPaymentFixedMax > 0;
+        showGracePeriod = prod.LoanGracePeriodMax.GetValueOrDefault() > 0;
+    }
+
+    bool success = false;
+    bool creditSim = false;
+
+    eBankit.Business.Entities.Banking.Loans.CoreLoanSimulation sim = null;
+
+    if (!string.IsNullOrEmpty(Request.QueryString["time"]) && !string.IsNullOrEmpty(Request.QueryString["amount"]))
+    {
+        string amount = Request.QueryString["amount"];
+        string time = Request.QueryString["time"];
+
+        string colat = "0";
+        string init = "0";
+        string bal = "0";
+        string grace = "0";
+
+        if (showCollateral && !string.IsNullOrEmpty(Request.QueryString["colat"]))
+        {
+            colat = Request.QueryString["colat"];
+        }
+
+        if (showInitialPayment && !string.IsNullOrEmpty(Request.QueryString["init"]))
+        {
+            init = Request.QueryString["init"];
+        }
+
+        if (showBalloonPayment && !string.IsNullOrEmpty(Request.QueryString["bal"]))
+        {
+            bal = Request.QueryString["bal"];
+        }
+
+        if (showGracePeriod && !string.IsNullOrEmpty(Request.QueryString["grace"]))
+        {
+            grace = Request.QueryString["grace"];
+        }
+
+        sim = ebankIT.Windows.Portals.Public.Umbraco.Helper.AccountHelper.CreditSimulate(loanTypeId, currencyId, productId,
+            int.Parse(time), decimal.Parse(amount), decimal.Parse(colat), decimal.Parse(init), decimal.Parse(bal), int.Parse(grace));
+
+        if (sim != null)
+        {
+            success = true;
+        }
+        creditSim = true;
+    }
+    else
+    {
+        sim = ebankIT.Windows.Portals.Public.Umbraco.Helper.AccountHelper.CreditSimulate(loanTypeId, currencyId, productId,
+            5, 25000, 0, 0, 0, 0);
+
+        if (sim != null)
+        {
+            success = true;
+        }
+        creditSim = true;
+    }
+}
+<div id="creditSim" class="savingsContainer creditSim">
+
+    <div class="row product">
+        <div class="col-xs-12 col-sm-12 col-8-override content_info">
+            <div class="savingsTitle page_simulator_title">@Umbraco.GetDictionaryValue("CreditSimulator")</div>
+            @if (creditSim)
+            {
+                <div class="title_simulator_date savingsSubTitle">@Umbraco.GetDictionaryValue("CreditSimulatorDate")</div>
+                <div class="descriptionBox">
+                    @if (success)
+                    {
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("SelectedProduct")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@product.Name</div>
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("MonthlyPay")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@string.Format("{0} {1}", sim.LoanPayments[0].PaymentValue, currencyId)</div>
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("NominalInterestRate")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@sim.NominalInterestRate%</div>
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TAE")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@sim.EffectiveAnnualRate%</div>
+                            </div>
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TAEG")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@sim.GlobalEffectiveAnnualRate%</div>
+                            </div>
+                        </div>
+                        if (sim.TotalTaxValue > 0)
+                        {<div class="row">
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TotalTaxValue")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@string.Format("{0} {1}", sim.TotalTaxValue, currencyId)</div>
+                            </div>
+                        </div>
+                        }
+                        if (sim.TotalFixedCostValue > 0)
+                        {
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TotalFixedCostValue")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@string.Format("{0} {1}", sim.TotalFixedCostValue, currencyId)</div>
+                            </div>
+                        </div>
+                        }
+                        if (sim.TotalFeeValue > 0)
+                        {
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TotalFeeValue")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@string.Format("{0} {1}", sim.TotalFeeValue, currencyId)</div>
+                            </div>
+                        </div>
+                           
+                        }
+                        if (sim.TotalOtherDebitValue > 0)
+                        {
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue("TotalOtherDebitValue")</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@string.Format("{0} {1}", sim.TotalOtherDebitValue, currencyId)</div>
+                            </div>
+                        </div>
+                            
+                        }
+
+                    }
+                    else
+                    {
+                        <div class="description">@Umbraco.GetDictionaryValue("ErrorMessageSimulator")</div>
+                    }
+                </div>
+                    if (success)
+                    { 
+                <div class="title_simulator_date savingsSubTitle">@Umbraco.GetDictionaryValue("AccountOpenningExpenses")</div>
+                <div class="descriptionBox">
+                    <div class="row">
+                        @foreach (var expense in sim.LoanSetupExpenses)
+                        { 
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue(expense.ExpenseId)</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@expense.ExpenseValue @currencyId</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                
+                <div class="title_simulator_date savingsSubTitle">@Umbraco.GetDictionaryValue("FirstTransferExpenses")</div>
+                <div class="descriptionBox">
+                    <div class="row">
+                        @foreach (var expense in sim.LoanFirstTransferExpenses)
+                        { 
+                            <div class="col-md-5 col-lg-5 col-xs-12">
+                                <div class="description savingsSubTitle title_description">@Umbraco.GetDictionaryValue(expense.ExpenseId)</div>
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xs-12">
+                                <div class="results">@expense.ExpenseValue @currencyId</div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                
+                <div class="title_simulator_date savingsSubTitle">@Umbraco.GetDictionaryValue("PaymentPlan")</div>
+                <div class="panel-group plan" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">@Umbraco.GetDictionaryValue("ViewPlan")</div>
+                            <div class="pull-right">
+                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse">
+                                     <i class="fa fa-chevron-down"></i>
+                                 </a>
+                            </div>                           
+                        </div>
+                        <div id="collapse" class="panel-collapse collapse ">
+                            <ul style="height:0; overflow:hidden" class="nav nav-tabs" role="tablist">
+                                @for (int i = 0; i < Math.Ceiling((double)sim.LoanPayments.Count / 10); i++)
+                                {
+                                    <li role="presentation" class="@(i == 0 ? "active" : string.Empty)">
+                                        <a href="#planTab@(i)" role="tab" data-toggle="tab"></a>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="panel-body">
+                                <div class="header">
+                                    <div class="row">
+                                        <div class="hidden-xs col-xs-12 col-sm-20 left">
+                                            @Umbraco.GetDictionaryValue("InstallmentNumber")
+                                        </div>
+                                        <div class="hidden-xs col-xs-12 col-sm-20">
+                                            @Umbraco.GetDictionaryValue("PaymentValue")
+                                        </div>
+                                        <div class="hidden-xs col-xs-12 col-sm-20">
+                                            @Umbraco.GetDictionaryValue("InterestValue")
+                                        </div>
+                                        <div class="hidden-xs col-xs-12 col-sm-20">
+                                            @Umbraco.GetDictionaryValue("DebtValue")
+                                        </div>
+                                        <div class="hidden-xs col-xs-12 col-sm-20 right">
+                                            @Umbraco.GetDictionaryValue("PaymentDate")
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content">
+                                    @{
+                                        int index = 0;
+                                        List<eBankit.Business.Entities.Banking.Loans.CoreLoanSimulationPaymentItem> payments;
+                                        string number = Umbraco.GetDictionaryValue("InstallmentNumber");
+                                        string paymentValue = Umbraco.GetDictionaryValue("PaymentValue");
+                                        string interest = Umbraco.GetDictionaryValue("InterestValue");
+                                        string debt = Umbraco.GetDictionaryValue("DebtValue");
+                                        string date = Umbraco.GetDictionaryValue("PaymentDate");
+                                        do
+                                        {
+                                            payments = sim.LoanPayments.OrderBy(x => x.InstallmentNumber).Skip(10 * index).Take(10).ToList();
+                                                <div role="tabpanel" class="tab-pane fade in @(index == 0 ? "active" : string.Empty)" id="planTab@(index)">
+                                                    @foreach (var payment in payments)
+                                                    {
+                                                        <div class="payment">
+                                                            <div class="row">
+                                                                <div class="col-xs-12 col-sm-20 left">
+                                                                    <p class="visible-xs">@number</p>
+                                                                    @payment.InstallmentNumber
+                                                                </div> 
+                                                                <div class="col-xs-12 col-sm-20">
+                                                                    <p class="visible-xs">@paymentValue</p>
+                                                                    @payment.PaymentValue @currencyId
+                                                                </div> 
+                                                                <div class="col-xs-12 col-sm-20">
+                                                                    <p class="visible-xs">@interest</p>
+                                                                    @payment.InterestValue @currencyId
+                                                                </div> 
+                                                                <div class="col-xs-12 col-sm-20">
+                                                                    <p class="visible-xs">@debt</p>
+                                                                    @payment.DebtValue @currencyId
+                                                                </div> 
+                                                                <div class="col-xs-12 col-sm-20 right">
+                                                                    <p class="visible-xs">@date</p>
+                                                                    @payment.PaymentDate.ToString("dd/MM/yyy")
+                                                                </div> 
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            index++;
+                                        } while (payments.Count == 10);
+                                    }
+                                </div>
+                                <div class="pull-left hide">
+                                    <i class="fa fa-chevron-left"></i>@Umbraco.GetDictionaryValue("PreviousPage")
+                                </div>
+                                <div class="pull-right hide">
+                                    @Umbraco.GetDictionaryValue("NextPage")<i class="fa fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            }
+        </div>
+        @if (success)
+        { 
+            <div class="col-xs-12 col-sm-12  col-4-override simulator_area">
+                <div class="savingsTitle title_simulator">@Umbraco.GetDictionaryValue("CreditSimulatorTitle")</div>
+                <div class="savingsTitle subtitle_simulator">@Umbraco.GetDictionaryValue("CreditSimulatorSubTitle")</div>
+                <div class="savingsSubTitle simulator_subtitle">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                            @Umbraco.GetDictionaryValue("Amount")
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                            @currencyId
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="dragAmtTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                <div class="savingsControl">
+                    <div id="dragAmtCredit" class="savingsLine dragdealer noselect">
+                        <div class="savingsButton drag img-circle handle"></div>
+                    </div>
+                </div>
+
+                @if (showCollateral)
+                {
+                    <div class="savingsSubTitle simulator_subtitle">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                                @Umbraco.GetDictionaryValue("Collateral")
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                                @currencyId
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="dragColatTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                    <div class="savingsControl">
+                        <div id="dragColatCredit" class="savingsLine dragdealer noselect">
+                            <div class="savingsButton drag img-circle handle"></div>
+                        </div>
+                    </div>
+                }
+
+                <div class="savingsSubTitle simulator_subtitle">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                            @Umbraco.GetDictionaryValue("Term")
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                            @Umbraco.GetDictionaryValue("Years")
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="dragTimeTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                <div class="savingsControl">
+                    <div id="dragTimeCredit" class="savingsLine dragdealer noselect">
+                        <div class="savingsButton drag img-circle handle"></div>
+                    </div>
+                </div>
+
+                @if (showInitialPayment)
+                {
+                    <div class="savingsSubTitle simulator_subtitle">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                                @Umbraco.GetDictionaryValue("InitialPayment")
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                                @currencyId
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="dragInitTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                    <div class="savingsControl">
+                        <div id="dragInitCredit" class="savingsLine dragdealer noselect">
+                            <div class="savingsButton drag img-circle handle"></div>
+                        </div>
+                    </div>
+                }
+
+                @if (showBalloonPayment)
+                {
+                    <div class="savingsSubTitle simulator_subtitle">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                                @Umbraco.GetDictionaryValue("BalloonPayment")
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                                @currencyId
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="dragBalTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                    <div class="savingsControl">
+                        <div id="dragBalCredit" class="savingsLine dragdealer noselect">
+                            <div class="savingsButton drag img-circle handle"></div>
+                        </div>
+                    </div>
+                }
+
+                @if (showGracePeriod)
+                {
+                    <div class="savingsSubTitle simulator_subtitle">
+
+                        <div class="row">
+                            <div class="col-md-8 col-lg-8 col-xs-8 title_1">
+                                @Umbraco.GetDictionaryValue("GracePeriod")
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-4 title_2">
+                                @Umbraco.GetDictionaryValue("Months")
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="dragGraceTextCredit" class="savingsDisplayBox pull-right input_simulator" />
+                    <div class="savingsControl">
+                        <div id="dragGraceCredit" class="savingsLine dragdealer noselect">
+                            <div class="savingsButton drag img-circle handle"></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+@if (success)
+{
+    <script>
+        var tabIndex = 0;
+        var tabMaxIndex = parseInt("@(Math.Ceiling((double)sim.LoanPayments.Count / 10))");
+        var tabChanging = false;
+
+        var dragTimeCredit;
+        var dragAmtCredit;
+        var dragColatCredit;
+        var dragInitCredit;
+        var dragBalCredit;
+        var dragGraceCredit;
+
+        var valueAmtCredit;
+        var valueYearsCredit;
+        var valueColatCredit;
+        var valueInitCredit;
+        var valueBalCredit;
+        var valueGraceCredit;
+
+        var dragTimeReady = false;
+        var dragAmtReady = false;
+        var dragColatReady = false;
+        var dragInitReady = false;
+        var dragBalReady = false;
+        var dragGraceReady = false;
+
+        var currencyCredit = "@currencyId";
+        var yearsCredit = "@Umbraco.GetDictionaryValue("Years")";
+        var monthsCredit = "@Umbraco.GetDictionaryValue("Months")";
+
+        var MIN_YEARS_CREDIT = parseInt("@prod.LoanDurationMin.GetValueOrDefault()");
+        var MAX_YEARS_CREDIT = parseInt("@prod.LoanDurationMax.GetValueOrDefault()");
+        var DIFF_YEARS_CREDIT = MAX_YEARS_CREDIT - MIN_YEARS_CREDIT;
+
+        var MIN_GRACE_CREDIT = parseInt("@prod.LoanGracePeriodMin.GetValueOrDefault()");
+        var MAX_GRACE_CREDIT = parseInt("@prod.LoanGracePeriodMax.GetValueOrDefault()");
+        var DIFF_GRACE_CREDIT = MAX_GRACE_CREDIT - MIN_GRACE_CREDIT;
+
+        var MIN_AMT_CREDIT = parseInt("@prod.LoanAmountMin.GetValueOrDefault()") / 1000;
+        var MAX_AMT_CREDIT = parseInt("@prod.LoanAmountMax.GetValueOrDefault()") / 1000;
+        var DIFF_AMT_CREDIT = MAX_AMT_CREDIT - MIN_AMT_CREDIT;
+
+        var MIN_AMT_INITPAY = parseFloat("@prod.LoanInitialPaymentFixedMin.GetValueOrDefault()") / 10;
+        var MAX_AMT_INITPAY = parseFloat("@prod.LoanInitialPaymentFixedMax.GetValueOrDefault()") / 10;
+        var DIFF_AMT_INITPAY = MAX_AMT_INITPAY - MIN_AMT_INITPAY;
+
+        var MIN_AMT_BALPAY = parseFloat("@prod.LoanBalloonPaymentFixedMin.GetValueOrDefault()") / 10;
+        var MAX_AMT_BALPAY = parseFloat("@prod.LoanBalloonPaymentFixedMax.GetValueOrDefault()") / 10;
+        var DIFF_AMT_BALPAY = MAX_AMT_BALPAY - MIN_AMT_BALPAY;
+
+        var AMT_VAL_CREDIT = 1000;
+        var AMT_VAL_INITPAY = 10;
+        var AMT_VAL_BALPAY = 10;
+
+        var PRODID;
+
+        function UpdateValueAmt(x) {
+            valueAmtCredit = (Math.floor((x * DIFF_AMT_CREDIT) + MIN_AMT_CREDIT) * AMT_VAL_CREDIT);
+            if (valueAmtCredit == 0) {
+                valueAmtCredit = MIN_AMT_CREDIT == 0 ? AMT_VAL_CREDIT : MIN_AMT_CREDIT;
+            }
+        }
+
+        function UpdateValueColat(x) {
+            valueColatCredit = (Math.floor((x * DIFF_AMT_CREDIT) + MIN_AMT_CREDIT) * AMT_VAL_CREDIT);
+            if (valueColatCredit == 0) {
+                valueColatCredit = MIN_AMT_CREDIT == 0 ? AMT_VAL_CREDIT : MIN_AMT_CREDIT;
+            }
+        }
+
+        function UpdateValueTime(x) {
+            valueYearsCredit = Math.floor(x * DIFF_YEARS_CREDIT) + MIN_YEARS_CREDIT;
+            if (valueYearsCredit == 0)
+                valueYearsCredit = MIN_YEARS_CREDIT;
+        }
+
+        function UpdateValueGrace(x) {
+            valueGraceCredit = Math.floor((x * DIFF_GRACE_CREDIT) + MIN_GRACE_CREDIT);
+        }
+
+        function UpdateValueInit(x) {
+            valueInitCredit = (Math.floor((x * DIFF_AMT_INITPAY) + MIN_AMT_INITPAY) * AMT_VAL_INITPAY);
+        }
+
+        function UpdateValueBal(x) {
+            valueBalCredit = (Math.floor((x * DIFF_AMT_INITPAY) + MIN_AMT_BALPAY) * AMT_VAL_BALPAY);
+        }
+
+        var fixedValue = true;
+
+        $(document).ready(function () {
+
+            PRODID = getURLParameter('IDProduct');
+            dragAmtCredit = new Dragdealer('dragAmtCredit', {
+                steps: DIFF_AMT_CREDIT,
+                slide: false,
+                snap: true,
+                speed: 1,
+                animationCallback: function (x, y) {
+                    if (!fixedValue)
+                        UpdateValueAmt(x);
+                    $("#dragAmtTextCredit").val(valueAmtCredit);
+                },
+                dragStartCallback: function (x, y) {
+                    fixedValue = false;
+                },
+                callback: function (x, y) {
+                    if (!fixedValue)
+                        UpdateValueAmt(x);
+                    if (dragAmtReady)
+                        CalculateCredit();
+                    dragAmtReady = true;
+                }
+            });
+
+            if ($("#dragColatCredit").length) {
+                dragColatCredit = new Dragdealer('dragColatCredit', {
+                    steps: DIFF_AMT_CREDIT,
+                    slide: false,
+                    snap: true,
+                    speed: 1,
+                    animationCallback: function (x, y) {
+                        if (!fixedValue) {
+                            UpdateValueColat(x);
+                        } $("#dragColatTextCredit").val(valueColatCredit);
+                    },
+                    dragStartCallback: function (x, y) {
+                        fixedValue = false;
+                    },
+                    callback: function (x, y) {
+                        if (!fixedValue) {
+                            UpdateValueColat(x);
+                        }
+                        if (valueColatCredit < valueAmtCredit) {
+                            UpdateValueAmt(x);
+                        }
+                        if (dragColatReady)
+                            CalculateCredit();
+                        dragColatReady = true;
+                    }
+                });
+            }
+            else {
+                valueColatCredit = 0;
+            }
+
+            dragTimeCredit = new Dragdealer('dragTimeCredit', {
+                steps: DIFF_YEARS_CREDIT + 1,
+                slide: false,
+                snap: true,
+                speed: 1,
+                animationCallback: function (x, y) {
+                        UpdateValueTime(x);
+                    $("#dragTimeTextCredit").val(valueYearsCredit);
+                },
+                dragStartCallback: function (x, y) {
+                    fixedValue = false;
+                },
+                callback: function (x, y) {
+                        UpdateValueTime(x);
+                    if (dragTimeReady)
+                        CalculateCredit();
+                    dragTimeReady = true;
+                }
+            });
+
+            if ($("#dragGraceCredit").length) {
+                dragGraceCredit = new Dragdealer('dragGraceCredit', {
+                    steps: DIFF_GRACE_CREDIT + 1,
+                    slide: false,
+                    snap: true,
+                    speed: 1,
+                    animationCallback: function (x, y) {
+                        UpdateValueGrace(x);
+                        $("#dragGraceTextCredit").val(valueGraceCredit);
+                    },
+                    dragStartCallback: function (x, y) {
+                        fixedValue = false;
+                    },
+                    callback: function (x, y) {
+                        UpdateValueGrace(x);
+                        if (dragGraceReady)
+                            CalculateCredit();
+                        dragGraceReady = true;
+                    }
+                });
+            }
+            else {
+                valueGraceCredit = 0;
+            }
+
+            if ($("#dragInitCredit").length) {
+                dragInitCredit = new Dragdealer('dragInitCredit', {
+                    steps: DIFF_AMT_INITPAY,
+                    slide: false,
+                    snap: true,
+                    speed: 1,
+                    animationCallback: function (x, y) {
+                        UpdateValueInit(x);
+                        $("#dragInitTextCredit").val(valueInitCredit);
+                    },
+                    dragStartCallback: function (x, y) {
+                        fixedValue = false;
+                    },
+                    callback: function (x, y) {
+                        UpdateValueInit(x);
+                        if (dragInitReady)
+                            CalculateCredit();
+                        dragInitReady = true;
+                    }
+                });
+            }
+            else {
+                valueInitCredit = 0;
+            }
+
+            if ($("#dragBalCredit").length) {
+                dragBalCredit = new Dragdealer('dragBalCredit', {
+                    steps: DIFF_AMT_BALPAY,
+                    slide: false,
+                    snap: true,
+                    speed: 1,
+                    animationCallback: function (x, y) {
+                        UpdateValueBal(x);
+                        $("#dragBalTextCredit").val(valueBalCredit);
+                    },
+                    dragStartCallback: function (x, y) {
+                        fixedValue = false;
+                    },
+                    callback: function (x, y) {
+                        UpdateValueBal(x);
+                        if (dragBalReady)
+                            CalculateCredit();
+                        dragBalReady = true;
+                    }
+                });
+            }
+            else {
+                valueBalCredit = 0;
+            }
+
+            $("#dragAmtTextCredit").focus(function () {
+                SetFocus($("#dragAmtTextCredit"));
+            });
+
+            $("#dragColatTextCredit").focus(function () {
+                SetFocus($("#dragColatTextCredit"));
+            });
+
+            $("#dragTimeTextCredit").focus(function () {
+                SetFocus($("#dragTimeTextCredit"));
+            });
+
+            $("#dragGraceTextCredit").focus(function () {
+                SetFocus($("#dragGraceTextCredit"));
+            });
+
+            $("#dragInitTextCredit").focus(function () {
+                SetFocus($("#dragInitTextCredit"));
+            });
+
+            $("#dragBalTextCredit").focus(function () {
+                SetFocus($("#dragBalTextCredit"));
+            });
+
+            SetKeypress($("#dragAmtTextCredit"));
+            SetKeypress($("#dragColatTextCredit"));
+            SetKeypress($("#dragTimeTextCredit"));
+            SetKeypress($("#dragGraceTextCredit"));
+            SetKeypress($("#dragInitTextCredit"));
+            SetKeypress($("#dragBalTextCredit"));
+
+            $("#dragAmtTextCredit").blur(function () {
+                fixedValue = true;
+                valueAmtCredit = Math.floor($(this).val());
+                dragAmtCredit.setValue((valueAmtCredit - MIN_AMT_CREDIT * AMT_VAL_CREDIT) / (DIFF_AMT_CREDIT * AMT_VAL_CREDIT), 1);
+            });
+
+            $("#dragColatTextCredit").blur(function () {
+                fixedValue = true;
+                valueColatCredit = Math.floor($(this).val());
+                dragColatCredit.setValue((valueColatCredit - MIN_AMT_CREDIT * AMT_VAL_CREDIT) / (DIFF_AMT_CREDIT * AMT_VAL_CREDIT), 1);
+            });
+
+            $("#dragTimeTextCredit").blur(function () {
+                fixedValue = true;
+                valueTimeCredit = Math.floor($(this).val());
+                dragTimeCredit.setValue((valueTimeCredit - MIN_YEARS_CREDIT) / (DIFF_YEARS_CREDIT), 1);
+            });
+
+            $("#dragGraceTextCredit").blur(function () {
+                fixedValue = true;
+                valueGraceCredit = Math.floor($(this).val());
+                dragGraceCredit.setValue((valueGraceCredit - MIN_GRACE_CREDIT) / DIFF_GRACE_CREDIT, 1);
+            });
+
+            $("#dragInitTextCredit").blur(function () {
+                fixedValue = true;
+                valueInitCredit = Math.floor($(this).val());
+                dragInitCredit.setValue((valueInitCredit - MIN_AMT_INITPAY * AMT_VAL_INITPAY) / (DIFF_AMT_INITPAY * AMT_VAL_INITPAY), 1);
+            });
+
+            $("#dragBalTextCredit").blur(function () {
+                fixedValue = true;
+                valueBalCredit = Math.floor($(this).val());
+                dragBalCredit.setValue((valueBalCredit - MIN_AMT_BALPAY * AMT_VAL_BALPAY) / (DIFF_AMT_BALPAY * AMT_VAL_BALPAY), 1);
+            });
+
+            var queryDict = {}
+            location.search.substr(1).split("&").forEach(function (item) {
+                queryDict[item.split("=")[0]] = item.split("=")[1]
+            })
+
+            if (queryDict["amount"] != undefined && $.isNumeric(queryDict["amount"])) {
+                $("#dragAmtTextCredit").val(queryDict["amount"]).blur();
+            }
+            else {
+                fixedValue = false;
+                $("#dragAmtTextCredit").val("25000").blur();
+            }
+
+            if (queryDict["time"] != undefined && $.isNumeric(queryDict["time"])) {
+                $("#dragTimeTextCredit").val(queryDict["time"]).blur();
+            }
+            else {
+                $("#dragTimeTextCredit").val("5").blur();
+            }
+
+            if ($("#dragColatCredit").length) {
+                if (queryDict["colat"] != undefined && $.isNumeric(queryDict["colat"])) {
+                    if (parseInt(queryDict["colat"]) >= parseInt(queryDict["amount"])) {
+                        $("#dragColatTextCredit").val(queryDict["colat"]).blur();
+                    }
+                    else {
+                        $("#dragColatTextCredit").val(queryDict["amount"]).blur();
+                    }
+                }
+                else if (queryDict["amount"] != undefined && $.isNumeric(queryDict["amount"])) {
+                    $("#dragColatTextCredit").val(queryDict["amount"]).blur();
+                } else {
+                    $("#dragColatTextCredit").val("25000").blur();
+                }
+            }
+            else {
+                fixedValue = false;
+                $("#dragColatTextCredit").val(queryDict["amount"]).blur();
+            }
+
+            if ($("#dragInitCredit").length) {
+                if (queryDict["init"] != undefined && $.isNumeric(queryDict["init"]))
+                    $("#dragInitTextCredit").val(queryDict["init"]).blur();
+                else
+                    dragInitCredit.setValue(0, 1);
+            }
+
+            if ($("#dragBalCredit").length) {
+                if (queryDict["bal"] != undefined && $.isNumeric(queryDict["bal"]))
+                    $("#dragBalTextCredit").val(queryDict["bal"]).blur();
+                else
+                    dragBalCredit.setValue(0, 1);
+            }
+
+            if ($("#dragGraceCredit").length) {
+                if (queryDict["grace"] != undefined && $.isNumeric(queryDict["grace"]))
+                    $("#dragGraceTextCredit").val(queryDict["grace"]).blur();
+                else
+                    dragGraceCredit.setValue(0, 1);
+            }
+
+            $("#collapse .pull-left").click(function() {
+                if (tabIndex >= 0) {
+                    if (tabChanging) {
+                        return;
+                    }
+                    tabChanging = true;
+                    setTimeout(function () { tabChanging = false; },300)
+                    tabIndex--;
+                    $("#collapse .pull-right").removeClass("hide");
+                    if (tabIndex == 0) {
+                        $(this).addClass("hide");
+                    }
+                    ChangeTab();
+                }
+            });
+
+            $("#collapse .pull-right").click(function() {
+                if (tabIndex < tabMaxIndex) {
+                    if (tabChanging) {
+                        return;
+                    }
+                    tabChanging = true;
+                    setTimeout(function () { tabChanging = false; }, 300)
+                    tabIndex++;
+                    $("#collapse .pull-left").removeClass("hide");
+                    if (tabIndex == tabMaxIndex - 1) {
+                        $(this).addClass("hide");
+                    }
+                    ChangeTab();
+                }
+            });
+
+            if (tabMaxIndex > 1) {
+                $("#collapse .pull-right").removeClass("hide");
+            }
+        });
+
+        function ChangeTab()
+        {
+            console.log($("a[href=#planTab" + tabIndex + "]"));
+            $("a[href=#planTab" + tabIndex + "]").tab('show');
+        }
+
+        function SetFocus(targetText) {
+            var text = targetText.val().split(' ')[0];
+            targetText.val(text);
+            targetText.select();
+        }
+
+        function SetKeypress(targetText) {
+            targetText.on('keypress', function (evt) {
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
+            });
+        }
+
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null
+        }
+
+        function CalculateCredit() {
+
+            var querystring =
+                "?IDProduct=" + PRODID +
+                "&currency=" + encodeURIComponent(currencyCredit) +
+                "&amount=" + encodeURIComponent(valueAmtCredit) +
+                "&colat=" + encodeURIComponent(valueColatCredit) +
+                "&time=" + encodeURIComponent(valueYearsCredit) +
+                "&init=" + encodeURIComponent(valueInitCredit) +
+                "&bal=" + encodeURIComponent(valueBalCredit) +
+                "&grace=" + encodeURIComponent(valueGraceCredit);
+            // var loc = decodeHtml("@Umbraco.GetDictionaryValue("LocationCredit")");
+        window.location = location.protocol + '//' + window.location.hostname + window.location.pathname + querystring;
+    }
+
+    </script>
+}
+@if (creditSim)
+{ 
+    <script>
+        $('html, body').animate({ scrollTop: $("#creditSim").offset().top }, 500);
+    </script>
+}

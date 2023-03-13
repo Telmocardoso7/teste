@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Ebankit.EbankitCustom" CodeBehind="EbankitCustom.svc.cs" %>

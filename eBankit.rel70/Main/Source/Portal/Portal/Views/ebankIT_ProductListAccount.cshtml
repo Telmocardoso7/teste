@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+    var products = CurrentPage.Children;
+    var productsHigh = CurrentPage.Children.Where("ebankIT_highlightinproductlist=true");
+
+    var highlights = CurrentPage.Children("ebankIT_Product");
+
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @{Html.RenderPartial("Highlight", Model.Content, new ViewDataDictionary { { "SegmentPage", true } });}
+
+    </div>
+</div>
+
+<div class="productList">
+    <div class="container">
+ 
+        <div class="row">
+            <div class="productsHomeTitle">@CurrentPage.GetPropertyValue("ebankIT_byline")</div>
+        </div>
+
+        @foreach (var prod in products)
+        {
+            <div class="row product">
+                <div class="col-xs-12 col-sm-4 col-4-override">
+                    @if (prod.ebankIT_rollupImage != null && !(prod.ebankIT_rollupImage is Umbraco.Core.Dynamics.DynamicNull))
+                    {
+                        var m =  prod.ebankIT_rollupImage ;
+                        <img src="@m.Url" class="lazy hidden-xs image img-responsive">
+                    }
+                    @if (prod.ebankIT_productImage != null && !(prod.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+                    {
+                        var m =  prod.ebankIT_productImage ;
+                        <img src="@m.Url" class="lazy visible-xs image img-responsive">
+                    }
+                </div>
+                <div class="col-xs-12 col-sm-8 col-8-override">
+                    <div class="descriptionBox">
+                        <div class="productsHomeTitle ">@prod.Name</div>
+                        <div class="description">@prod.GetPropertyValue("ebankIT_byLine")</div>
+                        
+
+                        <div class="row">
+                    
+                            <div class="col-xs-12">
+                                <div class="more pull-right">
+                                    <a href="@prod.Url">
+                                        @Umbraco.GetDictionaryValue("KnowMore")
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

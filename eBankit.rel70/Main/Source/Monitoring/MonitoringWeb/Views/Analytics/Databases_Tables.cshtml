@@ -1,0 +1,135 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model DatabaseTablesRequestsViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+	<!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(@Model.BreadCrumbs)
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Database Analytics<small></small></h1>
+	<!-- end page-header -->
+    <!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="panel col-md-12 transparent">
+			<!-- begin panel -->
+			<div class="panel-inverse newStyle">
+
+				<div class="panel-heading">
+					<h4 class="panel-title">@Model.Database Size Variation</h4>
+				</div>
+                @Interval.RenderIntervalMenu(Model.Intervals, Url.Action("Databases_Tables","Analytics", new { Database = @Model.Database  }),@Model.IntervalSelected)
+                <div class="panel-body">
+					<div id="graph" class="height-sm stacked-chart"></div>
+                    <div id="graphLegend" class="stacked-legend text-center"></div>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+	<!-- end row -->
+
+    <!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="panel col-md-12 transparent">
+			<!-- begin panel -->
+			<div class="panel-inverse newStyle">
+				<div class="panel-heading">
+					<h4 class="panel-title">@Model.Database Tables Statistics</h4>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>TableName</th>
+                                <th>SchemaName</th>
+                                <th>RowCounts</th>
+                                <th>TotalSpace (Kb)</th>
+                                <th>UsedSpace (Kb)</th>
+                                <th>UnusedSpace (Kb)</th>
+                                <th>Date</th>
+                                <th></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>
+	<!-- end row -->
+</div>
+<!-- end #content -->
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<link href="~/Content/morris.css" rel="stylesheet" />
+<script src="~/bundles/requestsScripts"></script>
+<script src="~/Scripts/raphael-min.js"></script>
+<script src="~/Scripts/morris.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        ToggleSideBarMenu($('#Analytics'), $('#DatabaseAnalytics'));
+
+        //TODO: DEFINE OUTPUT PARAMETERS
+        var dataUrl = '@Html.Raw(Url.Action("GetDatabaseTablesSizes", "Analytics", new { Database = Model.Database }))';
+        var columns = [
+            { "mDataProp": "TableName", "orderable": true },
+            { "mDataProp": "SchemaName", "orderable": true },
+            { "mDataProp": "RowCounts", "orderable": true },
+            { "mDataProp": "TotalSpace", "orderable": true },
+            { "mDataProp": "UsedSpace", "orderable": true },
+            { "mDataProp": "UnusedSpace", "orderable": true },
+            {
+                "mDataProp": "Date",
+                "orderable": false,
+                "mRender": function (data, type, full) {
+                    return "<span style='white-space: nowrap;'>" + moment(data).format('YYYY-MM-DD') + "<\span>";
+                }
+            },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "bVisible": '@ViewBag.Permissions.Analytics_Databases_Tables_Details'.toLowerCase() == 'true',
+                "mRender": function (data, type, full) {
+                    return "<div class='alignCenter' onclick='redirectToDatabaseTablesDetail(\"" + data.Database + "\",\"" + data.TableName + "\")'>" +
+                                "<div class='btn btn-inverse detailsButton'>" +
+                                    "<i class='fa fa-search-plus'  style='font-size:13px'></i>" +
+                                "</div>" +
+                            "</div>";
+                }
+            }
+        ];
+        var table = InitializeDataTable('results-table', dataUrl, columns, [[0, "ASC"]], true);
+
+        App.init();
+        var dataurl = '@Html.Raw(Url.Action("GetDatabaseAnalyticsByInterval","Analytics", new {Database = Model.Database, BeginDate = Model.BeginDate, EndDate = Model.EndDate, Interval = Model.Interval }))';
+
+        InitializeStackedBarGraph('graph', dataurl);
+        // CHART RESIZE
+        $(window).resize(function () {
+            window.wgraph.redraw();
+        });
+    });
+
+
+    var redirectToDatabaseTablesDetail = function (database, datatable) {
+        waitLoading();
+        window.location.href = '@Url.Action("Databases_Tables_Details","Analytics")' + '?Database=' + database + '&Datatable=' + datatable + "&Interval=7";
+    }
+
+    var redirectToHome = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Index","Home")';
+        }
+</script>

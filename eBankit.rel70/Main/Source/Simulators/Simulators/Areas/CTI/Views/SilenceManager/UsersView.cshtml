@@ -1,0 +1,186 @@
+﻿@model ResumeViewModel
+<br />
+<br />
+<hr />
+<div>
+    <div class="formCti">
+        <h3>Autenticate a new Operator</h3>
+        <div  style="margin-top:10px; display: flex;">
+
+            <div style="width:250px;">Operator:</div>
+            <div style="width:200px;">
+                <input type="text" name="username" id="operatorUsername"  style="height: 33px;vertical-align: bottom;"/>
+            </div>
+            <div style="width:200px;">
+                <button id="AutenticateOperatorButton" onclick="AutenticateOperator();" class="s-b-action-btn">Autenticate Operator</button>
+            </div>
+        </div>
+        <br />
+    </div>
+    @if (Model.Users.Any())
+    {
+        <div class="users">
+            <h3>List Operators</h3>
+            @foreach (var user in Model.Users)
+            {
+                <div class="@(Model.SelectUser != null && Model.SelectUser.Username == user.Username ? "userSelect" : "userUnSelect")" style="margin-bottom:10px; display: flex;">
+
+                    <div style="width:250px;"> @string.Format("{0} ({1})", user.Username, user.Interactions.Count())</div>
+                    <div style="width:200px;">
+                        @if (Model.SelectUser == null || !user.Username.Equals(Model.SelectUser.Username))
+                        {
+                            <button id="SelectOperatorButton" onclick="SelectUser('@user.Username');"  class="s-b-action-btn" >Select</button>
+                        }
+                    </div>
+                    <div>
+                        @if (!user.Interactions.Any())
+                        {
+                            <button id="LogoutOperatorButton" class="s-b-action-btn" style="color: crimson;border: 1px solid crimson;" onclick="LogoutOperator('@user.Username', false);">Logout</button>
+                            <button id="LogoutOperatorButton" class="s-b-action-btn" style="color: crimson;border: 1px solid crimson;" onclick="LogoutOperator('@user.Username', true);">Force Logout</button>
+                        }
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <br />
+        <hr />
+        <div class="calls formCti" style="width:100%">
+            @if (Model.SelectUser != null)
+            {
+                <h3>Selected Operator: @Model.SelectUser.Username</h3>
+                <span>Extension: @Model.SelectUser.Extension</span>
+                <br />
+                <h4>Interactions in Progress for this operator</h4>
+
+                <br />
+                if (Model.SelectUser.Interactions.Any())
+                {
+        <table style="        width: 100%;
+        line-height: normal;
+        border: 1px solid #0173A7;
+        margin-top: 10px;
+">
+            <tr style="color:white; background-color: #0173A7;">
+                <th>Identifier</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Attended</th>
+                <th>Authenticate</th>
+                <th></th>
+                <th style="text-align: center;">Options</th>
+            </tr>
+            @foreach (var call in Model.SelectUser.Interactions)
+            {
+                <tr style="border: 1px solid #0173A7">
+                    <td style="margin-left:2px;">
+                        @call.Identifier
+                    </td>
+                    <td>
+                        @call.InteractionType.ToString()
+                    </td>
+                    <td>
+                        @call.StartedCall.ToLongTimeString()
+                    </td>
+                    <td>
+                        @call.Attended
+                    </td>
+                    <td>
+                        @call.Authenticate
+                    </td>
+                    <td>
+                        @call.DestinationNumber
+                    </td>
+                    <td style="text-align: right; margin-right:2px;">
+                        @if (!call.Attended && call.InteractionType == InteractionManagementType.Call)
+                        {
+
+                            <button class="s-b-action-btn" id="addExtra" onclick="addExtra(this);">Add new extra Parameters</button>
+                            @using (Html.BeginForm("StartCall", "SilenceManager"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" value="@Model.SelectUser.Username" name="username" />
+                                <input type="hidden" value="@call.Identifier" name="interactionid" />
+
+                                <div id="extras">
+                                </div>
+
+                                <br />
+                                <label>Route to redirect (optional)</label>
+                                @Html.TextBoxFor(model => model.Route)
+                                <br />
+
+                                <label>ProcessId Marketing Campaign(optional)</label>
+                                @Html.TextBoxFor(model => model.ProcessId)
+                                <br />
+                                <input class="LinkButton s-b-action-btn" type="submit" value="Start Call" />
+                            }
+                        }
+                        @if (call.Attended && call.InteractionType == InteractionManagementType.Call && Model.HasMoreThanUser)
+                        {
+                            <button class="s-b-action-btn" id="TransferCallButton" onclick="TransferCall('@Model.SelectUser.Username', '@call.Identifier')" style="margin-right:2px;">Transfer Call</button>
+                            }
+                        @if (call.Attended && call.InteractionType == InteractionManagementType.Call)
+                        {
+                            <button id="TransferCallToIvrButton" class="s-b-action-btn" onclick="TransferCallToIvr('@Model.SelectUser.Username', '@call.Identifier')">Transfer Back To IVR</button>
+   
+                        }
+                        @if (call.InteractionType == InteractionManagementType.Call)
+                        {
+                            @using ( Html.BeginForm("EndCall", "SilenceManager", FormMethod.Post, new { id = "form_user_call" } ) )
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" value="@Model.SelectUser.Username" name="username" />
+                                <input type="hidden" value="@call.Identifier" name="interactionid" />
+                                <input type="hidden" value="N" name="forceEndCall" />
+
+                                <div id="extras">
+                                </div>
+
+                                <br />
+                                <label>Close session automatically in Contact Center?</label>
+                                @Html.CheckBoxFor(model => model.AutomaticClose, new { @class = "s-b-action-btn", style = "height: 20px!important;min-width: 20px !important;" })
+                                <br />
+                                <br />
+                                <label>Reason for end call (optional)</label>
+                                @Html.TextBoxFor(model => model.Reason)
+                                <br />
+
+                                <input class="LinkButton s-b-action-btn" type="submit" value="End Call" style="color: crimson;border: 1px solid crimson;" />
+
+                                @if (call.Attended)
+                                {
+                                    <button onclick="ForceEndCall(event)" class="LinkButton s-b-action-btn" style="color: crimson;border: 1px solid crimson;">Force End Call</button>
+                                }
+                            }
+
+                        }
+                        @if (call.InteractionType == InteractionManagementType.Email)
+                        {
+                            <button id="CloseEmailButton s-b-action-btn" onclick="CloseEmail('@call.Identifier');" >Close @call.InteractionType</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+                }
+                else
+                {
+                    @Html.Raw("No interactions for this Operator")
+                }
+
+            }
+            else
+            {
+                @Html.Raw("No Operator selected")
+            }
+        </div>
+        <hr />
+        <div style="clear: both;"></div>
+    }
+    else
+    {
+        @Html.Raw("No Operators added")
+    }
+</div>

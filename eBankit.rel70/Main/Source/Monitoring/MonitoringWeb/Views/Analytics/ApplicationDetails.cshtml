@@ -1,0 +1,371 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ApplicationDetailsViewModel
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<link href="~/Content/morris.css" rel="stylesheet" />
+<link href="~/Content/jquery-jvectormap.css" rel="stylesheet" />
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(@Model.BreadCrumbs)
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"><span>@Model.DetailsOf</span> Details</h1>
+    <!-- end page-header -->
+    <form id="ApplicationDetails">
+        <input type="hidden" id="TimeSelectorValue" name="TimeSelectorValue" />
+        <input type="hidden" name="Title" value="@Model.DetailsOf" />
+        <input type="hidden" name="Type" value="@Model.Type" />
+        <input type="hidden" name="Application" value="@Model.SearchFilters.Application" />
+        <input type="hidden" name="Icon" value="@Model.WidgetData.Icon" />
+        @if (Model.WidgetData.Probe != null)
+        {
+            <input type="hidden" name="ProbeName" value="@Model.WidgetData.Probe.Name" />
+        }
+        else
+        {
+            <input type="hidden" name="ProbeName" value="" />
+        }
+
+        <!-- Interval Selector -->
+        @Interval.RenderRadioIntervalMenu("ApplicationDetails", "TimeSelectorValue")
+        <!-- End Interval Selector -->
+        @*        <div id="TimeSelector" class="col-md-8 col-md-offset-2 time-selector" style="margin-bottom: 20px; padding: 0px;"></div>*@
+
+    </form>
+    @{ var myHtmlString = new HtmlString(ProbeSelector.PreRenderTests(Model.WidgetData.Probe, ProbeSelector.TestSize.Large));}
+
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-4">
+            @DashboardWidgets.RenderDetailsWidget(Model.WidgetData, false)
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-inverse" style="background-color: #2d353c !important;">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        Probe Tests
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    @myHtmlString
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+            <div class="panel-inverse">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        Users Origin
+                    </h4>
+                </div>
+                <div id="visitors-map" class="bg-black" style="height: 330px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="menuTab" class="bs-example" style="margin-bottom: 20px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#sectionAStats">Top @(Model.Type == ApplicationType.Mobile ? "Mobile" : "Web Pages")</a></li>
+            <li><a data-toggle="tab" href="#sectionBStats">Top Web Methods</a></li>
+            <li><a data-toggle="tab" href="#sectionCStats">Top Transactions</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="sectionAStats" class="tab-pane fade in active table-responsive">
+                <table id="results-webpages" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Request Path</th>
+                            <th>Count</th>
+                            <th>
+                                Avg<br />
+                                Execution(s)
+                            </th>
+                            <th>
+                                Avg<br />
+                                Request(bytes)
+                            </th>
+                            <th>
+                                Avg<br />
+                                Response(bytes)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="sectionBStats" class="tab-pane fade table-responsive">
+                <table id="results-webmethods" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Count</th>
+                            <th>
+                                Avg<br />
+                                Execution(s)
+                            </th>
+                            <th>
+                                Avg<br />
+                                Request(bytes)
+                            </th>
+                            <th>
+                                Avg<br />
+                                Response(bytes)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="sectionCStats" class="tab-pane fade table-responsive">
+                <table id="results-transactions" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Count</th>
+                            <th>Avg Execution(s)</th>
+                            <th>Success</th>
+                            <th>Failed</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.IsLiveTransactionEnabled)
+    {
+        @Html.HiddenFor(x => x.SearchFilters.Application);
+        Html.RenderPartial("_LiveTransaction");
+    }
+
+</div>
+<!-- end #content -->
+<script src="~/bundles/requestsScripts"></script>
+<script src="~/Scripts/raphael-min.js"></script>
+<script src="~/Scripts/morris.js"></script>
+<script src="~/Scripts/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/Scripts/jVectorMaps/world-ISO-A2/jquery-jvectormap-world-mill-en-US.min.js"></script>
+<script src="~/Scripts/data.js"></script>
+<script>
+    $(document).ready(function () {
+        handleVisitorsVectorMap('@Html.Raw(Url.Action("GetTodayUsersByCountryCode", "Home", new { Application = Model.SearchFilters.Application, TimeInterval = Model.SearchFilters.Interval }))', 'visitors-map');
+        SelectTimeInterval('@Model.SearchFilters.Interval');
+
+        var type = '@Model.Type';
+        if ('@Model.Type' == '@ApplicationType.WebPage') {
+
+            var dataUrlWP = '@Html.Raw(Url.Action("GetWebPagesTopByApplication", "Analytics", new { Application = Model.SearchFilters.Application, Interval = Model.SearchFilters.Interval }))';
+            var columnsWP = [
+                { "mDataProp": "RequestPath", "orderable": false },
+                { "mDataProp": "NRequests", "orderable": true },
+                { "mDataProp": "AvgExecutionTime", "orderable": false },
+                { "mDataProp": "AvgRequestSize", "orderable": false },
+                { "mDataProp": "AvgResponseSize", "orderable": false },
+                {
+                    "mDataProp": null,
+                    "orderable": false,
+                    "sClass": "detail",
+                    "mRender": function (data, type, full) {
+                        return "<div><div onclick='redirectToWebPagesAnalytics(\"" + data.RequestPath + "\")' class='btn btn-inverse'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                    }
+                }
+            ];
+            var tableRP = InitializeDataTable('results-webpages', dataUrlWP, columnsWP, [[1, "DESC"]]);
+        }
+        else if ('@Model.Type' == '@ApplicationType.Mobile') {
+            var dataUrlWP = '@Html.Raw(Url.Action("GetJsonTopByApplication", "Analytics", new { Application = Model.SearchFilters.Application, Interval = Model.SearchFilters.Interval }))';
+            var columnsWP = [
+                { "mDataProp": "RequestPath", "orderable": false },
+                { "mDataProp": "NRequests", "orderable": true },
+                { "mDataProp": "AvgExecutionTime", "orderable": false },
+                { "mDataProp": "AvgRequestSize", "orderable": false },
+                { "mDataProp": "AvgResponseSize", "orderable": false },
+                {
+                    "mDataProp": null,
+                    "orderable": false,
+                    "sClass": "detail",
+                    "mRender": function (data, type, full) {
+                        return "<div><div onclick='redirectToJsonAnalytics(\"" + data.RequestPath + "\")' class='btn btn-inverse'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                    }
+                }
+            ];
+            var tableRP = InitializeDataTable('results-webpages', dataUrlWP, columnsWP, [[1, "DESC"]]);
+        }
+
+        var dataUrlWebMethods = '@Html.Raw(Url.Action("GetWebMethodsTopByApplication", "Analytics", new { Application = Model.SearchFilters.Application, Interval = Model.SearchFilters.Interval }))';
+        var columnsWebMethods = [
+            { "mDataProp": "Action", "orderable": false },
+            { "mDataProp": "NRequests", "orderable": true },
+            { "mDataProp": "AvgExecutionTime", "orderable": false },
+            { "mDataProp": "AvgRequestSize", "orderable": false },
+            { "mDataProp": "AvgResponseSize", "orderable": false },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "mRender": function (data, type, full) {
+                    return "<div><div onclick='redirectToWebMethodsAnalytics(\"" + encodeURI(data.Action) + "\")' class='btn btn-inverse'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                }
+            }
+        ];
+        var tableWebMethods = InitializeDataTable('results-webmethods', dataUrlWebMethods, columnsWebMethods, [[1, "DESC"]]);
+
+        var dataUrlTransactions = '@Html.Raw(Url.Action("GetTransactionsTopByApplication", "Analytics", new { Application = Model.SearchFilters.Application, Interval = Model.SearchFilters.Interval }))';
+        var columnsTransactions = [
+            { "mDataProp": "TransactionId", "orderable": false },
+            { "mDataProp": "NRequests", "orderable": true },
+            { "mDataProp": "AvgExecutionTime", "orderable": false },
+            { "mDataProp": "Success", "orderable": false },
+            { "mDataProp": "Failed", "orderable": false },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "mRender": function (data, type, full) {
+                    return "<div><div onclick='redirectToTransactionsAnalytics(\"" + data.TransactionId + "\")' class='btn btn-inverse'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                }
+            }
+        ];
+        var tableTransactions = InitializeDataTable('results-transactions', dataUrlTransactions, columnsTransactions, [[1, "DESC"]]);
+
+        App.init();
+
+        InitCarousel();
+        // AutoRefresh
+        setInterval(function () { GetDataToRefreshProbes('@Url.Action("GetDataToRefreshProbes", "Probes")'); }, 15000);
+
+    });
+
+    var redirectToWebPagesAnalytics = function (reqpath) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebPages", "Analytics")' + '?RequestPath=' + reqpath + '&Application=' + '@Model.SearchFilters.Application';
+    }
+
+    var redirectToJsonAnalytics = function (reqpath) {
+        waitLoading();
+        window.location.href = '@Url.Action("Mobile", "Analytics")' + '?RequestPath=' + reqpath + '&Application=' + '@Model.SearchFilters.Application';
+    }
+
+    var redirectToWebMethodsAnalytics = function (action) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebMethods", "Analytics")' + '?ActionURL=' + action + '&Application=' + '@Model.SearchFilters.Application';
+    }
+
+    var redirectToTransactionsAnalytics = function (transactionId) {
+        waitLoading();
+        window.location.href = '@Url.Action("Transactions", "Analytics")' + '?Transaction=' + transactionId + '&Application=' + '@Model.SearchFilters.Application';
+    }
+
+</script>
+
+@*Live Transactions Styles*@
+<style type="text/css" media="screen">
+    #container {
+        margin: 0 auto;
+        width: 600px;
+        text-align: right;
+        position: relative;
+    }
+
+
+    .date {
+        font-size: .9em;
+    }
+
+    .time {
+        font-size: 1.7em;
+    }
+
+    #caption {
+        font-size: 1.7em;
+        width: 2000px;
+        float: right;
+    }
+
+
+    .start {
+        position: absolute;
+        bottom: 86px;
+        left: -180px;
+        width: 130px;
+    }
+
+    .current {
+        position: absolute;
+        bottom: 86px;
+        left: 625px;
+        width: 130px;
+        color: #eee;
+    }
+
+    .start {
+        color: #777;
+    }
+
+        .start p {
+            text-align: left;
+        }
+
+    .current p {
+        text-align: left;
+    }
+
+    #scale {
+        position: absolute;
+        left: 625px;
+        bottom: 40px;
+    }
+
+    .table-browsers {
+        width: 100% !important;
+        border-radius: 3px;
+        text-align: center;
+        background-color: #D9E0E7;
+    }
+
+        .table-browsers > thead {
+            color: black;
+        }
+
+            .table-browsers > thead > tr > th:nth-child(1) {
+                width: 60% !important;
+                padding: 5px;
+                min-width: 50px;
+                text-align: center;
+            }
+
+        .table-browsers > tbody > tr > td:nth-child(1) {
+            width: 60% !important;
+            padding: 5px;
+        }
+
+        .table-browsers > thead > tr > th:nth-child(2) {
+            width: 20% !important;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .table-browsers > tbody > tr > td:nth-child(2) {
+            width: 20% !important;
+            padding: 5px;
+        }
+
+        .table-browsers > thead > tr > th:nth-child(n+3) {
+            width: 20% !important;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .table-browsers > tbody > tr > td:nth-child(n+3) {
+            width: 20% !important;
+            padding: 5px;
+            font-weight: 300;
+        }
+</style>

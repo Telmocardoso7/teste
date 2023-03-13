@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>action_expand_hover</title>
+    <defs>
+        <path d="M15,1.017 C7.292,1.017 1.017,7.291 1.017,15 C1.017,22.708 7.292,28.983 15,28.983 C22.709,28.983 28.983,22.708 28.983,15 C28.983,7.291 22.709,1.017 15,1.017 M15,30 C6.729,30 0,23.272 0,15 C0,6.729 6.729,1.77635684e-15 15,1.77635684e-15 C23.272,1.77635684e-15 30,6.729 30,15 C30,23.272 23.272,30 15,30" id="path-1"></path>
+        <path d="M5.99975,5.25075 L0.91675,0.15675 C0.70775,-0.05225 0.36575,-0.05225 0.15675,0.15675 C-0.05225,0.36675 -0.05225,0.70975 0.15675,0.91875 L4.48275,5.25175 L0.15975,9.58375 C-0.04925,9.79475 -0.04925,10.13275 0.15975,10.34275 C0.26475,10.44775 0.39975,10.49975 0.53675,10.49975 C0.67275,10.49975 0.81175,10.44775 0.91675,10.34275 L5.99975,5.25075 Z" id="path-3"></path>
+    </defs>
+    <g id="Internet-banking" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="IB-iconset-OTHER-2" transform="translate(-736.000000, -90.000000)">
+            <g id="action_expand_hover" transform="translate(736.000000, 90.000000)">
+                <circle id="Oval" fill-opacity="0.16" fill="#0173A7" cx="15" cy="15" r="15"></circle>
+                <g id="action_expand" transform="translate(15.000000, 15.000000) rotate(90.000000) translate(-15.000000, -15.000000) ">
+                    <g id="Background-colour">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#0173A7" xlink:href="#path-1"></use>
+                        <g id="Group" mask="url(#mask-2)" fill="#0173A7">
+                            <g id="Background-colour">
+                                <rect id="Rectangle-14" x="0" y="0" width="30" height="30"></rect>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="icon-colour" transform="translate(13.000000, 10.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#0173A7" xlink:href="#path-3"></use>
+                        <g id="Group" mask="url(#mask-4)">
+                            <g transform="translate(-13.000000, -10.000000)" id="Background-colour">
+                                <rect id="Rectangle-14" fill="#0173A7" x="0" y="0" width="30" height="30"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

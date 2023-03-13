@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="cfcfdb1b-9aae-477a-8e1c-937611352f83" Title="eBankit.Middleware.GPMServices" Url="html/af8a0f36-59fb-621b-a4b7-04d30eed2868.htm">
+    <HelpTOCNode Id="5d362cdd-c52e-44bd-957b-248e7ec98d22" Title="Authentication Class" Url="html/51592e94-793e-140c-4a89-bf63ae48d324.htm">
+      <HelpTOCNode Title="Authentication Constructor " Url="html/bf7347fd-80ea-a358-8c07-f4765bae3c24.htm" />
+      <HelpTOCNode Title="Authentication Properties" Url="html/e0d06431-19ab-5ca0-a998-aa0d30f7108e.htm" />
+      <HelpTOCNode Id="ad659192-d462-4bdd-9a4b-329c218ebf99" Title="Authentication Methods" Url="html/54e029bc-fc0b-b904-8ab2-231b837678c9.htm">
+        <HelpTOCNode Title="ActivateAccount Method " Url="html/659a6f9b-2988-8328-9ca3-72f28889b584.htm" />
+        <HelpTOCNode Title="ActivateUserAccessCode Method " Url="html/7429ca7d-993f-f062-3b8e-07742329cb63.htm" />
+        <HelpTOCNode Title="AssociateAccessCodeExternalReference Method " Url="html/daa2c630-b5d7-7285-69a9-1e19bd2efa32.htm" />
+        <HelpTOCNode Title="AssociateMatrixCardReference Method " Url="html/c57c8869-a4a9-41c2-c2af-cc5e85e08e6d.htm" />
+        <HelpTOCNode Title="AssociateNewMatrixCard Method " Url="html/c74439f9-72b8-c0d7-68d5-01a1142c90fd.htm" />
+        <HelpTOCNode Title="ChangeAccessCode Method " Url="html/228488df-ecd6-7f08-e963-fd6d5f9244fd.htm" />
+        <HelpTOCNode Title="ChangeAccessCodeCallCenterAB7 Method " Url="html/c79a3dea-a983-afcb-bf68-2e19547199de.htm" />
+        <HelpTOCNode Title="ChangeAccessCodeStatus Method " Url="html/8785f3c2-e141-0925-7f52-d50cf0b91b5e.htm" />
+        <HelpTOCNode Title="ChangeAccessCodeType Method " Url="html/53c4747b-2fd2-30d4-ff90-790c5803c270.htm" />
+        <HelpTOCNode Title="ChangeAccessCodeValue Method " Url="html/aa6f3a5d-010a-631f-7c2b-98dea13f9368.htm" />
+        <HelpTOCNode Title="ChangeAliasValidation Method " Url="html/f777928b-9257-4d94-5afb-db70b5026137.htm" />
+        <HelpTOCNode Title="ChangeCertificates Method " Url="html/42a37826-a3a4-e043-81b9-950e3025f922.htm" />
+        <HelpTOCNode Title="ChangeError Method " Url="html/8ae0b912-a371-7f5d-b114-197ccbc88fb7.htm" />
+        <HelpTOCNode Title="ChangeUserAccess Method " Url="html/a1f5a6ce-3d91-6e5e-aa65-5d9c312fc54b.htm" />
+        <HelpTOCNode Title="CheckUserAccessCodesFailures Method " Url="html/08a73fea-a28a-b6b7-700b-4c33a65762cd.htm" />
+        <HelpTOCNode Id="815f42b8-cd2c-457e-8be6-d9289c3b5fcd" Title="Dispose Method " Url="html/fb1e9cd0-a41d-6ea8-2a89-12222f7b8560.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/23eb3dd3-dace-0723-36b6-babbe46fc598.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EncryptAccessCodeExternalReference Method " Url="html/c7550845-1037-73fe-fa44-3d82780ad827.htm" />
+        <HelpTOCNode Title="GenerateUserAuthentication Method " Url="html/fa811062-5ab7-2ae7-f57c-8cc2514fa1c7.htm" />
+        <HelpTOCNode Title="GetABUserPositions Method " Url="html/747ca920-0f23-62ba-cfef-dbbfa1bf8f5e.htm" />
+        <HelpTOCNode Title="GetAccessCode Method " Url="html/5ae041c2-a5e1-329b-62ad-25cc441d6e15.htm" />
+        <HelpTOCNode Title="GetAccessCodePositions Method " Url="html/56ca6733-15c4-0184-bfb7-6c0a8b75bae9.htm" />
+        <HelpTOCNode Title="GetAccessCodesBranchesAssigned Method " Url="html/b340014a-a39a-2605-1ae2-b3f914047c26.htm" />
+        <HelpTOCNode Title="GetAccessCodesByBranchDate Method " Url="html/52747e0f-2b78-c888-e17e-84487b9f4d85.htm" />
+        <HelpTOCNode Title="GetAccessCodeValue Method " Url="html/6dbf02ac-b275-d698-4489-d20bc149ee27.htm" />
+        <HelpTOCNode Title="GetAccessCodeWithStatus Method " Url="html/e5155009-1fed-c00c-70d7-2afd9b95147f.htm" />
+        <HelpTOCNode Title="GetAllAccessCodeStatus Method " Url="html/d2289df8-68ca-c656-b07f-fa0e3ab24365.htm" />
+        <HelpTOCNode Title="GetAllAccessCodeTypes Method " Url="html/cda2f82b-e4c7-d1d4-1071-b08ff42ea4d5.htm" />
+        <HelpTOCNode Title="GetAllCertificateAuthority Method " Url="html/b2d11965-80f3-c1f2-3858-86df64bc1268.htm" />
+        <HelpTOCNode Title="GetAllCertificateStatus Method " Url="html/7db422d1-520e-67fd-5a84-39b49d578e33.htm" />
+        <HelpTOCNode Title="GetAllCertificateType Method " Url="html/c0529f9a-0232-0426-0244-69bc982626e6.htm" />
+        <HelpTOCNode Title="GetAllTokenCardIssuers Method " Url="html/4621b2f1-2741-4e73-0192-96d168061522.htm" />
+        <HelpTOCNode Title="GetCertificates Method " Url="html/dad2ebce-5460-84c8-7b70-460bc9dafa34.htm" />
+        <HelpTOCNode Title="GetContractByExternalReference Method " Url="html/3b4383cd-52b6-538b-c4ee-758974dfcddd.htm" />
+        <HelpTOCNode Title="GetErrors Method " Url="html/b8f4c32b-3d0d-d2e8-0e8b-4eef73a2d6f8.htm" />
+        <HelpTOCNode Title="GetMatrixCardByCustomer Method " Url="html/97fca9c7-d245-9090-ad5a-98ed88dd8ad2.htm" />
+        <HelpTOCNode Title="GetMatrixCardByReference Method " Url="html/fcf69467-c4bf-25a5-2349-0fccf09e6c7d.htm" />
+        <HelpTOCNode Title="GetRandomContract Method " Url="html/344dc7ea-15d6-f12d-18d0-30df5a4a9217.htm" />
+        <HelpTOCNode Title="GetUserActivationKey Method " Url="html/148c0f0d-7d53-bee1-ef1a-777c1225970e.htm" />
+        <HelpTOCNode Title="GetUserPositions Method " Url="html/342fa450-f320-4170-35b2-c067fa155b35.htm" />
+        <HelpTOCNode Title="GetUsersPositions Method " Url="html/5ad0f275-ab3c-763a-f97d-e10d25a6c90b.htm" />
+        <HelpTOCNode Title="InactivateUserAccessCodeAllExceptThis Method " Url="html/d6dc5091-5c9b-c04d-5e0d-e5c9d9c0737a.htm" />
+        <HelpTOCNode Title="InitializeAccessCodeFailures Method " Url="html/de0c501e-9fdc-e21c-fee9-96bbba4dbf06.htm" />
+        <HelpTOCNode Title="InitializeAccessCodeFailuresById Method " Url="html/64286153-f71c-ecf9-f883-2edd822a56bf.htm" />
+        <HelpTOCNode Title="NewAccessCodeByCustomer Method " Url="html/7ebb8ede-b51a-39ac-23bf-6203d296b57d.htm" />
+        <HelpTOCNode Title="NewCertificate Method " Url="html/33358f21-245b-7367-1808-c41a18f32bdb.htm" />
+        <HelpTOCNode Title="NewUserAccessCodeInactive Method " Url="html/ce703dc8-33fe-9e18-fcac-6d80b611071c.htm" />
+        <HelpTOCNode Title="NewUserAccessCodeInactiveExtUser Method " Url="html/6ae1e57f-de9d-d0c2-2a22-7b75555a3868.htm" />
+        <HelpTOCNode Title="RecoverAccessCodeFromEnvelope Method " Url="html/42456c9c-c67b-50a4-a8dd-7a82741b685a.htm" />
+        <HelpTOCNode Title="ResetUserAccessCodesFailures Method " Url="html/df063b17-8833-73b6-0cf8-9e67bd5295d4.htm" />
+        <HelpTOCNode Title="SetAccessCodeByCustomer Method " Url="html/b1c48ab0-2703-72e4-9ca1-aa5b36cc68c5.htm" />
+        <HelpTOCNode Title="SetAliasAccessCodeActivation Method " Url="html/c4560db0-d695-b898-f93f-9ac752daef21.htm" />
+        <HelpTOCNode Title="SetAliasAuthentication Method " Url="html/2ebdf0dc-0be5-c261-1545-6226af935cc3.htm" />
+        <HelpTOCNode Title="SetMultiChannelAuthentication Method " Url="html/2bbfc96c-8161-4052-4851-299568a773e9.htm" />
+        <HelpTOCNode Title="SetUserAuthentication Method " Url="html/31d90e3b-f9de-68a7-dcc5-5e6c71fb6ec1.htm" />
+        <HelpTOCNode Title="SetUserSessionToken Method " Url="html/f9bf5997-e671-c6fe-f472-94bdd2dbf08a.htm" />
+        <HelpTOCNode Title="SignContract Method " Url="html/c7ccbd7d-51a4-cd10-e2ee-f6941425d510.htm" />
+        <HelpTOCNode Title="ValidateAccessCode Method " Url="html/5c1137af-e0ac-c338-8904-472389fcd59b.htm" />
+        <HelpTOCNode Title="ValidateAccessCodeByCustomer Method " Url="html/74700e13-746b-b368-86c6-7ece2fee1cfb.htm" />
+        <HelpTOCNode Title="ValidateCertificate Method " Url="html/08cc886e-1781-5adc-786d-a9f32abfb11a.htm" />
+        <HelpTOCNode Title="ValidateMultipleUserAccessCode Method " Url="html/4889c2de-ee2a-7fe1-8398-bb17c5e9ff8b.htm" />
+        <HelpTOCNode Title="ValidateStrongAccessCode Method " Url="html/7dd19cd1-e9c6-6f30-13a8-c2647bf1c9ad.htm" />
+        <HelpTOCNode Title="ValidateUserAccessCode Method " Url="html/55101010-7f61-f958-d398-f64a28b3923f.htm" />
+        <HelpTOCNode Title="ValidateUserAccessCodeWithoutSat Method " Url="html/a60566a2-b52e-c8ca-584e-cf2ba3c662b5.htm" />
+        <HelpTOCNode Title="ValidateUserCardToken Method " Url="html/26cb5fdb-c733-207c-ce2a-fdccce66b367.htm" />
+        <HelpTOCNode Title="ValidateUserSmsToken Method " Url="html/b29b61c9-f36b-c7ba-a35c-410f35ef15f9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Authentication Events" Url="html/a2acf9af-4f0c-9771-d165-34f042192ff1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c838ad49-e44a-4e4f-8953-e454eda3c474" Title="BaseWebService Class" Url="html/5aac9d13-66a5-dd22-74ce-1c46c00366d6.htm">
+      <HelpTOCNode Title="BaseWebService Constructor " Url="html/c5003efa-5708-59f4-d0d5-855f29764ebc.htm" />
+      <HelpTOCNode Title="BaseWebService Properties" Url="html/f71d76fe-8af2-39ff-6c09-9aaee3db4ce7.htm" />
+      <HelpTOCNode Id="ef80835f-8fb8-4b66-9fa3-1eb3a1fcc65e" Title="BaseWebService Methods" Url="html/57f6cbfa-4856-60c4-8597-c98e66ba46af.htm">
+        <HelpTOCNode Title="HandleException Method " Url="html/a7723955-e7dc-b96f-560f-453ce353e2ba.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="BaseWebService Events" Url="html/1e366915-9f62-4ccf-49e1-e3de6d01b971.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="fb1cf753-cc01-417a-8657-7e35a14a875d" Title="GpmManagement Class" Url="html/e80a812c-97ed-b49e-8e35-916730723928.htm">
+      <HelpTOCNode Title="GpmManagement Constructor " Url="html/60319b4e-ed23-f7ad-d2d1-f639049b5317.htm" />
+      <HelpTOCNode Title="GpmManagement Properties" Url="html/45890010-b7fb-8dd6-afe9-2e59634bc047.htm" />
+      <HelpTOCNode Id="72b36f49-bed1-4dfe-ab0f-3cbb65318c82" Title="GpmManagement Methods" Url="html/ac788150-e7cb-b002-7064-afa18edd4f0f.htm">
+        <HelpTOCNode Title="PingSite Method " Url="html/a4bfa33a-47aa-a23d-e9db-7050ee5ea84b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="GpmManagement Events" Url="html/40d4b0fe-f259-0541-7dde-7b9b7718a61c.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd3b8eff-85fb-44ff-a74c-cf4510bed2e2" Title="InputContextType Class" Url="html/ea4b3929-702f-f45a-4599-ac797fc1386d.htm">
+      <HelpTOCNode Title="InputContextType Constructor " Url="html/2a321d0e-bfb2-5e0c-bca6-5e80b7a1b187.htm" />
+      <HelpTOCNode Id="98f1305b-69a5-4161-8259-9d68bc6bbee6" Title="InputContextType Properties" Url="html/05243fba-72b8-498e-6bdf-bf602b21e706.htm">
+        <HelpTOCNode Title="ChannelId Property " Url="html/2564b90a-3203-dc1a-d502-bee0969d2ddc.htm" />
+        <HelpTOCNode Title="CorporationId Property " Url="html/39c4fc05-a3e8-d354-8f7e-ea45394e4b56.htm" />
+        <HelpTOCNode Title="ExternalSessionId Property " Url="html/6bba7316-65b8-183f-6598-38fdfb507ce4.htm" />
+        <HelpTOCNode Title="Language Property " Url="html/c8fea06e-2f6e-249e-7d0a-a8366190bc72.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="InputContextType Methods" Url="html/b4d6bfdb-1a70-075b-f874-782a89e81123.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a69edeb6-c08f-4ee0-bcdf-e94addacaa4e" Title="PredefinedCode Class" Url="html/31dbc46d-df15-dbf0-e84a-1b9cc025aa4c.htm">
+      <HelpTOCNode Title="PredefinedCode Constructor " Url="html/3def47a7-af4f-16e7-ff72-bf991534ca1d.htm" />
+      <HelpTOCNode Title="PredefinedCode Properties" Url="html/b36211e0-3f67-ac8e-e683-c31b11ec96dd.htm" />
+      <HelpTOCNode Id="c9ee0494-ceb5-4ee3-a0d0-94e91085b9cb" Title="PredefinedCode Methods" Url="html/12d043c5-573b-72e8-bd45-f88ebf638289.htm">
+        <HelpTOCNode Title="ChangePredefinedCodeStatus Method " Url="html/54489441-57d1-0d2b-0bba-06e9c1badfc1.htm" />
+        <HelpTOCNode Title="ChangePredefinedCodeStock Method " Url="html/b4823b74-256b-8fce-11a3-b3a592705066.htm" />
+        <HelpTOCNode Title="CreateBatchEnvelope Method " Url="html/d78168c1-e0fb-b03a-6942-050918c75f2f.htm" />
+        <HelpTOCNode Title="CreateMatrixBatch Method " Url="html/8f344c06-4744-30f9-c42c-5dfafea8c31a.htm" />
+        <HelpTOCNode Title="CreatePredefinedCodeBatchFile Method " Url="html/57696291-2ed4-d7c7-930a-f4cbe0461292.htm" />
+        <HelpTOCNode Title="CreatePredefinedCodes Method " Url="html/c9224d39-6406-d5aa-1e68-ea424fadc171.htm" />
+        <HelpTOCNode Title="CreatePredefinedMatrixBatchFile Method " Url="html/000a9855-1c12-4ab0-8f38-459345e6c13d.htm" />
+        <HelpTOCNode Title="CreatePredefinedSecurityCodeBatchFile Method " Url="html/2d16c136-55a2-4bb9-8644-b6b38cc02ba9.htm" />
+        <HelpTOCNode Title="CreateSecurityBatchEnvelope Method " Url="html/6cfce83b-0fc8-7eb1-3800-9627199ae817.htm" />
+        <HelpTOCNode Id="0a7c108e-cdda-4056-a417-e1aad558d87f" Title="Dispose Method " Url="html/73656105-e462-892c-e3b3-2e8422f532c0.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/0576ed82-e593-e6a3-f6d3-352ae45a294a.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllBatchStatus Method " Url="html/a96016c0-7880-45f6-43cb-9bf5c0e29ddc.htm" />
+        <HelpTOCNode Title="GetAllPredefinedCodeBranches Method " Url="html/baeab736-b5c5-6b69-aa38-021cf9b5d9f7.htm" />
+        <HelpTOCNode Title="GetAllPredefinedCodeStatus Method " Url="html/1d88a358-58dd-55db-3671-830cb955a25b.htm" />
+        <HelpTOCNode Title="GetBatchFileContent Method " Url="html/9d872b5e-e837-2764-ac15-4eae34830adf.htm" />
+        <HelpTOCNode Title="GetMatrixCardBatchDetail Method " Url="html/2e54a5d0-4d23-f084-db98-c63ba0946193.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeAccessCode Method " Url="html/485a428b-d474-dc97-2a03-5daf08027dec.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeBatchDetail Method " Url="html/7a2ecb32-0f5c-3a51-c865-3fe8326923df.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeBatches Method " Url="html/ad1100f8-6fcb-7141-181b-8cccfdd0ce5f.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeBatchFiles Method " Url="html/3f9b609d-0f11-54ae-b858-67090f4d19c1.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeBranch Method " Url="html/9df6b3e7-4f3e-c004-84c8-107ca38249e2.htm" />
+        <HelpTOCNode Title="GetPredefinedCodes Method " Url="html/6b0b0183-179e-be5f-f288-ae94efc9c4c0.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeStock Method " Url="html/57bed5a7-aea1-7b86-4a90-9add82079b0e.htm" />
+        <HelpTOCNode Title="GetPredefinedCodeStockByType Method " Url="html/a87f77e7-4d79-a28a-38cb-b32890494e1c.htm" />
+        <HelpTOCNode Title="GetPredefinedMatrixBatchFiles Method " Url="html/0733904e-ba6c-3cea-9ccb-66954ae64a1f.htm" />
+        <HelpTOCNode Title="GetPredefinedMatrixCardBatches Method " Url="html/ac2aa9e4-ae6b-d655-e616-9c08e3c912a6.htm" />
+        <HelpTOCNode Title="ReceiveBatchEnvelope Method " Url="html/204b7120-0092-e14e-e871-955117845dbc.htm" />
+        <HelpTOCNode Title="ReceiveBatchMatrixCard Method " Url="html/805a2fcd-f879-11ae-2ffb-216052aa2523.htm" />
+        <HelpTOCNode Title="ReceiveSecurityBatchEnvelope Method " Url="html/0bac43dd-46fd-7650-9eba-965d19dff1b1.htm" />
+        <HelpTOCNode Title="SendBatchEnvelope Method " Url="html/c35a1747-7f18-2d4b-4d0c-c7cb050e2a77.htm" />
+        <HelpTOCNode Title="SendMatrixBatch Method " Url="html/482c3586-8c5e-a3b4-db48-c5a6a639e0fa.htm" />
+        <HelpTOCNode Title="SendSecurityBatchEnvelope Method " Url="html/7158d020-922c-4f84-410e-8918588c0c77.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PredefinedCode Events" Url="html/5d8dd58d-2f36-e9a7-7b61-7fd355fbae97.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5caf1a28-3a95-42cf-85f2-da1821274d99" Title="User Class" Url="html/35830ed4-9800-4c2a-0259-9b6eb715fe1d.htm">
+      <HelpTOCNode Title="User Constructor " Url="html/0f184e4f-efe5-b8af-06b1-9d014aa24769.htm" />
+      <HelpTOCNode Title="User Properties" Url="html/f5cbb840-a660-3554-e42d-b723513f0aa3.htm" />
+      <HelpTOCNode Id="319337b7-df36-49e4-b56f-6d41f468c161" Title="User Methods" Url="html/053acc07-dcdd-f75e-ade8-398cec82563c.htm">
+        <HelpTOCNode Title="ActivateUserAD Method " Url="html/2fe2fbf5-a2bf-9539-053c-d9334f220940.htm" />
+        <HelpTOCNode Title="AddUserSMSTokenFailure Method " Url="html/8600e03a-185c-6c43-df54-77c177fa3771.htm" />
+        <HelpTOCNode Title="ChangeBaseUserCardToken Method " Url="html/1740e7fc-e580-e12b-60fc-0f5b267e8210.htm" />
+        <HelpTOCNode Title="ChangeExternalUser Method " Url="html/bd4059ef-1d5b-fa47-575e-c370abd305a5.htm" />
+        <HelpTOCNode Title="ChangeUser Method " Url="html/4673d673-3be3-314b-fd2e-122f6d7da8bb.htm" />
+        <HelpTOCNode Title="ChangeUserCardToken Method " Url="html/34be3d7e-69b6-38c6-af7f-ff9bc4a98651.htm" />
+        <HelpTOCNode Title="ChangeUserTokenOverview Method " Url="html/8302866d-4523-3049-bc84-bd75b039524f.htm" />
+        <HelpTOCNode Title="CreateNewUserAD Method " Url="html/6cd9a580-0bc2-b761-9c40-f7e141aa45fb.htm" />
+        <HelpTOCNode Title="CreateNewUserSMSToken Method " Url="html/10bbfb27-7d91-3bf6-f024-fa000a78f991.htm" />
+        <HelpTOCNode Title="DeleteUserCardToken Method " Url="html/b9ee133b-7580-e421-8156-1a72f03bcdfe.htm" />
+        <HelpTOCNode Title="DeleteUserTokenOverview Method " Url="html/21bf4f5d-2611-8361-5203-d38cec6d2a30.htm" />
+        <HelpTOCNode Id="9f1143b6-73ba-47e0-93fa-bc6f58ed2179" Title="Dispose Method " Url="html/e40e433d-b667-4c95-3be7-a80160b83d35.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/8a566c02-b726-41e8-20b9-38717247a88a.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllUserCardTokenStatus Method " Url="html/5e7717c7-b605-d406-f5af-b7453e94da6a.htm" />
+        <HelpTOCNode Title="GetAllUserStatus Method " Url="html/d6ae2074-da26-4a6d-be80-c1d38a5d4e07.htm" />
+        <HelpTOCNode Title="GetAllUserTypes Method " Url="html/e68b7514-de3a-ed28-d536-1b1959a45b0e.htm" />
+        <HelpTOCNode Title="GetExternalUser Method " Url="html/c6840437-6f4d-946e-ff90-ba811ab768e4.htm" />
+        <HelpTOCNode Title="GetSMSSecurityCode Method " Url="html/82517642-26b6-aa49-c6dc-531ebed66217.htm" />
+        <HelpTOCNode Title="GetTraceEnable Method " Url="html/eccfdafc-fbe5-14eb-1331-f7542d0a5d78.htm" />
+        <HelpTOCNode Title="GetUser Method " Url="html/6c3d2136-6229-4e71-3acd-c99b28e7121d.htm" />
+        <HelpTOCNode Title="GetUserAccessCodeList Method " Url="html/3262f7f3-72b3-1b57-cd6f-a160665d99d1.htm" />
+        <HelpTOCNode Title="GetUserAliasAccessCode Method " Url="html/b08a55f9-9309-728d-81e9-424f525dae5d.htm" />
+        <HelpTOCNode Title="GetUserAliasAccessCodes Method " Url="html/42fad07b-4b2c-704f-f028-242441014641.htm" />
+        <HelpTOCNode Title="GetUserAliasCertificate Method " Url="html/34ce10f7-7ae2-2979-6b46-b6695ff8ff4a.htm" />
+        <HelpTOCNode Title="GetUserAliasCertificates Method " Url="html/9ce4416e-1f96-55fd-c51c-e1799f8683dc.htm" />
+        <HelpTOCNode Title="GetUserByUserAccessCodeId Method " Url="html/7c6453a0-f72b-328b-9d57-65e433602b35.htm" />
+        <HelpTOCNode Title="GetUserCardToken Method " Url="html/0a5142d3-1274-75fb-da7e-9a1f6e655462.htm" />
+        <HelpTOCNode Title="GetUserCardTokens Method " Url="html/e30b529f-71fa-3792-cb48-574b542d29d4.htm" />
+        <HelpTOCNode Title="GetUserCertificateCounters Method " Url="html/9886646e-46ca-4837-45fe-eba4dd473a8e.htm" />
+        <HelpTOCNode Title="GetUserImpersonationCounters Method " Url="html/653969f1-c364-d8a0-280c-f2470d1c2058.htm" />
+        <HelpTOCNode Title="GetUsers Method " Url="html/6ee3dc54-dbf6-f0bb-9167-9a7db5711238.htm" />
+        <HelpTOCNode Title="GetUserSMSToken Method " Url="html/3dc6b504-5984-cdd6-41ba-a2ef4e82e0d8.htm" />
+        <HelpTOCNode Title="GetUserTokenOverview Method " Url="html/2c9087fe-5236-0a62-7b42-d3d70a29ad3e.htm" />
+        <HelpTOCNode Title="GetUserTypeId Method " Url="html/9bb63d24-3725-313a-1b11-0e9c44858e12.htm" />
+        <HelpTOCNode Title="NewUserInactive Method " Url="html/0ad86662-8f24-df65-ddd2-ab82e6ebd883.htm" />
+        <HelpTOCNode Title="ResetAllUserSMSTokenFailures Method " Url="html/d798faf1-3262-d269-9124-6536f9e33070.htm" />
+        <HelpTOCNode Title="ResetUserCardTokenFailure Method " Url="html/526cdb58-7764-8d66-ab8c-7bf36e21845f.htm" />
+        <HelpTOCNode Title="ResetUserSMSTokenFailure Method " Url="html/b9145dd2-d710-efd7-694b-eba38c92185c.htm" />
+        <HelpTOCNode Title="SetTraceEnable Method " Url="html/7dd5af2f-4f1f-a24d-5acf-9ff7d3b2d874.htm" />
+        <HelpTOCNode Title="SetUserCertificateCounters Method " Url="html/51624529-0fc1-35d2-dad2-7243952248b5.htm" />
+        <HelpTOCNode Title="UpdateUserCertificate Method " Url="html/79b78f59-2faf-4f8f-eaec-9426ee8d000f.htm" />
+        <HelpTOCNode Title="UserCanImpersonate Method " Url="html/724fd533-5600-b2fa-713f-3b04170d9a4f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="User Events" Url="html/1608396f-e6bf-d682-df1e-c7efe8142955.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="fe041a09-59e7-4813-8ddd-eef28c208f13" Title="eBankit.Middleware.MChannelServices" Url="html/5b5cea91-011a-92d6-5e28-be3088584c1c.htm">
+    <HelpTOCNode Id="d07e4528-6f66-45ed-8269-344d7fa478da" Title="AuthenticationService Class" Url="html/c3529a1c-41bb-71f4-6d74-5f481353b86d.htm">
+      <HelpTOCNode Title="AuthenticationService Constructor " Url="html/a68b0d67-6b99-8053-2970-055aeacf5d50.htm" />
+      <HelpTOCNode Title="AuthenticationService Properties" Url="html/6d7e24f0-4c7d-5784-79d9-aec1d44c6633.htm" />
+      <HelpTOCNode Id="85e1b1f1-97af-4bb5-abdb-b1b9efbfee8e" Title="AuthenticationService Methods" Url="html/6ea40138-9da2-9287-51af-5f41e9eca3bb.htm">
+        <HelpTOCNode Title="AssociateNewMatrixCard Method " Url="html/bfa4e6bd-1a63-0b0e-02cd-a2cf19b2c8c0.htm" />
+        <HelpTOCNode Title="AuthenticateAlias Method " Url="html/f38cac0d-8535-98c6-a739-c95abafdac47.htm" />
+        <HelpTOCNode Title="CancelAccessCode Method " Url="html/87bc5c48-e793-58b6-7fbf-b1bfa4a1e6d6.htm" />
+        <HelpTOCNode Title="ChangeContractPhone Method " Url="html/bf3ea085-347b-0173-a064-91b7f6c03bb4.htm" />
+        <HelpTOCNode Title="ChangePassword Method " Url="html/90ed4153-d21a-0374-aefb-892be25d4355.htm" />
+        <HelpTOCNode Title="ChangeUserAliasLimit Method " Url="html/432887d1-995f-9458-c51f-b7f7bc2490db.htm" />
+        <HelpTOCNode Title="CloseSession Method " Url="html/0cec9452-3b6d-e991-80d7-9924a5e909dd.htm" />
+        <HelpTOCNode Title="DisableAccessCode Method " Url="html/75c19c84-a1fa-8c2e-7d7e-1bca5b30ed66.htm" />
+        <HelpTOCNode Title="EvaluateTransaction Method " Url="html/58a2bbb9-c1ba-7406-ab5c-fa944bc7c1f4.htm" />
+        <HelpTOCNode Title="GetAliasAuthentication Method " Url="html/cb6ab150-bad6-dac9-f3da-0d2eb773be26.htm" />
+        <HelpTOCNode Title="GetAliasPositionsWithSession Method " Url="html/6ddd6aff-e11b-1f36-558c-72b21eae3ac8.htm" />
+        <HelpTOCNode Title="GetAllAssetImpactTypes Method " Url="html/264aa5b5-f574-c252-6127-f0bded954956.htm" />
+        <HelpTOCNode Title="GetAllChannels Method " Url="html/85385e9a-b209-7620-6306-e42b5ae47f1d.htm" />
+        <HelpTOCNode Title="GetAllDefaultCurrencies Method " Url="html/b97771ba-be23-7a0a-9375-35322ae66d8e.htm" />
+        <HelpTOCNode Title="GetAllTimePeriods Method " Url="html/1ef0bba9-acd1-1a61-d7b3-5257ff108a8e.htm" />
+        <HelpTOCNode Title="GetSubscriptionTransactionList Method " Url="html/394951e1-d820-05e4-7baf-1410206f7135.htm" />
+        <HelpTOCNode Title="GetUserAccessesByLocation Method " Url="html/8ce09a4e-6daa-df58-bbde-74735086dee8.htm" />
+        <HelpTOCNode Title="GetUserAliasAllDevices Method " Url="html/652dd322-aa3b-d6e8-843b-260dcedf03b8.htm" />
+        <HelpTOCNode Title="GetUserAliasAllLimits Method " Url="html/48842198-afcd-64b4-4058-3ec0f5e1af54.htm" />
+        <HelpTOCNode Title="GetUserContactInfo Method " Url="html/a0bc0e96-fafc-a191-9da4-e00ae2ae8ff8.htm" />
+        <HelpTOCNode Title="GetUserLoginAlternativeAlias Method " Url="html/98ef3ee6-570e-26cf-c5e7-27f36cb85f2e.htm" />
+        <HelpTOCNode Title="GetUserLoginMainAlias Method " Url="html/828b0808-9031-4d58-7ccf-edbb142733e9.htm" />
+        <HelpTOCNode Title="GetUserMatrixAccessCodes Method " Url="html/ab2ee0ae-b7c3-b9f1-9f3a-f871f7a48fcc.htm" />
+        <HelpTOCNode Title="ReenableAccessCode Method " Url="html/a4d0ec58-6d97-a21b-ded8-b7428edfbd4a.htm" />
+        <HelpTOCNode Title="RegistNewLoginAlias Method " Url="html/e2afd40e-e572-ce18-dd41-28c5c0695d39.htm" />
+        <HelpTOCNode Title="SendSMSMessage Method " Url="html/f06c2ccf-41e4-5005-983a-5885994752b1.htm" />
+        <HelpTOCNode Title="SendSMSToken Method " Url="html/3bb39803-682f-1951-a20c-e051e2631e30.htm" />
+        <HelpTOCNode Title="ValidateAccessCodePositions Method " Url="html/a10a2b77-0ea7-f4a6-3070-05bc7801ba3b.htm" />
+        <HelpTOCNode Title="ValidateRequestToken Method " Url="html/9d149301-a61e-cda0-957f-19fe68481e55.htm" />
+        <HelpTOCNode Title="ValidateSMSToken Method " Url="html/5964bb6c-8b04-1acc-b7ee-4a62518b6e8c.htm" />
+        <HelpTOCNode Title="ValidateToken Method " Url="html/5311ac05-7b5f-1be2-bf71-4fc0da4a366f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AuthenticationService Fields" Url="html/65e23735-d0ea-37c7-8c3f-6afa91f7f102.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="36a3fc80-3fbe-465a-8b61-8e8f820e53b6" Title="BaseMultiChannelService Class" Url="html/90d3e267-dac3-9197-33e8-52cfcdcf056a.htm">
+      <HelpTOCNode Title="BaseMultiChannelService Constructor " Url="html/ef3d6074-3fe0-aff1-f83f-9262066b745b.htm" />
+      <HelpTOCNode Id="210f8566-0a27-4f73-83b4-2eb3bbb830ce" Title="BaseMultiChannelService Properties" Url="html/5417f8a6-2a45-9bc0-2d97-ead2a988adfd.htm">
+        <HelpTOCNode Title="CurrentContext Property " Url="html/a5ff9ca6-0b94-6525-b126-4477f8842e6f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4a80de4a-3129-4e18-9585-78b38214f4cf" Title="BaseMultiChannelService Methods" Url="html/471548dd-3dd5-acb8-7cc5-bfab3ec20e24.htm">
+        <HelpTOCNode Title="CreateContext Method " Url="html/8ac0921a-9213-189e-c4ec-7e09ee92306c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="BaseMultiChannelService Fields" Url="html/b7bb9b30-2afd-aa5a-56ac-6694f1eb423f.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e8c72584-53a0-447e-b8a6-aa04b14106f4" Title="Global Class" Url="html/d8a06eac-75b6-03c0-7020-28640e3350ec.htm">
+      <HelpTOCNode Title="Global Constructor " Url="html/6ae992e6-2acf-c025-816e-3911bb0c903b.htm" />
+      <HelpTOCNode Title="Global Properties" Url="html/4a21df38-0c60-718f-897b-dbda56dd01cb.htm" />
+      <HelpTOCNode Title="Global Methods" Url="html/6c73b28c-0a34-be28-b063-5927017d56cf.htm" />
+      <HelpTOCNode Title="Global Events" Url="html/ecfcb058-b3a8-d188-c37c-68d945e0d32d.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9cc36a82-bfa7-48fb-8fd8-78ef864c0401" Title="IAuthenticationService Interface" Url="html/7ef450f0-8f4a-8efc-1de6-6de076c49683.htm">
+      <HelpTOCNode Id="33bf290e-c7fe-4ec5-8296-14eb86799f3c" Title="IAuthenticationService Methods" Url="html/a4640fde-f915-cb03-d54c-704ffa5c3b6b.htm">
+        <HelpTOCNode Title="AssociateNewMatrixCard Method " Url="html/977f6500-792a-dca0-ff68-ed55a6540378.htm" />
+        <HelpTOCNode Title="AuthenticateAlias Method " Url="html/788c6236-a1b3-15db-2c97-7cb139fe1fc0.htm" />
+        <HelpTOCNode Title="CancelAccessCode Method " Url="html/7ba44d26-eb12-dd1d-0fe2-84efecec6459.htm" />
+        <HelpTOCNode Title="ChangeContractPhone Method " Url="html/d2bd2259-e53f-0f2c-b6eb-7d224e6fd6c3.htm" />
+        <HelpTOCNode Title="ChangePassword Method " Url="html/0f18f426-8d1c-e96f-4092-25d69331f98a.htm" />
+        <HelpTOCNode Title="ChangeUserAliasLimit Method " Url="html/2934a809-8610-8199-e117-0b8ecc7b872d.htm" />
+        <HelpTOCNode Title="CloseSession Method " Url="html/c785fb32-4801-a318-e103-9d1a3876144b.htm" />
+        <HelpTOCNode Title="DisableAccessCode Method " Url="html/ea7fe7bb-4b75-c73d-0467-046baa780a37.htm" />
+        <HelpTOCNode Title="EvaluateTransaction Method " Url="html/5984cf2e-82c3-5e93-f74e-1d96de5f0be9.htm" />
+        <HelpTOCNode Title="GetAliasPositionsWithSession Method " Url="html/1a465606-96c7-52bf-2987-14cc9d6265ec.htm" />
+        <HelpTOCNode Title="GetAllAssetImpactTypes Method " Url="html/149d8d4a-9c77-1f90-b579-c3fc23ca60f3.htm" />
+        <HelpTOCNode Title="GetAllChannels Method " Url="html/e559a7bf-6095-3cd2-60ef-9d3b4cc7c170.htm" />
+        <HelpTOCNode Title="GetAllDefaultCurrencies Method " Url="html/f20ec1ec-be39-e54b-1296-dde450c54358.htm" />
+        <HelpTOCNode Title="GetAllTimePeriods Method " Url="html/7628fddf-b995-13fd-86af-69d6ae17ce5b.htm" />
+        <HelpTOCNode Title="GetSubscriptionTransactionList Method " Url="html/6d10c766-adaa-c8c5-ff23-934cf2f1107d.htm" />
+        <HelpTOCNode Title="GetUserAccessesByLocation Method " Url="html/c56ac3e7-4392-f451-ddff-807cb051c776.htm" />
+        <HelpTOCNode Title="GetUserAliasAllDevices Method " Url="html/799c4de6-92b6-59b5-1486-0fcd0544abbc.htm" />
+        <HelpTOCNode Title="GetUserAliasAllLimits Method " Url="html/8d7e72ea-6c0e-5b21-2b9e-4d2bef64511e.htm" />
+        <HelpTOCNode Title="GetUserContactInfo Method " Url="html/e495778e-b71a-3afd-a9d0-31c2b2e74e35.htm" />
+        <HelpTOCNode Title="GetUserLoginAlternativeAlias Method " Url="html/7eb89706-18f5-daf2-24c3-f10b45858fd1.htm" />
+        <HelpTOCNode Title="GetUserLoginMainAlias Method " Url="html/7a4b09b1-dd76-8039-70ce-d5682faf2f5a.htm" />
+        <HelpTOCNode Title="GetUserMatrixAccessCodes Method " Url="html/7dc53b39-12bb-d1ed-75c6-6b43fd664c74.htm" />
+        <HelpTOCNode Title="ReenableAccessCode Method " Url="html/5624d39e-96ef-250f-eb68-bc4f49439bf7.htm" />
+        <HelpTOCNode Title="RegistNewLoginAlias Method " Url="html/41e1148e-5ebe-3f0a-2563-1eec316b49ab.htm" />
+        <HelpTOCNode Title="SendSMSMessage Method " Url="html/0926c3fb-ed90-daae-98c0-1d18d91cefb7.htm" />
+        <HelpTOCNode Title="SendSMSToken Method " Url="html/9b1af6d3-d3b1-88f1-a3e0-8eafd937a256.htm" />
+        <HelpTOCNode Title="ValidateAccessCodePositions Method " Url="html/c4a20286-10cf-1f7c-d2de-ae71a715ff3d.htm" />
+        <HelpTOCNode Title="ValidateRequestToken Method " Url="html/80ee973a-2e1a-a9e3-e156-335920a9b97d.htm" />
+        <HelpTOCNode Title="ValidateSMSToken Method " Url="html/7262bf7d-ef50-8d35-4476-3bdca7f0166b.htm" />
+        <HelpTOCNode Title="ValidateToken Method " Url="html/9be82c2b-4540-bcb7-f763-fc6d10c4e378.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="300c4f69-bbe0-479e-ba31-9f2f5b1ed8d1" Title="IRegistrationService Interface" Url="html/c839ab05-322d-fa86-41d1-4682b794dbce.htm">
+      <HelpTOCNode Id="c8780415-f1db-4548-914a-410f1a7be882" Title="IRegistrationService Methods" Url="html/3f9170cf-de72-4ed6-f018-6ccb7f5acf4b.htm">
+        <HelpTOCNode Title="AddCommentToProcess Method " Url="html/7c132e4f-acf1-2056-a98e-68bbfd08dab0.htm" />
+        <HelpTOCNode Title="AddDocumentToProcess Method " Url="html/ea15a50a-8506-9519-cb0f-45432fde6246.htm" />
+        <HelpTOCNode Title="GetContract Method " Url="html/12ef7fce-584a-6b46-a124-e59ce6bac449.htm" />
+        <HelpTOCNode Title="GetProcessDocuments Method " Url="html/46a0a354-847b-334b-4cd7-38d1b01e1ff8.htm" />
+        <HelpTOCNode Title="GetRequiredDocument Method " Url="html/307320d1-8ad0-875e-7fc1-7f010180dcf9.htm" />
+        <HelpTOCNode Title="RegisterIndividualUser Method " Url="html/856cb7bd-bbad-d70b-88ef-5a1c4af851a6.htm" />
+        <HelpTOCNode Title="UpdatePushToken Method " Url="html/c4bcca00-3f51-4f1f-4d7d-2d0a2c656f87.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="858154aa-bf60-433a-9f04-96a8533d071f" Title="RegistrationService Class" Url="html/59bf8238-eedb-1eae-15d8-6963f253dd1e.htm">
+      <HelpTOCNode Title="RegistrationService Constructor " Url="html/3a037d38-81a6-1a0d-f466-d46389d4c794.htm" />
+      <HelpTOCNode Title="RegistrationService Properties" Url="html/980b4a2c-ea61-eb92-41ab-511fe732c133.htm" />
+      <HelpTOCNode Id="175fb670-2bfb-47b7-be13-b734d0560f5d" Title="RegistrationService Methods" Url="html/ff3e885d-5dfb-f4fe-0cfd-93e96e5adaa2.htm">
+        <HelpTOCNode Title="AddCommentToProcess Method " Url="html/451a2fb3-783e-7f3a-6917-136b6bf85e31.htm" />
+        <HelpTOCNode Title="AddDocumentToProcess Method " Url="html/f18305be-bda3-2ea6-0f35-f73f66cb78d7.htm" />
+        <HelpTOCNode Title="GetContract Method " Url="html/111ed537-7425-0c70-3ba9-3c6ced654da8.htm" />
+        <HelpTOCNode Title="GetProcessDocuments Method " Url="html/1df47056-1947-8971-73af-793448951865.htm" />
+        <HelpTOCNode Title="GetRequiredDocument Method " Url="html/0d774ec1-85cc-c992-a248-8981ba4fff2d.htm" />
+        <HelpTOCNode Title="RegisterIndividualUser Method " Url="html/555b5fb5-a93b-71ad-f424-2f22212d6504.htm" />
+        <HelpTOCNode Title="UpdatePushToken Method " Url="html/0ac05d64-bb27-9584-320e-d7a3e23163dd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="RegistrationService Fields" Url="html/7a2a3c1f-efee-91c0-e6ad-f601a15d9f64.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="57620eed-15bf-4384-ad08-782874fb7716" Title="eBankit.Middleware.SecurityCenter.WebServices" Url="html/99398edb-ba4c-9aa4-7558-3bf3af72b10c.htm">
+    <HelpTOCNode Id="0131bc8a-e988-4f92-9029-c13f991b7d04" Title="AliasAuthentication Class" Url="html/673a6fe6-39c5-f79f-4d28-737043dcd014.htm">
+      <HelpTOCNode Title="AliasAuthentication Constructor " Url="html/10e8f1d0-5ac2-507d-5395-729f765e95a6.htm" />
+      <HelpTOCNode Title="AliasAuthentication Properties" Url="html/a6b74a61-82d5-7bc4-aa84-d70b260ffa28.htm" />
+      <HelpTOCNode Id="100a0653-f69c-493d-a3d9-17abe88f8677" Title="AliasAuthentication Methods" Url="html/25f22ec9-1cb2-f615-5af0-7d3dedb6c8da.htm">
+        <HelpTOCNode Title="AgregateValidateAuthentication_v5 Method " Url="html/d28c09fc-1a81-b667-77c7-30423dc0fb94.htm" />
+        <HelpTOCNode Id="87657fe2-7b00-4c0f-92df-4f24062aeda0" Title="Dispose Method " Url="html/8328c67e-27a1-8e0c-c752-c037021d59de.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/82583624-a553-70ab-4347-9de00768200f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAliasPositions_v2 Method " Url="html/cd9e5207-f84e-b6db-c65b-d12ff6b71936.htm" />
+        <HelpTOCNode Title="GetAliasPositionsWithSession_v2 Method " Url="html/8acf85ab-861c-13f8-441f-ac874b4a6821.htm" />
+        <HelpTOCNode Title="GetAliasTypesByAlias Method " Url="html/8ee423b4-571b-14d5-1f3c-d06e5a4607d1.htm" />
+        <HelpTOCNode Title="SetAliasAuthentication Method " Url="html/a467cb0c-a73f-c32d-557a-896cb27ffda4.htm" />
+        <HelpTOCNode Title="ValidateAccessCode Method " Url="html/6c22fcd9-8089-9a62-3b27-3090be5cf519.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AliasAuthentication Events" Url="html/39c6b34f-740b-655a-a0da-d86bbea36a47.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="417426bd-9f88-4e16-976f-6075fbe616d7" Title="AliasAuthorization Class" Url="html/a9c7b683-8d7d-360a-5483-ba1dd7a9379e.htm">
+      <HelpTOCNode Title="AliasAuthorization Constructor " Url="html/7939460a-0852-5555-b208-3b79f3edc18c.htm" />
+      <HelpTOCNode Title="AliasAuthorization Properties" Url="html/4b121f7f-e3db-1b74-b69a-9d55cafcf442.htm" />
+      <HelpTOCNode Id="4f3e61c0-3170-498d-b32e-fcfb7f543443" Title="AliasAuthorization Methods" Url="html/a5c7f989-951f-b9d3-5aaa-deb09f51bb03.htm">
+        <HelpTOCNode Title="BeginTransaction Method " Url="html/35ae4d3e-389d-6d83-7a20-8c55f4023ac8.htm" />
+        <HelpTOCNode Title="BeginTransaction_v2 Method " Url="html/52e584bd-4b40-aeb6-b779-00b9814a6fc1.htm" />
+        <HelpTOCNode Title="BeginTransaction_v3 Method " Url="html/c05746af-e5c0-d791-be88-2e80992dcd11.htm" />
+        <HelpTOCNode Title="BeginTransaction_v4 Method " Url="html/0a3f3764-bb5b-66d8-e9f3-6b6f6a5a5be0.htm" />
+        <HelpTOCNode Title="BeginTransactionWithWorkflow Method " Url="html/4a10e56e-eed4-7577-2825-0d321f6a3a6c.htm" />
+        <HelpTOCNode Title="BeginTransactionWithWorkflow_v2 Method " Url="html/3cb30e5a-3c8d-336c-8c4a-a75336e7c8ad.htm" />
+        <HelpTOCNode Title="BeginTransactionWithWorkflow_v3 Method " Url="html/40cc2920-cb3c-3a7c-0db1-9e8d44078786.htm" />
+        <HelpTOCNode Title="BeginTransactionWithWorkflow_v4 Method " Url="html/aa2b6b7c-f5fe-b7bd-7158-6047a5041da6.htm" />
+        <HelpTOCNode Title="CommitTransaction Method " Url="html/0892e0d9-b071-e6c5-5553-8c601eee0c55.htm" />
+        <HelpTOCNode Title="DeleteAliasProfileCombinationLimitRules Method " Url="html/3662716b-62df-fb8c-1b84-75830b1e26e0.htm" />
+        <HelpTOCNode Title="DeleteAliasProfileCombinationLimitRulesByUserId Method " Url="html/f75196e5-41fe-9f1c-ac05-f9692d8c04ad.htm" />
+        <HelpTOCNode Title="DeleteHeuristicBlacklistNIB Method " Url="html/cd835703-38e1-fdf7-3d01-744842fd1c72.htm" />
+        <HelpTOCNode Id="5284f2d0-3cfd-401c-921b-040c713c7513" Title="Dispose Method " Url="html/ef8b345a-02f5-4a6f-460f-5a12ab609259.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/cd946480-3557-71e1-675b-859c576825fc.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EvaluateAliasProfile Method " Url="html/9858c122-219b-ccfd-4a81-bb02a9925e6e.htm" />
+        <HelpTOCNode Title="EvaluateTransaction Method " Url="html/17619a01-ecdd-633e-502a-744b508769cd.htm" />
+        <HelpTOCNode Title="EvaluateTransaction_v2 Method " Url="html/e80b8e1c-2c0c-ebf7-f0d4-dac0edfd8f94.htm" />
+        <HelpTOCNode Title="EvaluateTransaction_v3 Method " Url="html/504d5cf0-689c-97d7-3826-974ccfbf7c58.htm" />
+        <HelpTOCNode Title="EvaluateTransactionValue Method " Url="html/a4d62689-894a-d777-93e0-d7aa04cd8792.htm" />
+        <HelpTOCNode Title="EvaluateTransactionValue_v2 Method " Url="html/2dba71d7-0a20-fc91-c65f-b8ff3e9cc8ef.htm" />
+        <HelpTOCNode Title="EvaluateTransactionValue_v3 Method " Url="html/1273aaae-4c06-bf0d-2a70-22df82bcdf82.htm" />
+        <HelpTOCNode Title="GetAccessTransactionAccountProductList Method " Url="html/a4d3f5bb-8280-42ef-0ffa-c47ae49d1efb.htm" />
+        <HelpTOCNode Title="GetAccessTransactionAccountProductList_v2 Method " Url="html/ee8629c8-6791-c36d-2c1d-0508fb2fa8da.htm" />
+        <HelpTOCNode Title="GetAccountLimitsAndProfileOveridesList Method " Url="html/0556d942-4354-988a-ca5b-ed9284ce21df.htm" />
+        <HelpTOCNode Title="GetAccountProducts Method " Url="html/c64f72b0-1889-7af2-4607-f56a882675b9.htm" />
+        <HelpTOCNode Title="GetADRoleAccessInfo Method " Url="html/708a7c87-6538-8573-33ed-e0da822868ea.htm" />
+        <HelpTOCNode Title="GetADRoleAccessInfo_v2 Method " Url="html/a8d4a52a-33d0-4e3a-091c-6361d796ee02.htm" />
+        <HelpTOCNode Title="GetAliasProfileCombinationLimitRules Method " Url="html/d9959d92-e40a-3e7b-82bf-4cb613f4ceb1.htm" />
+        <HelpTOCNode Title="GetAllLimitTypes Method " Url="html/79154efa-2c35-b41f-0da1-467e6d71f58b.htm" />
+        <HelpTOCNode Title="GetAllTransactionGroupRelation Method " Url="html/d1e59c44-8592-08fd-5645-918e08183107.htm" />
+        <HelpTOCNode Title="GetOutAccountProducts Method " Url="html/9b049ef4-2762-c46d-0b91-9e3fc3af87f5.htm" />
+        <HelpTOCNode Title="GetProfileTransactionList Method " Url="html/bd652834-6c51-f22a-1a59-56aec6914f91.htm" />
+        <HelpTOCNode Title="GetRuleAccessInfo Method " Url="html/be97693d-1cc6-132b-f7df-a3cadca271a7.htm" />
+        <HelpTOCNode Title="GetSubRuleInfoByAlias Method " Url="html/f9b0ceda-bcc7-ca68-eb7f-06b6156cb41f.htm" />
+        <HelpTOCNode Title="GetTransactionViewForUser Method " Url="html/7b576c9e-94de-80fe-e916-c1b0419e75b2.htm" />
+        <HelpTOCNode Title="ListHeuristicBlacklistNIB Method " Url="html/877fca7d-d917-0002-7730-1524547b794b.htm" />
+        <HelpTOCNode Title="NewAliasDailyLimitDetail Method " Url="html/fd813899-173a-4394-3afe-555226f55307.htm" />
+        <HelpTOCNode Title="RollbackTransaction Method " Url="html/a8be6dce-31bc-9275-90a3-4c9457503102.htm" />
+        <HelpTOCNode Title="RollbackTransactionV2 Method " Url="html/549185bb-0574-0737-d5ca-9063ea2ef21e.htm" />
+        <HelpTOCNode Title="SetAccountLimitsAndProfileOveridesList Method " Url="html/5b7da2b8-52ca-3d5a-9fbb-9bad7ef82e8e.htm" />
+        <HelpTOCNode Title="SetAliasAccessTransactionList Method " Url="html/f85be289-e301-424d-6f46-2bea35db197b.htm" />
+        <HelpTOCNode Title="SetAliasAccountProductList Method " Url="html/5dc126f3-4680-3857-2a41-a596eef7f5bb.htm" />
+        <HelpTOCNode Title="SetAliasDailyLimitDetail Method " Url="html/6f26776e-e121-5bf9-36c1-0c931de6d5d7.htm" />
+        <HelpTOCNode Title="SetAliasProfileCombinationLimitRules Method " Url="html/27ebb667-d20b-67a5-973e-5d8f1782180e.htm" />
+        <HelpTOCNode Title="SetAliasProfileCombinationLimitRulesStateless Method " Url="html/21974ef9-5821-e34a-9f84-8f91486ee22d.htm" />
+        <HelpTOCNode Title="SetCompanyAliasAccessTransactionList Method " Url="html/1d9fc61d-bcd9-9921-15a8-ba67a973f0d7.htm" />
+        <HelpTOCNode Title="SetCompanyAliasAccessTransactionList_v2 Method " Url="html/1fc5c641-139e-d673-1821-8a4582d61b89.htm" />
+        <HelpTOCNode Title="SetCompanyAliasAccountProductList Method " Url="html/079b7202-1c65-b379-a18a-8c98c8dd34a7.htm" />
+        <HelpTOCNode Title="SetContextBranch Method " Url="html/8947fc45-7d55-ca97-d0f6-15a9794b5be9.htm" />
+        <HelpTOCNode Title="SetUserAliasAccessTransactionList Method " Url="html/045a6d80-e612-b253-74d6-d39ba8a0d8c6.htm" />
+        <HelpTOCNode Title="SetUserAliasAccessTransactionList_v2 Method " Url="html/826347d9-9fcb-7f37-1401-13976c54a380.htm" />
+        <HelpTOCNode Title="UpdateCompanyAliasProfile Method " Url="html/dcb6e2e3-7d79-0265-d90c-a3fe1d706ae9.htm" />
+        <HelpTOCNode Title="UpdateNIBHeuristicState Method " Url="html/0621ca5d-894b-7790-d67c-4d245de80f4e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AliasAuthorization Events" Url="html/d903abd7-0219-23d0-5a50-68834806977f.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="d51d0d14-6d58-487d-b0dd-4a9b51b1a083" Title="AliasManagement Class" Url="html/d868f9d8-89f6-7438-1715-272f1ee24603.htm">
+      <HelpTOCNode Title="AliasManagement Constructor " Url="html/faf0a78a-97d4-be06-e38f-c5527635f5b1.htm" />
+      <HelpTOCNode Title="AliasManagement Properties" Url="html/68adca6d-bf88-fbc0-f8ea-5c58cd8c57cb.htm" />
+      <HelpTOCNode Id="9b716f00-3dd6-44be-8aae-34a0c3faab9a" Title="AliasManagement Methods" Url="html/029dc7a6-e10b-340e-5aca-c924ee31c336.htm">
+        <HelpTOCNode Title="ChangeUserAliasLimit_v2 Method " Url="html/3bcc7044-c88f-6d7a-3c77-8449cd44332b.htm" />
+        <HelpTOCNode Id="d4df5374-75be-4252-93bc-667035763c6e" Title="Dispose Method " Url="html/10406867-b17b-ae60-1521-a0df99f7efa3.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/ef80e2fd-9230-011a-c846-3f234f43c556.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ExistsUserAlias Method " Url="html/e1d3df09-f504-c472-242e-2bd20aeaa505.htm" />
+        <HelpTOCNode Title="GetAliasBaseInfo Method " Url="html/b03c793e-003d-81be-04e7-ab93126e7610.htm" />
+        <HelpTOCNode Title="GetAllAliasStates Method " Url="html/3a609cd8-5973-4b02-abd9-3706b60b0988.htm" />
+        <HelpTOCNode Title="GetAllAliasType Method " Url="html/7f1f0f68-541d-7b40-7b2d-4b3f8465624a.htm" />
+        <HelpTOCNode Title="GetUserAliasAllLimitsAndCombinations_v2 Method " Url="html/2abd648d-311e-afb1-f56a-e91f5d5f275c.htm" />
+        <HelpTOCNode Title="GetUserAliasByAlias Method " Url="html/d67c1114-3917-ede3-988a-5401dabc5d5d.htm" />
+        <HelpTOCNode Title="GetUserLoginAlternativeAlias Method " Url="html/61ce5cea-9e30-b57d-571c-73338d8a6bee.htm" />
+        <HelpTOCNode Title="GetUserLoginMainAlias Method " Url="html/775cdcf9-339c-ed27-f2a7-d976d26c68ec.htm" />
+        <HelpTOCNode Title="RegistNewLoginAlias Method " Url="html/6f71c92e-103c-2bf5-8b01-93248c56a4bc.htm" />
+        <HelpTOCNode Title="SetAliasBaseInfo Method " Url="html/7c1a5e77-38ba-f597-5c91-5ede3d9acbf9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AliasManagement Events" Url="html/55ada4ed-4a9d-46b2-e79a-2793a1391327.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f82b311a-9074-4a3b-848b-186a1fb0dea8" Title="AliasOperation Class" Url="html/ace78e69-18b0-29dd-a52f-7116b0ef95c1.htm">
+      <HelpTOCNode Title="AliasOperation Constructor " Url="html/beffe8e4-04c3-d582-f9a1-79a3e5843aac.htm" />
+      <HelpTOCNode Title="AliasOperation Properties" Url="html/626d2f7d-c27b-a667-f28d-2055114f778b.htm" />
+      <HelpTOCNode Id="bf433d56-bddf-4e07-add5-dc554aeeb436" Title="AliasOperation Methods" Url="html/b7fe2d91-192c-f224-dddf-95494056c4c3.htm">
+        <HelpTOCNode Title="AuthorizeOperation Method " Url="html/4696383e-eeef-125d-a276-a8b7ffb39058.htm" />
+        <HelpTOCNode Title="CancelOperation Method " Url="html/d05acd70-1af8-87dd-02e3-83177107bac3.htm" />
+        <HelpTOCNode Title="ChangeOperationStatus Method " Url="html/b34ba755-f835-5c0e-9d9c-b0a1e5547d9a.htm" />
+        <HelpTOCNode Id="588424e2-256c-4da7-a640-460ecc16fc7d" Title="Dispose Method " Url="html/ec203419-a991-42e7-d3f0-732cc13eb771.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/45d56719-d4e0-ac3c-9815-edf7ab19ff00.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetMostUsedOperations Method " Url="html/b1539211-228b-98de-d3c0-21e9e18050e7.htm" />
+        <HelpTOCNode Title="GetOperations Method " Url="html/da12ab45-25e1-0de8-95dc-30909f560d21.htm" />
+        <HelpTOCNode Title="GetOperations_v7 Method " Url="html/32e075cd-6699-84e2-20d2-8fe8d2279d23.htm" />
+        <HelpTOCNode Title="GetOperationsDetail Method " Url="html/ab652096-ea30-06f5-63d9-8ae85f51a1e0.htm" />
+        <HelpTOCNode Title="GetOperationsDetailByExternalId Method " Url="html/ee2091fb-0c24-61af-e6ac-6ea9421db9f2.htm" />
+        <HelpTOCNode Title="GetPendingOperationsCount Method " Url="html/9dfd6472-5a58-81a6-c2d8-e6e5d19972e0.htm" />
+        <HelpTOCNode Title="NewOperation Method " Url="html/03a46937-fd89-281b-2089-24e009788bcd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AliasOperation Events" Url="html/f4eb23f9-b7b5-8d84-e9d2-8e99123073c4.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="0cedf53a-36f6-4cbd-a87b-85bd1628d136" Title="ApplicationService Class" Url="html/d74e7085-67d2-9bec-f5e3-dba71c445ced.htm">
+      <HelpTOCNode Title="ApplicationService Constructor " Url="html/f18ebab5-07eb-b241-89fe-aaf083c3b6ef.htm" />
+      <HelpTOCNode Title="ApplicationService Properties" Url="html/09923a9f-7dcf-e6c2-a0f4-f9ecd8cfa418.htm" />
+      <HelpTOCNode Id="f98543c5-dbd4-4fef-8c15-c17de298dcfb" Title="ApplicationService Methods" Url="html/9c8cef8d-8844-bd2b-8196-0f2679a5b5a2.htm">
+        <HelpTOCNode Title="AddNewGlobalContentType Method " Url="html/b9341d28-b63a-ce10-b824-795356f2c31a.htm" />
+        <HelpTOCNode Title="AddNewGlobalTypeLang Method " Url="html/d09a8fa7-d6e1-bf78-23f0-5dbf0f1a3344.htm" />
+        <HelpTOCNode Title="DeleteResource Method " Url="html/3f051651-cb59-cc84-0d23-89ded18b2161.htm" />
+        <HelpTOCNode Title="DeleteTransaction Method " Url="html/4b84d4f6-5cc4-d665-ccee-2b82c0144649.htm" />
+        <HelpTOCNode Title="DeleteTransactionLabel Method " Url="html/0dc9a816-9ff2-c310-c495-a78390803846.htm" />
+        <HelpTOCNode Title="DeleteTransactionSMSMessage Method " Url="html/73d217dc-9e2e-260d-b6f7-a01087f8ce8a.htm" />
+        <HelpTOCNode Id="9d7d1ce8-acfd-4e6a-9428-deb2e76579de" Title="Dispose Method " Url="html/1a55e255-9c78-fdba-2f0d-d1c904b82ad6.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/e12b1cf1-24e5-d94a-b7b3-c5f15e6d3920.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllAssetImpactTypes Method " Url="html/817587f2-c99e-ee14-e0bb-96c69e06a732.htm" />
+        <HelpTOCNode Title="GetAllChannels Method " Url="html/de94acfc-bdb2-4cb2-fd80-9252fe5fa942.htm" />
+        <HelpTOCNode Title="GetAllDefaultCurrencies Method " Url="html/c2169455-e784-4b87-e15d-1b73de08f7d5.htm" />
+        <HelpTOCNode Title="GetAllLanguages Method " Url="html/b5156b02-6012-011e-204a-49cfd6127941.htm" />
+        <HelpTOCNode Title="GetAllResources Method " Url="html/2f69f903-dd1d-8f57-7989-e243a7dab32f.htm" />
+        <HelpTOCNode Title="GetInternationalDialingPhoneCodes Method " Url="html/70220ab2-732b-bfe4-8a85-40309533ac60.htm" />
+        <HelpTOCNode Title="GetResourcesByID Method " Url="html/89d18193-497e-eeea-ea8a-5bb5043cd037.htm" />
+        <HelpTOCNode Title="GetTransactionFullDetails Method " Url="html/caf3a6a8-32ba-82a9-bbeb-400f4c75c78d.htm" />
+        <HelpTOCNode Title="GetTransactionList Method " Url="html/74692af1-35ed-8f49-51f4-907b4d99251b.htm" />
+        <HelpTOCNode Title="GetTransactionsFiltered Method " Url="html/55cf7b7d-52ed-1b0f-1d7d-c9013a7accf7.htm" />
+        <HelpTOCNode Title="GetTransactionSMSMessage Method " Url="html/9a1c777d-482a-4dfe-c683-8c1fc4e6a6bf.htm" />
+        <HelpTOCNode Title="GetTransactionViewForChannel Method " Url="html/56bbdfba-231e-bc97-58ca-c262810eb6b7.htm" />
+        <HelpTOCNode Title="GetUserAccountList Method " Url="html/8ae2c86c-0006-5fab-ebbe-09831b94aaad.htm" />
+        <HelpTOCNode Title="SetTransactionData Method " Url="html/cde2bcfd-7f41-7190-bf29-a20232f58b7c.htm" />
+        <HelpTOCNode Title="SetTransactionLabelData Method " Url="html/2733fc8b-fcc8-5a89-8592-e9ca3fc7a550.htm" />
+        <HelpTOCNode Title="SetTransactionSMSMessage Method " Url="html/8b0a9d13-19b0-965f-0a3d-7e5895f32d2f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ApplicationService Events" Url="html/7d1698f0-d2f6-6929-90cf-cc817ef28beb.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="386273ae-5f4e-43e7-af2a-fa37842b2f78" Title="Backoffice Class" Url="html/ebd1912a-6dde-a9ba-7bc1-665f5fcc6167.htm">
+      <HelpTOCNode Title="Backoffice Constructor " Url="html/4d45fff9-54d7-17f2-edbe-125774627577.htm" />
+      <HelpTOCNode Title="Backoffice Properties" Url="html/3c879026-504c-d938-8165-3f4cbbec411f.htm" />
+      <HelpTOCNode Id="42f5d944-dd59-43d1-94a6-d7ff9214e392" Title="Backoffice Methods" Url="html/fdee86e9-e660-67d7-a665-5d5ce2787d5f.htm">
+        <HelpTOCNode Title="ActivateContract Method " Url="html/78faf403-0032-241d-99c6-a0cc99493b0a.htm" />
+        <HelpTOCNode Title="CancellationCompanyUser Method " Url="html/c9ee5b7a-d56b-1a8b-80a7-80667de114c8.htm" />
+        <HelpTOCNode Title="ChangeAliasStatus Method " Url="html/8d2abafc-72d6-5db8-9541-57780d4ed479.htm" />
+        <HelpTOCNode Title="ChangeUserAliasCombination_v2 Method " Url="html/876c5fa5-6811-bd05-35d5-a0ee9e4e0dec.htm" />
+        <HelpTOCNode Title="ChangeUserAliasLimit_v2 Method " Url="html/a8faec87-12eb-47fa-edbc-e7cd427d21bf.htm" />
+        <HelpTOCNode Title="ClearAliasContext Method " Url="html/0d88d572-d44a-1dd7-4792-84f5a270f068.htm" />
+        <HelpTOCNode Title="ClearUserContext Method " Url="html/829f6050-a192-4b08-b297-d5c974db1fa3.htm" />
+        <HelpTOCNode Title="CopyStandardRule Method " Url="html/ef66c493-1e7f-6f79-3fb4-5b29ba605db2.htm" />
+        <HelpTOCNode Title="CreateTransactionLimit_v3 Method " Url="html/526a641e-3587-80df-d6a6-5d27f2850c11.htm" />
+        <HelpTOCNode Title="DeleteRules Method " Url="html/3fdc040a-e84f-346f-3c3f-057868b6954e.htm" />
+        <HelpTOCNode Id="c6659095-f267-4145-806e-dbf49a0ac970" Title="Dispose Method " Url="html/8a4a5482-25df-b5bd-491f-aa531e5806c6.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/325256fa-15a1-c880-072b-9adca62c62ff.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetActiveCustomer Method " Url="html/c2995e74-b3d9-8c83-ca37-55413a0c501b.htm" />
+        <HelpTOCNode Title="GetAliasBaseInfo Method " Url="html/723b902c-4aa4-a6e3-fa55-ddb1772d43aa.htm" />
+        <HelpTOCNode Title="GetCompanyOrGroupUsersOverview Method " Url="html/f9985c33-75db-2b6e-84ea-44775aa75c69.htm" />
+        <HelpTOCNode Title="GetContracts Method " Url="html/b8257a0f-41bb-0083-2003-ea7b9a3b1235.htm" />
+        <HelpTOCNode Title="GetContractStatus Method " Url="html/13950e66-441d-ee46-25e8-56c7394052ef.htm" />
+        <HelpTOCNode Title="GetCustomerDefaultAccount Method " Url="html/0b725f9f-61ca-9519-d4fd-00f8fa8f4874.htm" />
+        <HelpTOCNode Title="GetCustomerIdByAlias Method " Url="html/e706a258-99b6-37e5-0a08-2786b5988ec3.htm" />
+        <HelpTOCNode Title="GetEmployeeOverview Method " Url="html/c54bf1c2-8473-086b-830d-b41472656e14.htm" />
+        <HelpTOCNode Title="GetEmployeeOverview_v2 Method " Url="html/f5279062-0a58-39e5-1af5-cb86b3887c9d.htm" />
+        <HelpTOCNode Title="GetOperationHistoryDetail Method " Url="html/20536021-4dfd-db42-f1c9-ad75c63852f7.htm" />
+        <HelpTOCNode Title="GetOperationsHistoryByUserId_v2 Method " Url="html/9e030607-aa93-3de4-632e-fdcd23297969.htm" />
+        <HelpTOCNode Title="GetTransactionLimits_v2 Method " Url="html/5d72a6f2-efbf-db51-a35f-b941fc34a3c2.htm" />
+        <HelpTOCNode Title="GetUserAliasAllLimitsAndCombinations_v2 Method " Url="html/9a828874-b073-7734-5592-aa67ce98a6f7.htm" />
+        <HelpTOCNode Title="GetUserAliasLimitsAndCombinations_v3 Method " Url="html/553f356a-c742-dd92-2d5d-508c395e8b6d.htm" />
+        <HelpTOCNode Title="GetUserIdByCustomerId Method " Url="html/21c3b12f-ea75-a33b-18d2-967460a5b14c.htm" />
+        <HelpTOCNode Title="SearchUser Method " Url="html/781096e5-176d-b467-5404-706a4c752d23.htm" />
+        <HelpTOCNode Title="SetAliasContext Method " Url="html/015e0726-3c34-1328-383c-da7953ac78d9.htm" />
+        <HelpTOCNode Title="SetUserContext Method " Url="html/c026684a-5c67-6bc1-bfbb-c5d5ace3851e.htm" />
+        <HelpTOCNode Title="TransactionStats Method " Url="html/60bdfbdc-fcd1-96c5-f4ca-51152e36b318.htm" />
+        <HelpTOCNode Title="UpdateTransactionLimit_v01 Method " Url="html/98ba53d8-8466-7cfe-ec33-bf6e3cd4b0c2.htm" />
+        <HelpTOCNode Title="ValidateAuthentication Method " Url="html/226ac0f7-e935-b0b5-a255-cb5ec4ec16a6.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Backoffice Events" Url="html/c402174c-43c9-ec50-04e9-35cbcbda53ad.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1270c74d-db8d-41ab-963e-7761ede5d57e" Title="Consts Class" Url="html/343e852a-7349-3c8c-326c-121aa9fd44e9.htm">
+      <HelpTOCNode Title="Consts Methods" Url="html/4880fd69-cc8f-6db1-5fde-ff56f507d016.htm" />
+      <HelpTOCNode Id="52d08bb8-5d61-4bfd-98aa-124b2341b602" Title="Consts Fields" Url="html/21e07b1a-e1ce-caf8-3599-73a9045ecf58.htm">
+        <HelpTOCNode Title="ITS_DNA_NAMESPACE Field" Url="html/36429c8e-c8ae-f2f7-279e-7e7dc372462c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4deaced2-2593-4db4-8675-d01f1e64b011" Title="ContactHistory Class" Url="html/188216c6-a799-dc99-b91d-37b12aa7935a.htm">
+      <HelpTOCNode Title="ContactHistory Constructor " Url="html/5477d2e7-07a7-fb5d-ad0a-6f798ac92f06.htm" />
+      <HelpTOCNode Title="ContactHistory Properties" Url="html/f06b9d46-3c36-db9b-1577-1024d8de0d1d.htm" />
+      <HelpTOCNode Id="d8437c5d-0e23-464c-9514-f5b621c73ef8" Title="ContactHistory Methods" Url="html/3e3daaa3-7868-194e-f3c9-1cb94035fbdb.htm">
+        <HelpTOCNode Title="ChangeContactDetail Method " Url="html/c0b4826b-d3ad-894c-6c7b-4d4c79423491.htm" />
+        <HelpTOCNode Title="GetContactHistory Method " Url="html/618155ba-300e-9cf6-f77a-4aec91964afd.htm" />
+        <HelpTOCNode Title="GetContactHistoryDetail Method " Url="html/b8cdaf74-f0ea-6719-a306-58d2d5ea80dc.htm" />
+        <HelpTOCNode Title="GetCustomerContractEvents Method " Url="html/e78f6f5f-0f52-7dec-42f4-508fbe875d92.htm" />
+        <HelpTOCNode Title="NewContact Method " Url="html/f7366b2c-cf55-02d0-1621-8e9610ef960a.htm" />
+        <HelpTOCNode Title="NewContactByUserId Method " Url="html/3d4d674f-b2f9-bab0-1219-13a822c7445e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ContactHistory Events" Url="html/08747104-9293-9f00-2dc3-d625bb832223.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="58c02054-67a2-4293-a63e-c0a5a288cfc0" Title="SdcManagement Class" Url="html/44d7addf-7da6-bf7c-39a9-78f09e540967.htm">
+      <HelpTOCNode Title="SdcManagement Constructor " Url="html/84cf53e9-7e66-f5f6-7de5-c8d40ada7b90.htm" />
+      <HelpTOCNode Title="SdcManagement Properties" Url="html/1afdbb9c-ba5a-5997-ebbf-19408598927c.htm" />
+      <HelpTOCNode Id="751e4b17-d513-4da9-9452-814642d634a3" Title="SdcManagement Methods" Url="html/8ffe11b8-c25b-cfb3-0030-6a9f503d21e3.htm">
+        <HelpTOCNode Title="CloseSession Method " Url="html/8408ec90-3ed9-ea81-9c8b-52d94868e867.htm" />
+        <HelpTOCNode Title="CreateSession Method " Url="html/04727c51-c275-5f29-fe0c-fbd3e945cc02.htm" />
+        <HelpTOCNode Id="6f6cecdc-64a2-49c6-86fb-a9c3414ae1b1" Title="Dispose Method " Url="html/b0c4d92f-1542-22e6-a737-cea10e263846.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/6d0d52f3-c837-8e60-20fe-e61775cac90f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="HasValidSession Method " Url="html/2a9ad0fd-3ea9-a424-00d8-351b9e4093dd.htm" />
+        <HelpTOCNode Title="KeepAlive Method " Url="html/78bef598-db49-815a-a810-612f83693b6f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SdcManagement Events" Url="html/8a07d90f-2f47-94ae-3fd9-56c202fc84b6.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="f6a710e9-bc68-4d91-8b10-4f9259402b2c" Title="SMSToken Class" Url="html/cbbb35ca-e55d-09aa-4ceb-398fcd2f9ff5.htm">
+      <HelpTOCNode Title="SMSToken Constructor " Url="html/0931e393-3b4c-597d-4219-46a80c3ba356.htm" />
+      <HelpTOCNode Title="SMSToken Properties" Url="html/3bb8ad2e-ed52-fdfd-873c-ad8344d2d956.htm" />
+      <HelpTOCNode Id="16e7b4c5-0d97-4980-8a88-fa74831ac726" Title="SMSToken Methods" Url="html/194d1780-005d-9493-6e9a-abb7611ead5a.htm">
+        <HelpTOCNode Title="ChangeBaseUserCardToken Method " Url="html/416c3580-b63e-5690-baec-97a71b7ba012.htm" />
+        <HelpTOCNode Title="ChangeUserCardToken Method " Url="html/137119d6-ac06-3d61-2e4c-fb3c6dfa94af.htm" />
+        <HelpTOCNode Title="ChangeUserTokenOverview Method " Url="html/c8c7e999-3440-673f-c810-d8b2ed7caa37.htm" />
+        <HelpTOCNode Title="ChangeUserTokenOverview_v2 Method " Url="html/e5841b0e-d60b-2943-53d6-b6e54ba33c66.htm" />
+        <HelpTOCNode Title="CheckTokenSignatureValue Method " Url="html/c0c04b1e-177c-4b32-33e6-f34f37665294.htm" />
+        <HelpTOCNode Title="DeleteUserCardToken Method " Url="html/2ffa1a24-f2bd-b0b7-d5c5-d6aa2722bc0b.htm" />
+        <HelpTOCNode Title="DeleteUserTokenOverview Method " Url="html/0b675783-a273-c842-83ad-78811bff6489.htm" />
+        <HelpTOCNode Id="0844e46f-8cba-4a0c-bd17-9d757708f9b0" Title="Dispose Method " Url="html/15255b54-3e21-742a-2206-a63baeeb54ff.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/0a0d3798-6182-edfe-798e-60dd92218976.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllTokenCardIssuers Method " Url="html/4577d69a-407b-6e52-0b87-f37b595cfdf0.htm" />
+        <HelpTOCNode Title="GetAllUserCardTokenStatus Method " Url="html/195ffcc6-5d3e-75d9-4d7e-0a19589c0bd9.htm" />
+        <HelpTOCNode Title="GetCustomerCardTokens Method " Url="html/53eda753-9eb1-c51a-cabf-761fe630d63e.htm" />
+        <HelpTOCNode Title="GetTokenTransactionConfigurationReport Method " Url="html/cd300afc-a823-f9af-27d2-74f45c77b37e.htm" />
+        <HelpTOCNode Title="GetTokenTransactionConfigurationToCertify Method " Url="html/cb62ef2f-2f4b-e26c-e786-11a38cd0f38c.htm" />
+        <HelpTOCNode Title="GetTokenTransactionConfigurationToCertify_v2 Method " Url="html/0e759b84-aa25-96e4-4c0f-272837421ab2.htm" />
+        <HelpTOCNode Title="GetTokenTransactionConfigurationToCertify_v3 Method " Url="html/9bda79e2-47c0-3910-6665-7eee4b689c80.htm" />
+        <HelpTOCNode Title="GetUserCardToken Method " Url="html/06309b18-3639-5e89-632a-c27e1d7bc8ba.htm" />
+        <HelpTOCNode Title="GetUserCardTokens Method " Url="html/89611167-7b53-4a11-f8f0-74da0ac46269.htm" />
+        <HelpTOCNode Title="GetUserCardTokensBO Method " Url="html/3b5ef777-6167-7099-c96f-94adea81200d.htm" />
+        <HelpTOCNode Title="GetUserSmsToken Method " Url="html/9d1149e5-4f39-4f46-bad7-ccd90c92f8f9.htm" />
+        <HelpTOCNode Title="GetUserTokenOverview Method " Url="html/1f4a750e-02bc-ad46-e94c-7e939ad2b3c6.htm" />
+        <HelpTOCNode Title="GetUserTokenOverview_v2 Method " Url="html/7c73b3e3-bf8c-ff78-8253-f7d501edebc9.htm" />
+        <HelpTOCNode Title="ResetUserCardTokenFailure Method " Url="html/83543ca5-caf0-8b17-20b4-96f112f753f9.htm" />
+        <HelpTOCNode Title="ResetUserSMSTokenFailures Method " Url="html/d62d1cb1-7041-5877-bdd1-b37e05727001.htm" />
+        <HelpTOCNode Title="SendLoginTokenToMobile Method " Url="html/58d2ec57-37f2-dea3-7152-f220d8d80288.htm" />
+        <HelpTOCNode Title="SendSMSToMobile Method " Url="html/953d471c-2f10-9600-16d2-79c303183c9f.htm" />
+        <HelpTOCNode Title="SendTokenToMobile Method " Url="html/1523b879-4f56-007f-5593-f17399d7c579.htm" />
+        <HelpTOCNode Title="SendTokenToMobile_v2 Method " Url="html/fe17402b-b8c3-5ce2-1856-7a82befa50cd.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="SMSToken Events" Url="html/a5b58990-2bba-5ebb-1860-17eb99803c3a.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="be12d84b-a13d-46a4-b502-79e3b91633cc" Title="UserAutoComplete Class" Url="html/e79a7944-7406-4b1a-7939-616240d355be.htm">
+      <HelpTOCNode Title="UserAutoComplete Constructor " Url="html/7be4e4f4-fef9-27f0-3103-e9517b0d6595.htm" />
+      <HelpTOCNode Title="UserAutoComplete Properties" Url="html/e263a75d-a9a6-4bb1-9a95-739681ead7f8.htm" />
+      <HelpTOCNode Id="9f846941-b766-47be-b823-d24b958e6620" Title="UserAutoComplete Methods" Url="html/d61b609b-d3ad-bd9a-c2ca-0ec098937ca5.htm">
+        <HelpTOCNode Title="AddUserAutoCompleteInfo_V2 Method " Url="html/7ae21f1c-6d57-c2e3-7286-107198c2e041.htm" />
+        <HelpTOCNode Title="DeleteUserAutoCompleteTransactionsByList Method " Url="html/ed4e0127-8ead-97d6-a33b-d6f7363c60b3.htm" />
+        <HelpTOCNode Id="28d2d384-f73e-4aaf-a2e0-672a09c70888" Title="Dispose Method " Url="html/ec92efdd-5bc5-c549-a63b-19541aa31c7c.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/38e3dac6-864d-35b4-25c7-cd4169aede65.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllAutoCompleteTypes Method " Url="html/515d4ca1-5bae-426f-dd54-0a4da82ca9a1.htm" />
+        <HelpTOCNode Title="GetUserAutoCompleteInfo_v4 Method " Url="html/b1cd18c6-9969-a7c7-5260-2e834bb93ffb.htm" />
+        <HelpTOCNode Title="UpdateUserAutoCompleteInfo_V2 Method " Url="html/e5014705-1d13-4269-9e2d-b59b121c0460.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="UserAutoComplete Events" Url="html/8bbabf75-d1c1-d272-d512-e7c9c1b86a0c.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="78527f0c-c5f1-4a7d-8e37-c86ba5cee2f3" Title="UserManagement Class" Url="html/7acf5841-b569-a777-4c85-47aa54d0b109.htm">
+      <HelpTOCNode Title="UserManagement Constructor " Url="html/798a6e2e-94d9-cc63-982e-090e901b408f.htm" />
+      <HelpTOCNode Title="UserManagement Properties" Url="html/202cfb94-b517-194f-280b-9ba209fd338e.htm" />
+      <HelpTOCNode Id="cc492ba9-b450-4cea-aea3-91040bfd5d30" Title="UserManagement Methods" Url="html/a2127514-11fd-b289-67b1-dec061e7cd61.htm">
+        <HelpTOCNode Title="AssociateAccessCodeExternalReference Method " Url="html/65a79de1-7dcf-d104-5628-a0a012c3e96d.htm" />
+        <HelpTOCNode Title="AssociateAccessCodeExternalReference_V2 Method " Url="html/63ec888a-2995-9c87-7526-fa2680ad9ea8.htm" />
+        <HelpTOCNode Title="AssociateAccessCodeExternalReferenceById Method " Url="html/6ecc9d9a-5fb9-bb73-4719-e5e7d1633975.htm" />
+        <HelpTOCNode Title="AssociateNewMatrixCard Method " Url="html/f007ed8d-8b67-d1b5-b218-a699be28a3ce.htm" />
+        <HelpTOCNode Title="ChangeAccessCode Method " Url="html/97a36f37-184a-391a-9897-55b6af2accf4.htm" />
+        <HelpTOCNode Title="ChangeUserContactInfoByUserId Method " Url="html/74505e38-c22c-605c-b049-2c1bb2e2cd9c.htm" />
+        <HelpTOCNode Title="CloseContract Method " Url="html/e5736006-1af3-209a-e238-a5a07165ae00.htm" />
+        <HelpTOCNode Id="b21271f0-7338-470a-924c-98f49eaf4284" Title="Dispose Method " Url="html/b3e5ea10-c9ac-f3ef-ebec-2892f55ba1ff.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/9a1c1c63-9633-3a92-27c5-b4ad745d7345.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllUserProfiles Method " Url="html/b7cf17c5-500a-fc03-3588-e67a6729c0c0.htm" />
+        <HelpTOCNode Title="GetCompanyUserAliasInfo Method " Url="html/0f0c2faf-cfb8-6478-734a-489346103bca.htm" />
+        <HelpTOCNode Title="GetCompanyUserAliasList Method " Url="html/0213f0fc-9d86-590a-6c73-84f4a8f47fae.htm" />
+        <HelpTOCNode Title="GetOtherUserDetailInfo Method " Url="html/d77c7729-e0ca-8cae-ab00-773657f91eb6.htm" />
+        <HelpTOCNode Title="GetUserAccessCodes Method " Url="html/8f0c1b91-baba-fd08-f1a2-ca1ff2170386.htm" />
+        <HelpTOCNode Title="GetUserAccessesByLocation Method " Url="html/7859cffb-2ae5-54e8-97bf-cd83f2c7d567.htm" />
+        <HelpTOCNode Title="GetUserAlias Method " Url="html/586df265-7bf1-83d4-8447-4609f3dc5cb1.htm" />
+        <HelpTOCNode Title="GetUserAliasDevices Method " Url="html/2b9e3bca-1c28-2dd9-8630-d0f57d8988ba.htm" />
+        <HelpTOCNode Title="GetUserAliasList Method " Url="html/7266ce5e-42ec-acbd-2b6d-1ec53645a50a.htm" />
+        <HelpTOCNode Title="GetUserAssociatedUsers Method " Url="html/2ea74679-4ecc-e66d-962f-29e669fb24a4.htm" />
+        <HelpTOCNode Title="GetUserChannelOverview Method " Url="html/abd4b85e-2bec-a415-3360-12757ba264f1.htm" />
+        <HelpTOCNode Title="GetUserContactInfoByUserId Method " Url="html/9d08afc2-820b-688c-d076-575e45845591.htm" />
+        <HelpTOCNode Title="GetUserDetailInfo Method " Url="html/a9ce3cb4-3e51-756b-62ab-793690ece801.htm" />
+        <HelpTOCNode Title="GetUserEmailDetailByUserId Method " Url="html/462bd30a-b463-db4e-efd0-25b59ffd3793.htm" />
+        <HelpTOCNode Title="GetUserLimitPositionsSummary Method " Url="html/a57ddfef-514c-094d-23b6-b34ae9d68775.htm" />
+        <HelpTOCNode Title="GetUserMainSourcePointers Method " Url="html/05319730-1096-3355-6437-4a429184868c.htm" />
+        <HelpTOCNode Title="GetUserPhoneDetailByUserId Method " Url="html/9a7f7c9a-b43d-d5f2-7029-6826a3230e56.htm" />
+        <HelpTOCNode Title="GetUserPointers Method " Url="html/fb3dd05c-2714-50e7-5e3a-642f08b75be6.htm" />
+        <HelpTOCNode Title="GetUserRelationshipDetail Method " Url="html/64979d96-51c0-0718-a7a1-9411190ca092.htm" />
+        <HelpTOCNode Title="GetUserTokenOverview Method " Url="html/8ad4bfde-0229-eed8-a8ee-03ccde4d73ed.htm" />
+        <HelpTOCNode Title="InitializeAccessCodeFailuresById Method " Url="html/5c1601ae-b385-d364-177d-20190718a675.htm" />
+        <HelpTOCNode Title="UpdateUserRelationship Method " Url="html/6f8ae394-0251-6cb3-3c6a-da7d7d71e6ca.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="UserManagement Events" Url="html/20df0d2c-734d-0b24-3d7f-cfb80be44160.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e7a0836e-9ced-45cc-af0c-b51cede52d34" Title="UserRegistration Class" Url="html/64b42053-3ec4-e054-3ebf-b789ea69632b.htm">
+      <HelpTOCNode Title="UserRegistration Constructor " Url="html/8671f459-a105-7606-8623-485bd48bc67c.htm" />
+      <HelpTOCNode Title="UserRegistration Properties" Url="html/c041ff02-b2b1-d146-8777-a51a332d7262.htm" />
+      <HelpTOCNode Id="17020ab6-5ccb-46f0-a580-a2f1ee84ef76" Title="UserRegistration Methods" Url="html/08775b5e-9347-d45f-7280-0ca56ca70e6c.htm">
+        <HelpTOCNode Title="CompanyRegistration Method " Url="html/ef31a8eb-0bdb-b7ab-3dc7-36d14aa8fe55.htm" />
+        <HelpTOCNode Id="d3376193-136d-479e-aad7-3b5fb95a943d" Title="Dispose Method " Url="html/fde775cc-07de-3c1e-12e1-30ea87675332.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/67be1d5f-c2e1-a7c7-800a-c1df8255dd37.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="EmployeeRegistrationExtUser Method " Url="html/75bcecb7-b308-b247-c22e-1b56a63d826c.htm" />
+        <HelpTOCNode Title="GetCompanyRegistrationInformation Method " Url="html/3bebd500-23d2-47f9-3323-01f3ac1d79fd.htm" />
+        <HelpTOCNode Title="GetCustomerPushToken Method " Url="html/a2f7e558-1848-5688-8f67-f79c76523a4d.htm" />
+        <HelpTOCNode Title="GetRelatedUserByAliasValue Method " Url="html/f69cc92d-80db-fbb1-4b3c-6a07215849de.htm" />
+        <HelpTOCNode Title="IsRegisteredInChannel Method " Url="html/e6e3e4eb-1b88-0985-6614-4c6fb1d2df66.htm" />
+        <HelpTOCNode Title="RegisterDevice Method " Url="html/6ac83b00-4533-6cad-a59e-4e2c822600cd.htm" />
+        <HelpTOCNode Title="Registration_v2 Method " Url="html/81b9b032-a3d8-fa38-f7df-bc425dd213c1.htm" />
+        <HelpTOCNode Title="Registration_v3 Method " Url="html/9cb07329-6f64-910a-9396-39975c3c4ac1.htm" />
+        <HelpTOCNode Title="RegistrationWFMessage Method " Url="html/bbdd13d2-718a-dd4d-b38c-57138620a163.htm" />
+        <HelpTOCNode Title="UpdatePushToken Method " Url="html/8b02c9e8-82c2-56f5-b56b-0f62f77988ff.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="UserRegistration Events" Url="html/a51614ef-186b-1745-5521-d637d1ca6c91.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="aaeab37b-1ec2-4a19-bd96-cd9002ff0bab" Title="UserSubscription Class" Url="html/677af120-e232-d10c-a86d-13f7214b8d14.htm">
+      <HelpTOCNode Title="UserSubscription Constructor " Url="html/01cd2012-0bb5-a614-9127-9f005f954139.htm" />
+      <HelpTOCNode Title="UserSubscription Properties" Url="html/fcc319a6-00e2-f2d5-527b-d113307606c7.htm" />
+      <HelpTOCNode Id="76dbc143-e8ff-4d21-899e-8b87246e8a7e" Title="UserSubscription Methods" Url="html/36c7a6ee-b4a3-2f58-20d1-51442af9ac5a.htm">
+        <HelpTOCNode Id="38294a2d-c3e0-4239-894c-43912307def1" Title="Dispose Method " Url="html/2e9ca0cc-ff62-b383-5b77-54ce682a4f08.htm">
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/ea3dad96-77f1-c16d-d6ea-54ab68a8d778.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAllTimePeriods Method " Url="html/0f01080a-ac81-d539-ba13-4b4de883d902.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="UserSubscription Events" Url="html/ee42aec2-eb6a-8083-d147-2c26e17b4d94.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e2b4477f-f858-4a09-85de-a22a0b27a560" Title="eBankit.Middleware.SubscriptionServices" Url="html/c5516544-edba-7795-c74a-f5b95a71c3fb.htm">
+    <HelpTOCNode Id="6ac8eb1b-88f0-4eaf-b1eb-d2d278766ca1" Title="Global Class" Url="html/085a92b3-e486-62be-1800-b86cd46ab1bd.htm">
+      <HelpTOCNode Title="Global Constructor " Url="html/a08bc01d-4033-15ca-cd58-4a2af0c914fb.htm" />
+      <HelpTOCNode Title="Global Properties" Url="html/dbd5b968-1785-3d63-4336-bd80dec6275a.htm" />
+      <HelpTOCNode Id="c5d45189-2f10-4c6e-b8d4-0f66aba3dc75" Title="Global Methods" Url="html/2489cb0d-ac7b-961f-14f6-c3a8bc41b8a5.htm">
+        <HelpTOCNode Title="Application_AuthenticateRequest Method " Url="html/be268a2f-f8ee-0559-4880-de07c21a9d4c.htm" />
+        <HelpTOCNode Title="Application_BeginRequest Method " Url="html/c45b703e-f8d9-1a37-006f-a0481a89c863.htm" />
+        <HelpTOCNode Title="Application_End Method " Url="html/c9494f90-f607-8fcc-8483-04785d88b367.htm" />
+        <HelpTOCNode Title="Application_EndRequest Method " Url="html/f08121b4-8f71-0cda-0772-63f492f31e21.htm" />
+        <HelpTOCNode Title="Application_Error Method " Url="html/148ad4cb-af31-d0b4-56ed-e4b5db6289fa.htm" />
+        <HelpTOCNode Title="Application_Start Method " Url="html/18c66376-f58b-dc17-b390-b47cd17c0d21.htm" />
+        <HelpTOCNode Title="Session_End Method " Url="html/42456129-4109-81f7-0a72-f924e3aa9634.htm" />
+        <HelpTOCNode Title="Session_Start Method " Url="html/5da6ce7f-e0a7-253c-33ae-d1e8293f2773.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Global Events" Url="html/5132ba4c-2c46-6ea1-7997-9b7149e4dd9a.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

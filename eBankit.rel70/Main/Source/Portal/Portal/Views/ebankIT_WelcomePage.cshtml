@@ -1,0 +1,45 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var segments = currentLanguage.Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @{Html.RenderPartial("Highlight", Model.Content, new ViewDataDictionary { { "SegmentPage", true } });}
+        @{Html.RenderPartial("Adviser");}
+
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="mobileContainer">
+                    <div class="container">
+                        <div class="mobilePhone lazy">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mobileText">
+                                    <div class="carousel-subTitle">@Umbraco.GetDictionaryValue("Mobile")</div>
+                                    <div class="carousel-title pull-right ">@Umbraco.GetDictionaryValue("MobileText")</div>
+                                    <div class="carousel-description clearRight pull-right">
+                                        @Umbraco.GetDictionaryValue("MobileDescription")
+                                    </div>
+                                    <div class="carousel-more clearRight">
+                                        <a href="/@currentLanguage.Name/@segments.Name/MOBILE">
+                                            @Umbraco.GetDictionaryValue("KnowMore")
+                                            <i class="fa fa-chevron-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @{Html.RenderPartial("MoreToYou");}
+
+        @{Html.RenderPartial("Actions");}
+
+        @{ Html.RenderPartial("Savings"); }
+    </div>
+</div>

@@ -1,0 +1,600 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model SessionHistoryViewModel
+
+<!-- begin #content -->
+<div id="content" class="content">
+
+   
+
+	<!-- begin breadcrumb -->
+	<ol class="breadcrumb pull-right">
+		<li><a href="javascript:;">Home</a></li>
+		<li><a href="javascript:;">Requests</a></li>
+		<li class="active">Session History</li>
+	</ol>
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Session History<small> list of all sessions</small></h1>
+	<!-- end page-header -->
+	<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent"> 
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="#" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search session history</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="SessionHistory" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Application</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Apps,"SearchFilters.Application",Model.SearchFilters.Application)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">User</label>
+                            <div class="col-md-8">
+                                <input type="text" name="SearchFilters.User" id="txtUser" class="form-control" placeholder="User" value="@Model.SearchFilters.User">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request date</label>
+                            <div class="col-md-8">
+                                <div class="row row-space-10">
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker1","SearchFilters.FromDate",Model.SearchFilters.FromDate,"From",ViewBag.DateFormat)
+                                    </div>
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker2","SearchFilters.ToDate",Model.SearchFilters.ToDate,"To",ViewBag.DateFormat)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+        
+	<!-- begin row -->
+	<div class="row">
+		<!-- begin col-12 -->
+		<div class="col-md-12 panel transparent">
+			<!-- begin panel -->
+			<div class="panel-inverse newStyle">
+				<div class="panel-heading">
+                     <div class="panel-heading-btn">
+                        <a href="#" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+					<h4 class="panel-title">Session History</h4>
+				</div>
+				<div class="panel-body table-responsive" id="sessionTable">
+					<table id="results-table" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Application</th>
+								<th>User</th>
+                                <th>Last Access Date</th>
+                                <th style="text-align:center; width:90px">Has requests?</th>
+                                <th style="width:40px"></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-12 -->
+	</div>   
+    <!-- end row -->
+     <!-- begin row -->
+    <div class="row" id="sessionTimeline" style="display:none;">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle" style="min-height: 200px;">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Session History Timeline</h4>
+                </div>
+                <div class="panel-body" style="text-align: center">
+                    <div id="sessionResults">
+                        <div id="legend">
+                            <span class="legend" style="background-color: #9EA1EC;"></span><span class="legend-text">Mobile</span>
+                            <span class="legend" style="background-color: #7d8790;"></span><span class="legend-text">WebPages</span>
+                            <span class="legend" style="background-color: #0b62a4;"></span><span class="legend-text">Services</span>
+                            <span class="legend" style="background-color: #679dc6;"></span><span class="legend-text">Transactions</span>
+                        </div>
+                        
+                        <ul class="timeline nopadding">
+                            
+                        </ul>
+                        
+                        <div id="loading-row"><span class="spinner"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+<!-- end #content -->
+
+<div id="detailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <input type="hidden" id="txtId" />
+            <input type="hidden" id="txtModule" />
+            
+            <input type="hidden" id="txtIn" />
+            <input type="hidden" id="txtOut" />
+            <div class="modal-body" style="padding-left: 0px; padding-right: 0px;">
+                <div id="divWebPage" style="display: none">@DetailModal.RenderModal(new List<string> { "Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "ExecutionTime", "Action", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "UserAuthenticated", "BeginDate", "EndDate", "RequestSize", "ResponseSize" }, false, "w_")</div>
+                <div id="divService" style="display: none">@DetailModal.RenderModal(new List<string> { "Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "ExecutionTime", "Action", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "BeginDate", "EndDate", "RequestSize", "ResponseSize" }, true, "s_")</div>
+                <div id="divTransaction" style="display: none">@DetailModal.RenderModal(new List<string> { "Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "ExecutionTime", "TransactionId", "EventMessage", "EventTime", "BeginDate", "EndDate" }, true, "t_")</div>
+                <div id="divMobile" style="display: none">@DetailModal.RenderModal(new List<string> { "Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "ExecutionTime", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "BeginDate", "EndDate", "RequestSize", "ResponseSize" }, true, "m_")</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/jquery.jsonview.js"></script>  
+<link href="~/Content/jquery.jsonview.css" rel="stylesheet">
+
+<script src="~/Scripts/xml2json.js"></script>  
+
+<script>
+    var interactionId = '';
+    var pageSize = 5;
+    var pageIndex = 0;
+    var loading = false;
+
+    $(document).ready(function () {
+
+        InitializeTooltip();
+        ToggleSideBarMenu($('#Requests'),$('#SessionHistory'));
+        InitializeDropdowns();
+        InitializeRangedDatetimePicker($('#datetimepicker1'), $('#datetimepicker2'), '@ViewBag.DateFormat');
+
+        InitializeAutoComplete($('#txtUser'), '@Url.Action("UserSearch", "Requests", new {service = "SessionHistoryController/interactionusers" })');
+
+
+
+        var dataUrl = '@Html.Raw(Url.Action("GetSessionHistorySearchResults", "Requests", new {Application = Model.SearchFilters.Application,User = Model.SearchFilters.User,FromDate = Model.SearchFilters.FromDate,ToDate = Model.SearchFilters.ToDate}))';
+        var columns = [
+                { "mDataProp": "Application", "orderable": true },
+                { "mDataProp": "User", "orderable": false },
+                {
+                    "mDataProp": "LastAccessDate",
+                    "orderable": true,
+                    "mRender": function (data, type, full) {
+                        return moment(data).format('@ViewBag.DateFormat');
+                    }
+                },
+                {
+                    "mDataProp": "HasResults",
+                    "orderable": false,
+                    "mRender": function (data, type, full) {
+
+                        if (data > 0) {
+                            return "<div style=\"font-size: 20px;\" class='alignCenter'><i class=\"fa fa-check-square fa-2\"></i></div>";
+                        }
+                        else {
+                            return "";
+                        }
+                    }
+                },
+                {
+                    "mDataProp": null,
+                    "orderable": false,
+                    "mRender": function (data, type, full) {
+                        return "<div style='width:100%' class='alignCenter'><a id='timelineButton' onclick=\"hideDiv();showDiv('" + data.InteractionId + "');removeLoading();\" role='button' class='btn btn-inverse detailsButton' data-toggle='modal'><i class='fa fa-search-plus' style='font-size:13px'></i></a></div>";
+                    }
+                }
+        ];
+
+        if (@Json.Encode(Model.SearchFilters.FirstTime) != true)
+        {
+            InitializeDataTable('results-table', dataUrl, columns, [[2, "DESC"]]);
+        }
+
+        //var attributeList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "Level", "Message", "Exception", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl"];
+        //InitializeDetailClickEvent(attributeList, '@ViewBag.DateFormat', false);
+
+
+        //Infinite Scroll
+        $(window).scroll(function () {
+            if (pageIndex > 0)
+                {
+                if ($(window).scrollTop() ==
+                   $(document).height() - $(window).height() && !loading) {
+                    GetData();
+                    loading = true;
+                }
+            }
+        });
+
+        $('.nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+
+        App.init();
+    });
+
+    function removeLoading() {
+        setTimeout(function () {
+            $('#loading').remove();
+        }, 2000);
+    }
+
+    function showDiv(itId) {
+
+        document.getElementById("sessionTimeline").style.display = 'block';
+        $('#legend').hide();
+        $('#noresults').remove();
+        $('#loading-row').show();
+        $('.timeline').empty();
+        interactionId = itId;
+        pageSize = 5;
+        pageIndex = 0;
+        GetData();
+    }
+
+    function hideDiv() {
+        document.getElementById("sessionTable").style.display = 'none';
+        $('input:hidden#txtIn').val('');
+        $('input:hidden#txtOut').val('');
+    }
+
+
+    var url = '@Html.Raw(@Url.Action("DisplayTimeLine", "Requests"))';
+    //function generateTimeline(interactionid) {
+    //    interactionId = interactionid;
+
+    //    $('.timeline').load(url, { InteractionId: interactionid, PageSize: 5, PageIndex: 0 });
+    //    pageIndex++;
+    //}
+
+    function GetData() {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: { "pageindex": pageIndex, "pagesize": pageSize, "interactionid": interactionId },
+            //dataType: 'json',
+            success: function (data) {
+                $('#loading').remove();
+                if (data !== null) {
+                    $('#loading-row').hide();
+                    if (pageIndex === 0) {
+
+                        if ($.trim(data) !== '') {
+                            $('#legend').show();
+                            $('#noresults').remove();
+                        }
+                        else {
+                            $('#legend').hide();
+                            $('#sessionResults').append('<div id="noresults">No data to show.</div>');
+
+                        }
+                    }
+
+                    $('.timeline').append(data);
+
+
+                    if ($.trim(data) !== '') {
+                        $('.timeline').append('<li id="loading"><div><span class="spinner"></span></div></li>');
+                    }
+
+                    pageIndex++;
+                }
+                loading = false;
+            },
+            beforeSend: function () {
+                $("#progress").show();
+            },
+            complete: function () {
+                $("#progress").hide();
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                alert("Error while retrieving data!");
+            }
+        });
+    }
+
+
+    var OpenDetails = function (obj, id, type, hasSoap) {
+
+        var method = "GetSession" + type + "Details";
+        var url = '@Url.Action("actionName", "Requests")';
+        url = url.replace("actionName", method);
+
+        $('#divWebPage').hide();
+        $('#divService').hide();
+        $('#divTransaction').hide();
+        $('#divMobile').hide();
+
+        $('input:hidden#txtId').val(id);
+        $('input:hidden#txtModule').val(type);
+
+        var attrList;
+        var prefix;
+        var tab;
+
+        switch (type) {
+            case 'WebPage':
+                tab = '#divWebPage';
+                $('#divWebPage').show();
+                prefix = 'w_';
+                $('#divWebPage a[data-toggle="tab"]:first').tab('show');
+                attrList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "ExecutionTime", "Action", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "UserAuthenticated", "BeginDate", "EndDate", "RequestSize", "ResponseSize"];
+                break;
+            case 'Service':
+                tab = '#divService';
+                $('#divService').show();
+                prefix = 's_';
+                $('#divService a[data-toggle="tab"]:first').tab('show');
+                attrList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "ExecutionTime", "Action", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "BeginDate", "EndDate", "RequestSize", "ResponseSize"];
+                break;
+            case 'Mobile':
+                tab = '#divMobile';
+                $('#divMobile').show();
+                prefix = 'm_';
+                $('#divMobile a[data-toggle="tab"]:first').tab('show');
+                attrList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "ExecutionTime", "ApplicationVirtualPath", "EventTime", "MachineName", "RequestPath", "RequestThreadAccountName", "RequestUrl", "RequestMethod", "BeginDate", "EndDate", "RequestSize", "ResponseSize"];
+                break;
+            case 'Transaction':
+                tab = '#divTransaction';
+                $('#divTransaction').show();
+                prefix = 't_';
+                $('#divTransaction a[data-toggle="tab"]:first').tab('show');
+                attrList = ["Id", "Application", "InteractionId", "User", "SessionId", "RequestId", "SRequestId", "ExecutionTime", "TransactionId", "EventMessage", "EventTime", "BeginDate", "EndDate"];
+                break;
+        }
+
+        var fields = $('#details' + prefix).html();
+
+        $('#details' + prefix).html('<div id="loading' + prefix + '"  style="padding-top:100px;"><span class="spinner"></span></div>');
+
+        $('.modal-title').html(type + ' Details');
+        $("#detailModal").modal("show");
+        $('#loadingDiv').show();
+
+        //$('#details' + prefix).hide();
+        //$('#nav-tab-1' + prefix).hide();
+
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: { "id": id },
+            contentType: 'json',
+            success: function (result) {
+
+                //$('.modal-title').html('');
+                setTimeout(function () {
+
+                    $('#details' + prefix).html(fields);
+
+                    for (var i = 0; i < attrList.length; i++) {
+                        $('#' + prefix + attrList[i]).html('');
+                        $('#' + prefix + attrList[i]).html(result[attrList[i]]);
+                    }
+
+                    $('#loading' + prefix).remove();
+                    $('#details' + prefix).show();
+                    //$('#nav-tab-1' + prefix).show();
+
+                }, 1000);
+
+                //if (hasSoap === true) {
+
+                //    $('input:hidden#txtIn').val(result["SoapIn"]);
+                //    $('input:hidden#txtOut').val(result["SoapOut"]);
+
+                //    functionLoadTreeByPanel(prefix + 'SoapIn', $('input:hidden#txtIn').val(), prefix);
+                //    functionLoadTreeByPanel(prefix + 'SoapOut', $('input:hidden#txtOut').val(), prefix);
+                //}
+                //else {
+                //    $('input:hidden#txtIn').val('');
+                //    $('input:hidden#txtOut').val('');
+                //}
+
+
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                $('#loading' + prefix).remove();
+                $('#details' + prefix).html('Error loading details!');
+                $('#details' + prefix).show();
+
+            }
+        });
+    }
+
+    var redirectToAnalytics = function (value, type) {
+        waitLoading();
+        switch (type) {
+            case 'WebPage':
+                window.location.href = '@Url.Action("WebPages","Analytics")' + '?RequestPath=' + value;
+                break;
+            case 'Mobile':
+                window.location.href = '@Url.Action("Mobile","Analytics")' + '?RequestPath=' + value;
+                break;
+           @* case 'Service':
+                window.location.href = '@Url.Action("Services","Analytics")' + '?RequestPath=' + value;
+                break;*@
+            case 'Transaction':
+                window.location.href = '@Url.Action("Transactions", "Analytics")' + '?Transaction=' + value;
+                break;
+        }
+    }
+
+    var redirectToWebMethodsAnalytics = function (action, serviceName, machineName) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebMethods","Analytics")' + '?ActionURL=' + encodeURI(action) + '&ServiceName=' + serviceName + '&MachineName=' + machineName;
+    }
+
+
+    function functionLoadTreeByPanelSH(field, elem) {
+        var id = elem + field;
+
+        $('#' + elem + 'SoapIn').html('');
+        $('#' + elem + 'SoapOut').html('');
+
+        $('#' + id).html('<div id="loading' + id + '"  style="padding-top:100px;"><span class="spinner"></span></div>');
+
+        var method = "GetSession" + $('input:hidden#txtModule').val() + "Soaps";
+        var dataurl = '@Url.Action("actionName", "Requests")';
+        dataurl = dataurl.replace("actionName", method);
+
+        $.ajax({
+            url: dataurl,
+            type: 'GET',
+            data: { "id": $('input:hidden#txtId').val() },
+            contentType: 'json',
+            success: function (result) {
+
+                setTimeout(function () {
+                    var val = result[field];
+
+                    if ($.trim(val).length > 0) {
+
+                        $('#actions' + id).css('display', 'block');
+
+                        if (isJson(val) === false) {
+                            var xml2json = new X2JS();
+                            val = JSON.stringify(xml2json.xml_str2json(val));
+                        }
+
+
+                        $('#loading' + id).remove();
+                        $('#' + id).JSONView(val, { collapsed: true });
+
+                        $('#collapse-btn' + id).off('click');
+                        $('#collapse-btn' + id).off('click');
+                        $('#toggle-levelNext-btn' + id).off('click');
+                        $('#toggle-levelPrevious-btn' + id).off('click');
+
+                        var check = "obj level";
+                        var aux = 0;
+                        var cls = [];
+                        var i = 0;
+                        $('[class^="obj level"]').each(function () {
+                            // Get array of class names
+                            var temp = $(this).attr('class').split(' ');
+                            var t = temp[1].replace('level', '');
+                            if (t > aux) {
+                                cls[i] = t;
+                                aux = t
+                            }
+
+                        });
+
+                        var maxLevel = 0;
+                        if (cls.length > 0) {
+                            maxLevel = cls[0];
+                        }
+
+
+                        $('#toggle-levelPrevious-btn' + id).prop('disabled', true);
+                        $('#collapse-btn' + id).prop('disabled', true);
+
+                        if (maxLevel == 0) {
+                            $('#expand-btn' + id).prop('disabled', true);
+                            $('#toggle-levelNext-btn' + id).prop('disabled', true);
+                        }
+
+                        $('#collapse-btn' + id).on('click', function () {
+                            $('#' + id).JSONView('collapse');
+                            i = 0;
+                            $('#toggle-levelNext-btn' + id).prop('disabled', false);
+                            $('#expand-btn' + id).prop('disabled', false);
+                            $('#toggle-levelPrevious-btn' + id).prop('disabled', true);
+                            $('#collapse-btn' + id).prop('disabled', true);
+
+                        });
+
+                        $('#expand-btn' + id).on('click', function () {
+                            $('#' + id).JSONView('expand');
+                            $('#toggle-levelNext-btn' + id).prop('disabled', true);
+                            $('#expand-btn' + id).prop('disabled', true);
+                            $('#toggle-levelPrevious-btn' + id).prop('disabled', false);
+                            $('#collapse-btn' + id).prop('disabled', false);
+                            i = maxLevel;
+                        });
+
+                        //$('#toggle-btn' + id).on('click', function () {
+                        //    $('#' + id).JSONView('toggle');
+                        //});
+
+                        $('#toggle-levelNext-btn' + id).on('click', function () {
+
+                            i += 1;
+                            $('#' + id).JSONView('toggle', i);
+                            $('#toggle-levelPrevious-btn' + id).prop('disabled', false);
+                            $('#collapse-btn' + id).prop('disabled', false);
+
+                            if (i == maxLevel) {
+                                $('#toggle-levelNext-btn' + id).prop('disabled', true);
+                                $('#expand-btn' + id).prop('disabled', true);
+                            }
+                        });
+
+                        $('#toggle-levelPrevious-btn' + id).on('click', function () {
+                            if (i > 1 && i <= maxLevel) {
+                                $('#' + id).JSONView('toggle', i);
+                                i -= 1;
+                            }
+                            else {
+                                i = 0;
+                                $('#' + id).JSONView('collapse');
+                                $('#toggle-levelPrevious-btn' + id).prop('disabled', true);
+                                $('#collapse-btn' + id).prop('disabled', true);
+                            }
+                            $('#toggle-levelNext-btn' + id).prop('disabled', false);
+                            $('#expand-btn' + id).prop('disabled', false);
+                        });
+                    }
+                    else {
+                        $('#loading' + id).remove();
+                        $('#actions' + id).css('display','none');
+
+                        $('#' + id).html('<br><br>No soap where found in this request');
+                    }
+                }, 1000);
+
+
+
+            }
+        });
+    }
+
+
+
+
+</script>
+
+    
+ 

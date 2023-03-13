@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="eBankit.Middleware.BackOffice.CustomerManagementService" CodeBehind="CustomerManagementService.svc.cs" %>

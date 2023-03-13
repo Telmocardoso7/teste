@@ -1,0 +1,137 @@
+﻿
+/*  --------------------------------------------------
+    1.0 RESET
+    -------------------------------------------------- */
+
+	html, body, div, span, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+	small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video { margin: 0; padding: 0; border: 0; vertical-align: baseline; }
+
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section { display: block; }
+
+	blockquote, q { quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after { content: ''; content: none; }
+	ins { background-color: #ff9; color: #000; text-decoration: none; }
+	mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+	del { text-decoration: line-through; }
+	abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+	input, select { vertical-align: middle; }
+
+	select, input, textarea, button { outline: none; }
+	pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+	html { overflow-y: scroll; }
+	a:hover, a:active { outline: none; }
+	ul, ol { margin:0; padding:0; }
+	nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+	small { font-size: 85%; }
+	strong, th { font-weight: bold; }
+	td { vertical-align: top; }
+
+	sub, sup { font-size: 75%; line-height: 0; position: relative; }
+	sup { top: -0.5em; }
+	sub { bottom: -0.25em; }
+
+	pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+	textarea { overflow: auto; }
+	.ie6 legend, .ie7 legend { margin-left: -7px; } 
+	input[type="radio"] { vertical-align: text-bottom; }
+	input[type="checkbox"] { vertical-align: bottom; }
+	.ie7 input[type="checkbox"] { vertical-align: baseline; }
+	.ie6 input { vertical-align: text-bottom; }
+	label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+	button, input, select, textarea { margin: 0; }
+	input:valid, textarea:valid   {  }
+	input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+	.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+	button {  width: auto; overflow: visible; }
+	.ie7 img { -ms-interpolation-mode: bicubic; }
+	
+	body {
+		
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		}
+	
+	textarea { resize:none; }
+
+	nav ul, ul.list, fieldset ul, .tweets ul, .slides ul { list-style:none; margin:0; padding:0; overflow:visible; height:100%;	}
+	
+	.box,
+	input, textarea, select {
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		}
+		
+	i.fa {
+		margin-right:5px;
+		}	
+	i.fa.after {
+		margin-right:0;
+		margin-left:5px;
+		}
+	.overlayicon i.fa {
+		margin:0;
+		}
+	.site_search i.fa {
+		margin:0 auto;
+		}
+
+
+
+/*	--------------------------------------------------
+	2.0 CLEARFIX
+	-------------------------------------------------- */
+		 
+	/* Nicolas Gallagher's micro clearfix */
+	.row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
+	.row:after, .clearfix:after { clear: both; }
+	.row, .clearfix { zoom: 1; }
+	
+
+	/* http://sonspring.com/journal/clearing-floats */
+	.clear {
+		clear: both;
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		}
+
+	/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+	.clearfix:before,
+	.clearfix:after {
+		content: '\0020';
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		}
+
+	.clearfix:after {
+		clear: both;
+		}
+
+	/* The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem. */
+
+	.clearfix {
+		zoom: 1;
+		}
+
+		

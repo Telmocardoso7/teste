@@ -1,0 +1,35 @@
+﻿@model AutenticateCallViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<h3>Authenticate User on Call</h3>
+<div class="formCti">
+    <table>
+        <tr>
+            <td>
+                Client Number:
+            </td>
+            <td>
+                <input type="text" name="clientNumber" id="clientNumberToAuthenticate" />
+            </td>
+        </tr>
+        @if (Model.ShowAccessCode)
+        {
+            <tr>
+                <td>
+                    Access Code:
+                </td>
+                <td>
+                    <input type="password" name="accessCode" id="accessCodeToAuthenticate" />
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Back", "Index")
+    <button class="assignButton" id="ConfimAuthenticateCallButton" onclick="ConfirmAuthenticateCall('@Model.InteractionId', @Model.InteractionType)">Authenticate User</button>
+</div>

@@ -1,0 +1,15 @@
+﻿.pagination {
+  display: none;
+}
+.MoreInfoText {
+  cursor: pointer;
+  color: #9f6731;
+}
+.panel-body {
+  font-size: 14px;
+  font-family: "Gotham Light";
+}
+.blueFont {
+  color: #1892ae;
+  line-height: 35px;
+}

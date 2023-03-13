@@ -1,0 +1,37 @@
+﻿@model AutenticateCallViewModel
+
+
+@{
+    ViewData["Title"] = "CTI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<h3>Identity User on Call</h3>
+<div class="formCti">
+    <table>
+        <tr>
+            <td>
+                Client Number:
+            </td>
+            <td>
+                <input type="text" name="clientNumber" id="clientNumberToIdentifyCall" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Back", "Index")
+    <button class="assignButton s-b-action-btn" id="ConfimIdentifyCallButton" onclick="ConfirmIdentifyCall('@Model.InteractionId', @Model.InteractionType)">Identity User</button>
+</div>
+
+<environment include="Development">
+    <script src="~/js/areas/cti/simulator.js" type="text/javascript"></script>
+    <script src="~/js/areas/cti/SimulatorPlugins/SimulatorServices.js"></script>
+    <link href="~/css/ivr.css" rel="stylesheet" />
+</environment>
+<environment exclude="Development">
+    <script src="~/js/areas/cti/simulator.min.js" type="text/javascript" asp-append-version="true"></script>
+    <script src="~/js/areas/cti/SimulatorPlugins/SimulatorServices.min.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/ivr.min.css" asp-append-version="true" />
+</environment>

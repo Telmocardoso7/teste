@@ -1,0 +1,32 @@
+[
+  {
+    "outputFileName": "Scripts/bootstrap.min.js",
+    "inputFiles": [
+      "Scripts/bootstrap.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery-2.1.4.min.js",
+    "inputFiles": [
+      "Scripts/jquery-2.1.4.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery-ui-1.11.4.min.js",
+    "inputFiles": [
+      "Scripts/jquery-ui-1.11.4.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/respond.min.js",
+    "inputFiles": [
+      "Scripts/respond.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/respond.matchmedia.addListener.min.js",
+    "inputFiles": [
+      "Scripts/respond.matchmedia.addListener.js"
+    ]
+  }
+]

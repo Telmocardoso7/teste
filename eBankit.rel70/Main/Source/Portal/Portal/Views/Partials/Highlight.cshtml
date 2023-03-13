@@ -1,0 +1,81 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var ss = bool.Parse(@ViewData["SegmentPage"].ToString());
+    var vshowAll = ViewData["ShowAll"];
+    bool showAll = vshowAll != null ? bool.Parse(vshowAll.ToString()) : false;
+    dynamic productsHigh;
+    
+    if(showAll)
+    {
+        var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+        var segment = currentLanguage.Children.Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+
+        productsHigh = ss == true ? segment.Descendants().Where("ebankIT_highlightinsegmentpage=true") : CurrentPage.Descendants().Where("ebankIT_highlightinproductlist=true");
+    }
+    else
+    {
+        productsHigh = ss == true ? CurrentPage.Descendants().Where("ebankIT_highlightinsegmentpage=true") : CurrentPage.Descendants().Where("ebankIT_highlightinproductlist=true");
+    }
+
+    var hasBanners = productsHigh.Count() > 0;
+}
+
+@if (hasBanners)
+{
+    <div id="homeCarousel" class="carousel slide carouselHome">
+        <div class="carousel-inner" role="listbox">
+            @{
+                for (int i = 0; i < productsHigh.Count(); i++)
+                {
+                    var prod = productsHigh[i];
+                    var style = string.Empty;
+                    var imgsrc= string.Empty;
+                    if (prod.ebankIT_productImage != null && !(prod.ebankIT_productImage is Umbraco.Core.Dynamics.DynamicNull))
+                    { 
+                        imgsrc= prod.ebankIT_productImage.Url;
+                        style = "style=background-image:url(" + @prod.ebankIT_productImage.Url + ");background-position:center;";
+                    }
+
+        <div class="item @(i == 0 ? "active" : null)" @style>
+            @*<img src="@imgsrc" class="lazy"/>*@
+
+            <div class="carousel-text container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="carousel-subTitle">@prod.Parent.Name</div>
+                            <div class="carousel-title">@prod.Name</div>
+                            <div class="carousel-description">
+                                @prod.GetPropertyValue("ebankIT_byline")
+                            </div>
+                            <div class="carousel-more">
+                                <a href="@prod.Url">
+                                    @Umbraco.GetDictionaryValue("KnowMore")
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+            }
+        </div>
+        <ol class="carousel-indicators">
+            @{
+    for (int i = 0; i < productsHigh.Count(); i++)
+    {
+        <li data-target="#homeCarousel" data-slide-to="@i" class="@(i == 0 ? "active" : null)"></li>
+    }
+            }
+        </ol>
+        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+    </div>
+}

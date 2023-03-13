@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Handler Help</title>
+    <meta charset="utf-8" />
+    <!-- CSS LINKS -->
+    <!--<link href="Content/Site.css" rel="stylesheet" />-->
+    <!--<link href="Content/themes/base/all.css" rel="stylesheet" />-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="css/font-awesome.min.css" rel="stylesheet" />-->
+    <!--<link href="Content/animate.min.css" rel="stylesheet" />-->
+    <!--<link href="Content/style.min.css" rel="stylesheet" />-->
+    <!--<link href="Content/style-responsive.min.css" rel="stylesheet" />-->
+    <!--<link href="Content/default.css" rel="stylesheet" />-->
+    <!--<link href="Content/Site.css" rel="stylesheet" />-->
+    <!-- END CSS LINKS -->
+    <!-- SCRIPTS -->
+    <!--    <script src="/Scripts/jquery-2.1.4.min.js"></script>
+        <script src="/Scripts/jquery-migrate-1.2.1.min.js"></script>
+        <script src="/Scripts/jquery-ui-1.11.4.min.js"></script>
+        <script src="/Scripts/bootstrap.min.js"></script>-->
+    <!-- SCRIPTS END -->
+
+    <style>
+        body {
+            font-family: "Segoe UI Light", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="row container">
+        <div class="col-md-12">
+            <h1>Probes Handler Helper</h1>
+            <div class="row-container">
+                <fieldset>
+                    <legend>Usage</legend>
+                    <div class="col-md-12" style="color:#0000EE; background-color:#f1f1f1; padding-top:10px; border-radius:6px 6px;">
+                        <h4>Structure</h4>
+                        <p>&lt;monitoring-address&gt;/.monitor?&lt;querystring&gt;</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tests</legend>
+                    <div class="col-md-12">
+                        <fieldset>
+                            <legend>1. Ping Test</legend>
+                            <div class="col-md-12" style="color:#0000EE; background-color:#f1f1f1; padding-top:10px; border-radius:6px 6px;">
+                                <p>Test=<strong>1</strong></p>
+                                <p>Target=<strong>&lt;target-address&gt;</strong></p>
+
+                                <p>Example: http://example.local/.monitor?<strong>test=1&target=example.local/machine</strong></p>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>2. Database Connection Test</legend>
+                            <div class="col-md-12" style="color:#0000EE; background-color:#f1f1f1; padding-top:10px; border-radius:6px 6px;">
+                                <p>Test=<strong>2</strong></p>
+                                <p>Db=<strong>&lt;connection string name&gt;</strong></p>
+
+                                <p>Example: http://example.local/.monitor?<strong>test=2&db=ExampleConnectionString</strong></p>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>3. Endpoint Invocation Test</legend>
+                            <div class="col-md-12" style="color:#0000EE; background-color:#f1f1f1; padding-top:10px; border-radius:6px 6px;">
+                                <p>Test=<strong>3</strong></p>
+                                <p>Headers=<strong>&lt;header1-name:header1-value|header2-name:header2-value|…&gt;</strong></p>
+                                <p>EndPoint=<strong>&lt;endpoint&gt;</strong></p>
+
+                                <p>Example: http://example.local/.monitor?<strong>test=3&headers=ITSAPP-DEVICE:ANDROIDTABLET|ITSAPP-LANG:pt-PT|ITSAPP-VER:1.2.1|ITSAPP-SO:21&endPoint=http://example.local/public/login</strong></p>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

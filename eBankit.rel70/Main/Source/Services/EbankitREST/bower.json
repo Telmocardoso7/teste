@@ -1,0 +1,10 @@
+{
+  "name": "asp.net",
+  "dependencies": {
+    "jquery": "2.2.0",
+    "bootstrap": "v4.1.1",
+    "open-sans": "v1.1.0",
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "jquery-ui": "1.12.1"
+  }
+}

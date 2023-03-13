@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "eBankit - Omnichannel Service Bus Monitoring";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="pre-login-panel">
+    <div class="row">
+        <div class="col">
+            <img src="~/Content/img/ebankit_negative.png" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col pre-login-title">
+            Monitoring
+        </div>
+    </div>
+    <div class="row pre-login-line">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    @if (ViewBag.SessionExpired != null && ViewBag.SessionExpired is string && ((string)ViewBag.SessionExpired).Equals(bool.TrueString, StringComparison.InvariantCultureIgnoreCase))
+    {
+        <div class="row" style="margin-top: 0px !important;">
+            <div class="col pre-login-text">
+                Your session has ended.
+            </div>
+            <div class="col pre-login-text">
+                Please log in to continue.
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col pre-login-text">
+                Please log in to continue.
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col">
+            <form action="@Url.Action("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl })" method="POST">
+                @Html.AntiForgeryToken()
+                <button id="btnSelectRole" type="submit" class="btn btn-success pre-login-bt">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+﻿@media (min-width: 1050px) {
+  .grayContainer.security-image-without-margin {
+    text-align: left;
+  }
+  .grayContainer.security-image-without-margin .image-container-control {
+    margin: 0 68px;
+  }
+}

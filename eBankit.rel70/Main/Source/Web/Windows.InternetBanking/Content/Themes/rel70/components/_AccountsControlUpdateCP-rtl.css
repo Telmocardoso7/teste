@@ -1,0 +1,99 @@
+﻿.CorpSearchText {
+  float: right;
+  margin-bottom: 5px;
+}
+.CorpSearchText input[type=text],
+.CorpSearchText input[type=password],
+.CorpSearchText select,
+.CorpSearchText textarea {
+  border: none !important;
+  font-size: 13px !important;
+  color: #009999 !important;
+  width: 400px !important;
+  min-height: 30px;
+  border-bottom: 1px solid #009999 !important;
+  outline: none;
+}
+.CorpComboBox {
+  float: left;
+  margin-bottom: 5px;
+}
+.CorpComboBox input[type=text],
+.CorpComboBox input[type=password],
+.CorpComboBox select,
+.CorpComboBox textarea {
+  border: none !important;
+  font-size: 13px !important;
+  color: #009999 !important;
+  min-height: 30px;
+  outline: none;
+}
+.CorpAccNumber {
+  font-size: 11px !important;
+}
+.CorpAccBalance {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+.CorpAlwaysVisible {
+  white-space: normal !important;
+}
+.CorpFormatCurrency {
+  font-size: 12px !important;
+  margin-top: -5px !important;
+}
+.CorpExpandButton {
+  background-image: url("/content/themes/ebankit/images/icon/ico_arrow_dropdown.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.box-blue .scroll-item-top h4 {
+  height: 32px;
+}
+.scrollContainerAccountsCorp {
+  padding: 20px 20px 0px 20px;
+  background-color: #eeeeee;
+  height: 170px;
+}
+#scroolContentCorporate {
+  height: 120px;
+  position: relative;
+  display: block;
+  overflow: hidden !important;
+}
+#scroolContentCorporate .contentBoxCorporate {
+  background-color: #fff;
+  position: relative;
+  float: right;
+  display: block;
+  height: 110px;
+  width: 155px;
+  padding: 10px;
+  margin: 5px !important;
+  margin-left: 20px;
+  /* If you don't want the images in the scroller to be selectable, try the following
+            block of code. It's just a nice feature that prevent the images from
+            accidentally becoming selected/inverted when the user interacts with the scroller. */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  border: 2px solid #FFF;
+}
+#scroolContentCorporate .contentBoxCorporate:hover,
+#scroolContentCorporate .contentBoxCorporate.selected {
+  /* background-color: #cef4ff; */
+  cursor: pointer;
+  border: 2px solid #58595B !important;
+}
+#scroolContentCorporate .contentBoxCorporate img {
+  margin-bottom: 10px;
+}
+#scroolContentCorporate .contentBoxCorporate p {
+  font-size: 10px;
+}

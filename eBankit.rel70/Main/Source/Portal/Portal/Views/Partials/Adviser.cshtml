@@ -1,0 +1,79 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var currSegment = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Segment\"").FirstOrDefault();
+    Umbraco.Web.Models.DynamicPublishedContent savings = null;
+    Umbraco.Web.Models.DynamicPublishedContent credit = null;
+    Umbraco.Web.Models.DynamicPublishedContent card = null;
+
+    if (currSegment != null)
+    {
+        savings = ((Umbraco.Web.Models.DynamicPublishedContentList)CurrentPage.Children()).Where(x => x.GetTemplateAlias() == "ebankIT_ProductListSavings").FirstOrDefault();
+        credit = ((Umbraco.Web.Models.DynamicPublishedContentList)CurrentPage.Children()).Where(x => x.GetTemplateAlias() == "ebankIT_ProductListCredit").FirstOrDefault();
+        card = ((Umbraco.Web.Models.DynamicPublishedContentList)CurrentPage.Children()).Where(x => x.GetTemplateAlias() == "ebankIT_ProductListCard").FirstOrDefault();
+    }
+
+    var onIcon = "/css/images/digital_channels_onboarding_icon.png";
+    string onboarding = System.Web.Configuration.WebConfigurationManager.AppSettings["ebankIT_OnboardingLink"];
+    if (onboarding == null)
+    {
+        onboarding = "#";
+    }
+    
+}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-3-override col-3-margin">
+            <a href="@(savings != null ? savings.Url : "#")" class="noDecoration">
+                <div class="imgAdviser st centerBlock img-circle">
+                    <i class="fa fa-money fa-3x"></i>
+                </div>
+                <div class="titleAdviser">
+                    @Umbraco.GetDictionaryValue("SavingsAdviser")
+                </div>
+                <div class="descriptionAdviser">
+                    @Umbraco.GetDictionaryValue("SavingsAdviserText")
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-3-override col-3-margin">
+            <a href="@(card != null ? card.Url : "#")" class="noDecoration">
+                <div class="imgAdviser nd centerBlock img-circle">
+                    <i class="fa fa-credit-card fa-3x"></i>
+                </div>
+                <div class="titleAdviser">
+                    @Umbraco.GetDictionaryValue("CreditCardAdviser")
+                </div>
+                <div class="descriptionAdviser">
+                    @Umbraco.GetDictionaryValue("CreditCardAdviserText")
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-3-override">
+            <a href="@(credit != null ? credit.Url : "#")" class="noDecoration">
+                <div class="imgAdviser rd centerBlock img-circle">
+                    <i class="fa fa-arrow-down fa-3x"></i>
+                </div>
+                <div class="titleAdviser">
+                    @Umbraco.GetDictionaryValue("CreditCalculation")
+                </div>
+                <div class="descriptionAdviser">
+                    @Umbraco.GetDictionaryValue("CreditCalculationText")
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-3-override">
+            <a href="@onboarding" class="noDecoration">
+                <div class="onboardingIconRedirect centerBlock img-circle">
+                    @*<i class="fa fa-unlock-alt fa-3x"></i>*@
+                    <img src="@onIcon">
+                </div>
+                <div class="titleAdviser">
+                    @Umbraco.GetDictionaryValue("OnbordingTitle")
+                </div>
+                <div class="descriptionAdviser">
+                    @Umbraco.GetDictionaryValue("OnBordingText")
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

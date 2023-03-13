@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "Scripts/accountopening.min.js",
+    "inputFiles": [
+      "Scripts/accountopening.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Themes/ebankIT/register-new-account.min.js",
+    "inputFiles": [
+      "Scripts/Themes/ebankIT/register-new-account.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/register-new-account.min.js",
+    "inputFiles": [
+      "Scripts/register-new-account.js"
+    ]
+  }
+]

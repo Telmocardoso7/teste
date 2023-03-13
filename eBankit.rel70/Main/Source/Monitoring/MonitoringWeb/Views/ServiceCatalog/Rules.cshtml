@@ -1,0 +1,583 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model RulesViewModel
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">Service Catalog</a></li>
+        <li class="active">Manage Rules</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Service Catalog<small> list of all rules</small></h1>
+    <!-- end page-header -->
+    <!-- begin row (search filters) -->
+
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search Filters</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="Rules" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Application</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Applications, "SearchFilters.AppId", Model.SearchFilters.AppId)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Name</label>
+                            <div class="col-md-8">
+                                <input type="text" id="txtName" class="form-control" name="SearchFilters.Name" placeholder="Service Name" value="@Model.SearchFilters.Name" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                            <button class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" id="btnClear" value="Clear" onclick="redirectToRulesList();" name="BtnClear">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="panel col-md-12 transparent">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Application Rules</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="m-b-10">
+                        <table id="results-table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>ApplicationId</th>
+                                    <th>Name</th>
+                                    <th>Application</th>
+                                    <th style="text-align:center;">Is Allowed</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="row" style="padding: 5px; margin: 0px; padding: 9px 0px 9px 0px;">
+                        <div class="col-md-12 text-right">
+                            <button type="button" class="btn btn-success" value="NewRule" onclick="ClearFields('ApplicationRule');$('#modal-insert-ApplicationRule').modal('show');" name="BtnAddRule">Add Rule</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Users Rules</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="m-b-10">
+                        <table id="results-table-User" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>TypeId</th>
+                                    <th>NameId</th>
+                                    <th>UserId</th>
+                                    <th>User</th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th style="text-align:center;">Is Allowed</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="row" style="padding: 5px; margin: 0px; padding: 9px 0px 9px 0px;">
+                        <div class="col-md-12 text-right">
+                            <button type="button" class="btn btn-success" value="NewUserRule" onclick="ClearFields('UserRule');$('#modal-insert-UserRule').modal('show');" name="BtnAddUserRule">Add Rule</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+@*INSERT MODAL*@
+
+<div class="modal fade" id="modal-insert-ApplicationRule">
+    <div class="modal-dialog" style="width: 50%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Application Rule</h4>
+            </div>
+            <form id="ApplicationRuleForm">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    <div class="row panel-form">
+                        <div class="form-horizontal form-bordered col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Name</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.NewRule.Name, new { @class = "form-control", @id="NewApplicationRuleName", @placeholder="Name" })
+                                    @Html.ValidationMessageFor(m => m.NewRule.Name, "", new { @class = "text-danger"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Application</label>
+                                <div class="col-md-10">
+                                    @Dropdown.RenderDropdownWithId(Model.Applications, "NewApplicationRuleApplicationId", "Select an item")
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Is Allowed</label>
+                                <div class="col-md-10">
+                                    <input id="NewApplicationRuleIsAllowed" type='checkbox' class='js-switch' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-inverse" data-dismiss="modal">Close</a>
+                    <button type="button" onclick="ConfirmModal('Insert New Application Rule', 'This operation will create a new User Rule. Do you wish to continue?', 'Insert', 'ApplicationRule');" class="btn btn-sm btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-insert-UserRule">
+    <div class="modal-dialog" style="width: 50%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">User Rule</h4>
+            </div>
+            <form id="UserRuleForm">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    <div class="row panel-form">
+                        <div class="form-horizontal form-bordered col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">User</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.NewRule.User, new { @class = "form-control", @id="NewUserRuleName",@placeholder="User" })
+                                    @Html.ValidationMessageFor(m => m.NewRule.User, "", new { @class = "text-danger"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Type</label>
+                                <div class="col-md-10">
+                                    @Dropdown.RenderDropdownWithId(Model.Types, "NewUserRuleTypeId", "Select type")
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Name</label>
+                                <div class="col-md-10">
+                                     @Dropdown.RenderDropdownWithId(Model.Names, "NewUserRuleNameId", "Select name")
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Is Allowed</label>
+                                <div class="col-md-10">
+                                    <input id="NewUserRuleIsAllowed" type='checkbox' class='js-switch' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-inverse" data-dismiss="modal" onclick="ResetDDLFromModal();">Close</a>
+                    <button type="button" onclick="ConfirmModal('Insert New User Rule', 'This operation will create a new User Rule. Do you wish to continue?', 'Insert', 'UserRule');" class="btn btn-sm btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*DELETE MODAL*@
+
+<div class="modal fade" id="deleteAppRule">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="hdnAppRuleId" />
+                <input type="hidden" id="hdnAppAplicationId" />
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Delete Application Rule Confirmation</h4>
+            </div>
+            <div class="modal-body">Do you wish to delete this record?</div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-sm btn-success" onclick="DeleteRecord($('#hdnAppRuleId').val(),$('#hdnAppAplicationId').val(),'ApplicationRule');">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteUserRule">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="hdnUserRuleId" />
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Delete User Rule Confirmation</h4>
+            </div>
+            <div class="modal-body">Do you wish to delete this record?</div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-sm btn-success" onclick="DeleteRecord($('#hdnUserRuleId').val(),'','UserRule');">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="hdnRule" />
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="confirmModalTitle"></h4>
+            </div>
+            <div class="modal-body" id="confirmModalMessage"></div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal" id="confirmModalClose">Close</a>
+                <button type="button" class="btn btn-sm btn-success" id="confirmModalButton">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<script src="~/bundles/requestsScripts"></script>
+
+<style>
+    .spaceRight {
+        margin-right: 5px;
+    }
+
+    .ui-autocomplete{
+    z-index:1050;
+}
+</style>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        ToggleSideBarMenu($('#ServiceCatalog'), $('#Rules'));
+        InitializeDropdowns();
+
+
+        InitializeAutoComplete($('#txtName'), '@Url.Action("SearchRulesNames", "ServiceCatalog")');
+        InitializeAutoComplete($('#NewApplicationRuleName'), '@Url.Action("SearchRulesNames", "ServiceCatalog")');
+        InitializeAutoComplete($('#NewUserRuleName'), '@Url.Action("SearchUserNames", "ServiceCatalog")');
+
+
+        //APPLICATION RULE TABLE
+        var dataUrl = '@Html.Raw(Url.Action("GetApplicationRulesResults", "ServiceCatalog", new { RuleId = Model.SearchFilters.RuleId, AppId = Model.SearchFilters.AppId, Name = Model.SearchFilters.Name }))';
+        var columns = [
+            { "mDataProp": "Id", "targets": 0, "visible": false },
+            { "mDataProp": "ApplicationId", "targets": 1, "visible": false },
+            { "mDataProp": "Name", "orderable": true },
+            { "mDataProp": "Application", "orderable": true },
+            {
+                "mDataProp": "IsAllowed",
+                "orderable": false,
+                "sWidth": "10%",
+                "sClass": "IsAllowedApplication",
+                "mRender": function (data, type, full) {
+                    var checked = "";
+                    if (data) {
+                        checked = "checked";
+                    }
+
+                    return "<div style=\"font-size: 20px;\" class='alignCenter'><input type='checkbox' class='js-switch1' " + checked + " /></div>";
+
+                }
+            },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "sWidth": "9%",
+                "mRender": function (data, type, full) {
+                    var deleteModal = "<a href='#deleteAppRule' onclick='event.stopPropagation();$(\"#deleteAppRule\").modal(\"show\");$(\"#hdnAppAplicationId\").val(\"" + full.ApplicationId + "\");$(\"#hdnAppRuleId\").val(\"" + full.Id + "\");' role='button' class='btn btn-inverse' data-toggle='modal'><i class='fa fa-times' style='font-size:13px'></i></a>";
+
+                    return "<div style='width:85px' class='alignCenter'>" + deleteModal + "</div>";
+                }
+            }
+
+        ];
+        var table = InitializeDataTable('results-table', dataUrl, columns, [[2, "DESC"]], null, undefined, 'js-switch1');
+
+
+        //USER RULE TABLE
+        var dataUrlUser = '@Html.Raw(Url.Action("GetUserRulesResults", "ServiceCatalog", new { RuleId = Model.SearchFilters.RuleId, UserId = Model.SearchFilters.User, TypeId= Model.SearchFilters.TypeId, Name = Model.SearchFilters.Name, AppId = Model.SearchFilters.AppId}))';
+        var columns = [
+            { "mDataProp": "Id", "targets": 0, "visible": false },
+            { "mDataProp": "TypeId", "targets": 1, "visible": false },
+            { "mDataProp": "NameId", "targets": 2, "visible": false },
+            { "mDataProp": "UserId", "targets": 3, "visible": false },
+            { "mDataProp": "User", "orderable": true },
+            { "mDataProp": "Type", "orderable": true },
+            { "mDataProp": "Name", "orderable": true },
+            {
+                "mDataProp": "IsAllowed",
+                "orderable": false,
+                "sClass": "IsAllowedUser",
+                "mRender": function (data, type, full) {
+                    var checked = "";
+                    if (data) {
+                        checked = "checked";
+                    }
+
+                    return "<div style=\"font-size: 20px;\" class='alignCenter'><input type='checkbox' class='js-switch2' " + checked + " /></div>";
+
+                }
+            },
+            {
+                "mDataProp": null,
+                "orderable": false,
+                "sClass": "detail",
+                "sWidth": "9%",
+                "mRender": function (data, type, full) {
+                    var deleteModal = "<a href='#deleteUserRule' onclick='event.stopPropagation();$(\"#deleteUserRule\").modal(\"show\");$(\"#hdnUserRuleId\").val(\"" + full.Id + "\");' role='button' class='btn btn-inverse' data-toggle='modal'><i class='fa fa-times' style='font-size:13px'></i></a>";
+
+                    return "<div style='width:85px' class='alignCenter'>" + deleteModal + "</div>";
+                }
+            }
+
+        ];
+        var tableUser = InitializeDataTable('results-table-User', dataUrlUser, columns, [[2, "DESC"]], null, undefined, 'js-switch2');
+
+        var dataUrl = '@Html.Raw(Url.Action("AllowApplication","ServiceCatalog"))';
+        InitializeEnabledClick(dataUrl, 'results-table', 'IsAllowed', 'IsAllowedApplication', 'js-switch1');
+
+        var userUrl = '@Html.Raw(Url.Action("AllowUser","ServiceCatalog"))';
+        InitializeEnabledClick(userUrl, 'results-table-User', 'IsAllowed', 'IsAllowedUser', 'js-switch2');
+
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+        elems.forEach(function (html) {
+            var switchery = new Switchery(html, { color: 'rgb(0, 172, 172)' });
+        });
+
+        App.init();
+
+    });
+
+    var ConfirmModal = function (title, message, fc, arg) {
+        if ($('#' + arg + 'Form').valid())
+        {
+            $('#modal-insert-' + arg).modal('hide');
+
+            $('#confirmModalTitle').text(title);
+            $('#confirmModalMessage').text(message);
+
+            $('#confirmModalButton').prop('onclick', null).off('click');
+            if (fc == 'Insert')
+                $('#confirmModalButton').on('click', function () {
+                    InsertRecord(arg);
+                    $('#confirmModal').modal('hide');
+
+                });
+            $('#confirmModal').modal('show');
+        }
+    }
+
+
+    var DeleteRecord = function (ruleid, appid, type) {
+        var action = "Delete" + type;
+        var url = '@Html.Raw(Url.Action("actionName", "ServiceCatalog"))';
+        var dataUrl = url = url.replace("actionName", action);
+
+        event.stopPropagation();
+
+        var _table = $('#results-table').DataTable();
+        var input = '';
+
+        switch (type) {
+            case "ApplicationRule":
+                var input = JSON.stringify({
+                    'RuleId': ruleid,
+                    'ApplicationId': appid
+                });
+                break;
+            case "UserRule":
+                var input = JSON.stringify({
+                    'RuleId': ruleid
+                });
+                _table = $('#results-table-User').DataTable();
+
+                break;
+            default:
+                break;
+        }
+
+        $.ajax({
+            url: dataUrl,
+            type: 'POST',
+            data: input,
+            contentType: "application/json;charset=utf-8",
+            async: true,
+            success: function (data) {
+                $('.modal').modal('hide');
+                stopLoading();
+                _table.draw(false);
+            },
+            error: function () {
+            }
+        });
+
+    }
+
+
+    var InsertRecord = function (type) {
+        
+        var action = "Insert" + type;
+        var url = '@Html.Raw(Url.Action("actionName", "ServiceCatalog"))';
+        var dataUrl = url = url.replace("actionName", action);
+
+        var isallowed = document.querySelector("[id='New" + type + "IsAllowed']");
+
+        var fields = {};
+        fields['IsAllowed'] = isallowed.checked;
+
+        switch (type) {
+            case "ApplicationRule":
+
+                fields['Name'] = $('#New' + type + 'Name').val();
+                fields['ApplicationId'] = $('#New' + type + 'ApplicationId').val();
+
+                InsertRecordFunc('results-table', dataUrl, fields);
+
+
+                break;
+            case "UserRule":
+
+                fields['NameId'] = $('#New' + type + 'NameId').val();
+                fields['TypeId'] = $('#New' + type + 'TypeId').val();
+                fields['User'] = $('#New' + type + 'Name').val();
+                
+
+                InsertRecordFunc('results-table-User', dataUrl, fields);
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    var ClearFields = function (type) {
+
+        var isallowed = document.querySelector("[id='New" + type + "IsAllowed']");
+
+        switch (type) {
+            case "ApplicationRule":
+
+               $('#New' + type + 'Name').val('');
+               
+               $('select[id="New' + type + 'ApplicationId"] option:selected').prop('selected', false).change();
+               $('#New' + type + 'ApplicationId').selectpicker('refresh');
+                
+                break;
+            case "UserRule":
+
+
+                $('select[id="New' + type + 'NameId"] option:selected').prop('selected', false).change();
+                $('#New' + type + 'NameId').selectpicker('refresh');
+                      
+                $('select[id="New' + type + 'TypeId"] option:selected').prop('selected', false).change();
+                $('#New' + type + 'TypeId').selectpicker('refresh');
+                
+                $('#New' + type + 'Name').val('');
+
+
+                break;
+            default:
+                break;
+        }
+
+        SetSwitchery(isallowed, false);
+    }
+
+
+
+    $('#NewUserRuleTypeId').on('change', function () {
+        
+        var input = JSON.stringify({ "TypeId": this.value });
+
+        $.ajax({
+            url: '@Html.Raw(Url.Action("GetNames", "ServiceCatalog"))',
+            type: 'POST',
+            data: input,
+            contentType: "application/json;charset=utf-8",
+            async: true,
+            success: function (data) {
+                var jsonData = JSON.parse(data);
+                $('#NewUserRuleNameId').find('option').remove();
+                for (var i = 0; i < jsonData.length; i++) {
+                    $('#NewUserRuleNameId').append('<option value="' + jsonData[i].Id + '">' + jsonData[i].Designation + '</option>');
+                }
+                $('#NewUserRuleNameId').selectpicker('refresh');
+            },
+            error: function () {
+
+            }
+        });
+
+    });
+
+    var redirectToRulesList = function () {
+        event.stopPropagation();
+        waitLoading();
+        $('#txtName').val('');
+        $('select[name="SearchFilters.AppId"] option:selected').prop('selected', false).change();
+        window.location.href = '@Url.Action("Rules", "ServiceCatalog")';
+    }
+
+    var ResetDDLFromModal = function () {
+        $('#NewUserRuleNameId').find('option').remove().end().selectpicker('refresh');
+    }
+
+
+</script>
+

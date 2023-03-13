@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@2.2.0",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "bootstrap@4.1.1",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.min.js.map",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/css/bootstrap-grid.min.css",
+        "dist/css/bootstrap-grid.min.css.map",
+        "dist/css/bootstrap-reboot.min.css",
+        "dist/css/bootstrap-reboot.min.css.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "jqueryui@1.12.1",
+      "destination": "wwwroot/lib/jqueryui/",
+      "files": [
+        "jquery-ui.min.js"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/lib/font-awesome/",
+      "files": [
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/FontAwesome.otf",
+        "css/font-awesome.min.css"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "@bleskomat/open-sans-fontface@1.5.0",
+      "destination": "wwwroot/lib/open-sans/",
+      "files": [
+        "fonts/Regular/OpenSans-Regular.eot",
+        "fonts/Regular/OpenSans-Regular.svg",
+        "fonts/Regular/OpenSans-Regular.ttf",
+        "fonts/Regular/OpenSans-Regular.woff",
+        "fonts/Regular/OpenSans-Regular.woff2",
+        "fonts/Light/OpenSans-Light.eot",
+        "fonts/Light/OpenSans-Light.svg",
+        "fonts/Light/OpenSans-Light.ttf",
+        "fonts/Light/OpenSans-Light.woff",
+        "fonts/Light/OpenSans-Light.woff2",
+        "css/open-sans-fontface.min.css"
+      ]
+    }
+  ]
+}

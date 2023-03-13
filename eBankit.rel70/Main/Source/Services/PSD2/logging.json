@@ -1,0 +1,112 @@
+{
+  "MonitoringLogging": {
+    "UseMiddleware": true,
+    "BufferSettings": {
+      "UseBuffer": false,
+      "RegularFlushInterval": "00:00:30",
+      "UrgentFlushInterval": "00:00:15",
+      "UrgentFlushThreshold": 50000,
+      "MaxBufferSize": 1000000,
+      "MaxFlushSize": 20000,
+      "MaxBufferThreads": 10,
+      "Debug": true,
+      "LogsFolder": "C:\\Log\\HealthMonitoring"
+    },
+    "ConnectorSettings": {
+      "ConnectorAssembly": "eBankit.LIB.Logging.Sql.SqlLogConnector,eBankit.LIB.Logging.Sql",
+      "Options": {
+        "ConnectionString": "Data Source=EBKNTBOOK-0850\\LOCALDB;Initial Catalog=rel70_EbankitMonitoring;User ID=sa;Password=Portofc1997_",
+        "CommandTimeout": 0
+      }
+    },
+    "ObfuscationSettings": {
+      "IsEnable": true,
+      "Options": {
+        "ConnectionString": "Data Source=EBKNTBOOK-0850\\LOCALDB;Initial Catalog=rel70_EbankitMonitoring;User ID=sa;Password=Portofc1997_"
+      }
+    },
+    "RequestFilteringSettings": {
+      "IsEnable": true,
+      "IsBlocklist": true,
+      "ConnectionString": "Data Source=EBKNTBOOK-0850\\LOCALDB;Initial Catalog=rel70_EbankitMonitoring;User ID=sa;Password=Portofc1997_"
+    }
+  },
+  "Serilog": {
+    "Using": [
+      "Serilog.Enrichers.Thread",
+      "Serilog.Enrichers.Environment",
+      "Serilog.Sinks.Console",
+      "Serilog.Sinks.Trace",
+      "Serilog.Sinks.File",
+      "Serilog.Sinks.RollingFile",
+      "Serilog.Sinks.EventLog",
+      "eBankit.LIB.Logging"
+    ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Error"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "{Timestamp:HH:mm:ss} {Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}",
+          "restrictedToMinimumLevel": "Information"
+        }
+      },
+      {
+        "Name": "Trace",
+        "Args": {
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({SourceContext}) {Message}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "RollingFile",
+        "Args": {
+          "pathFormat": ".\\Logs\\testlog-{{Date}}.txt",
+          "restrictedToMinimumLevel": "Information",
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({SourceContext}) {Message}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "ApplicationLoggingSink",
+        "Args": {
+          "outputTemplate": "{Timestamp:HH:mm:ss} {Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}"
+        }
+      }
+    ],
+    "WriteToAsync": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "{Timestamp:HH:mm:ss} {Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}",
+          "restrictedToMinimumLevel": "Information"
+        }
+      },
+      {
+        "Name": "Trace",
+        "Args": {
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({SourceContext}) {Message}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "RollingFile",
+        "Args": {
+          "pathFormat": ".\\Logs\\testlog-{{Date}}.txt",
+          "restrictedToMinimumLevel": "Information",
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] ({SourceContext}) {Message}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "ApplicationLoggingSink",
+        "Args": {
+          "outputTemplate": "{Timestamp:HH:mm:ss} {Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}"
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ]
+  }
+}

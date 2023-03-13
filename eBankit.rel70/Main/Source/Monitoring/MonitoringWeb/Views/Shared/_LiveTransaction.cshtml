@@ -1,0 +1,40 @@
+﻿
+<div class="row">
+    <!-- begin col-12 -->
+    <div class="col-md-12">
+        <!-- begin panel -->
+        <div class="panel-inverse">
+            <div class="panel-heading">
+                <h4 class="panel-title">Live Transaction Feed</h4>
+
+            </div>
+            <div class="panel-body bg-silver">
+                <div class="table-responsive">
+                    <div style="background-color: black; min-width: 977px; display: block;">
+                        <div id="container">
+                            <div class="start">
+                                <p class="date"></p>
+                                <p class="time"></p>
+                                <p>start</p>
+                            </div>
+                            <div class="current">
+                                <p class="date"></p>
+                                <p class="time"></p>
+                                <p>now</p>
+                            </div>
+                            <canvas id="blocks" width="650" height="400" style="left: -10%; position: relative;"></canvas>
+                            <canvas id="scale" width="150" height="30"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end panel -->
+    </div>
+    <!-- end col-12 -->
+</div>
+
+
+<script src="~/Scripts/processing.js"></script>
+<script src="~/Scripts/ebankIT/Home/live-transaction.js"></script>
+<script src="~/Scripts/comments.js"></script>

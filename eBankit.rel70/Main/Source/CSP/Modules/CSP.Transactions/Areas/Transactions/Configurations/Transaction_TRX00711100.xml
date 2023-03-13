@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+   <Table>
+      <WorflowType>eBankit.FE.TRX.Workflow.Engine.Engine.CustomGenericFlow.CustomWorkflowSingle, eBankit.FE.TRX</WorflowType>
+      <Transaction>TRX00711</Transaction>
+      <IDTransaction>197</IDTransaction>
+   </Table>
+   <Tables1>
+      <Table1>
+         <Column1>TRX00711</Column1>
+         <WorkflowPropertyID>0</WorkflowPropertyID>
+         <vcPropertyValue>eBankit.FE.TRX.Workflow.Services.AccessValidation, eBankit.FE.TRX</vcPropertyValue>
+         <bRequired>false</bRequired>
+      </Table1>
+      <Table1>
+         <Column1>TRX00711</Column1>
+         <WorkflowPropertyID>1</WorkflowPropertyID>
+         <vcPropertyValue>~/Views/Transaction/Services/007/TRX00711_01.cshtml</vcPropertyValue>
+         <bRequired>false</bRequired>
+      </Table1>
+      <Table1>
+         <Column1>TRX00711</Column1>
+         <WorkflowPropertyID>2</WorkflowPropertyID>
+         <vcPropertyValue>eBankit.FE.TRX.Services.Transaction.TRX00711_01, eBankit.FE.TRX</vcPropertyValue>
+         <bRequired>false</bRequired>
+      </Table1>
+      <Table1>
+         <Column1>TRX00711</Column1>
+         <WorkflowPropertyID>4</WorkflowPropertyID>
+         <vcPropertyValue>~/Views/Transaction/Services/007/TRX00711_01.cshtml</vcPropertyValue>
+         <bRequired>false</bRequired>
+      </Table1>
+      <Table1>
+         <Column1>TRX00711</Column1>
+         <WorkflowPropertyID>5</WorkflowPropertyID>
+         <vcPropertyValue>~/Views/Transaction/Services/007/TRX00711_01.cshtml</vcPropertyValue>
+         <bRequired>false</bRequired>
+      </Table1>
+   </Tables1>
+</NewDataSet>

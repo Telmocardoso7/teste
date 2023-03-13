@@ -1,0 +1,48 @@
+{
+  "$schema": "http://cachemanager.michaco.net/schemas/cachemanager.json#",
+  "sql": [
+    {
+      "key": "sqlCache",
+      "connectionString": "__sql.0.connectionString__",
+      "tableName": "CacheItems",
+      "HeartbeatFrequency": 120,
+      "retryConnectionCount": 20,
+      "retryConnectionInterval": 1000,
+      "retryLaunchTaskInterval": 5000
+    }
+  ],
+  "cacheManagers": [
+    {
+      "maxRetries": 1000,
+      "name": "cacheManager",
+      "retryTimeout": 100,
+      "updateMode": "Up",
+      "backplane": {
+        "key": "sqlCache",
+        "type": "Ebankit.Core.Caching.CM.SqlServer.SqlCacheBackplane, Ebankit.Core.Caching.CM.SqlServer",
+        "channelName": "ib_Channel"
+      },
+      "loggerFactory": {
+        "knownType": "Microsoft"
+      },
+      "serializer": {
+        "knownType": "Json"
+      },
+      "handles": [
+        {
+          "knownType": "Dictionary",
+          "key": "dictio",
+          "expirationMode": "Absolute",
+          "expirationTimeout": "01:00:00"
+        },
+        {
+          "type": "Ebankit.Core.Caching.CM.SqlServer.SqlCacheHandle`1, Ebankit.Core.Caching.CM.SqlServer",
+          "key": "sqlCache",
+          "isBackplaneSource": true,
+          "expirationMode": "Sliding",
+          "expirationTimeout": "02:00:00"
+        }
+      ]
+    }
+  ]
+}

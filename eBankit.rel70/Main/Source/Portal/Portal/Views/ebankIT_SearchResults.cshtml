@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ebankIT_Master.cshtml";
+    var currentLanguage = CurrentPage.AncestorsOrSelf().Where("DocumentTypeAlias == \"ebankIT_Language\"").FirstOrDefault();
+    var results = Umbraco.TypedSearch(Request.QueryString["keywords"]).ToList();
+    results = results.Where(x => x.AncestorsOrSelf().Where(c => c.DocumentTypeAlias == "ebankIT_Language").First().Name == currentLanguage.Name).ToList();
+}
+<div class="searchPage">
+    <div class="container searchPage">
+        <br />
+        <h1>@Umbraco.GetDictionaryValue("SearchPageTitle")</h1>
+        <h4>
+           <strong> @results.Count() </strong> @Umbraco.GetDictionaryValue("SearchResultsFound")
+        </h4>
+    </div>
+    <div class="searchAgain">
+        <div class="container">
+            <div class=" row">
+                <div class="col-xs-12">
+
+                    <label for="exampleInputEmail1">@Umbraco.GetDictionaryValue("SearchAgain")</label>
+
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputSearchText" placeholder="@Umbraco.GetDictionaryValue("SearchPlaceHolder")" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default" id="inputSearchButton">@Umbraco.GetDictionaryValue("Search")</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="searchResults container">
+        @if (!string.IsNullOrEmpty(Request.QueryString["keywords"]))
+        {
+            <ul>
+                @foreach (var result in results)
+                {
+                                        <li>
+                        <div class="hr-line-dashed"></div>
+                        <div class="search-result">
+                            <h3><a href="@result.Url">@result.Name</a></h3>
+                            @*@{
+    var n = result.Parent;
+    var crumb = result.Name;
+    while (n.Parent != null)
+    {
+        crumb = n.Name + " » " + crumb;
+        n = n.Parent;
+    }
+            }
+            <h6> @crumb</h6>
+                            <h6>@result.Url.Replace("/"," » ")</h6>*@
+                            <p>
+                                @result.GetPropertyValue("ebankIT_byline")
+                            </p>
+
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        function submitLogin() {
+
+            event.preventDefault();
+
+
+
+            window.location.href = SERCHRESULTS + $('#inputSearchText').val();
+        }
+
+        $('#inputSearchText').keypress(function (e) {
+            if (e.which == '13') {
+                submitLogin()
+            }
+        });
+
+        $('#inputSearchButton').click(function () {
+            submitLogin()
+        });
+
+    });
+    $(document).on('click', 'button#inputSearchButton[type="submit"]', function (event) {
+
+        submitLogin()
+
+    });
+
+    $(document).ready(function () { $('#inputSearchText').focus(); });
+</script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.MW.OpenBanking.Services" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="$(userprofile)\.nuget\packages\eBankit.MW.OpenBanking.Services\$(Version)\contentFiles\any\$(TargetFramework)\eBankit.MW.OpenBanking.Services.xml" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+</Project>

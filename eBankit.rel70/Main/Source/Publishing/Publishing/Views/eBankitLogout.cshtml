@@ -1,0 +1,5 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+	UmbracoContext.Security.ClearCurrentLogin();
+	Response.Redirect("/umbraco");
+}

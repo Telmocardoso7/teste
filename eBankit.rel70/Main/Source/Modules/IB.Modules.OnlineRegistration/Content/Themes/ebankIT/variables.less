@@ -1,0 +1,44 @@
+﻿//
+// Variables
+// --------------------------------------------------
+@theme:"ebankit";
+@base-url: "../@{theme}";
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+
+// Color variables (appears count calculates by raw css)
+@color0: #0174a8; // Appears 19 times
+@color1: #0173a7; // Appears 15 times
+@color2: #0ab2c7; // Appears 12 times
+@color3: #0aaec5; // Appears 6 times
+@color4: #dddada; // Appears 3 times
+@color5: #ffffff; // Appears 3 times
+@color6: rgb(237, 237, 237); // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width0: 40px; // Appears 4 times
+@width1: 100%; // Appears 5 times
+
+// Height variables (appears count calculates by raw css)
+@height0: 60px; // Appears 4 times
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-normal:    "Gotham Book", "Open Sans",  "Arial", "sans-serif";
+@font-family-light:     "Gotham Light", 'Open Sans', sans-serif;
+@font-family-medium:     "Gotham Medium", 'Open Sans', sans-serif;
+@font-family-bold:"Gotham Bold", 'Open Sans', sans-serif;
+
+@font-family-menu: @font-family-normal;
+@font-family-menu-bold:'gotham bold';
+//## Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-light;

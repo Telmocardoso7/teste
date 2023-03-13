@@ -1,0 +1,64 @@
+﻿@model AssignViewModel
+
+<h3>Assign @Model.InteractionType.ToString() to an Operator</h3>
+@{ await Html.RenderPartialAsync("_OutputMessages"); }
+<div class="formCti">
+
+    <input type="hidden" name="identifier" id="identifier" value="@Model.InteractionId" />
+    <table>
+        <tr>
+            <td>
+                Operator:
+            </td>
+            <td>
+                <select name="extension" id="extension">
+                    @foreach (var user in Model.Users)
+                    {
+                        <option value="@user.Extension">@user.Username</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        @if (Model.InteractionType == InteractionManagementType.Email)
+        {
+
+            <tr>
+                <td>
+                    Email From:
+                </td>
+                <td>
+                    <input type="text" name="emailFrom" id="emailFrom" value="ricardo.lima@ebankit.com" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email Subject:
+                </td>
+                <td>
+                    <input type="text" name="emailSubject" id="emailSubject" value="Information request" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Eamil Message:
+                </td>
+                <td>
+                    <textarea type="text" name="emailBody" id="emailBody" style="width:600px; min-height:300px;">
+Hi
+
+I have a question about my credit card, when I have to pay my card?
+
+Thank you
+
+Good Bye
+</textarea>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    @Html.ActionLink("Back", "Index")
+    <button class="assignButton s-b-action-btn" id="ConfimAssignToOperatorButton" onclick="ConfirmAssignToOperator('@Model.InteractionId')">Assign @Model.InteractionType.ToString()</button>
+</div>

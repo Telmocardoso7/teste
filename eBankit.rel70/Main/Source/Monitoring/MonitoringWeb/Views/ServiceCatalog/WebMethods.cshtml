@@ -1,0 +1,152 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ServiceCatalogViewModel
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">Service Catalog</a></li>
+        <li class="active">Web Methods</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Web Methods Catalog<small> list of all published methods</small></h1>
+    <!-- end page-header -->
+<!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Search Web Methods Catalog</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="WebMethods" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Machine Name</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.MachineNames,"SearchFilters.MachineName",Model.SearchFilters.MachineName)
+                            </div>
+                        </div>
+                         <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Service Name</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.ServiceNames,"SearchFilters.ServiceName",Model.SearchFilters.ServiceName)
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Action</label>
+                            <div class="col-md-8">
+                                <input type="text" id="txtAction" name="SearchFilters.Action" class="form-control" placeholder="Action" value="@Model.SearchFilters.Action">
+                            </div>
+                        </div>                       
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Request Path</label>
+                            <div class="col-md-8">
+                                <input type="text" id="txtReqPath" class="form-control" name="SearchFilters.RequestPath" placeholder="Request Path" value="@Model.SearchFilters.RequestPath"/>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top:10px;float:right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Web Methods</h4>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table id="results-table" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Service Name</th>
+                                <th>Machine Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+<div id="detailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Web Methods details</h4>
+            </div>
+            <div class="modal-body" style="padding-left:0px;padding-right:0px;">
+                @DetailModal.RenderModal(new List<string> {"Action","ServiceName","MachineName"},false)
+            </div>
+            <input type="hidden" id="txtIn" />
+            <input type="hidden" id="txtOut" />
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+
+<script>
+    $(document).ready(function () {
+        InitializeTooltip();
+        ToggleSideBarMenu($('#ServiceCatalog'), $('#WebMethods'));
+        InitializeDropdowns();
+
+        //TODO: DEFINE OUTPUT PARAMETERS
+        var dataUrl = '@Html.Raw(Url.Action("GetWebMethodsCatalogResults", "ServiceCatalog", new {ActionURL = Model.SearchFilters.Action ,ServiceName = Model.SearchFilters.ServiceName,MachineName=Model.SearchFilters.MachineName,RequestPath = Model.SearchFilters.RequestPath,RequestUrl = Model.SearchFilters.RequestUrl}))';
+        var columns = [
+            { "mDataProp": "Action", "orderable": true },
+            { "mDataProp": "ServiceName", "orderable": true },
+            { "mDataProp": "MachineName", "orderable": true },
+            {
+                "mDataProp": "Detail",
+                "orderable": false,
+                "sClass": "detail",
+                "mRender": function (x, type, data) {
+                    return "<div style='width:85px;' class='alignCenter'><a href='#detailModal' role='button' class='btn btn-inverse detailsButton' data-toggle='modal'><i class='fa fa-search-plus' style='font-size:13px'></i></a> <div onclick='redirectToAnalytics(&quot;" + encodeURI(data.Action) + "&quot;,\"" + data.ServiceName + "\",\"" + data.MachineName + "\")' class='btn btn-inverse statsButton'><i class='fa fa-line-chart' style='font-size:13px'></i></div></div>";
+                }
+            }
+        ];
+        var table = InitializeDataTable('results-table', dataUrl, columns, [[0, "ASC"]]);
+
+        InitializeAutoComplete($('#txtReqPath'), '@Url.Action("RequestPathSearch", "ServiceCatalog", new {service = "ServiceController/servicerequestpaths" })');
+        InitializeAutoComplete($('#txtAction'), '@Url.Action("RequestPathSearch", "ServiceCatalog", new {service = "ServiceController/serviceactions" })');
+
+        var attributeList = ["Action", "ServiceName", "MachineName"];
+        InitializeDetailClickEvent(attributeList, '@ViewBag.DateFormat', false);
+
+        App.init();
+    });
+
+    var redirectToAnalytics = function (action, serviceName, machineName) {
+        waitLoading();
+        window.location.href = '@Url.Action("WebMethods","Analytics")' + '?ActionURL=' + action + '&ServiceName=' + serviceName + '&MachineName=' + machineName;
+            }
+</script>

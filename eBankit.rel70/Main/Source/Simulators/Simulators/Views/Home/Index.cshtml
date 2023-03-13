@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["HeaderTitle"] = "";
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/index-skin.css" rel="stylesheet" />
+
+<div class="messageContainer">
+    <div class="row s-container p-2">
+        <div class="col-md-12">
+            <div class="row s-b-title titleMargin">
+                <span>Welcome to ebankIT Simulators Portal</span>
+            </div>
+            <div class="row s-b-subtitle">
+                <span>Please select a simulator to start</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row s-container">
+    <div class="col-md-4">
+        <div class="boxContainer ctiContainer">
+            <div class="titleBottomBorder">
+                <div class="simulatorTitle">
+                    <span>CTI</span>
+                </div>
+            </div>
+            <div class="simulatorCTIDescription">
+                <div>
+                    Simulate incoming interactions for the Contact Center.
+                </div>
+            </div>
+            <div class="btnStart">
+                <div>
+                    <a asp-area="CTI" asp-controller="SilenceManager" asp-action="Index" data-header-title="CTI Simulator">
+                        <input class="s-b-action-btn" type="button" name="btnCTIStart" value="Start" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="boxContainer ttpContainer">
+            <div class="titleBottomBorder">
+                <div class="simulatorTitle">
+                    <span>TPP</span>
+                </div>
+            </div>
+            <div class="simulatorTPPDescription">
+                <div>
+                    Simulate open banking (PSD2) interactions between Third-Party Providers (TPP) and the ebankIT platform.
+                </div>
+            </div>
+            <div class="btnStart">
+                <div>
+                    <a asp-area="TPP" asp-controller="Manager" asp-action="Index" data-header-title="Tpp Simulator">
+                        <input class="s-b-action-btn" type="button" name="btnTPPStart" value="Start" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="boxContainer ttpContainer">
+            <div class="titleBottomBorder">
+                <div class="simulatorTitle">
+                    <span>Email Sender</span>
+                </div>
+            </div>
+            <div class="simulatorTPPDescription">
+                <div>
+                    Simulate and process the Email Queue created at EMS and dispatch the queue for MailChimp.
+                </div>
+            </div>
+            <div class="btnStart">
+                <div>
+                    <a asp-area="EmailSender" asp-controller="EmailSenderManager" asp-action="Index" data-header-title="Email Sender Simulator">
+                        <input class="s-b-action-btn" type="button" name="btnTPPStart" value="Start" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

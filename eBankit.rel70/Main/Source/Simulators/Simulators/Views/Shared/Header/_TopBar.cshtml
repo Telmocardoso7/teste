@@ -1,0 +1,12 @@
+﻿<div class="s-banner">
+    <div class="s-container h-100 p-2">
+        <div class="row h-100">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-8 h-100 mt-0 mt-md-4 mt-lg-4 mt-xl-4">
+                <a href="@Url.Action("Index", "Home", new { area = "", controller = "Home" })"><img src="~/images/other_logo.svg" /></a>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4 h-100 mt-1 mt-md-5 mt-lg-5 mt-xl-5 s-h-title">
+                @*@Translate.GetTranslation("Close", "CloseDescription", ebankitContext.CurrentCulture)*@@ViewData["HeaderTitle"]
+            </div>
+        </div>
+    </div>
+</div>

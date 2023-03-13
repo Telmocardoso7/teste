@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "Scripts/register-2.0.min.js",
+    "inputFiles": [
+      "Scripts/register-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/registerImages-2.0.min.js",
+    "inputFiles": [
+      "Scripts/registerImages-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/registerNewKey-2.0.min.js",
+    "inputFiles": [
+      "Scripts/registerNewKey-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/registerQuestions-2.0.min.js",
+    "inputFiles": [
+      "Scripts/registerQuestions-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/registerUsername-2.0.min.js",
+    "inputFiles": [
+      "Scripts/registerUsername-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/register-1.0.min.js",
+    "inputFiles": [
+      "Scripts/register-1.0.js"
+    ]
+  }
+]

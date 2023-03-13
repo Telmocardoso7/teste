@@ -1,0 +1,181 @@
+{
+  "AppSettings": {
+    "Endpoints": {
+      "Bridge": {
+        "Base": "http://bridge.rel70.local",
+        "AccountOpening": {
+        },
+        "ContactServices": {
+        },
+        "CoreServices": {
+        },
+        "Cti": {
+        },
+        "EbankitServices": {
+        },
+        "TemplateProcessor": {
+        },
+        "Workflow": {
+        },
+        "SecurityCenter": {
+          "Base": "http://appcenter.rel70.local/Services/SecurityCenter",
+          "ApplicationService": {
+          },
+          "AliasAuthentication": {
+          },
+          "AliasAuthorization": {
+          },
+          "AliasManagement": {
+          },
+          "AliasOperation": {
+          },
+          "Backoffice": {
+          },
+          "ContactHistory": {
+          },
+          "SdcManagement": {
+          },
+          "SmsToken": {
+          },
+          "UserManagement": {
+            "ResetUserAccessCode": "UserManagement/ResetUserAccessCode",
+            "ChangeAccessCode": "UserManagement/ChangeAccessCode",
+            "GetAllContractsByUserId": "UserManagement/GetAllContractsByUserId"
+          },
+          "SmsTokenManagement": {
+            "Base": "Services/SmsToken"
+          },
+          "ContractManagement": {
+          },
+          "CredentialManagement": {
+            "Base": "Credentials/CredentialsManagement.svc"
+          },
+          "PredefinedCodeManagement": {
+          },
+          "SecurityQuestionsManagement": {
+          },
+          "SecurityImagesManagement": {
+          },
+          "BackofficeManagement": {
+            "Base": "Backoffice/BackofficeManagement.svc"
+          },
+          "ContactHistoryManagement": {
+            "Base": "ContactHistory/ContactHistoryManagement.svc"
+          },
+          "OperationManagement": {
+            "Base": "Operations/OperationManagement.svc"
+          },
+          "SessionManagement": {
+            "Base": "Session/SessionManagement.svc"
+          },
+          "ConsentManagement": {
+          },
+          "ExportDataManagement": {
+          },
+          "DeviceManagement": {
+          }
+        },
+        "Media": {
+          "Base": "http://publishing.rel70.local",
+          "CreateMedia": "/umbraco/api/Contents/CreateMedia",
+          "GetChannelImages": "/umbraco/api/Contents/GetChannelImages"
+        }
+      },
+      "AccountOpeningService": {
+        "Base": "http://appcenter.rel70.local/Services/AccountOpening/AccountOpeningService.svc",
+        "GetFullAccountOpeningProcess": "json/FullAccountOpeningProcess"
+      },
+      "ContactCenter": {
+        "Base": "http://contactcenter.rel70.local",
+        "BaseServers": [
+          {
+            "ServerName": "EBKNTBOOK-0677",
+            "Base": "http://contactcenter.rel70.local"
+          },
+          {
+            "ServerName": "EBKNTBOOK-0678",
+            "Base": "http://contactcenter.rel70.local"
+          }
+        ]
+      },
+      "IdentityServer": {
+        "Base": "http://ids-internal.rel70.local",
+        "ApiGetResource": "/api/apiresource/{0}",
+        "ClientGetClientDetails": "/api/client/{0}",
+        "ClientInsertClient": "/api/client",
+        "ClientInsertClientScope": "/api/client/scope",
+        "ClientInsertClientClaim": "/api/client/claim",
+        "ClientInsertClientSecret": "/api/client/secret",
+        "ClientInsertClientProviderRestriction": "/api/client/providerrestriction",
+        "ClientInsertClientRedirectUri": "/api/client/redirecturi",
+        "ClientInsertClientPostLogoutRedirectUri": "/api/client/postlogoutredirecturi",
+        "ClientDeleteClient": "/api/client",
+        "ClientDeleteClientScope": "/api/client/scope",
+        "ClientDeleteClientClaim": "/api/client/claim",
+        "ClientDeleteClientSecret": "/api/client/secret",
+        "ClientDeleteClientProviderRestriction": "/api/client/providerrestriction",
+        "ClientDeleteClientRedirectUri": "/api/client/redirecturi",
+        "ClientDeleteClientPostLogoutRedirectUri": "/api/client/postlogoutredirecturi",
+        "ClientUpdateClientSecret": "/api/client/updateclientsecret/{0}",
+        "ClientSetClientScope": "/api/client/scope/set",
+        "ClientUpdateClientStatus": "/api/client/status",
+        "UserInformationInsertCustomer": "/api/userinformation",
+        "UserInformationValidateCustomerKey": "/api/userinformation/validatekey",
+        "UserInformationDeleteCustomer": "/api/userinformation"
+      },
+      "SecurityCenter": {
+        "Base": "http://appcenter.rel70.local/Services/SecurityCenter",
+        "ApplicationManagement": {
+        },
+        "IdentityServerService": {
+          "Base": "IdentityServer/IdentityServerAuthentication.svc"
+        },
+        "CredentialManagement": {
+          "Base": "Credentials/CredentialsManagement.svc"
+        },
+        "UserManagement": {
+        },
+        "VirtualEntityManagement": {
+        }
+      },
+      "Workflow": {
+        "Base": "http://appcenter.rel70.local/Services/Workflow/api/",
+        "Workflow": {
+        },
+        "Dashboard": {
+        },
+        "Process": {
+        },
+        "Document": {
+        },
+        "Comment": {
+        },
+        "User": {
+        },
+        "Schedule": {
+        }
+      },
+      "Simulator": {
+        "Base": "http://localhost:22414"
+      },
+      "TemplateProcessorService": {
+        "Base": "http://appcenter.rel70.local/Services/TemplateProcessor/TemplateProcessorService.svc"
+      },
+      "AppCenter": {
+        "Base": "http://appcenter.rel70.local",
+        "MChannel": {
+          "Base": "http://appcenter.rel70.local/Services/MChannel",
+          "Authentication": {
+            "Base": "http://appcenter.rel70.local/Services/MChannel/Authentication.svc"
+          }
+        }
+      },
+      "EbankitService": {
+        "Base": "http://appcenter.rel70.local/Services/Ebankit"
+      },
+      "Workers": {
+        "Operations": "http://operationsworker.rel70.local"
+      }
+    }
+  }
+}

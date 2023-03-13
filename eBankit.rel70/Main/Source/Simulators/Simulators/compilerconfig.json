@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.less"
+  },
+  {
+    "outputFile": "wwwroot/css/ivr.css",
+    "inputFile": "wwwroot/css/ivr.less"
+  },
+  {
+    "outputFile": "wwwroot/css/variables.css",
+    "inputFile": "wwwroot/css/variables.less"
+  },
+  {
+    "outputFile": "wwwroot/css/simulator-skin.css",
+    "inputFile": "wwwroot/css/simulator-skin.less"
+  },
+  {
+    "outputFile": "wwwroot/css/homepage-skin.css",
+    "inputFile": "wwwroot/css/homepage-skin.less"
+  },
+  {
+    "outputFile": "wwwroot/css/index-skin.css",
+    "inputFile": "wwwroot/css/index-skin.less"
+  },
+  {
+    "outputFile": "wwwroot/css/emailSender.css",
+    "inputFile": "wwwroot/css/emailSender.less"
+  }
+]

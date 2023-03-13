@@ -1,0 +1,21 @@
+{
+  "SwaggerSettings": {
+    "RoutePrefix": "api/swagger",
+    "SwaggerUI": {
+      "OAuthClientId": "Swagger",
+      "OAuthClientSecret": "ebankitSwaggerSecret",
+      "OAuthRealm": "swagger-ui-realm",
+      "OAuthAppName": "Swagger UI"
+    },
+    "APIs": [
+      {
+        "Name": "V1",
+        "Title": "UserEngagementHub API V1",
+        "Version": "v1"
+      }
+    ],
+    "SwaggerIgnore": {
+      "Environments": []
+    }
+  }
+}

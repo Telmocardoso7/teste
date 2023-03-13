@@ -1,0 +1,211 @@
+﻿@model ResumeViewModel
+
+@{
+    bool hasBlindTransferedCalls = Model.PendingInteractions != null && Model.PendingInteractions.Any(x => x.BlindTransfered);
+}
+
+<hr />
+<div class="formCti">
+    <h3>Incoming calls - IVR</h3>
+<div>
+    <button id="NewCallButton" class="s-b-action-btn" onclick="GenerateNewInteraction('call')">New Call</button>
+    <button id="NewEmailButton" class="s-b-action-btn" style="margin-left:10px;" onclick="GenerateNewInteraction('email')">New Email</button>
+</div>
+@if (Model.PendingInteractions.Any())
+{
+    <table style="width: 100%; line-height: normal;border: 1px solid #0173A7;margin-top:10px;">
+        <tr style="color:white; background-color: #0173A7;">
+            <th>Identifier</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Attended</th>
+            <th>Client Number</th>
+            <th>Authenticate</th>
+            @if (hasBlindTransferedCalls)
+            {
+                <th>Blind transfered</th>
+            }
+            <th style="text-align: center;">Options</th>
+        </tr>
+
+        @foreach (var call in Model.PendingInteractions)
+        {
+            <tr style="border: 1px solid #0173A7">
+                <td>
+                    @call.Identifier
+                </td>
+                <td>
+                    @call.InteractionType.ToString()
+                </td>
+                <td>
+                    @call.StartedCall.ToLongTimeString()
+                </td>
+                <td>
+                    @call.Attended
+                </td>
+                <td>
+                    @call.ClientNumber
+                </td>
+                <td>
+                    @call.Authenticate
+                </td>
+                @if (hasBlindTransferedCalls)
+                {
+                    <td>
+                        @call.BlindTransfered
+                    </td>
+                }
+                <td style="text-align: right;">
+                    @if (string.IsNullOrEmpty(call.ClientNumber) && !call.Authenticate)
+                    {
+                        <button id="IdentifyCallButton" class="s-b-action-btn" style="margin:2px;"  onclick="IdentifyCall('@call.Identifier')">Identify User</button>
+                    }
+                    @if (!call.Authenticate && call.InteractionType == InteractionManagementType.Call)
+                    {
+                        <button id="AuthenticateCallButton" class="s-b-action-btn" style="margin:2px;"  onclick="AuthenticateCall('@call.Identifier')">Authenticate User</button>
+                    }
+                    @if (!call.Authenticate && call.InteractionType == InteractionManagementType.Call)
+                    {
+                        <button id="ImpersonateCallButton" class="s-b-action-btn" style="margin:2px;"  onclick="ImpersonateCall('@call.Identifier')">Impersonate User</button>
+                    }
+                    @if (call.Authenticate && call.InteractionType == InteractionManagementType.Call)
+                    {
+                        <button id="DoTransferMoneyButton" class="s-b-action-btn" style="margin:2px;"  onclick="TransferMoney('@call.Identifier')">Do Transfer Money</button>
+                    }
+                    @if (Model.HasUsers && !call.TransferBackToIvr)
+                    {
+
+                        <button id="AssignToOperatorButton" class="s-b-action-btn" style="margin:2px;"  onclick="AssignToOperator('@call.Identifier')">Assign To Operator</button>
+                    }
+                    @if (Model.HasUsers && call.TransferBackToIvr)
+                    {
+                        <button id="TransferCallFromIvrButton" class="s-b-action-btn" style="margin:2px;"  onclick="TransferCallFromIvr('@call.Identifier')">Transfer back</button>
+                    }
+
+                    <button id="CloseCallButtonIVR" class="s-b-action-btn" style="margin:2px;" onclick="CloseInteraction('@call.Identifier')">Close @call.InteractionType</button>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    @Html.Raw("No pending interactions")
+}
+@if (@Model.IncomingInteractions.Any())
+{
+    <h3>Calls From CTI</h3>
+    <table class="table-bordered" style="width: 100%">
+        <tr>
+            <th>Identifier</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Attended</th>
+            <th>Operator Extension</th>
+            <th>To number</th>
+            <th>Authenticate</th>
+            <th>Options</th>
+        </tr>
+        @foreach (var call in Model.IncomingInteractions)
+        {
+            <tr>
+
+                <td>
+                    @call.Identifier
+                </td>
+                <td>
+                    @call.InteractionType.ToString()
+                </td>
+                <td>
+                    @call.StartedCall.ToLongTimeString()
+                </td>
+                <td>
+                    @call.Attended
+                </td>
+                <td>
+                    @call.ClientNumber
+                </td>
+                <td>
+                    @call.DestinationNumber
+                </td>
+                <td>
+                    @call.Authenticate
+                </td>
+                <td style="text-align: right;">
+                    <a onclick="AnswerCall('@call.Identifier');"> Answer Call </a>
+                    @Html.Raw("&nbsp;|")
+                    <a onclick="IgnoreCall('@call.Identifier');"> Ignore Call </a>
+                </td>
+            </tr>
+        }
+    </table>
+
+}
+</div>
+
+<div id="answerCallModal" class="modal">
+    <input id="interactionIdCall" type="hidden" />
+    <div class="modal-content">
+        <button class="close" onclick="closePopUp();" style="text-align: right;">&times;</button>
+        <h2 id="modalTittle"></h2>
+        <hr />
+        <div id="divExtensionCall">
+            <span><b>Call incoming from extension: </b></span>
+            <span id="extensionCall"></span>
+            <br />
+            <br />
+        </div>
+        <div id="divCallToNumber">
+            <span><b>Call to number: </b></span>
+            <span id="callToNumber"></span>
+            <br />
+            <br />
+        </div>
+        <div>
+            <span><b>Identifier: </b></span>
+            <span id="interactionid"></span>
+            <br />
+            <br />
+        </div>
+        <div id="divInformation">
+            <span><b>Information: </b></span>
+            <span id="information"></span>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div style="float: right;">
+            <button id="closePopUp" class="btn btn-success" onclick="closePopUp();"> Ok </button>
+            <button id="answerCall" class="btn btn-success" onclick="AnswerCall();"> Answer Call </button>
+            <button id="ignoreCall" class="btn btn-danger" onclick="IgnoreCall();"> Ignore Call </button>
+        </div>
+    </div>
+</div>
+
+<div id="genericMessageModal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeGenericMessagePopUp();" style="text-align: right;">&times;</button>
+        <h2 id="modalTittle">An automatic event ocurred</h2>
+        <hr />
+        <div>
+            <span><b>Information: </b></span>
+            <span id="genericMessageModalText"></span>
+        </div>
+        <br />
+        <div style="float: right;">
+            <button id="closePopUp" class="btn btn-success" onclick="closeGenericMessagePopUp();"> Ok </button>
+        </div>
+    </div>
+</div>
+
+<div id="partialViewContainer" class="partialView">
+
+    <div id="divPartialViewContent" class="partialView-content">
+        <div id="partialViewHeader" class="closePartialView" onclick="closePartialView();">
+            <img src="~/images/utils/closeIcon.png" style="width: 100%; height: 100%;" />
+        </div>
+        <div id="partialViewBody">
+
+        </div>
+    </div>
+</div>

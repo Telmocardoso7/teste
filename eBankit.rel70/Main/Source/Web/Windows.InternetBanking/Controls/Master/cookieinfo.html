@@ -1,0 +1,128 @@
+﻿<div class="gdprIntro_introInfo cookieRelative">
+    <div class="gdprCookiesInfo_Title">
+        <span><div id="gdprCookiesManagementFullTitle"></div></span>
+        <span>
+            <button class="close-generic gdprCloseButton_button" type="button" onclick="ShowInitialConsent();"></button>
+        </span>
+    </div>
+    <div class="gdprIntro_descriptionInfo">
+        <div id="gdprCookieInfoOverview" style="display: block;">
+            <div class="gdprCookieInfoContainer">
+                <div class="gdprCookiesTabs crumbs metro">
+                    <ul class="item">
+                        <li id="gdprCookiesRequired" tabindex="0" onkeyup="if(event.keyCode === 13)$(this).click();" onclick="javascript: showCookieContainerDetail('required');" class="gdprCookiesTab gdprCookiesTabSelected select"><span class="steptext gdprTabText_label gdprRemoveCapitalize"><div id="gdprCookieInfoRequired"></div></span><i class="    icon-record"></i></li>
+                        <li id="gdprCookiesPerformance" tabindex="0" onkeyup="if(event.keyCode === 13)$(this).click();" onclick="javascript: showCookieContainerDetail('performance');" class="gdprCookiesTab gdprCookiesTabItem notselect"><span class="steptext gdprTabText_label gdprRemoveCapitalize"><div id="gdprCookieInfoPerformance"></div></span><i class="icon-record"></i></li>
+                        <li id="gdprCookiesFunctional" tabindex="0" onkeyup="if(event.keyCode === 13)$(this).click();" onclick="javascript: showCookieContainerDetail('functional');" class="gdprCookiesTab gdprCookiesTabItem notselect"><span class="steptext gdprTabText_label gdprRemoveCapitalize"><div id="gdprCookieInfoFunctional"></div></span><i class="icon-record"></i></li>
+                        <li id="gdprCookiesAdvertising" tabindex="0" onkeyup="if(event.keyCode === 13)$(this).click();" onclick="javascript: showCookieContainerDetail('advertising');" class="gdprCookiesTab gdprCookiesTabItem notselect"><span class="steptext gdprTabText_label gdprRemoveCapitalize"><div id="gdprCookieInfoAdvertising"></div></span><i class="icon-record"></i></li>
+                    </ul>
+                </div>
+                <div class="gdprCookiesDescription">
+                    <div id="gdprCookiesRequiredDescription" class="gdprCookiesRequiredDescription" style="display: block;">
+                        <div class="gdprCookieButtonitem description">
+                            <div class="gdprCookieDescriptionItem gdprDescriptionBox_div">
+                                <div class="gdprRowCookieDesc_div">
+                                    <div class="gdprCookieButtonitem selection gdprCookieTabDisabled" style="cursor: not-allowed;">
+                                        <input disabled="disabled" type="checkbox" id="gdprCookieButtonRequiredInput" class="gdprCookieButtonAdvertisingInput gdprCookieTabDisabled" checked="checked">
+                                        <div class="checkmark" onclick="ChekCheckBox(this)"></div>
+                                    </div>
+                                    <div class="gdprCheckBoxTitle_div"><div id="gdprSelectTypeForCheckBox"></div></div>
+                                </div>
+                                <div style="padding-top: 10px;padding-bottom: 10px;"><div id="gdprCookiesRequiredDescription1"></div></div>
+                            </div>
+                            <table id="gdprCookieTableDetails" class="gdprCookieTableDetails">
+                                <thead>
+                                    <tr>
+                                        <th><div id="gdprCookieTableDetailsHeader1"></div></th>
+                                        <th><div id="gdprCookieTableDetailsHeader2"></div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title="ASP.NET_SessionId">ASP.NET_SessionId</td>
+                                        <td><div id="gdprCookieTableDetailsDescription1"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title=".ASPXFORMSAUTH">.ASPXFORMSAUTH</td>
+                                        <td><div id="gdprCookieTableDetailsDescription2"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title="ShowCookieBar">ShowCookieBar</td>
+                                        <td><div id="gdprCookieTableDetailsDescription3"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title="_AntiXsrfToken">_AntiXsrfToken</td>
+                                        <td><div id="gdprCookieTableDetailsDescription4"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title="culture">culture</td>
+                                        <td><div id="gdprCookieTableDetailsDescription5"></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cookiesGridSpacing" title="cultureDirection">cultureDirection</td>
+                                        <td><div id="gdprCookieTableDetailsDescription6"></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="gdprCookiesPerformanceDescription" class="gdprCookiesPerformanceDescription" style="display: none;">
+                        <div class="gdprCookieButtonitem description">
+                            <div class="gdprCookieDescriptionItem gdprDescriptionBox_div">
+                                <div class="row gdprRowCookieDesc_div">
+                                    <div class="gdprCookieButtonitem selection gdprCheckMarkEnabled col-xs-1" style="cursor: not-allowed; display: none;">
+                                        <input type="checkbox" id="gdprCookieButtonPerformanceInput" class="gdprCookieButtonAdvertisingInput" checked="checked">
+                                        <div class="checkmark" onclick="ChekCheckBox(this)"></div>
+                                    </div>
+                                </div>
+                                <div style="padding: 10px;"><div id="gdprCookiesRequiredDescription2"></div></div>
+                            </div>
+                            <div class="col-xs-12 gdprCookieMessage" style="padding: 20px;"><div class="controlCookieTableNoCookies"></div></div>
+                        </div>
+                    </div>
+                    <div id="gdprCookiesFunctionalDescription" class="gdprCookiesFunctionalDescription" style="display: none;">
+                        <div class="gdprCookieButtonitem description">
+                            <div class="gdprCookieDescriptionItem gdprDescriptionBox_div">
+                                <div class="row gdprRowCookieDesc_div">
+                                    <div class="gdprCookieButtonitem selection gdprCheckMarkEnabled col-xs-1" style="cursor: not-allowed; display: none;">
+                                        <input type="checkbox" id="gdprCookieButtonFunctionalInput" class="gdprCookieButtonAdvertisingInput" checked="checked">
+                                        <div class="checkmark" onclick="ChekCheckBox(this)"></div>
+                                    </div>
+                                </div>
+                                <div style="padding: 10px;"><div id="gdprCookiesRequiredDescription3"></div></div>
+                            </div>
+                            <div class="col-xs-12 gdprCookieMessage" style="padding: 20px;"><div class="controlCookieTableNoCookies"></div></div>
+                        </div>
+                    </div>
+                    <div id="gdprCookiesAdvertisingDescription" class="gdprCookiesAdvertisingDescription" style="display: none;">
+                        <div class="gdprCookieButtonitem description">
+                            <div class="gdprCookieDescriptionItem gdprDescriptionBox_div">
+                                <div class="row gdprRowCookieDesc_div">
+                                    <div class="gdprCookieButtonitem selection gdprCheckMarkEnabled col-xs-1" style="cursor: not-allowed; display: none;">
+                                        <input type="checkbox" id="gdprCookieButtonAdvertisingInput" class="gdprCookieButtonAdvertisingInput" checked="checked">
+                                        <div class="checkmark" onclick="ChekCheckBox(this)"></div>' + '
+                                    </div>
+                                </div>
+                                <div style="padding: 10px;"><div id="gdprCookiesRequiredDescription4"></div></div>
+                            </div>
+                            <div class="col-xs-12 gdprCookieMessage" style="padding: 20px;"><div class="controlCookieTableNoCookies"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gdprIntro_optionsInfo">
+        <div class="gdprIntroInfo">
+            <a class="gdprIntroInfo_link" href="https://www.ebankit.com/privacy-policy/" target="_blank" rel="noopener noreferrer"><div id="gdprPrivacyPolicyLinkText"></div></a>
+        </div>
+        <div class="gdprIntroInfo">
+            <a class="gdprIntroInfo_link" href="https://www.ebankit.com/cookies/" target="_blank" rel="noopener noreferrer"><div id="gdprCookiesPolicyLinkText"></div></a>
+        </div>
+        <button class="gdprButton_button gdprIntro_MoreInfo gdprInfoButton_button btn-default" type="button" onclick="ShowInitialConsent();">
+            <span><div id="gdprCookieInfoGoBack"></div></span>
+        </button>
+        <button class="gdprButton_button gdprIntro_acceptAll gdprInfoButton_button btn-success" onclick="createCookie('ShowCookieBar','30'); $('.unfocus').attr('tabindex', 0).removeClass('unfocus').removeAttr('disabled'); $('.CookieContainer').hide();" type="button">
+            <span><div id="ComfirmationCookieButton"></div></span>
+        </button>
+    </div>
+</div>

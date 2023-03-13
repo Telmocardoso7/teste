@@ -1,0 +1,288 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ProbesLogsViewModel
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(Model.BreadCrumbs)
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Probe Logs</h1>
+    <!-- end page-header -->
+
+    <!-- Search Filters -->
+    <!-- begin row (search filters) -->
+    <div class="row">
+        <div class="panel col-md-12 transparent">
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    </div>
+                    <h4 class="panel-title">Logs Search Filters</h4>
+                </div>
+                <div class="panel-body panel-form">
+                    <form class="form-horizontal form-bordered" action="Logs" method="post">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Probe</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Probes, "ProbeSelected", Model.ProbeSelected, "All Probes")
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Log Date</label>
+                            <div class="col-md-8">
+                                <div class="row row-space-10">
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker1", "BeginDateSelected", Model.BeginDateSelected, "From", "YYYY-MM-DD HH:mm:ss")
+                                    </div>
+                                    <div class="col-md-6">
+                                        @DateTimePicker.RenderDateTimePicker("datetimepicker2", "EndDateSelected", Model.EndDateSelected, "To", "YYYY-MM-DD HH:mm:ss")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Tests</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Tests, "TestSelected", Model.TestSelected, "All Tests")
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Actions</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Actions, "ActionSelected", Model.ActionSelected, "All Actions")
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Test Result Type</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.TestResultTypes, "TestResultSelected", Model.TestResultSelected, "All types")
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="control-label col-md-4">Action Result Type</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.ActionResultTypes, "ActionResultSelected", Model.ActionResultSelected, "All types")
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" value="Search" name="BtnSubmit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Search Filters -->
+
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel-inverse newStyle">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Log Entries</h4>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table id="results-table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Id</th>
+                                <th>Abbreviature</th>
+                                <th>Result</th>
+                                <th>Type</th>
+                                <th>TimeTaken (ms)</th>
+                                <th>Num Successes</th>
+                                <th>Num Fails</th>
+                                <th>ExtraInfo</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<link href="~/Content/morris.css" rel="stylesheet" />
+<script src="~/bundles/requestsScripts"></script>
+<script src="~/Scripts/raphael-min.js"></script>
+<script src="~/Scripts/morris.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        ToggleSideBarMenu($('#Probes'), $('#Logs'));
+        InitializeRangedDatetimePicker($('#datetimepicker1'), $('#datetimepicker2'), 'YYYY-MM-DD HH:mm:ss');
+        InitializeDropdowns();
+        InitializeTooltip();
+        AddProbesDropdownPostBackHandler();
+        AddTestsDropdownPostBackHandler();
+
+
+        var dataUrl = '@Html.Raw(Url.Action("GetLogDataFromServer", "Probes", new { ProbeSelected = Model.ProbeSelected, TestSelected = Model.TestSelected, ActionSelected = Model.ActionSelected, BeginDateSelected = Model.BeginDateSelected, EndDateSelected = Model.EndDateSelected, TestResultSelected = Model.TestResultSelected, ActionResultSelected = Model.ActionResultSelected }))';
+        var table = InitializeLogDataTable('results-table', dataUrl);
+
+
+
+
+        App.init();
+    });
+
+    var InitializeLogDataTable = function (tableid, geturl) {
+        table = $('#' + tableid).DataTable({
+            "sPaginationType": "full_numbers",
+            "paging": true,
+            "serverSide": true,
+            "processing": true,
+            "searching": false,
+            "ordering": false,
+            ajax: {
+                url: geturl,
+                type: "POST",
+                dataSrc: 'requests',
+                error: function (request, textStatus, errorThrown) {
+                    errorHandler(request, textStatus, errorThrown);
+                    $('#' + tableid + ' tbody').find('#loading-row').remove();
+                }
+            },
+            "fnDrawCallback": function (row, data, index) {
+                $('#' + tableid + ' tbody tr td').each(function () {
+                    $(this).attr("Title", $(this).text());
+                });
+                for (var i = 0; i < row.aoData.length; i++) {
+                    if (row.aoData[i]._sRowStripe == "odd") {
+                        if (row.aoData[i].anCells[3].innerText == "SUCCESS") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(0, 255, 0, 0.1)", "rgba(0, 255, 0, 0.3)");
+                            $(row.aoData[i].nTr).css("color", "green");
+                        }
+                        else if (row.aoData[i].anCells[3].innerText == "SLOW") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(251, 255, 0, 0.05)", "rgba(251, 255, 0, 0.2)");
+                            $(row.aoData[i].nTr).css("color", "orange");
+                        }
+                        else if (row.aoData[i].anCells[3].innerText == "FAIL") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(255,0,0,0.05)", "rgba(255,0,0,0.2)");
+                            $(row.aoData[i].nTr).css("color", "red");
+                        }
+                        else {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(108, 0, 128, 0.05)", "rgba(108, 0, 128, 0.2)");
+                            $(row.aoData[i].nTr).css("color", "purple");
+                        }
+                    }
+                    else {
+                        if (row.aoData[i].anCells[3].innerText == "SUCCESS") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(0, 255, 0, 0.2)", "rgba(0, 255, 0, 0.3)");
+                            $(row.aoData[i].nTr).css("color", "green");
+                        }
+                        else if (row.aoData[i].anCells[3].innerText == "SLOW") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(251, 255, 0, 0.1)", "rgba(251, 255, 0, 0.2)");
+                            $(row.aoData[i].nTr).css("color", "orange");
+                        }
+                        else if (row.aoData[i].anCells[3].innerText == "FAIL") {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(255,0,0,0.1)", "rgba(255,0,0,0.2)");
+                            $(row.aoData[i].nTr).css("color", "red");
+                        }
+                        else {
+                            AddRowHoverEffect(row.aoData[i].nTr, "rgba(108, 0, 128, 0.1)", "rgba(108, 0, 128, 0.2)");
+                            $(row.aoData[i].nTr).css("color", "purple");
+                        }
+                    }
+                }
+            }
+        });
+        InitializeTableLoading(tableid);
+
+        $('#' + tableid).css('width', '100%');
+    }
+
+
+    var AddRowHoverEffect = function (element, color, hoverColor) {
+        $(element).css("backgroundColor", color);
+        $(element).hover(
+        function () {
+            $(this).css("backgroundColor", hoverColor);
+        }, function () {
+            $(this).css("backgroundColor", color);
+        });
+    }
+
+    // Adds an onChange in Probes Dropdown. Creates an AJAX post call to retrive tests dropdown values
+    var AddProbesDropdownPostBackHandler = function () {
+        // Dropdown Probes
+        $("[name=ProbeSelected]").change(function () {
+            GetTestsDropDownValues();
+            GetActionsDropDownValues("");
+        });
+    }
+
+    // Adds an onChange in Tests Dropdown. Creates an AJAX post call to retrive actions dropdown values
+    var AddTestsDropdownPostBackHandler = function () {
+        // Dropdown Tests
+        $("[name=TestSelected]").change(function () {
+            GetActionsDropDownValues($("[name=TestSelected]").find("option:selected").val());
+        });
+    }
+
+
+
+    var GetTestsDropDownValues = function () {
+        var queryString = "?selectedId=" + $("[name=ProbeSelected]").find("option:selected").val();
+        $.ajax({
+            url: '@Url.Action("GetTestsForDropdown", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                var jsonData = JSON.parse(data);
+
+                var objTests = $("[name=TestSelected]") // Dropdown Tests
+                $(objTests).find('option').remove();
+                for (var i = 0; i < jsonData.length; i++) {
+                    var test = jsonData[i];
+                    $(objTests).append('<option value="' + test.Id + '">' + test.Designation + '</option>');
+                }
+                $(objTests).append('<option value selected="Selected">All Tests</option>');
+                $(objTests).selectpicker('refresh');
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+    var GetActionsDropDownValues = function (selectedTestId) {
+        var queryString = "?selectedId=" + $("[name=ProbeSelected]").find("option:selected").val() + "&testId=" + selectedTestId;
+        $.ajax({
+            url: '@Url.Action("GetActionsForDropdown", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                var jsonData = JSON.parse(data);
+
+                var objActions = $("[name=ActionSelected]") // Dropdown Actions
+                $(objActions).find('option').remove();
+                for (var i = 0; i < jsonData.length; i++) {
+                    var action = jsonData[i];
+                    $(objActions).append('<option value="' + action.Id + '">' + action.Designation + '</option>');
+                }
+                $(objActions).append('<option value selected="Selected">All Actions</option>');
+                $(objActions).selectpicker('refresh');
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+</script>

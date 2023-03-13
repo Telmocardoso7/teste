@@ -1,0 +1,366 @@
+﻿@{
+    ViewBag.Title = "ebankIT - Omnichannel Monitoring";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    @*<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />*@
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    @*<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />*@
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link href="assets/css/animate.min.css" rel="stylesheet" />*@
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    @*<link href="assets/css/style.min.css" rel="stylesheet" />*@
+    <link href="~/Content/style.min.css" rel="stylesheet" />
+    @*<link href="assets/css/style-responsive.min.css" rel="stylesheet" />*@
+    <link href="~/Content/style-responsive.min.css" rel="stylesheet" />
+    @*<link href="assets/css/theme/default.css" rel="stylesheet" id="theme" />*@
+    <link href="~/Content/default.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/switchery.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    @*<script src="assets/plugins/pace/pace.min.js"></script>*@
+    @*<script data-pace-options='{ "ajax": false }' src="~/Scripts/pace.min.js"></script>*@
+    <!-- ================== END BASE JS ================== -->
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    @*@RenderSection("scripts", required: false)*@
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="~/Scripts/ServiceCatalog/apps.min.js"></script>
+    @*<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>*@
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    @*<script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>*@
+    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    @*<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>*@
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    @*<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="assets/crossbrowserjs/respond.min.js"></script>
+        <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    @*<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>*@
+    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+    @*<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>*@
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/switchery.min.js"></script>
+    <script src="~/Scripts/ajax-request-error-handling.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/requestsScripts")
+
+</head>
+<body>
+    <style>
+        .navbar.navbar-default {
+            z-index: 1011;
+        }
+    </style>
+    <div id="page-loader" class="fade in" style="z-index:9999"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+        <!-- begin #header -->
+        @Html.Partial("~/Views/Shared/_Header.cshtml")
+        <!-- end #header -->
+        <!-- begin #sidebar -->
+        <div id="sidebar" class="sidebar">
+            <!-- begin sidebar scrollbar -->
+            <div data-scrollbar="true" data-height="100%">
+                <!-- begin sidebar user -->
+                <ul class="nav">
+                    <li class="nav-profile">
+                        <div class="image">
+                            <a onclick="LoadEditImage()">
+                                <img src="~/Content/img/avatar.png" id="UserPicture" alt="" width="34" height="34"/>
+                                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute;margin-top: 24px;margin-left: -12px;">
+                                    <g filter="url(#filter0_d_480_2)">
+                                        <g filter="url(#filter1_d_480_2)">
+                                            <circle cx="10" cy="8" r="6" fill="#2F353B"></circle>
+                                        </g>
+                                        <path d="M13.5 10C13.5 10.1326 13.4473 10.2598 13.3536 10.3536C13.2598 10.4473 13.1326 10.5 13 10.5H7C6.86739 10.5 6.74021 10.4473 6.64645 10.3536C6.55268 10.2598 6.5 10.1326 6.5 10V7C6.5 6.86739 6.55268 6.74021 6.64645 6.64645C6.74021 6.55268 6.86739 6.5 7 6.5H7.586C7.98362 6.49978 8.36488 6.3417 8.646 6.0605L9.061 5.6465C9.1545 5.55297 9.28125 5.50029 9.4135 5.5H10.5855C10.7181 5.50003 10.8453 5.55273 10.939 5.6465L11.353 6.0605C11.4923 6.19986 11.6577 6.3104 11.8398 6.38581C12.0218 6.46122 12.2169 6.50002 12.414 6.5H13C13.1326 6.5 13.2598 6.55268 13.3536 6.64645C13.4473 6.74021 13.5 6.86739 13.5 7V10ZM7 6C6.73478 6 6.48043 6.10536 6.29289 6.29289C6.10536 6.48043 6 6.73478 6 7V10C6 10.2652 6.10536 10.5196 6.29289 10.7071C6.48043 10.8946 6.73478 11 7 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V7C14 6.73478 13.8946 6.48043 13.7071 6.29289C13.5196 6.10536 13.2652 6 13 6H12.414C12.1488 5.99994 11.8945 5.89455 11.707 5.707L11.293 5.293C11.1055 5.10545 10.8512 5.00006 10.586 5H9.414C9.14881 5.00006 8.89449 5.10545 8.707 5.293L8.293 5.707C8.10551 5.89455 7.85119 5.99994 7.586 6H7Z" fill="#A9ACB0"></path>
+                                        <path d="M10 9.5C9.66848 9.5 9.35054 9.3683 9.11612 9.13388C8.8817 8.89946 8.75 8.58152 8.75 8.25C8.75 7.91848 8.8817 7.60054 9.11612 7.36612C9.35054 7.1317 9.66848 7 10 7C10.3315 7 10.6495 7.1317 10.8839 7.36612C11.1183 7.60054 11.25 7.91848 11.25 8.25C11.25 8.58152 11.1183 8.89946 10.8839 9.13388C10.6495 9.3683 10.3315 9.5 10 9.5ZM10 10C10.4641 10 10.9092 9.81563 11.2374 9.48744C11.5656 9.15925 11.75 8.71413 11.75 8.25C11.75 7.78587 11.5656 7.34075 11.2374 7.01256C10.9092 6.68437 10.4641 6.5 10 6.5C9.53587 6.5 9.09075 6.68437 8.76256 7.01256C8.43437 7.34075 8.25 7.78587 8.25 8.25C8.25 8.71413 8.43437 9.15925 8.76256 9.48744C9.09075 9.81563 9.53587 10 10 10V10ZM7.5 7.25C7.5 7.3163 7.47366 7.37989 7.42678 7.42678C7.37989 7.47366 7.3163 7.5 7.25 7.5C7.1837 7.5 7.12011 7.47366 7.07322 7.42678C7.02634 7.37989 7 7.3163 7 7.25C7 7.1837 7.02634 7.12011 7.07322 7.07322C7.12011 7.02634 7.1837 7 7.25 7C7.3163 7 7.37989 7.02634 7.42678 7.07322C7.47366 7.12011 7.5 7.1837 7.5 7.25V7.25Z" fill="#A9ACB0"></path>
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_d_480_2" x="0" y="2" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                            <feOffset dy="4"></feOffset>
+                                            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_480_2"></feBlend>
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_480_2" result="shape"></feBlend>
+                                        </filter>
+                                        <filter id="filter1_d_480_2" x="2" y="0" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                                            <feOffset></feOffset>
+                                            <feGaussianBlur stdDeviation="1"></feGaussianBlur>
+                                            <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_480_2"></feBlend>
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_480_2" result="shape"></feBlend>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </a>                            
+                        </div>
+                        <div class="info">
+                            @HttpContext.Current.User.Identity.Name
+                            <small>@ViewBag.Role</small>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- end sidebar user -->
+                <!-- begin sidebar nav -->
+                <ul class="nav">
+                    <li id="Dashboard" class="has-sub">
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="fa fa-laptop"></i>
+                            <span>Dashboard</span>
+                        </a>
+
+                    </li>
+
+                    @if (this.ViewBag.Permissions.Analytics_WebPages ||
+                         this.ViewBag.Permissions.Analytics_Mobile ||
+                         this.ViewBag.Permissions.Analytics_Services ||
+                         this.ViewBag.Permissions.Analytics_WebMethods ||
+                         this.ViewBag.Permissions.Analytics_Transactions ||
+                         this.ViewBag.Permissions.Analytics_Databases)
+                    {
+                        <li id="Analytics" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-align-left"></i>
+                                <span>Analytics</span>
+                            </a>
+                            <ul class="sub-menu">
+                                @if (this.ViewBag.Permissions.Analytics_WebPages)
+                                {
+                                    <li id="WebPageAnalytics"><a href="@Url.Action("WebPages", "Analytics")" onclick="waitLoading();">WebPages</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Analytics_Mobile)
+                                {
+                                    <li id="MobileAnalytics"><a href="@Url.Action("Mobile", "Analytics")" onclick="waitLoading();">Mobile</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Analytics_Services)
+                                {
+                                    <li id="ServiceAnalytics"><a href="@Url.Action("Services", "Analytics")" onclick="waitLoading();">Services</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Analytics_WebMethods)
+                                {
+                                    <li id="WebMethodsAnalytics"><a href="@Url.Action("WebMethods", "Analytics")" onclick="waitLoading();">Web Methods</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Analytics_Transactions)
+                                {
+                                    <li id="TransactionAnalytics"><a href="@Url.Action("Transactions", "Analytics")" onclick="waitLoading();">Transactions</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Analytics_Databases)
+                                {
+                                    <li id="DatabaseAnalytics"><a href="@Url.Action("Databases", "Analytics")" onclick="waitLoading();">Databases</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    @if (this.ViewBag.Permissions.Requests_WebPages ||
+                         this.ViewBag.Permissions.Requests_Mobile ||
+                         this.ViewBag.Permissions.Requests_Services ||
+                         this.ViewBag.Permissions.Requests_Transactions ||
+                         this.ViewBag.Permissions.Requests_Logs ||
+                         this.ViewBag.Permissions.Requests_SessionHistory)
+                    {
+                        <li id="Requests" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-exchange"></i>
+                                <span>Requests</span>
+                            </a>
+                            <ul class="sub-menu">
+                                @if (this.ViewBag.Permissions.Requests_WebPages)
+                                {
+                                    <li id="WebPageRequests"><a href="@Url.Action("WebPages", "Requests")" onclick="waitLoading();">Web Pages</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Requests_Mobile)
+                                {
+                                    <li id="MobileRequests"><a href="@Url.Action("Mobile", "Requests")" onclick="waitLoading();">Mobile</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Requests_Services)
+                                {
+                                    <li id="ServiceRequests"><a href="@Url.Action("Services", "Requests")" onclick="waitLoading();">Services</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Requests_Transactions)
+                                {
+                                    <li id="TransactionRequests"><a href="@Url.Action("Transactions", "Requests")" onclick="waitLoading();">Transactions</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Requests_Logs)
+                                {
+                                    <li id="LogRequests"><a href="@Url.Action("Logs", "Requests")" onclick="waitLoading();">Logs</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Requests_SessionHistory)
+                                {
+                                    <li id="SessionHistory"><a href="@Url.Action("SessionHistory", "Requests")" onclick="waitLoading();">Session History</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    @if (this.ViewBag.Permissions.ServiceCatalog_Services ||
+                         this.ViewBag.Permissions.ServiceCatalog_WebMethods)
+                    {
+                        <li id="ServiceCatalog" class="has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-laptop"></i>
+                                <span>Service Catalog</span>
+                            </a>
+                            <ul class="sub-menu">
+                                @if (this.ViewBag.Permissions.ServiceCatalog_Services)
+                                {
+                                    <li id="Services"><a href="@Url.Action("Services", "ServiceCatalog")" onclick="waitLoading();">Services</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.ServiceCatalog_WebMethods)
+                                {
+                                    <li id="WebMethods"><a href="@Url.Action("WebMethods", "ServiceCatalog")" onclick="waitLoading();">Web Methods</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    @if (this.ViewBag.Permissions.Probes_Manage ||
+                         this.ViewBag.Permissions.Probes_Logs)
+                    {
+                        <li class="has-sub" id="Probes">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-cogs"></i>
+                                <span>Probes </span>
+                            </a>
+                            <ul class="sub-menu">
+                                @if (this.ViewBag.Permissions.Probes_Manage)
+                                {
+                                    <li id="Manage"><a href="@Url.Action("Manage", "Probes")" onclick="waitLoading();">Manage</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Probes_Logs)
+                                {
+                                    <li id="Logs"><a href="@Url.Action("Logs", "Probes")" onclick="waitLoading();">Logs</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    @if (this.ViewBag.Permissions.Administration_Users ||
+                         this.ViewBag.Permissions.Administration_UserRoles ||
+                         this.ViewBag.Permissions.Administration_Roles)
+                    {
+                        <li class="has-sub" id="Administration">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <i class="fa fa-key"></i>
+                                <span>Administration</span>
+                            </a>
+                            <ul class="sub-menu">
+                                @if (this.ViewBag.Permissions.Administration_Users)
+                                {
+                                    <li id="Users"><a href="@Url.Action("Users", "Manage")" onclick="waitLoading();">Users</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Administration_UserRoles)
+                                {
+                                    <li id="UserRoles"><a href="@Url.Action("UserRoles", "Manage")" onclick="waitLoading();">User Roles</a></li>
+                                }
+                                @if (this.ViewBag.Permissions.Administration_Roles)
+                                {
+                                    <li id="Roles"><a href="@Url.Action("Roles", "Manage")" onclick="waitLoading();">Roles</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+
+                    <!-- begin sidebar minify button -->
+                    <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+                    <!-- end sidebar minify button -->
+                </ul>
+                <!-- end sidebar nav -->
+            </div>
+            <!-- end sidebar scrollbar -->
+        </div>
+        <div class="sidebar-bg"></div>
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        @Html.Partial("~/Views/Shared/_EditProfileImage.cshtml")
+
+        @RenderBody()
+
+        <!-- end #content -->
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+    <!-- end page container -->
+
+    <div class="modal fade" id="modal-logout">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title">Log out</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to log out?
+                    <br />
+                    By logging out, you will lose all ongoing activities in the backoffice and frontoffice channels. We recommend you close all browser windows after leaving.
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" id="cancelBtnModal" class="btn btn-sm btn-white" data-dismiss="modal">Cancel</a>
+                    <button type="button" id="confirmBtnModal" onclick="waitLoading(); window.location.href='@Url.Action("LogOff", "Account")';" class="btn btn-sm btn-success" data-dismiss="modal">Yes, log out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("body").find("[type=submit]").click(function () {
+            waitLoading();
+        });
+
+
+        function LoadProfileImage() {
+
+            var userName = '@HttpContext.Current.User.Identity.Name';
+
+            $.ajax({
+                url: '@Url.Action("GetUserPhoto", "Manage")',
+                type: 'GET',
+                cache: false,
+                contentType: false,
+                processData: false,
+                async: false,
+                success: function (response) {
+                    if (response != 'null' && response != '') {
+                        $('#UserPicture').attr('src', 'data:image/jpeg;base64,' + response);
+                    }
+                },
+                error: function (request, textStatus, errorThrown) {
+                    errorHandler(request, textStatus, errorThrown);
+                }
+            });
+
+        }
+        $(document).ready(function () {
+                LoadProfileImage()
+            }
+        );
+
+    </script>
+</body>
+</html>

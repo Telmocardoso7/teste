@@ -1,0 +1,49 @@
+﻿
+.pre-login-panel-parent {
+    width: 440px;
+    height: 390px;
+    background-color: #2A2D2E;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pre-login-panel {
+    min-width: 440px;
+    margin: auto;
+    float: none;
+    padding: 0;
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+.pre-login-panel .row{
+    margin-top: 23px;
+    margin-bottom: 15px;
+}
+
+.pre-login-panel button {
+    width: 380px;
+    height: 46px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.pre-login-panel .pre-login-title {
+    font-weight: 300;
+    font-size: 36px;
+}
+
+.pre-login-panel .pre-login-text {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.pre-login-panel .pre-login-line {
+    width: 220px;
+    margin: auto;
+}

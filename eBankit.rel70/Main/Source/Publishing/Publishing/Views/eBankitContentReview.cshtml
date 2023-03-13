@@ -1,0 +1,90 @@
+﻿@using ebankIT.Publishing.Web.Data;
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    var CacheVersion = "ver=48";// +DateTime.Now.Ticks;
+
+    
+    if(UmbracoContext.Security.CurrentUser == null)
+    {
+        var url = Request.Url.AbsolutePath.EncodeJsString();
+        Response.Redirect("/umbraco#/login/false?returnPath="+url);
+    }
+
+    var date = DateTime.Now;
+    
+    List<RecentChangesByUser> newContent = new List<RecentChangesByUser>();
+    List<RecentChangesByUser> newVersionContent = new List<RecentChangesByUser>();
+
+    ebankIT.Publishing.Web.Helpers.DataHelper.GetChangesByUser(out newContent,out newVersionContent);
+
+    var time = (DateTime.Now - date).TotalSeconds;
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>@Umbraco.Field("sEOTitle")</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <!-- styles -->
+        <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="~/css/ebankit/ebankit.css?@CacheVersion" rel="stylesheet"  media="screen">
+
+         <!-- Custom Fonts -->
+   
+        <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <span style="font-size:9px">Elapsed time: @time.ToString("N3") s</span>
+        <div class="container">
+            <div class="row" style="padding-top:20px;">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <p>Documents with a new version available</p>
+                    @{
+                        if (newVersionContent.Count > 0)
+                        {
+                            foreach (var user in newVersionContent)
+                            {
+                                <p style="padding-left:20px;">Changes by @user.User</p>
+                                foreach(var doc in user.ChangedDocuments)
+                                {
+		                            <p style="padding-left:40px;"><a href="/umbraco#/content/content/edit/@doc.Id" target="_blank">@doc.Name </a>@*(id: @doc.Id) *@ @doc.UpdateDate</p>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <p>No documents for review.</p>
+                        }
+                    }
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <p>New or unpublished Documents</p>
+                    @{
+                        if (newContent.Count > 0)
+                        {
+                            foreach (var user in newContent)
+                            {
+                                <p style="padding-left:20px;">Changes by @user.User</p>
+                                foreach(var doc in user.ChangedDocuments)
+                                {
+		                            <p style="padding-left:40px;"><a href="/umbraco#/content/content/edit/@doc.Id" target="_blank">@doc.Name </a>@*(id: @doc.Id) *@ @doc.UpdateDate</p>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <p>No unpublished documents for review.</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

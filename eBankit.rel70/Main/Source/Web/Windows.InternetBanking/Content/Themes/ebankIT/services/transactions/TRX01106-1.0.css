@@ -1,0 +1,6 @@
+﻿.hideAliasInfo {
+  display: none !important;
+}
+.showAliasInfo {
+  display: initial;
+}

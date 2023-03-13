@@ -1,0 +1,165 @@
+﻿@import url('_onboarding-variables');
+@import url('onboarding-marketing');
+@import url('_mixins');
+
+body {
+    overflow: hidden;
+    background-color: @backgroundcolor;
+}
+
+@media @phone {
+    #mainContainer > div > div > div.orchestrator-container,
+    #mainContainer > div > div > div.onboarding-leave-container {
+        padding: 0 30px !important;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+.onboarding-content {
+    @import url('onboarding-fields');
+    height: 100vh;
+    overflow: auto;
+    padding: 0;
+    font-family: @main-font-family;
+
+    h1, h2, h3, h4 {
+        color: @maincolor;
+        text-align: center;
+
+        &.without-color {
+            color: @labelcolor;
+        }
+    }
+
+
+    h1 {
+        .fontStyle(34px);
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        .fontStyle(24px,300,@font-family: @secondary-font-family);
+        margin-top: 0px;
+        margin-bottom: 20px;
+
+
+        @media @phone {
+            font-size: 20px;
+        }
+    }
+
+    h3 {
+        .fontStyle(14px,@font-family: @secondary-font-family);
+    }
+
+    h4 {
+        .fontStyle(14px,600,@font-family: @main-font-family);
+    }
+
+
+    .language-selector {
+        .positionAbsolute(@top:21px,@right:5%);
+        width: auto !important;
+        height: auto !important;
+        z-index: 100;
+
+        .a-primary, .a-disabled {
+            border-right: 1px solid #555555;
+            padding: 0px 5px;
+            .fontStyle(12px);
+
+            &:hover {
+                .fontStyle(12px,bold);
+            }
+        }
+
+        .a-primary {
+            color: @secondarycolor;
+        }
+
+        .a-disabled {
+            color: #555555;
+        }
+
+        a:last-of-type {
+            border-right: 0px;
+        }
+
+        .line-separator {
+            display: none;
+        }
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+
+    .onboarding-content-container {
+        height: 100%;
+        .flex(@flex-direction: column);
+        overflow: hidden;
+
+        @import url('onboarding-introduction');
+        @import url('onboarding-header');
+        @import url('onboarding-orchestrator');
+    }
+
+}
+
+.document-list .default-icon {
+    display: block;
+    background-image: url('@{base-url}/images/icons/documents-default.png');
+    height: 60px;
+    width: 60px;
+}
+
+.action-description {
+    &.action-description_1, &.action-description_4 {
+        display: block;
+        margin-top: 20px;
+        line-height: 22px;
+    }
+
+    @media @phone {
+        display:none !important;
+    }
+}
+@media @phone {
+    hr {
+        display:none;
+    }
+}
+
+.slick-slider * {
+    .slick-active:focus {
+        outline: 1px auto -webkit-focus-ring-color !important;
+        outline-offset: -2px;
+        /*outline: -webkit-focus-ring-color auto 1px;*/
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 1px;
+    }
+}
+
+.slick-dots li button {
+    padding: 4px;
+    width: auto;
+    height: auto;
+
+    &:focus {
+        outline: 1px auto -webkit-focus-ring-color !important;
+        outline-offset: -2px;
+        /*outline: -webkit-focus-ring-color auto 1px;*/
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 1px;
+    }
+}
+
+.btnRequestNewCode {
+    background-color: @backgroundcolor;
+    color: @maincolor;
+}

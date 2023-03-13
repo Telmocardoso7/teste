@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Umbraco Sonar way" ToolsVersion="16.0">
+  <Include Path="..\..\..\..\.sonarlint\umbracocsharp.ruleset" Action="Default" />
+  <Include Path="..\..\..\..\code analysis\ebankit.product.ruleset" Action="Default" />
+  <Include Path="..\..\..\.sonarlint\umbracocsharp.ruleset" Action="Default" />
+</RuleSet>

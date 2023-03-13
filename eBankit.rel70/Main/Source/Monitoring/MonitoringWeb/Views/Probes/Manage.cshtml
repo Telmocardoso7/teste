@@ -1,0 +1,820 @@
+﻿@using eBankit.Middleware.Ui.Web.Monitoring.HtmlHelpers
+@using eBankit.Middleware.Ui.Web.Monitoring.Models
+@model ManageProbesViewModel
+<!-- begin #content -->
+<div id="content" class="content" style="">
+    <!-- begin breadcrumb -->
+    @BreadCrumbs.RenderBreadCrumbs(Model.BreadCrumbs)
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">Manage Probes</h1>
+    <!-- end page-header -->
+    <!-- form -->
+    <form id="mainForm" class="form-horizontal form-bordered" action="Manage" method="post">
+        <input type="hidden" name="selectedId" id="hfSelectedId" />
+        <input type="hidden" name="testSelectedId" id="hfTestSelectedId" />
+        <input type="hidden" name="actionSelectedId" id="hfActionSelectedId" />
+        <input type="hidden" name="action" id="hfAction" />
+        <!-- Probes -->
+        <div class="row">
+            <div class="panel col-md-12 transparent">
+                <div class="panel-inverse probe-outer-panel">
+                    <div class="panel-heading">
+                        <div class="panel-heading-btn">
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-info" onclick="GetDataToRefreshProbes('@Url.Action("GetDataToRefreshProbes", "Probes")');"><i class="fa fa-refresh"></i></a>
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                        </div>
+                        <h4 class="panel-title">Probes</h4>
+                    </div>
+                    <div class="panel-body" style="margin-bottom: 0px; padding: 5px 15px 5px 15px;">
+                        @ProbeSelector.RenderProbeSelector(Model.Probes, "#panelProbeActions", ProbeSelector.WidgetType.Config)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Probes -->
+
+        <div class="row">
+            <div class="panel col-md-12 transparent">
+                <div class="panel-inverse newStyle">
+                    <div class="panel-heading">
+                        <div class="panel-heading-btn">
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                        </div>
+                        <h4 class="panel-title">Create New Probe</h4>
+                    </div>
+                    <div class="panel-body panel-form">
+                        <div class="col-md-4 form-group">
+                            <label class="control-label col-md-4">Name</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="InputParameters.Name" id="tbname" type="text" value="@Model.InputParameters.Name" onchange="DisableCreateProbeSubmit();">
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="control-label col-md-4">Widget</label>
+                            <div class="col-md-8">
+                                @Dropdown.RenderDropdown(Model.Widgets, "InputParameters.WidgetId", @Model.InputParameters.WidgetId.ToString(), "Select an item", false, true)
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label class="control-label col-md-4">Test cycle (ms)</label>
+                            <div class="col-md-8">
+                                <input class="form-control" name="InputParameters.Cycle" id="tbcycle" placeholder="15000" type="number" value="@Model.InputParameters.Cycle" onchange="DisableCreateProbeSubmit();">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button id="btnCreateProbe" type="submit" class="btn btn-inverse m-r-5 m-b-5" style="margin-top: 10px; float: right" onclick="waitLoading();UpdateSelectedAction('CreateProbe');">Create Probe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="div_confirmationModal" runat="server"></div>
+
+
+        @ProbeModalRender.RenderModal("modal-create-test", ProbeModalRender.DetailsType.CreateNewTest)
+
+        @ProbeModalRender.RenderModal("modal-test-detail", ProbeModalRender.DetailsType.ShowTestDetails)
+
+        @ProbeModalRender.RenderModal("modal-probe-detail", ProbeModalRender.DetailsType.EditProbe)
+
+        @ProbeModalRender.RenderModal("modal-create-http-action", ProbeModalRender.DetailsType.CreateNewHttpAction)
+
+        @ProbeModalRender.RenderModal("modal-create-mail-action", ProbeModalRender.DetailsType.CreateNewMailAction)
+
+        @ProbeModalRender.RenderModal("modal-choose-action-type", ProbeModalRender.DetailsType.ActionType)
+
+        @ProbeModalRender.RenderTestActions("modal-test-actions")
+
+
+    </form>
+    <link rel="stylesheet" type="text/css" href="~/Content/Slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Slick/slick-theme.css" />
+    <script type="text/javascript" src="~/Scripts/Slick/slick.js"></script>
+</div>
+
+@*Manage Error*@
+@ConfirmationModal.RenderModalError()
+@Html.Raw(ViewBag.modalError)
+
+
+<!-- end #content -->
+<link href="~/cssbundles/requestsStyles" rel="stylesheet" type="text/css" />
+<link href="~/Content/morris.css" rel="stylesheet" />
+<script src="~/bundles/requestsScripts"></script>
+<script src="~/Scripts/raphael-min.js"></script>
+<script src="~/Scripts/morris.js"></script>
+
+<style>
+    .slick-slider {
+        margin-bottom: 0px;
+    }
+
+    .slick-active {
+        outline: none;
+    }
+
+    html {
+        overflow-y: scroll;
+    }
+
+    .option-nav {
+        width: 20px;
+        display: inline-block;
+        left: 10px;
+        position: relative;
+        font-size: 11px;
+    }
+
+        .option-nav ul {
+            position: relative;
+            font-weight: 900;
+        }
+
+            .option-nav ul li {
+                position: relative;
+                list-style: none;
+                cursor: pointer;
+                width: 110px;
+                left: -40px;
+            }
+
+                .option-nav ul li ul {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+
+            .option-nav ul .clicker {
+                position: relative;
+                background: #242A30;
+                color: #FFF;
+                border-radius: 3px;
+            }
+
+                .option-nav ul .clicker:hover, .click-nav ul .active {
+                    background: #474d52;
+                }
+        /* Fallbacks */
+        .option-nav .no-js ul {
+            display: none;
+        }
+
+        .option-nav .no-js:hover ul {
+            display: block;
+            z-index: 100;
+        }
+
+        .option-nav i {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            font-size: 11px;
+        }
+
+        .option-nav ul li a {
+            transition: background-color 0.2s ease-in-out;
+            -webkit-transition: background-color 0.2s ease-in-out;
+            -moz-transition: background-color 0.2s ease-in-out;
+            display: block;
+            padding: 4px 10px 4px 37px;
+            margin-top: -2px;
+            background: #FFF;
+            color: #333;
+            text-decoration: none;
+        }
+
+            .option-nav ul li a:hover {
+                background: #e5e4e4;
+            }
+
+        .option-nav ul li ul li {
+            position: relative;
+            list-style: none;
+            cursor: pointer;
+            width: 110px;
+            left: -40px;
+        }
+
+
+    /*OVERRIDE SLICK*/
+    /* With this trick slick {speed:<value> } must be 0, or the transaction between them will be visible...*/
+
+    /* Remove overflow hidden*/
+    .slickshowprobe > .slick-list {
+        overflow: visible;
+    }
+
+    /* Hides all elements but not remove them, continuing ocupping the same spaces*/
+    .slickshowprobe.slick-initialized .slick-slide {
+        visibility: hidden;
+    }
+
+    /* Override the visibility for the active one's*/
+    .slickshowprobe > .slick-list > .slick-track > .slick-active {
+        Visibility: visible !important;
+    }
+
+    /* Overlap Slick track because of visibility hidden*/
+    .slick-prev {
+        z-index: 11;
+    }
+    /*END OVERRIDE SLICK*/
+
+    .slickshowtest {
+        max-height: 108px;
+    }
+</style>
+
+<script>
+    function DisableCreateProbeSubmit() {
+
+        var probeName = $('[name="InputParameters.Name"]')[0];
+        var probeWidgetId = $('[name="InputParameters.WidgetId"]')[0];
+        var probeCycle = $('[name="InputParameters.Cycle"]')[0];
+        var createProbeButton = $('[id="btnCreateProbe"]')[0];
+
+        if (createProbeButton !== undefined) {
+            if (probeName.value === undefined || probeWidgetId.value === undefined || probeCycle.value === undefined ||
+                probeName.value.length === 0 || probeWidgetId.value <= 0 || probeCycle.value.length === 0) {
+                createProbeButton.disabled = true;
+            }
+            else {
+                createProbeButton.disabled = false;
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        ToggleSideBarMenu($('#Probes'), $('#Manage'));
+
+        App.init();
+        InitCarousel();
+
+        // AutoRefresh
+        setInterval(function () { GetDataToRefreshProbes('@Url.Action("GetDataToRefreshProbes", "Probes")'); }, 15000);
+        AddTestModalEventHandlers();
+        AddHandlersForSMTP();
+
+        // SLICK code, Dude!
+        $('.slickshowprobe').slick({
+            infinite: true,
+            speed: 0,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        });
+
+        $('.probe-group').each(function () {
+            $(this).on('shown.bs.collapse', function (e) {
+                var t = $(this).find('[aria-expanded=true]').children('.slickshowtest');
+                if (typeof t !== undefined) {
+                    t.slick({
+                        infinite: true,
+                        speed: 0,
+                        slidesToShow: 6,
+                        slidesToScroll: 1
+                    });
+                }
+            });
+        });
+
+        // Start custom onclicks
+        $("[onClickStopEvent=GetDataToRefreshProbes]").click(function (event) {
+            event.stopPropagation();
+            GetDataToRefreshProbes('@Url.Action("GetDataToRefreshProbes", "Probes")');
+        });
+        $("[onClickStopEvent=OpenProbeDetails]").click(function (event) {
+            event.stopPropagation();
+            $("#hfSelectedId").val($(this).attr("selectedId"));
+            OpenProbeDetails();
+        });
+        $("[onClickStopEvent=UpdateSelectedActionDeleteProbe]").click(function (event) {
+            event.stopPropagation();
+            $("#hfSelectedId").val($(this).attr("selectedId"));
+            UpdateSelectedAction('DeleteProbe');
+            $("#modal-confirmation").modal('show');
+        });
+        $("[onClickStopEvent=UpdateSelectedActionDuplicateProbe]").click(function (event) {
+            event.stopPropagation();
+            $("#hfSelectedId").val($(this).attr("selectedId"));
+            UpdateSelectedAction('DuplicateProbe');
+            $("#modal-confirmation").modal('show');
+        });
+        $("[onClickStopEvent=UpdateSelectedActionCreateTest]").click(function (event) {
+            event.stopPropagation();
+            $("#hfSelectedId").val($(this).attr("selectedId"));
+            UpdateSelectedAction('CreateTest');
+            $("#modal-create-test").modal('show');
+        });
+        $("[onClickStopEvent=redirectToLogs]").click(function (event) {
+            event.stopPropagation();
+            $("#hfSelectedId").val($(this).attr("selectedId"));
+            redirectToLogs();
+        });
+
+        DisableCreateProbeSubmit();
+    });
+
+    $(function () {
+        // Clickable Dropdown
+        $('.click-nav > ul').toggleClass('no-js js');
+        $('.click-nav .js ul').hide();
+        $('.click-nav .js').click(function (e) {
+            $('.click-nav .js ul').slideToggle(200);
+            $('.clicker').toggleClass('active');
+            e.stopPropagation();
+        });
+        $(document).click(function () {
+            if ($('.click-nav .js ul').is(':visible')) {
+                $('.click-nav .js ul', this).slideUp();
+                $('.clicker').removeClass('active');
+            }
+        });
+    });
+
+    var redirectToLogs = function () {
+        waitLoading();
+        window.location.href = '@Url.Action("Logs", "Probes")' + '?selectId=' + $("#hfSelectedId").val() + '&testId=' + $("#hfTestSelectedId").val() + '&actionId=' + $("#hfActionSelectedId").val();
+    }
+
+    var openUrlInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        if (win) {
+            //Browser has allowed it to be opened
+            win.focus();
+        } else {
+            //Broswer has blocked it
+            alert('Please allow popups for this site');
+        }
+    }
+
+    /*****************  ACTIONS (Delete, duplicate, create, etc )  ***************************/
+
+    var UpdateSelectedActionAndPost = function (id, action) {
+        event.stopPropagation();
+        $("#hfSelectedId").val(id);
+        $("#hfAction").val(action);
+
+        $("#mainForm").submit();
+    }
+
+    var UpdateSelectedAction = function (action) {
+        $("#hfAction").val(action);
+
+        if (action == "DeleteProbe")
+            $("#div_confirmationModal").html('@ConfirmationModal.RenderConfirmationModal("DeleteProbe")');
+        else if (action == "DuplicateProbe")
+            $("#div_confirmationModal").html('@ConfirmationModal.RenderConfirmationModal("DuplicateProbe")');
+        else if (action == "EditAction")
+        {
+            $("#ac_UseSMTPAuthentication").val($("#ac_UseSMTPAuthentication").attr('checked') == "checked");
+            $("#ac_UseSSL").val($("#ac_UseSSL").attr('checked') == "checked");
+            $("#ac_UseDefaultSMTPServer").val($("#ac_UseDefaultSMTPServer").attr('checked') == "checked");
+
+        }
+    }
+
+    /***************** END ACTIONS (Delete, duplicate, create, etc )  ***************************/
+
+
+
+    /*****************  PROBES  ***************************/
+
+    var UpdateSelectedProbe = function (id) {
+        $("#hfSelectedId").val(id);
+    }
+
+
+    var OpenProbeDetails = function () {
+        var queryString = "?selectedId=" + $("#hfSelectedId").val();
+        $.ajax({
+            url: '@Url.Action("GetProbeDetails", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                FillProbeDetailModal(JSON.parse(data));
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+    var FillProbeDetailModal = function (jsonData) {
+        var attrList = ["Id", "Name", "Cycle", "WidgetId"];
+        for (var i = 0; i < attrList.length; i++) {
+            $("#p_" + attrList[i]).val(jsonData[attrList[i]]);
+        }
+        $("#modal-probe-detail").modal("show");
+    }
+
+    /*****************  END PROBES  ***************************/
+
+
+
+    /*****************  TESTS  ***************************/
+
+    var OpenTestDetails = function (id) {
+        event.stopPropagation();
+        $("#hfTestSelectedId").val(id);
+         
+        //var json = '@Html.Raw(Json.Encode(@Model))';
+        var queryString = "?selectedId=" + $("#hfSelectedId").val() + "&testSelectedId=" + id;
+        $.ajax({
+            url: '@Url.Action("GetTestDetails", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                FillTestDetailsModal(JSON.parse(data));
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+
+    var FillTestDetailsModal = function (jsonData) {
+        jsonData["TestUrl"] = decodeURIComponent(jsonData["TestUrl"]);
+        var attrList = ["Id", "Name", "Abbreviature", "Type", "Description", "Timeout", "SlowLimit", "Frequency",
+                        "TestUrl", "TriesNumber", "PostType", "PostData", "ConnectionTimeout", "SocketsTimeout",
+                        "MaxRedirects", "AuthRealm", "AuthDomain", "AuthUsername", "AuthPassword", "AuthSchema",
+                        "ProxyHost", "ProxyPort", "ProxyRealm", "ProxyDomain", "ProxyUsername", "ProxyPassword", "CheckType",
+                        "ContentToCompare", "CompareType"];
+        var attrListCheckBoxes = ["ContributesToGeneralError", "FollowRedirects", "DoAuthentication", "UseProxy"];
+        var attrListLastResult = ["Status", "TimeTaken", "ExtraInfo", "Successes", "Fails", "LastExec", "LastSuccess", "LastFail"]
+        for (var i = 0; i < attrList.length; i++) {
+            $("#pt_" + attrList[i]).val(jsonData[attrList[i]]);
+        }
+        for (var i = 0; i < attrListCheckBoxes.length; i++) {
+            $("#pt_" + attrListCheckBoxes[i]).prop('checked', jsonData[attrListCheckBoxes[i]]);
+        }
+        $("#pt_DoAuthentication").attr('checked') == "checked" ? $("#divTAuthentication").collapse('show') : $("#divTAuthentication").collapse('hide');
+        $("#pt_UseProxy").attr('checked') == "checked" ? $("#divTProxy").collapse('show') : $("#divTProxy").collapse('hide');
+
+        $("#pt_MethodType").val(jsonData["MethodType"]);
+
+        if ($("#pt_MethodType option:selected").text() == "POST") {
+            $("#pt_PostType").parent().parent().css("display", "block");
+            if ($("#pt_PostType option:selected").text() == "Json") {
+                $("#pt_PostData").parent().parent().css("display", "block");
+            }
+            else {
+                $("#pt_PostData").parent().parent().css("display", "none");
+            }
+        }
+        else {
+            $("#pt_PostType").parent().parent().css("display", "none");
+            $("#pt_PostData").parent().parent().css("display", "none");
+        }
+
+
+        if ($("#pt_CheckType option:selected").text() != "HTTP OK") {
+            $("#pt_CompareType").parent().parent().css("display", "block");
+            $("#pt_ContentToCompare").parent().parent().css("display", "block");
+        }
+        else {
+            $("#pt_CompareType").parent().parent().css("display", "none");
+            $("#pt_ContentToCompare").parent().parent().css("display", "none");
+
+        }
+
+
+        var lastResult = jsonData["LastResult"];
+        for (var i = 0; i < attrListLastResult.length; i++) {
+            $("#pt_LastResult" + attrListLastResult[i]).text(lastResult[attrListLastResult[i]]);
+        }
+
+        $("#pt_LastResultStatus").removeClass();
+        $("#pt_LastResultStatus").addClass("label");
+        if ($("#pt_LastResultStatus").text() == "Failed")
+            $("#pt_LastResultStatus").addClass("label-danger");
+        else if ($("#pt_LastResultStatus").text() == "Slow")
+            $("#pt_LastResultStatus").addClass("label-warning");
+        else if ($("#pt_LastResultStatus").text() == "Working")
+            $("#pt_LastResultStatus").addClass("label-success");
+        else if ($("#pt_LastResultStatus").text() == "Timeout" || $("#pt_LastResultStatus").text() == "Conn. Timeout")
+            $("#pt_LastResultStatus").addClass("bg-probe-timeout");
+        else
+            $("#pt_LastResultStatus").addClass("label-default");
+        $("#modal-test-detail").modal("show");
+    }
+
+    var AddTestModalEventHandlers = function () {
+        AddHandlerForMethodType("ptnw_MethodType", "ptnw_PostType", "ptnw_PostData");
+        AddHandlerForPostType("ptnw_PostType", "ptnw_PostData");
+        AddHandlerForCheckType("ptnw_CheckType", "ptnw_ContentToCompare");
+        AddHandlerForCheckType("ptnw_CheckType", "ptnw_CompareType");
+
+        AddHandlerForMethodType("pt_MethodType", "pt_PostType", "pt_PostData");
+        AddHandlerForPostType("pt_PostType", "pt_PostData");
+        AddHandlerForCheckType("pt_CheckType", "pt_ContentToCompare");
+        AddHandlerForCheckType("pt_CheckType", "pt_CompareType");
+
+        AddHandlerForMethodType("ac_MethodType", "ac_PostType", "ac_PostData");
+        AddHandlerForPostType("ac_PostType", "ac_PostData");
+
+        AddHandlerForMethodType("ptna_MethodType", "ptna_PostType", "ptna_PostData");
+        AddHandlerForPostType("ptna_PostType", "ptna_PostData");
+    }
+
+
+    var AddHandlerForMethodType = function (id, first, second) {
+        var firstParent = $("#" + first).parent().parent();
+        var secondParent = $("#" + second).parent().parent();
+
+        $(firstParent).css("display", "none");
+        $(secondParent).css("display", "none");
+
+        $("#" + id).change(function (e) {
+            if ($("#" + id + " option:selected").text() == "POST") {
+                $(firstParent).css("display", "block");
+                if ($("#" + first + " option:selected").text() == "Json")
+                    $(secondParent).css("display", "block");
+            }
+            else {
+                $(firstParent).css("display", "none");
+                $(secondParent).css("display", "none");
+            }
+        });
+    }
+
+    var AddHandlerForPostType = function (id, first) {
+        var firstParent = $("#" + first).parent().parent();
+
+        $(firstParent).css("display", "none");
+
+        $("#" + id).change(function (e) {
+            if ($("#" + id + " option:selected").text() == "Json")
+                $(firstParent).css("display", "block");
+            else
+                $(firstParent).css("display", "none");
+        });
+    }
+
+    var AddHandlerForCheckType = function (id, first) {
+        var firstParent = $("#" + first).parent().parent();
+
+        $(firstParent).css("display", "none");
+
+        $("#" + id).change(function (e) {
+            if ($("#" + id + " option:selected").text() != "HTTP OK")
+                $(firstParent).css("display", "block");
+            else
+                $(firstParent).css("display", "none");
+        });
+    }
+
+    /*****************  END TESTS  ***************************/
+
+
+
+    /*****************  ACTIONS  ***************************/
+
+    var OpenActionsDetails = function (id) {
+        event.stopPropagation();
+        $("#hfTestSelectedId").val(id);
+
+        var queryString = "?selectedId=" + $("#hfSelectedId").val() + "&testSelectedId=" + id;
+        $.ajax({
+            url: '@Url.Action("GetActions", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                FillActionsDropdownModal(JSON.parse(data));
+
+
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+                $("#divActions").addClass("hide");
+                $("#divNoActions").removeClass("hide");
+                OpenModalTestActions(); // Open Modal
+            }
+        });
+    }
+
+    var FillActionsDropdownModal = function (jsonData) {
+        if (jsonData.length > 0) {
+            $("#divActions").show();
+            $("#divNoActions").hide();
+
+            var objTests = $("#ddlActions"); // Dropdown Actions
+            AddActionDropdownHandler();
+            $(objTests).find('option').remove();
+            for (var i = 0; i < jsonData.length; i++) {
+                var action = jsonData[i];
+                $(objTests).append('<option value="' + action.Id + '">' + action.Name + '</option>');
+            }
+            GetActionDetails(jsonData[0].Id);
+        }
+        else {
+            $("#divActions").hide();
+            $("#divNoActions").show();
+        }
+        OpenModalTestActions(); // Open Modal
+    }
+
+    // Change Action, fill details
+    AddActionDropdownHandler = function () {
+        $("#ddlActions").change(function () {
+            GetActionDetails($(this).val());
+        });
+    }
+
+    var GetActionDetails = function (id) {
+        $("#divActionDetails").hide();
+        $('#divActionSpinner').append('<div id="loading-action" style=\"position:relative; top:50px; height:100px;\"><span class="spinner"></span></div>');
+
+        $("#hfActionSelectedId").val(id);
+
+        var queryString = "?selectedId=" + $("#hfSelectedId").val() + "&testSelectedId=" + $("#hfTestSelectedId").val() + "&actionSelectedId=" + id;
+        $.ajax({
+            url: '@Url.Action("GetActionDetails", "Probes")' + queryString,
+            type: 'POST',
+            contentType: 'json',
+            success: function (data) {
+                FillActionsDetailModal(JSON.parse(data));
+            },
+            error: function (request, textStatus, errorThrown) {
+                errorHandler(request, textStatus, errorThrown);
+            }
+        });
+    }
+
+    var FillActionsDetailModal = function (jsonData) {
+        var attrGeneralList = ["Id", "Name", "Abbreviature", "InitFailsCount"];
+        var attrGenTagList = ["IsActive", "IsRunning"];
+        var attrHttpList = ["TestUrl", "TriesNumber", "MethodType", "PostType", "PostData", "ConnectionTimeout", "SocketsTimeout",
+                        "MaxRedirects", "AuthRealm", "AuthDomain", "AuthUsername", "AuthPassword", "AuthSchema",
+                        "ProxyHost", "ProxyPort", "ProxyRealm", "ProxyDomain", "ProxyUsername", "ProxyPassword"];
+        var attrHttpListCheckBoxes = ["FollowRedirects", "DoAuthentication", "UseProxy"];
+        var attrMailList = ["SendWait", "ServerSMTP", "SMTPPort", "From", "To", "UseDefaultSMTPServer", "UseSMTPAuthentication", "Username", "Password", "UseSSL", "Timeout"]
+
+        for (var i = 0; i < attrGeneralList.length; i++) {
+            $("#ac_" + attrGeneralList[i]).val(jsonData[attrGeneralList[i]]);
+        }
+
+        for (var i = 0; i < attrGenTagList.length; i++) {
+
+            if (jsonData[attrGenTagList[i]] == true) {
+                $("#ac_" + attrGenTagList[i]).removeClass().addClass("label").addClass("label-success");
+                $("#ac_" + attrGenTagList[i]).html("True");
+                if (attrGenTagList[i] == "IsActive")
+                    $("#btnToogleAction").text("Deactivate");
+                else
+                    $("#btnRunStopAction").text("Stop");
+
+            }
+            else {
+                $("#ac_" + attrGenTagList[i]).removeClass().addClass("label").addClass("label-danger");
+                $("#ac_" + attrGenTagList[i]).html("False");
+                if (attrGenTagList[i] == "IsActive")
+                    $("#btnToogleAction").text("Activate");
+                else
+                    $("#btnRunStopAction").text("Start");
+            }
+        }
+
+        $("#ac_Type").html(jsonData["Type"] == 0 ? "Mail" : "Http");
+
+        // mail
+        if (jsonData["Type"] == "0") {
+            for (var i = 0; i < attrMailList.length; i++) {
+                $("#ac_" + attrMailList[i]).val(jsonData[attrMailList[i]]);
+            }
+            //Initialize
+            $("#ac_UseDefaultSMTPServer").prop('checked', false);
+            $("#ac_UseSMTPAuthentication").prop('checked', false);
+            $("#ac_UseSSL").prop('checked', false);
+
+            if ($("#ac_UseDefaultSMTPServer").val() == 'true'){
+                $("#ac_UseDefaultSMTPServer").prop('checked', true);
+            }
+
+            if ($("#ac_UseSSL").val() == 'true') {
+                $("#ac_UseSSL").prop('checked', true);
+            }
+
+            if ($("#ac_UseSMTPAuthentication").val() == 'true') {
+                $("#ac_UseSMTPAuthentication").prop('checked', true);
+            }
+
+            $('#divActionSpinner').find('#loading-action').remove();
+            $("#divActionDetails").show();
+            $("#divActionHttp").hide();
+            $("#divActionMail").show();
+
+            $("#ac_UseDefaultSMTPServer").attr('checked') == "checked" ? $("#divSMTPConfiguration").collapse('hide') : $("#divSMTPConfiguration").collapse('show');
+            if ($("#ac_UseSMTPAuthentication").attr('checked') == "checked") {
+                $("#ac_Username").parent().parent().css("display", "block");
+                $("#ac_Password").parent().parent().css("display", "block");
+            }
+            else {
+                $("#ac_Username").parent().parent().css("display", "none");
+                $("#ac_Password").parent().parent().css("display", "none");
+            }
+        }
+        // http
+        else if (jsonData["Type"] == "1") {
+            for (var i = 0; i < attrHttpList.length; i++) {
+                $("#ac_" + attrHttpList[i]).val(jsonData[attrHttpList[i]]);
+            }
+            for (var i = 0; i < attrHttpListCheckBoxes.length; i++) {
+                $("#ac_" + attrHttpListCheckBoxes[i]).prop('checked', jsonData[attrHttpListCheckBoxes[i]]);
+            }
+            $('#divActionSpinner').find('#loading-action').remove();
+            $("#divActionDetails").show();
+            $("#divActionMail").hide();
+            $("#divActionHttp").show();
+
+            $("#ac_DoAuthentication").attr('checked') == "checked" ? $("#divEAProxy").collapse('show') : $("#divEAProxy").collapse('hide');
+            $("#ac_UseProxy").attr('checked') == "checked" ? $("#divEAPProxy").collapse('show') : $("#divEAPProxy").collapse('hide');
+
+
+            if ($("#ac_MethodType option:selected").text() == "POST") {
+                $("#ac_PostType").parent().parent().css("display", "block");
+                if ($("#ac_PostType option:selected").text() == "Json") {
+                    $("#ac_PostData").parent().parent().css("display", "block");
+                }
+                else {
+                    $("#ac_PostData").parent().parent().css("display", "none");
+                }
+            }
+            else {
+                $("#ac_PostType").parent().parent().css("display", "none");
+                $("#ac_PostData").parent().parent().css("display", "none");
+            }
+
+        }
+    }
+
+
+    var AddHandlersForSMTP = function (id) {
+        $("#ac_UseSMTPAuthentication").change(function (e) {
+            if ($("#ac_UseSMTPAuthentication").attr('checked') == "checked") {
+                $("#ac_Username").parent().parent().css("display", "block");
+                $("#ac_Password").parent().parent().css("display", "block");
+            }
+            else {
+                $("#ac_Username").parent().parent().css("display", "none");
+                $("#ac_Password").parent().parent().css("display", "none");
+            }
+        });
+
+        $("#ptna_UseSMTPAuthentication").change(function (e) {
+            if ($("#ptna_UseSMTPAuthentication").attr('checked') == "checked") {
+                $("#ptna_Username").parent().parent().css("display", "block");
+                $("#ptna_Password").parent().parent().css("display", "block");
+            }
+            else {
+                $("#ptna_Username").parent().parent().css("display", "none");
+                $("#ptna_Password").parent().parent().css("display", "none");
+            }
+        });
+
+        // Set none
+        $("#ptna_Username").parent().parent().css("display", "none");
+        $("#ptna_Password").parent().parent().css("display", "none");
+    }
+
+    /*****************  END ACTIONS  ***************************/
+
+
+    /*****************  MODAL HANDLERS  ***************************/
+
+    var OpenModalNewTest = function () {
+        AddModalCloseHandler('#modal-test-detail', '#modal-create-test');
+        $("#modal-test-detail").modal("hide");
+        $("#hfAction").val("CreateTestWithParent");
+    }
+
+    var OpenModalChooseAction = function (from) {
+        AddModalCloseHandler("#" + from, '#modal-choose-action-type');
+        $("#" + from).modal("hide");
+    }
+
+    var OpenModalNewAction = function (type) {
+        $("#hfAction").val("CreateAction" + type);
+        if (type == "Mail")
+            AddModalCloseHandler('#modal-choose-action-type', '#modal-create-mail-action');
+        else if (type == "Http")
+            AddModalCloseHandler('#modal-choose-action-type', '#modal-create-http-action');
+        $("#modal-choose-action-type").modal("hide");
+    }
+
+    var OpenModalTestActions = function () {
+        $("#modal-test-actions").modal("show");
+    }
+
+    // Change from Modal to Modal
+    AddModalCloseHandler = function (from, to) {
+        $(from).on('hidden.bs.modal', function (e) {
+            $(to).modal('show');
+            $(from).off();
+        });
+    }
+
+    /***************** END MODAL HANDLERS  ***************************/
+</script>

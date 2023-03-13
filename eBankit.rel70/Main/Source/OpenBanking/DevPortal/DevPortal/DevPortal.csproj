@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <DevPortalContentFilesPath>$(userprofile)\.nuget\packages\eBankit.FE.DevPortal\$(ProductVersion)\contentFiles\any\$(TargetFramework)</DevPortalContentFilesPath>
+    <Configurations>Debug;Release;</Configurations>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <IsPackable>true</IsPackable>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AssemblyAttribute Include="eBankit.FE.Common.Entities.PackageHelpers.BasePackageAssemblyAttribute">
+      <!--Load static files from packages-->
+      <StaticFiles>
+        <StaticFilesRoot>$(DevPortalContentFilesPath)\wwwroot</StaticFilesRoot>
+      </StaticFiles>
+      <!--Load views from packages-->
+      <ViewProviders>
+        <ViewProvider>$(DevPortalContentFilesPath)</ViewProvider>
+      </ViewProviders>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <!-- publish content from base pacakge in publish -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(DevPortalContentFilesPath)\Views\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="$(DevPortalContentFilesPath)\wwwroot\**" />
+    <Content CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="$(DevPortalContentFilesPath)\Views\**" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="$(DevPortalContentFilesPath)\wwwroot\**" />
+    <None CopyToPublishDirectory="PreserveNewest" Update="wwwroot\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="eBankit.FE.DevPortal" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+</Project>

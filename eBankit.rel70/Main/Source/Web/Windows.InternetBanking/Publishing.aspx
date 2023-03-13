@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Publishing.aspx.cs" Inherits="eBankit.UI.Web.InternetBanking.Publishing" %>

@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "eBankitMaster.cshtml";
+    var a = (this.CurrentPage);
+
+    var b = a.GetPropertyValue("redirectUrl");
+
+    if (!string.IsNullOrEmpty(b))
+    {  Response.Redirect(b);
+}}
+
+@section content{
+    
+   
+}

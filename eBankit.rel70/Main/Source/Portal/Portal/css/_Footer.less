@@ -1,0 +1,129 @@
+﻿@import "_Variables.less";
+
+.footer{
+    min-height:350px;
+    background-color:@light-gray;
+    padding-top:30px;
+}
+
+.copyright{
+    height:50px;
+    text-align:center;
+    font-size:@font-s;
+    text-transform:uppercase;
+    color:@white;
+    padding-top:15px;
+    font-family:@font-book;
+}
+
+.footer ul{
+    list-style:none;
+    font-size:@font-xs;
+    margin-bottom:40px;
+    font-family:@font-book;
+}
+
+@media (max-width:768px){
+    .footer ul{
+        padding:0;
+    }
+    .footer ul li{
+        text-align:center;
+    }
+}
+
+.footer ul li:first-of-type{
+    text-transform:uppercase;
+    color:@blue;
+}
+
+.footer ul li a, .footer ul li a:hover{
+    margin-top:2px;
+    color:@darker-gray;
+    text-decoration:none;
+    display:block;
+}
+
+.footer ul li:nth-child(2){
+    margin-top:0;
+}
+
+.footer ul li.socialLink{
+    display:inline-block;
+}
+
+.footer ul li.contactTitle{
+    margin-bottom:20px;
+    margin-left:10px;
+    display:block;
+}
+
+@media (max-width:992px){
+    .footer ul li.socialLink:first-of-type,
+    .footer ul.socialLinksHeader li{
+        margin-left:0;
+    }
+}
+
+.footer ul li.socialLink a{
+    border-radius:50%;
+    border:2px solid @darker-gray;
+    background-color:@blue;
+    width:64px;
+    height:64px;
+    color:@white;
+    text-align:center;
+    padding-top:12px;
+    margin-left:10px;
+}
+
+.footer ul li.socialLink:first-of-type a{
+    margin-left:0;
+}
+
+.contactIcon{
+    margin-right:30px;
+    color:@darker-gray;
+    margin-left:10px;
+}
+
+@media (max-width:992px){
+    .contactTitle, .contactIcon{
+        margin-left:0!important;
+    }
+}
+
+.footer ul li:nth-child(2) .contactIcon{
+    margin-bottom:40px;
+}
+
+.contactIcon + span{
+    color:@darker-gray;
+    font-size:@font-m;
+    font-family:@font-book;
+    position:relative;
+    top:-10px;
+}
+
+.socialLinksDiv{
+    width:220px;
+}
+
+@media (min-width:768px) and (max-width:992px){
+    .socialLinksDiv{
+        margin:unset;
+        margin-left:40px;
+    }
+}
+
+.socialLinksDiv ul{
+    padding:0;
+}
+
+.socialLinksHeader{
+    margin-bottom:20px!important;
+}
+
+.socialLinksHeader li{
+    margin-left:10px;
+}

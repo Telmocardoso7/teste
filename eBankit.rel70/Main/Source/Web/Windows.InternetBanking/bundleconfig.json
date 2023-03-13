@@ -1,0 +1,830 @@
+[
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00101-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00101-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00116-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00116-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00117-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00117-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/register-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/register-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/login-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/login-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/exchangePage.min.js",
+    "inputFiles": [
+      "Scripts/Services/exchangePage.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/branchesPage-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/branchesPage-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01110-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01110-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01106-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01106-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00611-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00611-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00610-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00610-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00602-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00602-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00309-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00309-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00222-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00222-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00221-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00221-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00220-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00220-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00121-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00121-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00119-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00119-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/trx00118-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/trx00118-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01111-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01111-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01120-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01120-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01130-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01130-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01140-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01140-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/beneficiary-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/beneficiary-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Generic/SchedulerControl.min.js",
+    "inputFiles": [
+      "Scripts/Services/Generic/SchedulerControl.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/TemplateEbankit.min.js",
+    "inputFiles": [
+      "Scripts/Services/TemplateEbankit.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00120-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00120-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00171-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00171-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01510-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01510-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01520-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01520-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01530-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01530-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01601-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01601-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00205-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00205-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/recover-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/recover-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01150-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01150-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01701-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01701-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01702-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01702-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01005-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01005-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01703-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01703-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01603-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01603-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01160-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01160-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/favorit-selector-1.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/favorit-selector-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/product-selector-1.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/product-selector-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01112-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01112-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/loginBackground-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/loginBackground-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/registerImages-2.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/registerImages-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/registerQuestions-2.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/registerQuestions-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/registerUsername-2.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/registerUsername-2.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/loginSecurityQuestions-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/loginSecurityQuestions-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Generic/CredentialAuthorization.min.js",
+    "inputFiles": [
+      "Scripts/Services/Generic/CredentialAuthorization.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00514-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00514-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/selectProfile/control.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/selectProfile/control.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/selectProfile/widget.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/selectProfile/widget.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01801-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01801-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/date.min.js",
+    "inputFiles": [
+      "Scripts/date.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX01801-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX01801-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00701-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00701-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01302-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01302-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01151-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01151-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01161-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01161-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Generic/ResultControl.min.js",
+    "inputFiles": [
+      "Scripts/Services/Generic/ResultControl.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/common-1.0.min.js",
+    "inputFiles": [
+      "Scripts/common-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery.verifysession.min.js",
+    "inputFiles": [
+      "Scripts/jquery.verifysession.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01018-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01018-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01019-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01019-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01304-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01304-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX02001-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX02001-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX02002-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX02002-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/customerSummary/customer-summary.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/customerSummary/customer-summary.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/accounts-control-update-cp.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/accounts-control-update-cp.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/gdpr-popup.min.js",
+    "inputFiles": [
+      "Scripts/gdpr-popup.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01170-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01170-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/CustomerConsentList.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/CustomerConsentList.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/ExportData/ExportData-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/ExportData/ExportData-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/fingerprint2.min.js",
+    "inputFiles": [
+      "Scripts/Services/fingerprint2.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/styles.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/styles.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankITV3/styles.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankITV3/styles.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/modalpopup-1.0.min.js",
+    "inputFiles": [
+      "Scripts/modalpopup-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/ebankit-cookies.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/ebankit-cookies.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/ua-parser.min.js",
+    "inputFiles": [
+      "Scripts/Services/ua-parser.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/dashboard/dashboard.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/dashboard/dashboard.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/session/renew-session-control.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/session/renew-session-control.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/session/session-control.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/session/session-control.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/styles-cp.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/styles-cp.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX01120-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01107-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01107-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01305-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01305-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00161-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00161-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01811-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01811-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/campaign/customer-campaign.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/campaign/customer-campaign.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/dashboard/pending-product-widget.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/dashboard/pending-product-widget.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/custom-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/custom-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX00703-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01172-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01172-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/styles-rtl.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/styles-rtl.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/ebankit-phone.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/ebankit-phone.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/styles-cp-rtl.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/styles-cp-rtl.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX01172-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX01172-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Cart/uploadCart-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Cart/uploadCart-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/cart/TRX01801-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/cart/TRX01801-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "TextBox/CurrencyTextBox/CurrencyTextBoxControlAutoJs/autoNumeric.min.js",
+    "inputFiles": [
+      "TextBox/CurrencyTextBox/CurrencyTextBoxControlAutoJs/autoNumeric.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/policies.min.js",
+    "inputFiles": [
+      "Scripts/policies.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01335-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01335-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/ebankit-phone-rtl.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/ebankit-phone-rtl.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/styles-sb.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/styles-sb.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/bootstrap-multiselect.min.css",
+    "inputFiles": [
+      "Content/bootstrap-multiselect.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/components/LoginBackground.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/components/LoginBackground.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00223-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00223-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX02101-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX02101-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX02104-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX02104-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery.selectbox.min.js",
+    "inputFiles": [
+      "Scripts/jquery.selectbox.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/product-selector-slick-1.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/product-selector-slick-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/ebankit-muc-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/ebankit-muc-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/ebankit-muc-trustees-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/ebankit-muc-trustees-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/components/PendingOperations.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/components/PendingOperations.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX01811-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX01811-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/product-selector-slick-1.0.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/product-selector-slick-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/ebankitControls/accounts-control-update-ve.min.js",
+    "inputFiles": [
+      "Scripts/ebankitControls/accounts-control-update-ve.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01802-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01802-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/bootstrap-multiselect.min.js",
+    "inputFiles": [
+      "Scripts/bootstrap-multiselect.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/components/editdelegate.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/components/editdelegate.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/AddUsersToContractDelegates.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/AddUsersToContractDelegates.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/muc-details-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/muc-details-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Widgets/LandingSecureMessages.min.js",
+    "inputFiles": [
+      "Scripts/Services/Widgets/LandingSecureMessages.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery-3.4.1.fixes.min.js",
+    "inputFiles": [
+      "Scripts/jquery-3.4.1.fixes.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01902-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01902-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/components/AccountGroupEdit.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/components/AccountGroupEdit.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/components/GroupEdit.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/components/GroupEdit.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/Themes/ebankIT/services/transactions/TRX01802-1.0.min.css",
+    "inputFiles": [
+      "Content/Themes/ebankIT/services/transactions/TRX01802-1.0.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX01105-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX01105-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/GroupEditRule.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/GroupEditRule.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/MUC/SignatureEditLimit.min.js",
+    "inputFiles": [
+      "Scripts/Services/MUC/SignatureEditLimit.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00901_01.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00901_01.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX00901-01.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX00901-01.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/DataListCardControl.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/DataListCardControl.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/DataListCardControl-v2.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/DataListCardControl-v2.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Services/Transactions/TRX02201-1.0.min.js",
+    "inputFiles": [
+      "Scripts/Services/Transactions/TRX02201-1.0.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/IntegrationUtils.min.js",
+    "inputFiles": [
+      "Scripts/IntegrationUtils.js"
+    ]
+  }
+]

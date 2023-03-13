@@ -1,0 +1,78 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Masters/Transaction.Master" CodeBehind="Transactions.aspx.cs" Inherits="eBankit.UI.Web.InternetBanking.Security.Transactions.Transactions" %>
+
+<%@ Import Namespace="eBankit.Common.InternetBanking" %>
+
+<asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="TransactionFeaturedContent">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-max">
+        <section class="featured">
+            <div class="bs-reduced metro">
+                <asp:UpdatePanel ID="upTitle" runat="server">
+                    <ContentTemplate>
+                        <it:TitleSubtitle ID="titleSubtitle" ShowToolTipLikeHelpTitle="false" ShowToolTipTitle="false" ShowToolTipLikeHelpSubtitle="false" ShowToolTipSubtitle="false" ToolTipPlacementTitle="right" ToolTipPlacementSubtitle="right"  runat="server" />
+                        <asp:Panel ID="pnPageTitle" CssClass="col-lg-12 clearPadding" runat="server">
+                        </asp:Panel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("jquery.editable.js".ResolveJsUrl(), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("metro.min.js".ResolveJsUrl("metro"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("autoNumeric.js".ResolveJsUrl("Services/Amount"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="TransactionMainContent">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-max">
+        <asp:UpdatePanel ID="upHeader" runat="server">
+            <ContentTemplate>
+                <asp:PlaceHolder ID="phHeaderTransaction" runat="server"></asp:PlaceHolder>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <asp:PlaceHolder ID="phHeader" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="phMessage" runat="server"></asp:PlaceHolder>
+    <asp:UpdatePanel ID="upContentTop" runat="server" UpdateMode="Always">
+        <ContentTemplate>
+            <asp:Panel ID="pnContentTop" CssClass="col-lg-12 clearPadding" runat="server">
+            </asp:Panel>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:Panel ID="pnContentMiddle" CssClass="col-lg-12" runat="server"></asp:Panel>
+    <div id="divTopOperations" class="col-lg-12" runat="server">
+        <asp:PlaceHolder ID="phTopControls" runat="server"></asp:PlaceHolder>
+    </div>
+    <asp:PlaceHolder ID="phSelector" runat="server"></asp:PlaceHolder>
+    <div id="divLeftOperations" class="col-lg-2 col-right clearPadding" runat="server">
+        <asp:PlaceHolder ID="phLeftControls" runat="server"></asp:PlaceHolder>
+    </div>
+    <div id="divRightControls" class="col-lg-2 col-right col-right2" style="padding-left: 0px;" runat="server">
+        <asp:PlaceHolder ID="phRightControls" runat="server"></asp:PlaceHolder>
+    </div>
+    <div id="divRightTransaction" class="col-lg-8 col-left col-transaction clearPadding" runat="server">
+        <asp:UpdatePanel ID="updPanel" runat="server">
+            <ContentTemplate>
+                <asp:PlaceHolder ID="phMessageTransaction" runat="server"></asp:PlaceHolder>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <it:ProxyTransaction ID="txpTransactions" runat="server" />
+    </div>
+    <div class="clearBoth"></div>
+    <div id="divBottomOperations" class="col-lg-12 clearPadding" runat="server">
+        <asp:PlaceHolder ID="phBottomControls" runat="server"></asp:PlaceHolder>
+        <div id="campaignTransactionConclusionBottomBanner" runat="server" visible="false"></div>
+    </div>
+
+    <div class="clearBoth"></div>
+    <script type="text/javascript">
+        METRO_AUTO_REINIT = true;
+
+        $(document).ready(function () {
+            var elementId = $('[id$=btnCancelFlowItem]').removeAttr("href");
+        });
+    </script>
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("autoNumeric.js".ResolveJsUrl("Services/Amount"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+
+    <script type="text/javascript" src="<%= eBankit.Common.Sites.Utils.GetCacheVersion("dashboard.js".ResolveJsUrl("ebankitControls/dashboard"), eBankit.Common.Sites.Utils.CacheVersionKey.JScript) %>"></script>
+</asp:Content>

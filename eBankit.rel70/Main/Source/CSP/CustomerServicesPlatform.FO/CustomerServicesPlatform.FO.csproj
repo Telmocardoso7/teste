@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>7.0.1</Version>
+    <ProductVersion>7.0.1</ProductVersion>
+    <CSPContentFilesPath>$(userprofile)\.nuget\packages\ebankit.fe.cc\$(ProductVersion)\contentFiles\any\$(TargetFramework)</CSPContentFilesPath>
+    <Configurations>Debug;Release;CC;FO</Configurations>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ExternalServices\**" />
+    <Compile Remove="Logs\**" />
+    <Content Remove="ExternalServices\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="ExternalServices\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="ExternalServices\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Xdt.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerServicesPlatform.Base\CustomerServicesPlatform.Base.csproj" />
+    <ProjectReference Include="..\Modules\CSP.Campaigns\CSP.Campaigns.csproj" />
+    <ProjectReference Include="..\Modules\CSP.GDPR\CSP.GDPR.csproj" />
+    <ProjectReference Include="..\Modules\CSP.Messages\CSP.Messages.csproj" />
+    <ProjectReference Include="..\Modules\CSP.MultiUserContract\CSP.MultiUserContract.csproj" />
+    <ProjectReference Include="..\Modules\CSP.Notifications\CSP.Notifications.csproj" />
+    <ProjectReference Include="..\Modules\CSP.Processes\CSP.Processes.csproj" />
+    <ProjectReference Include="..\Modules\CSP.Transactions\CSP.Transactions.csproj" />
+  </ItemGroup>
+  <Target Name="CreateAppDataFolder" AfterTargets="AfterPublish">
+    <MakeDir Directories="$(PublishDir)ExternalServices" Condition="!Exists('$(PublishDir)ExternalServices')" />
+  </Target>
+  <Target Name="ApplyXdtConfigTransform" BeforeTargets="_TransformWebConfig">
+    <PropertyGroup>
+      <_SourceWebConfig>$(MSBuildThisFileDirectory)Web.config</_SourceWebConfig>
+      <_XdtTransform>$(CSPContentFilesPath)\Web.$(Configuration).config</_XdtTransform>
+      <_TargetWebConfig>$(PublishDir)Web.config</_TargetWebConfig>
+    </PropertyGroup>
+    <Exec Command="dotnet transform-xdt --xml &quot;$(_SourceWebConfig)&quot; --transform &quot;$(_XdtTransform)&quot; --output &quot;$(_TargetWebConfig)&quot;" Condition="Exists('$(_XdtTransform)')" />
+  </Target>
+</Project>

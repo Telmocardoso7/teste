@@ -1,0 +1,89 @@
+﻿.img-info {
+  background-image: url('../images/icon/ico-tooltip.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  display: inline-block;
+  padding: 0px 7px 0px 8px;
+  height: 20px;
+}
+p.action-buttons > a {
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  float: right;
+  display: inline-block;
+}
+p.action-buttons > a.btn-delete {
+  background-image: url(../images/icon/Corporate/delete.png);
+}
+p.action-buttons > a.btn-delete:hover {
+  background-image: url(../images/icon/Corporate/delete_hover.png);
+}
+.custom-muc-chk {
+  position: relative;
+  display: inline-block;
+}
+.custom-muc-chk-descricption {
+  display: inline-block;
+  margin-left: 5px !important;
+}
+.lblSubtitleAccountsGrid {
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.title-grid {
+  padding-left: 8px;
+}
+.cbcontainer {
+  padding-left: 0px !important;
+}
+.input-account-search {
+  height: 40px;
+  border: 1px solid #E2E2E2;
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.input-account-addon {
+  background: url("../images/icon/Corporate/other_search.svg") no-repeat center;
+  padding-right: 30px;
+  border: none;
+}
+.input-account-addon.clear {
+  background: url("../images/icon/Corporate/other_search_clear.svg") no-repeat center;
+  padding-right: 30px;
+  border: none;
+}
+.form-control {
+  border: none;
+  box-shadow: none;
+  height: 40px;
+}
+.form-control-box {
+  border: none;
+  box-shadow: none;
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  color: #555555;
+  padding-left: 10px;
+}
+.form-control-box:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  outline: 2px solid black;
+}
+.displayInlineBlock {
+  display: inline-block;
+}

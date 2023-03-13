@@ -1,0 +1,343 @@
+﻿.titleAccountGroups {
+  padding: 0;
+}
+.titleAccountGroups > h4 {
+  font-weight: 600;
+  color: #454547;
+}
+.infoAccountGroups {
+  padding: 0 0 10px 0;
+  color: #555555;
+  height: 75px;
+}
+.input-group-addon {
+  background: url("../../images/icon/Corporate/other_search.svg") no-repeat center;
+  padding-right: 30px;
+  border: none;
+}
+.input-group-addon.clear {
+  background: url("../../images/icon/Corporate/other_search_clear.svg") no-repeat center;
+  padding-right: 30px;
+  border: none;
+}
+.input-group {
+  height: 40px;
+  border: 1px solid #E2E2E2;
+  margin-top: 10px;
+  width: 100%;
+}
+.input-group-search {
+  height: 40px;
+  border: 1px solid #E2E2E2;
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.input-group.accounts {
+  margin: 0px 0px 10px 0px !important;
+  height: 80px;
+}
+.input-group-search:focus-within {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.form-control {
+  border: none;
+  box-shadow: none;
+  height: 40px;
+}
+.form-control-box {
+  border: none;
+  box-shadow: none;
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  color: #555555;
+  padding-left: 10px;
+}
+.form-control-box:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  outline: 2px solid black;
+}
+.overflowHidden {
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 600px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.accountDetailsName {
+  margin: 2px 0px 2px 10px;
+  color: #454547;
+}
+.accountDetailsNumber {
+  margin: 2px 0px 18px 10px;
+  color: #555555;
+  font-size: 16px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #EEEEEE;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.groups {
+  text-align: center;
+  background: #F9F9F9;
+  padding: 20px 0px 20px 0px;
+  overflow: hidden;
+}
+.groups.edit {
+  background: rgba(239, 123, 48, 0.2) !important;
+}
+.imgGroup {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.infoGroupName {
+  font-size: 18px;
+  color: #555555;
+  white-space: nowrap;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  height: 40px;
+  text-align: left;
+  max-width: 230px;
+  overflow: hidden;
+  line-height: 40px;
+}
+.icons {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 0;
+}
+.trs_buttons-action {
+  margin-top: 60px;
+}
+.highlight {
+  border: 1px dashed #555555;
+}
+.AccountsGroupMessage {
+  text-align: justify;
+  font-weight: 600;
+}
+.groupInfo.has-error {
+  border: solid 1px #ededed;
+  -webkit-box-shadow: 0px 0px 8px #D24627;
+  -moz-box-shadow: 0px 0px 8px #D24627;
+  box-shadow: 0px 0px 8px #D24627;
+}
+.ui-droppable label.has-error {
+  color: #D24627 !important;
+  font-size: 11px !important;
+  font-weight: normal;
+  left: 25px;
+  text-align: left;
+  width: 100%;
+}
+.accountGroupsCounter {
+  font-weight: 500;
+  width: 100%;
+  color: #555555;
+}
+.accountDetailsName > span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.accountDetailsCustomer {
+  display: inline-block;
+  max-width: fit-content;
+  max-height: fit-content;
+  padding: 2px 5px 2px 5px;
+  background-color: #555555;
+  color: white;
+  border-radius: 5px;
+  margin: 18px 0px 2px 10px;
+}
+.input-group > a {
+  color: #555555;
+}
+.input-group > a:hover {
+  color: #454547;
+}
+.editGroupNameBox:focus-within {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+.comment {
+  font-style: italic;
+  color: #999;
+}
+ul.instructions {
+  width: auto;
+  list-style-type: disc;
+  margin-left: 0;
+  padding: 0.5em;
+  background: #fff;
+  color: #000;
+  margin-bottom: 1em;
+}
+table#popup {
+  position: absolute;
+  width: 77%;
+  padding: 0.3em;
+  background: white;
+  color: #555555;
+  border: 1px solid #E2E2E2;
+  top: 6em;
+  left: 6em;
+  cursor: default;
+  z-index: 1;
+}
+table#popup tbody tr {
+  text-align: left !important;
+  margin: 0.3em 0 !important;
+  padding: 0 0.2em;
+  background-color: #ffffff;
+  height: 50px !important;
+  border: 1px solid #E2E2E2;
+}
+table#popup td {
+  padding-left: 20px;
+}
+table#popup th {
+  text-align: left !important;
+  margin: 0.3em 0 !important;
+  padding: 0 0.2em;
+  background-color: #ffffff;
+  height: 40px !important;
+  border: 1px solid #E2E2E2;
+  padding-left: 20px !important;
+}
+table#popup tbody tr.focus,
+table#popup tbody tr.hover {
+  background: rgba(239, 123, 48, 0.2);
+  color: #555555;
+}
+.groupInfo .highlight {
+  background: #c00;
+  color: #000;
+}
+div.ui-draggable {
+  cursor: move;
+}
+.lineContainer {
+  display: block;
+  width: 100%;
+  border-bottom: 3px solid #EEEEEE;
+  float: left;
+  overflow: visible;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+#divGroupsHeaders {
+  font-weight: bold;
+}
+.litEditHeader {
+  padding-left: 0px;
+}
+.litDeleteHeader {
+  padding-left: 10px;
+}
+.iconShare {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 0;
+  padding-left: 0px;
+}
+.iconVisible {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 22px;
+  padding-left: 15px;
+}
+.iconNotOwner {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 18px 0 0;
+}
+.iconNotOwner img {
+  height: 30px;
+  width: 30px;
+}
+.divInheritGroupName {
+  font-size: 18px;
+  color: #555555;
+  white-space: nowrap;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  height: 40px;
+  text-align: left;
+  max-width: 230px;
+  overflow: hidden;
+  line-height: 40px;
+}
+.divInheritGroupOwnerName {
+  font-size: 16px;
+  float: left;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: #555555;
+  line-height: 16px;
+}
+.divInfoInheritGroup {
+  margin-right: 7.5%;
+  margin-left: -2.5%;
+  padding-right: 0;
+}
+.litShareHeader {
+  padding-left: 0;
+}
+.litVisibleHeader {
+  margin-left: 29px;
+}
+.orderDivAccount {
+  height: 80px;
+  margin-left: 20.5%;
+}
+.visibilityHiddenNotShare {
+  visibility: hidden;
+}
+.alert-accounts {
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-warning-no-accounts {
+  background-color: #f5f5f5;
+  color: #333333;
+  padding: 0px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.alert-accounts-heading {
+  font-size: 16px;
+  text-align: center;
+}
